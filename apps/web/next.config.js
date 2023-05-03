@@ -5,7 +5,8 @@ module.exports = {
   transpilePackages: ["ui"],
   output: "standalone",
   experimental: {
-    outputFileTracingRoot: path.join(__dirname, "../../"),
     appDir: true,
+    outputFileTracingRoot: path.join(__dirname, "../../"),
+    typedRoutes: true,
   },
 };

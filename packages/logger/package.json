@@ -13,6 +13,7 @@
     "clean": "rm -rf dist",
     "dev": "tsc -w",
     "lint": "eslint \"src/**/*.ts*\"",
+    "lint:fix": "yarn lint --fix",
     "test": "jest"
   },
   "jest": {

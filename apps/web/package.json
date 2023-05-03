@@ -6,9 +6,11 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "next lint",
+    "lint:fix": "yarn lint --fix",
     "start": "next start"
   },
   "dependencies": {
+    "logger": "*",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

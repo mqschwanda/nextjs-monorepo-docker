@@ -6,4 +6,9 @@ module.exports = {
       './tsconfig.json',
     ],
   },
+  rules: {
+    "import/prefer-default-export": [
+      "off"
+    ]
+  }
 };
