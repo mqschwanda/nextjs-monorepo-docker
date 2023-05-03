@@ -1,5 +1,28 @@
 {
   "extends": "tsconfig/react-library.json",
-  "include": ["."],
-  "exclude": ["dist", "build", "node_modules"]
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "dist",
+    "build", 
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "lib": [
+      "ES2015"
+    ],
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "paths": {
+      "components/*": [
+        "src/components/*"
+      ],
+      "components": [
+        "src/components"
+      ]
+    }
+  },
 }

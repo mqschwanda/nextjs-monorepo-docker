@@ -1,4 +1,4 @@
-import HelloWorldForm from '../partials/HelloWorldForm';
+import HelloWorldForm from 'partials/HelloWorldForm';
 
 export const metadata = {
   title: 'My Page Title',
