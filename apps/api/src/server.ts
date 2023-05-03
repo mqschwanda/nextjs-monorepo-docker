@@ -2,6 +2,7 @@ import { json, urlencoded } from "body-parser";
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
+import graphqlServer from "graphql-server";
 
 export const createServer = () => {
   const app = express();
@@ -14,9 +15,10 @@ export const createServer = () => {
     .get("/message/:name", (req, res) => {
       return res.json({ message: `hello ${req.params.name}` });
     })
-    .get("/healthz", (req, res) => {
-      return res.json({ ok: true });
-    });
+    .get(
+      "/graphql/v1", 
+      graphqlServer(),
+    );
 
   return app;
 };

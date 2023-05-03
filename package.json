@@ -7,13 +7,13 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
-    "clean": "turbo run clean",
-    "dev": "turbo run dev",
+    "build": "turbo run build --concurrency=100%",
+    "clean": "turbo run clean --concurrency=100%",
+    "dev": "turbo run dev --concurrency=100%",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "lint": "turbo run lint",
-    "lint:fix": "turbo run lint:fix",
-    "test": "turbo run test"
+    "lint": "turbo run lint --concurrency=100%",
+    "lint:fix": "turbo run lint:fix --concurrency=100%",
+    "test": "turbo run test --concurrency=100%"
   },
   "dependencies": {},
   "devDependencies": {
