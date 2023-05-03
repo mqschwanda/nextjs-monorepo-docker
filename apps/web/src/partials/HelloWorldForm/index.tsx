@@ -3,16 +3,16 @@
 import { useEffect, useState } from 'react';
 import { Button } from 'ui';
 import logger from 'logger';
-
-const API_HOST = process.env.NEXT_PUBLIC_API_HOST || 'http://localhost:3001';
+import { queryHello, useLazyQuery } from 'graphql-client';
 
 export default function Page() {
   const [name, setName] = useState<string>('');
-  const [response, setResponse] = useState<{ message: string } | null>(null);
+  const [hello, setHello] = useState<string | null>(null);
   const [error, setError] = useState<string | undefined>();
+  const [getQueryHello] = useLazyQuery(queryHello);
 
   useEffect(() => {
-    setResponse(null);
+    setHello(null);
     setError(undefined);
   }, [name]);
 
@@ -22,9 +22,13 @@ export default function Page() {
     e.preventDefault();
 
     try {
-      const result = await fetch(`${API_HOST}/message/${name}`);
-      const data = await result.json();
-      setResponse(data);
+      const result = await getQueryHello({
+        variables: {
+          name,
+        },
+      });
+
+      setHello(result.data.hello);
     } catch (err) {
       logger(err);
       setError('Unable to fetch response');
@@ -64,10 +68,10 @@ export default function Page() {
           <p>{ error }</p>
         </div>
       ) }
-      { response && (
+      { hello && (
         <div>
           <h3>Greeting</h3>
-          <p>{ response.message }</p>
+          <p>{ hello }</p>
           <Button
             onClick={onReset}
           >

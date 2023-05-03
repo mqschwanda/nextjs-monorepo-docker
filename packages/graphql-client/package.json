@@ -1,5 +1,5 @@
 {
-  "name": "graphql-schema",
+  "name": "graphql-client",
   "version": "0.0.0",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -23,7 +23,9 @@
     "typescript": "^4.5.2"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.13",
+    "express-graphql": "^0.12.0",
     "graphql": "^16.6.0",
-    "@apollo/client": "^3.7.13"
+    "graphql-schema": "*"
   }
 }

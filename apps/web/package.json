@@ -10,6 +10,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "graphql-client": "*",
     "logger": "*",
     "next": "latest",
     "react": "^18.2.0",
