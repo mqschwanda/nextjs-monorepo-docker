@@ -2,6 +2,7 @@
 
 import type { ReactNode } from 'react';
 import { ApolloProvider } from 'graphql-client';
+import { UiProvider } from 'ui';
 
 export interface ProviderProps {
   children: ReactNode
@@ -12,7 +13,9 @@ export default function Providers({
 }: ProviderProps) {
   return (
     <ApolloProvider>
-      { children }
+      <UiProvider>
+        { children }
+      </UiProvider>
     </ApolloProvider>
   );
 }

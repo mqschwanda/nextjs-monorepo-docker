@@ -1,7 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Button } from 'ui';
+import {
+  Button,
+  Stack,
+  TextField,
+  Typography,
+} from 'ui';
 import logger from 'logger';
 import { queryHello, useLazyQuery } from 'graphql-client';
 
@@ -40,22 +45,21 @@ export default function Page() {
   };
 
   return (
-    <div>
+    <Stack
+      spacing={1}
+    >
       <form
         onSubmit={onSubmit}
       >
-        <label
-          htmlFor='name'
-        >
-          Name
-          <input
-            id='name'
-            name='name'
-            onChange={onChange}
-            type='text'
-            value={name}
-          />
-        </label>
+        <TextField
+          id='name'
+          label='Name'
+          name='name'
+          onChange={onChange}
+          size='small'
+          type='text'
+          value={name}
+        />
         <Button
           type='submit'
         >
@@ -63,22 +67,38 @@ export default function Page() {
         </Button>
       </form>
       { error && (
-        <div>
-          <h3>Error</h3>
-          <p>{ error }</p>
-        </div>
+        <Stack>
+          <Typography
+            variant='h5'
+          >
+            Error
+          </Typography>
+          <Typography
+            color='error'
+          >
+            { error }
+          </Typography>
+        </Stack>
       ) }
       { hello && (
-        <div>
-          <h3>Greeting</h3>
-          <p>{ hello }</p>
-          <Button
-            onClick={onReset}
+        <Stack>
+          <Typography
+            variant='h5'
           >
-            Reset
-          </Button>
-        </div>
+            Greeting
+          </Typography>
+          <Typography>
+            { hello }
+          </Typography>
+          <div>
+            <Button
+              onClick={onReset}
+            >
+              Reset
+            </Button>
+          </div>
+        </Stack>
       ) }
-    </div>
+    </Stack>
   );
 }

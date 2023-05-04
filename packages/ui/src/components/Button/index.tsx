@@ -1,18 +1,22 @@
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  children: React.ReactNode;
+import MuiButton, { ButtonProps as MuiButtonProps } from '@mui/material/Button';
+
+export interface ButtonProps extends MuiButtonProps {
+
 }
 
 export function Button({
   children,
   type = 'button',
+  variant = 'contained',
   ...rest
 }: ButtonProps) {
   return (
-    <button
-      type={type} // eslint-disable-line react/button-has-type
+    <MuiButton
+      type={type}
+      variant={variant}
       {...rest} // eslint-disable-line react/jsx-props-no-spreading
     >
       { children }
-    </button>
+    </MuiButton>
   );
 }

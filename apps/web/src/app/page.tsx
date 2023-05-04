@@ -1,4 +1,5 @@
 import HelloWorldForm from 'partials/HelloWorldForm';
+import { Typography } from 'ui';
 
 export const metadata = {
   title: 'My Page Title',
@@ -7,7 +8,11 @@ export const metadata = {
 export default function Page() {
   return (
     <div>
-      <h1>Web</h1>
+      <Typography
+        variant='h4'
+      >
+        Web
+      </Typography>
       <HelloWorldForm />
     </div>
   );

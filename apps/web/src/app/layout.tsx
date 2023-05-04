@@ -1,13 +1,12 @@
 import Providers from 'providers';
 import type { ReactNode } from 'react';
+import { Container } from 'ui';
 
 interface RootLayoutProps {
   children: ReactNode
 }
 
 export default function RootLayout({
-  // Layouts must accept a children prop.
-  // This will be populated with nested layouts or pages
   children,
 }: RootLayoutProps) {
   return (
@@ -16,7 +15,9 @@ export default function RootLayout({
     >
       <body>
         <Providers>
-          { children }
+          <Container>
+            { children }
+          </Container>
         </Providers>
       </body>
     </html>
