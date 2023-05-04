@@ -1,7 +1,8 @@
 module.exports = {
   ignorePatterns: [
     "dist", 
-    "build"
+    "build",
+    "__generated__",
   ],
   extends: [
     // 'next',

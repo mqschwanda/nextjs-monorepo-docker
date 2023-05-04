@@ -8,13 +8,13 @@ import {
   Typography,
 } from 'ui';
 import logger from 'logger';
-import { queryHello, useLazyQuery } from 'graphql-client';
+import { useHelloLazyQuery } from 'graphql-client';
 
 export default function Page() {
   const [name, setName] = useState<string>('');
   const [hello, setHello] = useState<string | null>(null);
   const [error, setError] = useState<string | undefined>();
-  const [getQueryHello] = useLazyQuery(queryHello);
+  const [getQueryHello] = useHelloLazyQuery();
 
   useEffect(() => {
     setHello(null);
@@ -33,7 +33,11 @@ export default function Page() {
         },
       });
 
-      setHello(result.data.hello);
+      if (result.data) {
+        setHello(result.data.hello);
+      } else {
+        setError('Unable to fetch response');
+      }
     } catch (err) {
       logger(err);
       setError('Unable to fetch response');

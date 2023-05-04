@@ -1,0 +1,6 @@
+query Hello(
+  $name: String!
+) {
+  hello(name: $name)
+}
+
