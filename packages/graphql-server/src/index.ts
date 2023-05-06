@@ -1,9 +1,13 @@
+import { IncomingMessage, ServerResponse } from 'http';
 import { graphqlHTTP } from 'express-graphql';
-import { schema } from 'graphql-schema';
+// import loadSchema from 'graphql-schema/loadSchema';
+import loadSchema from 'graphql-schema/dist/loadSchema';
+
+const schema = loadSchema();
 
 // The root provides a resolver function for each API endpoint
 const rootValue = {
-  hello: (_parent, args, _context, _info) => `Hello ${args.body.variables.name}`,
+  hello: (req: IncomingMessage, res: ServerResponse) => `Hello ${res.body.variables.name}`,
 };
 
 export default function graphqlServer() {

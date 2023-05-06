@@ -5,16 +5,26 @@
   "main": "./dist/index.js",
   "source": "./src/index.ts",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./dist/__generated__/react-apollo": "./dist/__generated__/react-apollo.js",
+    "./react-apollo": "./dist/__generated__/react-apollo.js",
+    "./dist/loadSchema": "./dist/loadSchema.js",
+    "./loadSchema": "./dist/loadSchema.js"
+  },
   "files": [
     "dist/**"
   ],
   "scripts": {
     "codegen": "graphql-codegen **/*.graphql",
     "codegen:watch": "yarn codegen --watch",
-    "build": "tsc",
-    "build:watch": "yarn build -w",
+    "copy-schema": "copyfiles -u 1 \"./src/schema/**/*\" \"./dist/\"",
+    "copy-schema:watch": "nodemon --watch ./src/schema/* --exec \"yarn copy-schema\"",
+    "build": "yarn build-tsc && yarn codegen && yarn copy-schema",
+    "build-tsc": "tsc",
+    "build-tsc:watch": "yarn build -w",
     "clean": "rm -rf dist",
-    "dev": "concurrently \"yarn build:watch\" \"yarn codegen:watch\"",
+    "dev": "concurrently \"yarn build-tsc:watch\" \"yarn codegen:watch\" \"yarn copy-schema:watch\"",
     "lint": "eslint \"**/*.ts*\"",
     "lint:fix": "yarn lint --fix"
   },
@@ -27,9 +37,11 @@
     "@graphql-codegen/typescript-resolvers": "^3.2.1",
     "@graphql-eslint/eslint-plugin": "^3.18.0",
     "concurrently": "^8.0.1",
+    "copyfiles": "^2.4.1",
     "eslint": "^7.32.0",
-    "eslint-config-custom": "*",
     "eslint-config-codegen": "*",
+    "eslint-config-custom": "*",
+    "nodemon": "^2.0.22",
     "react": "^18.2.0",
     "tsconfig": "*",
     "typescript": "^4.5.2"
