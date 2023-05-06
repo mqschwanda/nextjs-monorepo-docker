@@ -1,7 +1,6 @@
 import { IncomingMessage, ServerResponse } from 'http';
 import { graphqlHTTP } from 'express-graphql';
-// import loadSchema from 'graphql-schema/loadSchema';
-import loadSchema from 'graphql-schema/dist/loadSchema';
+import loadSchema from 'graphql-schema/loadSchema';
 
 const schema = loadSchema();
 

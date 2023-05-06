@@ -2,6 +2,7 @@
   "name": "graphql-schema",
   "version": "0.0.0",
   "license": "MIT",
+  "sideEffects": false,
   "main": "./dist/index.js",
   "source": "./src/index.ts",
   "types": "./dist/index.d.ts",
@@ -11,6 +12,16 @@
     "./react-apollo": "./dist/__generated__/react-apollo.js",
     "./dist/loadSchema": "./dist/loadSchema.js",
     "./loadSchema": "./dist/loadSchema.js"
+  },
+  "typesVersions": {
+    "*": {
+      "loadSchema": [
+        "./dist/loadSchema.d.ts"
+      ],
+      "react-apollo": [
+        "./dist/__generated__/react-apollo.d.ts"
+      ]
+    }
   },
   "files": [
     "dist/**"
