@@ -6,7 +6,10 @@ const schema = loadSchema();
 
 // The root provides a resolver function for each API endpoint
 const rootValue = {
-  hello: (req: IncomingMessage, res: ServerResponse) => `Hello ${res.body.variables.name}`,
+  hello: (
+    req: IncomingMessage,
+    res: ServerResponse,
+  ) => `Hello ${res.body.variables.name}`,
 };
 
 export default function graphqlServer() {
