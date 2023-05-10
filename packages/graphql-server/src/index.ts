@@ -1,21 +1,21 @@
-import { IncomingMessage, ServerResponse } from 'http';
-import { graphqlHTTP } from 'express-graphql';
+import { createHandler } from 'graphql-http/lib/use/express';
 import loadSchema from 'graphql-schema/loadSchema';
+import { makeExecutableSchema } from 'graphql-tools';
+import { Resolvers } from 'graphql-schema';
 
-const schema = loadSchema();
-
-// The root provides a resolver function for each API endpoint
-const rootValue = {
-  hello: (
-    req: IncomingMessage,
-    res: ServerResponse,
-  ) => `Hello ${res.body.variables.name}`,
+const resolvers: Resolvers = {
+  Query: {
+    hello: (_parent, args, _context, _info) => `Hello ${args.name}`,
+  },
 };
 
+const schema = makeExecutableSchema({
+  resolvers,
+  typeDefs: loadSchema(),
+});
+
 export default function graphqlServer() {
-  return graphqlHTTP({
-    graphiql: true,
-    rootValue,
+  return createHandler({
     schema,
   });
 }

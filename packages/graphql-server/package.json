@@ -23,7 +23,8 @@
     "typescript": "^4.5.2"
   },
   "dependencies": {
-    "express-graphql": "^0.12.0",
-    "graphql-schema": "*"
+    "graphql-http": "^1.18.0",
+    "graphql-schema": "*",
+    "graphql-tools": "^8.3.20"
   }
 }
