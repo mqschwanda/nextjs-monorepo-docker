@@ -2,9 +2,11 @@ import { json, urlencoded } from "body-parser";
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
-import graphqlServer from "graphql-server";
+import createGraphqlServer from "graphql-server";
 
 export const createServer = () => {
+  const graphql = createGraphqlServer()
+
   const app = express();
   app
     .disable("x-powered-by")
@@ -12,10 +14,7 @@ export const createServer = () => {
     .use(urlencoded({ extended: true }))
     .use(json())
     .use(cors())
-    .use(
-      "/graphql/v1", 
-      graphqlServer(),
-    );
+    .use(graphql.graphqlEndpoint, graphql);
 
   return app;
 };

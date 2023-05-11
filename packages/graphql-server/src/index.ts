@@ -1,21 +1,17 @@
-import { createHandler } from 'graphql-http/lib/use/express';
 import loadSchema from 'graphql-schema/loadSchema';
-import { makeExecutableSchema } from 'graphql-tools';
-import { Resolvers } from 'graphql-schema';
+import { createSchema, createYoga } from 'graphql-yoga';
+import resolvers from './resolvers';
 
-const resolvers: Resolvers = {
-  Query: {
-    hello: (_parent, args, _context, _info) => `Hello ${args.name}`,
-  },
-};
-
-const schema = makeExecutableSchema({
+const schema = createSchema({
   resolvers,
   typeDefs: loadSchema(),
 });
 
-export default function graphqlServer() {
-  return createHandler({
+export default function createGraphqlServer() {
+  return createYoga({
+    graphiql: true,
+    graphqlEndpoint: '/graphql/v1',
+    landingPage: false,
     schema,
   });
 }

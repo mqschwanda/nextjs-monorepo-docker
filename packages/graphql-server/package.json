@@ -23,8 +23,7 @@
     "typescript": "^4.5.2"
   },
   "dependencies": {
-    "graphql-http": "^1.18.0",
     "graphql-schema": "*",
-    "graphql-tools": "^8.3.20"
+    "graphql-yoga": "^3.9.1"
   }
 }
