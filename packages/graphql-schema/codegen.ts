@@ -1,19 +1,21 @@
 import { CodegenConfig } from '@graphql-codegen/cli';
+import { 
+  documentsGlob, 
+  generatedDir, 
+  reactApolloVersion, 
+  schemaGlob, 
+} from './src/constants'
 import path from 'path';
 
-const GRAPHQL_SCHEMA_GLOB = 'src/schema/*.graphql';
-const GRAPHQL_GENERATED_DIR = 'src/__generated__/';
-const APOLLO_VERSION = 3;
-
-const typesPath = './graphql';
-const reactApolloVersion = APOLLO_VERSION;
+export const srcDir = 'src';
+export const typesPath = './graphql';
 
 const config: CodegenConfig = {
   documents: [
-    './src/**/*.graphql',
+    path.join(srcDir, documentsGlob),
   ],
   generates: {
-    [GRAPHQL_GENERATED_DIR]: {
+    [path.join(srcDir, generatedDir, '/')]: {
       config: {
         arrayInputCoercion: false,
         avoidOptionals: false,
@@ -36,20 +38,7 @@ const config: CodegenConfig = {
         typesPath,
       },
     },
-    [path.join(GRAPHQL_GENERATED_DIR, 'react-apollo.ts')]: {
-      config: {
-        pureMagicComment: true,
-        reactApolloVersion,
-      },
-      plugins: [
-        'typescript-react-apollo',
-      ],
-      preset: 'import-types',
-      presetConfig: {
-        typesPath,
-      },
-    },
-    [path.join(GRAPHQL_GENERATED_DIR, 'resolvers.ts')]: {
+    [path.join(srcDir, generatedDir, 'resolvers.ts')]: {
       config: {
         reactApolloVersion,
       },
@@ -67,7 +56,7 @@ const config: CodegenConfig = {
   },
   schema: [
     {
-      [GRAPHQL_SCHEMA_GLOB]: {
+      [path.join(srcDir, schemaGlob)]: {
         noRequire: true,
       },
     },

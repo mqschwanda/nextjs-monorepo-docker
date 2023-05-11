@@ -1,48 +1,19 @@
 import { CodegenConfig } from '@graphql-codegen/cli';
+import { buildDir, documentsGlob, reactApolloVersion, schemaGlob } from 'graphql-schema/constants'
 import path from 'path';
 
-const GRAPHQL_GENERATED_DIR = 'src/__generated__';
-const APOLLO_VERSION = 3;
-const GRAPHQL_SCHEMA_GLOB = 'lib/api/graphql/schema/*.graphql';
+import graphqlSchemaPackageJson from 'graphql-schema/package.json'
 
-const reactApolloVersion = APOLLO_VERSION;
-const typesPath = './graphql';
+const grahpqlSchemaName = graphqlSchemaPackageJson.name;
+const graphqlSchemaPackageJsonMain = graphqlSchemaPackageJson.main.replace(/^.\//, '');
+const graphqlSchemaPath = require.resolve(grahpqlSchemaName).replace(graphqlSchemaPackageJsonMain, '')
 
 const config: CodegenConfig = {
   documents: [
-    './pages/**/*.graphql',
-    './lib/**/*.graphql',
+    path.join(graphqlSchemaPath, buildDir, documentsGlob),
   ],
   generates: {
-    [GRAPHQL_GENERATED_DIR]: {
-      config: {
-        arrayInputCoercion: false,
-        avoidOptionals: false,
-        dedupeFragments: true,
-        defaultScalarType: 'any',
-        enumsAsTypes: false,
-        namingConvention: 'change-case-all#pascalCase',
-        nonOptionalTypename: false,
-        scalars: {
-          Date: 'Date',
-          DateTime: 'string',
-          JSON: 'any',
-          JSONObject: 'Record<string, any>',
-          Time: 'string',
-        },
-        skipTypename: true,
-        strictScalars: true,
-        useTypeImports: false,
-      },
-      plugins: [
-
-      ],
-      preset: 'client',
-      presetConfig: {
-        fragmentMasking: false,
-      },
-    },
-    [path.join(GRAPHQL_GENERATED_DIR, 'react-apollo.ts')]: {
+    [path.join('src', '__generated__', 'react-apollo.ts')]: {
       config: {
         pureMagicComment: true,
         reactApolloVersion,
@@ -52,28 +23,16 @@ const config: CodegenConfig = {
       ],
       preset: 'import-types',
       presetConfig: {
-        typesPath,
-      },
-    },
-    [path.join(GRAPHQL_GENERATED_DIR, 'resolvers.ts')]: {
-      config: {
-        reactApolloVersion,
-      },
-      plugins: [
-        'typescript-resolvers',
-      ],
-      preset: 'import-types',
-      presetConfig: {
-        typesPath,
+        typesPath: grahpqlSchemaName,
       },
     },
   },
   hooks: {
-    afterAllFileWrite: 'yarn eslint --config .eslintrc.codegen.json --fix',
+    afterAllFileWrite: 'yarn eslint --config .eslintrc.codegen.js --fix',
   },
   schema: [
     {
-      [GRAPHQL_SCHEMA_GLOB]: {
+      [path.join(graphqlSchemaPath, buildDir, schemaGlob)]: {
         noRequire: true,
       },
     },
@@ -81,3 +40,4 @@ const config: CodegenConfig = {
 };
 
 export default config;
+

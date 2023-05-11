@@ -8,13 +8,17 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
-    "./dist/__generated__/react-apollo": "./dist/__generated__/react-apollo.js",
-    "./react-apollo": "./dist/__generated__/react-apollo.js",
-    "./dist/loadSchema": "./dist/loadSchema.js",
-    "./loadSchema": "./dist/loadSchema.js"
+    "./constants": "./dist/constants.js",
+    "./loadSchema": "./dist/loadSchema.js",
+    "./package.json": "./package.json",
+    "./queries/*.graphql": "./dist/queries/*.graphql",
+    "./schema/*.graphql": "./dist/schema/*.graphql"
   },
   "typesVersions": {
     "*": {
+      "constants": [
+        "./dist/constants.d.ts"
+      ],
       "loadSchema": [
         "./dist/loadSchema.d.ts"
       ],
@@ -31,11 +35,13 @@
     "codegen:watch": "yarn codegen --watch",
     "copy-schema": "copyfiles -u 1 \"./src/schema/**/*\" \"./dist/\"",
     "copy-schema:watch": "nodemon --watch ./src/schema/* --exec \"yarn copy-schema\"",
-    "build": "yarn build-tsc && yarn codegen && yarn copy-schema",
+    "copy-queries": "copyfiles -u 1 \"./src/queries/**/*\" \"./dist/\"",
+    "copy-queries:watch": "nodemon --watch ./src/queries/* --exec \"yarn copy-queries\"",
+    "build": "yarn codegen && yarn build-tsc && yarn copy-schema && yarn copy-queries",
     "build-tsc": "tsc",
     "build-tsc:watch": "yarn build -w",
     "clean": "rm -rf dist",
-    "dev": "concurrently \"yarn build-tsc:watch\" \"yarn codegen:watch\" \"yarn copy-schema:watch\"",
+    "dev": "yarn build && concurrently \"yarn codegen:watch\" \"yarn build-tsc:watch\" \"yarn copy-schema:watch\" \"yarn copy-queries:watch\"",
     "lint": "eslint \"**/*.ts*\"",
     "lint:fix": "yarn lint --fix"
   },
@@ -44,7 +50,6 @@
     "@graphql-codegen/client-preset": "^3.0.1",
     "@graphql-codegen/import-types-preset": "^2.2.6",
     "@graphql-codegen/typed-document-node": "^4.0.1",
-    "@graphql-codegen/typescript-react-apollo": "^3.3.7",
     "@graphql-codegen/typescript-resolvers": "^3.2.1",
     "@graphql-eslint/eslint-plugin": "^3.18.0",
     "concurrently": "^8.0.1",

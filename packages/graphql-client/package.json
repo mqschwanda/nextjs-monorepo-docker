@@ -9,23 +9,30 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsc",
+    "codegen": "graphql-codegen **/*.graphql",
+    "codegen:watch": "yarn codegen --watch",
+    "build": "yarn codegen && yarn build-tsc",
+    "build-tsc": "tsc",
+    "build-tsc:watch": "yarn build -w",
     "clean": "rm -rf dist",
-    "dev": "tsc -w",
+    "dev": "yarn build && concurrently \"yarn codegen:watch\" \"yarn build-tsc:watch\"",
     "lint": "eslint \"**/*.ts*\"",
     "lint:fix": "yarn lint --fix"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^3.3.1",
+    "@graphql-codegen/typescript-react-apollo": "^3.3.7",
+    "concurrently": "^8.0.1",
     "eslint": "^7.32.0",
+    "eslint-config-codegen": "*",
     "eslint-config-custom": "*",
+    "glob": "^10.2.3",
     "react": "^18.2.0",
     "tsconfig": "*",
     "typescript": "^4.5.2"
   },
   "dependencies": {
     "@apollo/client": "^3.7.13",
-    "express-graphql": "^0.12.0",
     "graphql": "^16.6.0",
     "graphql-schema": "*"
   }
