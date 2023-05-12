@@ -5,6 +5,34 @@ import * as Apollo from '@apollo/client';
 
 const defaultOptions = {} as const;
 
+export const CountdownDocument = /* #__PURE__ */ gql`
+    subscription Countdown($from: Int!) {
+  countdown(from: $from)
+}
+    `;
+
+/**
+ * __useCountdownSubscription__
+ *
+ * To run a query within a React component, call `useCountdownSubscription` and pass it any options that fit your needs.
+ * When your component renders, `useCountdownSubscription` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the subscription, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useCountdownSubscription({
+ *   variables: {
+ *      from: // value for 'from'
+ *   },
+ * });
+ */
+export function useCountdownSubscription(baseOptions: Apollo.SubscriptionHookOptions<Types.CountdownSubscription, Types.CountdownSubscriptionVariables>) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useSubscription<Types.CountdownSubscription, Types.CountdownSubscriptionVariables>(CountdownDocument, options);
+}
+export type CountdownSubscriptionHookResult = ReturnType<typeof useCountdownSubscription>;
+export type CountdownSubscriptionResult = Apollo.SubscriptionResult<Types.CountdownSubscription>;
 export const HelloDocument = /* #__PURE__ */ gql`
     query Hello($name: String!) {
   hello(name: $name)

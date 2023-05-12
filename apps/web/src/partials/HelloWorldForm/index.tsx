@@ -8,13 +8,18 @@ import {
   Typography,
 } from '@mqs/ui';
 import logger from '@mqs/logger';
-import { useHelloLazyQuery } from '@mqs/graphql-client';
+import { useCountdownSubscription, useHelloLazyQuery } from '@mqs/graphql-client';
 
 export default function Page() {
   const [name, setName] = useState<string>('');
   const [hello, setHello] = useState<string | null>(null);
   const [error, setError] = useState<string | undefined>();
   const [getQueryHello] = useHelloLazyQuery();
+  const { data } = useCountdownSubscription({
+    variables: {
+      from: 10,
+    },
+  });
 
   useEffect(() => {
     setHello(null);
@@ -52,6 +57,13 @@ export default function Page() {
     <Stack
       spacing={1}
     >
+      { data?.countdown !== undefined && (
+        <div>
+          <Typography>
+            { `Countdown: ${data.countdown}` }
+          </Typography>
+        </div>
+      ) }
       <form
         onSubmit={onSubmit}
       >

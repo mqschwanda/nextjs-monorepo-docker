@@ -2,6 +2,7 @@ import {
   ApolloClient,
   InMemoryCache,
 } from '@apollo/client';
+import { YogaLink } from '@graphql-yoga/apollo-link';
 
 function getApolloClientUri() {
   return 'http://localhost:3001/graphql/v1';
@@ -20,7 +21,9 @@ function getApolloClientUri() {
 
 const client = new ApolloClient({
   cache: new InMemoryCache(),
-  uri: getApolloClientUri(),
+  link: new YogaLink({
+    endpoint: getApolloClientUri(),
+  }),
 });
 
 export default client;

@@ -1083,6 +1083,14 @@
     lodash.sortby "^4.7.0"
     tslib "^2.4.0"
 
+"@graphql-tools/executor-apollo-link@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/executor-apollo-link/-/executor-apollo-link-0.0.9.tgz#c6bc3f5e9c9247d1c203a07e370913e0eeedb762"
+  integrity sha512-p3l/p5sT0QAXCiZs/5o2d66cE1bSSFtHyRwUeQTpk2/P1RFE8IaBUCXPw4rNNuqdaV6AICqrCuDUnLXnPAy8uA==
+  dependencies:
+    "@graphql-tools/utils" "^9.2.1"
+    tslib "^2.3.1"
+
 "@graphql-tools/executor-graphql-ws@^0.0.14":
   version "0.0.14"
   resolved "https://registry.yarnpkg.com/@graphql-tools/executor-graphql-ws/-/executor-graphql-ws-0.0.14.tgz#e0f53fc4cfc8a06cc461b2bc1edb4bb9a8e837ed"
@@ -1327,6 +1335,15 @@
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.2.0.tgz#5f3d96ec6b2354ad6d8a28bf216a1d97b5426861"
   integrity sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==
+
+"@graphql-yoga/apollo-link@^1.8.1":
+  version "1.8.1"
+  resolved "https://registry.yarnpkg.com/@graphql-yoga/apollo-link/-/apollo-link-1.8.1.tgz#153f8a76b1da0fec8c377693338bc8f1da64fa38"
+  integrity sha512-wxqH2hJKlKJoWpIuWWPbMC3PwUmGA+rbF88zzYLZEQZS35poMKbOeKW+gYv9WM0bLIWVpImziLLR0yyRUp0ZoA==
+  dependencies:
+    "@graphql-tools/executor-apollo-link" "^0.0.9"
+    "@graphql-tools/executor-http" "^0.1.9"
+    tslib "^2.3.1"
 
 "@graphql-yoga/logger@^0.0.1":
   version "0.0.1"

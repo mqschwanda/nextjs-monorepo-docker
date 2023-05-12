@@ -70,21 +70,30 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Types.Scalars['Boolean']>;
+  Int: ResolverTypeWrapper<Types.Scalars['Int']>;
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Types.Scalars['String']>;
+  Subscription: ResolverTypeWrapper<{}>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
   Boolean: Types.Scalars['Boolean'];
+  Int: Types.Scalars['Int'];
   Query: {};
   String: Types.Scalars['String'];
+  Subscription: {};
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   hello?: Resolver<ResolversTypes['String'], ParentType, ContextType, RequireFields<Types.QueryHelloArgs, 'name'>>;
 };
 
+export type SubscriptionResolvers<ContextType = any, ParentType extends ResolversParentTypes['Subscription'] = ResolversParentTypes['Subscription']> = {
+  countdown?: SubscriptionResolver<ResolversTypes['Int'], 'countdown', ParentType, ContextType, RequireFields<Types.SubscriptionCountdownArgs, 'from'>>;
+};
+
 export type Resolvers<ContextType = any> = {
   Query?: QueryResolvers<ContextType>;
+  Subscription?: SubscriptionResolvers<ContextType>;
 };

@@ -1,0 +1,5 @@
+subscription Countdown(
+  $from: Int!
+) {
+  countdown(from: $from)
+}
