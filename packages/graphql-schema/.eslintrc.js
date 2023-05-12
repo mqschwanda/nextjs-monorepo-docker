@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    '@mqs/custom-client',
+    '@mqs/client',
   ],
   parserOptions: {
     project: [

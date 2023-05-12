@@ -22,7 +22,7 @@
   "devDependencies": {
     "@types/jest": "^26.0.22",
     "eslint": "^7.32.0",
-    "@mqs/eslint-config-custom-client": "*",
+    "@mqs/eslint-config-client": "*",
     "jest": "^26.6.3",
     "@mqs/jest-presets": "*",
     "@mqs/tsconfig": "*",

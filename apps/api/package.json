@@ -30,7 +30,7 @@
     "esbuild": "^0.14.38",
     "esbuild-register": "^3.3.2",
     "eslint": "^7.32.0",
-    "@mqs/eslint-config-custom-server": "*",
+    "@mqs/eslint-config-server": "*",
     "jest": "^26.6.3",
     "@mqs/jest-presets": "*",
     "nodemon": "^2.0.15",

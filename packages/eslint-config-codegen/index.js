@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    '@mqs/eslint-config-custom-client',
+    '@mqs/eslint-config-client',
   ],
   ignorePatterns: [
     '!__generated__'

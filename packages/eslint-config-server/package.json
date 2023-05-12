@@ -1,5 +1,5 @@
 {
-  "name": "@mqs/eslint-config-custom-server",
+  "name": "@mqs/eslint-config-server",
   "version": "0.0.0",
   "license": "MIT",
   "main": "index.js",
@@ -7,6 +7,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "@mqs/eslint-config-custom-client": "*"
+    "@mqs/eslint-config-client": "*"
   }
 }

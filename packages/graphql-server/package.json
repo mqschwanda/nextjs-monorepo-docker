@@ -17,7 +17,7 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "@mqs/eslint-config-custom-client": "*",
+    "@mqs/eslint-config-client": "*",
     "react": "^18.2.0",
     "@mqs/tsconfig": "*",
     "typescript": "^4.5.2"

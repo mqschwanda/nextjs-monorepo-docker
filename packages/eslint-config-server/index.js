@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    '@mqs/custom-client',
+    '@mqs/client',
     "eslint:recommended"
   ],
   env: {

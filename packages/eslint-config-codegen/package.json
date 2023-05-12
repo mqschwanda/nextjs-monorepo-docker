@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "index.js",
   "dependencies": {
-    "@mqs/eslint-config-custom-client": "*"
+    "@mqs/eslint-config-client": "*"
   },
   "publishConfig": {
     "access": "public"
