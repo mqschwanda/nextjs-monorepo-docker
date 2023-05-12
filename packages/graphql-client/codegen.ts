@@ -1,12 +1,17 @@
 import { CodegenConfig } from '@graphql-codegen/cli';
-import { buildDir, documentsGlob, reactApolloVersion, schemaGlob } from 'graphql-schema/constants'
+import {
+  buildDir,
+  documentsGlob,
+  reactApolloVersion,
+  schemaGlob,
+} from 'graphql-schema/constants';
 import path from 'path';
 
-import graphqlSchemaPackageJson from 'graphql-schema/package.json'
+import graphqlSchemaPackageJson from 'graphql-schema/package.json';
 
 const grahpqlSchemaName = graphqlSchemaPackageJson.name;
 const graphqlSchemaPackageJsonMain = graphqlSchemaPackageJson.main.replace(/^.\//, '');
-const graphqlSchemaPath = require.resolve(grahpqlSchemaName).replace(graphqlSchemaPackageJsonMain, '')
+const graphqlSchemaPath = require.resolve(grahpqlSchemaName).replace(graphqlSchemaPackageJsonMain, '');
 
 const config: CodegenConfig = {
   documents: [
@@ -40,4 +45,3 @@ const config: CodegenConfig = {
 };
 
 export default config;
-

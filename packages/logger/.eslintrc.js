@@ -1,9 +1,22 @@
 module.exports = {
-  root: true,
-  extends: ["custom"],
+  extends: [
+    'custom',
+  ],
   parserOptions: {
     project: [
-      './tsconfig.json',
+      './tsconfig.eslint.json',
+    ],
+  },
+  root: true,
+  rules: {
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          './eslintrc.js',
+          '**/__tests__/**/*',
+        ],
+      },
     ],
   },
 };

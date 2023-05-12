@@ -42,7 +42,7 @@
     "build-tsc:watch": "yarn build -w",
     "clean": "rm -rf dist",
     "dev": "yarn build && concurrently \"yarn codegen:watch\" \"yarn build-tsc:watch\" \"yarn copy-schema:watch\" \"yarn copy-queries:watch\"",
-    "lint": "eslint \"**/*.ts*\"",
+    "lint": "eslint .",
     "lint:fix": "yarn lint --fix"
   },
   "devDependencies": {

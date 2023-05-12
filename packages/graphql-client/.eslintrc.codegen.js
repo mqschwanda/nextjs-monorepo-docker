@@ -1,9 +1,11 @@
 module.exports = {
-  root: true,
-  extends: ["eslint-config-codegen"],
+  extends: [
+    'eslint-config-codegen',
+  ],
   parserOptions: {
     project: [
       './tsconfig.json',
     ],
   },
+  root: true,
 };

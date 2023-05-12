@@ -1,11 +1,11 @@
 import { CodegenConfig } from '@graphql-codegen/cli';
-import { 
-  documentsGlob, 
-  generatedDir, 
-  reactApolloVersion, 
-  schemaGlob, 
-} from './src/constants'
 import path from 'path';
+import {
+  documentsGlob,
+  generatedDir,
+  reactApolloVersion,
+  schemaGlob,
+} from './src/constants';
 
 export const srcDir = 'src';
 export const typesPath = './graphql';
@@ -64,4 +64,3 @@ const config: CodegenConfig = {
 };
 
 export default config;
-

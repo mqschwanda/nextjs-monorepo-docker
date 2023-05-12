@@ -111,4 +111,12 @@ module.exports = {
       version: 'detect',
     },
   },
+  overrides: [
+    {
+      files: ["**/__tests__/**/*"],
+      env: {
+        jest: true,
+      },
+    },
+  ],
 };

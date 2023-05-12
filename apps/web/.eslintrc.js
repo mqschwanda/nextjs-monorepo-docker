@@ -1,12 +1,25 @@
 module.exports = {
-  root: true,
   extends: [
-    "custom",
-    'next/core-web-vitals',
+    'custom',
+    'next',
   ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     project: [
-      './tsconfig.json',
+      './tsconfig.eslint.json',
+    ],
+  },
+  root: true,
+  rules: {
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          './eslintrc.js',
+          './next.config.js',
+          '**/__tests__/**/*',
+        ],
+      },
     ],
   },
 };

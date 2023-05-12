@@ -1,4 +1,22 @@
 module.exports = {
+  extends: [
+    'custom-server',
+  ],
+  parserOptions: {
+    project: [
+      './tsconfig.eslint.json',
+    ],
+  },
   root: true,
-  extends: ["custom-server"],
+  rules: {
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          './eslintrc.js',
+          '**/__tests__/**/*',
+        ],
+      },
+    ],
+  },
 };

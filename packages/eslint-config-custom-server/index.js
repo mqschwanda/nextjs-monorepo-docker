@@ -1,5 +1,8 @@
 module.exports = {
-  extends: ["eslint:recommended"],
+  extends: [
+    'custom',
+    "eslint:recommended"
+  ],
   env: {
     node: true,
     es6: true,
@@ -8,12 +11,4 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module",
   },
-  overrides: [
-    {
-      files: ["**/__tests__/**/*"],
-      env: {
-        jest: true,
-      },
-    },
-  ],
 };

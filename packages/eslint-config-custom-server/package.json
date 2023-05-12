@@ -5,5 +5,8 @@
   "main": "index.js",
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "eslint-config-custom": "*"
   }
 }

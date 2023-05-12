@@ -1,14 +1,25 @@
 module.exports = {
-  root: true,
-  extends: ["custom"],
+  extends: [
+    'custom',
+  ],
   parserOptions: {
     project: [
-      './tsconfig.json',
+      './tsconfig.eslint.json',
     ],
   },
+  root: true,
   rules: {
-    "import/prefer-default-export": [
-      "off"
-    ]
-  }
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          './eslintrc.js',
+          '**/__tests__/**/*',
+        ],
+      },
+    ],
+    'import/prefer-default-export': [
+      'off',
+    ],
+  },
 };
