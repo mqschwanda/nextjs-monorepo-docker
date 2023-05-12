@@ -1,6 +1,6 @@
 module.exports = {
   ignorePatterns: [
-    "dist", 
+    "dist",
     "build",
     "__generated__",
   ],
