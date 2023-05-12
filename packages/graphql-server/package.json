@@ -1,5 +1,5 @@
 {
-  "name": "graphql-server",
+  "name": "@mqs/graphql-server",
   "version": "0.0.0",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -17,13 +17,13 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "eslint-config-custom": "*",
+    "@mqs/eslint-config-custom": "*",
     "react": "^18.2.0",
-    "tsconfig": "*",
+    "@mqs/tsconfig": "*",
     "typescript": "^4.5.2"
   },
   "dependencies": {
-    "graphql-schema": "*",
+    "@mqs/graphql-schema": "*",
     "graphql-yoga": "^3.9.1"
   }
 }

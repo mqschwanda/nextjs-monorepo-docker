@@ -1,4 +1,4 @@
-import { Resolvers } from 'graphql-schema';
+import { Resolvers } from '@mqs/graphql-schema';
 
 const resolvers: Resolvers = {
   Query: {

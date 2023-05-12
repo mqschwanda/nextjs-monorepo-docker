@@ -1,10 +1,10 @@
 {
-  "name": "eslint-config-codegen",
+  "name": "@mqs/eslint-config-codegen",
   "version": "0.0.0",
   "license": "MIT",
   "main": "index.js",
   "dependencies": {
-    "eslint-config-custom": "*"
+    "@mqs/eslint-config-custom": "*"
   },
   "publishConfig": {
     "access": "public"

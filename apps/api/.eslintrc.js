@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    'custom-server',
+    '@mqs/custom-server',
   ],
   parserOptions: {
     project: [

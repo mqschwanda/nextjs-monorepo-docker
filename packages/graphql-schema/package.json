@@ -1,5 +1,5 @@
 {
-  "name": "graphql-schema",
+  "name": "@mqs/graphql-schema",
   "version": "0.0.0",
   "license": "MIT",
   "sideEffects": false,
@@ -55,11 +55,11 @@
     "concurrently": "^8.0.1",
     "copyfiles": "^2.4.1",
     "eslint": "^7.32.0",
-    "eslint-config-codegen": "*",
-    "eslint-config-custom": "*",
+    "@mqs/eslint-config-codegen": "*",
+    "@mqs/eslint-config-custom": "*",
     "nodemon": "^2.0.22",
     "react": "^18.2.0",
-    "tsconfig": "*",
+    "@mqs/tsconfig": "*",
     "typescript": "^4.5.2"
   },
   "dependencies": {

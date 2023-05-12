@@ -1,4 +1,4 @@
-import { ReactTestingProps, spreadReactTestingProps } from 'react-testing-lib';
+import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import MuiTextField, { TextFieldProps as MuiTextFieldProps } from '@mui/material/TextField';
 
 export type TextFieldProps = MuiTextFieldProps & ReactTestingProps;

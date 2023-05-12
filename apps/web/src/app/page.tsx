@@ -1,5 +1,5 @@
 import HelloWorldForm from 'partials/HelloWorldForm';
-import { Typography } from 'ui';
+import { Typography } from '@mqs/ui';
 
 export const metadata = {
   title: 'My Page Title',

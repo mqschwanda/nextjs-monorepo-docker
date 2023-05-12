@@ -6,9 +6,9 @@ import {
   Stack,
   TextField,
   Typography,
-} from 'ui';
-import logger from 'logger';
-import { useHelloLazyQuery } from 'graphql-client';
+} from '@mqs/ui';
+import logger from '@mqs/logger';
+import { useHelloLazyQuery } from '@mqs/graphql-client';
 
 export default function Page() {
   const [name, setName] = useState<string>('');

@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/nextjs.json",
+  "extends": "@mqs/tsconfig/nextjs.json",
   "include": [
     "./src",
     "next-env.d.ts",
@@ -10,7 +10,7 @@
   ],
   "compilerOptions": {
     "baseUrl": "./src",
-    "rootDir": "./src",
+    "rootDir": "./",
     "plugins": [
       {
         "name": "next"

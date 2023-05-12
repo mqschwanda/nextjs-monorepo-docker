@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    'custom',
+    '@mqs/custom',
     'next',
   ],
   parser: '@typescript-eslint/parser',

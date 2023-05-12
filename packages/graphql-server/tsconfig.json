@@ -1,5 +1,5 @@
 {
-  "extends": "tsconfig/base.json",
+  "extends": "@mqs/tsconfig/base.json",
   "include": [
     "src"
   ],

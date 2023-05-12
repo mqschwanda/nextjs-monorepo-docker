@@ -1,5 +1,5 @@
 {
-  "name": "web",
+  "name": "@mqs/web",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -10,20 +10,20 @@
     "start": "next start"
   },
   "dependencies": {
-    "graphql-client": "*",
-    "logger": "*",
+    "@mqs/graphql-client": "*",
+    "@mqs/logger": "*",
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "ui": "*"
+    "@mqs/ui": "*"
   },
   "devDependencies": {
     "@types/node": "^17.0.12",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
     "eslint": "7.32.0",
-    "eslint-config-custom": "*",
-    "tsconfig": "*",
+    "@mqs/eslint-config-custom": "*",
+    "@mqs/tsconfig": "*",
     "typescript": "^4.5.3"
   }
 }

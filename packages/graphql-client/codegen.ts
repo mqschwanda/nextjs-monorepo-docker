@@ -4,10 +4,10 @@ import {
   documentsGlob,
   reactApolloVersion,
   schemaGlob,
-} from 'graphql-schema/constants';
+} from '@mqs/graphql-schema/constants';
 import path from 'path';
 
-import graphqlSchemaPackageJson from 'graphql-schema/package.json';
+import graphqlSchemaPackageJson from '@mqs/graphql-schema/package.json';
 
 const grahpqlSchemaName = graphqlSchemaPackageJson.name;
 const graphqlSchemaPackageJsonMain = graphqlSchemaPackageJson.main.replace(/^.\//, '');

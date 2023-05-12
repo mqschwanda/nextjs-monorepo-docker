@@ -1,4 +1,4 @@
-import { ReactTestingProps, spreadReactTestingProps } from 'react-testing-lib';
+import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import MuiContainer, { ContainerProps as MuiContainerProps } from '@mui/material/Container';
 
 export interface ContainerProps extends MuiContainerProps, ReactTestingProps {

@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    'eslint-config-codegen',
+    '@mqs/eslint-config-codegen',
   ],
   parserOptions: {
     project: [

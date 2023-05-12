@@ -2,7 +2,7 @@ import { json, urlencoded } from 'body-parser';
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
-import createGraphqlServer from 'graphql-server';
+import createGraphqlServer from '@mqs/graphql-server';
 
 export default function createServer() {
   const graphql = createGraphqlServer();

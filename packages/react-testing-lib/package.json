@@ -1,5 +1,5 @@
 {
-  "name": "react-testing-lib",
+  "name": "@mqs/react-testing-lib",
   "version": "0.0.0",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -18,8 +18,8 @@
   },
   "devDependencies": {
     "eslint": "^7.32.0",
-    "eslint-config-custom": "*",
-    "tsconfig": "*",
+    "@mqs/eslint-config-custom": "*",
+    "@mqs/tsconfig": "*",
     "typescript": "^4.5.2"
   }
 }

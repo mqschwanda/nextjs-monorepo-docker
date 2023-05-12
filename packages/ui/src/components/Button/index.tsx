@@ -1,4 +1,4 @@
-import { ReactTestingProps, spreadReactTestingProps } from 'react-testing-lib';
+import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import MuiButton, { ButtonProps as MuiButtonProps } from '@mui/material/Button';
 
 export interface ButtonProps extends MuiButtonProps, ReactTestingProps {

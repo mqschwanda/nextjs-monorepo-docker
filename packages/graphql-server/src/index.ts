@@ -1,4 +1,4 @@
-import loadSchema from 'graphql-schema/loadSchema';
+import loadSchema from '@mqs/graphql-schema/loadSchema';
 import { createSchema, createYoga } from 'graphql-yoga';
 import resolvers from './resolvers';
 
