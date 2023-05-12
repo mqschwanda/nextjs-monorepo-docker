@@ -1,22 +1,26 @@
 import { render } from '@testing-library/react';
 import { Container } from '..';
 
-describe('<Container />', () => {
-  it('renders correctly', () => {
-    const testId = 'Container';
-    const chilren = 'children...';
+describe('@mqs/ui', () => {
+  describe('components', () => {
+    describe('<Container />', () => {
+      it('renders', () => {
+        const testId = 'Container';
+        const chilren = 'children...';
 
-    const { getByTestId, asFragment } = render((
-      <Container
-        testId={testId}
-      >
-        { chilren }
-      </Container>
-    ));
+        const { getByTestId, asFragment } = render((
+          <Container
+            testId={testId}
+          >
+            { chilren }
+          </Container>
+        ));
 
-    const element = getByTestId(testId);
-    expect(element).toBeTruthy();
+        const element = getByTestId(testId);
+        expect(element).toBeTruthy();
 
-    expect(asFragment()).toMatchSnapshot();
+        expect(asFragment()).toMatchSnapshot();
+      });
+    });
   });
 });

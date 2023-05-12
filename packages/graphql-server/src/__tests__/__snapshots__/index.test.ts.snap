@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/graphql-server Query hello should return data 1`] = `
+Object {
+  "data": Object {
+    "hello": "Hello John Smith",
+  },
+}
+`;

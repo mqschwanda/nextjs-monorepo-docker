@@ -29,6 +29,25 @@
     tslib "^2.3.0"
     zen-observable-ts "^1.2.5"
 
+"@apollo/client@^3.7.14":
+  version "3.7.14"
+  resolved "https://registry.yarnpkg.com/@apollo/client/-/client-3.7.14.tgz#40ef90390e6690e94917457cd82bdeb29e8b6af9"
+  integrity sha512-BRvdkwq5PAXBkjXjboO12uksDm3nrZEqDi4xF97Fk3Mnaa0zDOEfJa7hoKTY9b9KA1EkeWv9BL3i7hSd4SfGBg==
+  dependencies:
+    "@graphql-typed-document-node/core" "^3.1.1"
+    "@wry/context" "^0.7.0"
+    "@wry/equality" "^0.5.0"
+    "@wry/trie" "^0.3.0"
+    graphql-tag "^2.12.6"
+    hoist-non-react-statics "^3.3.2"
+    optimism "^0.16.2"
+    prop-types "^15.7.2"
+    response-iterator "^0.2.6"
+    symbol-observable "^4.0.0"
+    ts-invariant "^0.10.3"
+    tslib "^2.3.0"
+    zen-observable-ts "^1.2.5"
+
 "@ardatan/relay-compiler@12.0.0":
   version "12.0.0"
   resolved "https://registry.yarnpkg.com/@ardatan/relay-compiler/-/relay-compiler-12.0.0.tgz#2e4cca43088e807adc63450e8cab037020e91106"
@@ -1103,6 +1122,20 @@
     isomorphic-ws "5.0.0"
     tslib "^2.4.0"
     ws "8.13.0"
+
+"@graphql-tools/executor-http@^0.1.10":
+  version "0.1.10"
+  resolved "https://registry.yarnpkg.com/@graphql-tools/executor-http/-/executor-http-0.1.10.tgz#faf48e18e62a925796c9653c2f50cf2095bc8e6f"
+  integrity sha512-hnAfbKv0/lb9s31LhWzawQ5hghBfHS+gYWtqxME6Rl0Aufq9GltiiLBcl7OVVOnkLF0KhwgbYP1mB5VKmgTGpg==
+  dependencies:
+    "@graphql-tools/utils" "^9.2.1"
+    "@repeaterjs/repeater" "^3.0.4"
+    "@whatwg-node/fetch" "^0.8.1"
+    dset "^3.1.2"
+    extract-files "^11.0.0"
+    meros "^1.2.1"
+    tslib "^2.4.0"
+    value-or-promise "^1.0.12"
 
 "@graphql-tools/executor-http@^0.1.7", "@graphql-tools/executor-http@^0.1.9":
   version "0.1.9"

@@ -14,6 +14,8 @@ module.exports = {
       {
         devDependencies: [
           './eslintrc.js',
+          './jest.config.js',
+          './jest.setupFilesAfterEnv.ts',
           '**/__tests__/**/*',
         ],
       },

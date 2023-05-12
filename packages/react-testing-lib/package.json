@@ -13,8 +13,7 @@
     "clean": "rm -rf dist",
     "dev": "tsc -w",
     "lint": "eslint .",
-    "lint:fix": "yarn lint --fix",
-    "test": "jest"
+    "lint:fix": "yarn lint --fix"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
