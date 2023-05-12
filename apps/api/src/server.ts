@@ -5,16 +5,18 @@ import cors from 'cors';
 import createGraphqlServer from '@mqs/graphql-server';
 
 export default function createServer() {
-  const graphql = createGraphqlServer();
+  const graphqlServer = createGraphqlServer();
 
   const app = express();
+
   app
     .disable('x-powered-by')
     .use(morgan('dev'))
     .use(urlencoded({ extended: true }))
     .use(json())
     .use(cors())
-    .use(graphql.graphqlEndpoint, graphql);
+    .use(graphqlServer.graphqlEndpoint, graphqlServer)
+    .get('/healthz', (_req, res) => res.json({ ok: true }));
 
   return app;
 }

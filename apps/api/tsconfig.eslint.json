@@ -1,6 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "files": [
-    "./.eslintrc.js"
+    "./.eslintrc.js",
+    "./jest.config.js"
   ],
 }

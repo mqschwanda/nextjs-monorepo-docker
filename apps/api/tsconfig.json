@@ -3,7 +3,8 @@
   "exclude": [
     "dist",
     "build",
-    "node_modules"
+    "node_modules",
+    "__tests__"
   ],
   "include": [
     "src"

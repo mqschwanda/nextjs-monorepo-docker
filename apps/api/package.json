@@ -9,10 +9,7 @@
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
     "start": "node -r esbuild-register ./src/index.ts",
-    "test": "jest --detectOpenHandles"
-  },
-  "jest": {
-    "preset": "jest-presets/jest/node"
+    "test": "jest"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
