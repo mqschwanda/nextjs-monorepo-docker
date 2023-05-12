@@ -19,7 +19,7 @@
   "devDependencies": {
     "@mqs/eslint-config-client": "*",
     "prettier": "latest",
-    "turbo": "latest"
+    "turbo": "^1.9.3"
   },
   "packageManager": "yarn@1.22.19",
   "engines": {
