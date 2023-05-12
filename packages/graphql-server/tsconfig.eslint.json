@@ -2,7 +2,7 @@
   "extends": "./tsconfig.json",
   "files": [
     "./.eslintrc.js",
-    "./jest.config.js",
+    "./jest.config.ts",
     "./jest.setupFilesAfterEnv.ts"
   ],
 }

@@ -17,20 +17,21 @@
     "test": "jest"
   },
   "devDependencies": {
+    "@mqs/eslint-config-client": "*",
+    "@mqs/jest-presets": "*",
+    "@mqs/tsconfig": "*",
     "@testing-library/react": "^14.0.0",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
     "eslint": "^7.32.0",
-    "@mqs/eslint-config-client": "*",
     "react": "^18.2.0",
-    "@mqs/tsconfig": "*",
     "typescript": "^4.5.2"
   },
   "dependencies": {
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
+    "@mqs/react-testing-lib": "*",
     "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.12.3",
-    "@mqs/react-testing-lib": "*"
+    "@mui/material": "^5.12.3"
   }
 }

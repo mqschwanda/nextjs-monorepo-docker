@@ -1,27 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`@mqs/graphql-server Query hello should return data 1`] = `
-Object {
-  "data": Object {
+{
+  "data": {
     "hello": "Hello John Smith",
   },
 }
 `;
 
 exports[`@mqs/graphql-server Subscription countdown should return async iterable data 1`] = `
-Array [
-  Object {
-    "data": Object {
+[
+  {
+    "data": {
       "countdown": 2,
     },
   },
-  Object {
-    "data": Object {
+  {
+    "data": {
       "countdown": 1,
     },
   },
-  Object {
-    "data": Object {
+  {
+    "data": {
       "countdown": 0,
     },
   },

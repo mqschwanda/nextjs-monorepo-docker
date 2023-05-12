@@ -17,17 +17,15 @@ module.exports = {
     },
   },
   rules: {
-    "import/no-extraneous-dependencies": [
-      "error",
-      // {
-      //   "devDependencies": [
-      //     "**/*.test.*",
-      //     "**/__test__/*",
-      //     "jest.config.*",
-      //     "jest.setup.*",
-      //     "codegen.ts"
-      //   ]
-      // }
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: [
+          './eslintrc.js',
+          './jest.config.ts',
+          '**/__tests__/**/*',
+        ],
+      },
     ],
     "no-plusplus": [
       "off"
