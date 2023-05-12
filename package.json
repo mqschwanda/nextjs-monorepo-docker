@@ -17,7 +17,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "eslint-config-custom": "*",
+    "@mqs/eslint-config-custom-client": "*",
     "prettier": "latest",
     "turbo": "latest"
   },

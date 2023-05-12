@@ -7,6 +7,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "@mqs/eslint-config-custom": "*"
+    "@mqs/eslint-config-custom-client": "*"
   }
 }

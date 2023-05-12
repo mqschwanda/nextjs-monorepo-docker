@@ -1,14 +1,4 @@
-# Turborepo Docker starter
-
-This is an official Docker starter Turborepo.
-
-## Using this example
-
-Run the following command:
-
-```sh
-npx create-turbo@latest -e with-docker
-```
+# Next Monorepo Docker
 
 ## What's inside?
 
@@ -18,12 +8,16 @@ This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package ma
 
 - `web`: a [Next.js](https://nextjs.org/) app
 - `api`: an [Express](https://expressjs.com/) server
-- `ui`: ui: a React component library
-- `eslint-config-custom`: `eslint` configurations for client side applications (includes `eslint-config-next` and `eslint-config-prettier`)
-- `eslint-config-custom-server`: `eslint` configurations for server side applications (includes `eslint-config-next` and `eslint-config-prettier`)
-- `scripts`: Jest configurations
+- `eslint-config-codegen`: `eslint` configurations for codegen
+- `eslint-config-custom-client`: `eslint` configurations for client side applications
+- `eslint-config-custom-server`: `eslint` configurations for server side applications
+- `graphql-client`: react client and api utitlites for graphql
+- `graphql-schema`: graphql schema and types
+- `graphql-server`: graphql server and resolvers
+- `jest-presets`: Jest configurations
 - `logger`: Isomorphic logger (a small wrapper around console.log)
 - `tsconfig`: tsconfig.json;s used throughout the monorepo
+- `ui`: a React component library
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
@@ -68,3 +62,4 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting
 - [Jest](https://jestjs.io) test runner for all things JavaScript
 - [Prettier](https://prettier.io) for code formatting
+- [GraphQL CodeGen](https://github.com/dotansimha/graphql-code-generator) for automated code generation

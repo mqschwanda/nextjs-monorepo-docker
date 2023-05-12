@@ -23,7 +23,7 @@
     "@graphql-codegen/cli": "^3.3.1",
     "@graphql-codegen/typescript-react-apollo": "^3.3.7",
     "@mqs/eslint-config-codegen": "*",
-    "@mqs/eslint-config-custom": "*",
+    "@mqs/eslint-config-custom-client": "*",
     "@mqs/tsconfig": "*",
     "concurrently": "^8.0.1",
     "eslint": "^7.32.0",
