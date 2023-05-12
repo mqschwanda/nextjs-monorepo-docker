@@ -1,7 +1,9 @@
-import { buildHTTPExecutor } from '@graphql-tools/executor-http';
-import { CountdownDocument, HelloDocument } from '@mqs/graphql-schema';
+import {
+  CountdownDocument,
+  HelloDocument,
+} from '@mqs/graphql-schema';
 import { isAsyncIterable } from 'graphql-yoga';
-import createGraphqlServer from '..';
+import { executeGraphqlDocument } from './utilities';
 
 describe('@mqs/graphql-server', () => {
   describe('Query', () => {
@@ -9,12 +11,7 @@ describe('@mqs/graphql-server', () => {
       it('should return data', async () => {
         const name = 'John Smith';
 
-        const graphqlServer = createGraphqlServer();
-        const executor = buildHTTPExecutor({
-          endpoint: graphqlServer.graphqlEndpoint,
-          fetch: graphqlServer.fetch,
-        });
-        const result = await executor({
+        const result = await executeGraphqlDocument({
           document: HelloDocument,
           variables: {
             name,
@@ -35,12 +32,7 @@ describe('@mqs/graphql-server', () => {
       it('should return async iterable data', async () => {
         const from = 2;
 
-        const graphqlServer = createGraphqlServer();
-        const executor = buildHTTPExecutor({
-          endpoint: graphqlServer.graphqlEndpoint,
-          fetch: graphqlServer.fetch,
-        });
-        const subscription = await executor({
+        const subscription = await executeGraphqlDocument({
           document: CountdownDocument,
           variables: {
             from,
@@ -51,16 +43,20 @@ describe('@mqs/graphql-server', () => {
           throw new Error('result should be AsyncIterable');
         }
 
+        const results = [];
         let i = from;
         // eslint-disable-next-line no-restricted-syntax
         for await (const result of subscription) {
+          results.push(result);
           expect(result.data?.countdown).toBe(i);
           i--;
 
-          if (i === 0) {
+          if (i < 0) {
             break;
           }
         }
+
+        expect(results).toMatchSnapshot();
       });
     });
   });

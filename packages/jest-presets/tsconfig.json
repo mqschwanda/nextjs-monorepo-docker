@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "lib": [
+      "ES2015"
+    ],
+    "module": "CommonJS",
+    "rootDir": "./"
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "extends": "@mqs/tsconfig/base.json",
+  "include": [
+    "."
+  ]
+}

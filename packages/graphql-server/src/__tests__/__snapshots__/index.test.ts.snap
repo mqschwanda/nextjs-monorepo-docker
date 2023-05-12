@@ -7,3 +7,23 @@ Object {
   },
 }
 `;
+
+exports[`@mqs/graphql-server Subscription countdown should return async iterable data 1`] = `
+Array [
+  Object {
+    "data": Object {
+      "countdown": 2,
+    },
+  },
+  Object {
+    "data": Object {
+      "countdown": 1,
+    },
+  },
+  Object {
+    "data": Object {
+      "countdown": 0,
+    },
+  },
+]
+`;
