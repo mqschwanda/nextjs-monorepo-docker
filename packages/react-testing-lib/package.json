@@ -16,8 +16,7 @@
     "lint:fix": "yarn lint --fix"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "@mqs/eslint-config-client": "*",
+    "@mqs/eslint-config": "*",
     "@mqs/tsconfig": "*",
     "typescript": "^4.5.2"
   }

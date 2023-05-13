@@ -1,6 +1,6 @@
 module.exports = {
   extends: [
-    '@mqs/server',
+    '@mqs/eslint-config/server',
   ],
   parserOptions: {
     project: [

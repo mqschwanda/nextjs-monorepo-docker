@@ -17,8 +17,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "@mqs/eslint-config-client": "*",
+    "@mqs/eslint-config": "*",
     "@mqs/jest-presets": "*",
     "@mqs/tsconfig": "*",
     "typescript": "^4.5.3"

@@ -8,9 +8,7 @@ This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package ma
 
 - `web`: a [Next.js](https://nextjs.org/) app
 - `api`: an [Express](https://expressjs.com/) server
-- `eslint-config-client`: `eslint` configurations for client side applications
-- `eslint-config-codegen`: `eslint` configurations for codegen
-- `eslint-config-server`: `eslint` configurations for server side applications
+- `eslint-config`: shared `eslint` configurations
 - `graphql-client`: react client and api utitlites for graphql
 - `graphql-schema`: graphql schema and types
 - `graphql-server`: graphql server and resolvers

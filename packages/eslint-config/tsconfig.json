@@ -1,0 +1,21 @@
+{
+  "extends": "@mqs/tsconfig/react-library.json",
+  "include": [
+    "./"
+  ],
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules",
+    "__tests__"
+  ],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "lib": [
+      "ES2015"
+    ],
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "rootDir": "./",
+  },
+}

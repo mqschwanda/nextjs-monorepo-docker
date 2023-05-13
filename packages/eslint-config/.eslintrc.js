@@ -1,10 +1,10 @@
 module.exports = {
   extends: [
-    '@mqs/eslint-config/codegen',
+    '@mqs/eslint-config/client',
   ],
   parserOptions: {
     project: [
-      './tsconfig.json',
+      './tsconfig.eslint.json',
     ],
   },
   root: true,

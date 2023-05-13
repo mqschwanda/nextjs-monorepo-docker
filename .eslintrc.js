@@ -1,9 +1,13 @@
 module.exports = {
-  root: true,
-  extends: ["custom"],
+  extends: [
+    '@mqs/eslint-config/client'
+  ],
   settings: {
     next: {
-      rootDir: ["apps/*/"],
+      rootDir: [
+        'apps/*/',
+      ],
     },
   },
+  root: true,
 };
