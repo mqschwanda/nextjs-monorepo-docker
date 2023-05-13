@@ -4,7 +4,7 @@ const config: Config = {
   moduleNameMapper: {
     '@mqs/graphql-schema/loadSchema': '<rootDir>/../../node_modules/@mqs/graphql-schema/dist/loadSchema',
   },
-  preset: '@mqs/jest-presets/jest/node',
+  preset: '@mqs/jest-presets/node',
   roots: [
     '<rootDir>/src',
   ],

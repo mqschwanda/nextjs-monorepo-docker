@@ -1,17 +1,20 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "lib": [
       "ES2015"
     ],
     "module": "CommonJS",
-    "rootDir": "./"
+    "outDir": "./dist",
+    "rootDir": "./src"
   },
   "exclude": [
+    "dist",
+    "build",
     "node_modules"
   ],
   "extends": "@mqs/tsconfig/base.json",
   "include": [
-    "."
+    "src"
   ]
 }
