@@ -1,4 +1,6 @@
-module.exports = {
+import { Linter } from 'eslint';
+
+const config: Linter.Config = {
   env: {
     es6: true,
     node: true,
@@ -12,3 +14,6 @@ module.exports = {
     sourceType: 'module',
   },
 };
+
+export {};
+module.exports = config;

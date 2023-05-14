@@ -2,11 +2,36 @@
   "name": "@mqs/eslint-config",
   "version": "0.0.0",
   "license": "MIT",
+  "exports": {
+    "./client": "./dist/client/index.js",
+    "./codegen": "./dist/codegen/index.js",
+    "./server": "./dist/server/index.js"
+  },
+  "typesVersions": {
+    "*": {
+      "client": [
+        "./dist/client/index.d.ts"
+      ],
+      "codegen": [
+        "./dist/codegen/index.d.ts"
+      ],
+      "server": [
+        "./dist/server/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist/**"
+  ],
   "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "dev": "tsc -w",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
+    "@types/eslint": "^8.37.0",
     "@typescript-eslint/eslint-plugin": "^5.59.2",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.4",

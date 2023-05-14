@@ -1,4 +1,6 @@
-module.exports = {
+import { Linter } from 'eslint';
+
+const config: Linter.Config = {
   extends: [
     // 'next',
     'turbo',
@@ -120,3 +122,6 @@ module.exports = {
     },
   },
 };
+
+export {};
+module.exports = config;

@@ -1,4 +1,6 @@
-module.exports = {
+import { Linter } from 'eslint';
+
+const config: Linter.Config = {
   extends: [
     '@mqs/eslint-config/client',
   ],
@@ -20,3 +22,6 @@ module.exports = {
     ],
   },
 };
+
+export {};
+module.exports = config;

@@ -8,4 +8,7 @@ module.exports = {
     ],
   },
   root: true,
+  rules: {
+    'import/no-import-module-exports': ['off'],
+  },
 };
