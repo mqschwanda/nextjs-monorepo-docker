@@ -1,31 +1,90 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "globalDependencies": ["**/.env.*local"],
-  "globalEnv": ["PORT"],
+  "globalDependencies": [
+    "**/.env.*local"
+  ],
+  "globalEnv": [
+    "PORT"
+  ],
   "pipeline": {
     "build": {
-      "outputs": ["dist/**", ".next/**", "!.next/cache/**", "public/dist/**"],
-      "dependsOn": ["^build"],
-      "env": ["NEXT_PUBLIC_API_HOST"]
+      "dependsOn": [
+        "^build"
+      ],
+      "env": [
+        "NEXT_PUBLIC_API_HOST"
+      ],
+      "inputs": [
+        "src/**/*.tsx",
+        "src/**/*.ts"
+      ],
+      "outputMode": "full",
+      "outputs": [
+        "dist/**",
+        ".next/**",
+        "!.next/cache/**",
+        "public/dist/**"
+      ],
+      "persistent": false
     },
-    "test": {
-      "outputs": ["coverage/**"],
-      "dependsOn": []
+    "clean": {
+      "cache": false,
+      "outputMode": "full",
+      "persistent": false
+    },
+    "codegen": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "codegen.ts"
+      ],
+      "outputMode": "full",
+      "outputs": [
+        "**/__generated__/**"
+      ],
+      "persistent": false
+    },
+    "codegen:watch": {
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "codegen.ts"
+      ],
+      "outputMode": "full",
+      "outputs": [
+        "**/__generated__/**"
+      ],
+      "persistent": true
+    },
+    "dev": {
+      "cache": false,
+      "outputMode": "full",
+      "persistent": true
     },
     "lint": {
-      "dependsOn": ["^build"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputMode": "full",
+      "persistent": false
     },
     "lint:fix": {
       "dependsOn": [
         "^build"
-      ]
+      ],
+      "outputMode": "full",
+      "persistent": false
     },
-    "dev": {
-      "cache": false,
-      "persistent": true
-    },
-    "clean": {
-      "cache": false
+    "test": {
+      "dependsOn": [],
+      "outputMode": "full",
+      "outputs": [
+        "coverage/**",
+        "**/__snapshots__/**"
+      ],
+      "persistent": false
     }
   }
 }

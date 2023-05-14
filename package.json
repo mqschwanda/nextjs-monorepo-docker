@@ -9,6 +9,8 @@
   "scripts": {
     "build": "turbo run build --concurrency=100%",
     "clean": "turbo run clean --concurrency=100%",
+    "codegen": "turbo run codegen --concurrency=100%",
+    "codegen:watch": "turbo run codegen:watch --concurrency=100%",
     "dev": "turbo run dev --concurrency=100%",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint --concurrency=100%",
