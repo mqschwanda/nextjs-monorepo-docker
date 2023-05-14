@@ -6,7 +6,7 @@ import {
   Stack,
   TextField,
   Typography,
-} from '@mqs/ui';
+} from '@mqs/react-client-components';
 import logger from '@mqs/logger';
 import { useCountdownSubscription, useHelloLazyQuery } from '@mqs/graphql-client';
 

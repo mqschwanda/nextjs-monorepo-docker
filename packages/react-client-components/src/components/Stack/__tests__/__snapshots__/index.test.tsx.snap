@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`@mqs/ui components <Stack /> renders 1`] = `
+exports[`@mqs/react-client-components components <Stack /> renders 1`] = `
 <DocumentFragment>
   <div
     class="MuiStack-root css-nen11g-MuiStack-root"

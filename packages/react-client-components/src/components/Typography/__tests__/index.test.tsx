@@ -1,19 +1,19 @@
 import { render } from '@testing-library/react';
-import { Container } from '..';
+import { Typography } from '..';
 
-describe('@mqs/ui', () => {
+describe('@mqs/react-client-components', () => {
   describe('components', () => {
-    describe('<Container />', () => {
+    describe('<Typography />', () => {
       it('renders', () => {
-        const testId = 'Container';
+        const testId = 'Typography';
         const chilren = 'children...';
 
         const { getByTestId, asFragment } = render((
-          <Container
+          <Typography
             testId={testId}
           >
             { chilren }
-          </Container>
+          </Typography>
         ));
 
         const element = getByTestId(testId);

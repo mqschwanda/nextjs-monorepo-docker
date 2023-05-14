@@ -1,19 +1,18 @@
 import { render } from '@testing-library/react';
-import { Typography } from '..';
+import { TextField } from '..';
 
-describe('@mqs/ui', () => {
+describe('@mqs/react-client-components', () => {
   describe('components', () => {
-    describe('<Typography />', () => {
+    describe('<TextField />', () => {
       it('renders', () => {
-        const testId = 'Typography';
-        const chilren = 'children...';
+        const testId = 'TextField';
 
         const { getByTestId, asFragment } = render((
-          <Typography
+          <TextField
+            label='Text Field'
             testId={testId}
-          >
-            { chilren }
-          </Typography>
+            value='value'
+          />
         ));
 
         const element = getByTestId(testId);

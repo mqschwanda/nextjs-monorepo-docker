@@ -1,18 +1,19 @@
 import { render } from '@testing-library/react';
-import { TextField } from '..';
+import { Container } from '..';
 
-describe('@mqs/ui', () => {
+describe('@mqs/react-client-components', () => {
   describe('components', () => {
-    describe('<TextField />', () => {
+    describe('<Container />', () => {
       it('renders', () => {
-        const testId = 'TextField';
+        const testId = 'Container';
+        const chilren = 'children...';
 
         const { getByTestId, asFragment } = render((
-          <TextField
-            label='Text Field'
+          <Container
             testId={testId}
-            value='value'
-          />
+          >
+            { chilren }
+          </Container>
         ));
 
         const element = getByTestId(testId);

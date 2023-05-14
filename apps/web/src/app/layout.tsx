@@ -1,6 +1,6 @@
 import Providers from 'providers';
 import type { ReactNode } from 'react';
-import { Container } from '@mqs/ui';
+import { Container } from '@mqs/react-client-components';
 
 interface RootLayoutProps {
   children: ReactNode

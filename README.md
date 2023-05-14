@@ -14,8 +14,9 @@ This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package ma
 - `graphql-server`: graphql server and resolvers
 - `jest-preset`: Jest configurations
 - `logger`: Isomorphic logger (a small wrapper around console.log)
+- `react-client-components`: a React component library
+- `react-testing-lib`: a React testing library
 - `tsconfig`: tsconfig.json;s used throughout the monorepo
-- `ui`: a React component library
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 

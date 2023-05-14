@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`@mqs/ui components <TextField /> renders 1`] = `
+exports[`@mqs/react-client-components components <TextField /> renders 1`] = `
 <DocumentFragment>
   <div
     class="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root"

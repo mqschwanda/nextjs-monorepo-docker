@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { Stack } from '..';
 
-describe('@mqs/ui', () => {
+describe('@mqs/react-client-components', () => {
   describe('components', () => {
     describe('<Stack />', () => {
       it('renders', () => {

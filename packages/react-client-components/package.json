@@ -1,5 +1,5 @@
 {
-  "name": "@mqs/ui",
+  "name": "@mqs/react-client-components",
   "version": "0.0.0",
   "license": "MIT",
   "main": "./dist/index.js",

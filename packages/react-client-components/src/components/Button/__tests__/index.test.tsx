@@ -1,7 +1,7 @@
 import { render, fireEvent } from '@testing-library/react';
 import { Button } from '..';
 
-describe('@mqs/ui', () => {
+describe('@mqs/react-client-components', () => {
   describe('components', () => {
     describe('<Button />', () => {
       it('renders', () => {
