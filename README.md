@@ -5,9 +5,13 @@
 
 ### Setup
 
-```
-yarn
-```
+1. [Install yarn package manager](https://classic.yarnpkg.com/en/docs/install#debian-stable) if you do not already have it on your system.
+
+2. From project root run the yarn cli to install all dependencies
+
+  ```
+  yarn install
+  ```
 
 ### Development
 
