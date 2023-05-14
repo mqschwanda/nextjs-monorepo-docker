@@ -1,5 +1,29 @@
 # Next Monorepo Docker
 
+
+## Quick Start
+
+### Setup
+
+```
+yarn
+```
+
+### Development
+
+```
+yarn dev
+```
+
+#### Troubleshooting
+
+##### File Watcher Limit
+
+Error: `ENOSPC: System limit for number of file watchers reached`
+
+[Stack Overflow solution](https://stackoverflow.com/questions/55763428/react-native-error-enospc-system-limit-for-number-of-file-watchers-reached) for updating max file watchers
+
+
 ## What's inside?
 
 This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It includes the following packages/apps:
@@ -14,7 +38,8 @@ This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package ma
 - `graphql-server`: graphql server and resolvers
 - `jest-preset`: Jest configurations
 - `logger`: Isomorphic logger (a small wrapper around console.log)
-- `react-client-components`: a React component library
+- `react-client-components`: a React client component library
+- `react-server-components`: a React server component library
 - `react-testing-lib`: a React testing library
 - `tsconfig`: tsconfig.json;s used throughout the monorepo
 

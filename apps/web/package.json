@@ -15,7 +15,8 @@
     "next": "latest",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@mqs/react-client-components": "*"
+    "@mqs/react-client-components": "*",
+    "@mqs/react-server-components": "*"
   },
   "devDependencies": {
     "@types/node": "^17.0.12",

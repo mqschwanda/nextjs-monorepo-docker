@@ -1,5 +1,5 @@
 {
-  "name": "@mqs/react-client-components",
+  "name": "@mqs/react-server-components",
   "version": "0.0.0",
   "license": "MIT",
   "main": "./dist/index.js",
@@ -26,11 +26,7 @@
     "typescript": "^4.5.2"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.8",
-    "@emotion/styled": "^11.10.8",
     "@mqs/react-testing-lib": "*",
-    "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.12.3",
     "react": "^18.2.0"
   }
 }

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-server-components components <Container /> renders 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="Container"
+  >
+    children...
+  </div>
+</DocumentFragment>
+`;
