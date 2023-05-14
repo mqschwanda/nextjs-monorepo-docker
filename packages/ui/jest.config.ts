@@ -1,7 +1,7 @@
 import type { Config } from 'jest';
 
 const config: Config = {
-  preset: '@mqs/jest-presets/node',
+  preset: '@mqs/jest-preset/node',
   roots: [
     '<rootDir>/src',
   ],

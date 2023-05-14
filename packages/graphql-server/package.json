@@ -21,7 +21,7 @@
     "@graphql-tools/executor-graphql-ws": "^0.0.14",
     "@graphql-tools/executor-http": "^0.1.10",
     "@mqs/eslint-config": "*",
-    "@mqs/jest-presets": "*",
+    "@mqs/jest-preset": "*",
     "@mqs/tsconfig": "*",
     "react": "^18.2.0",
     "typescript": "^4.5.2"

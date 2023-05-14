@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "@mqs/eslint-config": "*",
-    "@mqs/jest-presets": "*",
+    "@mqs/jest-preset": "*",
     "@mqs/tsconfig": "*",
     "@testing-library/react": "^14.0.0",
     "@types/react": "^17.0.37",

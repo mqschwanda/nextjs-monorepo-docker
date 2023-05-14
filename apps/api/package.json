@@ -20,7 +20,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "@mqs/jest-presets": "*",
+    "@mqs/jest-preset": "*",
     "@types/body-parser": "^1.19.0",
     "@types/cors": "^2.8.10",
     "@types/express": "^4.17.12",
