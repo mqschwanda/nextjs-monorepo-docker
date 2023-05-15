@@ -1,22 +1,24 @@
 {
   "extends": "@mqs/tsconfig/react-library.json",
   "include": [
-    "src"
+    "./src"
   ],
   "exclude": [
     "dist",
-    "build", 
+    "build",
     "node_modules",
     "__tests__"
   ],
   "compilerOptions": {
+    "jsx": "react-jsx",
     "baseUrl": "./src",
     "lib": [
       "ES2015"
     ],
-    "module": "CommonJS",
+    "module": "ESNext",
     "outDir": "./dist",
     "rootDir": "./src",
+    "target": "es6",
     "paths": {
       "components/*": [
         "src/components/*"

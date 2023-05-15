@@ -15,6 +15,7 @@ module.exports = {
         devDependencies: [
           './eslintrc.js',
           './jest.config.ts',
+          './rollup.config.ts',
           '**/__tests__/**/*',
         ],
       },
