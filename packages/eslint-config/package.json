@@ -49,6 +49,7 @@
     "access": "public"
   },
   "devDependencies": {
+    "jest": "^29.5.0",
     "typescript": "^5.0.4"
   }
 }

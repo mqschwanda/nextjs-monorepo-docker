@@ -3,6 +3,7 @@
 exports[`@mqs/react-server-components components <Container /> renders 1`] = `
 <DocumentFragment>
   <div
+    class="Container test"
     data-testid="Container"
   >
     children...

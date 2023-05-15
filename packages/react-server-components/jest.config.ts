@@ -1,6 +1,9 @@
 import type { Config } from 'jest';
 
 const config: Config = {
+  moduleNameMapper: {
+    '^.+\\.module\\.css$': 'identity-obj-proxy',
+  },
   preset: '@mqs/jest-preset/node',
   roots: [
     '<rootDir>/src',
