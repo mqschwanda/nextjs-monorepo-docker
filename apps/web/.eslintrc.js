@@ -5,6 +5,9 @@ module.exports = {
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
+    babelOptions: {
+      presets: [require.resolve('next/babel')],
+    },
     project: [
       './tsconfig.eslint.json',
     ],

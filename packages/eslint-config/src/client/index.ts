@@ -23,11 +23,6 @@ const config: Linter.Config = {
       ],
     },
   ],
-  parserOptions: {
-    babelOptions: {
-      presets: [require.resolve('next/babel')],
-    },
-  },
   rules: {
     '@typescript-eslint/naming-convention': [
       'error',

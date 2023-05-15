@@ -9,7 +9,7 @@
     "dist/**"
   ],
   "scripts": {
-    "codegen": "graphql-codegen **/*.graphql",
+    "codegen": "graphql-codegen",
     "codegen:watch": "yarn codegen --watch",
     "build": "yarn codegen && yarn build-tsc",
     "build-tsc": "tsc",
@@ -25,14 +25,16 @@
     "@mqs/eslint-config": "*",
     "@mqs/tsconfig": "*",
     "concurrently": "^8.0.1",
+    "eslint": "^7.32.0",
     "glob": "^10.2.3",
     "react": "^18.2.0",
-    "typescript": "^4.5.2"
+    "typescript": "^5.0.4"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.13",
+    "@apollo/client": "^3.7.14",
     "@graphql-yoga/apollo-link": "^1.8.1",
     "@mqs/graphql-schema": "*",
-    "graphql": "^16.6.0"
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6"
   }
 }

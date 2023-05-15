@@ -17,13 +17,15 @@
     "lint:fix": "turbo run lint:fix --concurrency=100%",
     "test": "turbo run test --concurrency=100%"
   },
-  "dependencies": {},
   "devDependencies": {
     "@mqs/eslint-config": "*",
-    "prettier": "latest",
-    "turbo": "^1.9.4"
+    "eslint": "^7.32.0",
+    "npm-check-updates": "^16.10.12",
+    "prettier": "^2.8.8",
+    "turbo": "^1.9.4",
+    "typescript": "^5.0.4"
   },
-  "packageManager": "yarn@1.22.19",
+  "packageManager": "yarn@3.5.1",
   "engines": {
     "node": ">=14.0.0",
     "npm": ">=7.0.0"
