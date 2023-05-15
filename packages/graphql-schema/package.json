@@ -52,12 +52,12 @@
     "@graphql-codegen/typed-document-node": "^4.0.1",
     "@graphql-codegen/typescript-resolvers": "^3.2.1",
     "@graphql-eslint/eslint-plugin": "^3.18.0",
+    "@mqs/eslint-config": "*",
+    "@mqs/tsconfig": "*",
     "concurrently": "^8.0.1",
     "copyfiles": "^2.4.1",
-    "@mqs/eslint-config": "*",
     "nodemon": "^2.0.22",
     "react": "^18.2.0",
-    "@mqs/tsconfig": "*",
     "typescript": "^4.5.2"
   },
   "dependencies": {
