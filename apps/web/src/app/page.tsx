@@ -1,5 +1,5 @@
 import HelloWorldForm from 'partials/HelloWorldForm';
-import { Typography } from '@mqs/react-client-components';
+import { Typography } from '@mqs/react-server-components';
 
 export const metadata = {
   title: 'My Page Title',

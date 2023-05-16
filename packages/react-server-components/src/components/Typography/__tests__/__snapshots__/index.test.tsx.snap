@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-server-components components <Typography /> renders 1`] = `
+<DocumentFragment>
+  <span
+    class="Typography test Typography_variant_body1"
+    data-testid="Typography"
+  >
+    children...
+  </span>
+</DocumentFragment>
+`;
