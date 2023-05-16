@@ -20,18 +20,4 @@ module.exports = {
     'cypress',
   ],
   root: true,
-  rules: {
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: [
-          './eslintrc.js',
-          './next.config.js',
-          './cypress.config.ts',
-          './cypress/**',
-          '**/__tests__/**/*',
-        ],
-      },
-    ],
-  },
 };

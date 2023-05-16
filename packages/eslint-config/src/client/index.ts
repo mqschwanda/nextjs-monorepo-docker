@@ -45,9 +45,13 @@ const config: Linter.Config = {
       'error',
       {
         devDependencies: [
-          './eslintrc.js',
-          './jest.config.ts',
           '**/__tests__/**/*',
+          '**/*.codegen.(ts|js)',
+          '**/*.config.(ts|js)',
+          '**/codegen.*.(js|ts)',
+          '**/cypress/**/*',
+          '**/eslintrc.(js|ts)',
+          '**/eslintrc.*.(js|ts)',
         ],
       },
     ],

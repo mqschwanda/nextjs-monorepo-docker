@@ -9,15 +9,6 @@ module.exports = {
   },
   root: true,
   rules: {
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: [
-          './eslintrc.js',
-          '**/__tests__/**/*',
-        ],
-      },
-    ],
     'import/prefer-default-export': [
       'off',
     ],
