@@ -14,5 +14,5 @@
     "./src",
     "next-env.d.ts",
     ".next/types/**/*.ts"
-  ],
+  ]
 }

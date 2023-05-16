@@ -1,10 +1,26 @@
-describe('Home', () => {
-  it('should navigate to the home page', () => {
-    cy.visit('http://localhost:3000/');
+describe('@mqs/web', () => {
+  describe('Home Page', () => {
+    it('should redirect to the home page', () => {
+      cy.visit('/');
 
-    cy.url().should('include', '/');
+      cy.url().should('include', '/home');
+    });
 
-    cy.get('span').contains('Web');
+    it('should render the home page', () => {
+      cy.visit('/home');
+
+      cy.get('head title').contains('Home');
+      cy.get('span').contains('Home');
+    });
+  });
+
+  describe('About Page', () => {
+    it('should render the about page', () => {
+      cy.visit('/about');
+
+      cy.get('head title').contains('About');
+      cy.get('span').contains('About');
+    });
   });
 });
 

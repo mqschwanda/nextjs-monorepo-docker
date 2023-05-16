@@ -22,6 +22,15 @@ module.exports = {
   },
   output: 'standalone',
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        destination: '/home',
+        permanent: true,
+        source: '/',
+      },
+    ];
+  },
   swcMinify: true,
   transpilePackages: [
     '@mqs/graphql-client',

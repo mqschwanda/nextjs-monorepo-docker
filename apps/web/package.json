@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "build": "next build",
+    "cypress:run": "cypress run --e2e",
+    "cypress:open": "cypress open --e2e",
     "dev": "next dev",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
     "start": "next start",
-    "test": "start-server-and-test dev http://localhost:3000 \"cypress run --e2e\"",
-    "test:head": "start-server-and-test dev http://localhost:3000 \"cypress open --e2e\""
+    "test": "start-server-and-test dev http://localhost:3000 \"yarn cypress:run\"",
+    "test:head": "start-server-and-test dev http://localhost:3000 \"yarn cypress:open\""
   },
   "dependencies": {
     "@mqs/graphql-client": "*",

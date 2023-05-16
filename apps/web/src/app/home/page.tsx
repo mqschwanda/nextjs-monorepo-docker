@@ -1,8 +1,7 @@
-import HelloWorldForm from 'partials/HelloWorldForm';
 import { Typography } from '@mqs/react-server-components';
 
 export const metadata = {
-  title: 'My Page Title',
+  title: 'Home',
 };
 
 export default function Page() {
@@ -11,9 +10,8 @@ export default function Page() {
       <Typography
         variant='h4'
       >
-        Web
+        Home
       </Typography>
-      <HelloWorldForm />
     </div>
   );
 }
