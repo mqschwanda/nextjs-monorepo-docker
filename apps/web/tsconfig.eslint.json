@@ -2,6 +2,17 @@
   "extends": "./tsconfig.json",
   "files": [
     "./.eslintrc.js",
-    "./next.config.js"
+    "./jest.config.js",
+    "./cypress.config.ts",
+    "./next.config.js",
+    "./cypress/**"
+  ],
+  "include": [
+    "./cypress/**/*",
+    "**/__tests__/**/*",
+    "__tests__",
+    "./src",
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
   ],
 }

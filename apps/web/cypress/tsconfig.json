@@ -1,0 +1,6 @@
+{
+  "extends": "@mqs/tsconfig/cypress.json",
+  "include": [
+    "**/*.ts"
+  ]
+}

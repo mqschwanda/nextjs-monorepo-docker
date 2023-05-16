@@ -3,7 +3,7 @@
 exports[`@mqs/react-server-components components <Typography /> renders 1`] = `
 <DocumentFragment>
   <span
-    class="Typography test Typography_variant_body1"
+    class="test Typography Typography_variant_body1"
     data-testid="Typography"
   >
     children...

@@ -1,7 +1,11 @@
 module.exports = {
+  env: {
+    'cypress/globals': true,
+  },
   extends: [
     '@mqs/eslint-config/client',
     'next',
+    'plugin:cypress/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -12,6 +16,9 @@ module.exports = {
       './tsconfig.eslint.json',
     ],
   },
+  plugins: [
+    'cypress',
+  ],
   root: true,
   rules: {
     'import/no-extraneous-dependencies': [
@@ -20,6 +27,8 @@ module.exports = {
         devDependencies: [
           './eslintrc.js',
           './next.config.js',
+          './cypress.config.ts',
+          './cypress/**',
           '**/__tests__/**/*',
         ],
       },
