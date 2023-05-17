@@ -6,7 +6,6 @@ const path = require('path');
 module.exports = {
   compiler: {
     emotion: false,
-    experimentalDecorators: false,
     reactRemoveProperties: false,
     removeConsole: true,
     styledComponents: false,

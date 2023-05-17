@@ -1,17 +1,16 @@
-import { render, fireEvent } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import { Button } from '..';
 
-describe('@mqs/react-client-components', () => {
+describe('@mqs/react-server-components', () => {
   describe('components', () => {
     describe('<Button />', () => {
       it('renders', () => {
         const testId = 'Button';
         const chilren = 'children...';
-        const handleClick = jest.fn();
 
         const { getByTestId, asFragment } = render((
           <Button
-            onClick={handleClick}
+            className='test'
             testId={testId}
           >
             { chilren }
@@ -20,9 +19,6 @@ describe('@mqs/react-client-components', () => {
 
         const element = getByTestId(testId);
         expect(element).toBeTruthy();
-
-        fireEvent.click(element);
-        expect(handleClick).toBeCalled();
 
         expect(asFragment()).toMatchSnapshot();
       });

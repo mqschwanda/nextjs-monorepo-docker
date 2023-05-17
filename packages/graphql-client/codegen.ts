@@ -13,8 +13,6 @@ const grahpqlSchemaName = graphqlSchemaPackageJson.name;
 const graphqlSchemaPackageJsonMain = graphqlSchemaPackageJson.main.replace(/^.\//, '');
 const graphqlSchemaPath = require.resolve(grahpqlSchemaName).replace(graphqlSchemaPackageJsonMain, '');
 
-console.log(graphqlSchemaPath);
-
 const config: CodegenConfig = {
   documents: [
     path.join(graphqlSchemaPath, buildDir, documentsGlob),

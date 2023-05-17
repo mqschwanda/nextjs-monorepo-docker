@@ -46,18 +46,27 @@ const config: Linter.Config = {
       {
         devDependencies: [
           '**/__tests__/**/*',
-          '**/*.codegen.(ts|js)',
-          '**/*.config.(ts|js)',
-          '**/codegen.*.(js|ts)',
+          'codegen.{js,ts}',
+          '*.codegen.{js,ts}',
+          '*.config.{js,ts}',
+          '**/codegen.*.{js,ts}',
           '**/cypress/**/*',
-          '**/eslintrc.(js|ts)',
-          '**/eslintrc.*.(js|ts)',
+          '**/eslintrc.{js,ts}',
+          '**/eslintrc.*.{js,ts}',
         ],
       },
     ],
     'jsx-quotes': [
       'error',
       'prefer-single',
+    ],
+    'max-len': [
+      'error',
+      {
+        code: 100,
+        ignoreComments: true,
+        ignoreStrings: true,
+      },
     ],
     'no-plusplus': [
       'off',

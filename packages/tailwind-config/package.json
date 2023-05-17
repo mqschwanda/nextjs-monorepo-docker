@@ -1,0 +1,23 @@
+{
+  "name": "@mqs/tailwind-config",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "dev": "tsc -w",
+    "lint": "eslint .",
+    "lint:fix": "yarn lint --fix"
+  },
+  "dependencies": {
+    "tailwindcss": "^3.2.4"
+  },
+  "devDependencies": {
+    "@mqs/eslint-config": "*",
+    "@mqs/tsconfig": "*",
+    "eslint": "^7.32.0",
+    "jest": "^29.5.0",
+    "typescript": "^5.0.4"
+  }
+}

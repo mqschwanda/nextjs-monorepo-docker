@@ -1,4 +1,4 @@
-import { Typography } from '@mqs/react-server-components';
+import { Button, Typography } from '@mqs/react-server-components';
 
 export const metadata = {
   title: 'Home',
@@ -12,6 +12,9 @@ export default function Page() {
       >
         Home
       </Typography>
+      <Button>
+        Button
+      </Button>
     </div>
   );
 }
