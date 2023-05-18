@@ -12,10 +12,10 @@ describe('@mqs/react-client-components', () => {
             testId={testId}
           >
             <div>
-              one
+              { 'one' }
             </div>
             <div>
-              two
+              { 'two' }
             </div>
           </Stack>
         ));

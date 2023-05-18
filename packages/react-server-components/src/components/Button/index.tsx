@@ -19,7 +19,7 @@ export function Button({
     <button
       className={cx(
         className,
-        '@mqs/style-btn',
+        'btn',
       )}
       type={type} // eslint-disable-line react/button-has-type
       {...spreadReactTestingProps({ testId })} // eslint-disable-line react/jsx-props-no-spreading

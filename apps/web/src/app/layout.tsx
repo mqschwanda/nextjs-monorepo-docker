@@ -1,9 +1,10 @@
 import Providers from 'providers';
 import type { ReactNode } from 'react';
-import { Container } from '@mqs/react-server-components';
 import '@mqs/react-server-components/styles';
 import '@mqs/style/style.css';
 import { Metadata } from 'next';
+import Footer from 'partials/Footer';
+import Nav from 'partials/Nav';
 
 interface RootLayoutProps {
   children: ReactNode
@@ -14,13 +15,24 @@ export default function RootLayout({
 }: RootLayoutProps) {
   return (
     <html
+      data-theme='dark'
       lang='en'
     >
-      <body>
+      <body
+        className='flex flex-col h-screen'
+      >
         <Providers>
-          <Container>
+          <header
+            className='sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 text-primary-content'
+          >
+            <Nav />
+          </header>
+          <main
+            className='flex-grow'
+          >
             { children }
-          </Container>
+          </main>
+          <Footer />
         </Providers>
       </body>
     </html>

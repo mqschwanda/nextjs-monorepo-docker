@@ -79,6 +79,14 @@ const config: Linter.Config = {
         ],
       },
     ],
+    'react/jsx-curly-brace-presence': [
+      'error',
+      {
+        children: 'always',
+        propElementValues: 'never',
+        props: 'never',
+      },
+    ],
     'react/jsx-curly-spacing': [
       'error',
       {

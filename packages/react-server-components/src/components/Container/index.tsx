@@ -16,7 +16,7 @@ export function Container({
 }: ContainerProps) {
   return (
     <div
-      className={cx('@mqs/style-container', className)}
+      className={cx('container', className)}
       {...spreadReactTestingProps({ testId })} // eslint-disable-line react/jsx-props-no-spreading
       {...rest} // eslint-disable-line react/jsx-props-no-spreading
     >

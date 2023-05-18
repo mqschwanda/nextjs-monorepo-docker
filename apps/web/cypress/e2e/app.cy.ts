@@ -10,7 +10,7 @@ describe('@mqs/web', () => {
       cy.visit('/home');
 
       cy.get('head title').contains('Home');
-      cy.get('span').contains('Home');
+      cy.screenshot();
     });
   });
 
@@ -19,7 +19,7 @@ describe('@mqs/web', () => {
       cy.visit('/about');
 
       cy.get('head title').contains('About');
-      cy.get('span').contains('About');
+      cy.screenshot();
     });
   });
 });

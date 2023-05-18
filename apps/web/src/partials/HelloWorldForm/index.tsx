@@ -12,7 +12,7 @@ import {
 import logger from '@mqs/logger';
 import { useCountdownSubscription, useHelloLazyQuery } from '@mqs/graphql-client';
 
-export default function Page() {
+export default function HelloWorldForm() {
   const [name, setName] = useState<string>('');
   const [hello, setHello] = useState<string | null>(null);
   const [error, setError] = useState<string | undefined>();
@@ -81,7 +81,7 @@ export default function Page() {
         <Button
           type='submit'
         >
-          Submit
+          { 'Submit' }
         </Button>
       </form>
       { error && (
@@ -89,7 +89,7 @@ export default function Page() {
           <Typography
             variant='h5'
           >
-            Error
+            { 'Error' }
           </Typography>
           <Typography
             color='error'
@@ -103,7 +103,7 @@ export default function Page() {
           <Typography
             variant='h5'
           >
-            Greeting
+            { 'Greeting' }
           </Typography>
           <Typography>
             { hello }
@@ -112,7 +112,7 @@ export default function Page() {
             <Button
               onClick={onReset}
             >
-              Reset
+              { 'Reset' }
             </Button>
           </div>
         </Stack>
