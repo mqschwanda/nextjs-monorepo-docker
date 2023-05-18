@@ -1,7 +1,7 @@
 {
   "extends": "@mqs/tsconfig/react-library.json",
   "include": [
-    "./src"
+    "src"
   ],
   "exclude": [
     "dist",
@@ -10,15 +10,13 @@
     "__tests__"
   ],
   "compilerOptions": {
-    "jsx": "react-jsx",
     "baseUrl": "./src",
     "lib": [
       "ES2015"
     ],
-    "module": "ESNext",
+    "module": "CommonJS",
     "outDir": "./dist",
     "rootDir": "./src",
-    "target": "es6",
     "paths": {
       "components/*": [
         "src/components/*"
@@ -26,11 +24,6 @@
       "components": [
         "src/components"
       ]
-    },
-    "plugins": [
-      {
-        "name": "typescript-plugin-css-modules"
-      }
-    ]
-  },
+    }
+  }
 }

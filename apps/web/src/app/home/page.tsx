@@ -7,9 +7,7 @@ export const metadata = {
 export default function Page() {
   return (
     <div>
-      <Typography
-        variant='h4'
-      >
+      <Typography>
         Home
       </Typography>
       <Button>

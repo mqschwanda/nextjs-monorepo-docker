@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import {
-  Button,
   Stack,
   TextField,
   Typography,
 } from '@mqs/react-client-components';
+import {
+  Button,
+} from '@mqs/react-server-components';
 import logger from '@mqs/logger';
 import { useCountdownSubscription, useHelloLazyQuery } from '@mqs/graphql-client';
 

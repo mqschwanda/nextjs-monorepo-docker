@@ -1,12 +1,23 @@
+/* eslint-disable global-require */
+
 import { Config } from 'tailwindcss';
 import colors from 'tailwindcss/colors';
 
 const config: Config = {
   content: [
-    'src/**/*.{js,ts,jsx,tsx}',
     '../../packages/**/*.{js,ts,jsx,tsx}',
+    '../../apps/**/*.{js,ts,jsx,tsx}',
   ],
-  plugins: [],
+  daisyui: {
+    themes: [
+      'light',
+      'dark',
+    ],
+  },
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('daisyui'),
+  ],
   theme: {
     extend: {
       colors: {

@@ -5,7 +5,7 @@
   ],
   "exclude": [
     "dist",
-    "build", 
+    "build",
     "node_modules",
     "__tests__"
   ],
@@ -25,5 +25,5 @@
         "src/components"
       ]
     }
-  },
+  }
 }

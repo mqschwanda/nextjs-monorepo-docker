@@ -1,8 +1,8 @@
-const mqsTailwindConfig = require('@mqs/tailwind-config');
+/* eslint-disable global-require */
 
 module.exports = {
   prefix: '@mqs/style-',
   presets: [
-    mqsTailwindConfig,
+    require('@mqs/tailwind-config'),
   ],
 };

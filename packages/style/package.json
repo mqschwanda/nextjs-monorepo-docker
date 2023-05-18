@@ -23,6 +23,7 @@
     "@mqs/tailwind-config": "*",
     "@mqs/tsconfig": "*",
     "@types/react": "^18.2.5",
+    "autoprefixer": "^10.4.14",
     "eslint": "^7.32.0",
     "postcss": "^8.4.20",
     "react": "^18.2.0",
