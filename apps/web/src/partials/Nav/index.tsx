@@ -17,6 +17,17 @@ const MENU_ITEMS = [
   },
 ] as const;
 
+const PROFILE_ITEMS = [
+  {
+    href: '/auth/sign-up',
+    label: 'Sign Up',
+  },
+  {
+    href: '/auth/sign-in',
+    label: 'Sign In',
+  },
+] as const;
+
 export default function Nav({
   className,
   ...rest
@@ -55,6 +66,35 @@ export default function Nav({
           className='menu menu-horizontal px-1'
         >
           { MENU_ITEMS.map(({
+            href,
+            label,
+          }) => (
+            <li
+              key={label}
+            >
+              <Link
+                href={href}
+                legacyBehavior
+                passHref
+              >
+                <a
+                  className='btn btn-ghost normal-case text-xl'
+                  href={href}
+                >
+                  { label }
+                </a>
+              </Link>
+            </li>
+          )) }
+        </ul>
+      </div>
+      <div
+        className='dropdown dropdown-end'
+      >
+        <ul
+          className='menu menu-horizontal px-1'
+        >
+          { PROFILE_ITEMS.map(({
             href,
             label,
           }) => (

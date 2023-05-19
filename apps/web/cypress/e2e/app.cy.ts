@@ -22,6 +22,26 @@ describe('@mqs/web', () => {
       cy.screenshot();
     });
   });
+
+  describe('auth', () => {
+    describe('Sign In Page', () => {
+      it('should render the about page', () => {
+        cy.visit('/auth/sign-in');
+
+        cy.get('head title').contains('Sign In');
+        cy.screenshot();
+      });
+    });
+
+    describe('Sign Up Page', () => {
+      it('should render the about page', () => {
+        cy.visit('/auth/sign-up');
+
+        cy.get('head title').contains('Sign Up');
+        cy.screenshot();
+      });
+    });
+  });
 });
 
 // Prevent TypeScript from reading file as legacy script
