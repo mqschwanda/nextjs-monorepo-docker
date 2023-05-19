@@ -1,6 +1,6 @@
 describe('@mqs/web', () => {
   describe('Home Page', () => {
-    it('should redirect to the home page', () => {
+    it('should redirect to the page', () => {
       cy.visit('/');
 
       cy.url().should('include', '/home');
@@ -15,7 +15,7 @@ describe('@mqs/web', () => {
   });
 
   describe('About Page', () => {
-    it('should render the about page', () => {
+    it('should render the page', () => {
       cy.visit('/about');
 
       cy.get('head title').contains('About');
@@ -25,7 +25,7 @@ describe('@mqs/web', () => {
 
   describe('auth', () => {
     describe('Sign In Page', () => {
-      it('should render the about page', () => {
+      it('should render the page', () => {
         cy.visit('/auth/sign-in');
 
         cy.get('head title').contains('Sign In');
@@ -45,7 +45,7 @@ describe('@mqs/web', () => {
     });
 
     describe('Sign Up Page', () => {
-      it('should render the about page', () => {
+      it('should render the page', () => {
         cy.visit('/auth/sign-up');
 
         cy.get('head title').contains('Sign Up');
