@@ -89,7 +89,7 @@ export default function Nav({
         </ul>
       </div>
       <div
-        className='dropdown dropdown-end'
+        className='flex-none'
       >
         <ul
           className='menu menu-horizontal px-1'

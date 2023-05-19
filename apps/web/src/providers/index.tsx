@@ -1,6 +1,6 @@
 'use client';
 
-import type { ReactNode } from 'react';
+import { ReactNode, memo } from 'react';
 import { ApolloProvider } from '@mqs/graphql-client';
 import { UiProvider } from '@mqs/react-client-components';
 
@@ -8,7 +8,7 @@ export interface ProviderProps {
   children: ReactNode
 }
 
-export default function Providers({
+function Providers({
   children,
 }: ProviderProps) {
   return (
@@ -19,3 +19,5 @@ export default function Providers({
     </ApolloProvider>
   );
 }
+
+export default memo(Providers);
