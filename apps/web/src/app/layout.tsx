@@ -42,15 +42,15 @@ export default function RootLayout({
 export const metadata: Metadata = {
   category: 'technology',
   description: 'MQS Web App',
-  openGraph: {
-    description: 'MQS Web App',
-    images: [],
-    locale: 'en-US',
-    siteName: '@mqs/web',
-    title: '@mqs/web',
-    type: 'website',
-    url: '',
-  },
+  // openGraph: {
+  //   description: 'MQS Web App',
+  //   images: [],
+  //   locale: 'en-US',
+  //   siteName: '@mqs/web',
+  //   title: '@mqs/web',
+  //   type: 'website',
+  //   url: '',
+  // },
   robots: {
     follow: false,
     googleBot: {
