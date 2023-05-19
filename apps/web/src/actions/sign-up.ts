@@ -1,6 +1,7 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
+import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
 
 export default async function signUp(data: FormData) {
@@ -21,7 +22,5 @@ export default async function signUp(data: FormData) {
 
   revalidatePath('/');
 
-  return {
-    user,
-  };
+  redirect('/');
 }

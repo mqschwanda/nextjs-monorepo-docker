@@ -40,7 +40,15 @@ describe('@mqs/web', () => {
 
         cy.screenshot();
 
+        cy.on('uncaught:exception', (err) => {
+          if (err?.message.includes('NEXT_REDIRECT')) {
+            return false;
+          }
+
+          return true;
+        });
         cy.get('button[type="submit"]').click();
+        cy.location('pathname', { timeout: 1000 }).should('eq', '/');
       });
     });
 
@@ -61,7 +69,15 @@ describe('@mqs/web', () => {
 
         cy.screenshot();
 
+        cy.on('uncaught:exception', (err) => {
+          if (err?.message.includes('NEXT_REDIRECT')) {
+            return false;
+          }
+
+          return true;
+        });
         cy.get('button[type="submit"]').click();
+        cy.location('pathname', { timeout: 1000 }).should('eq', '/');
       });
     });
   });
