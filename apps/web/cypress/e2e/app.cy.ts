@@ -31,6 +31,17 @@ describe('@mqs/web', () => {
         cy.get('head title').contains('Sign In');
         cy.screenshot();
       });
+
+      it('should fill out and submit the form', () => {
+        cy.visit('/auth/sign-in');
+
+        cy.get('#email').type('someone@example.com');
+        cy.get('#password').type('password');
+
+        cy.screenshot();
+
+        cy.get('button[type="submit"]').click();
+      });
     });
 
     describe('Sign Up Page', () => {
@@ -39,6 +50,18 @@ describe('@mqs/web', () => {
 
         cy.get('head title').contains('Sign Up');
         cy.screenshot();
+      });
+
+      it('should fill out and submit the form', () => {
+        cy.visit('/auth/sign-up');
+
+        cy.get('#email').type('someone@example.com');
+        cy.get('#password').type('password');
+        cy.get('#confirm-password').type('password');
+
+        cy.screenshot();
+
+        cy.get('button[type="submit"]').click();
       });
     });
   });

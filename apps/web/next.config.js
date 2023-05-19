@@ -7,12 +7,13 @@ module.exports = {
   compiler: {
     emotion: false,
     reactRemoveProperties: false,
-    removeConsole: true,
+    removeConsole: false,
     styledComponents: false,
   },
   experimental: {
     appDir: true,
     outputFileTracingRoot: path.join(__dirname, '../../'),
+    serverActions: true,
     serverComponentsExternalPackages: [
       '@mqs/react-server-components',
     ],

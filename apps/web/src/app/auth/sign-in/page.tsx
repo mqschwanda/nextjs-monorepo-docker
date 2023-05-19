@@ -1,3 +1,4 @@
+import signIn from 'actions/sign-in';
 import Link from 'next/link';
 
 export const metadata = {
@@ -32,7 +33,9 @@ export default function Page() {
           <div
             className='card-body'
           >
-            <form>
+            <form
+              action={signIn}
+            >
               <div
                 className='form-control'
               >
@@ -49,7 +52,9 @@ export default function Page() {
                 <input
                   className='input input-bordered'
                   id='email'
+                  name='email'
                   placeholder='email'
+                  required
                   type='text'
                 />
               </div>
@@ -69,8 +74,10 @@ export default function Page() {
                 <input
                   className='input input-bordered'
                   id='password'
+                  name='password'
                   placeholder='password'
-                  type='text'
+                  required
+                  type='password'
                 />
                 <label
                   className='label'
