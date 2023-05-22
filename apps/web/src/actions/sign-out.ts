@@ -7,6 +7,10 @@ import { cookies } from 'next/headers';
 export default async function signOut(_data: FormData) {
   'use server';
 
+  // TODO: validation
+
+  // TODO: handle sign out
+
   cookies().set('user', '');
 
   revalidatePath('/');

@@ -9,7 +9,7 @@ export default async function signUp(data: FormData) {
 
   const email = data.get('email');
 
-  if (!email) {
+  if (!email || typeof email !== 'string') {
     // TODO: validation
     return;
   }
@@ -29,5 +29,5 @@ export default async function signUp(data: FormData) {
   cookies().set('user', JSON.stringify(user));
 
   revalidatePath('/');
-  redirect('/');
+  redirect('/user/profile');
 }

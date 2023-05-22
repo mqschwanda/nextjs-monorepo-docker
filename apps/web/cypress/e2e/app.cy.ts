@@ -35,20 +35,19 @@ describe('@mqs/web', () => {
       it('should fill out and submit the form', () => {
         cy.visit('/auth/sign-in');
 
+        cy.get('#nav-auth-menu-auth').should('exist');
+        cy.get('#nav-auth-menu-profile').should('not.exist');
+
         cy.get('#email').type('someone@example.com');
         cy.get('#password').type('password');
 
         cy.screenshot();
 
-        cy.on('uncaught:exception', (err) => {
-          if (err?.message.includes('NEXT_REDIRECT')) {
-            return false;
-          }
-
-          return true;
-        });
         cy.get('button[type="submit"]').click();
-        cy.location('pathname', { timeout: 1000 }).should('eq', '/');
+        cy.location('pathname', { timeout: 1000 }).should('eq', '/user/profile');
+
+        cy.get('#nav-auth-menu-auth').should('not.exist');
+        cy.get('#nav-auth-menu-profile').should('exist');
       });
     });
 
@@ -63,21 +62,20 @@ describe('@mqs/web', () => {
       it('should fill out and submit the form', () => {
         cy.visit('/auth/sign-up');
 
+        cy.get('#nav-auth-menu-auth').should('exist');
+        cy.get('#nav-auth-menu-profile').should('not.exist');
+
         cy.get('#email').type('someone@example.com');
         cy.get('#password').type('password');
         cy.get('#confirm-password').type('password');
 
         cy.screenshot();
 
-        cy.on('uncaught:exception', (err) => {
-          if (err?.message.includes('NEXT_REDIRECT')) {
-            return false;
-          }
-
-          return true;
-        });
         cy.get('button[type="submit"]').click();
-        cy.location('pathname', { timeout: 1000 }).should('eq', '/');
+        cy.location('pathname', { timeout: 1000 }).should('eq', '/user/profile');
+
+        cy.get('#nav-auth-menu-auth').should('not.exist');
+        cy.get('#nav-auth-menu-profile').should('exist');
       });
     });
   });
