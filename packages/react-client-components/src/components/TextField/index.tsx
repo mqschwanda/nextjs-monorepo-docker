@@ -1,3 +1,5 @@
+'use client';
+
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import MuiTextField, { TextFieldProps as MuiTextFieldProps } from '@mui/material/TextField';
 

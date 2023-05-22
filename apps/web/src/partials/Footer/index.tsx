@@ -1,12 +1,13 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import cx from 'classnames';
+import cx, { Argument as ClassName } from 'classnames';
 
 interface Props extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'children'> {
-
+  cx?: ClassName
 }
 
 export default function Footer({
   className,
+  cx: cxProp,
   ...rest
 }: Props) {
   return (
@@ -18,6 +19,7 @@ export default function Footer({
         'items-center',
         'p-4',
         'text-neutral-content',
+        cxProp,
       )}
       {...rest} // eslint-disable-line react/jsx-props-no-spreading
     >

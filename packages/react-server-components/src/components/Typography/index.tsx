@@ -33,7 +33,7 @@ export function Typography({
   gutterBottom: _gutterBottom,
   testId,
   noWrap: _noWrap,
-  variant: _variant,
+  variant: _variant = TypographyVariant.body1,
   ...rest
 }: TypographyProps) {
   return (
@@ -48,9 +48,3 @@ export function Typography({
     </span>
   );
 }
-
-Typography.defaultProps = {
-  gutterBottom: false,
-  noWrap: false,
-  variant: TypographyVariant.body1,
-};

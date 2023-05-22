@@ -1,9 +1,9 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import cx from 'classnames';
+import cx, { Argument as ClassName } from 'classnames';
 import Link from 'next/link';
 
 interface Props extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'children'> {
-
+  cx?: ClassName
 }
 
 const MENU_ITEMS = [
@@ -30,6 +30,7 @@ const PROFILE_ITEMS = [
 
 export default function Nav({
   className,
+  cx: cxProp,
   ...rest
 }: Props) {
   return (
@@ -40,6 +41,7 @@ export default function Nav({
         'navbar',
         'text-primary-content',
         'w-full',
+        cxProp,
       )}
       {...rest} // eslint-disable-line react/jsx-props-no-spreading
     >

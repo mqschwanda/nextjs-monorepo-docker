@@ -5,6 +5,9 @@ import '@mqs/style/style.css';
 import { Metadata } from 'next';
 import Footer from 'partials/Footer';
 import Nav from 'partials/Nav';
+import Header from 'partials/Header';
+import { IconInfo } from '@mqs/react-server-components';
+import { AlertDismissable } from '@mqs/react-client-components';
 
 interface RootLayoutProps {
   children: ReactNode
@@ -22,11 +25,21 @@ export default function RootLayout({
         className='flex flex-col h-screen'
       >
         <Providers>
-          <header
-            className='sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 text-primary-content'
-          >
+          <Header>
             <Nav />
-          </header>
+            <AlertDismissable
+              cx={[
+                'my-4',
+                'shadow-lg',
+              ]}
+              variant='info'
+            >
+              <IconInfo
+                className='flex-shrink-0 w-6 h-6'
+              />
+              <span>{ 'New software update available.' }</span>
+            </AlertDismissable>
+          </Header>
           <main
             className='flex-grow'
           >

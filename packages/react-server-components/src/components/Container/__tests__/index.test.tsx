@@ -5,7 +5,7 @@ describe('@mqs/react-server-components', () => {
   describe('components', () => {
     describe('<Container />', () => {
       it('renders', () => {
-        const testId = 'Container';
+        const testId = Container.name;
         const chilren = 'children...';
 
         const { getByTestId, asFragment } = render((

@@ -122,6 +122,7 @@ const config: Linter.Config = {
       },
     ],
     'react/react-in-jsx-scope': 'off',
+    'react/require-default-props': 'off',
     'sort-keys': [
       'error',
       'asc',

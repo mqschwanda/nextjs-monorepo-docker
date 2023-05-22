@@ -5,7 +5,7 @@ describe('@mqs/react-server-components', () => {
   describe('components', () => {
     describe('<Button />', () => {
       it('renders', () => {
-        const testId = 'Button';
+        const testId = Button.name;
         const chilren = 'children...';
 
         const { getByTestId, asFragment } = render((

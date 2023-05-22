@@ -14,10 +14,7 @@ export default async function signIn(data: FormData) {
     email,
   };
 
-  // @ts-ignore - Property 'set' does not exist on type 'ReadonlyRequestCookies'.
-  cookies().set({
-    user,
-  });
+  cookies().set('user', JSON.stringify(user));
 
   revalidatePath('/');
 

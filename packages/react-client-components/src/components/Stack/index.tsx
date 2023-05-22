@@ -1,3 +1,5 @@
+'use client';
+
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import MuiStack, { StackProps as MuiStackProps } from '@mui/material/Stack';
 

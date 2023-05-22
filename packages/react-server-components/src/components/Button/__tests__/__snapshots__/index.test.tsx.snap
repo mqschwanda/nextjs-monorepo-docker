@@ -3,7 +3,7 @@
 exports[`@mqs/react-server-components components <Button /> renders 1`] = `
 <DocumentFragment>
   <button
-    class="test btn"
+    class="btn test"
     data-testid="Button"
     type="button"
   >

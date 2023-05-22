@@ -23,6 +23,12 @@
       ],
       "components": [
         "src/components"
+      ],
+      "utilities/*": [
+        "src/utilities/*"
+      ],
+      "utilities": [
+        "src/utilities"
       ]
     }
   }
