@@ -56,6 +56,27 @@ const config: Linter.Config = {
         ],
       },
     ],
+    'jsx-a11y/label-has-associated-control': [
+      'error',
+      {
+        controlComponents: [
+          'ul',
+        ],
+      },
+    ],
+    'jsx-a11y/no-noninteractive-tabindex': [
+      'error',
+      {
+        allowExpressionValues: true,
+        roles: [
+
+        ],
+        tags: [
+          'ul',
+          'label',
+        ],
+      },
+    ],
     'jsx-quotes': [
       'error',
       'prefer-single',

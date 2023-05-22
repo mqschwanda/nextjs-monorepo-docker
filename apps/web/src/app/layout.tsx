@@ -8,6 +8,7 @@ import Nav from 'partials/Nav';
 import Header from 'partials/Header';
 import { IconInfo } from '@mqs/react-server-components';
 import { AlertDismissable } from '@mqs/react-client-components';
+import { cookies } from 'next/headers';
 
 interface RootLayoutProps {
   children: ReactNode
@@ -16,6 +17,8 @@ interface RootLayoutProps {
 export default function RootLayout({
   children,
 }: RootLayoutProps) {
+  const { value: user } = cookies().get('user') || {};
+
   return (
     <html
       data-theme='dark'
@@ -26,7 +29,9 @@ export default function RootLayout({
       >
         <Providers>
           <Header>
-            <Nav />
+            <Nav
+              user={user as any}
+            />
             <AlertDismissable
               cx={[
                 'my-4',

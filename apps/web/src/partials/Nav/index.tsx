@@ -1,9 +1,14 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 import Link from 'next/link';
+import Image from 'next/image';
 
 interface Props extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'children'> {
   cx?: ClassName
+  user?: {
+    email: string,
+    username: string,
+  }
 }
 
 const MENU_ITEMS = [
@@ -17,7 +22,7 @@ const MENU_ITEMS = [
   },
 ] as const;
 
-const PROFILE_ITEMS = [
+const AUTH_ITEMS = [
   {
     href: '/auth/sign-up',
     label: 'Sign Up',
@@ -28,9 +33,21 @@ const PROFILE_ITEMS = [
   },
 ] as const;
 
+const PROFILE_ITEMS = [
+  {
+    href: '/user/profile',
+    label: 'Profile',
+  },
+  {
+    href: '/auth/sign-out',
+    label: 'Sign Out',
+  },
+] as const;
+
 export default function Nav({
   className,
   cx: cxProp,
+  user,
   ...rest
 }: Props) {
   return (
@@ -93,31 +110,81 @@ export default function Nav({
       <div
         className='flex-none'
       >
-        <ul
-          className='menu menu-horizontal px-1'
-        >
-          { PROFILE_ITEMS.map(({
-            href,
-            label,
-          }) => (
-            <li
-              key={label}
+        { user ? (
+          <div
+            className='dropdown dropdown-end'
+          >
+            <label
+              className='btn btn-ghost btn-circle avatar'
+              htmlFor='profile-menu'
+              tabIndex={0}
             >
-              <Link
-                href={href}
-                legacyBehavior
-                passHref
+              <div
+                className='w-10 rounded-full'
               >
-                <a
-                  className='btn btn-ghost normal-case text-xl'
-                  href={href}
+                <Image
+                  alt='profile-image'
+                  height={50}
+                  src='/assets/images/stock-profile-image.jpg'
+                  width={50}
+                />
+              </div>
+            </label>
+            <ul
+              className='mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52'
+              id='profile-menu'
+              tabIndex={0}
+            >
+              { PROFILE_ITEMS.map(({
+                href,
+                label,
+              }) => (
+                <li
+                  key={label}
                 >
-                  { label }
-                </a>
-              </Link>
-            </li>
-          )) }
-        </ul>
+                  <Link
+                    href={href}
+                    legacyBehavior
+                    passHref
+                  >
+                    <a
+                      className='btn btn-ghost normal-case text-xl'
+                      href={href}
+                    >
+                      { label }
+                    </a>
+                  </Link>
+                </li>
+              )) }
+            </ul>
+          </div>
+        ) : (
+          <ul
+            className='menu menu-horizontal px-1'
+          >
+            { AUTH_ITEMS.map(({
+              href,
+              label,
+            }) => (
+              <li
+                key={label}
+              >
+                <Link
+                  href={href}
+                  legacyBehavior
+                  passHref
+                >
+                  <a
+                    className='btn btn-ghost normal-case text-xl'
+                    href={href}
+                  >
+                    { label }
+                  </a>
+                </Link>
+              </li>
+            )) }
+          </ul>
+        ) }
       </div>
     </nav>
   );
