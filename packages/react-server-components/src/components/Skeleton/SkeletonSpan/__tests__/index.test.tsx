@@ -1,14 +1,14 @@
 import { render } from '@testing-library/react';
-import { Skeleton } from '..';
+import { SkeletonSpan } from '..';
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {
-    describe('<Skeleton />', () => {
+    describe('<SkeletonSpan />', () => {
       it('renders', () => {
-        const testId = Skeleton.name;
+        const testId = SkeletonSpan.name;
 
         const { getByTestId, asFragment } = render((
-          <Skeleton
+          <SkeletonSpan
             className='test'
             testId={testId}
           />

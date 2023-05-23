@@ -2,7 +2,9 @@ import {
   Card,
   CardBody,
   CardProps,
-  Skeleton,
+  CardTitle,
+  SkeletonDiv,
+  SkeletonSpan,
 } from '@mqs/react-server-components';
 
 export interface UserCardLoadingProps extends Omit<CardProps, 'side' | 'children'> {
@@ -16,7 +18,7 @@ export default function UserCardLoading(props: UserCardLoadingProps) {
       {...props} // eslint-disable-line react/jsx-props-no-spreading
     >
       <figure>
-        <Skeleton
+        <SkeletonDiv
           cx={[
             'h-[150px]',
             'w-[150px]',
@@ -24,14 +26,15 @@ export default function UserCardLoading(props: UserCardLoadingProps) {
         />
       </figure>
       <CardBody>
-        <Skeleton
-          cx={[
-            'card-title',
-            'rounded-md',
-            'h-[1rem]',
-            'w-[150px]',
-          ]}
-        />
+        <CardTitle>
+          <SkeletonSpan
+            cx={[
+              'rounded-md',
+              'h-[1rem]',
+              'w-[150px]',
+            ]}
+          />
+        </CardTitle>
       </CardBody>
     </Card>
   );

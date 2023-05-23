@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-server-components components <SkeletonDiv /> renders 1`] = `
+<DocumentFragment>
+  <div
+    class="animate-pulse bg-neutral-content test"
+    data-testid="SkeletonDiv"
+  />
+</DocumentFragment>
+`;

@@ -28,7 +28,7 @@ export default function Page() {
         <Suspense
           fallback={<UserCardLoading />}
         >
-          <UserCardLoading />
+          <UserCard />
         </Suspense>
       </div>
     </Container>
