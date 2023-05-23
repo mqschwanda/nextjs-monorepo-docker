@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-server-components components <Card /> renders 1`] = `
+<DocumentFragment>
+  <div
+    class="card shadow-xl test"
+    data-testid="Card"
+  >
+    <figure>
+      <img
+        alt="test"
+        src="/assets/images/test.jpg"
+      />
+    </figure>
+    <div
+      class="card-body"
+    >
+      <span
+        class="card-title"
+      >
+        Card Title
+      </span>
+      <p>
+        children...
+      </p>
+    </div>
+    <div
+      class="card-actions"
+    >
+      <button
+        class="btn"
+        type="button"
+      >
+        Click Me
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
