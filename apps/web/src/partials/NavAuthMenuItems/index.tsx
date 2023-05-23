@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { getCookie } from 'cookies-next';
 import { usePathname } from 'next/navigation';
@@ -13,9 +13,10 @@ interface Props {
 }
 
 export default function NavAuthMenuItems(_props: Props) {
+  const [user, setUser] = useState<UserCookie | null>(null);
   const pathname = usePathname();
 
-  const user = useMemo(
+  useEffect(
     () => {
       const cookie = getCookie('user');
 
@@ -23,10 +24,10 @@ export default function NavAuthMenuItems(_props: Props) {
         !cookie
         || typeof cookie !== 'string'
       ) {
-        return null;
+        setUser(null);
+      } else {
+        setUser(JSON.parse(cookie) as UserCookie);
       }
-
-      return JSON.parse(cookie) as UserCookie;
     },
     [ // eslint-disable-line react-hooks/exhaustive-deps
       pathname,

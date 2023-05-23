@@ -104,7 +104,7 @@ const config: Linter.Config = {
       'error',
       {
         children: 'always',
-        propElementValues: 'never',
+        propElementValues: 'always',
         props: 'never',
       },
     ],

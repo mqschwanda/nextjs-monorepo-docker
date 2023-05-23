@@ -1,5 +1,4 @@
-import Providers from 'providers';
-import type { ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import '@mqs/react-server-components/styles';
 import '@mqs/style/style.css';
 import { Metadata } from 'next';
@@ -24,29 +23,29 @@ export default function RootLayout({
       <body
         className='flex flex-col h-screen'
       >
-        <Providers>
-          <Header>
-            <Nav />
-            <AlertDismissable
-              cx={[
-                'my-4',
-                'shadow-lg',
-              ]}
-              variant='info'
-            >
-              <IconInfo
-                className='flex-shrink-0 w-6 h-6'
-              />
-              <span>{ 'New software update available.' }</span>
-            </AlertDismissable>
-          </Header>
-          <main
-            className='flex-grow'
+        <Header>
+          <Nav />
+          <AlertDismissable
+            cx={[
+              'my-4',
+              'shadow-lg',
+            ]}
+            variant='info'
           >
-            { children }
-          </main>
-          <Footer />
-        </Providers>
+            <IconInfo
+              className='flex-shrink-0 w-6 h-6'
+            />
+            <span>
+              { 'New software update available.' }
+            </span>
+          </AlertDismissable>
+        </Header>
+        <main
+          className='flex-grow'
+        >
+          { children }
+        </main>
+        <Footer />
       </body>
     </html>
   );

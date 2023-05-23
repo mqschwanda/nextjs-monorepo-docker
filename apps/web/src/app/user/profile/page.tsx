@@ -1,30 +1,17 @@
 import {
-  Card,
-  CardBody,
-  CardTitle,
   Container,
 } from '@mqs/react-server-components';
-import { cookies } from 'next/headers';
-import Image from 'next/image';
-import { UserCookie } from 'utilities/cookies';
-
-function getUserCookie() {
-  const { value } = cookies().get('user') || {};
-
-  if (!value) {
-    return null;
-  }
-
-  return JSON.parse(value) as UserCookie;
-}
+import {
+  Suspense,
+} from 'react';
+import UserCard from './_partials/UserCard';
+import UserCardLoading from './_partials/UserCardLoading';
 
 export const metadata = {
   title: 'User Profile',
 };
 
 export default function Page() {
-  const user = getUserCookie();
-
   return (
     <Container
       center
@@ -38,23 +25,11 @@ export default function Page() {
         { 'User Profile' }
       </h1>
       <div>
-        <Card
-          side
+        <Suspense
+          fallback={<UserCardLoading />}
         >
-          <figure>
-            <Image
-              alt={user?.email || 'profile-image'}
-              height='150'
-              src='/assets/images/stock-profile-image.jpg'
-              width='150'
-            />
-          </figure>
-          <CardBody>
-            <CardTitle>
-              { user?.username }
-            </CardTitle>
-          </CardBody>
-        </Card>
+          <UserCard />
+        </Suspense>
       </div>
     </Container>
   );
