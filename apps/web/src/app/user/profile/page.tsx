@@ -1,27 +1,22 @@
+import { Container } from '@mqs/react-server-components';
+
 export const metadata = {
   title: 'User Profile',
 };
 
 export default function Page() {
   return (
-    <div>
-      <div
-        className='hero min-h-screen bg-base-200'
+    <Container
+      center
+      cx={[
+        'py-4',
+      ]}
+    >
+      <h1
+        className='text-5xl font-bold'
       >
-        <div
-          className='hero-content text-center'
-        >
-          <div
-            className='max-w-md'
-          >
-            <h1
-              className='text-5xl font-bold'
-            >
-              { 'User Profile' }
-            </h1>
-          </div>
-        </div>
-      </div>
-    </div>
+        { 'User Profile' }
+      </h1>
+    </Container>
   );
 }
