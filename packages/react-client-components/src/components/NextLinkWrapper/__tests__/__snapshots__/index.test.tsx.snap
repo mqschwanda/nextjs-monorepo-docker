@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-client-components components <NextLinkWrapper /> renders 1`] = `
+<DocumentFragment>
+  <a
+    data-testid="NextLinkWrapper"
+    href="/home"
+  >
+    children...
+  </a>
+</DocumentFragment>
+`;

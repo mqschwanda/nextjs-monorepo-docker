@@ -1,23 +1,25 @@
 import { render } from '@testing-library/react';
-import { Stack } from '..';
+import { NextLinkWrapper } from '..';
 
 describe('@mqs/react-client-components', () => {
   describe('components', () => {
-    describe('<Stack />', () => {
+    describe('<NextLinkWrapper />', () => {
       it('renders', () => {
-        const testId = Stack.name;
+        const testId = NextLinkWrapper.name;
+        const chilren = 'children...';
+        const href = '/home';
 
         const { getByTestId, asFragment } = render((
-          <Stack
+          <NextLinkWrapper
+            href={href}
             testId={testId}
           >
-            <div>
-              { 'one' }
-            </div>
-            <div>
-              { 'two' }
-            </div>
-          </Stack>
+            <a
+              href={href}
+            >
+              { chilren }
+            </a>
+          </NextLinkWrapper>
         ));
 
         const element = getByTestId(testId);

@@ -5,7 +5,7 @@ describe('@mqs/react-client-components', () => {
   describe('components', () => {
     describe('<Typography />', () => {
       it('renders', () => {
-        const testId = 'Typography';
+        const testId = Typography.name;
         const chilren = 'children...';
 
         const { getByTestId, asFragment } = render((

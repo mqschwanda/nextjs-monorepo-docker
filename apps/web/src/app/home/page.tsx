@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { NextLinkWrapper } from '@mqs/react-client-components';
 
 export const metadata = {
   title: 'Home',
@@ -26,10 +26,8 @@ export default function Page() {
             >
               { 'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.' }
             </p>
-            <Link
+            <NextLinkWrapper
               href='/about'
-              legacyBehavior
-              passHref
             >
               <a
                 className='btn btn-primary'
@@ -38,7 +36,7 @@ export default function Page() {
               >
                 { 'About' }
               </a>
-            </Link>
+            </NextLinkWrapper>
           </div>
         </div>
       </div>

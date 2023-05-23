@@ -5,7 +5,7 @@ describe('@mqs/react-client-components', () => {
   describe('components', () => {
     describe('<TextField />', () => {
       it('renders', () => {
-        const testId = 'TextField';
+        const testId = TextField.name;
 
         const { getByTestId, asFragment } = render((
           <TextField

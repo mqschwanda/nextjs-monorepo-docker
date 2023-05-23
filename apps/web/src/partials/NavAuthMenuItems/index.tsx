@@ -1,11 +1,11 @@
 'use client';
 
 import { useMemo } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { getCookie } from 'cookies-next';
 import { usePathname } from 'next/navigation';
 import { UserCookie } from 'utilities/cookies';
+import { NextLinkWrapper } from '@mqs/react-client-components';
 import { AUTH_ITEMS, PROFILE_ITEMS } from './constants';
 
 interface Props {
@@ -66,10 +66,8 @@ export default function NavAuthMenuItems(_props: Props) {
             <li
               key={label}
             >
-              <Link
+              <NextLinkWrapper
                 href={href}
-                legacyBehavior
-                passHref
               >
                 <a
                   className='btn btn-ghost normal-case text-xl'
@@ -77,7 +75,7 @@ export default function NavAuthMenuItems(_props: Props) {
                 >
                   { label }
                 </a>
-              </Link>
+              </NextLinkWrapper>
             </li>
           )) }
         </ul>
@@ -97,10 +95,8 @@ export default function NavAuthMenuItems(_props: Props) {
         <li
           key={label}
         >
-          <Link
+          <NextLinkWrapper
             href={href}
-            legacyBehavior
-            passHref
           >
             <a
               className='btn btn-ghost normal-case text-xl'
@@ -108,7 +104,7 @@ export default function NavAuthMenuItems(_props: Props) {
             >
               { label }
             </a>
-          </Link>
+          </NextLinkWrapper>
         </li>
       )) }
     </ul>

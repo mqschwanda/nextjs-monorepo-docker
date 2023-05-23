@@ -1,5 +1,5 @@
+import { NextLinkWrapper } from '@mqs/react-client-components';
 import signUp from 'actions/sign-up';
-import Link from 'next/link';
 
 export const metadata = {
   title: 'Sign Up',
@@ -109,10 +109,8 @@ export default function Page() {
                 className='label'
                 htmlFor='already-have-account'
               >
-                <Link
+                <NextLinkWrapper
                   href='/auth/sign-in'
-                  legacyBehavior
-                  passHref
                 >
                   <a
                     className='label-text-alt link link-hover'
@@ -121,7 +119,7 @@ export default function Page() {
                   >
                     { 'Already have an account? Sign In.' }
                   </a>
-                </Link>
+                </NextLinkWrapper>
               </label>
             </form>
           </div>

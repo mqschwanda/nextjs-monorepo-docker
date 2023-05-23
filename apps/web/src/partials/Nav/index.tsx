@@ -1,7 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
-import Link from 'next/link';
 import NavAuthMenuItems from 'partials/NavAuthMenuItems';
+import { NextLinkWrapper } from '@mqs/react-client-components';
 import { MENU_ITEMS } from './constants';
 
 interface Props extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'children'> {
@@ -28,10 +28,8 @@ export default function Nav({
       <div
         className='flex-1'
       >
-        <Link
+        <NextLinkWrapper
           href='/home'
-          legacyBehavior
-          passHref
         >
           <a
             className='btn btn-ghost normal-case text-xl'
@@ -39,7 +37,7 @@ export default function Nav({
           >
             { 'Web' }
           </a>
-        </Link>
+        </NextLinkWrapper>
       </div>
       <div
         className='flex-none'
@@ -54,10 +52,8 @@ export default function Nav({
             <li
               key={label}
             >
-              <Link
+              <NextLinkWrapper
                 href={href}
-                legacyBehavior
-                passHref
               >
                 <a
                   className='btn btn-ghost normal-case text-xl'
@@ -65,7 +61,7 @@ export default function Nav({
                 >
                   { label }
                 </a>
-              </Link>
+              </NextLinkWrapper>
             </li>
           )) }
         </ul>
