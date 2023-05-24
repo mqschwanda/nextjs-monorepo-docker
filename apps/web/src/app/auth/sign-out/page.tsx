@@ -1,10 +1,8 @@
 import {
-  Button,
   Card,
   CardBody,
-  FormControl,
 } from '@mqs/react-server-components';
-import signOut from 'actions/sign-out';
+import FormSignOut from './_partials/FormSignOut';
 
 export const metadata = {
   title: 'Sign Out',
@@ -36,23 +34,7 @@ export default function Page() {
           className='flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'
         >
           <CardBody>
-            <form
-              action={signOut}
-            >
-              <p>
-                { 'Are you sure you want to sign out?' }
-              </p>
-              <FormControl
-                className='mt-6'
-              >
-                <Button
-                  color='primary'
-                  type='submit'
-                >
-                  { 'Sign Out' }
-                </Button>
-              </FormControl>
-            </form>
+            <FormSignOut />
           </CardBody>
         </Card>
       </div>
