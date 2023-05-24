@@ -1,4 +1,12 @@
 import { NextLinkWrapper } from '@mqs/react-client-components';
+import {
+  Button,
+  Card,
+  CardBody,
+  FormControl,
+  InputText,
+  Label,
+} from '@mqs/react-server-components';
 import signIn from 'actions/sign-in';
 
 export const metadata = {
@@ -27,20 +35,15 @@ export default function Page() {
             { 'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.' }
           </p>
         </div>
-        <div
-          className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'
+        <Card
+          className='flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'
         >
-          <div
-            className='card-body'
-          >
+          <CardBody>
             <form
               action={signIn}
             >
-              <div
-                className='form-control'
-              >
-                <label
-                  className='label'
+              <FormControl>
+                <Label
                   htmlFor='email'
                 >
                   <span
@@ -48,21 +51,18 @@ export default function Page() {
                   >
                     { 'Email' }
                   </span>
-                </label>
-                <input
-                  className='input input-bordered'
+                </Label>
+                <InputText
+                  bordered
                   id='email'
                   name='email'
                   placeholder='email'
                   required
                   type='text'
                 />
-              </div>
-              <div
-                className='form-control'
-              >
-                <label
-                  className='label'
+              </FormControl>
+              <FormControl>
+                <Label
                   htmlFor='password'
                 >
                   <span
@@ -70,17 +70,16 @@ export default function Page() {
                   >
                     { 'Password' }
                   </span>
-                </label>
-                <input
-                  className='input input-bordered'
+                </Label>
+                <InputText
+                  bordered
                   id='password'
                   name='password'
                   placeholder='password'
                   required
                   type='password'
                 />
-                <label
-                  className='label'
+                <Label
                   htmlFor='forgot-password'
                 >
                   <a
@@ -90,20 +89,19 @@ export default function Page() {
                   >
                     { 'Forgot password?' }
                   </a>
-                </label>
-              </div>
-              <div
-                className='form-control mt-6'
+                </Label>
+              </FormControl>
+              <FormControl
+                className='mt-6'
               >
-                <button
-                  className='btn btn-primary'
+                <Button
+                  color='primary'
                   type='submit'
                 >
                   { 'Sign In' }
-                </button>
-              </div>
-              <label
-                className='label'
+                </Button>
+              </FormControl>
+              <Label
                 htmlFor='dont-have-an-account'
               >
                 <NextLinkWrapper
@@ -117,10 +115,10 @@ export default function Page() {
                     { 'Don\'t have an account? Sign Up.' }
                   </a>
                 </NextLinkWrapper>
-              </label>
+              </Label>
             </form>
-          </div>
-        </div>
+          </CardBody>
+        </Card>
       </div>
     </div>
   );

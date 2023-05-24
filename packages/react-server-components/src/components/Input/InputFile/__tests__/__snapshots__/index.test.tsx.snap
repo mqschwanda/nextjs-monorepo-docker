@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-server-components components <InputFile /> renders 1`] = `
+<DocumentFragment>
+  <input
+    class="file-input test"
+    data-testid="InputFile"
+    type="file"
+  />
+</DocumentFragment>
+`;

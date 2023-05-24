@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-server-components components <InputRating /> renders 1`] = `
+<DocumentFragment>
+  <div
+    class="rating test"
+    data-testid="InputRating"
+  >
+    <input
+      class="mask rating-hidden mask-star"
+      name="test-rating"
+      type="radio"
+    />
+    <input
+      class="mask mask-star"
+      name="test-rating"
+      type="radio"
+    />
+    <input
+      class="mask mask-star"
+      name="test-rating"
+      type="radio"
+    />
+    <input
+      class="mask mask-star"
+      name="test-rating"
+      type="radio"
+    />
+    <input
+      class="mask mask-star"
+      name="test-rating"
+      type="radio"
+    />
+    <input
+      class="mask mask-star"
+      name="test-rating"
+      type="radio"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`@mqs/react-server-components components <InputRating /> renders halves 1`] = `
+<DocumentFragment>
+  <div
+    class="rating rating-half test"
+    data-testid="InputRating"
+  >
+    <input
+      class="mask rating-hidden mask-star"
+      name="test-rating"
+      type="radio"
+    />
+    <input
+      class="mask mask-half-1 mask-star"
+      name="test-rating"
+      type="radio"
+    />
+    <input
+      class="mask mask-half-2 mask-star"
+      name="test-rating"
+      type="radio"
+    />
+    <input
+      class="mask mask-half-1 mask-star"
+      name="test-rating"
+      type="radio"
+    />
+    <input
+      class="mask mask-half-2 mask-star"
+      name="test-rating"
+      type="radio"
+    />
+    <input
+      class="mask mask-half-1 mask-star"
+      name="test-rating"
+      type="radio"
+    />
+    <input
+      class="mask mask-half-2 mask-star"
+      name="test-rating"
+      type="radio"
+    />
+    <input
+      class="mask mask-half-1 mask-star"
+      name="test-rating"
+      type="radio"
+    />
+    <input
+      class="mask mask-half-2 mask-star"
+      name="test-rating"
+      type="radio"
+    />
+    <input
+      class="mask mask-half-1 mask-star"
+      name="test-rating"
+      type="radio"
+    />
+    <input
+      class="mask mask-half-2 mask-star"
+      name="test-rating"
+      type="radio"
+    />
+  </div>
+</DocumentFragment>
+`;

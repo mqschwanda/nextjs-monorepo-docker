@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-server-components components <FormControl /> renders 1`] = `
+<DocumentFragment>
+  <div
+    class="form-control test"
+    data-testid="FormControl"
+  >
+    <input
+      class="input"
+      placeholder="Type here"
+    />
+  </div>
+</DocumentFragment>
+`;

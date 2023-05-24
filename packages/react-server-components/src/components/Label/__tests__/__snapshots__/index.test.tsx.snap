@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-server-components components <Label /> renders 1`] = `
+<DocumentFragment>
+  <label
+    class="label test"
+    data-testid="Label"
+  >
+    <span
+      class="label-text"
+    >
+      What is your name?
+    </span>
+    <span
+      class="label-text-alt"
+    >
+      Top Right label
+    </span>
+  </label>
+</DocumentFragment>
+`;

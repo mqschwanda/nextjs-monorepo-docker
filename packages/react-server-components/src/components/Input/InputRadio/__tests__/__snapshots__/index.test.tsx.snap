@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-server-components components <InputRadio /> renders 1`] = `
+<DocumentFragment>
+  <input
+    class="radio test"
+    data-testid="InputRadio"
+    type="radio"
+  />
+</DocumentFragment>
+`;

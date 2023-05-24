@@ -1,4 +1,12 @@
 import { NextLinkWrapper } from '@mqs/react-client-components';
+import {
+  Button,
+  Card,
+  CardBody,
+  FormControl,
+  InputText,
+  Label,
+} from '@mqs/react-server-components';
 import signUp from 'actions/sign-up';
 
 export const metadata = {
@@ -27,20 +35,15 @@ export default function Page() {
             { 'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.' }
           </p>
         </div>
-        <div
-          className='card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'
+        <Card
+          className='flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100'
         >
-          <div
-            className='card-body'
-          >
+          <CardBody>
             <form
               action={signUp}
             >
-              <div
-                className='form-control'
-              >
-                <label
-                  className='label'
+              <FormControl>
+                <Label
                   htmlFor='email'
                 >
                   <span
@@ -48,20 +51,17 @@ export default function Page() {
                   >
                     { 'Email' }
                   </span>
-                </label>
-                <input
-                  className='input input-bordered'
+                </Label>
+                <InputText
+                  bordered
                   id='email'
                   name='email'
                   placeholder='email'
                   type='text'
                 />
-              </div>
-              <div
-                className='form-control'
-              >
-                <label
-                  className='label'
+              </FormControl>
+              <FormControl>
+                <Label
                   htmlFor='password'
                 >
                   <span
@@ -69,16 +69,15 @@ export default function Page() {
                   >
                     { 'Password' }
                   </span>
-                </label>
-                <input
-                  className='input input-bordered'
+                </Label>
+                <InputText
+                  bordered
                   id='password'
                   name='password'
                   placeholder='password'
                   type='text'
                 />
-                <label
-                  className='label'
+                <Label
                   htmlFor='confirm-password'
                 >
                   <span
@@ -86,27 +85,26 @@ export default function Page() {
                   >
                     { 'Confirm Password' }
                   </span>
-                </label>
-                <input
-                  className='input input-bordered'
+                </Label>
+                <InputText
+                  bordered
                   id='confirm-password'
                   name='confirm-password'
                   placeholder='confirm password'
                   type='text'
                 />
-              </div>
-              <div
-                className='form-control mt-6'
+              </FormControl>
+              <FormControl
+                className='mt-6'
               >
-                <button
-                  className='btn btn-primary'
+                <Button
+                  color='primary'
                   type='submit'
                 >
                   { 'Sign Up' }
-                </button>
-              </div>
-              <label
-                className='label'
+                </Button>
+              </FormControl>
+              <Label
                 htmlFor='already-have-account'
               >
                 <NextLinkWrapper
@@ -120,10 +118,10 @@ export default function Page() {
                     { 'Already have an account? Sign In.' }
                   </a>
                 </NextLinkWrapper>
-              </label>
+              </Label>
             </form>
-          </div>
-        </div>
+          </CardBody>
+        </Card>
       </div>
     </div>
   );

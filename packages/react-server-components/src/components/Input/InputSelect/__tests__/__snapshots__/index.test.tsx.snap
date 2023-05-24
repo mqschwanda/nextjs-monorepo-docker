@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-server-components components <InputSelect /> renders 1`] = `
+<DocumentFragment>
+  <select
+    class="select test"
+    data-testid="InputSelect"
+  >
+    <option>
+      One
+    </option>
+    <option>
+      Two
+    </option>
+    <option>
+      Three
+    </option>
+  </select>
+</DocumentFragment>
+`;

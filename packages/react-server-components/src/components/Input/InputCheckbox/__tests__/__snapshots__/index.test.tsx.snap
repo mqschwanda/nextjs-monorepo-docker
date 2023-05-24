@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-server-components components <InputCheckbox /> renders 1`] = `
+<DocumentFragment>
+  <input
+    class="checkbox test"
+    data-testid="InputCheckbox"
+    type="checkbox"
+  />
+</DocumentFragment>
+`;

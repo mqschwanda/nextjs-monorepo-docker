@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-server-components components <InputTextarea /> renders 1`] = `
+<DocumentFragment>
+  <textarea
+    class="textarea test"
+    data-testid="InputTextarea"
+  />
+</DocumentFragment>
+`;
