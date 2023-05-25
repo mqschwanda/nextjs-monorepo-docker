@@ -74,8 +74,8 @@ export default function FormSignUp(props: FormSignUpProps) {
         className='mt-6'
       >
         <Button
-          color='primary'
           type='submit'
+          variantColor='primary'
         >
           { 'Sign Up' }
         </Button>

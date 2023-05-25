@@ -56,9 +56,9 @@ export function AlertDismissable({
       </div>
       <Button
         onClick={handleClick}
-        shape='circle'
-        size='sm'
         type='button'
+        variantShape='circle'
+        variantSize='sm'
       >
         <IconClose
           cx='h-6 w-6'

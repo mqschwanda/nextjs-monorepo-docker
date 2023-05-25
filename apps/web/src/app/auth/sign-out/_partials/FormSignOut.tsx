@@ -27,8 +27,8 @@ export default function FormSignOut(props: FormSignOutProps) {
         className='mt-6'
       >
         <Button
-          color='primary'
           type='submit'
+          variantColor='primary'
         >
           { 'Sign Out' }
         </Button>

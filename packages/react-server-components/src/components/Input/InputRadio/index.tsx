@@ -3,7 +3,7 @@ import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 import { buildEnumCx } from '../../../utilities';
 
-enum InputRadioVariantColor {
+export enum InputRadioVariantColor {
   accent = 'radio-accent',
   error = 'radio-error',
   info = 'radio-info',
@@ -13,7 +13,7 @@ enum InputRadioVariantColor {
   warning = 'radio-warning',
 }
 
-enum InputRadioVariantSize {
+export enum InputRadioVariantSize {
   lg = 'radio-lg',
   md = 'radio-md',
   sm = 'radio-sm',

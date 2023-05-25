@@ -3,7 +3,7 @@ import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 import { buildEnumCx } from '../../../utilities';
 
-enum InputCheckboxVariantColor {
+export enum InputCheckboxVariantColor {
   accent = 'checkbox-accent',
   error = 'checkbox-error',
   info = 'checkbox-info',
@@ -13,7 +13,7 @@ enum InputCheckboxVariantColor {
   warning = 'checkbox-warning',
 }
 
-enum InputCheckboxVariantSize {
+export enum InputCheckboxVariantSize {
   lg = 'checkbox-lg',
   md = 'checkbox-md',
   sm = 'checkbox-sm',

@@ -3,7 +3,7 @@ import { DetailedHTMLProps, SelectHTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 import { buildEnumCx } from '../../../utilities';
 
-enum InputSelectVariantColor {
+export enum InputSelectVariantColor {
   accent = 'select-accent',
   error = 'select-error',
   ghost = 'select-ghost',
@@ -14,7 +14,7 @@ enum InputSelectVariantColor {
   warning = 'select-warning',
 }
 
-enum InputSelectVariantSize {
+export enum InputSelectVariantSize {
   lg = 'select-lg',
   md = 'select-md',
   sm = 'select-sm',

@@ -3,7 +3,7 @@ import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 import { buildEnumCx } from '../../../utilities';
 
-enum InputFileVariantColor {
+export enum InputFileVariantColor {
   accent = 'file-input-accent',
   error = 'file-input-error',
   ghost = 'file-input-ghost',
@@ -14,7 +14,7 @@ enum InputFileVariantColor {
   warning = 'file-input-warning',
 }
 
-enum InputFileVariantSize {
+export enum InputFileVariantSize {
   lg = 'file-input-lg',
   md = 'file-input-md',
   sm = 'file-input-sm',

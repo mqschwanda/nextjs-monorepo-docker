@@ -3,7 +3,7 @@ import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 import { buildEnumCx } from '../../../utilities';
 
-enum InputRangeVariantColor {
+export enum InputRangeVariantColor {
   accent = 'range-accent',
   error = 'range-error',
   info = 'range-info',
@@ -13,7 +13,7 @@ enum InputRangeVariantColor {
   warning = 'range-warning',
 }
 
-enum InputRangeVariantSize {
+export enum InputRangeVariantSize {
   lg = 'range-lg',
   md = 'range-md',
   sm = 'range-sm',

@@ -3,7 +3,7 @@ import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 import { buildEnumCx } from '../../utilities';
 
-export enum AlertVariant {
+export enum AlertVariantColor {
   info = 'alert-info',
   success = 'alert-success',
   warning = 'alert-warning',
@@ -15,7 +15,7 @@ export interface AlertProps
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   children: ReactNode,
   cx?: ClassName
-  variant?: keyof typeof AlertVariant,
+  variantColor?: keyof typeof AlertVariantColor,
 }
 
 export function Alert({
@@ -23,7 +23,7 @@ export function Alert({
   className,
   cx: cxProp,
   testId,
-  variant,
+  variantColor,
   ...rest
 }: AlertProps) {
   return (
@@ -31,8 +31,8 @@ export function Alert({
       className={cx(
         'alert',
         buildEnumCx(
-          AlertVariant,
-          variant,
+          AlertVariantColor,
+          variantColor,
         ),
         className,
         cxProp,

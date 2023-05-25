@@ -3,7 +3,7 @@ import { DetailedHTMLProps, TextareaHTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 import { buildEnumCx } from '../../../utilities';
 
-enum InputTextareaVariantColor {
+export enum InputTextareaVariantColor {
   accent = 'textarea-accent',
   error = 'textarea-error',
   ghost = 'textarea-ghost',
@@ -14,7 +14,7 @@ enum InputTextareaVariantColor {
   warning = 'textarea-warning',
 }
 
-enum InputTextareaVariantSize {
+export enum InputTextareaVariantSize {
   lg = 'textarea-lg',
   md = 'textarea-md',
   sm = 'textarea-sm',

@@ -71,8 +71,8 @@ export default function FormSignIn(props: FormSignInProps) {
         className='mt-6'
       >
         <Button
-          color='primary'
           type='submit'
+          variantColor='primary'
         >
           { 'Sign In' }
         </Button>

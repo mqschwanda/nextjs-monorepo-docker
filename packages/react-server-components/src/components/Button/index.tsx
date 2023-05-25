@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 import { buildEnumCx } from '../../utilities';
 
-enum ButtonColor {
+export enum ButtonVariantColor {
   accent = 'btn-accent',
   error = 'btn-error',
   ghost = 'btn-ghost',
@@ -16,13 +16,13 @@ enum ButtonColor {
   warning = 'btn-warning',
 }
 
-enum ButtonSize {
+export enum ButtonVariantSize {
   lg = 'btn-lg',
   sm = 'btn-sm',
   xs = 'btn-xs',
 }
 
-enum ButtonShape {
+export enum ButtonVariantShape {
   circle = 'btn-circle',
   square = 'btn-square',
 }
@@ -30,25 +30,25 @@ enum ButtonShape {
 export interface ButtonProps
   extends ReactTestingProps,
   DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
-  color?: keyof typeof ButtonColor,
   cx?: ClassName,
   loading?: boolean,
   noAnimation?: boolean,
-  shape?: keyof typeof ButtonShape,
-  size?: keyof typeof ButtonSize,
+  variantColor?: keyof typeof ButtonVariantColor,
+  variantShape?: keyof typeof ButtonVariantShape,
+  variantSize?: keyof typeof ButtonVariantSize,
   wide?: boolean,
 }
 
 export function Button({
   children,
   className,
-  color,
+  variantColor,
   cx: cxProp,
   disabled,
   loading,
   noAnimation,
-  shape,
-  size,
+  variantShape,
+  variantSize,
   testId,
   type = 'button',
   wide,
@@ -63,16 +63,16 @@ export function Button({
         noAnimation ? 'no-animation' : undefined,
         wide ? 'btn-wide' : undefined,
         buildEnumCx(
-          ButtonColor,
-          color,
+          ButtonVariantColor,
+          variantColor,
         ),
         buildEnumCx(
-          ButtonShape,
-          shape,
+          ButtonVariantShape,
+          variantShape,
         ),
         buildEnumCx(
-          ButtonSize,
-          size,
+          ButtonVariantSize,
+          variantSize,
         ),
         className,
         cxProp,

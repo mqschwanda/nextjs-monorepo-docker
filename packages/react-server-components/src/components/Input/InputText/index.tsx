@@ -3,7 +3,7 @@ import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 import { buildEnumCx } from '../../../utilities';
 
-enum InputTextVariantColor {
+export enum InputTextVariantColor {
   accent = 'input-accent',
   error = 'input-error',
   ghost = 'input-ghost',
@@ -14,7 +14,7 @@ enum InputTextVariantColor {
   warning = 'input-warning',
 }
 
-enum InputTextVariantSize {
+export enum InputTextVariantSize {
   lg = 'input-lg',
   md = 'input-md',
   sm = 'input-sm',

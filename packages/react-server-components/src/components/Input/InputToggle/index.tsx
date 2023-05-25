@@ -3,7 +3,7 @@ import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 import { buildEnumCx } from '../../../utilities';
 
-enum InputToggleVariantColor {
+export enum InputToggleVariantColor {
   accent = 'toggle-accent',
   error = 'toggle-error',
   info = 'toggle-info',
@@ -13,7 +13,7 @@ enum InputToggleVariantColor {
   warning = 'toggle-warning',
 }
 
-enum InputToggleVariantSize {
+export enum InputToggleVariantSize {
   lg = 'toggle-lg',
   md = 'toggle-md',
   sm = 'toggle-sm',

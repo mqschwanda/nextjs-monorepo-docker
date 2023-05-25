@@ -3,7 +3,7 @@ import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 import { buildEnumCx } from '../../../utilities';
 
-enum InputRatingVariantColor {
+export enum InputRatingVariantColor {
   accent = 'bg-accent',
   error = 'bg-error',
   info = 'bg-info',
@@ -13,7 +13,7 @@ enum InputRatingVariantColor {
   warning = 'bg-warning',
 }
 
-enum InputRatingVariantMask {
+export enum InputRatingVariantMask {
   squircle = 'mask-squircle',
   heart = 'mask-heart',
   hexagon = 'mask-hexagon',
@@ -35,7 +35,7 @@ enum InputRatingVariantMask {
   'triangle-4' = 'mask-triangle-4',
 }
 
-enum InputRatingVariantSize {
+export enum InputRatingVariantSize {
   lg = 'rating-lg',
   md = 'rating-md',
   sm = 'rating-sm',
