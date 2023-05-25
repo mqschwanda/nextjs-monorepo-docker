@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react';
-import '@mqs/react-server-components/styles';
+// import '@mqs/react-server-components/styles';
 import '@mqs/style/style.css';
 import { Metadata } from 'next';
 import Footer from 'partials/Footer';

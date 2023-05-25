@@ -5,9 +5,8 @@
   ],
   "exclude": [
     "dist",
-    "build", 
-    "node_modules",
-    "__tests__"
+    "build",
+    "node_modules"
   ],
   "compilerOptions": {
     "baseUrl": "./src",

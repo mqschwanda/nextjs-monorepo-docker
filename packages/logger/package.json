@@ -9,7 +9,7 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
     "dev": "tsc -w",
     "lint": "eslint .",

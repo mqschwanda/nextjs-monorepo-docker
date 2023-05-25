@@ -38,7 +38,7 @@
     "copy-queries": "copyfiles -u 1 \"./src/queries/**/*\" \"./dist/\"",
     "copy-queries:watch": "nodemon --watch ./src/queries/* --exec \"yarn copy-queries\"",
     "build": "yarn codegen && yarn build-tsc && yarn copy-schema && yarn copy-queries",
-    "build-tsc": "tsc",
+    "build-tsc": "tsc --project tsconfig.build.json",
     "build-tsc:watch": "yarn build -w",
     "clean": "rm -rf dist",
     "dev": "yarn build && concurrently \"yarn codegen:watch\" \"yarn build-tsc:watch\" \"yarn copy-schema:watch\" \"yarn copy-queries:watch\"",

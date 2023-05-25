@@ -38,4 +38,8 @@ module.exports = {
     '@mqs/react-client-components',
     '@mqs/react-server-components',
   ],
+  typescript: {
+    ignoreBuildErrors: false,
+    tsconfigPath: './tsconfig.build.json',
+  },
 };

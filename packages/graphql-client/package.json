@@ -12,7 +12,7 @@
     "codegen": "graphql-codegen",
     "codegen:watch": "yarn codegen --watch",
     "build": "yarn codegen && yarn build-tsc",
-    "build-tsc": "tsc",
+    "build-tsc": "tsc --project tsconfig.build.json",
     "build-tsc:watch": "yarn build -w",
     "clean": "rm -rf dist",
     "dev": "yarn build && concurrently \"yarn codegen:watch\" \"yarn build-tsc:watch\"",
