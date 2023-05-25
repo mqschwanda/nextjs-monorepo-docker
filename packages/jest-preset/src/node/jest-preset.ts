@@ -10,6 +10,9 @@ const config: Config = {
     'json',
     'node',
   ],
+  moduleNameMapper: {
+    '\\.(css|less|sass|scss)$': '@mqs/jest-preset/stubs/css.js',
+  },
   modulePathIgnorePatterns: [
     '<rootDir>/test/__fixtures__',
     '<rootDir>/node_modules',

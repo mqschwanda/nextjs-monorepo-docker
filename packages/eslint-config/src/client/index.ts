@@ -7,6 +7,7 @@ const config: Linter.Config = {
     'prettier',
     'airbnb',
     'airbnb-typescript',
+    'plugin:storybook/recommended',
   ],
   ignorePatterns: [
     'dist',

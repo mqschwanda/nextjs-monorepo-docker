@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "files": [
+    "./.eslintrc.js",
+    "./jest.config.ts",
+    "./.storybook/main.ts",
+    "./.storybook/preview.ts"
+  ]
+}

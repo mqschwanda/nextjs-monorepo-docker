@@ -5,12 +5,16 @@
   "license": "MIT",
   "exports": {
     "./node/jest-preset.js": "./dist/node/jest-preset.js",
-    "./node/": "./dist/node/"
+    "./node/": "./dist/node/",
+    "./stubs/css.js": "./dist/stubs/css.js"
   },
   "typesVersions": {
     "*": {
       "node/jest-preset.js": [
         "./dist/node/jest-preset.d.ts"
+      ],
+      "stubs/css.js": [
+        "./dist/stubs/css.d.ts"
       ]
     }
   },
