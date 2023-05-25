@@ -9,6 +9,7 @@
     "node_modules"
   ],
   "compilerOptions": {
+    "resolveJsonModule": true,
     "baseUrl": "./src",
     "lib": [
       "ES2015"
@@ -17,17 +18,11 @@
     "outDir": "./dist",
     "rootDir": "./src",
     "paths": {
-      "components/*": [
-        "src/components/*"
+      "@": [
+        "./"
       ],
-      "components": [
-        "src/components"
-      ],
-      "utilities/*": [
-        "src/utilities/*"
-      ],
-      "utilities": [
-        "src/utilities"
+      "@/*": [
+        "./*"
       ]
     }
   }

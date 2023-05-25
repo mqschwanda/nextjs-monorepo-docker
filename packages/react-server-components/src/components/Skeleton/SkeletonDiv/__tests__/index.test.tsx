@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { SkeletonDiv } from '..';
+import { SkeletonDiv } from '@';
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {

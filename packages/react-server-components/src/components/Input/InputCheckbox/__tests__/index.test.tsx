@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { InputCheckbox } from '..';
+import { InputCheckbox } from '@';
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {

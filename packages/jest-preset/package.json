@@ -6,7 +6,8 @@
   "exports": {
     "./node/jest-preset.js": "./dist/node/jest-preset.js",
     "./node/": "./dist/node/",
-    "./stubs/css.js": "./dist/stubs/css.js"
+    "./stubs/css.js": "./dist/stubs/css.js",
+    "./utilities": "./dist/utilities/index.js"
   },
   "typesVersions": {
     "*": {
@@ -15,6 +16,9 @@
       ],
       "stubs/css.js": [
         "./dist/stubs/css.d.ts"
+      ],
+      "utilities": [
+        "./dist/utilities/index.d.ts"
       ]
     }
   },

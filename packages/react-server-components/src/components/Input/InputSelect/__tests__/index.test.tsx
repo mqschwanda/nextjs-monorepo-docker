@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { InputSelect } from '..';
+import { InputSelect } from '@';
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {

@@ -42,6 +42,14 @@ const config: Linter.Config = {
         varsIgnorePattern: '^_',
       },
     ],
+    'import/extensions': [
+      'error',
+      'never',
+      {
+        css: 'always',
+        json: 'always',
+      },
+    ],
     'import/no-extraneous-dependencies': [
       'error',
       {

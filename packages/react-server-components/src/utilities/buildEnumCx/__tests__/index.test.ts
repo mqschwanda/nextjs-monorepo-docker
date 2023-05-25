@@ -1,4 +1,4 @@
-import buildEnumCx from '..';
+import { buildEnumCx } from '@';
 
 enum TestVariant {
   test = 'test',

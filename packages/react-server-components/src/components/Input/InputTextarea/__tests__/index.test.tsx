@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { InputTextarea } from '..';
+import { InputTextarea } from '@';
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {

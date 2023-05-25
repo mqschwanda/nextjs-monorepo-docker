@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { IconInfo } from '..';
+import { IconInfo } from '@';
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {

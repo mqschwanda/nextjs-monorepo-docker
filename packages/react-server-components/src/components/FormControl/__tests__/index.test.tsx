@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react';
-import { InputText } from '../../Input';
-import { FormControl } from '..';
+import { InputText, FormControl } from '@';
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {

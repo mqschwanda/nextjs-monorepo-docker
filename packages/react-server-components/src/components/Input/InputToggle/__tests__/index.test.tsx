@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { InputToggle } from '..';
+import { InputToggle } from '@';
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {

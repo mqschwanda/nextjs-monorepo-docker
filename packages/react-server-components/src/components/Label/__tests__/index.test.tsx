@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { Label } from '..';
+import { Label } from '@';
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {

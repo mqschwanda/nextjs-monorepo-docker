@@ -5,7 +5,7 @@ import {
   CardTitle,
   CardBody,
   CardActions,
-} from '../..';
+} from '@';
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {

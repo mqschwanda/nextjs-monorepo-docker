@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { InputRadio } from '..';
+import { InputRadio } from '@';
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {

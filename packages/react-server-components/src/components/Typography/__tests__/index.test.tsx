@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { Typography } from '..';
+import { Typography } from '@';
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {
