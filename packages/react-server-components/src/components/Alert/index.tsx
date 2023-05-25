@@ -1,5 +1,5 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 import { buildEnumCx } from '../../utilities';
 
@@ -13,8 +13,15 @@ export enum AlertVariantColor {
 export interface AlertProps
   extends ReactTestingProps,
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  children: ReactNode,
+  /**
+   * Argument passed into classnames function.
+   *
+   * See [classnames docs](https://github.com/JedWatson/classnames).
+   */
   cx?: ClassName
+  /**
+   * Background color for the alert.
+   */
   variantColor?: keyof typeof AlertVariantColor,
 }
 
