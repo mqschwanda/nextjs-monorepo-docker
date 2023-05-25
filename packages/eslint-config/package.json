@@ -5,6 +5,7 @@
   "exports": {
     "./client": "./dist/client/index.js",
     "./codegen": "./dist/codegen/index.js",
+    "./next": "./dist/next/index.js",
     "./server": "./dist/server/index.js"
   },
   "typesVersions": {
@@ -14,6 +15,9 @@
       ],
       "codegen": [
         "./dist/codegen/index.d.ts"
+      ],
+      "next": [
+        "./dist/next/index.d.ts"
       ],
       "server": [
         "./dist/server/index.d.ts"
@@ -31,16 +35,17 @@
     "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
-    "@types/eslint": "^8.37.0",
-    "@typescript-eslint/eslint-plugin": "^5.59.6",
-    "@typescript-eslint/parser": "^5.59.6",
+    "@types/eslint": "^8.40.0",
+    "@typescript-eslint/eslint-plugin": "^5.59.7",
+    "@typescript-eslint/parser": "^5.59.7",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-next": "^13.4.2",
+    "eslint-config-next": "^13.4.3",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-config-turbo": "^1.9.8",
-    "eslint-plugin-import": "^2.27.5",
+    "eslint-config-turbo": "^1.9.9",
+    "eslint-plugin-cypress": "^2.13.3",
+    "eslint-plugin-import": "^2.27.2",
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0"
