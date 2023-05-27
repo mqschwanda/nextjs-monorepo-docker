@@ -1,5 +1,5 @@
 import { fireEvent, render } from '@testing-library/react';
-import { AlertDismissable } from '..';
+import { AlertDismissable } from '@';
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {

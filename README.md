@@ -1,5 +1,9 @@
 # Next Monorepo Docker
 
+## Development Philosophies
+
+For a detailed explanation of why certain decisions were made and what guidelines should be followed review the [development philosophies documentation](docs/development-philosophies.md) 
+
 
 ## Quick Start
 
@@ -37,7 +41,7 @@ This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package ma
 - `web`: a [Next.js](https://nextjs.org/) app
 - `api`: an [Express](https://expressjs.com/) server
 - `eslint-config`: shared `eslint` configurations
-- `graphql-client`: react client and api utitlites for graphql
+- `graphql-client`: react client and api utilities for graphql
 - `graphql-schema`: graphql schema and types
 - `graphql-server`: graphql server and resolvers
 - `jest-preset`: Jest configurations

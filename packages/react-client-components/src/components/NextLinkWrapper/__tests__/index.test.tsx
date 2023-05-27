@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { NextLinkWrapper } from '..';
+import { NextLinkWrapper } from '@';
 
 describe('@mqs/react-client-components', () => {
   describe('components', () => {

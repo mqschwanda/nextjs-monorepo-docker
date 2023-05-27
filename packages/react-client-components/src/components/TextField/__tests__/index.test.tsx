@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { TextField } from '..';
+import { TextField } from '@';
 
 describe('@mqs/react-client-components', () => {
   describe('components', () => {
