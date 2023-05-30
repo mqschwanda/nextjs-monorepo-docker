@@ -1,0 +1,33 @@
+{
+  "name": "@mqs/tsc",
+  "version": "0.0.0",
+  "license": "MIT",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json && tsc-alias --project tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "dev": "tsc && (concurrently \"tsc -w --project tsconfig.build.json\" \"tsc-alias -w --project tsconfig.build.json\")",
+    "lint": "eslint .",
+    "lint:fix": "yarn lint --fix"
+  },
+  "bin": {
+    "mqs-tsc": "./dist/mqs-tsc.js",
+    "mqs-tsc-watch": "./dist/mqs-tsc-watch.js"
+  },
+  "devDependencies": {
+    "@mqs/eslint-config": "*",
+    "@mqs/tsconfig": "*",
+    "eslint": "^7.32.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "concurrently": "^8.0.1",
+    "tsc-alias": "^1.8.6"
+  },
+  "peerDependencies": {
+    "tsc-alias": "^1.8.6",
+    "typescript": "^5.0.4"
+  }
+}

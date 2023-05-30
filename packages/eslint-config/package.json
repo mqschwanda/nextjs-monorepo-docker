@@ -30,7 +30,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
-    "dev": "tsc -w",
+    "dev": "tsc -w --project tsconfig.build.json",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix"
   },

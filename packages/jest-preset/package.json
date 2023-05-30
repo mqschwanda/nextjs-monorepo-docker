@@ -26,9 +26,9 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.build.json",
+    "build": "mqs-tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
-    "dev": "tsc -w",
+    "dev": "mqs-tsc-watch --project tsconfig.build.json",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix"
   },
@@ -41,9 +41,11 @@
   },
   "devDependencies": {
     "@mqs/eslint-config": "*",
+    "@mqs/tsc": "*",
     "@mqs/tsconfig": "*",
     "@types/node": "^20.2.3",
     "eslint": "^7.32.0",
+    "tsc-alias": "^1.8.6",
     "typescript": "^5.0.4"
   }
 }

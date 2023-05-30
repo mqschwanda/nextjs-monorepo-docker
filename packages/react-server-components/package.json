@@ -13,9 +13,9 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.build.json && tsc-alias --project tsconfig.build.json",
+    "build": "mqs-tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
-    "dev": "tsc && (concurrently \"tsc -w --project tsconfig.build.json\" \"tsc-alias -w --project tsconfig.build.json\")",
+    "dev": "mqs-tsc-watch --project tsconfig.build.json",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
     "test": "jest"
@@ -23,6 +23,7 @@
   "devDependencies": {
     "@mqs/eslint-config": "*",
     "@mqs/jest-preset": "*",
+    "@mqs/tsc": "*",
     "@mqs/tsconfig": "*",
     "@storybook/addon-storyshots": "^7.0.17",
     "@storybook/react": "^7.0.17",
@@ -38,7 +39,6 @@
     "@mqs/react-testing-lib": "*",
     "@mqs/style": "*",
     "classnames": "^2.3.2",
-    "concurrently": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

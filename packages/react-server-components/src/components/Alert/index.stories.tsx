@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Alert, Button } from '@';
+import { // eslint-disable-line import/no-extraneous-dependencies
+  Alert,
+  Button,
+} from '@mqs/react-server-components';
 
 const meta: Meta<typeof Alert> = {
   component: Alert,
