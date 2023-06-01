@@ -32,7 +32,7 @@ function spawnTsc() {
 }
 
 function spawnTscAlias() {
-  const alias = spawn('tsc-alias', args);
+  const alias = spawn('mqs-tsc-alias', args);
 
   alias.stdout.on(
     'data',

@@ -34,7 +34,7 @@ tsc.on(
             command: `tsc -w ${argsString}`,
           },
           {
-            command: `tsc-alias -w ${argsString}`,
+            command: `mqs-tsc-alias -w ${argsString}`,
           },
         ],
       );

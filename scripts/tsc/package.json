@@ -14,6 +14,7 @@
   },
   "bin": {
     "mqs-tsc": "./dist/mqs-tsc.js",
+    "mqs-tsc-alias": "./dist/mqs-tsc-alias.js",
     "mqs-tsc-watch": "./dist/mqs-tsc-watch.js"
   },
   "devDependencies": {
@@ -27,7 +28,6 @@
     "tsc-alias": "^1.8.6"
   },
   "peerDependencies": {
-    "tsc-alias": "^1.8.6",
     "typescript": "^5.0.4"
   }
 }
