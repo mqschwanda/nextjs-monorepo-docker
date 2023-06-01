@@ -32,7 +32,7 @@ export const AlertInfoExample: AlertStoryObj = {
   },
   render: () => (
     <Alert
-      variantColor='info'
+      variantBackgroundColor='info'
     >
       <div>
         <svg
@@ -62,7 +62,7 @@ export const AlertSuccessExample: AlertStoryObj = {
   },
   render: () => (
     <Alert
-      variantColor='success'
+      variantBackgroundColor='success'
     >
       <div>
         <svg
@@ -92,7 +92,7 @@ export const AlertWarningExample: AlertStoryObj = {
   },
   render: () => (
     <Alert
-      variantColor='warning'
+      variantBackgroundColor='warning'
     >
       <div>
         <svg
@@ -122,7 +122,7 @@ export const AlertErrorExample: AlertStoryObj = {
   },
   render: () => (
     <Alert
-      variantColor='error'
+      variantBackgroundColor='error'
     >
       <div>
         <svg

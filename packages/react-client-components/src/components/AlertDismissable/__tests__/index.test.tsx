@@ -12,7 +12,7 @@ describe('@mqs/react-server-components', () => {
           <AlertDismissable
             className='test'
             testId={testId}
-            variantColor='info'
+            variantBackgroundColor='info'
           >
             { chilren }
           </AlertDismissable>
@@ -33,7 +33,7 @@ describe('@mqs/react-server-components', () => {
           <AlertDismissable
             className='test'
             testId={testId}
-            variantColor='info'
+            variantBackgroundColor='info'
           >
             { chilren }
           </AlertDismissable>
@@ -59,7 +59,7 @@ describe('@mqs/react-server-components', () => {
             className='test'
             onClickDismiss={onClickDismiss}
             testId={testId}
-            variantColor='info'
+            variantBackgroundColor='info'
           >
             { chilren }
           </AlertDismissable>
@@ -85,7 +85,7 @@ describe('@mqs/react-server-components', () => {
             className='test'
             onClickDismiss={onClickDismiss}
             testId={testId}
-            variantColor='info'
+            variantBackgroundColor='info'
           >
             { chilren }
           </AlertDismissable>

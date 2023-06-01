@@ -30,7 +30,7 @@ export default function RootLayout({
               'my-4',
               'shadow-lg',
             ]}
-            variantColor='info'
+            variantBackgroundColor='info'
           >
             <IconInfo
               className='flex-shrink-0 w-6 h-6'

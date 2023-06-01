@@ -3,10 +3,25 @@ import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 import { buildEnumCx } from '@/utilities';
 
-export enum AlertVariantColor {
+/**
+ * Background color for the alert.
+ */
+export enum AlertVariantBackgroundColor {
+  /**
+   * Alert with `info` color.
+   */
   info = 'alert-info',
+  /**
+   * Alert with `success` color.
+   */
   success = 'alert-success',
+  /**
+   * Alert with `warning` color.
+   */
   warning = 'alert-warning',
+  /**
+   * Alert with `error` color.
+   */
   error = 'alert-error',
 }
 
@@ -22,15 +37,20 @@ export interface AlertProps
   /**
    * Background color for the alert.
    */
-  variantColor?: keyof typeof AlertVariantColor,
+  variantBackgroundColor?: keyof typeof AlertVariantBackgroundColor,
 }
 
+/**
+ * Alert informs users about important events.
+ *
+ * @see https://mqschwanda.github.io/nextjs-monorepo-docker/?path=/docs/mqs-react-server-components-components-alert--docs
+ */
 export function Alert({
   children,
   className,
   cx: cxProp,
   testId,
-  variantColor,
+  variantBackgroundColor,
   ...rest
 }: AlertProps) {
   return (
@@ -38,8 +58,8 @@ export function Alert({
       className={cx(
         'alert',
         buildEnumCx(
-          AlertVariantColor,
-          variantColor,
+          AlertVariantBackgroundColor,
+          variantBackgroundColor,
         ),
         className,
         cxProp,

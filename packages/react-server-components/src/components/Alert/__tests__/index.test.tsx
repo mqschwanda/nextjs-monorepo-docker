@@ -18,7 +18,7 @@ describe('@mqs/react-server-components', () => {
           <Alert
             className='test'
             testId={testId}
-            variantColor='info'
+            variantBackgroundColor='info'
           >
             { chilren }
           </Alert>
