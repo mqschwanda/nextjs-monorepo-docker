@@ -1,4 +1,8 @@
-# Next Monorepo Docker
+# Next JS Monorepo Docker
+
+## Storybook
+
+To see live example you can visit [github pages](https://mqschwanda.github.io/nextjs-monorepo-docker/).
 
 ## Development Philosophies
 
