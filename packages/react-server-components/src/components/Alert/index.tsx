@@ -25,6 +25,9 @@ export enum AlertVariantBackgroundColor {
   error = 'alert-error',
 }
 
+/**
+ * Props for the `<Alert />` component.
+ */
 export interface AlertProps
   extends ReactTestingProps,
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {

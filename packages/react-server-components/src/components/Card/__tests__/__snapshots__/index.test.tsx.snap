@@ -28,7 +28,7 @@ exports[`@mqs/react-server-components components <Card /> renders 1`] = `
       class="card-actions"
     >
       <button
-        class="btn"
+        class="btn btn-md"
         type="button"
       >
         Click Me

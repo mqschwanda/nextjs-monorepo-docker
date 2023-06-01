@@ -5,6 +5,7 @@ import { Alert } from '@';
 
 initStoryshots({
   configPath: path.resolve(__dirname, '../../../../../storybook/.storybook'),
+  storyKindRegex: /^@mqs\/react-server-components\/components\/Alert$/,
 });
 
 describe('@mqs/react-server-components', () => {

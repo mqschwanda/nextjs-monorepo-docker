@@ -3,11 +3,164 @@
 exports[`@mqs/react-server-components components <Button /> renders 1`] = `
 <DocumentFragment>
   <button
-    class="btn test"
+    class="btn btn-md test"
     data-testid="Button"
     type="button"
   >
     children...
   </button>
 </DocumentFragment>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Button Button Color Example 1`] = `
+[
+  <button
+    className="btn btn-accent btn-md"
+    type="button"
+  >
+    accent
+  </button>,
+  <button
+    className="btn btn-error btn-md"
+    type="button"
+  >
+    error
+  </button>,
+  <button
+    className="btn btn-ghost btn-md"
+    type="button"
+  >
+    ghost
+  </button>,
+  <button
+    className="btn glass btn-md"
+    type="button"
+  >
+    glass
+  </button>,
+  <button
+    className="btn btn-info btn-md"
+    type="button"
+  >
+    info
+  </button>,
+  <button
+    className="btn btn-link btn-md"
+    type="button"
+  >
+    link
+  </button>,
+  <button
+    className="btn btn-neutral btn-md"
+    type="button"
+  >
+    neutral
+  </button>,
+  <button
+    className="btn btn-primary btn-md"
+    type="button"
+  >
+    primary
+  </button>,
+  <button
+    className="btn btn-secondary btn-md"
+    type="button"
+  >
+    secondary
+  </button>,
+  <button
+    className="btn btn-success btn-md"
+    type="button"
+  >
+    success
+  </button>,
+  <button
+    className="btn btn-warning btn-md"
+    type="button"
+  >
+    warning
+  </button>,
+]
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Button Button Example 1`] = `
+<button
+  className="btn btn-md"
+  type="button"
+>
+  Click Me!
+</button>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Button Button Loading Example 1`] = `
+<button
+  className="btn loading btn-md"
+  type="button"
+>
+  Loading
+</button>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Button Button No Animation Example 1`] = `
+<button
+  className="btn no-animation btn-md"
+  type="button"
+>
+  No Animation
+</button>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Button Button Shape Example 1`] = `
+[
+  <button
+    className="btn btn-circle btn-md"
+    type="button"
+  >
+    c
+  </button>,
+  <button
+    className="btn btn-square btn-md"
+    type="button"
+  >
+    s
+  </button>,
+]
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Button Button Size Example 1`] = `
+[
+  <button
+    className="btn btn-lg"
+    type="button"
+  >
+    lg
+  </button>,
+  <button
+    className="btn btn-md"
+    type="button"
+  >
+    md
+  </button>,
+  <button
+    className="btn btn-sm"
+    type="button"
+  >
+    sm
+  </button>,
+  <button
+    className="btn btn-xs"
+    type="button"
+  >
+    xs
+  </button>,
+]
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Button Button Wide Example 1`] = `
+<button
+  className="btn btn-wide btn-md"
+  type="button"
+>
+  Wide
+</button>
 `;
