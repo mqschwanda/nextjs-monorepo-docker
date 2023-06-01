@@ -1,4 +1,6 @@
 import { render } from '@testing-library/react';
+import path from 'path';
+import initStoryshots from '@storybook/addon-storyshots';
 import {
   Button,
   Card,
@@ -6,6 +8,11 @@ import {
   CardBody,
   CardActions,
 } from '@';
+
+initStoryshots({
+  configPath: path.resolve(__dirname, '../../../../../storybook/.storybook'),
+  storyKindRegex: /^@mqs\/react-server-components\/components\/Card$/,
+});
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {

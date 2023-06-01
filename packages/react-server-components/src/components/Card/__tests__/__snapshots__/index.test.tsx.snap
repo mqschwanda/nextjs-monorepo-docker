@@ -3,7 +3,7 @@
 exports[`@mqs/react-server-components components <Card /> renders 1`] = `
 <DocumentFragment>
   <div
-    class="card shadow-xl test"
+    class="card shadow-xl card-normal test"
     data-testid="Card"
   >
     <figure>
@@ -36,4 +36,413 @@ exports[`@mqs/react-server-components components <Card /> renders 1`] = `
     </div>
   </div>
 </DocumentFragment>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Card Card Compact Example 1`] = `
+<div
+  className="card shadow-xl card-compact"
+>
+  <figure>
+    <img
+      alt="Kittens"
+      src="http://placekitten.com/1000/400"
+    />
+  </figure>
+  <div
+    className="card-body"
+  >
+    <span
+      className="card-title"
+    >
+      Kittens!
+    </span>
+    <p>
+      Kittens learn to walk when they are around three weeks old.
+    </p>
+    <div
+      className="card-actions justify-end"
+    >
+      <button
+        className="btn btn-primary btn-md"
+        type="button"
+      >
+        See More Kittens
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Card Card Example 1`] = `
+<div
+  className="card shadow-xl card-normal"
+>
+  <figure>
+    <img
+      alt="Kittens"
+      src="http://placekitten.com/1000/400"
+    />
+  </figure>
+  <div
+    className="card-body"
+  >
+    <span
+      className="card-title"
+    >
+      Kittens!
+    </span>
+    <p>
+      Kittens learn to walk when they are around three weeks old.
+    </p>
+    <div
+      className="card-actions justify-end"
+    >
+      <button
+        className="btn btn-primary btn-md"
+        type="button"
+      >
+        See More Kittens
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Card Card With Action On Top Example 1`] = `
+<div
+  className="card shadow-xl card-normal"
+>
+  <div
+    className="card-body"
+  >
+    <div
+      className="card-actions justify-end"
+    >
+      <button
+        className="btn btn-square btn-sm"
+        type="button"
+      >
+        <svg
+          className="stroke-current"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 18L18 6M6 6l12 12"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+          />
+        </svg>
+      </button>
+    </div>
+    <p>
+      We are using cookies for no reason.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Card Card With Badge Example 1`] = `
+<div
+  className="card shadow-xl card-normal"
+>
+  <figure>
+    <img
+      alt="Kittens"
+      src="http://placekitten.com/1000/400"
+    />
+  </figure>
+  <div
+    className="card-body"
+  >
+    <span
+      className="card-title"
+    >
+      Kittens!
+      <div
+        className="badge badge-secondary"
+      >
+        Cute!
+      </div>
+    </span>
+    <p>
+      Kittens learn to walk when they are around three weeks old.
+    </p>
+    <div
+      className="card-actions justify-end"
+    >
+      <button
+        className="btn btn-primary btn-md"
+        type="button"
+      >
+        See More Kittens
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Card Card With Bottom Image Example 1`] = `
+<div
+  className="card shadow-xl card-normal"
+>
+  <div
+    className="card-body"
+  >
+    <span
+      className="card-title"
+    >
+      Kittens!
+    </span>
+    <p>
+      Kittens learn to walk when they are around three weeks old.
+    </p>
+    <div
+      className="card-actions justify-end"
+    >
+      <button
+        className="btn btn-primary btn-md"
+        type="button"
+      >
+        See More Kittens
+      </button>
+    </div>
+  </div>
+  <figure>
+    <img
+      alt="Kittens"
+      src="http://placekitten.com/1000/400"
+    />
+  </figure>
+</div>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Card Card With Centered Content Example 1`] = `
+<div
+  className="card shadow-xl card-normal"
+>
+  <figure>
+    <img
+      alt="Kittens"
+      src="http://placekitten.com/1000/400"
+    />
+  </figure>
+  <div
+    className="card-body items-center text-center"
+  >
+    <span
+      className="card-title"
+    >
+      Kittens!
+    </span>
+    <p>
+      Kittens learn to walk when they are around three weeks old.
+    </p>
+    <div
+      className="card-actions"
+    >
+      <button
+        className="btn btn-primary btn-md"
+        type="button"
+      >
+        See More Kittens
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Card Card With Custom Color Example 1`] = `
+<div
+  className="card shadow-xl card-normal bg-primary text-primary-content"
+>
+  <div
+    className="card-body"
+  >
+    <span
+      className="card-title"
+    >
+      Kittens!
+    </span>
+    <p>
+      Kittens learn to walk when they are around three weeks old.
+    </p>
+    <div
+      className="card-actions justify-end"
+    >
+      <button
+        className="btn btn-md"
+        type="button"
+      >
+        See More Kittens
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Card Card With Glass Example 1`] = `
+<div
+  className="card shadow-xl card-normal glass"
+>
+  <figure>
+    <img
+      alt="Kittens"
+      src="http://placekitten.com/1000/400"
+    />
+  </figure>
+  <div
+    className="card-body"
+  >
+    <span
+      className="card-title"
+    >
+      Kittens!
+    </span>
+    <p>
+      Kittens learn to walk when they are around three weeks old.
+    </p>
+    <div
+      className="card-actions justify-end"
+    >
+      <button
+        className="btn btn-primary btn-md"
+        type="button"
+      >
+        See More Kittens
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Card Card With Image On Side Example 1`] = `
+<div
+  className="card shadow-xl card-side card-normal"
+>
+  <figure>
+    <img
+      alt="Kittens"
+      src="http://placekitten.com/250/500"
+    />
+  </figure>
+  <div
+    className="card-body"
+  >
+    <span
+      className="card-title"
+    >
+      Kittens!
+    </span>
+    <p>
+      Kittens learn to walk when they are around three weeks old.
+    </p>
+    <div
+      className="card-actions justify-end"
+    >
+      <button
+        className="btn btn-primary btn-md"
+        type="button"
+      >
+        See More Kittens
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Card Card With Image Overlay Example 1`] = `
+<div
+  className="card shadow-xl image-full card-normal"
+>
+  <figure>
+    <img
+      alt="Kittens"
+      src="http://placekitten.com/1000/400"
+    />
+  </figure>
+  <div
+    className="card-body"
+  >
+    <span
+      className="card-title"
+    >
+      Kittens!
+    </span>
+    <p>
+      Kittens learn to walk when they are around three weeks old.
+    </p>
+    <div
+      className="card-actions justify-end"
+    >
+      <button
+        className="btn btn-primary btn-md"
+        type="button"
+      >
+        See More Kittens
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Card Card With Neutral Color Example 1`] = `
+<div
+  className="card shadow-xl card-normal bg-neutral text-neutral-content"
+>
+  <div
+    className="card-body"
+  >
+    <span
+      className="card-title"
+    >
+      Kittens!
+    </span>
+    <p>
+      Kittens learn to walk when they are around three weeks old.
+    </p>
+    <div
+      className="card-actions justify-end"
+    >
+      <button
+        className="btn btn-primary btn-md"
+        type="button"
+      >
+        See More Kittens
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Card Card With No Image Example 1`] = `
+<div
+  className="card shadow-xl card-normal"
+>
+  <div
+    className="card-body"
+  >
+    <span
+      className="card-title"
+    >
+      Kittens!
+    </span>
+    <p>
+      Kittens learn to walk when they are around three weeks old.
+    </p>
+    <div
+      className="card-actions justify-end"
+    >
+      <button
+        className="btn btn-primary btn-md"
+        type="button"
+      >
+        See More Kittens
+      </button>
+    </div>
+  </div>
+</div>
 `;

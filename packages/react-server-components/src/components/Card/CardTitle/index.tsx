@@ -1,14 +1,24 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 
+/**
+ * Props for the `<CardTitle />` component.
+ */
 export interface CardTitleProps
   extends ReactTestingProps,
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  children: ReactNode,
+  /**
+   * Argument passed into classnames function.
+   *
+   * See [classnames docs](https://github.com/JedWatson/classnames).
+   */
   cx?: ClassName,
 }
 
+/**
+ * Title of `<Card />` component.
+ */
 export function CardTitle({
   children,
   className,
