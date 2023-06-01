@@ -13,9 +13,7 @@
     "build": "turbo run build --concurrency=100%",
     "clean": "turbo run clean --concurrency=100%",
     "codegen": "turbo run codegen --concurrency=100%",
-    "codegen:watch": "turbo run codegen:watch --concurrency=100%",
-    "dev": "turbo run dev --concurrency=100%",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "dev": "turbo run dev --filter='./apps/*' --concurrency=100%",
     "lint": "turbo run lint --concurrency=100%",
     "lint:fix": "turbo run lint:fix --concurrency=100%",
     "test": "turbo run test --concurrency=100%"
