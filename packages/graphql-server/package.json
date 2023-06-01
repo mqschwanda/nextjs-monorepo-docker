@@ -17,7 +17,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@apollo/client": "^3.7.14",
+    "@apollo/client": "^3.7.15",
     "@graphql-tools/executor-graphql-ws": "^0.0.14",
     "@graphql-tools/executor-http": "^0.1.10",
     "@mqs/eslint-config": "*",
