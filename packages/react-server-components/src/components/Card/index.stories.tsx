@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { // eslint-disable-line import/no-extraneous-dependencies
+import {
   Button,
   Card,
   CardActions,
   CardBody,
   CardTitle,
   IconClose,
-} from '@mqs/react-server-components';
+} from '@';
 
 const meta: Meta<typeof Card> = {
   component: Card,

@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { // eslint-disable-line import/no-extraneous-dependencies
+import {
   Button,
   ButtonProps,
   ButtonVariantColor,
   ButtonVariantShape,
   ButtonVariantSize,
-} from '@mqs/react-server-components';
+} from '@';
 
 const meta: Meta<typeof Button> = {
   component: Button,
