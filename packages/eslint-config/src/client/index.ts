@@ -62,6 +62,7 @@ const config: Linter.Config = {
           '**/cypress/**/*',
           '**/eslintrc.{js,ts}',
           '**/eslintrc.*.{js,ts}',
+          '**/*.stories.{jsx,tsx}',
         ],
       },
     ],

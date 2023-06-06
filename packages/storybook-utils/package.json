@@ -1,0 +1,23 @@
+{
+  "name": "@mqs/storybook-utils",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "mqs-tsc --project tsconfig.build.json",
+    "clean": "rm -rf dist",
+    "dev": "mqs-tsc-watch --project tsconfig.build.json",
+    "lint": "eslint .",
+    "lint:fix": "yarn lint --fix"
+  },
+  "devDependencies": {
+    "@mqs/eslint-config": "*",
+    "@mqs/tsc": "*",
+    "@mqs/tsconfig": "*",
+    "@storybook/react": "^7.0.18",
+    "@storybook/types": "^7.0.18",
+    "eslint": "^7.32.0",
+    "jest": "^29.5.0",
+    "typescript": "^5.0.4"
+  }
+}

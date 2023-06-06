@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { filterEnumForStorybook } from '@mqs/storybook-utils';
 import {
   Button,
-  ButtonProps,
   ButtonVariantColor,
   ButtonVariantShape,
   ButtonVariantSize,
@@ -34,9 +34,9 @@ export const ButtonColorExample: ButtonStoryObj = {
     },
   },
   // @ts-expect-error
-  render: () => Object.keys(ButtonVariantColor).map((variantColor) => (
+  render: () => filterEnumForStorybook(ButtonVariantColor).map((variantColor) => (
     <Button
-      variantColor={variantColor as ButtonProps['variantColor']}
+      variantColor={variantColor}
     >
       { variantColor }
     </Button>
@@ -50,9 +50,9 @@ export const ButtonSizeExample: ButtonStoryObj = {
     },
   },
   // @ts-expect-error
-  render: () => Object.keys(ButtonVariantSize).map((variantSize) => (
+  render: () => filterEnumForStorybook(ButtonVariantSize).map((variantSize) => (
     <Button
-      variantSize={variantSize as ButtonProps['variantSize']}
+      variantSize={variantSize}
     >
       { variantSize }
     </Button>
@@ -66,9 +66,9 @@ export const ButtonShapeExample: ButtonStoryObj = {
     },
   },
   // @ts-expect-error
-  render: () => Object.keys(ButtonVariantShape).map((variantShape) => (
+  render: () => filterEnumForStorybook(ButtonVariantShape).map((variantShape) => (
     <Button
-      variantShape={variantShape as ButtonProps['variantShape']}
+      variantShape={variantShape}
     >
       { variantShape.charAt(0) }
     </Button>

@@ -4049,6 +4049,7 @@ __metadata:
     "@mqs/eslint-config": "*"
     "@mqs/jest-preset": "*"
     "@mqs/react-testing-lib": "*"
+    "@mqs/storybook-utils": "*"
     "@mqs/style": "*"
     "@mqs/tsc": "*"
     "@mqs/tsconfig": "*"
@@ -4079,6 +4080,21 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@mqs/storybook-utils@*, @mqs/storybook-utils@workspace:packages/storybook-utils":
+  version: 0.0.0-use.local
+  resolution: "@mqs/storybook-utils@workspace:packages/storybook-utils"
+  dependencies:
+    "@mqs/eslint-config": "*"
+    "@mqs/tsc": "*"
+    "@mqs/tsconfig": "*"
+    "@storybook/react": ^7.0.18
+    "@storybook/types": ^7.0.18
+    eslint: ^7.32.0
+    jest: ^29.5.0
+    typescript: ^5.0.4
+  languageName: unknown
+  linkType: soft
+
 "@mqs/storybook@workspace:packages/storybook":
   version: 0.0.0-use.local
   resolution: "@mqs/storybook@workspace:packages/storybook"
@@ -4088,9 +4104,9 @@ __metadata:
     "@babel/preset-react": ^7.22.3
     "@babel/preset-typescript": ^7.21.5
     "@mqs/eslint-config": "*"
+    "@mqs/storybook-utils": "*"
     "@mqs/style": "*"
     "@mqs/tsconfig": "*"
-    "@storybook/addon-docs": ^7.0.18
     "@storybook/addon-essentials": ^7.0.18
     "@storybook/addon-interactions": ^7.0.18
     "@storybook/addon-links": ^7.0.18
@@ -4107,7 +4123,6 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     storybook: ^7.0.18
-    storybook-addon-react-docgen: ^1.2.43
     tsconfig-paths-webpack-plugin: ^4.0.1
     typescript: ^5.0.4
   languageName: unknown
@@ -4907,7 +4922,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-docs@npm:7.0.18, @storybook/addon-docs@npm:^7.0.18":
+"@storybook/addon-docs@npm:7.0.18":
   version: 7.0.18
   resolution: "@storybook/addon-docs@npm:7.0.18"
   dependencies:
@@ -6000,7 +6015,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/types@npm:7.0.18":
+"@storybook/types@npm:7.0.18, @storybook/types@npm:^7.0.18":
   version: 7.0.18
   resolution: "@storybook/types@npm:7.0.18"
   dependencies:
@@ -9411,13 +9426,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^1.0.0":
-  version: 1.2.7
-  resolution: "core-js@npm:1.2.7"
-  checksum: 0b76371bfa98708351cde580f9287e2360d2209920e738ae950ae74ad08639a2e063541020bf666c28778956fc356ed9fe56d962129c88a87a6a4a0612526c75
-  languageName: node
-  linkType: hard
-
 "core-util-is@npm:1.0.2":
   version: 1.0.2
   resolution: "core-util-is@npm:1.0.2"
@@ -10350,7 +10358,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"encoding@npm:^0.1.11, encoding@npm:^0.1.13":
+"encoding@npm:^0.1.13":
   version: 0.1.13
   resolution: "encoding@npm:0.1.13"
   dependencies:
@@ -11728,21 +11736,6 @@ __metadata:
   version: 1.0.2
   resolution: "fbjs-css-vars@npm:1.0.2"
   checksum: 72baf6d22c45b75109118b4daecb6c8016d4c83c8c0f23f683f22e9d7c21f32fff6201d288df46eb561e3c7d4bb4489b8ad140b7f56444c453ba407e8bd28511
-  languageName: node
-  linkType: hard
-
-"fbjs@npm:^0.8.4":
-  version: 0.8.18
-  resolution: "fbjs@npm:0.8.18"
-  dependencies:
-    core-js: ^1.0.0
-    isomorphic-fetch: ^2.1.1
-    loose-envify: ^1.0.0
-    object-assign: ^4.1.0
-    promise: ^7.1.1
-    setimmediate: ^1.0.5
-    ua-parser-js: ^0.7.30
-  checksum: 668731b946a765908c9cbe51d5160f973abb78004b3d122587c3e930e3e1ddcc0ce2b17f2a8637dc9d733e149aa580f8d3035a35cc2d3bc78b78f1b19aab90e2
   languageName: node
   linkType: hard
 
@@ -13819,13 +13812,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"is-stream@npm:^1.0.1":
-  version: 1.1.0
-  resolution: "is-stream@npm:1.1.0"
-  checksum: 063c6bec9d5647aa6d42108d4c59723d2bd4ae42135a2d4db6eadbd49b7ea05b750fd69d279e5c7c45cf9da753ad2c00d8978be354d65aa9f6bb434969c6a2ae
-  languageName: node
-  linkType: hard
-
 "is-stream@npm:^2.0.0":
   version: 2.0.1
   resolution: "is-stream@npm:2.0.1"
@@ -13998,16 +13984,6 @@ __metadata:
   version: 3.0.1
   resolution: "isobject@npm:3.0.1"
   checksum: db85c4c970ce30693676487cca0e61da2ca34e8d4967c2e1309143ff910c207133a969f9e4ddb2dc6aba670aabce4e0e307146c310350b298e74a31f7d464703
-  languageName: node
-  linkType: hard
-
-"isomorphic-fetch@npm:^2.1.1":
-  version: 2.2.1
-  resolution: "isomorphic-fetch@npm:2.2.1"
-  dependencies:
-    node-fetch: ^1.0.1
-    whatwg-fetch: ">=0.10.0"
-  checksum: bb5daa7c3785d6742f4379a81e55b549a469503f7c9bf9411b48592e86632cf5e8fe8ea878dba185c0f33eb7c510c23abdeb55aebfdf5d3c70f031ced68c5424
   languageName: node
   linkType: hard
 
@@ -15847,7 +15823,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"loose-envify@npm:^1.0.0, loose-envify@npm:^1.1.0, loose-envify@npm:^1.3.1, loose-envify@npm:^1.4.0":
+"loose-envify@npm:^1.0.0, loose-envify@npm:^1.1.0, loose-envify@npm:^1.4.0":
   version: 1.4.0
   resolution: "loose-envify@npm:1.4.0"
   dependencies:
@@ -16505,13 +16481,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nested-object-assign@npm:^1.0.3":
-  version: 1.0.4
-  resolution: "nested-object-assign@npm:1.0.4"
-  checksum: 7373f14c23bbf8f05f354e3f5b127af936c89642e81ceaa011d67105b40445ee4517d8138bf571bcc5bf7f00eebaf82b2f10860400894a8a4af72eb390e1cabd
-  languageName: node
-  linkType: hard
-
 "next@npm:^13.4.4":
   version: 13.4.4
   resolution: "next@npm:13.4.4"
@@ -16609,16 +16578,6 @@ __metadata:
   version: 1.1.1
   resolution: "node-fetch-native@npm:1.1.1"
   checksum: 41fe59179eb94b6ffb25e657e5ed14b4b50e2ba7f6bf5346622970638c8abbf29653b011141c919c6c081979962edd1eb94424a7621412cd78c47a9cd8be1227
-  languageName: node
-  linkType: hard
-
-"node-fetch@npm:^1.0.1":
-  version: 1.7.3
-  resolution: "node-fetch@npm:1.7.3"
-  dependencies:
-    encoding: ^0.1.11
-    is-stream: ^1.0.1
-  checksum: 3bb0528c05d541316ebe52770d71ee25a6dce334df4231fd55df41a644143e07f068637488c18a5b0c43f05041dbd3346752f9e19b50df50569a802484544d5b
   languageName: node
   linkType: hard
 
@@ -18399,17 +18358,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-addons-create-fragment@npm:^15.6.2":
-  version: 15.6.2
-  resolution: "react-addons-create-fragment@npm:15.6.2"
-  dependencies:
-    fbjs: ^0.8.4
-    loose-envify: ^1.3.1
-    object-assign: ^4.1.0
-  checksum: b88fcc04431b848a6f1576dd180d3d109463d0797ad5d5fd4e57106635b1229f7bc3b4f1aeffdc83b9e7156d011a1cb0d2bb6798d8d257d18f55e2da567a95ea
-  languageName: node
-  linkType: hard
-
 "react-colorful@npm:^5.1.2":
   version: 5.6.1
   resolution: "react-colorful@npm:5.6.1"
@@ -18509,13 +18457,6 @@ __metadata:
   version: 17.0.2
   resolution: "react-is@npm:17.0.2"
   checksum: 9d6d111d8990dc98bc5402c1266a808b0459b5d54830bbea24c12d908b536df7883f268a7868cfaedde3dd9d4e0d574db456f84d2e6df9c4526f99bb4b5344d8
-  languageName: node
-  linkType: hard
-
-"react-lifecycles-compat@npm:^3.0.4":
-  version: 3.0.4
-  resolution: "react-lifecycles-compat@npm:3.0.4"
-  checksum: a904b0fc0a8eeb15a148c9feb7bc17cec7ef96e71188280061fc340043fd6d8ee3ff233381f0e8f95c1cf926210b2c4a31f38182c8f35ac55057e453d6df204f
   languageName: node
   linkType: hard
 
@@ -19911,33 +19852,6 @@ __metadata:
   version: 2.14.2
   resolution: "store2@npm:2.14.2"
   checksum: 6f270fc5bab99b63f45fcc7bd8b99c2714b4adf880f557ed7ffb5ed3987131251165bccde425a00928aaf044870aee79ddeef548576d093c68703ed2edec45d7
-  languageName: node
-  linkType: hard
-
-"storybook-addon-react-docgen@npm:^1.2.43":
-  version: 1.2.43
-  resolution: "storybook-addon-react-docgen@npm:1.2.43"
-  dependencies:
-    nested-object-assign: ^1.0.3
-    prop-types: ^15.6.2
-    react-addons-create-fragment: ^15.6.2
-    react-lifecycles-compat: ^3.0.4
-    storybook-pretty-props: ^1.2.1
-  peerDependencies:
-    "@storybook/addons": "*"
-    "@storybook/components": "*"
-    "@storybook/core-events": "*"
-    react: "*"
-  checksum: e727b0a5ae0253497b1f276b16a68b76ddac65754a7852d478dbc05ec775af46406479fb04b9cc2192b125b9e17ecc90fe8342557817dc9b875129aab72b5c76
-  languageName: node
-  linkType: hard
-
-"storybook-pretty-props@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "storybook-pretty-props@npm:1.2.1"
-  peerDependencies:
-    react: "*"
-  checksum: adc0a5e62c0838cfc860d02abb4692e67f76f0161599c14108203ea8e53c68f7ff3854bb6b59ee624b38d4360ff6ddbe97d0be5e4897fa7d4b84fc11054d014e
   languageName: node
   linkType: hard
 
@@ -21874,13 +21788,6 @@ __metadata:
   dependencies:
     iconv-lite: 0.6.3
   checksum: 7087810c410aa9b689cbd6af8773341a53cdc1f3aae2a882c163bd5522ec8ca4cdfc269aef417a5792f411807d5d77d50df4c24e3abb00bb60192858a40cc675
-  languageName: node
-  linkType: hard
-
-"whatwg-fetch@npm:>=0.10.0":
-  version: 3.6.2
-  resolution: "whatwg-fetch@npm:3.6.2"
-  checksum: ee976b7249e7791edb0d0a62cd806b29006ad7ec3a3d89145921ad8c00a3a67e4be8f3fb3ec6bc7b58498724fd568d11aeeeea1f7827e7e1e5eae6c8a275afed
   languageName: node
   linkType: hard
 
