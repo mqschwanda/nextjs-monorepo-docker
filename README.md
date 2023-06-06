@@ -40,10 +40,13 @@ Error: `ENOSPC: System limit for number of file watchers reached`
 
 This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package manager. It includes the following packages/apps:
 
-### Apps and Packages
+### Workspaces
+Each workspace is built with [TypeScript](https://www.typescriptlang.org/).
 
+#### Apps
 - `web`: a [Next.js](https://nextjs.org/) app
 - `api`: an [Express](https://expressjs.com/) server
+#### Packages
 - `eslint-config`: shared `eslint` configurations
 - `graphql-client`: react client and api utilities for graphql
 - `graphql-schema`: graphql schema and types
@@ -53,9 +56,13 @@ This turborepo uses [Yarn](https://classic.yarnpkg.com/lang/en/) as a package ma
 - `react-client-components`: a React client component library
 - `react-server-components`: a React server component library
 - `react-testing-lib`: a React testing library
+- `storybook`: a package to build and deploy [Storybook](https://storybook.js.org/) documentation
+- `storybook-utils`: utilities for implementing Storybook
+- `style`: shared css and style utilities for components and apps
+- `tailwind-config`: a generalized [Tailwind CSS](https://tailwindcss.com/) configuration
 - `tsconfig`: tsconfig.json;s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+#### Scripts
+- `tsc`: a script to turn typescript source code into javascript
 
 ### Docker
 
@@ -94,8 +101,10 @@ You can test this behavior using a command like:
 
 This Turborepo has some additional tools already setup for you:
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
-- [Jest](https://jestjs.io) test runner for all things JavaScript
-- [Prettier](https://prettier.io) for code formatting
+- [GraphQL](https://graphql.org/) from fetching data
 - [GraphQL CodeGen](https://github.com/dotansimha/graphql-code-generator) for automated code generation
+- [Jest](https://jestjs.io) test runner for all things JavaScript
+- [Storybook](https://storybook.js.org/) for documentation
+- [Tailwind CSS](https://tailwindcss.com/) for style
+- [TypeScript](https://www.typescriptlang.org/) for static type checking
