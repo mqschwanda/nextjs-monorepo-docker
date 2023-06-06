@@ -1,0 +1,31 @@
+{
+    "version": "0.2",
+    "allowCompoundWords": true,
+    "caseSensitive": false,
+    "dictionaryDefinitions": [
+      {
+        "name": "custom-dictionary",
+        "path": "./custom-dictionary.txt"
+      }
+    ],
+    "dictionaries": [
+      "custom-dictionary"
+    ],
+    "ignorePaths": [
+      "**/__generated__/**",
+      "**/dist/**",
+      "node_modules",
+      "**/node_modules",
+      "**/node_modules/**",
+      "node_modules/**",
+      "**/storybook-static/**",
+      ".git",
+      "**/*.log",
+      "**/*.lock",
+      "**/*.snap",
+      "**/*.mp4"
+    ],
+    "ignoreWords": [],
+    "import": [],
+    "words": []
+}

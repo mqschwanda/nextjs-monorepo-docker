@@ -30,14 +30,14 @@ describe('@mqs/react-server-components', () => {
     describe('<Button />', () => {
       it('renders', () => {
         const testId = Button.name;
-        const chilren = 'children...';
+        const children = 'children...';
 
         const { getByTestId, asFragment } = render((
           <Button
             className='test'
             testId={testId}
           >
-            { chilren }
+            { children }
           </Button>
         ));
 

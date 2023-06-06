@@ -13,7 +13,7 @@ describe('@mqs/react-server-components', () => {
     describe('<Alert />', () => {
       it('renders', () => {
         const testId = Alert.name;
-        const chilren = 'children...';
+        const children = 'children...';
 
         const { getByTestId, asFragment } = render((
           <Alert
@@ -21,7 +21,7 @@ describe('@mqs/react-server-components', () => {
             testId={testId}
             variantBackgroundColor='info'
           >
-            { chilren }
+            { children }
           </Alert>
         ));
 

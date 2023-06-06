@@ -13,6 +13,7 @@ const config: Linter.Config = {
     'dist',
     'build',
     '__generated__',
+    'storybook-static',
   ],
   overrides: [
     {

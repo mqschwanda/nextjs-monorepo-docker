@@ -6,7 +6,7 @@ import Footer from 'partials/Footer';
 import Nav from 'partials/Nav';
 import Header from 'partials/Header';
 import { IconInfo } from '@mqs/react-server-components';
-import { AlertDismissable } from '@mqs/react-client-components';
+import { AlertDismissible } from '@mqs/react-client-components';
 
 interface RootLayoutProps {
   children: ReactNode
@@ -25,7 +25,7 @@ export default function RootLayout({
       >
         <Header>
           <Nav />
-          <AlertDismissable
+          <AlertDismissible
             cx={[
               'my-4',
               'shadow-lg',
@@ -38,7 +38,7 @@ export default function RootLayout({
             <span>
               { 'New software update available.' }
             </span>
-          </AlertDismissable>
+          </AlertDismissible>
         </Header>
         <main
           className='flex-grow'

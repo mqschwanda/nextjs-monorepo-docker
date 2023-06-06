@@ -16,10 +16,12 @@
     "dev": "turbo run dev --filter='./apps/*' --concurrency=100%",
     "lint": "turbo run lint --concurrency=100%",
     "lint:fix": "turbo run lint:fix --concurrency=100%",
+    "spelling": "cspell . -c .cspell/cspell.json",
     "test": "turbo run test --concurrency=100%"
   },
   "devDependencies": {
     "@mqs/eslint-config": "*",
+    "cspell": "^6.31.1",
     "eslint": "^7.32.0",
     "jest": "^29.5.0",
     "npm-check-updates": "^16.10.12",

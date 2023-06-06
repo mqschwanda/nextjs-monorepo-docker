@@ -78,7 +78,7 @@ export default function FormSignIn(props: FormSignInProps) {
         </Button>
       </FormControl>
       <Label
-        htmlFor='dont-have-an-account'
+        htmlFor='do-not-have-an-account'
       >
         <NextLinkWrapper
           href='/auth/sign-up'
@@ -86,7 +86,7 @@ export default function FormSignIn(props: FormSignInProps) {
           <a
             className='label-text-alt link link-hover'
             href='/auth/sign-up'
-            id='dont-have-an-account'
+            id='do-not-have-an-account'
           >
             { 'Don\'t have an account? Sign Up.' }
           </a>

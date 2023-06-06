@@ -32,6 +32,10 @@ Scripts exist at the workspace root, as well as for each individual workspace. S
 
   Statically analyze the source code in all workspaces and find syntax or style errors. 
 
+- `spelling`
+
+  Statically analyze files for spelling errors.
+
 - `lint:fix`
 
   Run the `lint` script and auto fix code where possible.

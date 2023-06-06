@@ -9,9 +9,9 @@ import path from 'path';
 
 import graphqlSchemaPackageJson from '@mqs/graphql-schema/package.json';
 
-const grahpqlSchemaName = graphqlSchemaPackageJson.name;
+const graphqlSchemaName = graphqlSchemaPackageJson.name;
 const graphqlSchemaPackageJsonMain = graphqlSchemaPackageJson.main.replace(/^.\//, '');
-const graphqlSchemaPath = require.resolve(grahpqlSchemaName).replace(graphqlSchemaPackageJsonMain, '');
+const graphqlSchemaPath = require.resolve(graphqlSchemaName).replace(graphqlSchemaPackageJsonMain, '');
 
 const config: CodegenConfig = {
   documents: [
@@ -28,7 +28,7 @@ const config: CodegenConfig = {
       ],
       preset: 'import-types',
       presetConfig: {
-        typesPath: grahpqlSchemaName,
+        typesPath: graphqlSchemaName,
       },
     },
   },

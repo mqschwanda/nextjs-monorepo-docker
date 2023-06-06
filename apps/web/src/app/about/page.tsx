@@ -30,29 +30,61 @@ export default function Page() {
 
         <p>
           <strong>
-            { 'Pellentesque habitant morbi tristique' }
+            {
+              // cspell:disable
+              'Pellentesque habitant morbi tristique'
+              // cspell:enable
+            }
           </strong>
           { ' ' }
-          { 'senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.' }
+          {
+            // cspell:disable
+            'senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.'
+            // cspell:enable
+          }
           { ' ' }
           <em>
-            { 'Aenean ultricies mi vitae est.' }
+            {
+              // cspell:disable
+              'Aenean ultricies mi vitae est.'
+              // cspell:enable
+            }
           </em>
           { ' ' }
-          { 'Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed,' }
+          {
+            // cspell:disable
+            'Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed,'
+            // cspell:enable
+          }
           { ' ' }
           <code>
-            { 'commodo vitae' }
+            {
+              // cspell:disable
+              'commodo vitae'
+              // cspell:enable
+            }
           </code>
-          { ', ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.' }
+          {
+            // cspell:disable
+            ', ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.'
+            // cspell:enable
+          }
           { ' ' }
           <a
             href='#about-title'
           >
-            { 'Donec non enim' }
+            {
+              // cspell:disable
+              'Donec non enim'
+              // cspell:enable
+            }
           </a>
           { ' ' }
-          { 'in turpis pulvinar facilisis. Ut felis.' }
+          {
+            // cspell:disable
+            'in turpis pulvinar facilisis. Ut felis.'
+            // cspell:enable
+          }
         </p>
 
         <h2>
@@ -61,16 +93,28 @@ export default function Page() {
 
         <ol>
           <li>
-            { 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.' }
+            {
+              // cspell:disable
+              'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
+              // cspell:enable
+            }
           </li>
           <li>
-            { 'Aliquam tincidunt mauris eu risus.' }
+            {
+              // cspell:disable
+              'Aliquam tincidunt mauris eu risus.'
+              // cspell:enable
+            }
           </li>
         </ol>
 
         <blockquote>
           <p>
-            { 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.' }
+            {
+              // cspell:disable
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.'
+              // cspell:enable
+            }
           </p>
         </blockquote>
 
@@ -80,10 +124,18 @@ export default function Page() {
 
         <ul>
           <li>
-            { 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.' }
+            {
+              // cspell:disable
+              'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'
+              // cspell:enable
+            }
           </li>
           <li>
-            { 'Aliquam tincidunt mauris eu risus.' }
+            {
+              // cspell:disable
+              'Aliquam tincidunt mauris eu risus.'
+              // cspell:enable
+            }
           </li>
         </ul>
         <div

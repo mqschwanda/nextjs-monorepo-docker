@@ -24,7 +24,7 @@ export interface AlertDismissableProps
   onClickDismiss?: OnClickDismiss
 }
 
-export function AlertDismissable({
+export function AlertDismissible({
   children,
   onClickDismiss,
   cx: cxProp,

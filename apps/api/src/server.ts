@@ -16,7 +16,10 @@ export default function createServer() {
     .use(json())
     .use(cors())
     .use(graphqlServer.graphqlEndpoint, graphqlServer)
-    .get('/healthz', (_req, res) => res.json({ ok: true }));
+    .get(
+      '/healthz', // cspell:disable-line
+      (_req, res) => res.json({ ok: true }),
+    );
 
   return app;
 }

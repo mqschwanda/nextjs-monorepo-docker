@@ -6,7 +6,7 @@ describe('@mqs/react-client-components', () => {
     describe('<NextLinkWrapper />', () => {
       it('renders', () => {
         const testId = NextLinkWrapper.name;
-        const chilren = 'children...';
+        const children = 'children...';
         const href = '/home';
 
         const { getByTestId, asFragment } = render((
@@ -17,7 +17,7 @@ describe('@mqs/react-client-components', () => {
             <a
               href={href}
             >
-              { chilren }
+              { children }
             </a>
           </NextLinkWrapper>
         ));

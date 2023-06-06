@@ -1,6 +1,6 @@
 'use client';
 
-export * from './AlertDismissable';
+export * from './AlertDismissible';
 export * from './NextLinkWrapper';
 export * from './Stack';
 export * from './TextField';

@@ -1,7 +1,10 @@
 {
   "eslint.workingDirectories": [
-    { 
-      "mode": "auto" 
+    {
+      "mode": "auto"
     }
+  ],
+  "cSpell.import": [
+    "${workspaceFolder:next-monorepo-docker}/.cspell/cspell.json"
   ]
 }

@@ -14,7 +14,7 @@ export interface UserCardLoadingProps extends Omit<CardProps, 'side' | 'children
 export default function UserCardLoading(props: UserCardLoadingProps) {
   return (
     <Card
-      side
+      variantImage='side'
       {...props} // eslint-disable-line react/jsx-props-no-spreading
     >
       <figure>

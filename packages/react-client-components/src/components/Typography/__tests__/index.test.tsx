@@ -6,13 +6,13 @@ describe('@mqs/react-client-components', () => {
     describe('<Typography />', () => {
       it('renders', () => {
         const testId = Typography.name;
-        const chilren = 'children...';
+        const children = 'children...';
 
         const { getByTestId, asFragment } = render((
           <Typography
             testId={testId}
           >
-            { chilren }
+            { children }
           </Typography>
         ));
 

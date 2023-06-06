@@ -7,13 +7,15 @@ describe('@mqs/api', () => {
       const server = supertest(createServer());
 
       const res = await server
-        .get('/healthz')
+        .get(
+          '/healthz', // cspell:disable-line
+        )
         .expect(200);
 
       expect(res.body.ok).toBe(true);
     });
 
-    it('graqphql endpoint returns 200', async () => {
+    it('graphql endpoint returns 200', async () => {
       const server = supertest(createServer());
 
       const res = await server

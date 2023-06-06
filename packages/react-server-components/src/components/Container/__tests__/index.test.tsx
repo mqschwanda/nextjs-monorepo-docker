@@ -6,14 +6,14 @@ describe('@mqs/react-server-components', () => {
     describe('<Container />', () => {
       it('renders', () => {
         const testId = Container.name;
-        const chilren = 'children...';
+        const children = 'children...';
 
         const { getByTestId, asFragment } = render((
           <Container
             className='test'
             testId={testId}
           >
-            { chilren }
+            { children }
           </Container>
         ));
 

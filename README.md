@@ -101,6 +101,7 @@ You can test this behavior using a command like:
 
 This Turborepo has some additional tools already setup for you:
 
+- [CSpell](https://cspell.org/) for spell checking
 - [ESLint](https://eslint.org/) for code linting
 - [GraphQL](https://graphql.org/) from fetching data
 - [GraphQL CodeGen](https://github.com/dotansimha/graphql-code-generator) for automated code generation

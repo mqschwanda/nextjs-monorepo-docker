@@ -1,0 +1,18 @@
+# Custom Dictionary Words
+codegen
+daisyui
+docgen
+Dockerfiles
+ENOSPC
+expressjs
+GraphiQL
+GraphQL
+libc
+NextJS
+nocache
+noimageindex
+squircle
+tailwindcss
+testid
+tsup
+Turborepo

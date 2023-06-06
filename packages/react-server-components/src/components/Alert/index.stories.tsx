@@ -15,7 +15,9 @@ type AlertStoryObj = StoryObj<typeof Alert>;
 
 export const AlertExample: AlertStoryObj = {
   args: {
+    // cspell:disable
     children: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mollis.',
+    // cspell:enable
   },
   parameters: {
     controls: {

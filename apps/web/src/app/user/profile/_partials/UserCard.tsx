@@ -27,7 +27,7 @@ export default function UserCard(props: UserCardProps) {
 
   return (
     <Card
-      side
+      variantImage='side'
       {...props} // eslint-disable-line react/jsx-props-no-spreading
     >
       <figure>

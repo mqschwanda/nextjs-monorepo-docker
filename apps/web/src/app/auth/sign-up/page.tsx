@@ -27,7 +27,11 @@ export default function Page() {
           <p
             className='py-6'
           >
-            { 'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.' }
+            {
+              // cspell:disable
+              'Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.'
+              // cspell:enable
+            }
           </p>
         </div>
         <Card

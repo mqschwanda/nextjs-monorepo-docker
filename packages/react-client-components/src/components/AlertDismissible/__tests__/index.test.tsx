@@ -1,21 +1,21 @@
 import { fireEvent, render } from '@testing-library/react';
-import { AlertDismissable } from '@';
+import { AlertDismissible } from '@';
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {
-    describe('<AlertDismissable />', () => {
+    describe('<AlertDismissible />', () => {
       it('renders', () => {
-        const testId = AlertDismissable.name;
-        const chilren = 'children...';
+        const testId = AlertDismissible.name;
+        const children = 'children...';
 
         const { getByTestId, asFragment } = render((
-          <AlertDismissable
+          <AlertDismissible
             className='test'
             testId={testId}
             variantBackgroundColor='info'
           >
-            { chilren }
-          </AlertDismissable>
+            { children }
+          </AlertDismissible>
         ));
 
         const element = getByTestId(testId);
@@ -25,18 +25,18 @@ describe('@mqs/react-server-components', () => {
         expect(asFragment()).toMatchSnapshot();
       });
 
-      it('hides when dismisse button is clicked', () => {
-        const testId = AlertDismissable.name;
-        const chilren = 'children...';
+      it('hides when dismiss button is clicked', () => {
+        const testId = AlertDismissible.name;
+        const children = 'children...';
 
         const { getByTestId } = render((
-          <AlertDismissable
+          <AlertDismissible
             className='test'
             testId={testId}
             variantBackgroundColor='info'
           >
-            { chilren }
-          </AlertDismissable>
+            { children }
+          </AlertDismissible>
         ));
 
         const element = getByTestId(testId);
@@ -49,20 +49,20 @@ describe('@mqs/react-server-components', () => {
         expect(element.classList.contains('hidden')).toBe(true);
       });
 
-      it('hides when dismisse button is clicked and onClickDismiss prop returns true', () => {
-        const testId = AlertDismissable.name;
-        const chilren = 'children...';
+      it('hides when dismiss button is clicked and onClickDismiss prop returns true', () => {
+        const testId = AlertDismissible.name;
+        const children = 'children...';
         const onClickDismiss = () => true;
 
         const { getByTestId } = render((
-          <AlertDismissable
+          <AlertDismissible
             className='test'
             onClickDismiss={onClickDismiss}
             testId={testId}
             variantBackgroundColor='info'
           >
-            { chilren }
-          </AlertDismissable>
+            { children }
+          </AlertDismissible>
         ));
 
         const element = getByTestId(testId);
@@ -75,20 +75,20 @@ describe('@mqs/react-server-components', () => {
         expect(element.classList.contains('hidden')).toBe(true);
       });
 
-      it('does not hide when dismisse button is clicked and onClickDismiss prop returns false', () => {
-        const testId = AlertDismissable.name;
-        const chilren = 'children...';
+      it('does not hide when dismiss button is clicked and onClickDismiss prop returns false', () => {
+        const testId = AlertDismissible.name;
+        const children = 'children...';
         const onClickDismiss = () => false;
 
         const { getByTestId } = render((
-          <AlertDismissable
+          <AlertDismissible
             className='test'
             onClickDismiss={onClickDismiss}
             testId={testId}
             variantBackgroundColor='info'
           >
-            { chilren }
-          </AlertDismissable>
+            { children }
+          </AlertDismissible>
         ));
 
         const element = getByTestId(testId);
