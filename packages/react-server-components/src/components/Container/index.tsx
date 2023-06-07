@@ -1,15 +1,28 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 
+/**
+ * Props for the `<Container />` component.
+ */
 export interface ContainerProps
   extends ReactTestingProps,
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  children: ReactNode,
+  /**
+  * Set horizontal margin to auto.
+  */
   center?: boolean,
+  /**
+   * Argument passed into classnames function.
+   *
+   * See [classnames docs](https://github.com/JedWatson/classnames).
+   */
   cx?: ClassName,
 }
 
+/**
+ * A component for fixing an element's width to the current breakpoint.
+ */
 export function Container({
   children,
   className,
