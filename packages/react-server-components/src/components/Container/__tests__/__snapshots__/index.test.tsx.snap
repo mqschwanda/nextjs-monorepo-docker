@@ -10,3 +10,11 @@ exports[`@mqs/react-server-components components <Container /> renders 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`Storyshots @mqs/react-server-components/components/Container Container Example 1`] = `
+<div
+  className="container"
+>
+  I am a container
+</div>
+`;
