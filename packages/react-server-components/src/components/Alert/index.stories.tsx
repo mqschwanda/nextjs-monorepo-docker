@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta } from '@storybook/react';
+import type { StoryObjReact } from '@mqs/storybook-utils';
 import {
   Alert,
   Button,
@@ -11,7 +12,7 @@ const meta: Meta<typeof Alert> = {
 
 export default meta;
 
-type AlertStoryObj = StoryObj<typeof Alert>;
+type AlertStoryObj = StoryObjReact<typeof Alert>;
 
 export const AlertExample: AlertStoryObj = {
   args: {

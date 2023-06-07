@@ -1,4 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta } from '@storybook/react';
+import type { StoryObjReact } from '@mqs/storybook-utils';
 import {
   Button,
   Card,
@@ -15,7 +16,7 @@ const meta: Meta<typeof Card> = {
 
 export default meta;
 
-type CardStoryObj = StoryObj<typeof Card>;
+type CardStoryObj = StoryObjReact<typeof Card>;
 
 export const CardExample: CardStoryObj = {
   parameters: {

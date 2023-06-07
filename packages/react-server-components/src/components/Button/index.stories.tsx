@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { filterEnumForStorybook } from '@mqs/storybook-utils';
+import type { Meta } from '@storybook/react';
+import { StoryObjReact, filterEnumForStorybook } from '@mqs/storybook-utils';
 import {
   Button,
   ButtonVariantColor,
@@ -14,7 +14,7 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 
-type ButtonStoryObj = StoryObj<typeof Button>;
+type ButtonStoryObj = StoryObjReact<typeof Button>;
 
 export const ButtonExample: ButtonStoryObj = {
   args: {
@@ -33,7 +33,6 @@ export const ButtonColorExample: ButtonStoryObj = {
       hideNoControlsWarning: true,
     },
   },
-  // @ts-expect-error
   render: () => filterEnumForStorybook(ButtonVariantColor).map((variantColor) => (
     <Button
       variantColor={variantColor}
@@ -49,7 +48,6 @@ export const ButtonSizeExample: ButtonStoryObj = {
       hideNoControlsWarning: true,
     },
   },
-  // @ts-expect-error
   render: () => filterEnumForStorybook(ButtonVariantSize).map((variantSize) => (
     <Button
       variantSize={variantSize}
@@ -65,7 +63,6 @@ export const ButtonShapeExample: ButtonStoryObj = {
       hideNoControlsWarning: true,
     },
   },
-  // @ts-expect-error
   render: () => filterEnumForStorybook(ButtonVariantShape).map((variantShape) => (
     <Button
       variantShape={variantShape}
