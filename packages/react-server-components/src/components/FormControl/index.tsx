@@ -1,15 +1,24 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
+import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 
+/**
+ * Props for the `<FormControl />` component.
+ */
 export interface FormControlProps
   extends ReactTestingProps,
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  children: ReactNode,
-  center?: boolean,
+  /**
+   * Argument passed into classnames function.
+   *
+   * See [classnames docs](https://github.com/JedWatson/classnames).
+   */
   cx?: ClassName,
 }
 
+/**
+ * Input container
+ */
 export function FormControl({
   children,
   className,

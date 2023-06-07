@@ -1,5 +1,12 @@
 import { render } from '@testing-library/react';
+import path from 'path';
+import initStoryshots from '@storybook/addon-storyshots';
 import { InputText, FormControl } from '@';
+
+initStoryshots({
+  configPath: path.resolve(__dirname, '../../../../../storybook/.storybook'),
+  storyKindRegex: /^@mqs\/react-server-components\/components\/FormControl$/,
+});
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {

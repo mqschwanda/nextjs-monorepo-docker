@@ -13,3 +13,20 @@ exports[`@mqs/react-server-components components <FormControl /> renders 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`Storyshots @mqs/react-server-components/components/FormControl Form Control Example 1`] = `
+<div
+  className="form-control"
+>
+  <label
+    className="label"
+  >
+    Text Input:
+  </label>
+  <input
+    className="input input-bordered"
+    placeholder="type here..."
+    type="text"
+  />
+</div>
+`;
