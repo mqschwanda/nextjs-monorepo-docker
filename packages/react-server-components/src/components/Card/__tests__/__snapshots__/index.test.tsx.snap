@@ -123,8 +123,8 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Actio
         type="button"
       >
         <svg
-          className="stroke-current"
-          fill="none"
+          className="fill-none stroke-current stroke-1"
+          fill="currentColor"
           stroke="currentColor"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
