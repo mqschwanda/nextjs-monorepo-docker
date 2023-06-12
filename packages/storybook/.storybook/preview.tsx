@@ -3,7 +3,9 @@ import '@mqs/style/style.css';
 import { themeDecorator, themeGlobalType } from '@mqs/storybook-utils';
 
 const preview: Preview = {
-  decorators: [themeDecorator],
+  decorators: [
+    themeDecorator
+  ],
   globalTypes: {
     theme: themeGlobalType,
   },
