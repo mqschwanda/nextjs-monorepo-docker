@@ -1,7 +1,7 @@
 import { spreadReactTestingProps, ReactTestingProps } from '@mqs/react-testing-lib';
 import cx from 'classnames';
 import { SVGProps } from 'react';
-import { ReactCxProps, buildEnumCx } from '@/utilities';
+import { ReactCxProps, buildEnumCx } from '@mqs/react-utils';
 import { SvgVariantFillColor, SvgVariantStrokeColor, SvgVariantStrokeWidth } from './types';
 
 /**

@@ -1,7 +1,7 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import cx from 'classnames';
-import { ReactCxProps, buildEnumCx } from '@/utilities';
+import { ReactCxProps, buildEnumCx } from '@mqs/react-utils';
 
 export enum InputFileVariantColor {
   accent = 'file-input-accent',

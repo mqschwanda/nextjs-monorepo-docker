@@ -1,7 +1,7 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cx from 'classnames';
-import { ReactCxProps, buildEnumCx } from '@/utilities';
+import { ReactCxProps, buildEnumCx } from '@mqs/react-utils';
 
 /**
  * Image style for the card.

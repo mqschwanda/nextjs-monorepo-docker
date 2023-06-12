@@ -1,7 +1,7 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cx from 'classnames';
-import { ReactCxProps } from '@/utilities';
+import { ReactCxProps } from '@mqs/react-utils';
 
 /**
  * Props for the `<CardActions />` component.

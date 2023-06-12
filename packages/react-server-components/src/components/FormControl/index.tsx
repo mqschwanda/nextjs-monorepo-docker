@@ -1,8 +1,8 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import cx from 'classnames';
+import { ReactCxProps } from '@mqs/react-utils';
 import { Label } from '@/components/Label';
-import { ReactCxProps } from '@/utilities';
 
 /**
  * Props for the `<FormControl />` component.

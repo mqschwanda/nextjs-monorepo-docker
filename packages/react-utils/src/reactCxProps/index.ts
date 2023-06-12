@@ -1,4 +1,4 @@
-import { Argument as ClassName } from 'classnames';
+import type { Argument as ClassName } from 'classnames';
 
 /**
  * Props for react component that leverages the classnames module.

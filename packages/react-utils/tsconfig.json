@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "baseUrl": "./src",
+    "lib": [
+      "ES2015"
+    ],
+    "isolatedModules": true,
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "paths": {
+      "@": [
+        "./"
+      ],
+      "@/*": [
+        "./*"
+      ]
+    }
+  },
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules"
+  ],
+  "extends": "@mqs/tsconfig/react-library.json",
+  "include": [
+    "src"
+  ]
+}
