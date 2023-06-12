@@ -1,7 +1,7 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import { DetailedHTMLProps, TextareaHTMLAttributes } from 'react';
-import cx, { Argument as ClassName } from 'classnames';
-import { buildEnumCx } from '@/utilities';
+import cx from 'classnames';
+import { ReactCxProps, buildEnumCx } from '@/utilities';
 
 export enum InputTextareaVariantColor {
   accent = 'textarea-accent',
@@ -23,11 +23,11 @@ export enum InputTextareaVariantSize {
 
 export interface InputTextareaProps
   extends ReactTestingProps,
+  ReactCxProps,
   DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {
   bordered?: boolean,
   variantColor?: keyof typeof InputTextareaVariantColor,
   variantSize?: keyof typeof InputTextareaVariantSize,
-  cx?: ClassName,
 }
 
 export function InputTextarea({

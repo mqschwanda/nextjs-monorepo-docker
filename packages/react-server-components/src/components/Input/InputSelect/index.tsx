@@ -1,7 +1,7 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import { DetailedHTMLProps, SelectHTMLAttributes } from 'react';
-import cx, { Argument as ClassName } from 'classnames';
-import { buildEnumCx } from '@/utilities';
+import cx from 'classnames';
+import { ReactCxProps, buildEnumCx } from '@/utilities';
 
 export enum InputSelectVariantColor {
   accent = 'select-accent',
@@ -23,11 +23,11 @@ export enum InputSelectVariantSize {
 
 export interface InputSelectProps
   extends ReactTestingProps,
+  ReactCxProps,
   DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement> {
   bordered?: boolean,
   variantColor?: keyof typeof InputSelectVariantColor,
   variantSize?: keyof typeof InputSelectVariantSize,
-  cx?: ClassName,
 }
 
 export function InputSelect({

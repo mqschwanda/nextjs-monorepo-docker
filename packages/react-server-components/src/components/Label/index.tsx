@@ -1,13 +1,14 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import { DetailedHTMLProps, LabelHTMLAttributes, ReactNode } from 'react';
-import cx, { Argument as ClassName } from 'classnames';
+import cx from 'classnames';
+import { ReactCxProps } from '@/utilities';
 
 export interface LabelProps
   extends ReactTestingProps,
+  ReactCxProps,
   DetailedHTMLProps<LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement> {
   children: ReactNode,
   center?: boolean,
-  cx?: ClassName,
 }
 
 export function Label({

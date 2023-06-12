@@ -1,7 +1,7 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import cx, { Argument as ClassName } from 'classnames';
-import { buildEnumCx } from '@/utilities';
+import cx from 'classnames';
+import { ReactCxProps, buildEnumCx } from '@/utilities';
 
 /**
  * Image style for the card.
@@ -36,17 +36,12 @@ export enum CardVariantPadding {
  */
 export interface CardProps
   extends ReactTestingProps,
+  ReactCxProps,
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   /**
    * Adds border to card.
    */
   bordered?: boolean,
-  /**
-   * Argument passed into classnames function.
-   *
-   * See [classnames docs](https://github.com/JedWatson/classnames).
-   */
-  cx?: ClassName,
   /**
    * Image style for the card.
    */

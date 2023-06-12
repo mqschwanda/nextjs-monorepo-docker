@@ -1,7 +1,8 @@
 import type { Meta } from '@storybook/react';
 import type { StoryObjReact } from '@mqs/storybook-utils';
 import {
-  FormControl, InputText, Label,
+  FormControl,
+  InputText,
 } from '@';
 
 const meta: Meta<typeof FormControl> = {
@@ -14,6 +15,10 @@ export default meta;
 type FormControlStoryObj = StoryObjReact<typeof FormControl>;
 
 export const FormControlExample: FormControlStoryObj = {
+  args: {
+    description: 'input description goes here',
+    label: 'Text Input:',
+  },
   parameters: {
     controls: {
       hideNoControlsWarning: true,
@@ -23,11 +28,9 @@ export const FormControlExample: FormControlStoryObj = {
     <FormControl
       {...props} // eslint-disable-line react/jsx-props-no-spreading
     >
-      <Label>
-        { 'Text Input:' }
-      </Label>
       <InputText
         bordered
+        error={Boolean(props.error)}
         placeholder='type here...'
         type='text'
       />

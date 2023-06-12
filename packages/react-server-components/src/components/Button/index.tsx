@@ -1,7 +1,7 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
-import cx, { Argument as ClassName } from 'classnames';
-import { buildEnumCx } from '@/utilities';
+import cx from 'classnames';
+import { ReactCxProps, buildEnumCx } from '@/utilities';
 
 /**
  * Button color and style.
@@ -94,17 +94,12 @@ export enum ButtonVariantShape {
  */
 export interface ButtonProps
   extends ReactTestingProps,
+  ReactCxProps,
   DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   /**
    * Force button to show active state.
    */
   active?: boolean,
-  /**
-   * Argument passed into classnames function.
-   *
-   * See [classnames docs](https://github.com/JedWatson/classnames).
-   */
-  cx?: ClassName,
   /**
    * Force button to show disabled state.
    */

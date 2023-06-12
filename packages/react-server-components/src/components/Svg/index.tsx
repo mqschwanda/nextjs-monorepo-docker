@@ -1,7 +1,7 @@
 import { spreadReactTestingProps, ReactTestingProps } from '@mqs/react-testing-lib';
-import cx, { Argument as ClassName } from 'classnames';
+import cx from 'classnames';
 import { SVGProps } from 'react';
-import { buildEnumCx } from '@/utilities';
+import { ReactCxProps, buildEnumCx } from '@/utilities';
 import { SvgVariantFillColor, SvgVariantStrokeColor, SvgVariantStrokeWidth } from './types';
 
 /**
@@ -9,13 +9,8 @@ import { SvgVariantFillColor, SvgVariantStrokeColor, SvgVariantStrokeWidth } fro
  */
 export interface SvgProps
   extends ReactTestingProps,
+  ReactCxProps,
   Omit<SVGProps<SVGSVGElement>, 'stroke' | 'fill' | 'cx'> {
-  /**
-   * Argument passed into classnames function.
-   *
-   * See [classnames docs](https://github.com/JedWatson/classnames).
-   */
-  cx?: ClassName,
   /**
    * Svg fill color
    */

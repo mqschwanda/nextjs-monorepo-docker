@@ -1,11 +1,13 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import cx, { Argument as ClassName } from 'classnames';
+import cx from 'classnames';
+import { ReactCxProps } from '@/utilities';
 
 export interface SkeletonSpanProps
   extends ReactTestingProps,
+  ReactCxProps,
   Omit<DetailedHTMLProps<HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>, 'children'> {
-  cx?: ClassName,
+
 }
 
 export function SkeletonSpan({

@@ -1,7 +1,7 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
-import cx, { Argument as ClassName } from 'classnames';
-import { buildEnumCx } from '@/utilities';
+import cx from 'classnames';
+import { ReactCxProps, buildEnumCx } from '@/utilities';
 
 export enum InputToggleVariantColor {
   accent = 'toggle-accent',
@@ -22,10 +22,10 @@ export enum InputToggleVariantSize {
 
 export interface InputToggleProps
   extends ReactTestingProps,
+  ReactCxProps,
   Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'type'> {
   variantColor?: keyof typeof InputToggleVariantColor,
   variantSize?: keyof typeof InputToggleVariantSize,
-  cx?: ClassName,
 }
 
 export function InputToggle({

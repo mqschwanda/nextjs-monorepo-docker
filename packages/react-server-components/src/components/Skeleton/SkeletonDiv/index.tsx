@@ -1,11 +1,13 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import cx, { Argument as ClassName } from 'classnames';
+import cx from 'classnames';
+import { ReactCxProps } from '@/utilities';
 
 export interface SkeletonDivProps
   extends ReactTestingProps,
+  ReactCxProps,
   Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'children'> {
-  cx?: ClassName,
+
 }
 
 export function SkeletonDiv({

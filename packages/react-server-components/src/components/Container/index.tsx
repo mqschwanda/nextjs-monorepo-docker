@@ -1,23 +1,19 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import cx, { Argument as ClassName } from 'classnames';
+import cx from 'classnames';
+import { ReactCxProps } from '@/utilities';
 
 /**
  * Props for the `<Container />` component.
  */
 export interface ContainerProps
   extends ReactTestingProps,
+  ReactCxProps,
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   /**
   * Set horizontal margin to auto.
   */
   center?: boolean,
-  /**
-   * Argument passed into classnames function.
-   *
-   * See [classnames docs](https://github.com/JedWatson/classnames).
-   */
-  cx?: ClassName,
 }
 
 /**

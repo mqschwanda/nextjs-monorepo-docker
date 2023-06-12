@@ -1,19 +1,16 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import cx, { Argument as ClassName } from 'classnames';
+import cx from 'classnames';
+import { ReactCxProps } from '@/utilities';
 
 /**
  * Props for the `<CardBody />` component.
  */
 export interface CardBodyProps
   extends ReactTestingProps,
+  ReactCxProps,
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  /**
-   * Argument passed into classnames function.
-   *
-   * See [classnames docs](https://github.com/JedWatson/classnames).
-   */
-  cx?: ClassName,
+
 }
 
 /**

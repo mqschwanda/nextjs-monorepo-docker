@@ -7,7 +7,7 @@ exports[`@mqs/react-server-components components <FormControl /> renders 1`] = `
     data-testid="FormControl"
   >
     <input
-      class="input"
+      class="input input-md"
       placeholder="Type here"
     />
   </div>
@@ -24,9 +24,18 @@ exports[`Storyshots @mqs/react-server-components/components/FormControl Form Con
     Text Input:
   </label>
   <input
-    className="input input-bordered"
+    className="input input-bordered input-md"
     placeholder="type here..."
     type="text"
   />
+  <label
+    className="label"
+  >
+    <span
+      className="label-text-alt"
+    >
+      input description goes here
+    </span>
+  </label>
 </div>
 `;

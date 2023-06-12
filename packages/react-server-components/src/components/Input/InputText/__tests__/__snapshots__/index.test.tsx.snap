@@ -3,8 +3,181 @@
 exports[`@mqs/react-server-components components <InputText /> renders 1`] = `
 <DocumentFragment>
   <input
-    class="input test"
+    class="input input-md test"
     data-testid="InputText"
   />
 </DocumentFragment>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputText Input Text Color Example 1`] = `
+[
+  <div
+    className="form-control my-4"
+  >
+    <label
+      className="label"
+    >
+      accent
+    </label>
+    <input
+      className="input input-bordered input-accent input-md"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+  >
+    <label
+      className="label"
+    >
+      error
+    </label>
+    <input
+      className="input input-bordered input-error input-md"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+  >
+    <label
+      className="label"
+    >
+      ghost
+    </label>
+    <input
+      className="input input-bordered input-ghost input-md"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+  >
+    <label
+      className="label"
+    >
+      info
+    </label>
+    <input
+      className="input input-bordered input-info input-md"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+  >
+    <label
+      className="label"
+    >
+      primary
+    </label>
+    <input
+      className="input input-bordered input-primary input-md"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+  >
+    <label
+      className="label"
+    >
+      secondary
+    </label>
+    <input
+      className="input input-bordered input-secondary input-md"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+  >
+    <label
+      className="label"
+    >
+      success
+    </label>
+    <input
+      className="input input-bordered input-success input-md"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+  >
+    <label
+      className="label"
+    >
+      warning
+    </label>
+    <input
+      className="input input-bordered input-warning input-md"
+      placeholder="type here..."
+    />
+  </div>,
+]
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputText Input Text Example 1`] = `
+<input
+  className="input input-bordered input-md"
+  placeholder="type here..."
+/>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputText Input Text Size Example 1`] = `
+[
+  <div
+    className="form-control my-4"
+  >
+    <label
+      className="label"
+    >
+      lg
+    </label>
+    <input
+      className="input input-bordered input-lg"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+  >
+    <label
+      className="label"
+    >
+      md
+    </label>
+    <input
+      className="input input-bordered input-md"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+  >
+    <label
+      className="label"
+    >
+      sm
+    </label>
+    <input
+      className="input input-bordered input-sm"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+  >
+    <label
+      className="label"
+    >
+      xs
+    </label>
+    <input
+      className="input input-bordered input-xs"
+      placeholder="type here..."
+    />
+  </div>,
+]
 `;

@@ -1,7 +1,7 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
-import cx, { Argument as ClassName } from 'classnames';
-import { buildEnumCx } from '@/utilities';
+import cx from 'classnames';
+import { ReactCxProps, buildEnumCx } from '@/utilities';
 
 export enum InputRadioVariantColor {
   accent = 'radio-accent',
@@ -22,10 +22,10 @@ export enum InputRadioVariantSize {
 
 export interface InputRadioProps
   extends ReactTestingProps,
+  ReactCxProps,
   Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'type'> {
   variantColor?: keyof typeof InputRadioVariantColor,
   variantSize?: keyof typeof InputRadioVariantSize,
-  cx?: ClassName,
 }
 
 export function InputRadio({

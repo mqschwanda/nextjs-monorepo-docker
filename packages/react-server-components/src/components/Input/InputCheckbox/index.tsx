@@ -1,7 +1,7 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
-import cx, { Argument as ClassName } from 'classnames';
-import { buildEnumCx } from '@/utilities';
+import cx from 'classnames';
+import { ReactCxProps, buildEnumCx } from '@/utilities';
 
 export enum InputCheckboxVariantColor {
   accent = 'checkbox-accent',
@@ -22,10 +22,10 @@ export enum InputCheckboxVariantSize {
 
 export interface InputCheckboxProps
   extends ReactTestingProps,
+  ReactCxProps,
   Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'type'> {
   variantColor?: keyof typeof InputCheckboxVariantColor,
   variantSize?: keyof typeof InputCheckboxVariantSize,
-  cx?: ClassName,
 }
 
 export function InputCheckbox({

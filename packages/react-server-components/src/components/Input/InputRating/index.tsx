@@ -1,7 +1,7 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import cx, { Argument as ClassName } from 'classnames';
-import { buildEnumCx } from '@/utilities';
+import cx from 'classnames';
+import { ReactCxProps, buildEnumCx } from '@/utilities';
 
 export enum InputRatingVariantColor {
   accent = 'bg-accent',
@@ -44,8 +44,8 @@ export enum InputRatingVariantSize {
 
 export interface InputRatingProps
   extends ReactTestingProps,
+  ReactCxProps,
   Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'children'> {
-  cx?: ClassName,
   half?: boolean,
   max: number,
   min?: number,
