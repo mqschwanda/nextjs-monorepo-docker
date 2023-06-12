@@ -35,7 +35,7 @@ export function InputRange({
   cx: cxProp,
   max,
   min,
-  testId,
+  testId = 'InputRange',
   variantColor,
   variantSize,
   ...rest

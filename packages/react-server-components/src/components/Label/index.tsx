@@ -15,7 +15,7 @@ export function Label({
   children,
   className,
   cx: cxProp,
-  testId,
+  testId = 'Label',
   ...rest
 }: LabelProps) {
   return (

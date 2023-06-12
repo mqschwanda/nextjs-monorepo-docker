@@ -14,8 +14,8 @@ exports[`@mqs/react-server-components components <AlertDismissible /> renders 1`
       type="button"
     >
       <svg
-        class="stroke-current h-6 w-6"
-        fill="none"
+        class="fill-none stroke-current stroke-1 h-6 w-6"
+        fill="currentColor"
         stroke="currentColor"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"

@@ -47,7 +47,7 @@ export function Alert({
   children,
   className,
   cx: cxProp,
-  testId,
+  testId = 'Alert',
   variantBackgroundColor,
   ...rest
 }: AlertProps) {

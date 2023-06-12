@@ -20,7 +20,7 @@ export function CardTitle({
   children,
   className,
   cx: cxProp,
-  testId,
+  testId = 'CardTitle',
   ...rest
 }: CardTitleProps) {
   return (

@@ -62,7 +62,7 @@ export function InputRating({
   max,
   min = 0,
   name,
-  testId,
+  testId = 'InputRating',
   variantColor,
   variantMask = 'star',
   variantSize,

@@ -33,7 +33,7 @@ export function InputCheckbox({
   cx: cxProp,
   variantColor,
   variantSize,
-  testId,
+  testId = 'InputCheckbox',
   ...rest
 }: InputCheckboxProps) {
   return (

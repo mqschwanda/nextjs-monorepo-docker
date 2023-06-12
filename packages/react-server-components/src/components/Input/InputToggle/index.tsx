@@ -33,7 +33,7 @@ export function InputToggle({
   cx: cxProp,
   variantColor,
   variantSize,
-  testId,
+  testId = 'InputToggle',
   ...rest
 }: InputToggleProps) {
   return (

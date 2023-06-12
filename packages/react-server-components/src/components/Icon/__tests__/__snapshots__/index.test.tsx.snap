@@ -4,11 +4,13 @@ exports[`Storyshots @mqs/react-server-components/components/Icon Icon Example 1`
 [
   <span
     className=""
+    data-testid="Typography"
   >
     IconClose
   </span>,
   <svg
     className="fill-none stroke-current stroke-1 h-6 w-6"
+    data-testid="IconClose"
     fill="currentColor"
     stroke="currentColor"
     viewBox="0 0 24 24"
@@ -24,11 +26,13 @@ exports[`Storyshots @mqs/react-server-components/components/Icon Icon Example 1`
   <br />,
   <span
     className=""
+    data-testid="Typography"
   >
     IconInfo
   </span>,
   <svg
     className="fill-none stroke-current stroke-1 h-6 w-6"
+    data-testid="IconInfo"
     fill="currentColor"
     stroke="currentColor"
     viewBox="0 0 24 24"

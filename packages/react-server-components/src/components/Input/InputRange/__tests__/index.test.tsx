@@ -14,7 +14,6 @@ describe('@mqs/react-server-components', () => {
             className='test'
             max={max}
             min={min}
-            testId={testId}
           />
         ));
 

@@ -16,66 +16,77 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Color 
 [
   <button
     className="btn btn-accent btn-md"
+    data-testid="Button"
     type="button"
   >
     accent
   </button>,
   <button
     className="btn btn-error btn-md"
+    data-testid="Button"
     type="button"
   >
     error
   </button>,
   <button
     className="btn btn-ghost btn-md"
+    data-testid="Button"
     type="button"
   >
     ghost
   </button>,
   <button
     className="btn glass btn-md"
+    data-testid="Button"
     type="button"
   >
     glass
   </button>,
   <button
     className="btn btn-info btn-md"
+    data-testid="Button"
     type="button"
   >
     info
   </button>,
   <button
     className="btn btn-link btn-md"
+    data-testid="Button"
     type="button"
   >
     link
   </button>,
   <button
     className="btn btn-neutral btn-md"
+    data-testid="Button"
     type="button"
   >
     neutral
   </button>,
   <button
     className="btn btn-primary btn-md"
+    data-testid="Button"
     type="button"
   >
     primary
   </button>,
   <button
     className="btn btn-secondary btn-md"
+    data-testid="Button"
     type="button"
   >
     secondary
   </button>,
   <button
     className="btn btn-success btn-md"
+    data-testid="Button"
     type="button"
   >
     success
   </button>,
   <button
     className="btn btn-warning btn-md"
+    data-testid="Button"
     type="button"
   >
     warning
@@ -86,6 +97,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Color 
 exports[`Storyshots @mqs/react-server-components/components/Button Button Example 1`] = `
 <button
   className="btn btn-md"
+  data-testid="Button"
   type="button"
 >
   Click Me!
@@ -95,6 +107,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Exampl
 exports[`Storyshots @mqs/react-server-components/components/Button Button Loading Example 1`] = `
 <button
   className="btn loading btn-md"
+  data-testid="Button"
   type="button"
 >
   Loading
@@ -104,6 +117,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Loadin
 exports[`Storyshots @mqs/react-server-components/components/Button Button No Animation Example 1`] = `
 <button
   className="btn no-animation btn-md"
+  data-testid="Button"
   type="button"
 >
   No Animation
@@ -114,12 +128,14 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Shape 
 [
   <button
     className="btn btn-circle btn-md"
+    data-testid="Button"
     type="button"
   >
     c
   </button>,
   <button
     className="btn btn-square btn-md"
+    data-testid="Button"
     type="button"
   >
     s
@@ -131,24 +147,28 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Size E
 [
   <button
     className="btn btn-lg"
+    data-testid="Button"
     type="button"
   >
     lg
   </button>,
   <button
     className="btn btn-md"
+    data-testid="Button"
     type="button"
   >
     md
   </button>,
   <button
     className="btn btn-sm"
+    data-testid="Button"
     type="button"
   >
     sm
   </button>,
   <button
     className="btn btn-xs"
+    data-testid="Button"
     type="button"
   >
     xs
@@ -159,6 +179,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Size E
 exports[`Storyshots @mqs/react-server-components/components/Button Button Wide Example 1`] = `
 <button
   className="btn btn-wide btn-md"
+  data-testid="Button"
   type="button"
 >
   Wide

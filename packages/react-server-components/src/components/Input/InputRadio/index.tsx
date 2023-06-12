@@ -33,7 +33,7 @@ export function InputRadio({
   cx: cxProp,
   variantColor,
   variantSize,
-  testId,
+  testId = 'InputRadio',
   ...rest
 }: InputRadioProps) {
   return (

@@ -10,7 +10,6 @@ describe('@mqs/react-server-components', () => {
         const { getByTestId, asFragment } = render((
           <Label
             className='test'
-            testId={testId}
           >
             <span
               className='label-text'

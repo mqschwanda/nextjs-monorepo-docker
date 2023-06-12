@@ -17,7 +17,6 @@ describe('@mqs/react-server-components', () => {
         const { getByTestId, asFragment } = render((
           <FormControl
             className='test'
-            testId={testId}
           >
             <InputText
               placeholder='Type here'

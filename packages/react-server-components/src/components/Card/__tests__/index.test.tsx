@@ -24,7 +24,6 @@ describe('@mqs/react-server-components', () => {
         const { getByTestId, asFragment } = render((
           <Card
             className='test'
-            testId={testId}
           >
             <figure>
               <img

@@ -9,7 +9,7 @@ export interface TypographyProps extends MuiTypographyProps, ReactTestingProps {
 
 export function Typography({
   children,
-  testId,
+  testId = 'Typography',
   ...rest
 }: TypographyProps) {
   return (

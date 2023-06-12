@@ -34,7 +34,7 @@ export function Svg({
   children,
   className,
   cx: cxProp,
-  testId,
+  testId = 'Svg',
   variantFillColor = 'inherit',
   variantStrokeColor = 'inherit',
   variantStrokeWidth = 1,

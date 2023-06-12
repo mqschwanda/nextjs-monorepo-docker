@@ -36,7 +36,7 @@ export function InputFile({
   cx: cxProp,
   variantColor,
   variantSize,
-  testId,
+  testId = 'InputFile',
   ...rest
 }: InputFileProps) {
   return (

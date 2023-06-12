@@ -100,7 +100,7 @@ export function InputText({
   error,
   variantColor,
   variantSize = 'md',
-  testId,
+  testId = 'InputText',
   ...rest
 }: InputTextProps) {
   return (

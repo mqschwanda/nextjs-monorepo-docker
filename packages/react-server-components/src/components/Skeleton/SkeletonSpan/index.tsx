@@ -13,7 +13,7 @@ export interface SkeletonSpanProps
 export function SkeletonSpan({
   className,
   cx: cxProp,
-  testId,
+  testId = 'SkeletonSpan',
   ...rest
 }: SkeletonSpanProps) {
   return (

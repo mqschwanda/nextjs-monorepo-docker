@@ -10,7 +10,7 @@ export interface NextLinkWrapperProps extends Omit<LinkProps, 'legacyBehavior' |
 
 export function NextLinkWrapper({
   children,
-  testId,
+  testId = 'NextLinkWrapper',
   ...rest
 }: NextLinkWrapperProps) {
   const child = useMemo(

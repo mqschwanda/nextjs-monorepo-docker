@@ -13,7 +13,7 @@ export interface SkeletonDivProps
 export function SkeletonDiv({
   className,
   cx: cxProp,
-  testId,
+  testId = 'SkeletonDiv',
   ...rest
 }: SkeletonDivProps) {
   return (

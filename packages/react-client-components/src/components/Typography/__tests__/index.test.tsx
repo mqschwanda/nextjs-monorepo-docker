@@ -9,9 +9,7 @@ describe('@mqs/react-client-components', () => {
         const children = 'children...';
 
         const { getByTestId, asFragment } = render((
-          <Typography
-            testId={testId}
-          >
+          <Typography>
             { children }
           </Typography>
         ));

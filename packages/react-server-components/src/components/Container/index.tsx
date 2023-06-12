@@ -24,7 +24,7 @@ export function Container({
   className,
   center,
   cx: cxProp,
-  testId,
+  testId = 'Container',
   ...rest
 }: ContainerProps) {
   return (

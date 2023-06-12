@@ -145,7 +145,7 @@ export function Button({
   variantColor,
   variantShape,
   variantSize = 'md',
-  testId,
+  testId = 'Button',
   type = 'button',
   wide,
   ...rest

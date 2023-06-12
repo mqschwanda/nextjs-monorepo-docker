@@ -10,7 +10,6 @@ describe('@mqs/react-server-components', () => {
         const { getByTestId, asFragment } = render((
           <InputFile
             className='test'
-            testId={testId}
           />
         ));
 

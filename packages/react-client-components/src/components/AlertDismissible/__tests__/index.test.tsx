@@ -11,7 +11,6 @@ describe('@mqs/react-server-components', () => {
         const { getByTestId, asFragment } = render((
           <AlertDismissible
             className='test'
-            testId={testId}
             variantBackgroundColor='info'
           >
             { children }
@@ -32,7 +31,6 @@ describe('@mqs/react-server-components', () => {
         const { getByTestId } = render((
           <AlertDismissible
             className='test'
-            testId={testId}
             variantBackgroundColor='info'
           >
             { children }
@@ -58,7 +56,6 @@ describe('@mqs/react-server-components', () => {
           <AlertDismissible
             className='test'
             onClickDismiss={onClickDismiss}
-            testId={testId}
             variantBackgroundColor='info'
           >
             { children }
@@ -84,7 +81,6 @@ describe('@mqs/react-server-components', () => {
           <AlertDismissible
             className='test'
             onClickDismiss={onClickDismiss}
-            testId={testId}
             variantBackgroundColor='info'
           >
             { children }

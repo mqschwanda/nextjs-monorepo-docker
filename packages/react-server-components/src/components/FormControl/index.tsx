@@ -38,7 +38,7 @@ export function FormControl({
   error = '',
   id,
   label,
-  testId,
+  testId = 'FormControl',
   ...rest
 }: FormControlProps) {
   return (

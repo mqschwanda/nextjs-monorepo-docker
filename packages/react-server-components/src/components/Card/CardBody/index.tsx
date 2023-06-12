@@ -20,7 +20,7 @@ export function CardBody({
   children,
   className,
   cx: cxProp,
-  testId,
+  testId = 'CardBody',
   ...rest
 }: CardBodyProps) {
   return (

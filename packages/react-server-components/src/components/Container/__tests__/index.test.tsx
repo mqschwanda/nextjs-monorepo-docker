@@ -18,7 +18,6 @@ describe('@mqs/react-server-components', () => {
         const { getByTestId, asFragment } = render((
           <Container
             className='test'
-            testId={testId}
           >
             { children }
           </Container>

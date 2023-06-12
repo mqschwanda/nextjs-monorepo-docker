@@ -10,7 +10,6 @@ describe('@mqs/react-client-components', () => {
         const { getByTestId, asFragment } = render((
           <TextField
             label='Text Field'
-            testId={testId}
             value='value'
           />
         ));

@@ -10,7 +10,6 @@ describe('@mqs/react-server-components', () => {
         const { getByTestId, asFragment } = render((
           <InputToggle
             className='test'
-            testId={testId}
           />
         ));
 

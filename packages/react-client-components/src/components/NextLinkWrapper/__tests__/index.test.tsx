@@ -12,7 +12,6 @@ describe('@mqs/react-client-components', () => {
         const { getByTestId, asFragment } = render((
           <NextLinkWrapper
             href={href}
-            testId={testId}
           >
             <a
               href={href}

@@ -36,7 +36,7 @@ export function InputTextarea({
   cx: cxProp,
   variantColor,
   variantSize,
-  testId,
+  testId = 'InputTextarea',
   ...rest
 }: InputTextareaProps) {
   return (

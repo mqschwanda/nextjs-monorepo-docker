@@ -11,7 +11,6 @@ describe('@mqs/react-server-components', () => {
         const { getByTestId, asFragment } = render((
           <Typography
             className='test'
-            testId={testId}
           >
             { children }
           </Typography>

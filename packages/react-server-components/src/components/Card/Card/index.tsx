@@ -60,7 +60,7 @@ export function Card({
   children,
   className,
   cx: cxProp,
-  testId,
+  testId = 'Card',
   variantImage,
   variantPadding = 'normal',
   ...rest

@@ -2,12 +2,14 @@ import { Svg } from '@/components/Svg';
 import { IconProps } from '@/components/Icon/types';
 
 export function IconInfo({
+  testId = 'IconInfo',
   variantFillColor = 'none',
   variantStrokeColor = 'current',
   ...rest
 }: IconProps) {
   return (
     <Svg
+      testId={testId}
       variantFillColor={variantFillColor}
       variantStrokeColor={variantStrokeColor}
       viewBox='0 0 24 24'

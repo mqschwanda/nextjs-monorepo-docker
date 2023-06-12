@@ -34,7 +34,6 @@ describe('@mqs/react-server-components', () => {
         const { getByTestId, asFragment } = render((
           <InputText
             className='test'
-            testId={testId}
           />
         ));
 

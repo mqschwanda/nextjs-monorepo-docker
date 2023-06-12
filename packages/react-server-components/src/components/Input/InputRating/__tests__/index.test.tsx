@@ -12,7 +12,6 @@ describe('@mqs/react-server-components', () => {
             className='test'
             max={5}
             name='test-rating'
-            testId={testId}
           />
         ));
 
@@ -31,7 +30,6 @@ describe('@mqs/react-server-components', () => {
             half
             max={5}
             name='test-rating'
-            testId={testId}
           />
         ));
 

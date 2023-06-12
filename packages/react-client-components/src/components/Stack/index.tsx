@@ -9,7 +9,7 @@ export interface StackProps extends MuiStackProps, ReactTestingProps {
 
 export function Stack({
   children,
-  testId,
+  testId = 'Stack',
   ...rest
 }: StackProps) {
   return (

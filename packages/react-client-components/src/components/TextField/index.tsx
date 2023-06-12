@@ -6,7 +6,7 @@ import MuiTextField, { TextFieldProps as MuiTextFieldProps } from '@mui/material
 export type TextFieldProps = MuiTextFieldProps & ReactTestingProps;
 
 export function TextField({
-  testId,
+  testId = 'TextField',
   ...rest
 }: TextFieldProps) {
   return (

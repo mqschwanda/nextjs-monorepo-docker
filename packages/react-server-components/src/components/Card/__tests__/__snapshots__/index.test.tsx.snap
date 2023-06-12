@@ -14,9 +14,11 @@ exports[`@mqs/react-server-components components <Card /> renders 1`] = `
     </figure>
     <div
       class="card-body"
+      data-testid="CardBody"
     >
       <span
         class="card-title"
+        data-testid="CardTitle"
       >
         Card Title
       </span>
@@ -26,9 +28,11 @@ exports[`@mqs/react-server-components components <Card /> renders 1`] = `
     </div>
     <div
       class="card-actions"
+      data-testid="CardActions"
     >
       <button
         class="btn btn-md"
+        data-testid="Button"
         type="button"
       >
         Click Me
@@ -41,6 +45,7 @@ exports[`@mqs/react-server-components components <Card /> renders 1`] = `
 exports[`Storyshots @mqs/react-server-components/components/Card Card Compact Example 1`] = `
 <div
   className="card shadow-xl card-compact"
+  data-testid="Card"
 >
   <figure>
     <img
@@ -50,9 +55,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card Compact Ex
   </figure>
   <div
     className="card-body"
+    data-testid="CardBody"
   >
     <span
       className="card-title"
+      data-testid="CardTitle"
     >
       Kittens!
     </span>
@@ -61,9 +68,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card Compact Ex
     </p>
     <div
       className="card-actions justify-end"
+      data-testid="CardActions"
     >
       <button
         className="btn btn-primary btn-md"
+        data-testid="Button"
         type="button"
       >
         See More Kittens
@@ -76,6 +85,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card Compact Ex
 exports[`Storyshots @mqs/react-server-components/components/Card Card Example 1`] = `
 <div
   className="card shadow-xl card-normal"
+  data-testid="Card"
 >
   <figure>
     <img
@@ -85,9 +95,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card Example 1`
   </figure>
   <div
     className="card-body"
+    data-testid="CardBody"
   >
     <span
       className="card-title"
+      data-testid="CardTitle"
     >
       Kittens!
     </span>
@@ -96,9 +108,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card Example 1`
     </p>
     <div
       className="card-actions justify-end"
+      data-testid="CardActions"
     >
       <button
         className="btn btn-primary btn-md"
+        data-testid="Button"
         type="button"
       >
         See More Kittens
@@ -111,19 +125,24 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card Example 1`
 exports[`Storyshots @mqs/react-server-components/components/Card Card With Action On Top Example 1`] = `
 <div
   className="card shadow-xl card-normal"
+  data-testid="Card"
 >
   <div
     className="card-body"
+    data-testid="CardBody"
   >
     <div
       className="card-actions justify-end"
+      data-testid="CardActions"
     >
       <button
         className="btn btn-square btn-sm"
+        data-testid="Button"
         type="button"
       >
         <svg
           className="fill-none stroke-current stroke-1"
+          data-testid="IconClose"
           fill="currentColor"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -148,6 +167,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Actio
 exports[`Storyshots @mqs/react-server-components/components/Card Card With Badge Example 1`] = `
 <div
   className="card shadow-xl card-normal"
+  data-testid="Card"
 >
   <figure>
     <img
@@ -157,9 +177,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Badge
   </figure>
   <div
     className="card-body"
+    data-testid="CardBody"
   >
     <span
       className="card-title"
+      data-testid="CardTitle"
     >
       Kittens!
       <div
@@ -173,9 +195,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Badge
     </p>
     <div
       className="card-actions justify-end"
+      data-testid="CardActions"
     >
       <button
         className="btn btn-primary btn-md"
+        data-testid="Button"
         type="button"
       >
         See More Kittens
@@ -188,12 +212,15 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Badge
 exports[`Storyshots @mqs/react-server-components/components/Card Card With Bottom Image Example 1`] = `
 <div
   className="card shadow-xl card-normal"
+  data-testid="Card"
 >
   <div
     className="card-body"
+    data-testid="CardBody"
   >
     <span
       className="card-title"
+      data-testid="CardTitle"
     >
       Kittens!
     </span>
@@ -202,9 +229,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Botto
     </p>
     <div
       className="card-actions justify-end"
+      data-testid="CardActions"
     >
       <button
         className="btn btn-primary btn-md"
+        data-testid="Button"
         type="button"
       >
         See More Kittens
@@ -223,6 +252,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Botto
 exports[`Storyshots @mqs/react-server-components/components/Card Card With Centered Content Example 1`] = `
 <div
   className="card shadow-xl card-normal"
+  data-testid="Card"
 >
   <figure>
     <img
@@ -232,9 +262,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Cente
   </figure>
   <div
     className="card-body items-center text-center"
+    data-testid="CardBody"
   >
     <span
       className="card-title"
+      data-testid="CardTitle"
     >
       Kittens!
     </span>
@@ -243,9 +275,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Cente
     </p>
     <div
       className="card-actions"
+      data-testid="CardActions"
     >
       <button
         className="btn btn-primary btn-md"
+        data-testid="Button"
         type="button"
       >
         See More Kittens
@@ -258,12 +292,15 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Cente
 exports[`Storyshots @mqs/react-server-components/components/Card Card With Custom Color Example 1`] = `
 <div
   className="card shadow-xl card-normal bg-primary text-primary-content"
+  data-testid="Card"
 >
   <div
     className="card-body"
+    data-testid="CardBody"
   >
     <span
       className="card-title"
+      data-testid="CardTitle"
     >
       Kittens!
     </span>
@@ -272,9 +309,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Custo
     </p>
     <div
       className="card-actions justify-end"
+      data-testid="CardActions"
     >
       <button
         className="btn btn-md"
+        data-testid="Button"
         type="button"
       >
         See More Kittens
@@ -287,6 +326,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Custo
 exports[`Storyshots @mqs/react-server-components/components/Card Card With Glass Example 1`] = `
 <div
   className="card shadow-xl card-normal glass"
+  data-testid="Card"
 >
   <figure>
     <img
@@ -296,9 +336,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Glass
   </figure>
   <div
     className="card-body"
+    data-testid="CardBody"
   >
     <span
       className="card-title"
+      data-testid="CardTitle"
     >
       Kittens!
     </span>
@@ -307,9 +349,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Glass
     </p>
     <div
       className="card-actions justify-end"
+      data-testid="CardActions"
     >
       <button
         className="btn btn-primary btn-md"
+        data-testid="Button"
         type="button"
       >
         See More Kittens
@@ -322,6 +366,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Glass
 exports[`Storyshots @mqs/react-server-components/components/Card Card With Image On Side Example 1`] = `
 <div
   className="card shadow-xl card-side card-normal"
+  data-testid="Card"
 >
   <figure>
     <img
@@ -331,9 +376,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Image
   </figure>
   <div
     className="card-body"
+    data-testid="CardBody"
   >
     <span
       className="card-title"
+      data-testid="CardTitle"
     >
       Kittens!
     </span>
@@ -342,9 +389,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Image
     </p>
     <div
       className="card-actions justify-end"
+      data-testid="CardActions"
     >
       <button
         className="btn btn-primary btn-md"
+        data-testid="Button"
         type="button"
       >
         See More Kittens
@@ -357,6 +406,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Image
 exports[`Storyshots @mqs/react-server-components/components/Card Card With Image Overlay Example 1`] = `
 <div
   className="card shadow-xl image-full card-normal"
+  data-testid="Card"
 >
   <figure>
     <img
@@ -366,9 +416,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Image
   </figure>
   <div
     className="card-body"
+    data-testid="CardBody"
   >
     <span
       className="card-title"
+      data-testid="CardTitle"
     >
       Kittens!
     </span>
@@ -377,9 +429,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Image
     </p>
     <div
       className="card-actions justify-end"
+      data-testid="CardActions"
     >
       <button
         className="btn btn-primary btn-md"
+        data-testid="Button"
         type="button"
       >
         See More Kittens
@@ -392,12 +446,15 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Image
 exports[`Storyshots @mqs/react-server-components/components/Card Card With Neutral Color Example 1`] = `
 <div
   className="card shadow-xl card-normal bg-neutral text-neutral-content"
+  data-testid="Card"
 >
   <div
     className="card-body"
+    data-testid="CardBody"
   >
     <span
       className="card-title"
+      data-testid="CardTitle"
     >
       Kittens!
     </span>
@@ -406,9 +463,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Neutr
     </p>
     <div
       className="card-actions justify-end"
+      data-testid="CardActions"
     >
       <button
         className="btn btn-primary btn-md"
+        data-testid="Button"
         type="button"
       >
         See More Kittens
@@ -421,12 +480,15 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Neutr
 exports[`Storyshots @mqs/react-server-components/components/Card Card With No Image Example 1`] = `
 <div
   className="card shadow-xl card-normal"
+  data-testid="Card"
 >
   <div
     className="card-body"
+    data-testid="CardBody"
   >
     <span
       className="card-title"
+      data-testid="CardTitle"
     >
       Kittens!
     </span>
@@ -435,9 +497,11 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With No Im
     </p>
     <div
       className="card-actions justify-end"
+      data-testid="CardActions"
     >
       <button
         className="btn btn-primary btn-md"
+        data-testid="Button"
         type="button"
       >
         See More Kittens

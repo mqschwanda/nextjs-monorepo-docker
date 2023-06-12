@@ -28,6 +28,7 @@ export function AlertDismissible({
   children,
   onClickDismiss,
   cx: cxProp,
+  testId = 'AlertDismissible',
   ...rest
 }: AlertDismissableProps) {
   const [hidden, setHidden] = useState(false);
@@ -49,6 +50,7 @@ export function AlertDismissible({
         cxProp,
         hidden ? 'hidden' : null,
       )}
+      testId={testId}
       {...rest} // eslint-disable-line react/jsx-props-no-spreading
     >
       <div>

@@ -22,6 +22,7 @@ exports[`@mqs/react-server-components components <Svg /> renders 1`] = `
 exports[`Storyshots @mqs/react-server-components/components/Svg Svg Example 1`] = `
 <svg
   className="fill-none stroke-current stroke-1 h-6 w-6"
+  data-testid="Svg"
   fill="currentColor"
   stroke="currentColor"
   viewBox="0 0 24 24"

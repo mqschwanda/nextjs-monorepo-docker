@@ -8,9 +8,7 @@ describe('@mqs/react-client-components', () => {
         const testId = Stack.name;
 
         const { getByTestId, asFragment } = render((
-          <Stack
-            testId={testId}
-          >
+          <Stack>
             <div>
               { 'one' }
             </div>

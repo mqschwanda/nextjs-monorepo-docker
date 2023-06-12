@@ -13,105 +13,129 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputText Inpu
 [
   <div
     className="form-control my-4"
+    data-testid="FormControl"
   >
     <label
       className="label"
+      data-testid="Label"
     >
       accent
     </label>
     <input
       className="input input-bordered input-accent input-md"
+      data-testid="InputText"
       placeholder="type here..."
     />
   </div>,
   <div
     className="form-control my-4"
+    data-testid="FormControl"
   >
     <label
       className="label"
+      data-testid="Label"
     >
       error
     </label>
     <input
       className="input input-bordered input-error input-md"
+      data-testid="InputText"
       placeholder="type here..."
     />
   </div>,
   <div
     className="form-control my-4"
+    data-testid="FormControl"
   >
     <label
       className="label"
+      data-testid="Label"
     >
       ghost
     </label>
     <input
       className="input input-bordered input-ghost input-md"
+      data-testid="InputText"
       placeholder="type here..."
     />
   </div>,
   <div
     className="form-control my-4"
+    data-testid="FormControl"
   >
     <label
       className="label"
+      data-testid="Label"
     >
       info
     </label>
     <input
       className="input input-bordered input-info input-md"
+      data-testid="InputText"
       placeholder="type here..."
     />
   </div>,
   <div
     className="form-control my-4"
+    data-testid="FormControl"
   >
     <label
       className="label"
+      data-testid="Label"
     >
       primary
     </label>
     <input
       className="input input-bordered input-primary input-md"
+      data-testid="InputText"
       placeholder="type here..."
     />
   </div>,
   <div
     className="form-control my-4"
+    data-testid="FormControl"
   >
     <label
       className="label"
+      data-testid="Label"
     >
       secondary
     </label>
     <input
       className="input input-bordered input-secondary input-md"
+      data-testid="InputText"
       placeholder="type here..."
     />
   </div>,
   <div
     className="form-control my-4"
+    data-testid="FormControl"
   >
     <label
       className="label"
+      data-testid="Label"
     >
       success
     </label>
     <input
       className="input input-bordered input-success input-md"
+      data-testid="InputText"
       placeholder="type here..."
     />
   </div>,
   <div
     className="form-control my-4"
+    data-testid="FormControl"
   >
     <label
       className="label"
+      data-testid="Label"
     >
       warning
     </label>
     <input
       className="input input-bordered input-warning input-md"
+      data-testid="InputText"
       placeholder="type here..."
     />
   </div>,
@@ -121,6 +145,7 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputText Inpu
 exports[`Storyshots @mqs/react-server-components/components/Input/InputText Input Text Example 1`] = `
 <input
   className="input input-bordered input-md"
+  data-testid="InputText"
   placeholder="type here..."
 />
 `;
@@ -129,53 +154,65 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputText Inpu
 [
   <div
     className="form-control my-4"
+    data-testid="FormControl"
   >
     <label
       className="label"
+      data-testid="Label"
     >
       lg
     </label>
     <input
       className="input input-bordered input-lg"
+      data-testid="InputText"
       placeholder="type here..."
     />
   </div>,
   <div
     className="form-control my-4"
+    data-testid="FormControl"
   >
     <label
       className="label"
+      data-testid="Label"
     >
       md
     </label>
     <input
       className="input input-bordered input-md"
+      data-testid="InputText"
       placeholder="type here..."
     />
   </div>,
   <div
     className="form-control my-4"
+    data-testid="FormControl"
   >
     <label
       className="label"
+      data-testid="Label"
     >
       sm
     </label>
     <input
       className="input input-bordered input-sm"
+      data-testid="InputText"
       placeholder="type here..."
     />
   </div>,
   <div
     className="form-control my-4"
+    data-testid="FormControl"
   >
     <label
       className="label"
+      data-testid="Label"
     >
       xs
     </label>
     <input
       className="input input-bordered input-xs"
+      data-testid="InputText"
       placeholder="type here..."
     />
   </div>,

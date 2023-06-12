@@ -36,7 +36,7 @@ export function InputSelect({
   cx: cxProp,
   variantColor,
   variantSize,
-  testId,
+  testId = 'InputSelect',
   ...rest
 }: InputSelectProps) {
   return (

@@ -11,7 +11,6 @@ describe('@mqs/react-server-components', () => {
           const { getByTestId, asFragment } = render((
             <IconInfo
               className='test'
-              testId={testId}
             />
           ));
 

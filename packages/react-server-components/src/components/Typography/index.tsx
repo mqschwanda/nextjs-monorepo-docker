@@ -31,7 +31,7 @@ export function Typography({
   children,
   className,
   gutterBottom: _gutterBottom,
-  testId,
+  testId = 'Typography',
   noWrap: _noWrap,
   variant: _variant = TypographyVariant.body1,
   ...rest

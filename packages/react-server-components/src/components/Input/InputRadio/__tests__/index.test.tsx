@@ -10,7 +10,6 @@ describe('@mqs/react-server-components', () => {
         const { getByTestId, asFragment } = render((
           <InputRadio
             className='test'
-            testId={testId}
           />
         ));
 
