@@ -17,6 +17,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Color 
   <button
     className="btn btn-accent btn-md"
     data-testid="Button"
+    disabled={false}
     type="button"
   >
     accent
@@ -24,6 +25,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Color 
   <button
     className="btn btn-error btn-md"
     data-testid="Button"
+    disabled={false}
     type="button"
   >
     error
@@ -31,6 +33,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Color 
   <button
     className="btn btn-ghost btn-md"
     data-testid="Button"
+    disabled={false}
     type="button"
   >
     ghost
@@ -38,6 +41,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Color 
   <button
     className="btn glass btn-md"
     data-testid="Button"
+    disabled={false}
     type="button"
   >
     glass
@@ -45,6 +49,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Color 
   <button
     className="btn btn-info btn-md"
     data-testid="Button"
+    disabled={false}
     type="button"
   >
     info
@@ -52,6 +57,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Color 
   <button
     className="btn btn-link btn-md"
     data-testid="Button"
+    disabled={false}
     type="button"
   >
     link
@@ -59,6 +65,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Color 
   <button
     className="btn btn-neutral btn-md"
     data-testid="Button"
+    disabled={false}
     type="button"
   >
     neutral
@@ -66,6 +73,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Color 
   <button
     className="btn btn-primary btn-md"
     data-testid="Button"
+    disabled={false}
     type="button"
   >
     primary
@@ -73,6 +81,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Color 
   <button
     className="btn btn-secondary btn-md"
     data-testid="Button"
+    disabled={false}
     type="button"
   >
     secondary
@@ -80,6 +89,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Color 
   <button
     className="btn btn-success btn-md"
     data-testid="Button"
+    disabled={false}
     type="button"
   >
     success
@@ -87,6 +97,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Color 
   <button
     className="btn btn-warning btn-md"
     data-testid="Button"
+    disabled={false}
     type="button"
   >
     warning
@@ -98,6 +109,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Exampl
 <button
   className="btn btn-md"
   data-testid="Button"
+  disabled={false}
   type="button"
 >
   Click Me!
@@ -108,6 +120,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Loadin
 <button
   className="btn loading btn-md"
   data-testid="Button"
+  disabled={false}
   type="button"
 >
   Loading
@@ -118,6 +131,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button No Ani
 <button
   className="btn no-animation btn-md"
   data-testid="Button"
+  disabled={false}
   type="button"
 >
   No Animation
@@ -129,6 +143,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Shape 
   <button
     className="btn btn-circle btn-md"
     data-testid="Button"
+    disabled={false}
     type="button"
   >
     c
@@ -136,6 +151,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Shape 
   <button
     className="btn btn-square btn-md"
     data-testid="Button"
+    disabled={false}
     type="button"
   >
     s
@@ -148,6 +164,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Size E
   <button
     className="btn btn-lg"
     data-testid="Button"
+    disabled={false}
     type="button"
   >
     lg
@@ -155,6 +172,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Size E
   <button
     className="btn btn-md"
     data-testid="Button"
+    disabled={false}
     type="button"
   >
     md
@@ -162,6 +180,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Size E
   <button
     className="btn btn-sm"
     data-testid="Button"
+    disabled={false}
     type="button"
   >
     sm
@@ -169,6 +188,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Size E
   <button
     className="btn btn-xs"
     data-testid="Button"
+    disabled={false}
     type="button"
   >
     xs
@@ -180,6 +200,7 @@ exports[`Storyshots @mqs/react-server-components/components/Button Button Wide E
 <button
   className="btn btn-wide btn-md"
   data-testid="Button"
+  disabled={false}
   type="button"
 >
   Wide

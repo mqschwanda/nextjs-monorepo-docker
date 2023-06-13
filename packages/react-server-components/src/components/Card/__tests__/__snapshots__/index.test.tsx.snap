@@ -73,6 +73,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card Compact Ex
       <button
         className="btn btn-primary btn-md"
         data-testid="Button"
+        disabled={false}
         type="button"
       >
         See More Kittens
@@ -113,6 +114,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card Example 1`
       <button
         className="btn btn-primary btn-md"
         data-testid="Button"
+        disabled={false}
         type="button"
       >
         See More Kittens
@@ -138,6 +140,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Actio
       <button
         className="btn btn-square btn-sm"
         data-testid="Button"
+        disabled={false}
         type="button"
       >
         <svg
@@ -200,6 +203,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Badge
       <button
         className="btn btn-primary btn-md"
         data-testid="Button"
+        disabled={false}
         type="button"
       >
         See More Kittens
@@ -234,6 +238,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Botto
       <button
         className="btn btn-primary btn-md"
         data-testid="Button"
+        disabled={false}
         type="button"
       >
         See More Kittens
@@ -280,6 +285,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Cente
       <button
         className="btn btn-primary btn-md"
         data-testid="Button"
+        disabled={false}
         type="button"
       >
         See More Kittens
@@ -314,6 +320,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Custo
       <button
         className="btn btn-md"
         data-testid="Button"
+        disabled={false}
         type="button"
       >
         See More Kittens
@@ -354,6 +361,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Glass
       <button
         className="btn btn-primary btn-md"
         data-testid="Button"
+        disabled={false}
         type="button"
       >
         See More Kittens
@@ -394,6 +402,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Image
       <button
         className="btn btn-primary btn-md"
         data-testid="Button"
+        disabled={false}
         type="button"
       >
         See More Kittens
@@ -434,6 +443,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Image
       <button
         className="btn btn-primary btn-md"
         data-testid="Button"
+        disabled={false}
         type="button"
       >
         See More Kittens
@@ -468,6 +478,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With Neutr
       <button
         className="btn btn-primary btn-md"
         data-testid="Button"
+        disabled={false}
         type="button"
       >
         See More Kittens
@@ -502,6 +513,7 @@ exports[`Storyshots @mqs/react-server-components/components/Card Card With No Im
       <button
         className="btn btn-primary btn-md"
         data-testid="Button"
+        disabled={false}
         type="button"
       >
         See More Kittens

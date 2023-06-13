@@ -2,92 +2,9 @@ import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-l
 import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 import cx from 'classnames';
 import { ReactCxProps, buildEnumCx } from '@mqs/react-utils';
+import { ButtonVariantColor, ButtonVariantShape, ButtonVariantSize } from './types';
 
-/**
- * Button color and style.
- */
-export enum ButtonVariantColor {
-  /**
-   * Button with `accent` color.
-   */
-  accent = 'btn-accent',
-  /**
-   * Button with `error` color.
-   */
-  error = 'btn-error',
-  /**
-   * Button with ghost style.
-   */
-  ghost = 'btn-ghost',
-  /**
-   * Button with a glass effect.
-   */
-  glass = 'glass',
-  /**
-   * Button with `info` color.
-   */
-  info = 'btn-info',
-  /**
-   * Button styled as a link.
-   */
-  link = 'btn-link',
-  /**
-   * Button with `neutral` color.
-   */
-  neutral = 'btn-neutral',
-  /**
-   * Button with `primary` color.
-   */
-  primary = 'btn-primary',
-  /**
-   * Button with `secondary` color.
-   */
-  secondary = 'btn-secondary',
-  /**
-   * Button with `success` color.
-   */
-  success = 'btn-success',
-  /**
-   * Button with `warning` color.
-   */
-  warning = 'btn-warning',
-}
-
-/**
- * Button size
- */
-export enum ButtonVariantSize {
-  /**
-   * Large button
-   */
-  lg = 'btn-lg',
-  /**
-   * Medium button (default)
-   */
-  md = 'btn-md',
-  /**
-   * Small button
-   */
-  sm = 'btn-sm',
-  /**
-   * Extra small button
-   */
-  xs = 'btn-xs',
-}
-
-/**
- * Button shape
- */
-export enum ButtonVariantShape {
-  /**
-   * Circle button with a 1:1 ratio.
-   */
-  circle = 'btn-circle',
-  /**
-   * Square button with a 1:1 ratio.
-   */
-  square = 'btn-square',
-}
+export { ButtonVariantColor, ButtonVariantShape, ButtonVariantSize };
 
 /**
  * Props for the `<Button />` component.
@@ -98,18 +15,26 @@ export interface ButtonProps
   DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> {
   /**
    * Force button to show active state.
+   *
+   * @default false
    */
   active?: boolean,
   /**
    * Force button to show disabled state.
+   *
+   * @default false
    */
   disabled?: boolean,
   /**
    * Button with loading spinner.
+   *
+   * @default false
    */
   loading?: boolean,
   /**
    * Disables click animation.
+   *
+   * @default false
    */
   noAnimation?: boolean,
   /**
@@ -122,32 +47,37 @@ export interface ButtonProps
   variantShape?: keyof typeof ButtonVariantShape,
   /**
    * Button size
+   *
    * @default md
    */
   variantSize?: keyof typeof ButtonVariantSize,
   /**
    * Wide button (more horizontal padding).
+   *
+   * @default false
    */
   wide?: boolean,
 }
 
 /**
  * Buttons allow the user to take actions or make choices.
+ *
+ * See [interactive docs](https://mqschwanda.github.io/nextjs-monorepo-docker/?path=/docs/mqs-react-server-components-components-button--docs) for more information.
  */
 export function Button({
-  active,
+  active = false,
   children,
   className,
   cx: cxProp,
-  disabled,
-  loading,
-  noAnimation,
+  disabled = false,
+  loading = false,
+  noAnimation = false,
   variantColor,
   variantShape,
   variantSize = 'md',
   testId = 'Button',
   type = 'button',
-  wide,
+  wide = false,
   ...rest
 }: ButtonProps) {
   return (

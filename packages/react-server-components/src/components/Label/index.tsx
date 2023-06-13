@@ -1,16 +1,23 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
-import { DetailedHTMLProps, LabelHTMLAttributes, ReactNode } from 'react';
+import { DetailedHTMLProps, LabelHTMLAttributes } from 'react';
 import cx from 'classnames';
 import { ReactCxProps } from '@mqs/react-utils';
 
+/**
+ * Props for the `<Label />` component.
+ */
 export interface LabelProps
   extends ReactTestingProps,
   ReactCxProps,
   DetailedHTMLProps<LabelHTMLAttributes<HTMLLabelElement>, HTMLLabelElement> {
-  children: ReactNode,
-  center?: boolean,
+
 }
 
+/**
+ * Label to associate helper text with an input component.
+ *
+ * See [interactive docs](https://mqschwanda.github.io/nextjs-monorepo-docker/?path=/docs/mqs-react-server-components-components-label--docs) for more information.
+ */
 export function Label({
   children,
   className,

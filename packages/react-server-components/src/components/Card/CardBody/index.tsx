@@ -15,6 +15,8 @@ export interface CardBodyProps
 
 /**
  * Container for content inside `<Card />` component.
+ *
+ * See [interactive docs](https://mqschwanda.github.io/nextjs-monorepo-docker/?path=/docs/mqs-react-server-components-components-card--docs) for more information.
  */
 export function CardBody({
   children,

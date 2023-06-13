@@ -3,6 +3,9 @@ import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cx from 'classnames';
 import { ReactCxProps } from '@mqs/react-utils';
 
+/**
+ * Props for the `<SkeletonDiv />` component.
+ */
 export interface SkeletonDivProps
   extends ReactTestingProps,
   ReactCxProps,
@@ -10,6 +13,9 @@ export interface SkeletonDivProps
 
 }
 
+/**
+ * Placeholder generic component with a pulsing (fade in and out) animation used for loading.
+ */
 export function SkeletonDiv({
   className,
   cx: cxProp,

@@ -24,8 +24,10 @@ export const CardExample: CardStoryObj = {
       hideNoControlsWarning: true,
     },
   },
-  render: () => (
-    <Card>
+  render: (props) => (
+    <Card
+      {...props} // eslint-disable-line react/jsx-props-no-spreading
+    >
       <figure>
         <img
           alt='Kittens'

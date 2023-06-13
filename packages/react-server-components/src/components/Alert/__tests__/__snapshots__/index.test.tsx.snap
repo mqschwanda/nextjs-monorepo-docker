@@ -153,6 +153,7 @@ exports[`Storyshots @mqs/react-server-components/components/Alert Alert With But
     <button
       className="btn btn-ghost btn-sm"
       data-testid="Button"
+      disabled={false}
       type="button"
     >
       Deny
@@ -160,6 +161,7 @@ exports[`Storyshots @mqs/react-server-components/components/Alert Alert With But
     <button
       className="btn btn-primary btn-sm"
       data-testid="Button"
+      disabled={false}
       type="button"
     >
       Accept
@@ -206,6 +208,7 @@ exports[`Storyshots @mqs/react-server-components/components/Alert Alert With Tit
     <button
       className="btn btn-sm"
       data-testid="Button"
+      disabled={false}
       type="button"
     >
       See

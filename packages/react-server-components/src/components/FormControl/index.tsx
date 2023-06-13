@@ -19,6 +19,8 @@ export interface FormControlProps
    * React node that is rendered as the error label below the child input.
    *
    * The error prop will render instead of the description prop if both are present.
+   *
+   * @default ''
    */
   error?: ReactNode,
   /**
@@ -29,6 +31,8 @@ export interface FormControlProps
 
 /**
  * Input container
+ *
+ * See [interactive docs](https://mqschwanda.github.io/nextjs-monorepo-docker/?path=/docs/mqs-react-server-components-components-formcontrol--docs) for more information.
  */
 export function FormControl({
   children,

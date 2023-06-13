@@ -1,5 +1,5 @@
 /**
- * Svg fill color
+ * `<Svg />` component fill color
  */
 export enum SvgVariantFillColor {
   'none' = 'fill-none',
@@ -253,7 +253,7 @@ export enum SvgVariantFillColor {
 }
 
 /**
- * Svg stroke color
+ * `<Svg />` component stroke color
  */
 export enum SvgVariantStrokeColor {
   'none' = 'stroke-none',
@@ -507,7 +507,7 @@ export enum SvgVariantStrokeColor {
 }
 
 /**
- * Svg stroke width
+ * `<Svg />` component stroke width
  */
 export const SvgVariantStrokeWidth = {
   0: 'stroke-0',

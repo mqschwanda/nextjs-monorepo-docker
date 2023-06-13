@@ -15,6 +15,7 @@ type ContainerStoryObj = StoryObjReact<typeof Container>;
 
 export const ContainerExample: ContainerStoryObj = {
   args: {
+    center: false,
     children: 'I am a container',
   },
   parameters: {

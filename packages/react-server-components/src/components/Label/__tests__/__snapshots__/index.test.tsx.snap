@@ -19,3 +19,24 @@ exports[`@mqs/react-server-components components <Label /> renders 1`] = `
   </label>
 </DocumentFragment>
 `;
+
+exports[`Storyshots @mqs/react-server-components/components/Label Label Example 1`] = `
+<div
+  className="form-control"
+  data-testid="FormControl"
+>
+  <label
+    className="label"
+    data-testid="Label"
+    htmlFor="example-input"
+  >
+    Label:
+  </label>
+  <input
+    className="input input-bordered input-primary input-md"
+    data-testid="InputText"
+    id="example-input"
+    placeholder="type here..."
+  />
+</div>
+`;

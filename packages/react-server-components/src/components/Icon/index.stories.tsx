@@ -8,7 +8,6 @@ import {
 } from '@';
 
 const meta: Meta<IconType> = {
-  component: IconClose,
   title: '@mqs/react-server-components/components/Icon',
 };
 

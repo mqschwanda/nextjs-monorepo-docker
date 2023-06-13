@@ -3,7 +3,7 @@
 exports[`@mqs/react-server-components components <InputText /> renders 1`] = `
 <DocumentFragment>
   <input
-    class="input input-md test"
+    class="input input-bordered input-primary input-md test"
     data-testid="InputText"
   />
 </DocumentFragment>
@@ -144,7 +144,7 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputText Inpu
 
 exports[`Storyshots @mqs/react-server-components/components/Input/InputText Input Text Example 1`] = `
 <input
-  className="input input-bordered input-md"
+  className="input input-bordered input-primary input-md"
   data-testid="InputText"
   placeholder="type here..."
 />
@@ -163,7 +163,7 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputText Inpu
       lg
     </label>
     <input
-      className="input input-bordered input-lg"
+      className="input input-bordered input-primary input-lg"
       data-testid="InputText"
       placeholder="type here..."
     />
@@ -179,7 +179,7 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputText Inpu
       md
     </label>
     <input
-      className="input input-bordered input-md"
+      className="input input-bordered input-primary input-md"
       data-testid="InputText"
       placeholder="type here..."
     />
@@ -195,7 +195,7 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputText Inpu
       sm
     </label>
     <input
-      className="input input-bordered input-sm"
+      className="input input-bordered input-primary input-sm"
       data-testid="InputText"
       placeholder="type here..."
     />
@@ -211,7 +211,7 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputText Inpu
       xs
     </label>
     <input
-      className="input input-bordered input-xs"
+      className="input input-bordered input-primary input-xs"
       data-testid="InputText"
       placeholder="type here..."
     />

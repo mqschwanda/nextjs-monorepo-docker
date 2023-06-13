@@ -1,6 +1,11 @@
 import { Svg } from '@/components/Svg';
 import { IconProps } from '@/components/Icon/types';
 
+/**
+ * Svg 'close' icon.
+ *
+ * See [interactive docs](https://mqschwanda.github.io/nextjs-monorepo-docker/?path=/docs/mqs-react-server-components-components-icon--docs) for more information.
+ */
 export function IconClose({
   testId = 'IconClose',
   variantFillColor = 'none',

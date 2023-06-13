@@ -2,34 +2,9 @@ import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-l
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cx from 'classnames';
 import { ReactCxProps, buildEnumCx } from '@mqs/react-utils';
+import { CardVariantImage, CardVariantPadding } from './types';
 
-/**
- * Image style for the card.
- */
-export enum CardVariantImage {
-  /**
-   * The image in <figure> element will be the background.
-   */
-  full = 'image-full',
-  /**
-   * The image in <figure> will be on to the side.
-   */
-  side = 'card-side',
-}
-
-/**
- * Padding size for the card.
- */
-export enum CardVariantPadding {
-  /**
-   * Applies smaller padding.
-   */
-  compact = 'card-compact',
-  /**
-   * Applies default paddings.
-   */
-  normal = 'card-normal',
-}
+export { CardVariantImage, CardVariantPadding };
 
 /**
  * Props for the `<Card />` component.
@@ -40,28 +15,36 @@ export interface CardProps
   DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   /**
    * Adds border to card.
+   *
+   * @default false
    */
   bordered?: boolean,
   /**
    * Image style for the card.
+   *
+   * @default 'normal'
    */
   variantImage?: keyof typeof CardVariantImage,
   /**
    * Padding size for the card.
+   *
+   * @default 'normal'
    */
   variantPadding?: keyof typeof CardVariantPadding,
 }
 
 /**
  * Cards are used to group and display content in a way that is easily readable.
+ *
+ * See [interactive docs](https://mqschwanda.github.io/nextjs-monorepo-docker/?path=/docs/mqs-react-server-components-components-card--docs) for more information.
  */
 export function Card({
-  bordered,
+  bordered = false,
   children,
   className,
   cx: cxProp,
   testId = 'Card',
-  variantImage,
+  variantImage = 'normal',
   variantPadding = 'normal',
   ...rest
 }: CardProps) {

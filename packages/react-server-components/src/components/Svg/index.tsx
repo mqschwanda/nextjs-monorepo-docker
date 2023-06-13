@@ -13,14 +13,20 @@ export interface SvgProps
   Omit<SVGProps<SVGSVGElement>, 'stroke' | 'fill' | 'cx'> {
   /**
    * Svg fill color
+   *
+   * @default 'inherit'
    */
   variantFillColor?: keyof typeof SvgVariantFillColor,
   /**
    * Svg stroke color
+   *
+   * @default 'inherit'
    */
   variantStrokeColor?: keyof typeof SvgVariantStrokeColor,
   /**
    * Svg stroke width
+   *
+   * @default 1
    */
   variantStrokeWidth?: keyof typeof SvgVariantStrokeWidth,
 }
@@ -28,7 +34,9 @@ export interface SvgProps
 /**
  * Scalable Vector Graphics component.
  *
- * See [SVG docs](https://developer.mozilla.org/en-US/docs/Web/SVG).
+ * See [Mozilla SVG docs](https://developer.mozilla.org/en-US/docs/Web/SVG).
+ *
+ * See [interactive docs](https://mqschwanda.github.io/nextjs-monorepo-docker/?path=/docs/mqs-react-server-components-components-icon--docs) for more information.
  */
 export function Svg({
   children,

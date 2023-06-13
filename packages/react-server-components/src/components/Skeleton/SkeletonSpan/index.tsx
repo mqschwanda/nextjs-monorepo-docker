@@ -3,6 +3,9 @@ import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cx from 'classnames';
 import { ReactCxProps } from '@mqs/react-utils';
 
+/**
+ * Props for the `<SkeletonSpan />` component.
+ */
 export interface SkeletonSpanProps
   extends ReactTestingProps,
   ReactCxProps,
@@ -10,6 +13,9 @@ export interface SkeletonSpanProps
 
 }
 
+/**
+ * Placeholder text component with a pulsing (fade in and out) animation used for loading.
+ */
 export function SkeletonSpan({
   className,
   cx: cxProp,

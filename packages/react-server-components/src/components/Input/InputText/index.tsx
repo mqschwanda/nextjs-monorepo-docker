@@ -2,66 +2,9 @@ import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-l
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import cx from 'classnames';
 import { ReactCxProps, buildEnumCx } from '@mqs/react-utils';
+import { InputTextVariantColor, InputTextVariantSize } from './types';
 
-/**
- * InputText color and style.
- */
-export enum InputTextVariantColor {
-  /**
-   * Input with `accent` color
-   */
-  accent = 'input-accent',
-  /**
-   * Input with `error` color
-   */
-  error = 'input-error',
-  /**
-   * Input with `ghost` style
-   */
-  ghost = 'input-ghost',
-  /**
-   * Input with `info` color
-   */
-  info = 'input-info',
-  /**
-   * Input with `primary` color
-   */
-  primary = 'input-primary',
-  /**
-   * Input with `secondary` color
-   */
-  secondary = 'input-secondary',
-  /**
-   * Input with `success` color
-   */
-  success = 'input-success',
-  /**
-   * Input with `warning` color
-   */
-  warning = 'input-warning',
-}
-
-/**
- * InputText size.
- */
-export enum InputTextVariantSize {
-  /**
-   * Large size for input
-   */
-  lg = 'input-lg',
-  /**
-   * Medium (default) size for input
-   */
-  md = 'input-md',
-  /**
-   * Small size for input
-   */
-  sm = 'input-sm',
-  /**
-   * Extra small size for input
-   */
-  xs = 'input-xs',
-}
+export { InputTextVariantColor, InputTextVariantSize };
 
 /**
  * Props for the `<InputText />` component.
@@ -72,14 +15,20 @@ export interface InputTextProps
   DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
   /**
    * Adds border to input
+   *
+   * @default true
    */
   bordered?: boolean,
   /**
    * Override the `variantColor` prop with the error style.
+   *
+   * @default false
    */
   error?: boolean,
   /**
    * color and style
+   *
+   * @default 'primary'
    */
   variantColor?: keyof typeof InputTextVariantColor,
   /**
@@ -92,13 +41,15 @@ export interface InputTextProps
 
 /**
  * a simple input field.
+ *
+ * See [interactive docs](https://mqschwanda.github.io/nextjs-monorepo-docker/?path=/docs/mqs-react-server-components-components-input-inputtext--docs) for more information.
  */
 export function InputText({
-  bordered,
+  bordered = true,
   className,
   cx: cxProp,
-  error,
-  variantColor,
+  error = false,
+  variantColor = 'primary',
   variantSize = 'md',
   testId = 'InputText',
   ...rest
