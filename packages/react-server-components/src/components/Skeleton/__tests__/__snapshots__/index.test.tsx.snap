@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots @mqs/react-server-components/components/Skeleton Skeleton Card Example 1`] = `
+<div
+  className="card shadow-xl card-side card-normal"
+  data-testid="Card"
+>
+  <figure>
+    <div
+      className="animate-pulse bg-neutral-content h-[200px] w-[200px]"
+      data-testid="SkeletonDiv"
+    />
+  </figure>
+  <div
+    className="card-body"
+    data-testid="CardBody"
+  >
+    <span
+      className="card-title"
+      data-testid="CardTitle"
+    >
+      <span
+        className="animate-pulse bg-neutral-content inline-block rounded-md h-[1rem] w-[150px]"
+        data-testid="SkeletonSpan"
+      />
+    </span>
+    <p>
+      <span
+        className="animate-pulse bg-neutral-content inline-block rounded-md h-[1rem] w-full"
+        data-testid="SkeletonSpan"
+      />
+    </p>
+    <p>
+      <span
+        className="animate-pulse bg-neutral-content inline-block rounded-md h-[1rem] w-full"
+        data-testid="SkeletonSpan"
+      />
+    </p>
+    <p>
+      <span
+        className="animate-pulse bg-neutral-content inline-block rounded-md h-[1rem] w-full"
+        data-testid="SkeletonSpan"
+      />
+    </p>
+  </div>
+</div>
+`;

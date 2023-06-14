@@ -3,7 +3,7 @@
 exports[`@mqs/react-server-components components <SkeletonSpan /> renders 1`] = `
 <DocumentFragment>
   <span
-    class="animate-pulse bg-neutral-content test"
+    class="animate-pulse bg-neutral-content inline-block rounded-md h-[1rem] test"
     data-testid="SkeletonSpan"
   />
 </DocumentFragment>

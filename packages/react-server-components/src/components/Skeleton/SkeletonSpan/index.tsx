@@ -27,6 +27,9 @@ export function SkeletonSpan({
       className={cx(
         'animate-pulse',
         'bg-neutral-content',
+        'inline-block',
+        'rounded-md',
+        'h-[1rem]',
         className,
         cxProp,
       )}
