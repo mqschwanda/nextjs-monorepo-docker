@@ -1,6 +1,5 @@
 import { render } from '@testing-library/react';
-import path from 'path';
-import initStoryshots from '@storybook/addon-storyshots';
+import initStoryshots from '@/__tests__/initStoryshots';
 import {
   Button,
   Card,
@@ -10,7 +9,6 @@ import {
 } from '@';
 
 initStoryshots({
-  configPath: path.resolve(__dirname, '../../../../../storybook/.storybook'),
   storyKindRegex: /^@mqs\/react-server-components\/components\/Card$/,
 });
 
