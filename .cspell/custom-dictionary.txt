@@ -12,6 +12,7 @@ NextJS
 nocache
 noimageindex
 squircle
+storyshots
 tailwindcss
 testid
 tsup

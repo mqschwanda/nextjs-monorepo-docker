@@ -2,12 +2,30 @@ import type { StoryshotsOptions } from '@storybook/addon-storyshots/dist/api/Sto
 import initAddonStoryshots from '@storybook/addon-storyshots';
 import path from 'path';
 
+/**
+ * Path to workspace storybook config
+ */
 const configPath = path.resolve(__dirname, '../../../storybook/.storybook');
 
+/**
+ * Options for the `initStoryshots` function.
+ */
 export type InitStoryshotsOptions = Omit<StoryshotsOptions, 'configPath'> & {
+  /**
+   * If the snapshot tests fail when react logs a key error.
+   *
+   * Set this to `false` if stories avoid using the key because it would show up in the code example.
+   *
+   * @default true
+   */
   failOnReactKeyError?: boolean
 };
 
+/**
+ * A wrapper for the `@storybook/addon-storyshots` module
+ *
+ * See [addon storyshots docs](https://storybook.js.org/addons/@storybook/addon-storyshots) for more information.
+ */
 export default function initStoryshots({
   failOnReactKeyError = true,
   ...options
