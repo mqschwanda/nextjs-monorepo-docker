@@ -17,7 +17,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@apollo/client": "^3.7.15",
+    "@apollo/client": "^3.7.16",
     "@graphql-tools/executor-graphql-ws": "^0.0.14",
     "@graphql-tools/executor-http": "^0.1.10",
     "@mqs/eslint-config": "*",
@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@mqs/graphql-schema": "*",
-    "graphql": "^16.6.0",
+    "graphql": "^16.7.1",
     "graphql-yoga": "^3.9.1"
   }
 }

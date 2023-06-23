@@ -64,8 +64,8 @@
     "typescript": "^5.1.3"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.15",
-    "glob": "^10.2.7",
-    "graphql": "^16.6.0"
+    "@apollo/client": "^3.7.16",
+    "glob": "^10.3.0",
+    "graphql": "^16.7.1"
   }
 }
