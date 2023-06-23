@@ -1,4 +1,4 @@
-import { initStoryshots as initStoryshotsMqs, InitStoryshotsOptions as InitStoryshotsOptionsMqs } from '@mqs/storybook-utils';
+import initStoryshotsMqs, { InitStoryshotsOptions as InitStoryshotsOptionsMqs } from '@mqs/storybook-utils/initStoryshots';
 import path from 'path';
 
 /**
