@@ -4321,7 +4321,7 @@ __metadata:
     eslint: ^7.32.0
     eslint-config-airbnb: ^19.0.4
     eslint-config-airbnb-typescript: ^17.0.0
-    eslint-config-next: ^13.4.5
+    eslint-config-next: ^13.4.7
     eslint-config-prettier: ^8.8.0
     eslint-config-turbo: 1.10.3
     eslint-plugin-cypress: ^2.13.3
@@ -11577,7 +11577,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-next@npm:^13.4.5":
+"eslint-config-next@npm:^13.4.7":
   version: 13.4.7
   resolution: "eslint-config-next@npm:13.4.7"
   dependencies:
