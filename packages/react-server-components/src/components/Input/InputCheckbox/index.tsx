@@ -2,37 +2,51 @@ import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-l
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import cx from 'classnames';
 import { ReactCxProps, buildEnumCx } from '@mqs/react-utils';
+import { InputCheckboxVariantColor, InputCheckboxVariantSize } from './types';
 
-export enum InputCheckboxVariantColor {
-  accent = 'checkbox-accent',
-  error = 'checkbox-error',
-  info = 'checkbox-info',
-  primary = 'checkbox-primary',
-  secondary = 'checkbox-secondary',
-  success = 'checkbox-success',
-  warning = 'checkbox-warning',
-}
+export {
+  InputCheckboxVariantColor,
+  InputCheckboxVariantSize,
+};
 
-export enum InputCheckboxVariantSize {
-  lg = 'checkbox-lg',
-  md = 'checkbox-md',
-  sm = 'checkbox-sm',
-  xs = 'checkbox-xs',
-}
-
+/**
+ * Props for the `<InputCheckbox />` component.
+ */
 export interface InputCheckboxProps
   extends ReactTestingProps,
   ReactCxProps,
   Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'type'> {
+  /**
+   * Override the `variantColor` prop with the error style.
+   *
+   * @default false
+   */
+  error?: boolean,
+  /**
+   * color and style
+   *
+   * @default 'primary'
+   */
   variantColor?: keyof typeof InputCheckboxVariantColor,
+  /**
+   * size
+   *
+   * @default 'md'
+   */
   variantSize?: keyof typeof InputCheckboxVariantSize,
 }
 
+/**
+ * used to select or deselect a value.
+ *
+ * See [interactive docs](https://mqschwanda.github.io/nextjs-monorepo-docker/?path=/docs/mqs-react-server-components-components-input-inputcheckbox--docs) for more information.
+ */
 export function InputCheckbox({
   className,
   cx: cxProp,
-  variantColor,
-  variantSize,
+  error = false,
+  variantColor = 'primary',
+  variantSize = 'md',
   testId = 'InputCheckbox',
   ...rest
 }: InputCheckboxProps) {
@@ -42,7 +56,7 @@ export function InputCheckbox({
         'checkbox',
         buildEnumCx(
           InputCheckboxVariantColor,
-          variantColor,
+          error ? 'error' : variantColor,
         ),
         buildEnumCx(
           InputCheckboxVariantSize,

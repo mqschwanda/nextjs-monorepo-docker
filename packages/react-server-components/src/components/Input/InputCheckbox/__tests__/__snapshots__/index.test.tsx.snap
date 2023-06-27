@@ -3,9 +3,203 @@
 exports[`@mqs/react-server-components components <InputCheckbox /> renders 1`] = `
 <DocumentFragment>
   <input
-    class="checkbox test"
+    class="checkbox checkbox-primary checkbox-md test"
     data-testid="InputCheckbox"
     type="checkbox"
   />
 </DocumentFragment>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputCheckbox Input Checkbox Color Example 1`] = `
+[
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      accent
+    </label>
+    <input
+      className="checkbox checkbox-accent checkbox-md"
+      data-testid="InputCheckbox"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      error
+    </label>
+    <input
+      className="checkbox checkbox-error checkbox-md"
+      data-testid="InputCheckbox"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      info
+    </label>
+    <input
+      className="checkbox checkbox-info checkbox-md"
+      data-testid="InputCheckbox"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      primary
+    </label>
+    <input
+      className="checkbox checkbox-primary checkbox-md"
+      data-testid="InputCheckbox"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      secondary
+    </label>
+    <input
+      className="checkbox checkbox-secondary checkbox-md"
+      data-testid="InputCheckbox"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      success
+    </label>
+    <input
+      className="checkbox checkbox-success checkbox-md"
+      data-testid="InputCheckbox"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      warning
+    </label>
+    <input
+      className="checkbox checkbox-warning checkbox-md"
+      data-testid="InputCheckbox"
+      type="checkbox"
+    />
+  </div>,
+]
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputCheckbox Input Checkbox Example 1`] = `
+<input
+  className="checkbox checkbox-primary checkbox-md"
+  data-testid="InputCheckbox"
+  type="checkbox"
+/>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputCheckbox Input Checkbox Size Example 1`] = `
+[
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      lg
+    </label>
+    <input
+      className="checkbox checkbox-primary checkbox-lg"
+      data-testid="InputCheckbox"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      md
+    </label>
+    <input
+      className="checkbox checkbox-primary checkbox-md"
+      data-testid="InputCheckbox"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      sm
+    </label>
+    <input
+      className="checkbox checkbox-primary checkbox-sm"
+      data-testid="InputCheckbox"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      xs
+    </label>
+    <input
+      className="checkbox checkbox-primary checkbox-xs"
+      data-testid="InputCheckbox"
+      type="checkbox"
+    />
+  </div>,
+]
 `;

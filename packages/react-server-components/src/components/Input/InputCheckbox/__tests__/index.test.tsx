@@ -1,5 +1,11 @@
 import { render } from '@testing-library/react';
 import { InputCheckbox } from '@';
+import initStoryshots from '@/__tests__/initStoryshots';
+
+initStoryshots({
+  failOnReactKeyError: false,
+  storyKindRegex: /^@mqs\/react-server-components\/components\/Input\/InputCheckbox$/,
+});
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {
