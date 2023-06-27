@@ -3,9 +3,203 @@
 exports[`@mqs/react-server-components components <InputToggle /> renders 1`] = `
 <DocumentFragment>
   <input
-    class="toggle test"
+    class="toggle toggle-primary toggle-md test"
     data-testid="InputToggle"
     type="checkbox"
   />
 </DocumentFragment>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputToggle Input Toggle Color Example 1`] = `
+[
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      accent
+    </label>
+    <input
+      className="toggle toggle-accent toggle-md"
+      data-testid="InputToggle"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      error
+    </label>
+    <input
+      className="toggle toggle-error toggle-md"
+      data-testid="InputToggle"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      info
+    </label>
+    <input
+      className="toggle toggle-info toggle-md"
+      data-testid="InputToggle"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      primary
+    </label>
+    <input
+      className="toggle toggle-primary toggle-md"
+      data-testid="InputToggle"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      secondary
+    </label>
+    <input
+      className="toggle toggle-secondary toggle-md"
+      data-testid="InputToggle"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      success
+    </label>
+    <input
+      className="toggle toggle-success toggle-md"
+      data-testid="InputToggle"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      warning
+    </label>
+    <input
+      className="toggle toggle-warning toggle-md"
+      data-testid="InputToggle"
+      type="checkbox"
+    />
+  </div>,
+]
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputToggle Input Toggle Example 1`] = `
+<input
+  className="toggle toggle-primary toggle-md"
+  data-testid="InputToggle"
+  type="checkbox"
+/>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputToggle Input Toggle Size Example 1`] = `
+[
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      lg
+    </label>
+    <input
+      className="toggle toggle-primary toggle-lg"
+      data-testid="InputToggle"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      md
+    </label>
+    <input
+      className="toggle toggle-primary toggle-md"
+      data-testid="InputToggle"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      sm
+    </label>
+    <input
+      className="toggle toggle-primary toggle-sm"
+      data-testid="InputToggle"
+      type="checkbox"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      xs
+    </label>
+    <input
+      className="toggle toggle-primary toggle-xs"
+      data-testid="InputToggle"
+      type="checkbox"
+    />
+  </div>,
+]
 `;

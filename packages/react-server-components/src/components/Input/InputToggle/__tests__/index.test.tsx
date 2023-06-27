@@ -1,5 +1,11 @@
 import { render } from '@testing-library/react';
 import { InputToggle } from '@';
+import initStoryshots from '@/__tests__/initStoryshots';
+
+initStoryshots({
+  failOnReactKeyError: false,
+  storyKindRegex: /^@mqs\/react-server-components\/components\/Input\/InputToggle$/,
+});
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {

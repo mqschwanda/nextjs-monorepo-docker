@@ -2,37 +2,48 @@ import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-l
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import cx from 'classnames';
 import { ReactCxProps, buildEnumCx } from '@mqs/react-utils';
+import { InputToggleVariantColor, InputToggleVariantSize } from './types';
 
-export enum InputToggleVariantColor {
-  accent = 'toggle-accent',
-  error = 'toggle-error',
-  info = 'toggle-info',
-  primary = 'toggle-primary',
-  secondary = 'toggle-secondary',
-  success = 'toggle-success',
-  warning = 'toggle-warning',
-}
+export { InputToggleVariantColor, InputToggleVariantSize };
 
-export enum InputToggleVariantSize {
-  lg = 'toggle-lg',
-  md = 'toggle-md',
-  sm = 'toggle-sm',
-  xs = 'toggle-xs',
-}
-
+/**
+ * Props for the `<InputToggle />` component.
+ */
 export interface InputToggleProps
   extends ReactTestingProps,
   ReactCxProps,
   Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'type'> {
+  /**
+   * Override the `variantColor` prop with the error style.
+   *
+   * @default false
+   */
+  error?: boolean,
+  /**
+   * color and style
+   *
+   * @default 'primary'
+   */
   variantColor?: keyof typeof InputToggleVariantColor,
+  /**
+   * size
+   *
+   * @default 'md'
+   */
   variantSize?: keyof typeof InputToggleVariantSize,
 }
 
+/**
+ * a checkbox that is styled to look like a switch button.
+ *
+ * See [interactive docs](https://mqschwanda.github.io/nextjs-monorepo-docker/?path=/docs/mqs-react-server-components-components-input-inputoggle--docs) for more information.
+ */
 export function InputToggle({
   className,
   cx: cxProp,
-  variantColor,
-  variantSize,
+  error = false,
+  variantColor = 'primary',
+  variantSize = 'md',
   testId = 'InputToggle',
   ...rest
 }: InputToggleProps) {
@@ -42,7 +53,7 @@ export function InputToggle({
         'toggle',
         buildEnumCx(
           InputToggleVariantColor,
-          variantColor,
+          error ? 'error' : variantColor,
         ),
         buildEnumCx(
           InputToggleVariantSize,
