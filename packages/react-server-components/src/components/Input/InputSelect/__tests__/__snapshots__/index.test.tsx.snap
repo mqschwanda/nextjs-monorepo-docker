@@ -3,7 +3,7 @@
 exports[`@mqs/react-server-components components <InputSelect /> renders 1`] = `
 <DocumentFragment>
   <select
-    class="select test"
+    class="select select-primary select-md test"
     data-testid="InputSelect"
   >
     <option>
@@ -17,4 +17,487 @@ exports[`@mqs/react-server-components components <InputSelect /> renders 1`] = `
     </option>
   </select>
 </DocumentFragment>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputSelect Input Select Color Example 1`] = `
+[
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      accent
+    </label>
+    <select
+      className="select select-bordered select-accent select-md"
+      data-testid="InputSelect"
+    >
+      <option
+        disabled={true}
+        selected={true}
+      >
+        Pick your favorite Simpson
+      </option>
+      <option>
+        Homer
+      </option>
+      <option>
+        Marge
+      </option>
+      <option>
+        Bart
+      </option>
+      <option>
+        Lisa
+      </option>
+      <option>
+        Maggie
+      </option>
+    </select>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      error
+    </label>
+    <select
+      className="select select-bordered select-error select-md"
+      data-testid="InputSelect"
+    >
+      <option
+        disabled={true}
+        selected={true}
+      >
+        Pick your favorite Simpson
+      </option>
+      <option>
+        Homer
+      </option>
+      <option>
+        Marge
+      </option>
+      <option>
+        Bart
+      </option>
+      <option>
+        Lisa
+      </option>
+      <option>
+        Maggie
+      </option>
+    </select>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      ghost
+    </label>
+    <select
+      className="select select-bordered select-ghost select-md"
+      data-testid="InputSelect"
+    >
+      <option
+        disabled={true}
+        selected={true}
+      >
+        Pick your favorite Simpson
+      </option>
+      <option>
+        Homer
+      </option>
+      <option>
+        Marge
+      </option>
+      <option>
+        Bart
+      </option>
+      <option>
+        Lisa
+      </option>
+      <option>
+        Maggie
+      </option>
+    </select>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      info
+    </label>
+    <select
+      className="select select-bordered select-info select-md"
+      data-testid="InputSelect"
+    >
+      <option
+        disabled={true}
+        selected={true}
+      >
+        Pick your favorite Simpson
+      </option>
+      <option>
+        Homer
+      </option>
+      <option>
+        Marge
+      </option>
+      <option>
+        Bart
+      </option>
+      <option>
+        Lisa
+      </option>
+      <option>
+        Maggie
+      </option>
+    </select>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      primary
+    </label>
+    <select
+      className="select select-bordered select-primary select-md"
+      data-testid="InputSelect"
+    >
+      <option
+        disabled={true}
+        selected={true}
+      >
+        Pick your favorite Simpson
+      </option>
+      <option>
+        Homer
+      </option>
+      <option>
+        Marge
+      </option>
+      <option>
+        Bart
+      </option>
+      <option>
+        Lisa
+      </option>
+      <option>
+        Maggie
+      </option>
+    </select>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      secondary
+    </label>
+    <select
+      className="select select-bordered select-secondary select-md"
+      data-testid="InputSelect"
+    >
+      <option
+        disabled={true}
+        selected={true}
+      >
+        Pick your favorite Simpson
+      </option>
+      <option>
+        Homer
+      </option>
+      <option>
+        Marge
+      </option>
+      <option>
+        Bart
+      </option>
+      <option>
+        Lisa
+      </option>
+      <option>
+        Maggie
+      </option>
+    </select>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      success
+    </label>
+    <select
+      className="select select-bordered select-success select-md"
+      data-testid="InputSelect"
+    >
+      <option
+        disabled={true}
+        selected={true}
+      >
+        Pick your favorite Simpson
+      </option>
+      <option>
+        Homer
+      </option>
+      <option>
+        Marge
+      </option>
+      <option>
+        Bart
+      </option>
+      <option>
+        Lisa
+      </option>
+      <option>
+        Maggie
+      </option>
+    </select>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      warning
+    </label>
+    <select
+      className="select select-bordered select-warning select-md"
+      data-testid="InputSelect"
+    >
+      <option
+        disabled={true}
+        selected={true}
+      >
+        Pick your favorite Simpson
+      </option>
+      <option>
+        Homer
+      </option>
+      <option>
+        Marge
+      </option>
+      <option>
+        Bart
+      </option>
+      <option>
+        Lisa
+      </option>
+      <option>
+        Maggie
+      </option>
+    </select>
+  </div>,
+]
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputSelect Input Select Example 1`] = `
+<select
+  className="select select-bordered select-primary select-md"
+  data-testid="InputSelect"
+>
+  <option
+    disabled={true}
+    selected={true}
+  >
+    Pick your favorite Simpson
+  </option>
+  <option>
+    Homer
+  </option>
+  <option>
+    Marge
+  </option>
+  <option>
+    Bart
+  </option>
+  <option>
+    Lisa
+  </option>
+  <option>
+    Maggie
+  </option>
+</select>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputSelect Input Select Size Example 1`] = `
+[
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      lg
+    </label>
+    <select
+      className="select select-bordered select-primary select-lg"
+      data-testid="InputSelect"
+    >
+      <option
+        disabled={true}
+        selected={true}
+      >
+        Pick your favorite Simpson
+      </option>
+      <option>
+        Homer
+      </option>
+      <option>
+        Marge
+      </option>
+      <option>
+        Bart
+      </option>
+      <option>
+        Lisa
+      </option>
+      <option>
+        Maggie
+      </option>
+    </select>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      md
+    </label>
+    <select
+      className="select select-bordered select-primary select-md"
+      data-testid="InputSelect"
+    >
+      <option
+        disabled={true}
+        selected={true}
+      >
+        Pick your favorite Simpson
+      </option>
+      <option>
+        Homer
+      </option>
+      <option>
+        Marge
+      </option>
+      <option>
+        Bart
+      </option>
+      <option>
+        Lisa
+      </option>
+      <option>
+        Maggie
+      </option>
+    </select>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      sm
+    </label>
+    <select
+      className="select select-bordered select-primary select-sm"
+      data-testid="InputSelect"
+    >
+      <option
+        disabled={true}
+        selected={true}
+      >
+        Pick your favorite Simpson
+      </option>
+      <option>
+        Homer
+      </option>
+      <option>
+        Marge
+      </option>
+      <option>
+        Bart
+      </option>
+      <option>
+        Lisa
+      </option>
+      <option>
+        Maggie
+      </option>
+    </select>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      xs
+    </label>
+    <select
+      className="select select-bordered select-primary select-xs"
+      data-testid="InputSelect"
+    >
+      <option
+        disabled={true}
+        selected={true}
+      >
+        Pick your favorite Simpson
+      </option>
+      <option>
+        Homer
+      </option>
+      <option>
+        Marge
+      </option>
+      <option>
+        Bart
+      </option>
+      <option>
+        Lisa
+      </option>
+      <option>
+        Maggie
+      </option>
+    </select>
+  </div>,
+]
 `;
