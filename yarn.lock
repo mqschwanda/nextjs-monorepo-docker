@@ -4323,7 +4323,7 @@ __metadata:
     eslint-config-airbnb-typescript: ^17.0.0
     eslint-config-next: ^13.4.7
     eslint-config-prettier: ^8.8.0
-    eslint-config-turbo: 1.10.3
+    eslint-config-turbo: 1.10.6
     eslint-plugin-cypress: ^2.13.3
     eslint-plugin-import: ^2.27.5
     eslint-plugin-jsx-a11y: ^6.7.1
@@ -10799,6 +10799,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:16.0.3":
+  version: 16.0.3
+  resolution: "dotenv@npm:16.0.3"
+  checksum: afcf03f373d7a6d62c7e9afea6328e62851d627a4e73f2e12d0a8deae1cd375892004f3021883f8aec85932cd2834b091f568ced92b4774625b321db83b827f8
+  languageName: node
+  linkType: hard
+
 "dotenv@npm:^16.0.0, dotenv@npm:^16.0.3":
   version: 16.3.1
   resolution: "dotenv@npm:16.3.1"
@@ -11605,14 +11612,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-turbo@npm:1.10.3":
-  version: 1.10.3
-  resolution: "eslint-config-turbo@npm:1.10.3"
+"eslint-config-turbo@npm:1.10.6":
+  version: 1.10.6
+  resolution: "eslint-config-turbo@npm:1.10.6"
   dependencies:
-    eslint-plugin-turbo: 1.10.3
+    eslint-plugin-turbo: 1.10.6
   peerDependencies:
     eslint: ">6.6.0"
-  checksum: 749a2c8e01dc4abb4784851a7049f034ee00b3911579283692771237606052077750ffc280fe5f556ffabe5069221300dc3c3d8e03b529ff728dc470753d41d7
+  checksum: 3159c0290935bc039640a8e82eb8c04f945165d75cd3c250be97db8891d7244cec4793dd58064c258bce677a1301f7a92e6417770388c40b08b055746cb213c7
   languageName: node
   linkType: hard
 
@@ -11768,12 +11775,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-turbo@npm:1.10.3":
-  version: 1.10.3
-  resolution: "eslint-plugin-turbo@npm:1.10.3"
+"eslint-plugin-turbo@npm:1.10.6":
+  version: 1.10.6
+  resolution: "eslint-plugin-turbo@npm:1.10.6"
+  dependencies:
+    dotenv: 16.0.3
   peerDependencies:
     eslint: ">6.6.0"
-  checksum: b66ccea3bad9e8ca705f108c22a121255166cb7bce9a2a944414fa8184cca2aaffb03d06099a50b272ed8459f9aa7bcf8a418ea780d4199f96c94e18e95964cb
+  checksum: b6c9ae6b25433f4d6621fcff2d07394b774fe3253f111785307539a28122ade7b52823870fc3c48e4bd549c716de89efcd8b94db36275a8eb0c1e8e4c2c02f4b
   languageName: node
   linkType: hard
 
@@ -21506,7 +21515,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo@npm:^1.10.5":
+"turbo@npm:^1.10.6":
   version: 1.10.6
   resolution: "turbo@npm:1.10.6"
   dependencies:
@@ -22485,7 +22494,7 @@ __metadata:
     jest: ^29.5.0
     npm-check-updates: ^16.10.13
     prettier: ^2.8.8
-    turbo: ^1.10.5
+    turbo: ^1.10.6
     typescript: ^5.1.3
   languageName: unknown
   linkType: soft

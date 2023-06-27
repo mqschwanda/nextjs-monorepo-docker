@@ -43,7 +43,7 @@
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-next": "^13.4.7",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-config-turbo": "1.10.3",
+    "eslint-config-turbo": "1.10.6",
     "eslint-plugin-cypress": "^2.13.3",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jsx-a11y": "^6.7.1",
