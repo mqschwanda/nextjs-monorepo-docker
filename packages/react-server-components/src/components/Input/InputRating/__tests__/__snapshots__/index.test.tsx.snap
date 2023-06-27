@@ -3,36 +3,36 @@
 exports[`@mqs/react-server-components components <InputRating /> renders 1`] = `
 <DocumentFragment>
   <div
-    class="rating test"
+    class="rating rating-md test"
     data-testid="InputRating"
   >
     <input
-      class="mask rating-hidden mask-star"
+      class="mask rating-hidden bg-primary mask-star"
       name="test-rating"
       type="radio"
     />
     <input
-      class="mask mask-star"
+      class="mask bg-primary mask-star"
       name="test-rating"
       type="radio"
     />
     <input
-      class="mask mask-star"
+      class="mask bg-primary mask-star"
       name="test-rating"
       type="radio"
     />
     <input
-      class="mask mask-star"
+      class="mask bg-primary mask-star"
       name="test-rating"
       type="radio"
     />
     <input
-      class="mask mask-star"
+      class="mask bg-primary mask-star"
       name="test-rating"
       type="radio"
     />
     <input
-      class="mask mask-star"
+      class="mask bg-primary mask-star"
       name="test-rating"
       type="radio"
     />
@@ -43,64 +43,1497 @@ exports[`@mqs/react-server-components components <InputRating /> renders 1`] = `
 exports[`@mqs/react-server-components components <InputRating /> renders halves 1`] = `
 <DocumentFragment>
   <div
-    class="rating rating-half test"
+    class="rating rating-half rating-md test"
     data-testid="InputRating"
   >
     <input
-      class="mask rating-hidden mask-star"
+      class="mask rating-hidden bg-primary mask-star"
       name="test-rating"
       type="radio"
     />
     <input
-      class="mask mask-half-1 mask-star"
+      class="mask mask-half-1 bg-primary mask-star"
       name="test-rating"
       type="radio"
     />
     <input
-      class="mask mask-half-2 mask-star"
+      class="mask mask-half-2 bg-primary mask-star"
       name="test-rating"
       type="radio"
     />
     <input
-      class="mask mask-half-1 mask-star"
+      class="mask mask-half-1 bg-primary mask-star"
       name="test-rating"
       type="radio"
     />
     <input
-      class="mask mask-half-2 mask-star"
+      class="mask mask-half-2 bg-primary mask-star"
       name="test-rating"
       type="radio"
     />
     <input
-      class="mask mask-half-1 mask-star"
+      class="mask mask-half-1 bg-primary mask-star"
       name="test-rating"
       type="radio"
     />
     <input
-      class="mask mask-half-2 mask-star"
+      class="mask mask-half-2 bg-primary mask-star"
       name="test-rating"
       type="radio"
     />
     <input
-      class="mask mask-half-1 mask-star"
+      class="mask mask-half-1 bg-primary mask-star"
       name="test-rating"
       type="radio"
     />
     <input
-      class="mask mask-half-2 mask-star"
+      class="mask mask-half-2 bg-primary mask-star"
       name="test-rating"
       type="radio"
     />
     <input
-      class="mask mask-half-1 mask-star"
+      class="mask mask-half-1 bg-primary mask-star"
       name="test-rating"
       type="radio"
     />
     <input
-      class="mask mask-half-2 mask-star"
+      class="mask mask-half-2 bg-primary mask-star"
       name="test-rating"
       type="radio"
     />
   </div>
 </DocumentFragment>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputRating Input Rating Color Example 1`] = `
+[
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      accent
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-accent mask-star"
+        name="InputRatingColorExample-accent"
+        type="radio"
+      />
+      <input
+        className="mask bg-accent mask-star"
+        name="InputRatingColorExample-accent"
+        type="radio"
+      />
+      <input
+        className="mask bg-accent mask-star"
+        name="InputRatingColorExample-accent"
+        type="radio"
+      />
+      <input
+        className="mask bg-accent mask-star"
+        name="InputRatingColorExample-accent"
+        type="radio"
+      />
+      <input
+        className="mask bg-accent mask-star"
+        name="InputRatingColorExample-accent"
+        type="radio"
+      />
+      <input
+        className="mask bg-accent mask-star"
+        name="InputRatingColorExample-accent"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      error
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-error mask-star"
+        name="InputRatingColorExample-error"
+        type="radio"
+      />
+      <input
+        className="mask bg-error mask-star"
+        name="InputRatingColorExample-error"
+        type="radio"
+      />
+      <input
+        className="mask bg-error mask-star"
+        name="InputRatingColorExample-error"
+        type="radio"
+      />
+      <input
+        className="mask bg-error mask-star"
+        name="InputRatingColorExample-error"
+        type="radio"
+      />
+      <input
+        className="mask bg-error mask-star"
+        name="InputRatingColorExample-error"
+        type="radio"
+      />
+      <input
+        className="mask bg-error mask-star"
+        name="InputRatingColorExample-error"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      info
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-info mask-star"
+        name="InputRatingColorExample-info"
+        type="radio"
+      />
+      <input
+        className="mask bg-info mask-star"
+        name="InputRatingColorExample-info"
+        type="radio"
+      />
+      <input
+        className="mask bg-info mask-star"
+        name="InputRatingColorExample-info"
+        type="radio"
+      />
+      <input
+        className="mask bg-info mask-star"
+        name="InputRatingColorExample-info"
+        type="radio"
+      />
+      <input
+        className="mask bg-info mask-star"
+        name="InputRatingColorExample-info"
+        type="radio"
+      />
+      <input
+        className="mask bg-info mask-star"
+        name="InputRatingColorExample-info"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      primary
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-star"
+        name="InputRatingColorExample-primary"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingColorExample-primary"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingColorExample-primary"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingColorExample-primary"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingColorExample-primary"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingColorExample-primary"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      secondary
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-secondary mask-star"
+        name="InputRatingColorExample-secondary"
+        type="radio"
+      />
+      <input
+        className="mask bg-secondary mask-star"
+        name="InputRatingColorExample-secondary"
+        type="radio"
+      />
+      <input
+        className="mask bg-secondary mask-star"
+        name="InputRatingColorExample-secondary"
+        type="radio"
+      />
+      <input
+        className="mask bg-secondary mask-star"
+        name="InputRatingColorExample-secondary"
+        type="radio"
+      />
+      <input
+        className="mask bg-secondary mask-star"
+        name="InputRatingColorExample-secondary"
+        type="radio"
+      />
+      <input
+        className="mask bg-secondary mask-star"
+        name="InputRatingColorExample-secondary"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      success
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-success mask-star"
+        name="InputRatingColorExample-success"
+        type="radio"
+      />
+      <input
+        className="mask bg-success mask-star"
+        name="InputRatingColorExample-success"
+        type="radio"
+      />
+      <input
+        className="mask bg-success mask-star"
+        name="InputRatingColorExample-success"
+        type="radio"
+      />
+      <input
+        className="mask bg-success mask-star"
+        name="InputRatingColorExample-success"
+        type="radio"
+      />
+      <input
+        className="mask bg-success mask-star"
+        name="InputRatingColorExample-success"
+        type="radio"
+      />
+      <input
+        className="mask bg-success mask-star"
+        name="InputRatingColorExample-success"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      warning
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-warning mask-star"
+        name="InputRatingColorExample-warning"
+        type="radio"
+      />
+      <input
+        className="mask bg-warning mask-star"
+        name="InputRatingColorExample-warning"
+        type="radio"
+      />
+      <input
+        className="mask bg-warning mask-star"
+        name="InputRatingColorExample-warning"
+        type="radio"
+      />
+      <input
+        className="mask bg-warning mask-star"
+        name="InputRatingColorExample-warning"
+        type="radio"
+      />
+      <input
+        className="mask bg-warning mask-star"
+        name="InputRatingColorExample-warning"
+        type="radio"
+      />
+      <input
+        className="mask bg-warning mask-star"
+        name="InputRatingColorExample-warning"
+        type="radio"
+      />
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputRating Input Rating Example 1`] = `
+<div
+  className="rating rating-md"
+  data-testid="InputRating"
+>
+  <input
+    className="mask rating-hidden bg-primary mask-star"
+    name="InputRatingExample"
+    type="radio"
+  />
+  <input
+    className="mask bg-primary mask-star"
+    name="InputRatingExample"
+    type="radio"
+  />
+  <input
+    className="mask bg-primary mask-star"
+    name="InputRatingExample"
+    type="radio"
+  />
+  <input
+    className="mask bg-primary mask-star"
+    name="InputRatingExample"
+    type="radio"
+  />
+  <input
+    className="mask bg-primary mask-star"
+    name="InputRatingExample"
+    type="radio"
+  />
+  <input
+    className="mask bg-primary mask-star"
+    name="InputRatingExample"
+    type="radio"
+  />
+</div>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputRating Input Rating Mask Example 1`] = `
+[
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      circle
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-circle"
+        name="InputRatingMaskExample-circle"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-circle"
+        name="InputRatingMaskExample-circle"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-circle"
+        name="InputRatingMaskExample-circle"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-circle"
+        name="InputRatingMaskExample-circle"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-circle"
+        name="InputRatingMaskExample-circle"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-circle"
+        name="InputRatingMaskExample-circle"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      decagon
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-decagon"
+        name="InputRatingMaskExample-decagon"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-decagon"
+        name="InputRatingMaskExample-decagon"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-decagon"
+        name="InputRatingMaskExample-decagon"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-decagon"
+        name="InputRatingMaskExample-decagon"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-decagon"
+        name="InputRatingMaskExample-decagon"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-decagon"
+        name="InputRatingMaskExample-decagon"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      diamond
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-diamond"
+        name="InputRatingMaskExample-diamond"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-diamond"
+        name="InputRatingMaskExample-diamond"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-diamond"
+        name="InputRatingMaskExample-diamond"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-diamond"
+        name="InputRatingMaskExample-diamond"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-diamond"
+        name="InputRatingMaskExample-diamond"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-diamond"
+        name="InputRatingMaskExample-diamond"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      heart
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-heart"
+        name="InputRatingMaskExample-heart"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-heart"
+        name="InputRatingMaskExample-heart"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-heart"
+        name="InputRatingMaskExample-heart"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-heart"
+        name="InputRatingMaskExample-heart"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-heart"
+        name="InputRatingMaskExample-heart"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-heart"
+        name="InputRatingMaskExample-heart"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      hexagon
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-hexagon"
+        name="InputRatingMaskExample-hexagon"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-hexagon"
+        name="InputRatingMaskExample-hexagon"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-hexagon"
+        name="InputRatingMaskExample-hexagon"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-hexagon"
+        name="InputRatingMaskExample-hexagon"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-hexagon"
+        name="InputRatingMaskExample-hexagon"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-hexagon"
+        name="InputRatingMaskExample-hexagon"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      hexagon-2
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-hexagon-2"
+        name="InputRatingMaskExample-hexagon-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-hexagon-2"
+        name="InputRatingMaskExample-hexagon-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-hexagon-2"
+        name="InputRatingMaskExample-hexagon-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-hexagon-2"
+        name="InputRatingMaskExample-hexagon-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-hexagon-2"
+        name="InputRatingMaskExample-hexagon-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-hexagon-2"
+        name="InputRatingMaskExample-hexagon-2"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      parallelogram
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-parallelogram"
+        name="InputRatingMaskExample-parallelogram"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram"
+        name="InputRatingMaskExample-parallelogram"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram"
+        name="InputRatingMaskExample-parallelogram"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram"
+        name="InputRatingMaskExample-parallelogram"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram"
+        name="InputRatingMaskExample-parallelogram"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram"
+        name="InputRatingMaskExample-parallelogram"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      parallelogram-2
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-parallelogram-2"
+        name="InputRatingMaskExample-parallelogram-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram-2"
+        name="InputRatingMaskExample-parallelogram-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram-2"
+        name="InputRatingMaskExample-parallelogram-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram-2"
+        name="InputRatingMaskExample-parallelogram-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram-2"
+        name="InputRatingMaskExample-parallelogram-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram-2"
+        name="InputRatingMaskExample-parallelogram-2"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      parallelogram-3
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-parallelogram-3"
+        name="InputRatingMaskExample-parallelogram-3"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram-3"
+        name="InputRatingMaskExample-parallelogram-3"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram-3"
+        name="InputRatingMaskExample-parallelogram-3"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram-3"
+        name="InputRatingMaskExample-parallelogram-3"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram-3"
+        name="InputRatingMaskExample-parallelogram-3"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram-3"
+        name="InputRatingMaskExample-parallelogram-3"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      parallelogram-4
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-parallelogram-4"
+        name="InputRatingMaskExample-parallelogram-4"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram-4"
+        name="InputRatingMaskExample-parallelogram-4"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram-4"
+        name="InputRatingMaskExample-parallelogram-4"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram-4"
+        name="InputRatingMaskExample-parallelogram-4"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram-4"
+        name="InputRatingMaskExample-parallelogram-4"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-parallelogram-4"
+        name="InputRatingMaskExample-parallelogram-4"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      pentagon
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-pentagon"
+        name="InputRatingMaskExample-pentagon"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-pentagon"
+        name="InputRatingMaskExample-pentagon"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-pentagon"
+        name="InputRatingMaskExample-pentagon"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-pentagon"
+        name="InputRatingMaskExample-pentagon"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-pentagon"
+        name="InputRatingMaskExample-pentagon"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-pentagon"
+        name="InputRatingMaskExample-pentagon"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      square
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-square"
+        name="InputRatingMaskExample-square"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-square"
+        name="InputRatingMaskExample-square"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-square"
+        name="InputRatingMaskExample-square"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-square"
+        name="InputRatingMaskExample-square"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-square"
+        name="InputRatingMaskExample-square"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-square"
+        name="InputRatingMaskExample-square"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      squircle
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-squircle"
+        name="InputRatingMaskExample-squircle"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-squircle"
+        name="InputRatingMaskExample-squircle"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-squircle"
+        name="InputRatingMaskExample-squircle"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-squircle"
+        name="InputRatingMaskExample-squircle"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-squircle"
+        name="InputRatingMaskExample-squircle"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-squircle"
+        name="InputRatingMaskExample-squircle"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      star
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-star"
+        name="InputRatingMaskExample-star"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingMaskExample-star"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingMaskExample-star"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingMaskExample-star"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingMaskExample-star"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingMaskExample-star"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      star-2
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-star-2"
+        name="InputRatingMaskExample-star-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star-2"
+        name="InputRatingMaskExample-star-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star-2"
+        name="InputRatingMaskExample-star-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star-2"
+        name="InputRatingMaskExample-star-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star-2"
+        name="InputRatingMaskExample-star-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star-2"
+        name="InputRatingMaskExample-star-2"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      triangle
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-triangle"
+        name="InputRatingMaskExample-triangle"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle"
+        name="InputRatingMaskExample-triangle"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle"
+        name="InputRatingMaskExample-triangle"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle"
+        name="InputRatingMaskExample-triangle"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle"
+        name="InputRatingMaskExample-triangle"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle"
+        name="InputRatingMaskExample-triangle"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      triangle-2
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-triangle-2"
+        name="InputRatingMaskExample-triangle-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle-2"
+        name="InputRatingMaskExample-triangle-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle-2"
+        name="InputRatingMaskExample-triangle-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle-2"
+        name="InputRatingMaskExample-triangle-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle-2"
+        name="InputRatingMaskExample-triangle-2"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle-2"
+        name="InputRatingMaskExample-triangle-2"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      triangle-3
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-triangle-3"
+        name="InputRatingMaskExample-triangle-3"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle-3"
+        name="InputRatingMaskExample-triangle-3"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle-3"
+        name="InputRatingMaskExample-triangle-3"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle-3"
+        name="InputRatingMaskExample-triangle-3"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle-3"
+        name="InputRatingMaskExample-triangle-3"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle-3"
+        name="InputRatingMaskExample-triangle-3"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      triangle-4
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-triangle-4"
+        name="InputRatingMaskExample-triangle-4"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle-4"
+        name="InputRatingMaskExample-triangle-4"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle-4"
+        name="InputRatingMaskExample-triangle-4"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle-4"
+        name="InputRatingMaskExample-triangle-4"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle-4"
+        name="InputRatingMaskExample-triangle-4"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-triangle-4"
+        name="InputRatingMaskExample-triangle-4"
+        type="radio"
+      />
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputRating Input Rating Size Example 1`] = `
+[
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      lg
+    </label>
+    <div
+      className="rating rating-lg"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-star"
+        name="InputRatingSizeExample-lg"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-lg"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-lg"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-lg"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-lg"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-lg"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      md
+    </label>
+    <div
+      className="rating rating-md"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-star"
+        name="InputRatingSizeExample-md"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-md"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-md"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-md"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-md"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-md"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      sm
+    </label>
+    <div
+      className="rating rating-sm"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-star"
+        name="InputRatingSizeExample-sm"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-sm"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-sm"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-sm"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-sm"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-sm"
+        type="radio"
+      />
+    </div>
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      xs
+    </label>
+    <div
+      className="rating rating-xs"
+      data-testid="InputRating"
+    >
+      <input
+        className="mask rating-hidden bg-primary mask-star"
+        name="InputRatingSizeExample-xs"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-xs"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-xs"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-xs"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-xs"
+        type="radio"
+      />
+      <input
+        className="mask bg-primary mask-star"
+        name="InputRatingSizeExample-xs"
+        type="radio"
+      />
+    </div>
+  </div>,
+]
 `;

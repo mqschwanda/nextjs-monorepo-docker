@@ -2,70 +2,87 @@ import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-l
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cx from 'classnames';
 import { ReactCxProps, buildEnumCx } from '@mqs/react-utils';
+import { InputRatingVariantColor, InputRatingVariantMask, InputRatingVariantSize } from './types';
+import { getMaskHalfClassName } from './utils';
 
-export enum InputRatingVariantColor {
-  accent = 'bg-accent',
-  error = 'bg-error',
-  info = 'bg-info',
-  primary = 'bg-primary',
-  secondary = 'bg-secondary',
-  success = 'bg-success',
-  warning = 'bg-warning',
-}
+export {
+  InputRatingVariantColor,
+  InputRatingVariantMask,
+  InputRatingVariantSize,
+};
 
-export enum InputRatingVariantMask {
-  squircle = 'mask-squircle',
-  heart = 'mask-heart',
-  hexagon = 'mask-hexagon',
-  'hexagon-2' = 'mask-hexagon-2',
-  decagon = 'mask-decagon',
-  pentagon = 'mask-pentagon',
-  diamond = 'mask-diamond',
-  square = 'mask-square',
-  circle = 'mask-circle',
-  parallelogram = 'mask-parallelogram',
-  'parallelogram-2' = 'mask-parallelogram-2',
-  'parallelogram-3' = 'mask-parallelogram-3',
-  'parallelogram-4' = 'mask-parallelogram-4',
-  star = 'mask-star',
-  'star-2' = 'mask-star-2',
-  triangle = 'mask-triangle',
-  'triangle-2' = 'mask-triangle-2',
-  'triangle-3' = 'mask-triangle-3',
-  'triangle-4' = 'mask-triangle-4',
-}
-
-export enum InputRatingVariantSize {
-  lg = 'rating-lg',
-  md = 'rating-md',
-  sm = 'rating-sm',
-  xs = 'rating-xs',
-}
-
+/**
+ * Props for the `<InputRating />` component.
+ */
 export interface InputRatingProps
   extends ReactTestingProps,
   ReactCxProps,
   Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'children'> {
+  /**
+   * Override the `variantColor` prop with the error style.
+   *
+   * @default false
+   */
+  error?: boolean,
+  /**
+   * allow half fill for each option.
+   *
+   * @default false
+   */
   half?: boolean,
+  /**
+   * the maximum possible rating.
+   *
+   * @default 5
+   */
   max: number,
+  /**
+   * the minimum possible rating.
+   *
+   * @default 0
+   */
   min?: number,
+  /**
+   * A string specifying a name for each input control rendered by rating component.
+   */
   name: string,
+  /**
+   * color and style
+   *
+   * @default 'primary'
+   */
   variantColor?: keyof typeof InputRatingVariantColor,
+  /**
+   * mask shape
+   *
+   * @default 'star'
+   */
   variantMask?: keyof typeof InputRatingVariantMask,
+  /**
+   * size
+   *
+   * @default 'md'
+   */
   variantSize?: keyof typeof InputRatingVariantSize,
 }
 
+/**
+ * a set of radio buttons that allow the user to rate something.
+ *
+ * See [interactive docs](https://mqschwanda.github.io/nextjs-monorepo-docker/?path=/docs/mqs-react-server-components-components-input-inputrating--docs) for more information.
+ */
 export function InputRating({
   className,
   cx: cxProp,
-  half,
-  max,
+  error = false,
+  half = false,
+  max = 5,
   min = 0,
   name,
   testId = 'InputRating',
-  variantColor,
+  variantColor = 'primary',
   variantMask = 'star',
-  variantSize,
+  variantSize = 'md',
   ...rest
 }: InputRatingProps) {
   if (!Number.isInteger(min)) {
@@ -95,11 +112,11 @@ export function InputRating({
         <input
           className={cx(
             'mask',
-            half && i > 0 ? (i % 2 ? 'mask-half-1' : 'mask-half-2') : undefined, // eslint-disable-line no-nested-ternary
+            getMaskHalfClassName({ half, i }),
             min === 0 && i === 0 ? 'rating-hidden' : undefined,
             buildEnumCx(
               InputRatingVariantColor,
-              variantColor,
+              error ? 'error' : variantColor,
             ),
             buildEnumCx(
               InputRatingVariantMask,
