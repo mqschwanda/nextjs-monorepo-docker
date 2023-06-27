@@ -2,40 +2,58 @@ import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-l
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import cx from 'classnames';
 import { ReactCxProps, buildEnumCx } from '@mqs/react-utils';
+import { InputFileVariantColor, InputFileVariantSize } from './types';
 
-export enum InputFileVariantColor {
-  accent = 'file-input-accent',
-  error = 'file-input-error',
-  ghost = 'file-input-ghost',
-  info = 'file-input-info',
-  primary = 'file-input-primary',
-  secondary = 'file-input-secondary',
-  success = 'file-input-success',
-  warning = 'file-input-warning',
-}
+export {
+  InputFileVariantColor,
+  InputFileVariantSize,
+};
 
-export enum InputFileVariantSize {
-  lg = 'file-input-lg',
-  md = 'file-input-md',
-  sm = 'file-input-sm',
-  xs = 'file-input-xs',
-}
-
+/**
+ * Props for the `<InputFile />` component.
+ */
 export interface InputFileProps
   extends ReactTestingProps,
   ReactCxProps,
   Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'type'> {
+  /**
+   * Adds border to input
+   *
+   * @default true
+   */
   bordered?: boolean,
+  /**
+   * Override the `variantColor` prop with the error style.
+   *
+   * @default false
+   */
+  error?: boolean,
+  /**
+   * color and style
+   *
+   * @default 'primary'
+   */
   variantColor?: keyof typeof InputFileVariantColor,
+  /**
+   * size
+   *
+   * @default 'md'
+   */
   variantSize?: keyof typeof InputFileVariantSize,
 }
 
+/**
+ * an input field for uploading files.
+ *
+ * See [interactive docs](https://mqschwanda.github.io/nextjs-monorepo-docker/?path=/docs/mqs-react-server-components-components-input-inputfile--docs) for more information.
+ */
 export function InputFile({
-  bordered,
+  bordered = true,
   className,
   cx: cxProp,
-  variantColor,
-  variantSize,
+  error = false,
+  variantColor = 'primary',
+  variantSize = 'md',
   testId = 'InputFile',
   ...rest
 }: InputFileProps) {
@@ -46,7 +64,7 @@ export function InputFile({
         bordered ? 'file-input-bordered' : undefined,
         buildEnumCx(
           InputFileVariantColor,
-          variantColor,
+          error ? 'error' : variantColor,
         ),
         buildEnumCx(
           InputFileVariantSize,

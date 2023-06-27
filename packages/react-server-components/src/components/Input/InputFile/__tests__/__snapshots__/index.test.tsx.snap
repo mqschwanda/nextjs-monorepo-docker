@@ -3,9 +3,219 @@
 exports[`@mqs/react-server-components components <InputFile /> renders 1`] = `
 <DocumentFragment>
   <input
-    class="file-input test"
+    class="file-input file-input-bordered file-input-primary file-input-md test"
     data-testid="InputFile"
     type="file"
   />
 </DocumentFragment>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputFile Input File Color Example 1`] = `
+[
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      accent
+    </label>
+    <input
+      className="file-input file-input-bordered file-input-accent file-input-md"
+      data-testid="InputFile"
+      type="file"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      error
+    </label>
+    <input
+      className="file-input file-input-bordered file-input-error file-input-md"
+      data-testid="InputFile"
+      type="file"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      ghost
+    </label>
+    <input
+      className="file-input file-input-bordered file-input-ghost file-input-md"
+      data-testid="InputFile"
+      type="file"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      info
+    </label>
+    <input
+      className="file-input file-input-bordered file-input-info file-input-md"
+      data-testid="InputFile"
+      type="file"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      primary
+    </label>
+    <input
+      className="file-input file-input-bordered file-input-primary file-input-md"
+      data-testid="InputFile"
+      type="file"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      secondary
+    </label>
+    <input
+      className="file-input file-input-bordered file-input-secondary file-input-md"
+      data-testid="InputFile"
+      type="file"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      success
+    </label>
+    <input
+      className="file-input file-input-bordered file-input-success file-input-md"
+      data-testid="InputFile"
+      type="file"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      warning
+    </label>
+    <input
+      className="file-input file-input-bordered file-input-warning file-input-md"
+      data-testid="InputFile"
+      type="file"
+    />
+  </div>,
+]
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputFile Input File Example 1`] = `
+<input
+  className="file-input file-input-bordered file-input-primary file-input-md"
+  data-testid="InputFile"
+  type="file"
+/>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputFile Input File Size Example 1`] = `
+[
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      lg
+    </label>
+    <input
+      className="file-input file-input-bordered file-input-primary file-input-lg"
+      data-testid="InputFile"
+      type="file"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      md
+    </label>
+    <input
+      className="file-input file-input-bordered file-input-primary file-input-md"
+      data-testid="InputFile"
+      type="file"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      sm
+    </label>
+    <input
+      className="file-input file-input-bordered file-input-primary file-input-sm"
+      data-testid="InputFile"
+      type="file"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      xs
+    </label>
+    <input
+      className="file-input file-input-bordered file-input-primary file-input-xs"
+      data-testid="InputFile"
+      type="file"
+    />
+  </div>,
+]
 `;
