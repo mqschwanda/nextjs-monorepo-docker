@@ -35,7 +35,7 @@ export interface InputRatingProps
    *
    * @default 5
    */
-  max: number,
+  max?: number,
   /**
    * the minimum possible rating.
    *

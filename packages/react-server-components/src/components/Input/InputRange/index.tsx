@@ -2,42 +2,66 @@ import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-l
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import cx from 'classnames';
 import { ReactCxProps, buildEnumCx } from '@mqs/react-utils';
+import { InputRangeVariantColor, InputRangeVariantSize } from './types';
 
-export enum InputRangeVariantColor {
-  accent = 'range-accent',
-  error = 'range-error',
-  info = 'range-info',
-  primary = 'range-primary',
-  secondary = 'range-secondary',
-  success = 'range-success',
-  warning = 'range-warning',
-}
+export {
+  InputRangeVariantColor,
+  InputRangeVariantSize,
+};
 
-export enum InputRangeVariantSize {
-  lg = 'range-lg',
-  md = 'range-md',
-  sm = 'range-sm',
-  xs = 'range-xs',
-}
-
+/**
+ * Props for the `<InputRange />` component.
+ */
 export interface InputRangeProps
   extends ReactTestingProps,
   ReactCxProps,
   Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'max' | 'min' | 'type'> {
-  max: number,
-  min: number,
+  /**
+   * Override the `variantColor` prop with the error style.
+   *
+   * @default false
+   */
+  error?: boolean,
+  /**
+   * the maximum possible value.
+   *
+   * @default 100
+   */
+  max?: number,
+  /**
+   * the minimum possible value.
+   *
+   * @default 0
+   */
+  min?: number,
+  /**
+   * color and style
+   *
+   * @default 'primary'
+   */
   variantColor?: keyof typeof InputRangeVariantColor,
+  /**
+   * size
+   *
+   * @default 'md'
+   */
   variantSize?: keyof typeof InputRangeVariantSize,
 }
 
+/**
+ * a slider is used to select a value by sliding a handle.
+ *
+ * See [interactive docs](https://mqschwanda.github.io/nextjs-monorepo-docker/?path=/docs/mqs-react-server-components-components-input-inputrange--docs) for more information.
+ */
 export function InputRange({
   className,
   cx: cxProp,
-  max,
-  min,
+  error = false,
+  max = 100,
+  min = 0,
   testId = 'InputRange',
-  variantColor,
-  variantSize,
+  variantColor = 'primary',
+  variantSize = 'md',
   ...rest
 }: InputRangeProps) {
   return (
@@ -46,7 +70,7 @@ export function InputRange({
         'range',
         buildEnumCx(
           InputRangeVariantColor,
-          variantColor,
+          error ? 'error' : variantColor,
         ),
         buildEnumCx(
           InputRangeVariantSize,
