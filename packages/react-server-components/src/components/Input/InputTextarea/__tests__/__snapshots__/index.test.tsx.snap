@@ -3,8 +3,218 @@
 exports[`@mqs/react-server-components components <InputTextarea /> renders 1`] = `
 <DocumentFragment>
   <textarea
-    class="textarea test"
+    class="textarea textarea-primary textarea-md test"
     data-testid="InputTextarea"
   />
 </DocumentFragment>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputTextarea Input Textarea Color Example 1`] = `
+[
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      accent
+    </label>
+    <textarea
+      className="textarea textarea-bordered textarea-accent textarea-md"
+      data-testid="InputTextarea"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      error
+    </label>
+    <textarea
+      className="textarea textarea-bordered textarea-error textarea-md"
+      data-testid="InputTextarea"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      ghost
+    </label>
+    <textarea
+      className="textarea textarea-bordered textarea-ghost textarea-md"
+      data-testid="InputTextarea"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      info
+    </label>
+    <textarea
+      className="textarea textarea-bordered textarea-info textarea-md"
+      data-testid="InputTextarea"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      primary
+    </label>
+    <textarea
+      className="textarea textarea-bordered textarea-primary textarea-md"
+      data-testid="InputTextarea"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      secondary
+    </label>
+    <textarea
+      className="textarea textarea-bordered textarea-secondary textarea-md"
+      data-testid="InputTextarea"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      success
+    </label>
+    <textarea
+      className="textarea textarea-bordered textarea-success textarea-md"
+      data-testid="InputTextarea"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      warning
+    </label>
+    <textarea
+      className="textarea textarea-bordered textarea-warning textarea-md"
+      data-testid="InputTextarea"
+      placeholder="type here..."
+    />
+  </div>,
+]
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputTextarea Input Textarea Example 1`] = `
+<textarea
+  className="textarea textarea-bordered textarea-primary textarea-md"
+  data-testid="InputTextarea"
+  placeholder="type here..."
+/>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputTextarea Input Textarea Size Example 1`] = `
+[
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      lg
+    </label>
+    <textarea
+      className="textarea textarea-bordered textarea-primary textarea-lg"
+      data-testid="InputTextarea"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      md
+    </label>
+    <textarea
+      className="textarea textarea-bordered textarea-primary textarea-md"
+      data-testid="InputTextarea"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      sm
+    </label>
+    <textarea
+      className="textarea textarea-bordered textarea-primary textarea-sm"
+      data-testid="InputTextarea"
+      placeholder="type here..."
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      xs
+    </label>
+    <textarea
+      className="textarea textarea-bordered textarea-primary textarea-xs"
+      data-testid="InputTextarea"
+      placeholder="type here..."
+    />
+  </div>,
+]
 `;

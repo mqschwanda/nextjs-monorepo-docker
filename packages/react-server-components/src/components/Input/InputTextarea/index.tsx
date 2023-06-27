@@ -2,40 +2,55 @@ import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-l
 import { DetailedHTMLProps, TextareaHTMLAttributes } from 'react';
 import cx from 'classnames';
 import { ReactCxProps, buildEnumCx } from '@mqs/react-utils';
+import { InputTextareaVariantColor, InputTextareaVariantSize } from './types';
 
-export enum InputTextareaVariantColor {
-  accent = 'textarea-accent',
-  error = 'textarea-error',
-  ghost = 'textarea-ghost',
-  info = 'textarea-info',
-  primary = 'textarea-primary',
-  secondary = 'textarea-secondary',
-  success = 'textarea-success',
-  warning = 'textarea-warning',
-}
+export { InputTextareaVariantColor, InputTextareaVariantSize };
 
-export enum InputTextareaVariantSize {
-  lg = 'textarea-lg',
-  md = 'textarea-md',
-  sm = 'textarea-sm',
-  xs = 'textarea-xs',
-}
-
+/**
+ * Props for the `<InputTextarea />` component.
+ */
 export interface InputTextareaProps
   extends ReactTestingProps,
   ReactCxProps,
   DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> {
+  /**
+   * Adds border to input
+   *
+   * @default true
+   */
   bordered?: boolean,
+  /**
+   * Override the `variantColor` prop with the error style.
+   *
+   * @default false
+   */
+  error?: boolean,
+  /**
+   * color and style
+   *
+   * @default 'primary'
+   */
   variantColor?: keyof typeof InputTextareaVariantColor,
+  /**
+   * size
+   *
+   * @default 'md'
+   */
   variantSize?: keyof typeof InputTextareaVariantSize,
 }
 
+/**
+ * an input that allows users to enter text in multiple lines.
+ *
+ * See [interactive docs](https://mqschwanda.github.io/nextjs-monorepo-docker/?path=/docs/mqs-react-server-components-components-input-inputtextarea--docs) for more information.
+ */
 export function InputTextarea({
   bordered,
   className,
   cx: cxProp,
-  variantColor,
-  variantSize,
+  error = false,
+  variantColor = 'primary',
+  variantSize = 'md',
   testId = 'InputTextarea',
   ...rest
 }: InputTextareaProps) {
@@ -46,7 +61,7 @@ export function InputTextarea({
         bordered ? 'textarea-bordered' : undefined,
         buildEnumCx(
           InputTextareaVariantColor,
-          variantColor,
+          error ? 'error' : variantColor,
         ),
         buildEnumCx(
           InputTextareaVariantSize,
