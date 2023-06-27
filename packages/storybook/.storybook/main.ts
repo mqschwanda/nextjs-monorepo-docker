@@ -52,6 +52,7 @@ const config: StorybookConfig = {
       new TsconfigPathsPlugin({
         // TODO: extend config for all workspaces
         configFile: path.resolve(__dirname, "../../react-server-components/tsconfig.json"),
+        // context: path.resolve(__dirname, "../../react-server-components"),
         extensions: config.resolve.extensions,
       }),
     ]
