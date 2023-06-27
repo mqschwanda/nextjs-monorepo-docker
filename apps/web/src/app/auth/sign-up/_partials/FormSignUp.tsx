@@ -1,3 +1,5 @@
+'use client';
+
 import { NextLinkWrapper } from '@mqs/react-client-components';
 import {
   Button,
@@ -5,67 +7,74 @@ import {
   InputText,
   Label,
 } from '@mqs/react-server-components';
-import signUp from 'actions/sign-up';
-import { DetailedHTMLProps, FormHTMLAttributes } from 'react';
+import signUp from 'actions/sign-up/action';
+import { Schema } from 'actions/sign-up/validation';
+import {
+  DetailedHTMLProps,
+  FormHTMLAttributes,
+} from 'react';
+import useFormAction from 'utilities/useFormAction';
 
-export interface FormSignUpProps extends Omit<DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>, 'action' | 'children'> {
+export interface FormSignUpProps
+  extends Omit<DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>, 'action' | 'children'> {
 
 }
 
 export default function FormSignUp(props: FormSignUpProps) {
+  const {
+    clearErrors,
+    errors,
+    handleAction,
+  } = useFormAction<Schema>({
+    action: signUp,
+  });
+
   return (
     <form
-      action={signUp}
+      action={handleAction}
       {...props} // eslint-disable-line react/jsx-props-no-spreading
     >
-      <FormControl>
-        <Label
-          htmlFor='email'
-        >
-          <span
-            className='label-text'
-          >
-            { 'Email' }
-          </span>
-        </Label>
+      <FormControl
+        error={errors.email}
+        htmlFor='email'
+        label='Email'
+      >
         <InputText
           bordered
+          error={!!errors.email}
           id='email'
           name='email'
+          onChange={() => clearErrors(['email'])}
           placeholder='email'
           type='text'
         />
       </FormControl>
-      <FormControl>
-        <Label
-          htmlFor='password'
-        >
-          <span
-            className='label-text'
-          >
-            { 'Password' }
-          </span>
-        </Label>
+      <FormControl
+        error={errors.password}
+        htmlFor='password'
+        label='Password'
+      >
         <InputText
           bordered
+          error={!!errors.password}
           id='password'
           name='password'
+          onChange={() => clearErrors(['confirm-password', 'password'])}
           placeholder='password'
           type='text'
         />
-        <Label
-          htmlFor='confirm-password'
-        >
-          <span
-            className='label-text'
-          >
-            { 'Confirm Password' }
-          </span>
-        </Label>
+      </FormControl>
+      <FormControl
+        error={errors['confirm-password']}
+        htmlFor='confirm-password'
+        label='Confirm Password'
+      >
         <InputText
           bordered
+          error={!!errors['confirm-password']}
           id='confirm-password'
           name='confirm-password'
+          onChange={() => clearErrors(['confirm-password', 'password'])}
           placeholder='confirm password'
           type='text'
         />

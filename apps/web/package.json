@@ -23,7 +23,8 @@
     "cookies-next": "^2.1.2",
     "next": "^13.4.7",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@mqs/eslint-config": "*",

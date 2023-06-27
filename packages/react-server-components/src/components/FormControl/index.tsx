@@ -24,6 +24,10 @@ export interface FormControlProps
    */
   error?: ReactNode,
   /**
+   * The id of the element the labels are bound to.
+   */
+  htmlFor?: string,
+  /**
    * React node that is rendered as the primary label above the child input.
    */
   label?: ReactNode,
@@ -40,7 +44,7 @@ export function FormControl({
   cx: cxProp,
   description,
   error = '',
-  id,
+  htmlFor,
   label,
   testId = 'FormControl',
   ...rest
@@ -52,21 +56,24 @@ export function FormControl({
         className,
         cxProp,
       )}
-      id={id}
       {...spreadReactTestingProps({ testId })} // eslint-disable-line react/jsx-props-no-spreading
       {...rest} // eslint-disable-line react/jsx-props-no-spreading
     >
       { label ? (
         <Label
-          htmlFor={id}
+          htmlFor={htmlFor}
         >
-          { label }
+          <span
+            className='label-text'
+          >
+            { label }
+          </span>
         </Label>
       ) : null }
       { children }
       { error || description ? (
         <Label
-          htmlFor={id}
+          htmlFor={htmlFor}
         >
           <span
             className={cx(
