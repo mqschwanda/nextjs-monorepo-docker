@@ -1,5 +1,11 @@
 import { render } from '@testing-library/react';
 import { InputRadio } from '@';
+import initStoryshots from '@/__tests__/initStoryshots';
+
+initStoryshots({
+  failOnReactKeyError: false,
+  storyKindRegex: /^@mqs\/react-server-components\/components\/Input\/InputRadio$/,
+});
 
 describe('@mqs/react-server-components', () => {
   describe('components', () => {

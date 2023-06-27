@@ -3,11 +3,229 @@
 exports[`@mqs/react-server-components components <InputRange /> renders 1`] = `
 <DocumentFragment>
   <input
-    class="range test"
+    class="range range-primary range-md test"
     data-testid="InputRange"
     max="100"
     min="0"
     type="range"
   />
 </DocumentFragment>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputRange Input Range Color Example 1`] = `
+[
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      accent
+    </label>
+    <input
+      className="range range-accent range-md"
+      data-testid="InputRange"
+      max={100}
+      min={0}
+      type="range"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      error
+    </label>
+    <input
+      className="range range-error range-md"
+      data-testid="InputRange"
+      max={100}
+      min={0}
+      type="range"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      info
+    </label>
+    <input
+      className="range range-info range-md"
+      data-testid="InputRange"
+      max={100}
+      min={0}
+      type="range"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      primary
+    </label>
+    <input
+      className="range range-primary range-md"
+      data-testid="InputRange"
+      max={100}
+      min={0}
+      type="range"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      secondary
+    </label>
+    <input
+      className="range range-secondary range-md"
+      data-testid="InputRange"
+      max={100}
+      min={0}
+      type="range"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      success
+    </label>
+    <input
+      className="range range-success range-md"
+      data-testid="InputRange"
+      max={100}
+      min={0}
+      type="range"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      warning
+    </label>
+    <input
+      className="range range-warning range-md"
+      data-testid="InputRange"
+      max={100}
+      min={0}
+      type="range"
+    />
+  </div>,
+]
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputRange Input Range Example 1`] = `
+<input
+  className="range range-primary range-md"
+  data-testid="InputRange"
+  max={100}
+  min={0}
+  type="range"
+/>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputRange Input Range Size Example 1`] = `
+[
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      lg
+    </label>
+    <input
+      className="range range-primary range-lg"
+      data-testid="InputRange"
+      max={100}
+      min={0}
+      type="range"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      md
+    </label>
+    <input
+      className="range range-primary range-md"
+      data-testid="InputRange"
+      max={100}
+      min={0}
+      type="range"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      sm
+    </label>
+    <input
+      className="range range-primary range-sm"
+      data-testid="InputRange"
+      max={100}
+      min={0}
+      type="range"
+    />
+  </div>,
+  <div
+    className="form-control my-4"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      xs
+    </label>
+    <input
+      className="range range-primary range-xs"
+      data-testid="InputRange"
+      max={100}
+      min={0}
+      type="range"
+    />
+  </div>,
+]
 `;

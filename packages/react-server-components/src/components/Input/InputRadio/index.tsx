@@ -2,37 +2,51 @@ import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-l
 import { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import cx from 'classnames';
 import { ReactCxProps, buildEnumCx } from '@mqs/react-utils';
+import { InputRadioVariantColor, InputRadioVariantSize } from './types';
 
-export enum InputRadioVariantColor {
-  accent = 'radio-accent',
-  error = 'radio-error',
-  info = 'radio-info',
-  primary = 'radio-primary',
-  secondary = 'radio-secondary',
-  success = 'radio-success',
-  warning = 'radio-warning',
-}
+export {
+  InputRadioVariantColor,
+  InputRadioVariantSize,
+};
 
-export enum InputRadioVariantSize {
-  lg = 'radio-lg',
-  md = 'radio-md',
-  sm = 'radio-sm',
-  xs = 'radio-xs',
-}
-
+/**
+ * Props for the `<InputRadio />` component.
+ */
 export interface InputRadioProps
   extends ReactTestingProps,
   ReactCxProps,
   Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'type'> {
+  /**
+   * Override the `variantColor` prop with the error style.
+   *
+   * @default false
+   */
+  error?: boolean,
+  /**
+   * color and style
+   *
+   * @default 'primary'
+   */
   variantColor?: keyof typeof InputRadioVariantColor,
+  /**
+   * size
+   *
+   * @default 'md'
+   */
   variantSize?: keyof typeof InputRadioVariantSize,
 }
 
+/**
+ * allow the user to select one option from a set.
+ *
+ * See [interactive docs](https://mqschwanda.github.io/nextjs-monorepo-docker/?path=/docs/mqs-react-server-components-components-input-inputradio--docs) for more information.
+ */
 export function InputRadio({
   className,
   cx: cxProp,
-  variantColor,
-  variantSize,
+  error = false,
+  variantColor = 'primary',
+  variantSize = 'md',
   testId = 'InputRadio',
   ...rest
 }: InputRadioProps) {
@@ -42,7 +56,7 @@ export function InputRadio({
         'radio',
         buildEnumCx(
           InputRadioVariantColor,
-          variantColor,
+          error ? 'error' : variantColor,
         ),
         buildEnumCx(
           InputRadioVariantSize,

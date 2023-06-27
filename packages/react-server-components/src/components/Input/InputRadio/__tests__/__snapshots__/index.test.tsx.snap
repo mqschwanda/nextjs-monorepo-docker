@@ -3,9 +3,658 @@
 exports[`@mqs/react-server-components components <InputRadio /> renders 1`] = `
 <DocumentFragment>
   <input
-    class="radio test"
+    class="radio radio-primary radio-md test"
     data-testid="InputRadio"
     type="radio"
   />
 </DocumentFragment>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputRadio Input Radio Color Example 1`] = `
+[
+  <div
+    className="form-control my-4 w-[200px]"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      accent
+    </label>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 1
+        </span>
+        <input
+          className="radio radio-accent radio-md"
+          data-testid="InputRadio"
+          name="InputRadio-accent"
+          type="radio"
+        />
+      </label>
+    </div>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 2
+        </span>
+        <input
+          className="radio radio-accent radio-md"
+          data-testid="InputRadio"
+          name="InputRadio-accent"
+          type="radio"
+        />
+      </label>
+    </div>
+  </div>,
+  <div
+    className="form-control my-4 w-[200px]"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      error
+    </label>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 1
+        </span>
+        <input
+          className="radio radio-error radio-md"
+          data-testid="InputRadio"
+          name="InputRadio-error"
+          type="radio"
+        />
+      </label>
+    </div>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 2
+        </span>
+        <input
+          className="radio radio-error radio-md"
+          data-testid="InputRadio"
+          name="InputRadio-error"
+          type="radio"
+        />
+      </label>
+    </div>
+  </div>,
+  <div
+    className="form-control my-4 w-[200px]"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      info
+    </label>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 1
+        </span>
+        <input
+          className="radio radio-info radio-md"
+          data-testid="InputRadio"
+          name="InputRadio-info"
+          type="radio"
+        />
+      </label>
+    </div>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 2
+        </span>
+        <input
+          className="radio radio-info radio-md"
+          data-testid="InputRadio"
+          name="InputRadio-info"
+          type="radio"
+        />
+      </label>
+    </div>
+  </div>,
+  <div
+    className="form-control my-4 w-[200px]"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      primary
+    </label>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 1
+        </span>
+        <input
+          className="radio radio-primary radio-md"
+          data-testid="InputRadio"
+          name="InputRadio-primary"
+          type="radio"
+        />
+      </label>
+    </div>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 2
+        </span>
+        <input
+          className="radio radio-primary radio-md"
+          data-testid="InputRadio"
+          name="InputRadio-primary"
+          type="radio"
+        />
+      </label>
+    </div>
+  </div>,
+  <div
+    className="form-control my-4 w-[200px]"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      secondary
+    </label>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 1
+        </span>
+        <input
+          className="radio radio-secondary radio-md"
+          data-testid="InputRadio"
+          name="InputRadio-secondary"
+          type="radio"
+        />
+      </label>
+    </div>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 2
+        </span>
+        <input
+          className="radio radio-secondary radio-md"
+          data-testid="InputRadio"
+          name="InputRadio-secondary"
+          type="radio"
+        />
+      </label>
+    </div>
+  </div>,
+  <div
+    className="form-control my-4 w-[200px]"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      success
+    </label>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 1
+        </span>
+        <input
+          className="radio radio-success radio-md"
+          data-testid="InputRadio"
+          name="InputRadio-success"
+          type="radio"
+        />
+      </label>
+    </div>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 2
+        </span>
+        <input
+          className="radio radio-success radio-md"
+          data-testid="InputRadio"
+          name="InputRadio-success"
+          type="radio"
+        />
+      </label>
+    </div>
+  </div>,
+  <div
+    className="form-control my-4 w-[200px]"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      warning
+    </label>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 1
+        </span>
+        <input
+          className="radio radio-warning radio-md"
+          data-testid="InputRadio"
+          name="InputRadio-warning"
+          type="radio"
+        />
+      </label>
+    </div>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 2
+        </span>
+        <input
+          className="radio radio-warning radio-md"
+          data-testid="InputRadio"
+          name="InputRadio-warning"
+          type="radio"
+        />
+      </label>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputRadio Input Radio Example 1`] = `
+<div
+  className="form-control w-[200px]"
+  data-testid="FormControl"
+>
+  <label
+    className="label"
+    data-testid="Label"
+  >
+    Example
+  </label>
+  <div
+    className="form-control"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      <span
+        className="label-text"
+      >
+        Option 1
+      </span>
+      <input
+        className="radio radio-primary radio-md"
+        data-testid="InputRadio"
+        name="InputRadioExample"
+        type="radio"
+      />
+    </label>
+  </div>
+  <div
+    className="form-control"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      <span
+        className="label-text"
+      >
+        Option 2
+      </span>
+      <input
+        className="radio radio-primary radio-md"
+        data-testid="InputRadio"
+        name="InputRadioExample"
+        type="radio"
+      />
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Input/InputRadio Input Radio Size Example 1`] = `
+[
+  <div
+    className="form-control my-4 w-[200px]"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      lg
+    </label>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 1
+        </span>
+        <input
+          className="radio radio-primary radio-lg"
+          data-testid="InputRadio"
+          name="InputRadio-lg"
+          type="radio"
+        />
+      </label>
+    </div>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 2
+        </span>
+        <input
+          className="radio radio-primary radio-lg"
+          data-testid="InputRadio"
+          name="InputRadio-lg"
+          type="radio"
+        />
+      </label>
+    </div>
+  </div>,
+  <div
+    className="form-control my-4 w-[200px]"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      md
+    </label>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 1
+        </span>
+        <input
+          className="radio radio-primary radio-md"
+          data-testid="InputRadio"
+          name="InputRadio-md"
+          type="radio"
+        />
+      </label>
+    </div>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 2
+        </span>
+        <input
+          className="radio radio-primary radio-md"
+          data-testid="InputRadio"
+          name="InputRadio-md"
+          type="radio"
+        />
+      </label>
+    </div>
+  </div>,
+  <div
+    className="form-control my-4 w-[200px]"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      sm
+    </label>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 1
+        </span>
+        <input
+          className="radio radio-primary radio-sm"
+          data-testid="InputRadio"
+          name="InputRadio-sm"
+          type="radio"
+        />
+      </label>
+    </div>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 2
+        </span>
+        <input
+          className="radio radio-primary radio-sm"
+          data-testid="InputRadio"
+          name="InputRadio-sm"
+          type="radio"
+        />
+      </label>
+    </div>
+  </div>,
+  <div
+    className="form-control my-4 w-[200px]"
+    data-testid="FormControl"
+  >
+    <label
+      className="label"
+      data-testid="Label"
+    >
+      xs
+    </label>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 1
+        </span>
+        <input
+          className="radio radio-primary radio-xs"
+          data-testid="InputRadio"
+          name="InputRadio-xs"
+          type="radio"
+        />
+      </label>
+    </div>
+    <div
+      className="form-control"
+      data-testid="FormControl"
+    >
+      <label
+        className="label"
+        data-testid="Label"
+      >
+        <span
+          className="label-text"
+        >
+          Option 2
+        </span>
+        <input
+          className="radio radio-primary radio-xs"
+          data-testid="InputRadio"
+          name="InputRadio-xs"
+          type="radio"
+        />
+      </label>
+    </div>
+  </div>,
+]
 `;
