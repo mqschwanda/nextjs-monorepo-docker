@@ -1,5 +1,6 @@
 import {
   ZodArray,
+  ZodEffects,
   ZodNullable,
   ZodObject,
   ZodOptional,
@@ -34,6 +35,10 @@ function zodKeys<T extends ZodTypeAny>(schema: T): string[] {
       // return nested keys
       return nested.length ? nested : key;
     });
+  }
+  // check is schema has attached effects
+  if (schema instanceof ZodEffects) {
+    return zodKeys(schema.innerType());
   }
   // return empty array
   return [];

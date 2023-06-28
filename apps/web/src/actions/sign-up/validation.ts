@@ -12,26 +12,24 @@ export const schema = z
     password: z
       .string()
       .min(1, { message: 'password is required' }),
-  });
-  // .refine(
-  //   (obj) => obj.password === obj['confirm-password'],
-  //   {
-  //     message: 'password and confirm password must be equal',
-  //     path: [
-  //       'confirm-password',
-  //       // 'password',
-  //     ],
-  //   },
-  // )
-  // .refine(
-  //   (obj) => obj.password === obj['confirm-password'],
-  //   {
-  //     message: 'password and confirm password must be equal',
-  //     path: [
-  //       'password',
-  //       // 'confirm-password',
-  //     ],
-  //   },
-  // );
+  })
+  .refine(
+    (obj) => obj.password === obj['confirm-password'],
+    {
+      message: 'password and confirm password must be equal',
+      path: [
+        'confirm-password',
+      ],
+    },
+  )
+  .refine(
+    (obj) => obj.password === obj['confirm-password'],
+    {
+      message: 'password and confirm password must be equal',
+      path: [
+        'password',
+      ],
+    },
+  );
 
 export type Schema = z.infer<typeof schema>;
