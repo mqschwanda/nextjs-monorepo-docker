@@ -3,24 +3,28 @@ import {
   useMemo,
   useState,
 } from 'react';
+import getFormDataForZod from 'utilities/getFormDataForZod';
 import { ZodTypeAny, typeToFlattenedError } from 'zod';
 
 /**
  * A hook to handle server actions for a form.
  */
 export default function useFormAction<
-  TSchema extends ZodTypeAny['_output'],
+  TSchema extends ZodTypeAny,
+  TSchemaOutput = TSchema['_output'],
 >({
   action,
+  schema,
 }: {
   action: (formData: FormData) => Promise<{
-    errors: typeToFlattenedError<TSchema>,
+    errors: typeToFlattenedError<TSchemaOutput>,
   }>,
+  schema: TSchema,
 }) {
-  type TErrors = typeToFlattenedError<TSchema>;
+  type TErrors = typeToFlattenedError<TSchemaOutput>;
   type TFieldErrors = TErrors['fieldErrors'];
 
-  const [errors, setServer] = useState<TErrors>({
+  const [errors, setErrors] = useState<TErrors>({
     fieldErrors: {},
     formErrors: [],
   });
@@ -30,13 +34,24 @@ export default function useFormAction<
    */
   const handleAction = useCallback(
     async (data: FormData) => {
+      // handle validation on the client
+      const validation = await schema.safeParseAsync(
+        getFormDataForZod(data, schema),
+      );
+
+      if (!validation.success) {
+        setErrors(validation.error.flatten());
+      }
+
       const result = await action(data);
 
-      setServer(result.errors);
+      // finalize validation from the server
+      setErrors(result.errors);
     },
     [
       action,
-      setServer,
+      schema,
+      setErrors,
     ],
   );
 
@@ -47,7 +62,7 @@ export default function useFormAction<
    */
   const clearFieldErrors = useCallback(
     (names: Array<keyof TFieldErrors>) => {
-      setServer((current) => ({
+      setErrors((current) => ({
         ...current,
         fieldErrors: {
           ...current.fieldErrors,
@@ -59,7 +74,7 @@ export default function useFormAction<
       }));
     },
     [
-      setServer,
+      setErrors,
     ],
   );
 

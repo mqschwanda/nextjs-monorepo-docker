@@ -8,7 +8,7 @@ import {
   Label,
 } from '@mqs/react-server-components';
 import signUp from 'actions/sign-up/action';
-import { Schema } from 'actions/sign-up/validation';
+import { schema } from 'actions/sign-up/validation';
 import {
   DetailedHTMLProps,
   FormHTMLAttributes,
@@ -25,8 +25,9 @@ export default function FormSignUp(props: FormSignUpProps) {
     clearFieldErrors,
     errors,
     handleAction,
-  } = useFormAction<Schema>({
+  } = useFormAction({
     action: signUp,
+    schema,
   });
 
   return (
