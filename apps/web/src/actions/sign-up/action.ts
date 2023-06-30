@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
-import getFormDataForZod from 'utilities/getFormDataForZod';
+import { getFormDataForZod } from '@mqs/zod';
 import { schema } from './validation';
 
 // eslint-disable-next-line consistent-return

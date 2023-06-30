@@ -13,7 +13,7 @@ import {
   DetailedHTMLProps,
   FormHTMLAttributes,
 } from 'react';
-import useFormAction from 'utilities/useFormAction';
+import { useFormAction } from '@mqs/react-utils';
 
 export interface FormSignUpProps
   extends Omit<DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>, 'action' | 'children'> {

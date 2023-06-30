@@ -3,7 +3,7 @@ import {
   useMemo,
   useState,
 } from 'react';
-import getFormDataForZod from 'utilities/getFormDataForZod';
+import { getFormDataForZod } from '@mqs/zod';
 import { ZodTypeAny, typeToFlattenedError } from 'zod';
 
 /**

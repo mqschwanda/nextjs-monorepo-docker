@@ -8,7 +8,7 @@ import {
   ZodTypeAny,
 } from 'zod';
 
-function zodKeys<T extends ZodTypeAny>(schema: T): string[] {
+export default function getZodKeys<T extends ZodTypeAny>(schema: T): string[] {
   // make sure schema is not null or undefined
   if (schema === null || schema === undefined) {
     return [];
@@ -17,10 +17,10 @@ function zodKeys<T extends ZodTypeAny>(schema: T): string[] {
   if (
     schema instanceof ZodNullable
     || schema instanceof ZodOptional
-  ) return zodKeys(schema.unwrap());
+  ) return getZodKeys(schema.unwrap());
   // check if schema is an array
   if (schema instanceof ZodArray) {
-    return zodKeys(schema.element);
+    return getZodKeys(schema.element);
   }
   // check if schema is an object
   if (schema instanceof ZodObject) {
@@ -30,7 +30,7 @@ function zodKeys<T extends ZodTypeAny>(schema: T): string[] {
     return entries.flatMap(([key, value]) => {
       // get nested keys
       const nested = value instanceof ZodType
-        ? zodKeys(value).map((subKey) => `${key}.${subKey}`)
+        ? getZodKeys(value).map((subKey) => `${key}.${subKey}`)
         : [];
       // return nested keys
       return nested.length ? nested : key;
@@ -38,27 +38,8 @@ function zodKeys<T extends ZodTypeAny>(schema: T): string[] {
   }
   // check is schema has attached effects
   if (schema instanceof ZodEffects) {
-    return zodKeys(schema.innerType());
+    return getZodKeys(schema.innerType());
   }
   // return empty array
   return [];
-}
-
-export default function getFormDataForZod<
-  T extends ZodTypeAny,
->(
-  formData: FormData,
-  schema: T,
-) {
-  const keys = zodKeys(schema);
-
-  const data = keys.reduce(
-    (current, key) => ({
-      ...current,
-      [key]: formData.get(key),
-    }),
-    {} as Record<string, any>,
-  );
-
-  return data;
 }
