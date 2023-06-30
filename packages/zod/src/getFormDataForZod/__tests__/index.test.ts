@@ -1,5 +1,4 @@
-import * as z from 'zod';
-import { getFormDataForZod } from '@';
+import * as z from '@';
 
 describe('@mqs/zod', () => {
   describe('getDataForZod', () => {
@@ -13,7 +12,7 @@ describe('@mqs/zod', () => {
       formData.append('foo', 'bar');
       formData.append('bar', 'foo');
 
-      const result = getFormDataForZod(formData, schema);
+      const result = z.getFormDataForZod(formData, schema);
 
       expect(result).toStrictEqual(
         {

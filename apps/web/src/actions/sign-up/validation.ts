@@ -1,4 +1,4 @@
-import * as z from 'zod';
+import * as z from '@mqs/zod';
 
 export const schema = z
   .object({

@@ -1,5 +1,4 @@
-import * as z from 'zod';
-import { getZodKeys } from '@';
+import * as z from '@';
 
 describe('@mqs/zod', () => {
   describe('getZodKeys', () => {
@@ -10,7 +9,7 @@ describe('@mqs/zod', () => {
           foo: z.string(),
         });
 
-      const result = getZodKeys(schema);
+      const result = z.getZodKeys(schema);
 
       expect(result).toStrictEqual(['bar', 'foo']);
     });
@@ -29,7 +28,7 @@ describe('@mqs/zod', () => {
           },
         );
 
-      const result = getZodKeys(schema);
+      const result = z.getZodKeys(schema);
 
       expect(result).toStrictEqual(['bar', 'foo']);
     });

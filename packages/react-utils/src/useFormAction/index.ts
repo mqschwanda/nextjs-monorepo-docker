@@ -3,8 +3,7 @@ import {
   useMemo,
   useState,
 } from 'react';
-import { getFormDataForZod } from '@mqs/zod';
-import { ZodTypeAny, typeToFlattenedError } from 'zod';
+import { getFormDataForZod, ZodTypeAny, typeToFlattenedError } from '@mqs/zod';
 
 /**
  * A hook to handle server actions for a form.
