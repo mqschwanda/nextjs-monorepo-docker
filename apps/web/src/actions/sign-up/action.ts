@@ -16,7 +16,7 @@ export default async function signUp(formData: FormData) {
 
   if (!validation.success) {
     return {
-      errors: validation.error.flatten().fieldErrors,
+      errors: validation.error.flatten(),
     };
   }
 

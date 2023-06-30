@@ -22,7 +22,7 @@ export interface FormSignUpProps
 
 export default function FormSignUp(props: FormSignUpProps) {
   const {
-    clearErrors,
+    clearFieldErrors,
     errors,
     handleAction,
   } = useFormAction<Schema>({
@@ -35,46 +35,46 @@ export default function FormSignUp(props: FormSignUpProps) {
       {...props} // eslint-disable-line react/jsx-props-no-spreading
     >
       <FormControl
-        error={errors.email}
+        error={errors?.fieldErrors?.email?.join(', ')}
         htmlFor='email'
         label='Email'
       >
         <InputText
           bordered
-          error={!!errors.email}
+          error={!!errors?.fieldErrors?.email?.length}
           id='email'
           name='email'
-          onChange={() => clearErrors(['email'])}
+          onChange={() => clearFieldErrors(['email'])}
           placeholder='email'
           type='text'
         />
       </FormControl>
       <FormControl
-        error={errors.password}
+        error={errors?.fieldErrors?.password?.join(', ')}
         htmlFor='password'
         label='Password'
       >
         <InputText
           bordered
-          error={!!errors.password}
+          error={!!errors?.fieldErrors?.password?.length}
           id='password'
           name='password'
-          onChange={() => clearErrors(['confirm-password', 'password'])}
+          onChange={() => clearFieldErrors(['confirm-password', 'password'])}
           placeholder='password'
           type='text'
         />
       </FormControl>
       <FormControl
-        error={errors['confirm-password']}
+        error={errors?.fieldErrors['confirm-password']?.join(', ')}
         htmlFor='confirm-password'
         label='Confirm Password'
       >
         <InputText
           bordered
-          error={!!errors['confirm-password']}
+          error={!!errors?.fieldErrors['confirm-password']?.length}
           id='confirm-password'
           name='confirm-password'
-          onChange={() => clearErrors(['confirm-password', 'password'])}
+          onChange={() => clearFieldErrors(['confirm-password', 'password'])}
           placeholder='confirm password'
           type='text'
         />

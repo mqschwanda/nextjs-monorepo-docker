@@ -3,65 +3,48 @@ import {
   useMemo,
   useState,
 } from 'react';
-import { ZodType, typeToFlattenedError } from 'zod';
+import { ZodTypeAny, typeToFlattenedError } from 'zod';
 
 export default function useFormAction<
-  TSchema extends ZodType<any, any, any>['_output'],
+  TSchema extends ZodTypeAny['_output'],
 >({
   action,
 }: {
   action: (formData: FormData) => Promise<{
-    errors: typeToFlattenedError<TSchema>['fieldErrors'],
+    errors: typeToFlattenedError<TSchema>,
   }>,
 }) {
-  type TFieldErrors = typeToFlattenedError<TSchema>['fieldErrors'];
-  type TErrors = Partial<{ [key in keyof TFieldErrors]: string | undefined }>;
+  type TErrors = typeToFlattenedError<TSchema>;
+  type TFieldErrors = TErrors['fieldErrors'];
 
-  const [errorsServer, setErrorsServer] = useState<TErrors>({});
-
-  const getError = useCallback(
-    (name: keyof TFieldErrors, errors: TFieldErrors) => {
-      if (!errors) {
-        return undefined;
-      }
-
-      const [error] = errors[name] || [undefined];
-
-      return error;
-    },
-    [],
-  );
+  const [errorsServer, setErrorsServer] = useState<TErrors>({
+    fieldErrors: {},
+    formErrors: [],
+  });
 
   const handleAction = useCallback(
     async (data: FormData) => {
       const result = await action(data);
 
-      setErrorsServer(
-        (Object.keys(result.errors) as Array<keyof TFieldErrors>)
-          .reduce((previous, name) => ({
-            ...previous,
-            [name]: getError(
-              name,
-              result.errors,
-            ),
-          }), {} as TErrors),
-      );
+      setErrorsServer(result.errors);
     },
     [
       action,
       setErrorsServer,
-      getError,
     ],
   );
 
-  const clearErrors = useCallback(
+  const clearFieldErrors = useCallback(
     (names: Array<keyof TFieldErrors>) => {
       setErrorsServer((current) => ({
         ...current,
-        ...names.reduce((previous, name) => ({
-          ...previous,
-          [name]: undefined,
-        }), {}),
+        fieldErrors: {
+          ...current.fieldErrors,
+          ...names.reduce((previous, name) => ({
+            ...previous,
+            [name]: undefined,
+          }), {}),
+        },
       }));
     },
     [
@@ -71,12 +54,12 @@ export default function useFormAction<
 
   return useMemo(
     () => ({
-      clearErrors,
+      clearFieldErrors,
       errors: errorsServer,
       handleAction,
     }),
     [
-      clearErrors,
+      clearFieldErrors,
       errorsServer,
       handleAction,
     ],
