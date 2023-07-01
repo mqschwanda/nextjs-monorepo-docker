@@ -5,21 +5,26 @@ import {
 } from 'react';
 import { getFormDataForZod, ZodTypeAny, typeToFlattenedError } from '@mqs/zod';
 
+export type UseFormActionOptions<
+  TSchema extends ZodTypeAny,
+  TSchemaOutput = TSchema['_output'],
+> = {
+  action: (formData: FormData) => Promise<{
+    errors: typeToFlattenedError<TSchemaOutput>,
+  }>,
+  schema: TSchema,
+};
+
 /**
  * A hook to handle server actions for a form.
  */
-export default function useFormAction<
+export function useFormAction<
   TSchema extends ZodTypeAny,
   TSchemaOutput = TSchema['_output'],
 >({
   action,
   schema,
-}: {
-  action: (formData: FormData) => Promise<{
-    errors: typeToFlattenedError<TSchemaOutput>,
-  }>,
-  schema: TSchema,
-}) {
+}: UseFormActionOptions<TSchema, TSchemaOutput>) {
   type TErrors = typeToFlattenedError<TSchemaOutput>;
   type TFieldErrors = TErrors['fieldErrors'];
 

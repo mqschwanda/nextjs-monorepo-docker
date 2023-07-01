@@ -1,6 +1,6 @@
 import * as z from '@mqs/zod';
 
-export const schema = z
+export const signUpSchema = z
   .object({
     'confirm-password': z
       .string()
@@ -32,4 +32,4 @@ export const schema = z
     },
   );
 
-export type Schema = z.infer<typeof schema>;
+export type SignUpSchema = z.infer<typeof signUpSchema>;

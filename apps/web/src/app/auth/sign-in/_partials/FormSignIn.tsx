@@ -1,3 +1,5 @@
+'use client';
+
 import { NextLinkWrapper } from '@mqs/react-client-components';
 import {
   Button,
@@ -5,7 +7,7 @@ import {
   InputText,
   Label,
 } from '@mqs/react-server-components';
-import signIn from 'actions/sign-in';
+import { useFormActionSignIn } from 'actions/sign-in';
 import { DetailedHTMLProps, FormHTMLAttributes } from 'react';
 
 export interface FormSignInProps extends Omit<DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>, 'action' | 'children'> {
@@ -13,44 +15,44 @@ export interface FormSignInProps extends Omit<DetailedHTMLProps<FormHTMLAttribut
 }
 
 export default function FormSignIn(props: FormSignInProps) {
+  const {
+    clearFieldErrors,
+    errors,
+    handleAction,
+  } = useFormActionSignIn();
+
   return (
     <form
-      action={signIn}
+      action={handleAction}
       {...props} // eslint-disable-line react/jsx-props-no-spreading
     >
-      <FormControl>
-        <Label
-          htmlFor='email'
-        >
-          <span
-            className='label-text'
-          >
-            { 'Email' }
-          </span>
-        </Label>
+      <FormControl
+        error={errors?.fieldErrors?.email?.join(', ')}
+        htmlFor='email'
+        label='Email'
+      >
         <InputText
           bordered
+          error={!!errors?.fieldErrors?.email?.length}
           id='email'
           name='email'
+          onChange={() => clearFieldErrors(['email'])}
           placeholder='email'
           required
           type='text'
         />
       </FormControl>
-      <FormControl>
-        <Label
-          htmlFor='password'
-        >
-          <span
-            className='label-text'
-          >
-            { 'Password' }
-          </span>
-        </Label>
+      <FormControl
+        error={errors?.fieldErrors?.password?.join(', ')}
+        htmlFor='password'
+        label='Password'
+      >
         <InputText
           bordered
+          error={!!errors?.fieldErrors?.password?.length}
           id='password'
           name='password'
+          onChange={() => clearFieldErrors(['password'])}
           placeholder='password'
           required
           type='password'

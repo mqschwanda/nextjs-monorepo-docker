@@ -7,13 +7,11 @@ import {
   InputText,
   Label,
 } from '@mqs/react-server-components';
-import signUp from 'actions/sign-up/action';
-import { schema } from 'actions/sign-up/validation';
+import { useFormActionSignUp } from 'actions/sign-up';
 import {
   DetailedHTMLProps,
   FormHTMLAttributes,
 } from 'react';
-import { useFormAction } from '@mqs/react-utils';
 
 export interface FormSignUpProps
   extends Omit<DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>, 'action' | 'children'> {
@@ -25,10 +23,7 @@ export default function FormSignUp(props: FormSignUpProps) {
     clearFieldErrors,
     errors,
     handleAction,
-  } = useFormAction({
-    action: signUp,
-    schema,
-  });
+  } = useFormActionSignUp();
 
   return (
     <form
@@ -47,6 +42,7 @@ export default function FormSignUp(props: FormSignUpProps) {
           name='email'
           onChange={() => clearFieldErrors(['email'])}
           placeholder='email'
+          required
           type='text'
         />
       </FormControl>
@@ -62,6 +58,7 @@ export default function FormSignUp(props: FormSignUpProps) {
           name='password'
           onChange={() => clearFieldErrors(['confirm-password', 'password'])}
           placeholder='password'
+          required
           type='text'
         />
       </FormControl>
@@ -77,6 +74,7 @@ export default function FormSignUp(props: FormSignUpProps) {
           name='confirm-password'
           onChange={() => clearFieldErrors(['confirm-password', 'password'])}
           placeholder='confirm password'
+          required
           type='text'
         />
       </FormControl>

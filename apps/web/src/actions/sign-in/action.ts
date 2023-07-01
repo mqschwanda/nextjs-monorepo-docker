@@ -3,15 +3,16 @@
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
+import { UserCookie } from 'utilities/cookies';
 import { getFormDataForZod } from '@mqs/zod';
-import { signUpSchema } from './validation';
+import { signInSchema } from './validation';
 
 // eslint-disable-next-line consistent-return
-export default async function signUpAction(formData: FormData) {
+export default async function signInAction(formData: FormData) {
   'use server';
 
-  const validation = signUpSchema.safeParse(
-    getFormDataForZod(formData, signUpSchema),
+  const validation = signInSchema.safeParse(
+    getFormDataForZod(formData, signInSchema),
   );
 
   if (!validation.success) {
@@ -23,17 +24,16 @@ export default async function signUpAction(formData: FormData) {
   const {
     data: {
       email,
+      // password,
     },
   } = validation;
-  const [username] = email.split('@');
 
-  const user = {
+  const [username] = email.toString().split('@');
+
+  const user: UserCookie = {
     email,
     username,
   };
-
-  // TODO: handle user insert into database
-  // TODO: handle password hash
 
   cookies().set('user', JSON.stringify(user));
 
