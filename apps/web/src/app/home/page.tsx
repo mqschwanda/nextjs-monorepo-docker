@@ -8,7 +8,7 @@ export default function Page() {
   return (
     <div>
       <div
-        className='hero min-h-screen bg-base-200'
+        className='hero bg-base-200'
       >
         <div
           className='hero-content text-center'

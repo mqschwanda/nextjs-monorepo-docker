@@ -155,25 +155,21 @@ export const AlertWithButtonsExample: AlertStoryObj = {
   },
   render: () => (
     <Alert>
-      <div>
-        <svg
-          className='stroke-info flex-shrink-0 w-6 h-6'
-          fill='none'
-          viewBox='0 0 24 24'
-          xmlns='http://www.w3.org/2000/svg'
-        >
-          <path
-            d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth='2'
-          />
-        </svg>
-        <span>{ 'we use cookies for no reason.' }</span>
-      </div>
-      <div
-        className='flex-none'
+      <svg
+        className='stroke-info flex-shrink-0 w-6 h-6'
+        fill='none'
+        viewBox='0 0 24 24'
+        xmlns='http://www.w3.org/2000/svg'
       >
+        <path
+          d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth='2'
+        />
+      </svg>
+      <span>{ 'we use cookies for no reason.' }</span>
+      <div>
         <Button
           variantColor='ghost'
           variantSize='sm'
@@ -199,31 +195,29 @@ export const AlertWithTitleAndDescriptionExample: AlertStoryObj = {
   },
   render: () => (
     <Alert>
+      <svg
+        className='stroke-info flex-shrink-0 w-6 h-6'
+        fill='none'
+        viewBox='0 0 24 24'
+        xmlns='http://www.w3.org/2000/svg'
+      >
+        <path
+          d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth='2'
+        />
+      </svg>
       <div>
-        <svg
-          className='stroke-info flex-shrink-0 w-6 h-6'
-          fill='none'
-          viewBox='0 0 24 24'
-          xmlns='http://www.w3.org/2000/svg'
+        <h3
+          className='font-bold'
         >
-          <path
-            d='M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            strokeWidth='2'
-          />
-        </svg>
-        <div>
-          <h3
-            className='font-bold'
-          >
-            { 'New message!' }
-          </h3>
-          <div
-            className='text-xs'
-          >
-            { 'You have 1 unread message' }
-          </div>
+          { 'New message!' }
+        </h3>
+        <div
+          className='text-xs'
+        >
+          { 'You have 1 unread message' }
         </div>
       </div>
       <div

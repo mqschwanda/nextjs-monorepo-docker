@@ -53,9 +53,7 @@ export function AlertDismissible({
       testId={testId}
       {...rest} // eslint-disable-line react/jsx-props-no-spreading
     >
-      <div>
-        { children }
-      </div>
+      { children }
       <Button
         onClick={handleClick}
         type='button'

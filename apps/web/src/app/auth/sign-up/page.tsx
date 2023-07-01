@@ -11,7 +11,7 @@ export const metadata = {
 export default function Page() {
   return (
     <div
-      className='hero min-h-screen bg-base-200'
+      className='hero'
     >
       <div
         className='hero-content flex-col lg:flex-row-reverse'
