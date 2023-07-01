@@ -35,6 +35,10 @@ Error: `ENOSPC: System limit for number of file watchers reached`
 
 [Stack Overflow solution](https://stackoverflow.com/questions/55763428/react-native-error-enospc-system-limit-for-number-of-file-watchers-reached) for updating max file watchers
 
+###### NOTE
+
+You should not run into this issue unless you are trying to run all (or many) workspaces dev modes at once. Having this many file watchers will crash some systems, and slow down most. Instead of watching all workspaces it is recommended that the root `yarn dev` script is used and any other packages that are needed are run in a separate terminal window with `yarn workspace @mqs/<WORKSPACE_NAME> dev`.
+
 
 ## What's inside?
 
@@ -56,11 +60,13 @@ Each workspace is built with [TypeScript](https://www.typescriptlang.org/).
 - `react-client-components`: a React client component library
 - `react-server-components`: a React server component library
 - `react-testing-lib`: a React testing library
+- `react-utils`: a React utilities library
 - `storybook`: a package to build and deploy [Storybook](https://storybook.js.org/) documentation
 - `storybook-utils`: utilities for implementing Storybook
 - `style`: shared css and style utilities for components and apps
 - `tailwind-config`: a generalized [Tailwind CSS](https://tailwindcss.com/) configuration
 - `tsconfig`: tsconfig.json;s used throughout the monorepo
+- `zod`: utilities for handling validation with [Zod](https://zod.dev/)
 #### Scripts
 - `tsc`: a script to turn typescript source code into javascript
 
@@ -103,9 +109,10 @@ This Turborepo has some additional tools already setup for you:
 
 - [CSpell](https://cspell.org/) for spell checking
 - [ESLint](https://eslint.org/) for code linting
-- [GraphQL](https://graphql.org/) from fetching data
+- [GraphQL](https://graphql.org/) for fetching data
 - [GraphQL CodeGen](https://github.com/dotansimha/graphql-code-generator) for automated code generation
 - [Jest](https://jestjs.io) test runner for all things JavaScript
 - [Storybook](https://storybook.js.org/) for documentation
 - [Tailwind CSS](https://tailwindcss.com/) for style
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
+- [Zod](https://zod.dev/) for schema validation with static type inference
