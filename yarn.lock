@@ -36,7 +36,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/client@npm:^3.7.16":
+"@apollo/client@npm:^3.7.17":
   version: 3.7.17
   resolution: "@apollo/client@npm:3.7.17"
   dependencies:
@@ -146,7 +146,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.16, @babel/core@npm:^7.14.0, @babel/core@npm:^7.20.7, @babel/core@npm:^7.22.0, @babel/core@npm:^7.22.5, @babel/core@npm:^7.7.5":
+"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.16, @babel/core@npm:^7.14.0, @babel/core@npm:^7.20.7, @babel/core@npm:^7.22.0, @babel/core@npm:^7.22.9, @babel/core@npm:^7.7.5":
   version: 7.22.9
   resolution: "@babel/core@npm:7.22.9"
   dependencies:
@@ -1447,7 +1447,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-env@npm:^7.20.2, @babel/preset-env@npm:^7.22.0, @babel/preset-env@npm:^7.22.5":
+"@babel/preset-env@npm:^7.20.2, @babel/preset-env@npm:^7.22.0, @babel/preset-env@npm:^7.22.9":
   version: 7.22.9
   resolution: "@babel/preset-env@npm:7.22.9"
   dependencies:
@@ -2119,7 +2119,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cypress/request@npm:^2.88.10":
+"@cypress/request@npm:^2.88.11":
   version: 2.88.11
   resolution: "@cypress/request@npm:2.88.11"
   dependencies:
@@ -4182,7 +4182,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mqs/graphql-client@workspace:packages/graphql-client"
   dependencies:
-    "@apollo/client": ^3.7.16
+    "@apollo/client": ^3.7.17
     "@graphql-codegen/cli": ^3.3.1
     "@graphql-codegen/typescript-react-apollo": ^3.3.7
     "@graphql-yoga/apollo-link": ^1.8.1
@@ -4205,7 +4205,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mqs/graphql-schema@workspace:packages/graphql-schema"
   dependencies:
-    "@apollo/client": ^3.7.16
+    "@apollo/client": ^3.7.17
     "@graphql-codegen/cli": ^3.3.1
     "@graphql-codegen/client-preset": ^3.0.1
     "@graphql-codegen/import-types-preset": ^2.2.6
@@ -4231,7 +4231,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mqs/graphql-server@workspace:packages/graphql-server"
   dependencies:
-    "@apollo/client": ^3.7.16
+    "@apollo/client": ^3.7.17
     "@graphql-tools/executor-graphql-ws": ^0.0.14
     "@graphql-tools/executor-http": ^0.1.10
     "@mqs/eslint-config": "*"
@@ -4385,8 +4385,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mqs/storybook@workspace:packages/storybook"
   dependencies:
-    "@babel/core": ^7.22.5
-    "@babel/preset-env": ^7.22.5
+    "@babel/core": ^7.22.9
+    "@babel/preset-env": ^7.22.9
     "@babel/preset-react": ^7.22.5
     "@babel/preset-typescript": ^7.22.5
     "@mqs/eslint-config": "*"
@@ -4444,7 +4444,7 @@ __metadata:
     "@mqs/tsconfig": "*"
     "@tailwindcss/typography": ^0.5.9
     autoprefixer: ^10.4.14
-    daisyui: ^3.1.6
+    daisyui: ^3.3.1
     eslint: ^7.32.0
     jest: ^29.6.1
     postcss: ^8.4.26
@@ -4501,7 +4501,7 @@ __metadata:
     "@types/react-dom": ^18.2.7
     classnames: ^2.3.2
     cookies-next: ^2.1.2
-    cypress: 12.16.0
+    cypress: 12.17.2
     eslint: ^7.32.0
     next: ^13.4.10
     react: ^18.2.0
@@ -10102,7 +10102,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cspell@npm:^6.31.1":
+"cspell@npm:^6.31.2":
   version: 6.31.2
   resolution: "cspell@npm:6.31.2"
   dependencies:
@@ -10227,11 +10227,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:12.16.0":
-  version: 12.16.0
-  resolution: "cypress@npm:12.16.0"
+"cypress@npm:12.17.2":
+  version: 12.17.2
+  resolution: "cypress@npm:12.17.2"
   dependencies:
-    "@cypress/request": ^2.88.10
+    "@cypress/request": ^2.88.11
     "@cypress/xvfb": ^1.2.4
     "@types/node": ^14.14.31
     "@types/sinonjs__fake-timers": 8.1.1
@@ -10268,18 +10268,18 @@ __metadata:
     pretty-bytes: ^5.6.0
     proxy-from-env: 1.0.0
     request-progress: ^3.0.0
-    semver: ^7.3.2
+    semver: ^7.5.3
     supports-color: ^8.1.1
     tmp: ~0.2.1
     untildify: ^4.0.0
     yauzl: ^2.10.0
   bin:
     cypress: bin/cypress
-  checksum: 551e2ec372f56a39a22526575b39bf9c6a110e5648ac1bf1c76460dfaebc3ca57d5537e7c206316284fe796ec76fa18f0493f3e040c92bd39c3720c9136fd5e4
+  checksum: 19144db1fe02d92270de71f69ece324affd2f60bafa2f7018440c00907f837b1f8556926206df8b6e7b1c9890d250435730656ccb4a5a31e7872b24dd79c0af8
   languageName: node
   linkType: hard
 
-"daisyui@npm:^3.1.6":
+"daisyui@npm:^3.3.1":
   version: 3.3.1
   resolution: "daisyui@npm:3.3.1"
   dependencies:
@@ -19967,7 +19967,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.2.1, semver@npm:^7.3.2, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8, semver@npm:^7.5.3":
+"semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.2.1, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8, semver@npm:^7.5.3":
   version: 7.5.4
   resolution: "semver@npm:7.5.4"
   dependencies:
@@ -22617,7 +22617,7 @@ __metadata:
   resolution: "with-docker@workspace:."
   dependencies:
     "@mqs/eslint-config": "*"
-    cspell: ^6.31.1
+    cspell: ^6.31.2
     eslint: ^7.32.0
     jest: ^29.6.1
     npm-check-updates: ^16.10.16

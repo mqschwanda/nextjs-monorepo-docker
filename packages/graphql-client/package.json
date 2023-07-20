@@ -33,7 +33,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@apollo/client": "^3.7.16",
+    "@apollo/client": "^3.7.17",
     "@graphql-yoga/apollo-link": "^1.8.1",
     "@mqs/graphql-schema": "*",
     "graphql": "^16.7.1",
