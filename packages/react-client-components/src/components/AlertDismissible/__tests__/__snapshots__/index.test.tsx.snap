@@ -6,15 +6,15 @@ exports[`@mqs/react-server-components components <AlertDismissible /> renders 1`
     class="alert alert-info test"
     data-testid="AlertDismissible"
   >
-    <div>
-      children...
-    </div>
+    children...
     <button
       class="btn btn-circle btn-sm"
+      data-testid="Button"
       type="button"
     >
       <svg
         class="fill-none stroke-current stroke-1 h-6 w-6"
+        data-testid="IconClose"
         fill="currentColor"
         stroke="currentColor"
         viewBox="0 0 24 24"

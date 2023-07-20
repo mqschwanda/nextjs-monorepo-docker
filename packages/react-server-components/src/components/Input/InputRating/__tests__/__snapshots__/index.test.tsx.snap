@@ -115,7 +115,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      accent
+      <span
+        className="label-text"
+      >
+        accent
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -161,7 +165,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      error
+      <span
+        className="label-text"
+      >
+        error
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -207,7 +215,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      info
+      <span
+        className="label-text"
+      >
+        info
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -253,7 +265,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      primary
+      <span
+        className="label-text"
+      >
+        primary
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -299,7 +315,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      secondary
+      <span
+        className="label-text"
+      >
+        secondary
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -345,7 +365,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      success
+      <span
+        className="label-text"
+      >
+        success
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -391,7 +415,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      warning
+      <span
+        className="label-text"
+      >
+        warning
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -480,7 +508,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      circle
+      <span
+        className="label-text"
+      >
+        circle
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -526,7 +558,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      decagon
+      <span
+        className="label-text"
+      >
+        decagon
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -572,7 +608,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      diamond
+      <span
+        className="label-text"
+      >
+        diamond
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -618,7 +658,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      heart
+      <span
+        className="label-text"
+      >
+        heart
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -664,7 +708,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      hexagon
+      <span
+        className="label-text"
+      >
+        hexagon
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -710,7 +758,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      hexagon-2
+      <span
+        className="label-text"
+      >
+        hexagon-2
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -756,7 +808,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      parallelogram
+      <span
+        className="label-text"
+      >
+        parallelogram
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -802,7 +858,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      parallelogram-2
+      <span
+        className="label-text"
+      >
+        parallelogram-2
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -848,7 +908,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      parallelogram-3
+      <span
+        className="label-text"
+      >
+        parallelogram-3
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -894,7 +958,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      parallelogram-4
+      <span
+        className="label-text"
+      >
+        parallelogram-4
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -940,7 +1008,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      pentagon
+      <span
+        className="label-text"
+      >
+        pentagon
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -986,7 +1058,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      square
+      <span
+        className="label-text"
+      >
+        square
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -1032,7 +1108,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      squircle
+      <span
+        className="label-text"
+      >
+        squircle
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -1078,7 +1158,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      star
+      <span
+        className="label-text"
+      >
+        star
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -1124,7 +1208,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      star-2
+      <span
+        className="label-text"
+      >
+        star-2
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -1170,7 +1258,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      triangle
+      <span
+        className="label-text"
+      >
+        triangle
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -1216,7 +1308,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      triangle-2
+      <span
+        className="label-text"
+      >
+        triangle-2
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -1262,7 +1358,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      triangle-3
+      <span
+        className="label-text"
+      >
+        triangle-3
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -1308,7 +1408,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      triangle-4
+      <span
+        className="label-text"
+      >
+        triangle-4
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -1359,7 +1463,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      lg
+      <span
+        className="label-text"
+      >
+        lg
+      </span>
     </label>
     <div
       className="rating rating-lg"
@@ -1405,7 +1513,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      md
+      <span
+        className="label-text"
+      >
+        md
+      </span>
     </label>
     <div
       className="rating rating-md"
@@ -1451,7 +1563,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      sm
+      <span
+        className="label-text"
+      >
+        sm
+      </span>
     </label>
     <div
       className="rating rating-sm"
@@ -1497,7 +1613,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRating In
       className="label"
       data-testid="Label"
     >
-      xs
+      <span
+        className="label-text"
+      >
+        xs
+      </span>
     </label>
     <div
       className="rating rating-xs"

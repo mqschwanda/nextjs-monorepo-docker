@@ -20,7 +20,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputToggle In
       className="label"
       data-testid="Label"
     >
-      accent
+      <span
+        className="label-text"
+      >
+        accent
+      </span>
     </label>
     <input
       className="toggle toggle-accent toggle-md"
@@ -36,7 +40,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputToggle In
       className="label"
       data-testid="Label"
     >
-      error
+      <span
+        className="label-text"
+      >
+        error
+      </span>
     </label>
     <input
       className="toggle toggle-error toggle-md"
@@ -52,7 +60,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputToggle In
       className="label"
       data-testid="Label"
     >
-      info
+      <span
+        className="label-text"
+      >
+        info
+      </span>
     </label>
     <input
       className="toggle toggle-info toggle-md"
@@ -68,7 +80,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputToggle In
       className="label"
       data-testid="Label"
     >
-      primary
+      <span
+        className="label-text"
+      >
+        primary
+      </span>
     </label>
     <input
       className="toggle toggle-primary toggle-md"
@@ -84,7 +100,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputToggle In
       className="label"
       data-testid="Label"
     >
-      secondary
+      <span
+        className="label-text"
+      >
+        secondary
+      </span>
     </label>
     <input
       className="toggle toggle-secondary toggle-md"
@@ -100,7 +120,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputToggle In
       className="label"
       data-testid="Label"
     >
-      success
+      <span
+        className="label-text"
+      >
+        success
+      </span>
     </label>
     <input
       className="toggle toggle-success toggle-md"
@@ -116,7 +140,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputToggle In
       className="label"
       data-testid="Label"
     >
-      warning
+      <span
+        className="label-text"
+      >
+        warning
+      </span>
     </label>
     <input
       className="toggle toggle-warning toggle-md"
@@ -145,7 +173,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputToggle In
       className="label"
       data-testid="Label"
     >
-      lg
+      <span
+        className="label-text"
+      >
+        lg
+      </span>
     </label>
     <input
       className="toggle toggle-primary toggle-lg"
@@ -161,7 +193,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputToggle In
       className="label"
       data-testid="Label"
     >
-      md
+      <span
+        className="label-text"
+      >
+        md
+      </span>
     </label>
     <input
       className="toggle toggle-primary toggle-md"
@@ -177,7 +213,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputToggle In
       className="label"
       data-testid="Label"
     >
-      sm
+      <span
+        className="label-text"
+      >
+        sm
+      </span>
     </label>
     <input
       className="toggle toggle-primary toggle-sm"
@@ -193,7 +233,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputToggle In
       className="label"
       data-testid="Label"
     >
-      xs
+      <span
+        className="label-text"
+      >
+        xs
+      </span>
     </label>
     <input
       className="toggle toggle-primary toggle-xs"

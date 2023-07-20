@@ -29,7 +29,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputSelect In
       className="label"
       data-testid="Label"
     >
-      accent
+      <span
+        className="label-text"
+      >
+        accent
+      </span>
     </label>
     <select
       className="select select-bordered select-accent select-md"
@@ -66,7 +70,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputSelect In
       className="label"
       data-testid="Label"
     >
-      error
+      <span
+        className="label-text"
+      >
+        error
+      </span>
     </label>
     <select
       className="select select-bordered select-error select-md"
@@ -103,7 +111,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputSelect In
       className="label"
       data-testid="Label"
     >
-      ghost
+      <span
+        className="label-text"
+      >
+        ghost
+      </span>
     </label>
     <select
       className="select select-bordered select-ghost select-md"
@@ -140,7 +152,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputSelect In
       className="label"
       data-testid="Label"
     >
-      info
+      <span
+        className="label-text"
+      >
+        info
+      </span>
     </label>
     <select
       className="select select-bordered select-info select-md"
@@ -177,7 +193,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputSelect In
       className="label"
       data-testid="Label"
     >
-      primary
+      <span
+        className="label-text"
+      >
+        primary
+      </span>
     </label>
     <select
       className="select select-bordered select-primary select-md"
@@ -214,7 +234,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputSelect In
       className="label"
       data-testid="Label"
     >
-      secondary
+      <span
+        className="label-text"
+      >
+        secondary
+      </span>
     </label>
     <select
       className="select select-bordered select-secondary select-md"
@@ -251,7 +275,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputSelect In
       className="label"
       data-testid="Label"
     >
-      success
+      <span
+        className="label-text"
+      >
+        success
+      </span>
     </label>
     <select
       className="select select-bordered select-success select-md"
@@ -288,7 +316,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputSelect In
       className="label"
       data-testid="Label"
     >
-      warning
+      <span
+        className="label-text"
+      >
+        warning
+      </span>
     </label>
     <select
       className="select select-bordered select-warning select-md"
@@ -359,7 +391,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputSelect In
       className="label"
       data-testid="Label"
     >
-      lg
+      <span
+        className="label-text"
+      >
+        lg
+      </span>
     </label>
     <select
       className="select select-bordered select-primary select-lg"
@@ -396,7 +432,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputSelect In
       className="label"
       data-testid="Label"
     >
-      md
+      <span
+        className="label-text"
+      >
+        md
+      </span>
     </label>
     <select
       className="select select-bordered select-primary select-md"
@@ -433,7 +473,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputSelect In
       className="label"
       data-testid="Label"
     >
-      sm
+      <span
+        className="label-text"
+      >
+        sm
+      </span>
     </label>
     <select
       className="select select-bordered select-primary select-sm"
@@ -470,7 +514,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputSelect In
       className="label"
       data-testid="Label"
     >
-      xs
+      <span
+        className="label-text"
+      >
+        xs
+      </span>
     </label>
     <select
       className="select select-bordered select-primary select-xs"

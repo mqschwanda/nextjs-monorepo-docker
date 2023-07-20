@@ -24,7 +24,11 @@ exports[`Storyshots @mqs/react-server-components/components/FormControl Form Con
     className="label"
     data-testid="Label"
   >
-    Text Input:
+    <span
+      className="label-text"
+    >
+      Text Input:
+    </span>
   </label>
   <input
     className="input input-bordered input-primary input-md"

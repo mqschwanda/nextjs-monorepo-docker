@@ -20,7 +20,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRadio Inp
       className="label"
       data-testid="Label"
     >
-      accent
+      <span
+        className="label-text"
+      >
+        accent
+      </span>
     </label>
     <div
       className="form-control"
@@ -73,7 +77,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRadio Inp
       className="label"
       data-testid="Label"
     >
-      error
+      <span
+        className="label-text"
+      >
+        error
+      </span>
     </label>
     <div
       className="form-control"
@@ -126,7 +134,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRadio Inp
       className="label"
       data-testid="Label"
     >
-      info
+      <span
+        className="label-text"
+      >
+        info
+      </span>
     </label>
     <div
       className="form-control"
@@ -179,7 +191,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRadio Inp
       className="label"
       data-testid="Label"
     >
-      primary
+      <span
+        className="label-text"
+      >
+        primary
+      </span>
     </label>
     <div
       className="form-control"
@@ -232,7 +248,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRadio Inp
       className="label"
       data-testid="Label"
     >
-      secondary
+      <span
+        className="label-text"
+      >
+        secondary
+      </span>
     </label>
     <div
       className="form-control"
@@ -285,7 +305,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRadio Inp
       className="label"
       data-testid="Label"
     >
-      success
+      <span
+        className="label-text"
+      >
+        success
+      </span>
     </label>
     <div
       className="form-control"
@@ -338,7 +362,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRadio Inp
       className="label"
       data-testid="Label"
     >
-      warning
+      <span
+        className="label-text"
+      >
+        warning
+      </span>
     </label>
     <div
       className="form-control"
@@ -395,7 +423,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRadio Inp
     className="label"
     data-testid="Label"
   >
-    Example
+    <span
+      className="label-text"
+    >
+      Example
+    </span>
   </label>
   <div
     className="form-control"
@@ -452,7 +484,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRadio Inp
       className="label"
       data-testid="Label"
     >
-      lg
+      <span
+        className="label-text"
+      >
+        lg
+      </span>
     </label>
     <div
       className="form-control"
@@ -505,7 +541,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRadio Inp
       className="label"
       data-testid="Label"
     >
-      md
+      <span
+        className="label-text"
+      >
+        md
+      </span>
     </label>
     <div
       className="form-control"
@@ -558,7 +598,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRadio Inp
       className="label"
       data-testid="Label"
     >
-      sm
+      <span
+        className="label-text"
+      >
+        sm
+      </span>
     </label>
     <div
       className="form-control"
@@ -611,7 +655,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputRadio Inp
       className="label"
       data-testid="Label"
     >
-      xs
+      <span
+        className="label-text"
+      >
+        xs
+      </span>
     </label>
     <div
       className="form-control"

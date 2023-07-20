@@ -19,7 +19,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputTextarea 
       className="label"
       data-testid="Label"
     >
-      accent
+      <span
+        className="label-text"
+      >
+        accent
+      </span>
     </label>
     <textarea
       className="textarea textarea-bordered textarea-accent textarea-md"
@@ -35,7 +39,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputTextarea 
       className="label"
       data-testid="Label"
     >
-      error
+      <span
+        className="label-text"
+      >
+        error
+      </span>
     </label>
     <textarea
       className="textarea textarea-bordered textarea-error textarea-md"
@@ -51,7 +59,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputTextarea 
       className="label"
       data-testid="Label"
     >
-      ghost
+      <span
+        className="label-text"
+      >
+        ghost
+      </span>
     </label>
     <textarea
       className="textarea textarea-bordered textarea-ghost textarea-md"
@@ -67,7 +79,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputTextarea 
       className="label"
       data-testid="Label"
     >
-      info
+      <span
+        className="label-text"
+      >
+        info
+      </span>
     </label>
     <textarea
       className="textarea textarea-bordered textarea-info textarea-md"
@@ -83,7 +99,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputTextarea 
       className="label"
       data-testid="Label"
     >
-      primary
+      <span
+        className="label-text"
+      >
+        primary
+      </span>
     </label>
     <textarea
       className="textarea textarea-bordered textarea-primary textarea-md"
@@ -99,7 +119,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputTextarea 
       className="label"
       data-testid="Label"
     >
-      secondary
+      <span
+        className="label-text"
+      >
+        secondary
+      </span>
     </label>
     <textarea
       className="textarea textarea-bordered textarea-secondary textarea-md"
@@ -115,7 +139,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputTextarea 
       className="label"
       data-testid="Label"
     >
-      success
+      <span
+        className="label-text"
+      >
+        success
+      </span>
     </label>
     <textarea
       className="textarea textarea-bordered textarea-success textarea-md"
@@ -131,7 +159,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputTextarea 
       className="label"
       data-testid="Label"
     >
-      warning
+      <span
+        className="label-text"
+      >
+        warning
+      </span>
     </label>
     <textarea
       className="textarea textarea-bordered textarea-warning textarea-md"
@@ -160,7 +192,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputTextarea 
       className="label"
       data-testid="Label"
     >
-      lg
+      <span
+        className="label-text"
+      >
+        lg
+      </span>
     </label>
     <textarea
       className="textarea textarea-bordered textarea-primary textarea-lg"
@@ -176,7 +212,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputTextarea 
       className="label"
       data-testid="Label"
     >
-      md
+      <span
+        className="label-text"
+      >
+        md
+      </span>
     </label>
     <textarea
       className="textarea textarea-bordered textarea-primary textarea-md"
@@ -192,7 +232,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputTextarea 
       className="label"
       data-testid="Label"
     >
-      sm
+      <span
+        className="label-text"
+      >
+        sm
+      </span>
     </label>
     <textarea
       className="textarea textarea-bordered textarea-primary textarea-sm"
@@ -208,7 +252,11 @@ exports[`Storyshots @mqs/react-server-components/components/Input/InputTextarea 
       className="label"
       data-testid="Label"
     >
-      xs
+      <span
+        className="label-text"
+      >
+        xs
+      </span>
     </label>
     <textarea
       className="textarea textarea-bordered textarea-primary textarea-xs"
