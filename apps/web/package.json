@@ -7,7 +7,7 @@
     "cypress:run": "cypress run --e2e",
     "cypress:open": "cypress open --e2e",
     "dev": "next dev",
-    "lint": "eslint .",
+    "lint": "eslint . --resolve-plugins-relative-to .",
     "lint:fix": "yarn lint --fix",
     "start": "next start",
     "test": "start-server-and-test dev http://localhost:3000 \"yarn cypress:run\"",
