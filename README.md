@@ -27,6 +27,18 @@ For a detailed explanation of why certain decisions were made and what guideline
 yarn dev
 ```
 
+#### Troubleshooting
+
+##### File Watcher Limit
+
+Error: `ENOSPC: System limit for number of file watchers reached`
+
+[Stack Overflow solution](https://stackoverflow.com/questions/55763428/react-native-error-enospc-system-limit-for-number-of-file-watchers-reached) for updating max file watchers
+
+###### NOTE
+
+You should not run into this issue unless you are trying to run all (or many) workspaces dev modes at once. Having this many file watchers will crash some systems, and slow down most. Instead of watching all workspaces it is recommended that the root `yarn dev` script is used and any other packages that are needed are run in a separate terminal window with `yarn workspace @mqs/<WORKSPACE_NAME> dev`.
+
 ### Production
 
 This repo is configured to be built with Docker, and Docker compose. To build all apps in this repo:
@@ -51,19 +63,6 @@ To shutdown all running containers:
 # Stop all running containers
 yarn docker-kill
 ```
-
-#### Troubleshooting
-
-##### File Watcher Limit
-
-Error: `ENOSPC: System limit for number of file watchers reached`
-
-[Stack Overflow solution](https://stackoverflow.com/questions/55763428/react-native-error-enospc-system-limit-for-number-of-file-watchers-reached) for updating max file watchers
-
-###### NOTE
-
-You should not run into this issue unless you are trying to run all (or many) workspaces dev modes at once. Having this many file watchers will crash some systems, and slow down most. Instead of watching all workspaces it is recommended that the root `yarn dev` script is used and any other packages that are needed are run in a separate terminal window with `yarn workspace @mqs/<WORKSPACE_NAME> dev`.
-
 
 ## What's inside?
 
