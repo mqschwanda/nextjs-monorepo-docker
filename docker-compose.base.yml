@@ -19,6 +19,12 @@ services:
       - 3001:3001
     networks:
       - app_network
+  db:
+    container_name: db
+    image: postgres
+    restart: always
+    networks:
+      - app_network
 
 networks:
   app_network:

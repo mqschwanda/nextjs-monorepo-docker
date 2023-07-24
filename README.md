@@ -81,6 +81,7 @@ Each workspace is built with [TypeScript](https://www.typescriptlang.org/).
 - `graphql-server`: graphql server and resolvers
 - `jest-preset`: Jest configurations
 - `logger`: Isomorphic logger (a small wrapper around console.log)
+- `prisma`: Database ORM
 - `react-client-components`: a React client component library
 - `react-server-components`: a React server component library
 - `react-testing-lib`: a React testing library
@@ -103,6 +104,8 @@ This Turborepo has some additional tools already setup for you:
 - [GraphQL](https://graphql.org/) for fetching data
 - [GraphQL CodeGen](https://github.com/dotansimha/graphql-code-generator) for automated code generation
 - [Jest](https://jestjs.io) test runner for all things JavaScript
+- [PostgreSQL](https://www.postgresql.org/) Open Source Relational Database
+- [Prisma](https://www.prisma.io/) Database ORM for Node and TypeScript
 - [Storybook](https://storybook.js.org/) for documentation
 - [Tailwind CSS](https://tailwindcss.com/) for style
 - [TypeScript](https://www.typescriptlang.org/) for static type checking

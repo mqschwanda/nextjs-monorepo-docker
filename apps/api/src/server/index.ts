@@ -3,6 +3,8 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import createGraphqlServer from '@mqs/graphql-server';
+import healthz from './routes/healthz'; // cspell:disable-line
+import healthDb from './routes/healthz db'; // cspell:disable-line
 
 export default function createServer() {
   const graphqlServer = createGraphqlServer();
@@ -16,10 +18,8 @@ export default function createServer() {
     .use(json())
     .use(cors())
     .use(graphqlServer.graphqlEndpoint, graphqlServer)
-    .get(
-      '/healthz', // cspell:disable-line
-      (_req, res) => res.json({ ok: true }),
-    );
+    .get('/healthz', healthz) // cspell:disable-line
+    .get('/healthz-db', healthDb); // cspell:disable-line
 
   return app;
 }
