@@ -4,7 +4,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import createGraphqlServer from '@mqs/graphql-server';
 import healthz from './routes/healthz'; // cspell:disable-line
-import healthDb from './routes/healthz db'; // cspell:disable-line
+import healthDb from './routes/healthz-db'; // cspell:disable-line
 
 export default function createServer() {
   const graphqlServer = createGraphqlServer();
