@@ -1,0 +1,14 @@
+services:
+  web:
+    volumes:
+      - ./:/app
+    build:
+      dockerfile: ./apps/web/Dockerfile.dev
+  api:
+    volumes:
+      - ./:/app
+    build:
+      dockerfile: ./apps/api/Dockerfile.dev
+
+volumes:
+  app:

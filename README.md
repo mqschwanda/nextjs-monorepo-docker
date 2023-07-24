@@ -23,6 +23,13 @@ For a detailed explanation of why certain decisions were made and what guideline
 
 ### Development
 
+This repo is configured to be built with Docker, and Docker compose. To run all apps in this repo:
+```
+yarn docker-build:dev
+yarn docker-run:dev
+```
+
+If you do not want to use docker the alternative command can be used:
 ```
 yarn dev
 ```
@@ -44,14 +51,7 @@ You should not run into this issue unless you are trying to run all (or many) wo
 This repo is configured to be built with Docker, and Docker compose. To build all apps in this repo:
 
 ```
-# Create a network, which allows containers to communicate
-# with each other, by using their container name as a hostname
-docker network create app_network
-
-# Build prod using new BuildKit engine
 yarn docker-build:prod
-
-# Start prod in detached mode
 yarn docker-run:prod
 ```
 
