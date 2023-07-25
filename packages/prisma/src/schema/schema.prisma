@@ -1,15 +1,37 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
 datasource db {
   provider = "postgresql"
   url      = "postgresql://user:password@db:5432/postgres"
 }
 
-generator client {
-  provider = "prisma-client-js"
-  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+model Role {
+  id        Int        @id @default(autoincrement())
+  key       RoleKey    @unique
+  name      String
+  userRoles UserRole[]
+}
+
+model UserRole {
+  @@id([userId, roleId])
+  userId Int
+  roleId Int
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  role   Role @relation(fields: [roleId], references: [id])
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  email     String   @unique
+  nameFirst String
+  nameLast  String
+  roles     UserRole[]
+}
+
+enum RoleKey {
+  Admin
 }

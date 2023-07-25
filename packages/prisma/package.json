@@ -19,13 +19,22 @@
   "files": [
     "dist/**"
   ],
+  "prisma": {
+    "seed": "node ./dist/seed/index.js"
+  },
   "scripts": {
-    "generate:schema": "prisma generate --schema ./src/schema/schema.prisma",
-    "build": "mqs-tsc --project tsconfig.build.json",
+    "build": "yarn generate:schema && mqs-tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
     "dev": "mqs-tsc-watch --project tsconfig.build.json",
+    "generate:schema": "prisma generate --schema ./src/schema/schema.prisma",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
+    "migrate:dev": "prisma migrate dev  --schema ./src/schema/schema.prisma",
+    "migrate:reset": "prisma migrate reset --schema ./src/schema/schema.prisma",
+    "migrate:status": "prisma migrate status --schema ./src/schema/schema.prisma",
+    "pull:dev": "prisma db pull --schema ./src/schema/schema.prisma",
+    "push:dev": "prisma db push --schema ./src/schema/schema.prisma --force-reset",
+    "seed:dev": "prisma db seed",
     "test": "jest"
   },
   "devDependencies": {
