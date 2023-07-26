@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
 import { UserCookie } from 'utilities/cookies';
 import { getFormDataForZod } from '@mqs/zod';
+import { prisma } from '@mqs/prisma/client';
 import { signInSchema } from './validation';
 
 // eslint-disable-next-line consistent-return
@@ -24,18 +25,40 @@ export default async function signInAction(formData: FormData) {
   const {
     data: {
       email,
-      // password,
+      password,
     },
   } = validation;
 
-  const [username] = email.toString().split('@');
-
-  const user: UserCookie = {
+  const isPasswordValid = await prisma.user.isPasswordValid({
     email,
-    username,
+    password,
+  });
+
+  if (!isPasswordValid) {
+    return {
+      errors: {
+        fieldErrors: {
+          email: ['not authorized'],
+          password: ['not authorized'],
+        },
+        formErrors: [],
+      },
+    };
+  }
+
+  const user = await prisma.user.findUniqueOrThrow({
+    where: {
+      email,
+    },
+  });
+
+  const cookie: UserCookie = {
+    email: user.email,
+    nameFirst: user.nameFirst,
+    nameLast: user.nameLast,
   };
 
-  cookies().set('user', JSON.stringify(user));
+  cookies().set('user', JSON.stringify(cookie));
 
   revalidatePath('/');
   redirect('/user/profile');

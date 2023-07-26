@@ -9,6 +9,12 @@ export const signUpSchema = z
       .string()
       .email()
       .min(1, { message: 'email is required' }),
+    nameFirst: z
+      .string()
+      .min(1, { message: 'first name is required' }),
+    nameLast: z
+      .string()
+      .min(1, { message: 'last name is required' }),
     password: z
       .string()
       .min(1, { message: 'password is required' }),

@@ -41,8 +41,13 @@ export default function UserCard(props: UserCardProps) {
       </figure>
       <CardBody>
         <CardTitle>
-          { user?.username }
+          { `${user?.nameFirst} ${user?.nameLast}` }
         </CardTitle>
+        <ul>
+          <li>
+            { user?.email }
+          </li>
+        </ul>
       </CardBody>
     </Card>
   );

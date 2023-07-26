@@ -8,7 +8,7 @@ import {
   Label,
 } from '@mqs/react-server-components';
 import { useFormActionSignIn } from 'actions/sign-in';
-import { DetailedHTMLProps, FormHTMLAttributes } from 'react';
+import { DetailedHTMLProps, FormHTMLAttributes, useMemo } from 'react';
 
 export interface FormSignInProps extends Omit<DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>, 'action' | 'children'> {
 
@@ -20,6 +20,13 @@ export default function FormSignIn(props: FormSignInProps) {
     errors,
     handleAction,
   } = useFormActionSignIn();
+
+  const formError = useMemo(
+    () => (errors?.formErrors?.length > 0 ? errors.formErrors[0] : null),
+    [
+      errors,
+    ],
+  );
 
   return (
     <form
@@ -73,11 +80,19 @@ export default function FormSignIn(props: FormSignInProps) {
         className='mt-6'
       >
         <Button
+          id='sign-in-submit'
           type='submit'
           variantColor='primary'
         >
           { 'Sign In' }
         </Button>
+        { formError ? (
+          <Label
+            htmlFor='sign-in-submit'
+          >
+            { formError }
+          </Label>
+        ) : null }
       </FormControl>
       <Label
         htmlFor='do-not-have-an-account'

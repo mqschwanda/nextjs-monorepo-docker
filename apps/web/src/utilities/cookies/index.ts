@@ -1,4 +1,5 @@
 export type UserCookie = {
   email: string,
-  username: string,
+  nameFirst: string,
+  nameLast: string,
 };

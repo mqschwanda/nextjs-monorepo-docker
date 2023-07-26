@@ -11,6 +11,7 @@ import { useFormActionSignUp } from 'actions/sign-up';
 import {
   DetailedHTMLProps,
   FormHTMLAttributes,
+  useMemo,
 } from 'react';
 
 export interface FormSignUpProps
@@ -25,11 +26,50 @@ export default function FormSignUp(props: FormSignUpProps) {
     handleAction,
   } = useFormActionSignUp();
 
+  const formError = useMemo(
+    () => (errors?.formErrors?.length > 0 ? errors.formErrors[0] : null),
+    [
+      errors,
+    ],
+  );
+
   return (
     <form
       action={handleAction}
       {...props} // eslint-disable-line react/jsx-props-no-spreading
     >
+      <FormControl
+        error={errors?.fieldErrors?.nameFirst?.join(', ')}
+        htmlFor='nameFirst'
+        label='First Name'
+      >
+        <InputText
+          bordered
+          error={!!errors?.fieldErrors?.nameFirst?.length}
+          id='nameFirst'
+          name='nameFirst'
+          onChange={() => clearFieldErrors(['nameFirst'])}
+          placeholder='first name'
+          required
+          type='text'
+        />
+      </FormControl>
+      <FormControl
+        error={errors?.fieldErrors?.nameLast?.join(', ')}
+        htmlFor='nameLast'
+        label='Last Name'
+      >
+        <InputText
+          bordered
+          error={!!errors?.fieldErrors?.nameLast?.length}
+          id='nameLast'
+          name='nameLast'
+          onChange={() => clearFieldErrors(['nameLast'])}
+          placeholder='last name'
+          required
+          type='text'
+        />
+      </FormControl>
       <FormControl
         error={errors?.fieldErrors?.email?.join(', ')}
         htmlFor='email'
@@ -59,7 +99,7 @@ export default function FormSignUp(props: FormSignUpProps) {
           onChange={() => clearFieldErrors(['confirm-password', 'password'])}
           placeholder='password'
           required
-          type='text'
+          type='password'
         />
       </FormControl>
       <FormControl
@@ -75,18 +115,26 @@ export default function FormSignUp(props: FormSignUpProps) {
           onChange={() => clearFieldErrors(['confirm-password', 'password'])}
           placeholder='confirm password'
           required
-          type='text'
+          type='password'
         />
       </FormControl>
       <FormControl
         className='mt-6'
       >
         <Button
+          id='sign-up-submit'
           type='submit'
           variantColor='primary'
         >
           { 'Sign Up' }
         </Button>
+        { formError ? (
+          <Label
+            htmlFor='sign-up-submit'
+          >
+            { formError }
+          </Label>
+        ) : null }
       </FormControl>
       <Label
         htmlFor='already-have-account'

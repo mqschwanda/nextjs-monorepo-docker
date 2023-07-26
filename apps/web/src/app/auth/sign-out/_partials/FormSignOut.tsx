@@ -3,8 +3,9 @@
 import {
   Button,
   FormControl,
+  Label,
 } from '@mqs/react-server-components';
-import { DetailedHTMLProps, FormHTMLAttributes } from 'react';
+import { DetailedHTMLProps, FormHTMLAttributes, useMemo } from 'react';
 import { useFormActionSignOut } from 'actions/sign-out';
 
 export interface FormSignOutProps extends Omit<DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>, 'action' | 'children'> {
@@ -16,6 +17,13 @@ export default function FormSignOut(props: FormSignOutProps) {
     errors,
     handleAction,
   } = useFormActionSignOut();
+
+  const formError = useMemo(
+    () => (errors?.formErrors?.length > 0 ? errors.formErrors[0] : null),
+    [
+      errors,
+    ],
+  );
 
   return (
     <form
@@ -35,11 +43,19 @@ export default function FormSignOut(props: FormSignOutProps) {
           value='example@email.com' // TODO: handle email for sign out
         />
         <Button
+          id='sign-out-submit'
           type='submit'
           variantColor='primary'
         >
           { 'Sign Out' }
         </Button>
+        { formError ? (
+          <Label
+            htmlFor='sign-out-submit'
+          >
+            { formError }
+          </Label>
+        ) : null }
       </FormControl>
     </form>
   );

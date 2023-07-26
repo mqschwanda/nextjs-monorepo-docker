@@ -1,3 +1,4 @@
+import bcrypt from 'bcrypt';
 import {
   User,
   Role,
@@ -23,16 +24,19 @@ async function seed() {
     })),
   );
 
+  const password = await bcrypt.hash('password', 10);
   const users: Array<Omit<User, 'id' | 'createdAt'>> = [
     {
       email: 'admin@email.com',
       nameFirst: 'Admin',
       nameLast: 'Smith',
+      password,
     },
     {
       email: 'user@email.com',
       nameFirst: 'John',
       nameLast: 'Smith',
+      password,
     },
   ];
 

@@ -1,4 +1,7 @@
-import { PrismaClient, RoleKey, Prisma } from '@prisma/client';
+import {
+  PrismaClient, RoleKey, Prisma, User,
+} from '@prisma/client';
+import bcrypt from 'bcrypt';
 
 export * from '@prisma/client';
 
@@ -27,7 +30,7 @@ const prisma = new PrismaClient()
             }),
           ]);
 
-          await prisma.userRole.upsert({
+          return prisma.userRole.upsert({
             create: {
               roleId: adminRole.id,
               userId: adminUser.id,
@@ -40,6 +43,37 @@ const prisma = new PrismaClient()
               },
             },
           });
+        },
+        async createWithPassword({
+          email,
+          nameFirst,
+          nameLast,
+          password,
+        }: Omit<User, 'id' | 'createdAt'>) {
+          const hashedPassword = await bcrypt.hash(password, 10);
+
+          return prisma.user.create({
+            data: {
+              email,
+              nameFirst,
+              nameLast,
+              password: hashedPassword,
+            },
+          });
+        },
+        async isPasswordValid({
+          email,
+          password,
+        }: Pick<User, 'email' | 'password'>) {
+          const user = await prisma.user.findUniqueOrThrow({
+            where: {
+              email,
+            },
+          });
+
+          const isPasswordValid = await bcrypt.compare(password, user.password);
+
+          return isPasswordValid;
         },
       },
     },
