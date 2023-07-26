@@ -1,3 +1,5 @@
+import { faker } from '@faker-js/faker';
+
 describe('@mqs/web', () => {
   describe('Home Page', () => {
     it('should redirect to the page', () => {
@@ -24,32 +26,12 @@ describe('@mqs/web', () => {
   });
 
   describe('auth', () => {
-    describe('Sign In Page', () => {
-      it('should render the page', () => {
-        cy.visit('/auth/sign-in');
-
-        cy.get('head title').contains('Sign In');
-        cy.screenshot();
-      });
-
-      it('should fill out and submit the form', () => {
-        cy.visit('/auth/sign-in');
-
-        cy.get('#nav-auth-menu-auth').should('exist');
-        cy.get('#nav-auth-menu-profile').should('not.exist');
-
-        cy.get('#email').type('someone@example.com');
-        cy.get('#password').type('password');
-
-        cy.screenshot();
-
-        cy.get('button[type="submit"]').click();
-        cy.location('pathname', { timeout: 1000 }).should('eq', '/user/profile');
-
-        cy.get('#nav-auth-menu-auth').should('not.exist');
-        cy.get('#nav-auth-menu-profile').should('exist');
-      });
-    });
+    const user = {
+      email: faker.internet.email(),
+      nameFirst: faker.person.firstName(),
+      nameLast: faker.person.lastName(),
+      password: faker.internet.password(),
+    };
 
     describe('Sign Up Page', () => {
       it('should render the page', () => {
@@ -65,9 +47,38 @@ describe('@mqs/web', () => {
         cy.get('#nav-auth-menu-auth').should('exist');
         cy.get('#nav-auth-menu-profile').should('not.exist');
 
-        cy.get('#email').type('someone@example.com');
-        cy.get('#password').type('password');
-        cy.get('#confirm-password').type('password');
+        cy.get('#email').type(user.email);
+        cy.get('#nameFirst').type(user.nameFirst);
+        cy.get('#nameLast').type(user.nameLast);
+        cy.get('#password').type(user.password);
+        cy.get('#confirm-password').type(user.password);
+
+        cy.screenshot();
+
+        cy.get('button[type="submit"]').click();
+        cy.location('pathname', { timeout: 1000 }).should('eq', '/user/profile');
+
+        cy.get('#nav-auth-menu-auth').should('not.exist');
+        cy.get('#nav-auth-menu-profile').should('exist');
+      });
+    });
+
+    describe('Sign In Page', () => {
+      it('should render the page', () => {
+        cy.visit('/auth/sign-in');
+
+        cy.get('head title').contains('Sign In');
+        cy.screenshot();
+      });
+
+      it('should fill out and submit the form', () => {
+        cy.visit('/auth/sign-in');
+
+        cy.get('#nav-auth-menu-auth').should('exist');
+        cy.get('#nav-auth-menu-profile').should('not.exist');
+
+        cy.get('#email').type(user.email);
+        cy.get('#password').type(user.password);
 
         cy.screenshot();
 
