@@ -31,6 +31,14 @@ model User {
   nameLast  String
   password  String
   roles     UserRole[]
+  jwts      Jwt[]
+}
+
+model Jwt {
+  @@id([userId, value])
+  value  String @unique
+  userId Int
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 enum RoleKey {

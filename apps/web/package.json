@@ -24,6 +24,7 @@
     "@mqs/zod": "*",
     "classnames": "^2.3.2",
     "cookies-next": "^2.1.2",
+    "jsonwebtoken": "^9.0.1",
     "next": "^13.4.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -32,6 +33,7 @@
     "@faker-js/faker": "^8.0.2",
     "@mqs/eslint-config": "*",
     "@mqs/tsconfig": "*",
+    "@types/jsonwebtoken": "^9.0.2",
     "@types/node": "^20.4.2",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",

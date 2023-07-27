@@ -12,7 +12,8 @@
         "^build"
       ],
       "env": [
-        "NEXT_PUBLIC_API_HOST"
+        "NEXT_PUBLIC_API_HOST",
+        "JWT_SECRET"
       ],
       "inputs": [
         "src/**/*.tsx",
@@ -60,6 +61,9 @@
     },
     "dev": {
       "cache": false,
+      "env": [
+        "JWT_SECRET"
+      ],
       "outputMode": "full",
       "persistent": true
     },

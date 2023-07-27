@@ -35,6 +35,7 @@ module.exports = {
   transpilePackages: [
     '@mqs/graphql-client',
     '@mqs/logger',
+    '@mqs/prisma',
     '@mqs/react-client-components',
     '@mqs/react-server-components',
   ],

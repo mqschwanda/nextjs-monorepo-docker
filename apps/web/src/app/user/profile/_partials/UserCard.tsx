@@ -6,16 +6,23 @@ import {
 } from '@mqs/react-server-components';
 import { cookies } from 'next/headers';
 import Image from 'next/image';
-import { UserCookie } from 'utilities/cookies';
+import jwt from 'jsonwebtoken';
+import { User } from '@mqs/prisma/client';
 
-function getUserCookie() {
-  const { value } = cookies().get('user') || {};
+function getUser() {
+  const { value } = cookies().get('token') || {};
 
   if (!value) {
     return null;
   }
 
-  return JSON.parse(value) as UserCookie;
+  if (process.env.JWT_SECRET === undefined) {
+    throw new Error('an unexpected error occurred');
+  }
+
+  const user = jwt.verify(value, process.env.JWT_SECRET);
+
+  return user as User;
 }
 
 export interface UserCardProps extends Omit<CardProps, 'side' | 'children'> {
@@ -23,7 +30,7 @@ export interface UserCardProps extends Omit<CardProps, 'side' | 'children'> {
 }
 
 export default function UserCard(props: UserCardProps) {
-  const user = getUserCookie();
+  const user = getUser();
 
   return (
     <Card

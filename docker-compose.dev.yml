@@ -4,6 +4,8 @@ services:
       - ./:/app
     build:
       dockerfile: ./apps/web/Dockerfile.dev
+    environment:
+      JWT_SECRET: secret
   api:
     volumes:
       - ./:/app

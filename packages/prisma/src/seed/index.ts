@@ -56,6 +56,14 @@ async function seed() {
       email: 'admin@email.com',
     },
   });
+
+  const user = await prisma.user.findFirstOrThrow();
+  await prisma.jwt.create({
+    data: {
+      userId: user.id,
+      value: 'not a valid token',
+    },
+  });
 }
 
 seed()

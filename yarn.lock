@@ -4565,6 +4565,7 @@ __metadata:
     "@mqs/style": "*"
     "@mqs/tsconfig": "*"
     "@mqs/zod": "*"
+    "@types/jsonwebtoken": ^9.0.2
     "@types/node": ^20.4.2
     "@types/react": ^18.2.15
     "@types/react-dom": ^18.2.7
@@ -4572,6 +4573,7 @@ __metadata:
     cookies-next: ^2.1.2
     cypress: 12.17.2
     eslint: ^7.32.0
+    jsonwebtoken: ^9.0.1
     next: ^13.4.10
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -7096,6 +7098,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/jsonwebtoken@npm:^9.0.2":
+  version: 9.0.2
+  resolution: "@types/jsonwebtoken@npm:9.0.2"
+  dependencies:
+    "@types/node": "*"
+  checksum: 3bb8d40e78d7eb53e427db6e9f0f22e0890cfee80965dcf741d08341814913afb211306de6e9847c6d241cc8e36f8a59090cbfdcc510ab7c81af9d650c5afe0e
+  languageName: node
+  linkType: hard
+
 "@types/lodash@npm:^4.14.167":
   version: 4.14.195
   resolution: "@types/lodash@npm:4.14.195"
@@ -9044,6 +9055,13 @@ __metadata:
   version: 0.2.13
   resolution: "buffer-crc32@npm:0.2.13"
   checksum: 06252347ae6daca3453b94e4b2f1d3754a3b146a111d81c68924c22d91889a40623264e95e67955b1cb4a68cbedf317abeabb5140a9766ed248973096db5ce1c
+  languageName: node
+  linkType: hard
+
+"buffer-equal-constant-time@npm:1.0.1":
+  version: 1.0.1
+  resolution: "buffer-equal-constant-time@npm:1.0.1"
+  checksum: 80bb945f5d782a56f374b292770901065bad21420e34936ecbe949e57724b4a13874f735850dd1cc61f078773c4fb5493a41391e7bda40d1fa388d6bd80daaab
   languageName: node
   linkType: hard
 
@@ -11047,6 +11065,15 @@ __metadata:
     jsbn: ~0.1.0
     safer-buffer: ^2.1.0
   checksum: 22fef4b6203e5f31d425f5b711eb389e4c6c2723402e389af394f8411b76a488fa414d309d866e2b577ce3e8462d344205545c88a8143cc21752a5172818888a
+  languageName: node
+  linkType: hard
+
+"ecdsa-sig-formatter@npm:1.0.11":
+  version: 1.0.11
+  resolution: "ecdsa-sig-formatter@npm:1.0.11"
+  dependencies:
+    safe-buffer: ^5.0.1
+  checksum: 207f9ab1c2669b8e65540bce29506134613dd5f122cccf1e6a560f4d63f2732d427d938f8481df175505aad94583bcb32c688737bb39a6df0625f903d6d93c03
   languageName: node
   linkType: hard
 
@@ -16306,6 +16333,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jsonwebtoken@npm:^9.0.1":
+  version: 9.0.1
+  resolution: "jsonwebtoken@npm:9.0.1"
+  dependencies:
+    jws: ^3.2.2
+    lodash: ^4.17.21
+    ms: ^2.1.1
+    semver: ^7.3.8
+  checksum: 0eafe268896f4e8f9ab1f0f20e8c645721b7a9cddc41c0aba1e58da5c34564e8c9990817c1a5b646d795bcbb1339350826fe57c4569b5379ba9eea4a9aa5bbd0
+  languageName: node
+  linkType: hard
+
 "jsprim@npm:^2.0.2":
   version: 2.0.2
   resolution: "jsprim@npm:2.0.2"
@@ -16327,6 +16366,27 @@ __metadata:
     object.assign: ^4.1.4
     object.values: ^1.1.6
   checksum: a6a00d324e38f0d47e04f973d79670248a663422a4dccdc02efd6f1caf1c00042fb0aafcff1023707c85dea6f013d435b90db67c1c6841bf345628f0a720d8b3
+  languageName: node
+  linkType: hard
+
+"jwa@npm:^1.4.1":
+  version: 1.4.1
+  resolution: "jwa@npm:1.4.1"
+  dependencies:
+    buffer-equal-constant-time: 1.0.1
+    ecdsa-sig-formatter: 1.0.11
+    safe-buffer: ^5.0.1
+  checksum: ff30ea7c2dcc61f3ed2098d868bf89d43701605090c5b21b5544b512843ec6fd9e028381a4dda466cbcdb885c2d1150f7c62e7168394ee07941b4098e1035e2f
+  languageName: node
+  linkType: hard
+
+"jws@npm:^3.2.2":
+  version: 3.2.2
+  resolution: "jws@npm:3.2.2"
+  dependencies:
+    jwa: ^1.4.1
+    safe-buffer: ^5.0.1
+  checksum: f0213fe5b79344c56cd443428d8f65c16bf842dc8cb8f5aed693e1e91d79c20741663ad6eff07a6d2c433d1831acc9814e8d7bada6a0471fbb91d09ceb2bf5c2
   languageName: node
   linkType: hard
 

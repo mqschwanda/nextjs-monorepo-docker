@@ -6,6 +6,7 @@ import { cookies } from 'next/headers';
 import { UserCookie } from 'utilities/cookies';
 import { getFormDataForZod } from '@mqs/zod';
 import { prisma } from '@mqs/prisma/client';
+import jwt from 'jsonwebtoken';
 import { signInSchema } from './validation';
 
 // eslint-disable-next-line consistent-return
@@ -59,6 +60,24 @@ export default async function signInAction(formData: FormData) {
   };
 
   cookies().set('user', JSON.stringify(cookie));
+
+  if (process.env.JWT_SECRET === undefined) {
+    return {
+      errors: {
+        fieldErrors: {},
+        formErrors: ['an unexpected error occurred'],
+      },
+    };
+  }
+
+  const token = jwt.sign(user, process.env.JWT_SECRET);
+  await prisma.jwt.create({
+    data: {
+      userId: user.id,
+      value: token,
+    },
+  });
+  cookies().set('token', token);
 
   revalidatePath('/');
   redirect('/user/profile');

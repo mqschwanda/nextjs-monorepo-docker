@@ -48,7 +48,7 @@ export default function NavAuthMenuItems(_props: Props) {
             className='w-10 rounded-full'
           >
             <Image
-              alt={user.username}
+              alt={user.email}
               height={50}
               src='/assets/images/stock-profile-image.jpg'
               width={50}
