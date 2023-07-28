@@ -1,7 +1,7 @@
 'use client';
 
 import { ReactNode, memo } from 'react';
-import { ApolloProvider } from '@mqs/graphql-client';
+import { ApolloProvider } from '@mqs/graphql-client/provider';
 import { UiProvider } from '@mqs/react-client-components';
 
 export interface ProviderProps {

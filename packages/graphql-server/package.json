@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@mqs/graphql-schema": "*",
+    "@mqs/prisma": "*",
     "graphql": "^16.7.1",
     "graphql-yoga": "^3.9.1"
   }

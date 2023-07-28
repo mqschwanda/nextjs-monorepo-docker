@@ -1,11 +1,10 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Image from 'next/image';
-import { getCookie } from 'cookies-next';
 import { usePathname } from 'next/navigation';
-import { UserCookie } from 'utilities/cookies';
 import { NextLinkWrapper } from '@mqs/react-client-components';
+import { useMeQuery } from '@mqs/graphql-client';
 import { AUTH_ITEMS, PROFILE_ITEMS } from './constants';
 
 interface Props {
@@ -13,28 +12,24 @@ interface Props {
 }
 
 export default function NavAuthMenuItems(_props: Props) {
-  const [user, setUser] = useState<UserCookie | null>(null);
+  const { data, refetch, loading } = useMeQuery();
   const pathname = usePathname();
 
   useEffect(
     () => {
-      const cookie = getCookie('user');
-
-      if (
-        !cookie
-        || typeof cookie !== 'string'
-      ) {
-        setUser(null);
-      } else {
-        setUser(JSON.parse(cookie) as UserCookie);
-      }
+      refetch();
     },
     [ // eslint-disable-line react-hooks/exhaustive-deps
       pathname,
     ],
   );
 
-  if (user) {
+  if (loading) {
+    // TODO: handle loading state
+    return null;
+  }
+
+  if (data?.me) {
     return (
       <div
         className='dropdown dropdown-end'
@@ -48,7 +43,7 @@ export default function NavAuthMenuItems(_props: Props) {
             className='w-10 rounded-full'
           >
             <Image
-              alt={user.email}
+              alt={data.me.email}
               height={50}
               src='/assets/images/stock-profile-image.jpg'
               width={50}

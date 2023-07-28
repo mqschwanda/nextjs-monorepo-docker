@@ -4239,12 +4239,14 @@ __metadata:
     "@mqs/graphql-schema": "*"
     "@mqs/tsc": "*"
     "@mqs/tsconfig": "*"
+    "@types/js-cookie": ^3.0.3
     concurrently: ^8.2.0
     eslint: ^7.32.0
     glob: ^10.3.3
     graphql: ^16.7.1
     graphql-tag: ^2.12.6
     jest: ^29.6.1
+    js-cookie: ^3.0.5
     react: ^18.2.0
     typescript: ^5.1.6
   languageName: unknown
@@ -4286,6 +4288,7 @@ __metadata:
     "@mqs/eslint-config": "*"
     "@mqs/graphql-schema": "*"
     "@mqs/jest-preset": "*"
+    "@mqs/prisma": "*"
     "@mqs/tsc": "*"
     "@mqs/tsconfig": "*"
     eslint: ^7.32.0
@@ -7056,6 +7059,13 @@ __metadata:
     expect: ^29.0.0
     pretty-format: ^29.0.0
   checksum: e36bb92e0b9e5ea7d6f8832baa42f087fc1697f6cd30ec309a07ea4c268e06ec460f1f0cfd2581daf5eff5763475190ec1ad8ac6520c49ccfe4f5c0a48bfa676
+  languageName: node
+  linkType: hard
+
+"@types/js-cookie@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "@types/js-cookie@npm:3.0.3"
+  checksum: 927254ec37ce4fbe4d9d54f53a446b4351259799d9933db5808ddb7c430396aa2496bdd0a4e47e1b56048ffbec98645cbd4daa9e3ed9a6fff55e25eb640fcb15
   languageName: node
   linkType: hard
 
@@ -16048,6 +16058,13 @@ __metadata:
   version: 3.1.1
   resolution: "joycon@npm:3.1.1"
   checksum: 8003c9c3fc79c5c7602b1c7e9f7a2df2e9916f046b0dbad862aa589be78c15734d11beb9fe846f5e06138df22cb2ad29961b6a986ba81c4920ce2b15a7f11067
+  languageName: node
+  linkType: hard
+
+"js-cookie@npm:^3.0.5":
+  version: 3.0.5
+  resolution: "js-cookie@npm:3.0.5"
+  checksum: 2dbd2809c6180fbcf060c6957cb82dbb47edae0ead6bd71cbeedf448aa6b6923115003b995f7d3e3077bfe2cb76295ea6b584eb7196cca8ba0a09f389f64967a
   languageName: node
   linkType: hard
 

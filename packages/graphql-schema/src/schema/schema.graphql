@@ -1,7 +1,16 @@
 type Query {
   hello(name: String!): String!
+  me: User
 }
+
 
 type Subscription {
   countdown(from: Int!): Int!
+}
+
+type User {
+  id: ID!
+  email: String!
+  nameFirst: String!
+  nameLast: String!
 }

@@ -7,6 +7,7 @@ import Nav from 'partials/Nav';
 import Header from 'partials/Header';
 import { IconInfo } from '@mqs/react-server-components';
 import { AlertDismissible } from '@mqs/react-client-components';
+import Providers from 'providers';
 
 interface RootLayoutProps {
   children: ReactNode
@@ -23,29 +24,31 @@ export default function RootLayout({
       <body
         className='flex flex-col h-screen'
       >
-        <Header>
-          <Nav />
-          <AlertDismissible
-            cx={[
-              'my-4',
-              'shadow-lg',
-            ]}
-            variantBackgroundColor='info'
+        <Providers>
+          <Header>
+            <Nav />
+            <AlertDismissible
+              cx={[
+                'my-4',
+                'shadow-lg',
+              ]}
+              variantBackgroundColor='info'
+            >
+              <IconInfo
+                className='flex-shrink-0 w-6 h-6'
+              />
+              <span>
+                { 'New software update available.' }
+              </span>
+            </AlertDismissible>
+          </Header>
+          <main
+            className='flex-grow'
           >
-            <IconInfo
-              className='flex-shrink-0 w-6 h-6'
-            />
-            <span>
-              { 'New software update available.' }
-            </span>
-          </AlertDismissible>
-        </Header>
-        <main
-          className='flex-grow'
-        >
-          { children }
-        </main>
-        <Footer />
+            { children }
+          </main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );

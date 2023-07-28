@@ -70,30 +70,44 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Types.Scalars['Boolean']>;
+  ID: ResolverTypeWrapper<Types.Scalars['ID']>;
   Int: ResolverTypeWrapper<Types.Scalars['Int']>;
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Types.Scalars['String']>;
   Subscription: ResolverTypeWrapper<{}>;
+  User: ResolverTypeWrapper<Types.User>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
   Boolean: Types.Scalars['Boolean'];
+  ID: Types.Scalars['ID'];
   Int: Types.Scalars['Int'];
   Query: {};
   String: Types.Scalars['String'];
   Subscription: {};
+  User: Types.User;
 };
 
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   hello?: Resolver<ResolversTypes['String'], ParentType, ContextType, RequireFields<Types.QueryHelloArgs, 'name'>>;
+  me?: Resolver<Types.Maybe<ResolversTypes['User']>, ParentType, ContextType>;
 };
 
 export type SubscriptionResolvers<ContextType = any, ParentType extends ResolversParentTypes['Subscription'] = ResolversParentTypes['Subscription']> = {
   countdown?: SubscriptionResolver<ResolversTypes['Int'], 'countdown', ParentType, ContextType, RequireFields<Types.SubscriptionCountdownArgs, 'from'>>;
 };
 
+export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
+  email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  nameFirst?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  nameLast?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type Resolvers<ContextType = any> = {
   Query?: QueryResolvers<ContextType>;
   Subscription?: SubscriptionResolvers<ContextType>;
+  User?: UserResolvers<ContextType>;
 };

@@ -16,7 +16,10 @@ export default function createServer() {
     .use(morgan('dev'))
     .use(urlencoded({ extended: true }))
     .use(json())
-    .use(cors())
+    .use(cors({
+      credentials: true,
+      origin: '*',
+    }))
     .use(graphqlServer.graphqlEndpoint, graphqlServer)
     .get('/healthz', healthz) // cspell:disable-line
     .get('/healthz-db', healthDb); // cspell:disable-line

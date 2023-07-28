@@ -8,6 +8,17 @@
   "files": [
     "dist/**"
   ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./provider": "./dist/provider/index.js"
+  },
+  "typesVersions": {
+    "*": {
+      "provider": [
+        "./dist/provider/index.d.ts"
+      ]
+    }
+  },
   "scripts": {
     "codegen": "graphql-codegen",
     "codegen:watch": "yarn codegen --watch",
@@ -25,6 +36,7 @@
     "@mqs/eslint-config": "*",
     "@mqs/tsc": "*",
     "@mqs/tsconfig": "*",
+    "@types/js-cookie": "^3.0.3",
     "concurrently": "^8.2.0",
     "eslint": "^7.32.0",
     "glob": "^10.3.3",
@@ -37,6 +49,7 @@
     "@graphql-yoga/apollo-link": "^1.8.1",
     "@mqs/graphql-schema": "*",
     "graphql": "^16.7.1",
-    "graphql-tag": "^2.12.6"
+    "graphql-tag": "^2.12.6",
+    "js-cookie": "^3.0.5"
   }
 }

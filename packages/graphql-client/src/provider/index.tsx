@@ -1,3 +1,5 @@
+'use client';
+
 import { ApolloProvider as Provider } from '@apollo/client';
 import type { ReactNode } from 'react';
 import client from '../client';
