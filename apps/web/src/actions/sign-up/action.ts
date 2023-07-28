@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
 import { getFormDataForZod } from '@mqs/zod';
 import { Prisma, prisma } from '@mqs/prisma/client';
-import jwt from 'jsonwebtoken';
+import jwtSign from 'utilities/jwt/jwtSign';
 import { signUpSchema } from './validation';
 
 // eslint-disable-next-line consistent-return
@@ -79,23 +79,18 @@ export default async function signUpAction(formData: FormData) {
     };
   }
 
-  if (process.env.JWT_SECRET === undefined) {
-    return {
-      errors: {
-        fieldErrors: {},
-        formErrors: ['an unexpected error occurred'],
-      },
-    };
-  }
-
-  const token = jwt.sign(user, process.env.JWT_SECRET);
+  const token = jwtSign({
+    userId: user.id,
+  });
   await prisma.jwt.create({
     data: {
       userId: user.id,
       value: token,
     },
   });
-  cookies().set('token', token);
+  cookies().set('token', token, {
+    httpOnly: true,
+  });
 
   revalidatePath('/');
   redirect('/user/profile');

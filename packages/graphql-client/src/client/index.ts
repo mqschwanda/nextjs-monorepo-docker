@@ -4,6 +4,7 @@ import {
   from,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { HTTPExecutorOptions } from '@graphql-tools/executor-http';
 import { YogaLink } from '@graphql-yoga/apollo-link';
 import Cookies from 'js-cookie';
 
@@ -22,40 +23,49 @@ function getApolloClientUri() {
   // throw new Error('no uri');
 }
 
-const authorizationLink = setContext((_, ctx) => {
-  const { headers = {} } = ctx;
+export default function getClient({
+  fetch,
+}: {
+  fetch?: HTTPExecutorOptions['fetch'],
+}) {
+  const authorizationLink = setContext((_, ctx) => {
+    const { headers = {} } = ctx;
 
-  const token = Cookies.get('token');
-  const authorization = token ? `Bearer ${token}` : undefined;
+    const token = Cookies.get('token');
+    const authorization = token ? `Bearer ${token}` : undefined;
 
-  return {
-    ...ctx,
-    headers: {
-      ...headers,
-      authorization,
-    },
-  };
-});
-
-const link = from(
-  [
-    authorizationLink,
-    new YogaLink({
-      endpoint: getApolloClientUri(),
-      headers: (executorRequest) => {
-        if (executorRequest) {
-          return executorRequest.context.headers;
-        }
-
-        return {};
+    return {
+      ...ctx,
+      headers: {
+        ...headers,
+        authorization,
       },
-    }),
-  ],
-);
+    };
+  });
 
-const client = new ApolloClient({
-  cache: new InMemoryCache(),
-  link,
-});
+  const link = from(
+    [
+      authorizationLink,
+      new YogaLink({
+        credentials: 'include',
+        endpoint: getApolloClientUri(),
+        fetch,
+        headers: (executorRequest) => {
+          if (executorRequest) {
+            return executorRequest.context.headers;
+          }
 
-export default client;
+          return {};
+        },
+      }),
+    ],
+  );
+
+  const client = new ApolloClient({
+    cache: new InMemoryCache(),
+    credentials: 'include',
+    link,
+  });
+
+  return client;
+}

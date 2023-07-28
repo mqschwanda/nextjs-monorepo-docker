@@ -9,6 +9,10 @@ const schema = createSchema({
 
 export default function createGraphqlServer() {
   return createYoga({
+    cors: {
+      credentials: true,
+      // origin: 'http://localhost:3000',
+    },
     graphiql: true,
     graphqlEndpoint: '/graphql/v1',
     landingPage: false,

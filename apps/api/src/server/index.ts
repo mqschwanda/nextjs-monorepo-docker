@@ -18,7 +18,7 @@ export default function createServer() {
     .use(json())
     .use(cors({
       credentials: true,
-      origin: '*',
+      origin: 'http://localhost:3000',
     }))
     .use(graphqlServer.graphqlEndpoint, graphqlServer)
     .get('/healthz', healthz) // cspell:disable-line

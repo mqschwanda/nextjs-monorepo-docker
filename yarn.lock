@@ -3164,6 +3164,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@graphql-tools/executor-http@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@graphql-tools/executor-http@npm:1.0.2"
+  dependencies:
+    "@graphql-tools/utils": ^10.0.2
+    "@repeaterjs/repeater": ^3.0.4
+    "@whatwg-node/fetch": ^0.9.0
+    extract-files: ^11.0.0
+    meros: ^1.2.1
+    tslib: ^2.4.0
+    value-or-promise: ^1.0.12
+  peerDependencies:
+    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
+  checksum: 6e246bdfb6de8763e4ae7070c99339ae377ae0ef7acee864d8db2a76c6e0e4fa139769291c8ea5e1f07f698016f5f21915f1f5678720d196faa63bc7c3116b2a
+  languageName: node
+  linkType: hard
+
 "@graphql-tools/executor-legacy-ws@npm:^0.0.11":
   version: 0.0.11
   resolution: "@graphql-tools/executor-legacy-ws@npm:0.0.11"
@@ -3412,6 +3429,19 @@ __metadata:
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
   checksum: e4deccaa4b333a91022e9a19594e6c696c4463c94f091893c8d056e4090b2c8c5e5036b0e7bcce79f0c4c0ad2f0e6f3c8d170a765f0d5a2ba29965bee096f355
+  languageName: node
+  linkType: hard
+
+"@graphql-tools/utils@npm:^10.0.2":
+  version: 10.0.4
+  resolution: "@graphql-tools/utils@npm:10.0.4"
+  dependencies:
+    "@graphql-typed-document-node/core": ^3.1.1
+    dset: ^3.1.2
+    tslib: ^2.4.0
+  peerDependencies:
+    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
+  checksum: cb90c4c7f12dc6a5a519c4dfa5298b33d902ff921a4bc5d7cd15f5fe9e4eb3bf79cefd671de30661008d762cae5fef33420249f46bcbef5d7b38a949e5718f2d
   languageName: node
   linkType: hard
 
@@ -4183,12 +4213,14 @@ __metadata:
     "@mqs/prisma": "*"
     "@mqs/tsconfig": "*"
     "@types/body-parser": ^1.19.2
+    "@types/cookie-parser": ^1.4.3
     "@types/cors": ^2.8.13
     "@types/express": ^4.17.17
     "@types/morgan": ^1.9.4
     "@types/node": ^20.4.2
     "@types/supertest": ^2.0.12
     body-parser: ^1.20.2
+    cookie-parser: ^1.4.6
     cors: ^2.8.5
     esbuild: ^0.14.54
     esbuild-register: ^3.4.2
@@ -4234,6 +4266,7 @@ __metadata:
     "@apollo/client": ^3.7.17
     "@graphql-codegen/cli": ^3.3.1
     "@graphql-codegen/typescript-react-apollo": ^3.3.7
+    "@graphql-tools/executor-http": ^1.0.2
     "@graphql-yoga/apollo-link": ^1.8.1
     "@mqs/eslint-config": "*"
     "@mqs/graphql-schema": "*"
@@ -4291,6 +4324,9 @@ __metadata:
     "@mqs/prisma": "*"
     "@mqs/tsc": "*"
     "@mqs/tsconfig": "*"
+    "@types/cookie": ^0.5.1
+    "@whatwg-node/server-plugin-cookies": ^1.0.1
+    cookie: ^0.5.0
     eslint: ^7.32.0
     graphql: ^16.7.1
     graphql-yoga: ^3.9.1
@@ -6856,10 +6892,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/cookie-parser@npm:^1.4.3":
+  version: 1.4.3
+  resolution: "@types/cookie-parser@npm:1.4.3"
+  dependencies:
+    "@types/express": "*"
+  checksum: f390f3af1b1711190dee2c2ecd9af33af81fbde8d81ee820dadb6fe1e0d80c3faba40af37c6ed36fb88b04b64870f6a021f7e9edceecd17c42fe22abe0af5005
+  languageName: node
+  linkType: hard
+
 "@types/cookie@npm:^0.4.1":
   version: 0.4.1
   resolution: "@types/cookie@npm:0.4.1"
   checksum: 3275534ed69a76c68eb1a77d547d75f99fedc80befb75a3d1d03662fb08d697e6f8b1274e12af1a74c6896071b11510631ba891f64d30c78528d0ec45a9c1a18
+  languageName: node
+  linkType: hard
+
+"@types/cookie@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "@types/cookie@npm:0.5.1"
+  checksum: 9a8d60fc84797122bc399d6bd330fe5780dc7aab032321de705049ea925339f74658bfa418de483a625d51858770efef58df633ff2e20f1bdf7fbd74a52847e2
   languageName: node
   linkType: hard
 
@@ -6969,7 +7021,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/express@npm:^4.17.17, @types/express@npm:^4.7.0":
+"@types/express@npm:*, @types/express@npm:^4.17.17, @types/express@npm:^4.7.0":
   version: 4.17.17
   resolution: "@types/express@npm:4.17.17"
   dependencies:
@@ -7710,6 +7762,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@whatwg-node/cookie-store@npm:0.2.1":
+  version: 0.2.1
+  resolution: "@whatwg-node/cookie-store@npm:0.2.1"
+  dependencies:
+    tslib: ^2.3.1
+  checksum: c6fba4360236b19abef8432f310c14eeaeae6fc4136ba6f4c66413f1ac9b2ff37ef8aaf550c3238c0a89028fc9c4b2eeb101e8930b8d323b3db5a26171d185ae
+  languageName: node
+  linkType: hard
+
 "@whatwg-node/events@npm:0.0.2":
   version: 0.0.2
   resolution: "@whatwg-node/events@npm:0.0.2"
@@ -7721,6 +7782,13 @@ __metadata:
   version: 0.0.3
   resolution: "@whatwg-node/events@npm:0.0.3"
   checksum: af26f40d4d0a0f5f0ee45fc6124afb8d6b33988dae96ab0fb87aa5e66d1ff08a749491b9da533ea524bbaebd4a770736f254d574a91ab4455386aa098cee8c77
+  languageName: node
+  linkType: hard
+
+"@whatwg-node/events@npm:^0.1.0":
+  version: 0.1.1
+  resolution: "@whatwg-node/events@npm:0.1.1"
+  checksum: 3a356ca23522190201e27446cfd7ebf1cf96815ddb9d1ba5da0a00bbe6c1d28b4094862104411101fbedd47c758b25fe3683033f6a3e80933029efd664c33567
   languageName: node
   linkType: hard
 
@@ -7737,6 +7805,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@whatwg-node/fetch@npm:^0.9.0":
+  version: 0.9.9
+  resolution: "@whatwg-node/fetch@npm:0.9.9"
+  dependencies:
+    "@whatwg-node/node-fetch": ^0.4.8
+    urlpattern-polyfill: ^9.0.0
+  checksum: d77127d264ce3dd99880520c54cf5fad3db1ab3c62c37ab81a3983e9dbc1b349a16aafc003232e7f093cce55129fa07a20e0d5c8585ec8ddb6fd9c22c09cd669
+  languageName: node
+  linkType: hard
+
 "@whatwg-node/node-fetch@npm:^0.3.6":
   version: 0.3.6
   resolution: "@whatwg-node/node-fetch@npm:0.3.6"
@@ -7747,6 +7825,31 @@ __metadata:
     fast-url-parser: ^1.1.3
     tslib: ^2.3.1
   checksum: d3d7b0a0242c0511c7b666de66d9096fb24ea251426ce76e3a26a8ca17408de5d4d4f81b5aaec840cc7025f0321fb97e06067c53f377c844a5a9473dd76491ae
+  languageName: node
+  linkType: hard
+
+"@whatwg-node/node-fetch@npm:^0.4.8":
+  version: 0.4.11
+  resolution: "@whatwg-node/node-fetch@npm:0.4.11"
+  dependencies:
+    "@whatwg-node/events": ^0.1.0
+    busboy: ^1.6.0
+    fast-querystring: ^1.1.1
+    fast-url-parser: ^1.1.3
+    tslib: ^2.3.1
+  checksum: 0226fbcc5adb9d93fe3c02886a578d11d8d7600f1c7c1a2b4c899ff046832f4b07f05cda8b41247ed765c8ca4e3da1e7cf0f42bdd95210b2f7ab5d4b85cc5425
+  languageName: node
+  linkType: hard
+
+"@whatwg-node/server-plugin-cookies@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@whatwg-node/server-plugin-cookies@npm:1.0.1"
+  dependencies:
+    "@whatwg-node/cookie-store": 0.2.1
+    tslib: ^2.3.1
+  peerDependencies:
+    "@whatwg-node/server": ^0.9.0
+  checksum: 01e8c93b8527d8aa834c5cc19ed56282d26236bb31573f80cb4e77f12e65af8b29ecdfd0230cbcbb3ed52f47d3cef97654ea5d76be2a9bd9d4355a8294f69387
   languageName: node
   linkType: hard
 
@@ -9984,6 +10087,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"cookie-parser@npm:^1.4.6":
+  version: 1.4.6
+  resolution: "cookie-parser@npm:1.4.6"
+  dependencies:
+    cookie: 0.4.1
+    cookie-signature: 1.0.6
+  checksum: 1e5a63aa82e8eb4e02d2977c6902983dee87b02e87ec5ec43ac3cb1e72da354003716570cd5190c0ad9e8a454c9d3237f4ad6e2f16d0902205a96a1c72b77ba5
+  languageName: node
+  linkType: hard
+
 "cookie-signature@npm:1.0.6":
   version: 1.0.6
   resolution: "cookie-signature@npm:1.0.6"
@@ -9991,7 +10104,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cookie@npm:0.5.0":
+"cookie@npm:0.4.1":
+  version: 0.4.1
+  resolution: "cookie@npm:0.4.1"
+  checksum: bd7c47f5d94ab70ccdfe8210cde7d725880d2fcda06d8e375afbdd82de0c8d3b73541996e9ce57d35f67f672c4ee6d60208adec06b3c5fc94cebb85196084cf8
+  languageName: node
+  linkType: hard
+
+"cookie@npm:0.5.0, cookie@npm:^0.5.0":
   version: 0.5.0
   resolution: "cookie@npm:0.5.0"
   checksum: 1f4bd2ca5765f8c9689a7e8954183f5332139eb72b6ff783d8947032ec1fdf43109852c178e21a953a30c0dd42257828185be01b49d1eb1a67fd054ca588a180
@@ -22380,6 +22500,13 @@ __metadata:
   version: 8.0.2
   resolution: "urlpattern-polyfill@npm:8.0.2"
   checksum: d2cc0905a613c77e330c426e8697ee522dd9640eda79ac51160a0f6350e103f09b8c327623880989f8ba7325e8d95267b745aa280fdcc2aead80b023e16bd09d
+  languageName: node
+  linkType: hard
+
+"urlpattern-polyfill@npm:^9.0.0":
+  version: 9.0.0
+  resolution: "urlpattern-polyfill@npm:9.0.0"
+  checksum: d3658b78a10eaee514c464f5a4336c408c70cf01e9b915cb1df5892b3c49003d1ed4042dc72d1b18493b8b847883e84fbf2bf358abb5dff84b2725d5e8463bcb
   languageName: node
   linkType: hard
 

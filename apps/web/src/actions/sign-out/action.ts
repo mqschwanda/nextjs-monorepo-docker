@@ -38,7 +38,6 @@ export default async function signOutAction(formData: FormData) {
     },
   });
   cookies().delete('token');
-  cookies().delete('user');
 
   revalidatePath('/');
   redirect('/');
