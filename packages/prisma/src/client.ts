@@ -65,11 +65,15 @@ const prisma = new PrismaClient()
           email,
           password,
         }: Pick<User, 'email' | 'password'>) {
-          const user = await prisma.user.findUniqueOrThrow({
+          const user = await prisma.user.findUnique({
             where: {
               email,
             },
           });
+
+          if (!user) {
+            return false;
+          }
 
           const isPasswordValid = await bcrypt.compare(password, user.password);
 
