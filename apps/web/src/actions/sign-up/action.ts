@@ -5,7 +5,6 @@ import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
 import { getFormDataForZod } from '@mqs/zod';
 import { Prisma, prisma } from '@mqs/prisma/client';
-import { UserCookie } from 'utilities/cookies';
 import jwt from 'jsonwebtoken';
 import { signUpSchema } from './validation';
 
@@ -79,13 +78,6 @@ export default async function signUpAction(formData: FormData) {
       },
     };
   }
-
-  const cookie: UserCookie = {
-    email: user.email,
-    nameFirst: user.nameFirst,
-    nameLast: user.nameLast,
-  };
-  cookies().set('user', JSON.stringify(cookie));
 
   if (process.env.JWT_SECRET === undefined) {
     return {

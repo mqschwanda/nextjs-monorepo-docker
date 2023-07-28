@@ -3,7 +3,6 @@
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
-import { UserCookie } from 'utilities/cookies';
 import { getFormDataForZod } from '@mqs/zod';
 import { prisma } from '@mqs/prisma/client';
 import jwt from 'jsonwebtoken';
@@ -52,14 +51,6 @@ export default async function signInAction(formData: FormData) {
       email,
     },
   });
-
-  const cookie: UserCookie = {
-    email: user.email,
-    nameFirst: user.nameFirst,
-    nameLast: user.nameLast,
-  };
-
-  cookies().set('user', JSON.stringify(cookie));
 
   if (process.env.JWT_SECRET === undefined) {
     return {
