@@ -6,31 +6,33 @@ import {
 } from '@mqs/react-server-components';
 import { cookies } from 'next/headers';
 import Image from 'next/image';
-import jwt from 'jsonwebtoken';
-import { User } from '@mqs/prisma/client';
+import { prisma } from '@mqs/prisma/client';
 
-function getUser() {
+async function getUser() {
   const { value } = cookies().get('token') || {};
 
   if (!value) {
-    return null;
-  }
-
-  if (process.env.JWT_SECRET === undefined) {
     throw new Error('an unexpected error occurred');
   }
 
-  const user = jwt.verify(value, process.env.JWT_SECRET);
+  const jwt = await prisma.jwt.findFirstOrThrow({
+    select: {
+      user: true,
+    },
+    where: {
+      value,
+    },
+  });
 
-  return user as User;
+  return jwt.user;
 }
 
 export interface UserCardProps extends Omit<CardProps, 'side' | 'children'> {
 
 }
 
-export default function UserCard(props: UserCardProps) {
-  const user = getUser();
+export default async function UserCard(props: UserCardProps) {
+  const user = await getUser();
 
   return (
     <Card
@@ -39,7 +41,7 @@ export default function UserCard(props: UserCardProps) {
     >
       <figure>
         <Image
-          alt={user?.email || 'profile-image'}
+          alt={user.email || 'profile-image'}
           className='w-[150px] h-[150px]'
           height={150}
           src='/assets/images/stock-profile-image.jpg'
@@ -48,11 +50,11 @@ export default function UserCard(props: UserCardProps) {
       </figure>
       <CardBody>
         <CardTitle>
-          { `${user?.nameFirst} ${user?.nameLast}` }
+          { `${user.nameFirst} ${user.nameLast}` }
         </CardTitle>
         <ul>
           <li>
-            { user?.email }
+            { user.email }
           </li>
         </ul>
       </CardBody>
