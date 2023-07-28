@@ -51,6 +51,9 @@ export default function FormSignOut(props: FormSignOutProps) {
         </Button>
         { formError ? (
           <Label
+            cx={[
+              'text-error',
+            ]}
             htmlFor='sign-out-submit'
           >
             { formError }

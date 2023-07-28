@@ -88,6 +88,9 @@ export default function FormSignIn(props: FormSignInProps) {
         </Button>
         { formError ? (
           <Label
+            cx={[
+              'text-error',
+            ]}
             htmlFor='sign-in-submit'
           >
             { formError }

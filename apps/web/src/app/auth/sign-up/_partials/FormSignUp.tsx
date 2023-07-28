@@ -130,6 +130,9 @@ export default function FormSignUp(props: FormSignUpProps) {
         </Button>
         { formError ? (
           <Label
+            cx={[
+              'text-error',
+            ]}
             htmlFor='sign-up-submit'
           >
             { formError }
