@@ -12,6 +12,20 @@ export default function createGraphqlServer() {
     graphiql: true,
     graphqlEndpoint: '/graphql/v1',
     landingPage: false,
+    logging: {
+      debug(...args) {
+        console.debug(...args);
+      },
+      error(...args) {
+        console.error(...args);
+      },
+      info(...args) {
+        console.info(...args);
+      },
+      warn(...args) {
+        console.warn(...args);
+      },
+    },
     schema,
   });
 }
