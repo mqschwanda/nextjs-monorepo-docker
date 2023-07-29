@@ -60,6 +60,31 @@ describe('@mqs/web', () => {
 
         cy.get('#nav-auth-menu-auth').should('not.exist');
         cy.get('#nav-auth-menu-profile').should('exist');
+
+        cy.signOutUser();
+      });
+    });
+
+    describe('Sign Out Page', () => {
+      it('should render the page', () => {
+        cy.signInUser();
+        cy.visit('/auth/sign-out');
+
+        cy.get('head title').contains('Sign Out');
+        cy.screenshot();
+      });
+
+      it('should submit the form', () => {
+        cy.signInUser();
+
+        cy.signOutUser();
+        cy.location('pathname', { timeout: 1000 }).should('eq', '/home');
+      });
+
+      it('should redirect when no user is signed in', () => {
+        cy.visit('/auth/sign-out');
+
+        cy.location('pathname', { timeout: 1000 }).should('eq', '/home');
       });
     });
 
@@ -72,7 +97,20 @@ describe('@mqs/web', () => {
       });
 
       it('should fill out and submit the form', () => {
-        cy.visit('/auth/sign-in');
+        cy.signInUser({
+          screenshot: true,
+        });
+        cy.location('pathname', { timeout: 1000 }).should('eq', '/home');
+
+        cy.get('#nav-auth-menu-auth').should('not.exist');
+        cy.get('#nav-auth-menu-profile').should('exist');
+
+        cy.signOutUser();
+      });
+
+      it('should redirect user based on url search param', () => {
+        const userProfilePath = '/user/profile';
+        cy.visit(`/auth/sign-in?redirect=${encodeURIComponent(userProfilePath)}`);
 
         cy.get('#nav-auth-menu-auth').should('exist');
         cy.get('#nav-auth-menu-profile').should('not.exist');
@@ -83,10 +121,12 @@ describe('@mqs/web', () => {
         cy.screenshot();
 
         cy.get('button[type="submit"]').click();
-        cy.location('pathname', { timeout: 1000 }).should('eq', '/user/profile');
+        cy.location('pathname', { timeout: 1000 }).should('eq', userProfilePath);
 
         cy.get('#nav-auth-menu-auth').should('not.exist');
         cy.get('#nav-auth-menu-profile').should('exist');
+
+        cy.signOutUser();
       });
     });
   });

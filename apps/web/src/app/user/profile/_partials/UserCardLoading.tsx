@@ -35,6 +35,17 @@ export default function UserCardLoading(props: UserCardLoadingProps) {
             ]}
           />
         </CardTitle>
+        <ul>
+          <li>
+            <SkeletonSpan
+              cx={[
+                'rounded-md',
+                'h-[1rem]',
+                'w-[150px]',
+              ]}
+            />
+          </li>
+        </ul>
       </CardBody>
     </Card>
   );

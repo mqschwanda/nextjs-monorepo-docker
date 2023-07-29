@@ -7,11 +7,27 @@ import {
 import { cookies } from 'next/headers';
 import Image from 'next/image';
 import { prisma } from '@mqs/prisma/client';
+import jwtVerify from 'utilities/jwt/jwtVerify';
+import { redirect } from 'next/navigation';
 
 async function getUser() {
   const { value } = cookies().get('token') || {};
 
   if (!value) {
+    redirect('/auth/sign-in');
+  }
+
+  let token;
+
+  try {
+    token = jwtVerify(value);
+  } catch (error) {
+    if (error) {
+      redirect('/auth/sign-in');
+    }
+  }
+
+  if (!token) {
     throw new Error('an unexpected error occurred');
   }
 
@@ -23,6 +39,10 @@ async function getUser() {
       value,
     },
   });
+
+  if (token.data.userId !== jwt.user.id) {
+    throw new Error('an unexpected error occurred');
+  }
 
   return jwt.user;
 }

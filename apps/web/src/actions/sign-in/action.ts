@@ -2,7 +2,7 @@
 
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
-import { cookies } from 'next/headers';
+import { cookies, headers } from 'next/headers';
 import { getFormDataForZod } from '@mqs/zod';
 import { prisma } from '@mqs/prisma/client';
 import jwtSign from 'utilities/jwt/jwtSign';
@@ -65,6 +65,16 @@ export default async function signInAction(formData: FormData) {
     httpOnly: true,
   });
 
-  revalidatePath('/');
-  redirect('/user/profile');
+  let redirectPath = '/';
+  const referer = headers().get('referer');
+  if (referer) {
+    const url = new URL(referer);
+    const redirectEncoded = url.searchParams.get('redirect');
+    if (redirectEncoded) {
+      redirectPath = decodeURIComponent(redirectEncoded);
+    }
+  }
+
+  revalidatePath(redirectPath);
+  redirect(redirectPath);
 }

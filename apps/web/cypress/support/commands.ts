@@ -36,5 +36,47 @@
 //   }
 // }
 
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      signInUser(options?: {
+        screenshot?: boolean
+      }): Chainable<void>
+      signOutUser(): Chainable<void>
+    }
+  }
+}
+
+Cypress.Commands.add('signInUser', ({
+  screenshot = false,
+} = {}) => {
+  cy.visit('/auth/sign-in');
+
+  cy.get('#nav-auth-menu-auth').should('exist');
+  cy.get('#nav-auth-menu-profile').should('not.exist');
+
+  cy.get('#email').type('admin@email.com');
+  cy.get('#password').type('password');
+
+  if (screenshot) {
+    cy.screenshot();
+  }
+
+  cy.get('button[type="submit"]').click();
+});
+
+Cypress.Commands.add('signOutUser', () => {
+  cy.visit('/auth/sign-out');
+  cy.get('button[type="submit"]').click();
+
+  cy.location('pathname', { timeout: 1000 }).should('eq', '/home');
+
+  // TODO: figure out why reload is needed to update ui because this currently works in development
+  cy.reload();
+
+  cy.get('#nav-auth-menu-auth').should('exist');
+  cy.get('#nav-auth-menu-profile').should('not.exist');
+});
+
 // Prevent TypeScript from reading file as legacy script
 export {};

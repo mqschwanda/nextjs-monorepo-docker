@@ -5,8 +5,12 @@ import {
   FormControl,
   Label,
 } from '@mqs/react-server-components';
-import { DetailedHTMLProps, FormHTMLAttributes, useMemo } from 'react';
+import {
+  DetailedHTMLProps, FormHTMLAttributes, useEffect, useMemo,
+} from 'react';
 import { useFormActionSignOut } from 'actions/sign-out';
+import { useMeQuery } from '@mqs/graphql-client';
+import { useRouter } from 'next/navigation';
 
 export interface FormSignOutProps extends Omit<DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>, 'action' | 'children'> {
 
@@ -18,10 +22,27 @@ export default function FormSignOut(props: FormSignOutProps) {
     handleAction,
   } = useFormActionSignOut();
 
+  const router = useRouter();
+
+  const { data, loading } = useMeQuery();
+
   const formError = useMemo(
     () => (errors?.formErrors?.length > 0 ? errors.formErrors[0] : null),
     [
       errors,
+    ],
+  );
+
+  useEffect(
+    () => {
+      if (!loading && !data?.me) {
+        router.push('/');
+      }
+    },
+    [
+      loading,
+      data,
+      router,
     ],
   );
 
@@ -40,9 +61,10 @@ export default function FormSignOut(props: FormSignOutProps) {
         <input
           name='email'
           type='hidden'
-          value='example@email.com' // TODO: handle email for sign out
+          value={data?.me?.email}
         />
         <Button
+          disabled={loading || !data?.me}
           id='sign-out-submit'
           type='submit'
           variantColor='primary'

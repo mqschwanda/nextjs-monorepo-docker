@@ -5,6 +5,7 @@ import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
 import { getFormDataForZod } from '@mqs/zod';
 import { prisma } from '@mqs/prisma/client';
+import jwtVerify from 'utilities/jwt/jwtVerify';
 import { signOutSchema } from './validation';
 
 // eslint-disable-next-line consistent-return
@@ -32,8 +33,18 @@ export default async function signOutAction(formData: FormData) {
   }
 
   const { value } = token;
+
+  const verified = jwtVerify(value, { ignoreExpiration: true });
+
   await prisma.jwt.delete({
+    select: {
+      user: true,
+    },
     where: {
+      user: {
+        email: validation.data.email,
+      },
+      userId: verified.data.userId,
       value,
     },
   });

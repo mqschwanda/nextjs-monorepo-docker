@@ -12,7 +12,9 @@ interface Props {
 }
 
 export default function NavAuthMenuItems(_props: Props) {
-  const { data, refetch, loading } = useMeQuery();
+  const { data, refetch, loading } = useMeQuery({
+    fetchPolicy: 'no-cache',
+  });
   const pathname = usePathname();
 
   useEffect(

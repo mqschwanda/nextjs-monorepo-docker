@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
-
-const ONE_HOUR = 60 * 60;
+import { Token } from '../types';
+import { ALGORITHM, AUDIENCE, ISSUER } from '../constants';
 
 export default function jwtSign({
   userId,
@@ -11,14 +11,21 @@ export default function jwtSign({
     throw new Error('an unexpected error occurred');
   }
 
-  const issuedAt = Date.now();
-  const payload = {
-    expiredAt: Math.floor(issuedAt / 1000) + ONE_HOUR,
-    issuedAt,
-    userId,
+  const payload: Pick<Token, 'data'> = {
+    data: {
+      userId,
+    },
   };
-
-  const token = jwt.sign(payload, process.env.JWT_SECRET);
+  const token = jwt.sign(
+    payload,
+    process.env.JWT_SECRET,
+    {
+      algorithm: ALGORITHM,
+      audience: AUDIENCE,
+      expiresIn: '1h',
+      issuer: ISSUER,
+    },
+  );
 
   return token;
 }
