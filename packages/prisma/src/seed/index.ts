@@ -58,7 +58,7 @@ async function seed() {
   });
 
   const user = await prisma.user.findFirstOrThrow();
-  await prisma.jwt.create({
+  await prisma.authenticationToken.create({
     data: {
       userId: user.id,
       value: 'not a valid token',

@@ -82,7 +82,7 @@ export default async function signUpAction(formData: FormData) {
   const token = jwtSign({
     userId: user.id,
   });
-  await prisma.jwt.create({
+  await prisma.authenticationToken.create({
     data: {
       userId: user.id,
       value: token,

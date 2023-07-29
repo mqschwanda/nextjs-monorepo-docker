@@ -19,7 +19,7 @@ const resolvers: Resolvers = {
         return null;
       }
 
-      const jwt = await prisma.jwt.findFirstOrThrow({
+      const authenticationToken = await prisma.authenticationToken.findFirstOrThrow({
         select: {
           user: true,
         },
@@ -28,7 +28,7 @@ const resolvers: Resolvers = {
         },
       });
 
-      return coercePrismaObjectForGraphQL(jwt.user);
+      return coercePrismaObjectForGraphQL(authenticationToken.user);
     },
   },
   Subscription: {

@@ -36,7 +36,7 @@ export default async function signOutAction(formData: FormData) {
 
   const verified = jwtVerify(value, { ignoreExpiration: true });
 
-  await prisma.jwt.delete({
+  await prisma.authenticationToken.delete({
     select: {
       user: true,
     },

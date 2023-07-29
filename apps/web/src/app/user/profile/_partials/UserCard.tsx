@@ -38,7 +38,7 @@ async function getUser() {
     throw new Error('an unexpected error occurred');
   }
 
-  const jwt = await prisma.jwt.findFirstOrThrow({
+  const authenticationToken = await prisma.authenticationToken.findFirstOrThrow({
     select: {
       user: true,
     },
@@ -47,11 +47,11 @@ async function getUser() {
     },
   });
 
-  if (token.data.userId !== jwt.user.id) {
+  if (token.data.userId !== authenticationToken.user.id) {
     throw new Error('an unexpected error occurred');
   }
 
-  return jwt.user;
+  return authenticationToken.user;
 }
 
 export interface UserCardProps extends Omit<CardProps, 'side' | 'children'> {

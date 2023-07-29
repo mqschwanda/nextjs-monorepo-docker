@@ -24,17 +24,17 @@ model UserRole {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  email     String   @unique
-  nameFirst String
-  nameLast  String
-  password  String
-  roles     UserRole[]
-  jwts      Jwt[]
+  id                   Int                   @id @default(autoincrement())
+  createdAt            DateTime              @default(now())
+  email                String                @unique
+  nameFirst            String
+  nameLast             String
+  password             String
+  roles                UserRole[]
+  authenticationTokens AuthenticationToken[]
 }
 
-model Jwt {
+model AuthenticationToken {
   @@id([userId, value])
   value  String @unique
   userId Int
