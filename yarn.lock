@@ -4213,14 +4213,12 @@ __metadata:
     "@mqs/prisma": "*"
     "@mqs/tsconfig": "*"
     "@types/body-parser": ^1.19.2
-    "@types/cookie-parser": ^1.4.3
     "@types/cors": ^2.8.13
     "@types/express": ^4.17.17
     "@types/morgan": ^1.9.4
     "@types/node": ^20.4.2
     "@types/supertest": ^2.0.12
     body-parser: ^1.20.2
-    cookie-parser: ^1.4.6
     cors: ^2.8.5
     esbuild: ^0.14.54
     esbuild-register: ^3.4.2
@@ -4325,7 +4323,6 @@ __metadata:
     "@mqs/tsc": "*"
     "@mqs/tsconfig": "*"
     "@types/cookie": ^0.5.1
-    "@whatwg-node/server-plugin-cookies": ^1.0.1
     cookie: ^0.5.0
     eslint: ^7.32.0
     graphql: ^16.7.1
@@ -4614,6 +4611,7 @@ __metadata:
     eslint: ^7.32.0
     jsonwebtoken: ^9.0.1
     next: ^13.4.10
+    query-string: ^8.1.0
     react: ^18.2.0
     react-dom: ^18.2.0
     start-server-and-test: 1.15.4
@@ -6892,15 +6890,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/cookie-parser@npm:^1.4.3":
-  version: 1.4.3
-  resolution: "@types/cookie-parser@npm:1.4.3"
-  dependencies:
-    "@types/express": "*"
-  checksum: f390f3af1b1711190dee2c2ecd9af33af81fbde8d81ee820dadb6fe1e0d80c3faba40af37c6ed36fb88b04b64870f6a021f7e9edceecd17c42fe22abe0af5005
-  languageName: node
-  linkType: hard
-
 "@types/cookie@npm:^0.4.1":
   version: 0.4.1
   resolution: "@types/cookie@npm:0.4.1"
@@ -7021,7 +7010,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/express@npm:*, @types/express@npm:^4.17.17, @types/express@npm:^4.7.0":
+"@types/express@npm:^4.17.17, @types/express@npm:^4.7.0":
   version: 4.17.17
   resolution: "@types/express@npm:4.17.17"
   dependencies:
@@ -7762,15 +7751,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@whatwg-node/cookie-store@npm:0.2.1":
-  version: 0.2.1
-  resolution: "@whatwg-node/cookie-store@npm:0.2.1"
-  dependencies:
-    tslib: ^2.3.1
-  checksum: c6fba4360236b19abef8432f310c14eeaeae6fc4136ba6f4c66413f1ac9b2ff37ef8aaf550c3238c0a89028fc9c4b2eeb101e8930b8d323b3db5a26171d185ae
-  languageName: node
-  linkType: hard
-
 "@whatwg-node/events@npm:0.0.2":
   version: 0.0.2
   resolution: "@whatwg-node/events@npm:0.0.2"
@@ -7838,18 +7818,6 @@ __metadata:
     fast-url-parser: ^1.1.3
     tslib: ^2.3.1
   checksum: 0226fbcc5adb9d93fe3c02886a578d11d8d7600f1c7c1a2b4c899ff046832f4b07f05cda8b41247ed765c8ca4e3da1e7cf0f42bdd95210b2f7ab5d4b85cc5425
-  languageName: node
-  linkType: hard
-
-"@whatwg-node/server-plugin-cookies@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@whatwg-node/server-plugin-cookies@npm:1.0.1"
-  dependencies:
-    "@whatwg-node/cookie-store": 0.2.1
-    tslib: ^2.3.1
-  peerDependencies:
-    "@whatwg-node/server": ^0.9.0
-  checksum: 01e8c93b8527d8aa834c5cc19ed56282d26236bb31573f80cb4e77f12e65af8b29ecdfd0230cbcbb3ed52f47d3cef97654ea5d76be2a9bd9d4355a8294f69387
   languageName: node
   linkType: hard
 
@@ -10087,27 +10055,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cookie-parser@npm:^1.4.6":
-  version: 1.4.6
-  resolution: "cookie-parser@npm:1.4.6"
-  dependencies:
-    cookie: 0.4.1
-    cookie-signature: 1.0.6
-  checksum: 1e5a63aa82e8eb4e02d2977c6902983dee87b02e87ec5ec43ac3cb1e72da354003716570cd5190c0ad9e8a454c9d3237f4ad6e2f16d0902205a96a1c72b77ba5
-  languageName: node
-  linkType: hard
-
 "cookie-signature@npm:1.0.6":
   version: 1.0.6
   resolution: "cookie-signature@npm:1.0.6"
   checksum: f4e1b0a98a27a0e6e66fd7ea4e4e9d8e038f624058371bf4499cfcd8f3980be9a121486995202ba3fca74fbed93a407d6d54d43a43f96fd28d0bd7a06761591a
-  languageName: node
-  linkType: hard
-
-"cookie@npm:0.4.1":
-  version: 0.4.1
-  resolution: "cookie@npm:0.4.1"
-  checksum: bd7c47f5d94ab70ccdfe8210cde7d725880d2fcda06d8e375afbdd82de0c8d3b73541996e9ce57d35f67f672c4ee6d60208adec06b3c5fc94cebb85196084cf8
   languageName: node
   linkType: hard
 
@@ -10662,6 +10613,13 @@ __metadata:
   version: 10.4.3
   resolution: "decimal.js@npm:10.4.3"
   checksum: 796404dcfa9d1dbfdc48870229d57f788b48c21c603c3f6554a1c17c10195fc1024de338b0cf9e1efe0c7c167eeb18f04548979bcc5fdfabebb7cc0ae3287bae
+  languageName: node
+  linkType: hard
+
+"decode-uri-component@npm:^0.4.1":
+  version: 0.4.1
+  resolution: "decode-uri-component@npm:0.4.1"
+  checksum: 0473924860986fb6ca19ee65a2af13e08801b4f3660475b058500ea8479ed715c919884a026b6bf4296dbb640d3cea74fadf45490b2439152fc548271d0201ec
   languageName: node
   linkType: hard
 
@@ -12861,6 +12819,13 @@ __metadata:
   dependencies:
     to-regex-range: ^5.0.1
   checksum: cc283f4e65b504259e64fd969bcf4def4eb08d85565e906b7d36516e87819db52029a76b6363d0f02d0d532f0033c9603b9e2d943d56ee3b0d4f7ad3328ff917
+  languageName: node
+  linkType: hard
+
+"filter-obj@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "filter-obj@npm:5.1.0"
+  checksum: ba7c24d9b2c0552ee87d268e07eca74483af61fb740545ffa809f7e9e5294de38cf163ecc55af0e8a40020af9a49512c32f4022de2a858b110420fc8bffa7c9c
   languageName: node
   linkType: hard
 
@@ -19298,6 +19263,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"query-string@npm:^8.1.0":
+  version: 8.1.0
+  resolution: "query-string@npm:8.1.0"
+  dependencies:
+    decode-uri-component: ^0.4.1
+    filter-obj: ^5.1.0
+    split-on-first: ^3.0.0
+  checksum: 16fe49ab714f2b802bd31bc417876a38a82cd49bea01c0d6c37ca3439604c774752c8c66f9eda5ee33c268de2fc2a65e0e0e27aa97d8d98159af5c1fc838a017
+  languageName: node
+  linkType: hard
+
 "querystringify@npm:^2.1.1":
   version: 2.2.0
   resolution: "querystringify@npm:2.2.0"
@@ -20768,6 +20744,13 @@ __metadata:
   version: 3.0.13
   resolution: "spdx-license-ids@npm:3.0.13"
   checksum: 3469d85c65f3245a279fa11afc250c3dca96e9e847f2f79d57f466940c5bb8495da08a542646086d499b7f24a74b8d0b42f3fc0f95d50ff99af1f599f6360ad7
+  languageName: node
+  linkType: hard
+
+"split-on-first@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "split-on-first@npm:3.0.0"
+  checksum: 75dc27ecbac65cfbeab9a3b90cf046307220192d3d7a30e46aa0f19571cc9b4802aac813f3de2cc9b16f2e46aae72f275659b5d2614bb5369c77724d739e5f73
   languageName: node
   linkType: hard
 

@@ -9,12 +9,19 @@ import Image from 'next/image';
 import { prisma } from '@mqs/prisma/client';
 import jwtVerify from 'utilities/jwt/jwtVerify';
 import { redirect } from 'next/navigation';
+import qs from 'query-string';
 
 async function getUser() {
   const { value } = cookies().get('token') || {};
 
+  const query = qs.stringify({
+    redirect: '/user/profile',
+  });
+
+  const redirectPath = `/auth/sign-in?${query}`;
+
   if (!value) {
-    redirect('/auth/sign-in');
+    redirect(redirectPath);
   }
 
   let token;
@@ -23,7 +30,7 @@ async function getUser() {
     token = jwtVerify(value);
   } catch (error) {
     if (error) {
-      redirect('/auth/sign-in');
+      redirect(redirectPath);
     }
   }
 

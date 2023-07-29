@@ -130,6 +130,28 @@ describe('@mqs/web', () => {
       });
     });
   });
+
+  describe('user', () => {
+    describe('Profile Page', () => {
+      it('should render the page', () => {
+        cy.signInUser();
+        cy.visit('/user/profile');
+
+        cy.get('head title').contains('User Profile');
+        cy.screenshot();
+
+        cy.signOutUser();
+      });
+
+      it('should redirect to sign in without user', () => {
+        cy.visit('/user/profile');
+
+        const userProfilePath = '/user/profile';
+        cy.location('pathname', { timeout: 1000 }).should('eq', '/auth/sign-in');
+        cy.location('search', { timeout: 1000 }).should('include', `redirect=${encodeURIComponent(userProfilePath)}`);
+      });
+    });
+  });
 });
 
 // Prevent TypeScript from reading file as legacy script
