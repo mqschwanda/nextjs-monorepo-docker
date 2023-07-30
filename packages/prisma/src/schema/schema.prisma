@@ -35,10 +35,20 @@ model User {
 }
 
 model AuthenticationToken {
-  @@id([userId, value])
-  value  String @unique
-  userId Int
-  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  id             Int          @id @default(autoincrement())
+  createdAt      DateTime     @default(now())
+  value          String       @unique
+  userId         Int
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  refreshTokenId Int          @unique
+  refreshToken   RefreshToken @relation(fields: [refreshTokenId], references: [id], onDelete: Cascade)
+}
+
+model RefreshToken {
+  id                    Int                   @id @default(autoincrement())
+  createdAt             DateTime              @default(now())
+  value                 String                @unique
+  authenticationToken   AuthenticationToken?
 }
 
 enum RoleKey {

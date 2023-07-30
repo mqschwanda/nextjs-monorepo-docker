@@ -11,6 +11,8 @@ services:
       - ./:/app
     build:
       dockerfile: ./apps/api/Dockerfile.dev
+    environment:
+      JWT_SECRET: secret
   db:
     environment:
       POSTGRES_PASSWORD: password

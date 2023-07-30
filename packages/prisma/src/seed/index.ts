@@ -58,8 +58,14 @@ async function seed() {
   });
 
   const user = await prisma.user.findFirstOrThrow();
+  const refreshToken = await prisma.refreshToken.create({
+    data: {
+      value: 'not a valid token',
+    },
+  });
   await prisma.authenticationToken.create({
     data: {
+      refreshTokenId: refreshToken.id,
       userId: user.id,
       value: 'not a valid token',
     },

@@ -85,9 +85,20 @@ export default async function signUpAction(formData: FormData) {
     },
   });
 
-  cookies().set('token', authenticationToken.value, {
-    httpOnly: true,
-  });
+  cookies().set(
+    'authentication',
+    authenticationToken.value,
+    {
+      httpOnly: true,
+    },
+  );
+  cookies().set(
+    'refresh',
+    authenticationToken.refreshToken.value,
+    {
+      httpOnly: true,
+    },
+  );
 
   revalidatePath('/');
   redirect('/user/profile');

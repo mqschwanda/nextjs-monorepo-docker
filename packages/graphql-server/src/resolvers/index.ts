@@ -1,6 +1,6 @@
 import { Resolvers } from '@mqs/graphql-schema';
-import { prisma } from '@mqs/prisma/client';
 import cookie from 'cookie';
+import { Tokens } from '@mqs/tokens';
 
 function coercePrismaObjectForGraphQL<Obj extends Record<string, any> & { id: number }>(obj: Obj) {
   return {
@@ -13,20 +13,19 @@ const resolvers: Resolvers = {
   Query: {
     hello: (_parent, args, _context, _info) => `Hello ${args.name}`,
     me: async (_parent, _args, context, _info) => {
-      const { token } = cookie.parse(context.request.headers.get('cookie'));
+      const cookies = context.request.headers.get('cookie');
 
-      if (!token) {
+      if (!cookies) {
         return null;
       }
 
-      const authenticationToken = await prisma.authenticationToken.findFirstOrThrow({
-        select: {
-          user: true,
-        },
-        where: {
-          value: token,
-        },
-      });
+      const { authentication } = cookie.parse(cookies);
+
+      if (!authentication) {
+        return null;
+      }
+
+      const authenticationToken = await Tokens.verifyAuthenticationToken(authentication);
 
       return coercePrismaObjectForGraphQL(authenticationToken.user);
     },

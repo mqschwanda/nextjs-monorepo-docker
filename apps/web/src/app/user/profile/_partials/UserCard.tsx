@@ -10,34 +10,26 @@ import { redirect } from 'next/navigation';
 import qs from 'query-string';
 import { Tokens } from '@mqs/tokens';
 
-async function getUser() {
-  const { value } = cookies().get('token') || {};
+async function getUser() { // eslint-disable-line consistent-return
+  const { value: authenticationTokenCookie } = cookies().get('authentication') || {};
 
   const query = qs.stringify({
     redirect: '/user/profile',
   });
 
-  const redirectPath = `/auth/sign-in?${query}`;
+  const signInPath = `/auth/sign-in?${query}`;
 
-  if (!value) {
-    redirect(redirectPath);
+  if (!authenticationTokenCookie) {
+    redirect(signInPath);
   }
-
-  let token;
 
   try {
-    token = await Tokens.verifyAuthenticationToken(value);
+    const authenticationToken = await Tokens.verifyAuthenticationToken(authenticationTokenCookie);
+
+    return authenticationToken.user;
   } catch (error) {
-    if (error) {
-      redirect(redirectPath);
-    }
+    redirect(`/auth/refresh?${query}`);
   }
-
-  if (!token) {
-    throw new Error('an unexpected error occurred');
-  }
-
-  return token.user;
 }
 
 export interface UserCardProps extends Omit<CardProps, 'side' | 'children'> {

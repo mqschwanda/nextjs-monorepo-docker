@@ -57,9 +57,21 @@ export default async function signInAction(formData: FormData) {
       userId: user.id,
     },
   });
-  cookies().set('token', authenticationToken.value, {
-    httpOnly: true,
-  });
+
+  cookies().set(
+    'authentication',
+    authenticationToken.value,
+    {
+      httpOnly: true,
+    },
+  );
+  cookies().set(
+    'refresh',
+    authenticationToken.refreshToken.value,
+    {
+      httpOnly: true,
+    },
+  );
 
   let redirectPath = '/';
   const referer = headers().get('referer');

@@ -21,20 +21,26 @@ export default async function signOutAction(formData: FormData) {
     };
   }
 
-  const token = cookies().get('token');
-  if (!token) {
-    return {
-      errors: {
-        fieldErrors: {},
-        formErrors: ['an unexpected error occurred'],
+  const authenticationTokenCookie = cookies().get('authentication');
+  const refreshTokenCookie = cookies().get('refresh');
+  if (authenticationTokenCookie) {
+    await Tokens.invalidateAuthenticationToken(
+      authenticationTokenCookie.value,
+      {
+        ignoreExpiration: true,
       },
-    };
+    );
+  } else if (refreshTokenCookie) {
+    await Tokens.invalidateRefreshToken(
+      refreshTokenCookie.value,
+      {
+        ignoreExpiration: true,
+      },
+    );
   }
 
-  const { value } = token;
-
-  await Tokens.invalidateAuthenticationToken(value, { ignoreExpiration: true });
-  cookies().delete('token');
+  cookies().delete('authentication');
+  cookies().delete('refresh');
 
   revalidatePath('/');
   redirect('/');

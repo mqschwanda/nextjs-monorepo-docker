@@ -33,6 +33,7 @@
   "dependencies": {
     "@mqs/graphql-schema": "*",
     "@mqs/prisma": "*",
+    "@mqs/tokens": "*",
     "cookie": "^0.5.0",
     "graphql": "^16.7.1",
     "graphql-yoga": "^3.9.1"
