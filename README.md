@@ -96,6 +96,7 @@ Each workspace is built with [TypeScript](https://www.typescriptlang.org/).
 - `storybook-utils`: utilities for implementing Storybook
 - `style`: shared css and style utilities for components and apps
 - `tailwind-config`: a generalized [Tailwind CSS](https://tailwindcss.com/) configuration
+- `tokens`: utility to handle authentication and refresh tokens
 - `tsconfig`: tsconfig.json;s used throughout the monorepo
 - `zod`: utilities for handling validation with [Zod](https://zod.dev/)
 #### Scripts
