@@ -34,6 +34,12 @@ If you do not want to use docker the alternative command can be used:
 yarn dev
 ```
 
+To setup the database run the migration setup and reset scripts:
+```
+docker-prisma-migrate-dev:dev
+docker-prisma-migrate-reset:dev
+```
+
 #### Troubleshooting
 
 ##### File Watcher Limit
