@@ -86,14 +86,14 @@ export default async function signUpAction(formData: FormData) {
   });
 
   cookies().set(
-    'access',
+    Tokens.audienceAccess,
     accessToken.value,
     {
       httpOnly: true,
     },
   );
   cookies().set(
-    'refresh',
+    Tokens.audienceRefresh,
     accessToken.refreshToken.value,
     {
       httpOnly: true,

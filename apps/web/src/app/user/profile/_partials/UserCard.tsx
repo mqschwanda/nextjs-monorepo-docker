@@ -11,7 +11,7 @@ import qs from 'query-string';
 import { Tokens } from '@mqs/tokens';
 
 async function getUser() { // eslint-disable-line consistent-return
-  const { value: accessTokenCookie } = cookies().get('access') || {};
+  const { value: accessTokenCookie } = cookies().get(Tokens.audienceAccess) || {};
 
   const query = qs.stringify({
     redirect: '/user/profile',

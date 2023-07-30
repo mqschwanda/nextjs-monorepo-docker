@@ -7,8 +7,8 @@ export async function GET(request: Request) { // eslint-disable-line import/pref
   const url = new URL(request.url);
   const redirectPath = url.searchParams.get('redirect');
 
-  const { value: accessTokenCookie } = cookies().get('access') || {};
-  const { value: refreshTokenCookie } = cookies().get('refresh') || {};
+  const { value: accessTokenCookie } = cookies().get(Tokens.audienceAccess) || {};
+  const { value: refreshTokenCookie } = cookies().get(Tokens.audienceRefresh) || {};
 
   const query = qs.stringify({
     redirect: redirectPath,
@@ -30,14 +30,14 @@ export async function GET(request: Request) { // eslint-disable-line import/pref
     );
 
     cookies().set(
-      'access',
+      Tokens.audienceAccess,
       accessToken.value,
       {
         httpOnly: true,
       },
     );
     cookies().set(
-      'refresh',
+      Tokens.audienceRefresh,
       accessToken.refreshToken.value,
       {
         httpOnly: true,

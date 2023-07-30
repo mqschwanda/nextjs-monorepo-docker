@@ -21,8 +21,8 @@ export default async function signOutAction(formData: FormData) {
     };
   }
 
-  const accessTokenCookie = cookies().get('access');
-  const refreshTokenCookie = cookies().get('refresh');
+  const accessTokenCookie = cookies().get(Tokens.audienceAccess);
+  const refreshTokenCookie = cookies().get(Tokens.audienceRefresh);
   if (accessTokenCookie) {
     await Tokens.invalidateAccessToken(
       accessTokenCookie.value,
@@ -39,8 +39,8 @@ export default async function signOutAction(formData: FormData) {
     );
   }
 
-  cookies().delete('access');
-  cookies().delete('refresh');
+  cookies().delete(Tokens.audienceAccess);
+  cookies().delete(Tokens.audienceRefresh);
 
   revalidatePath('/');
   redirect('/');
