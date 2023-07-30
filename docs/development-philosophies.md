@@ -1,5 +1,23 @@
 # Development Philosophies
 
+## Apps
+
+### Separation of Concerns
+
+Each app has a distinct purpose and features should be implemented in a way that best utilizes each application's technology. 
+
+#### `@mqs/web`
+
+`@mqs/web` is an interactive web app built with the NextJS serverless framework. This app is for all web-based UI/UX and should not be used for data-based API routes. In some situations, API routes may be needed, like for authentication or revalidation. However, these routes should be self-contained and reserved for use cases that another application can not solve.
+
+Data fetching should be handled in react server components using direct access to the database when possible. If it is not possible to leverage this pattern, react client components should be used which request an endpoint on the `@mqs/api` application.
+
+#### `@mqs/api`
+
+`@mqs/api` is a persistent Node application that leverages ExpressJS to serve routes. The main role of this application is to serve as the backbone connecting the database to other client-side applications. For this reason, any API servers (GraphQL or REST) should be implemented with this application.
+
+Any feature that requires a persistent server, like cron jobs and socket connections, should be implemented with `@mqs/api`.
+
 ## NPM
 - Scripts
 
