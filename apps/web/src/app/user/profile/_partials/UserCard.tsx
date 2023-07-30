@@ -11,7 +11,7 @@ import qs from 'query-string';
 import { Tokens } from '@mqs/tokens';
 
 async function getUser() { // eslint-disable-line consistent-return
-  const { value: authenticationTokenCookie } = cookies().get('authentication') || {};
+  const { value: accessTokenCookie } = cookies().get('access') || {};
 
   const query = qs.stringify({
     redirect: '/user/profile',
@@ -19,14 +19,14 @@ async function getUser() { // eslint-disable-line consistent-return
 
   const signInPath = `/auth/sign-in?${query}`;
 
-  if (!authenticationTokenCookie) {
+  if (!accessTokenCookie) {
     redirect(signInPath);
   }
 
   try {
-    const authenticationToken = await Tokens.verifyAuthenticationToken(authenticationTokenCookie);
+    const accessToken = await Tokens.verifyAccessToken(accessTokenCookie);
 
-    return authenticationToken.user;
+    return accessToken.user;
   } catch (error) {
     redirect(`/auth/refresh?${query}`);
   }

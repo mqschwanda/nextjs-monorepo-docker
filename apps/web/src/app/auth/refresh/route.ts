@@ -7,7 +7,7 @@ export async function GET(request: Request) { // eslint-disable-line import/pref
   const url = new URL(request.url);
   const redirectPath = url.searchParams.get('redirect');
 
-  const { value: authenticationTokenCookie } = cookies().get('authentication') || {};
+  const { value: accessTokenCookie } = cookies().get('access') || {};
   const { value: refreshTokenCookie } = cookies().get('refresh') || {};
 
   const query = qs.stringify({
@@ -17,28 +17,28 @@ export async function GET(request: Request) { // eslint-disable-line import/pref
   const signInPath = `/auth/sign-in?${query}`;
 
   if (
-    !authenticationTokenCookie
+    !accessTokenCookie
     || !refreshTokenCookie
   ) {
     redirect(signInPath);
   }
 
   try {
-    const authenticationToken = await Tokens.authenticate(
-      authenticationTokenCookie,
+    const accessToken = await Tokens.authenticate(
+      accessTokenCookie,
       refreshTokenCookie,
     );
 
     cookies().set(
-      'authentication',
-      authenticationToken.value,
+      'access',
+      accessToken.value,
       {
         httpOnly: true,
       },
     );
     cookies().set(
       'refresh',
-      authenticationToken.refreshToken.value,
+      accessToken.refreshToken.value,
       {
         httpOnly: true,
       },

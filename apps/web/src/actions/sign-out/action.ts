@@ -21,11 +21,11 @@ export default async function signOutAction(formData: FormData) {
     };
   }
 
-  const authenticationTokenCookie = cookies().get('authentication');
+  const accessTokenCookie = cookies().get('access');
   const refreshTokenCookie = cookies().get('refresh');
-  if (authenticationTokenCookie) {
-    await Tokens.invalidateAuthenticationToken(
-      authenticationTokenCookie.value,
+  if (accessTokenCookie) {
+    await Tokens.invalidateAccessToken(
+      accessTokenCookie.value,
       {
         ignoreExpiration: true,
       },
@@ -39,7 +39,7 @@ export default async function signOutAction(formData: FormData) {
     );
   }
 
-  cookies().delete('authentication');
+  cookies().delete('access');
   cookies().delete('refresh');
 
   revalidatePath('/');

@@ -19,15 +19,15 @@ const resolvers: Resolvers = {
         return null;
       }
 
-      const { authentication } = cookie.parse(cookies);
+      const { access } = cookie.parse(cookies);
 
-      if (!authentication) {
+      if (!access) {
         return null;
       }
 
-      const authenticationToken = await Tokens.verifyAuthenticationToken(authentication);
+      const accessToken = await Tokens.verifyAccessToken(access);
 
-      return coercePrismaObjectForGraphQL(authenticationToken.user);
+      return coercePrismaObjectForGraphQL(accessToken.user);
     },
   },
   Subscription: {

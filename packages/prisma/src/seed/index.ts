@@ -63,7 +63,7 @@ async function seed() {
       value: 'not a valid token',
     },
   });
-  await prisma.authenticationToken.create({
+  await prisma.accessToken.create({
     data: {
       refreshTokenId: refreshToken.id,
       userId: user.id,

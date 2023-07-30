@@ -52,22 +52,22 @@ export default async function signInAction(formData: FormData) {
     },
   });
 
-  const authenticationToken = await Tokens.signAuthenticationToken({
+  const accessToken = await Tokens.signAccessToken({
     data: {
       userId: user.id,
     },
   });
 
   cookies().set(
-    'authentication',
-    authenticationToken.value,
+    'access',
+    accessToken.value,
     {
       httpOnly: true,
     },
   );
   cookies().set(
     'refresh',
-    authenticationToken.refreshToken.value,
+    accessToken.refreshToken.value,
     {
       httpOnly: true,
     },

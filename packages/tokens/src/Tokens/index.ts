@@ -11,26 +11,26 @@ type TokenPayload = {
 export default class Tokens {
   static algorithm = 'HS256' as const;
 
-  static audienceAuthentication = 'authentication' as const;
+  static audienceAccess = 'access' as const;
 
   static audienceRefresh = 'refresh' as const;
 
-  static expiresInAuthentication = '1h' as const;
+  static expiresInAccess = '1h' as const;
 
   static expiresInRefresh = '1d' as const;
 
   static issuer = '@mqs/token' as const;
 
   static async authenticate(
-    authenticationTokenValue: string,
+    accessTokenValue: string,
     refreshTokenValue: string,
   ) {
     try {
-      const authenticationToken = await Tokens.verifyAuthenticationToken(authenticationTokenValue);
+      const accessToken = await Tokens.verifyAccessToken(accessTokenValue);
 
-      return authenticationToken;
-    } catch (authenticationError) {
-      const error = authenticationError as Error;
+      return accessToken;
+    } catch (accessError) {
+      const error = accessError as Error;
 
       if (error.name !== 'TokenExpiredError') {
         throw error;
@@ -40,23 +40,23 @@ export default class Tokens {
       try {
         refreshToken = await Tokens.verifyRefreshToken(refreshTokenValue);
       } catch (refreshError) {
-        if (!refreshToken?.authenticationToken) {
+        if (!refreshToken?.accessToken) {
           throw new Error('an unexpected error occurred');
         }
 
         await Tokens.invalidateUserTokens({
-          userId: refreshToken.authenticationToken.userId,
+          userId: refreshToken.accessToken.userId,
         });
 
         throw refreshError;
       }
 
-      if (!refreshToken?.authenticationToken) {
+      if (!refreshToken?.accessToken) {
         throw new Error('an unexpected error occurred');
       }
 
-      await Tokens.invalidateAuthenticationToken(
-        authenticationTokenValue,
+      await Tokens.invalidateAccessToken(
+        accessTokenValue,
         {
           ignoreExpiration: true,
         },
@@ -64,21 +64,21 @@ export default class Tokens {
 
       const payload = {
         data: {
-          userId: refreshToken.authenticationToken.userId,
+          userId: refreshToken.accessToken.userId,
         },
       };
-      const authenticationToken = await Tokens.signAuthenticationToken(payload);
+      const accessToken = await Tokens.signAccessToken(payload);
 
-      return authenticationToken;
+      return accessToken;
     }
   }
 
-  static async invalidateAuthenticationToken(
+  static async invalidateAccessToken(
     value: string,
     options: VerifyOptions = {},
   ) {
     try {
-      await prisma.authenticationToken.delete({
+      await prisma.accessToken.delete({
         where: {
           value,
         },
@@ -111,7 +111,7 @@ export default class Tokens {
     const now = new Date();
     const staleDate = new Date(now.setHours(now.getHours() - 25));
 
-    await prisma.authenticationToken.deleteMany({
+    await prisma.accessToken.deleteMany({
       where: {
         createdAt: {
           lte: staleDate,
@@ -125,14 +125,14 @@ export default class Tokens {
   }: {
     userId: number,
   }) {
-    await prisma.authenticationToken.deleteMany({
+    await prisma.accessToken.deleteMany({
       where: {
         userId,
       },
     });
   }
 
-  static async signAuthenticationToken(payload: TokenPayload) {
+  static async signAccessToken(payload: TokenPayload) {
     // TODO: change how the secret for tokens is defined
     if (process.env.JWT_SECRET === undefined) {
       throw new Error('an unexpected error occurred');
@@ -145,13 +145,13 @@ export default class Tokens {
       process.env.JWT_SECRET,
       {
         algorithm: Tokens.algorithm,
-        audience: Tokens.audienceAuthentication,
-        expiresIn: Tokens.expiresInAuthentication,
+        audience: Tokens.audienceAccess,
+        expiresIn: Tokens.expiresInAccess,
         issuer: Tokens.issuer,
       },
     );
 
-    const authenticationToken = await prisma.authenticationToken.create({
+    const accessToken = await prisma.accessToken.create({
       data: {
         refreshTokenId: refreshToken.id,
         userId: payload.data.userId,
@@ -166,7 +166,7 @@ export default class Tokens {
       },
     });
 
-    return authenticationToken;
+    return accessToken;
   }
 
   static async signRefreshToken(payload: TokenPayload) {
@@ -195,7 +195,7 @@ export default class Tokens {
     return refreshToken;
   }
 
-  static async verifyAuthenticationToken(
+  static async verifyAccessToken(
     value: string,
     options: VerifyOptions = {},
   ) {
@@ -215,13 +215,13 @@ export default class Tokens {
         algorithms: [
           Tokens.algorithm,
         ],
-        audience: Tokens.audienceAuthentication,
+        audience: Tokens.audienceAccess,
         ignoreExpiration,
         issuer: Tokens.issuer,
       },
     ) as TokenPayload;
 
-    const authenticationToken = await prisma.authenticationToken.findFirstOrThrow({
+    const accessToken = await prisma.accessToken.findFirstOrThrow({
       select: {
         createdAt: true,
         id: true,
@@ -234,11 +234,11 @@ export default class Tokens {
       },
     });
 
-    if (token.data.userId !== authenticationToken.user.id) {
+    if (token.data.userId !== accessToken.user.id) {
       throw new Error('an unexpected error occurred');
     }
 
-    return authenticationToken;
+    return accessToken;
   }
 
   static async verifyRefreshToken(
@@ -269,7 +269,7 @@ export default class Tokens {
 
     const refreshToken = await prisma.refreshToken.findFirstOrThrow({
       select: {
-        authenticationToken: true,
+        accessToken: true,
         createdAt: true,
         id: true,
         value: true,
@@ -279,7 +279,7 @@ export default class Tokens {
       },
     });
 
-    if (token.data.userId !== refreshToken.authenticationToken?.userId) {
+    if (token.data.userId !== refreshToken.accessToken?.userId) {
       throw new Error('an unexpected error occurred');
     }
 

@@ -24,17 +24,17 @@ model UserRole {
 }
 
 model User {
-  id                   Int                   @id @default(autoincrement())
-  createdAt            DateTime              @default(now())
-  email                String                @unique
-  nameFirst            String
-  nameLast             String
-  password             String
-  roles                UserRole[]
-  authenticationTokens AuthenticationToken[]
+  id           Int                   @id @default(autoincrement())
+  createdAt    DateTime              @default(now())
+  email        String                @unique
+  nameFirst    String
+  nameLast     String
+  password     String
+  roles        UserRole[]
+  accessTokens AccessToken[]
 }
 
-model AuthenticationToken {
+model AccessToken {
   id             Int          @id @default(autoincrement())
   createdAt      DateTime     @default(now())
   value          String       @unique
@@ -45,10 +45,10 @@ model AuthenticationToken {
 }
 
 model RefreshToken {
-  id                    Int                   @id @default(autoincrement())
-  createdAt             DateTime              @default(now())
-  value                 String                @unique
-  authenticationToken   AuthenticationToken?
+  id          Int          @id @default(autoincrement())
+  createdAt   DateTime     @default(now())
+  value       String       @unique
+  accessToken AccessToken?
 }
 
 enum RoleKey {
