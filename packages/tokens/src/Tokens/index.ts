@@ -1,4 +1,5 @@
 import jwt, { VerifyOptions as JwtVerifyOptions } from 'jsonwebtoken';
+import { prisma } from '@mqs/prisma/client';
 
 const ALGORITHM = 'HS256';
 const EXPIRES_IN_AUTHENTICATION = '1h';
@@ -13,13 +14,13 @@ type AuthenticationToken = {
 };
 
 export default class Tokens {
-  static signAuthenticationToken(payload: AuthenticationToken) {
+  static async signAuthenticationToken(payload: AuthenticationToken) {
     // TODO: change how the secret for tokens is defined
     if (process.env.JWT_SECRET === undefined) {
       throw new Error('an unexpected error occurred');
     }
 
-    const token = jwt.sign(
+    const value = jwt.sign(
       payload,
       process.env.JWT_SECRET,
       {
@@ -30,10 +31,21 @@ export default class Tokens {
       },
     );
 
-    return token;
+    const authenticationToken = await prisma.authenticationToken.create({
+      data: {
+        userId: payload.data.userId,
+        value,
+      },
+      select: {
+        user: true,
+        value: true,
+      },
+    });
+
+    return authenticationToken;
   }
 
-  static verifyAuthenticationToken(
+  static async verifyAuthenticationToken(
     value: string,
     options: VerifyOptions = {},
   ) {
@@ -59,6 +71,40 @@ export default class Tokens {
       },
     ) as AuthenticationToken;
 
-    return token;
+    const authenticationToken = await prisma.authenticationToken.findFirstOrThrow({
+      select: {
+        user: true,
+        value: true,
+      },
+      where: {
+        value,
+      },
+    });
+
+    if (token.data.userId !== authenticationToken.user.id) {
+      throw new Error('an unexpected error occurred');
+    }
+
+    return authenticationToken;
+  }
+
+  static async invalidateAuthenticationToken(
+    value: string,
+    options: VerifyOptions = {},
+  ) {
+    const token = await Tokens.verifyAuthenticationToken(value, options);
+
+    try {
+      await prisma.authenticationToken.delete({
+        where: {
+          userId: token.user.id,
+          value,
+        },
+      });
+    } catch (error) {
+      if (!options.ignoreExpiration) {
+        throw error;
+      }
+    }
   }
 }

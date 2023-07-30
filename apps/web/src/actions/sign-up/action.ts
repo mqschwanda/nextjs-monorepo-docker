@@ -79,20 +79,13 @@ export default async function signUpAction(formData: FormData) {
     };
   }
 
-  const token = Tokens.signAuthenticationToken({
+  const authenticationToken = await Tokens.signAuthenticationToken({
     data: {
       userId: user.id,
     },
   });
 
-  await prisma.authenticationToken.create({
-    data: {
-      userId: user.id,
-      value: token,
-    },
-  });
-
-  cookies().set('token', token, {
+  cookies().set('token', authenticationToken.value, {
     httpOnly: true,
   });
 

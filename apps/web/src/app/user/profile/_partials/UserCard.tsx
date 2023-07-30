@@ -6,7 +6,6 @@ import {
 } from '@mqs/react-server-components';
 import { cookies } from 'next/headers';
 import Image from 'next/image';
-import { prisma } from '@mqs/prisma/client';
 import { redirect } from 'next/navigation';
 import qs from 'query-string';
 import { Tokens } from '@mqs/tokens';
@@ -27,7 +26,7 @@ async function getUser() {
   let token;
 
   try {
-    token = Tokens.verifyAuthenticationToken(value);
+    token = await Tokens.verifyAuthenticationToken(value);
   } catch (error) {
     if (error) {
       redirect(redirectPath);
@@ -38,20 +37,7 @@ async function getUser() {
     throw new Error('an unexpected error occurred');
   }
 
-  const authenticationToken = await prisma.authenticationToken.findFirstOrThrow({
-    select: {
-      user: true,
-    },
-    where: {
-      value,
-    },
-  });
-
-  if (token.data.userId !== authenticationToken.user.id) {
-    throw new Error('an unexpected error occurred');
-  }
-
-  return authenticationToken.user;
+  return token.user;
 }
 
 export interface UserCardProps extends Omit<CardProps, 'side' | 'children'> {
