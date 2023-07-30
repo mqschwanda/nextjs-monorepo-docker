@@ -2,6 +2,10 @@
 
 ## Apps
 
+### Authentication
+
+Security and convenience is always a tradeoff. In this case, a decision was made to err on the side of security at the cost of performance and convenience. Access and refresh tokens are implemented with JSON web tokens and are integrated into the database for fine-grain control. This allows for refresh token rotation, as well as token invalidation for both access and refresh tokens.
+
 ### Separation of Concerns
 
 Each app has a distinct purpose and features should be implemented in a way that best utilizes each application's technology. 
