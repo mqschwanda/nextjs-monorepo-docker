@@ -16,6 +16,117 @@ type TokenPayload = {
 };
 
 export default class Tokens {
+  static async authenticate(
+    authenticationTokenValue: string,
+    refreshTokenValue: string,
+  ) {
+    try {
+      const authenticationToken = await Tokens.verifyAuthenticationToken(authenticationTokenValue);
+
+      return authenticationToken;
+    } catch (authenticationError) {
+      const error = authenticationError as Error;
+
+      if (error.name !== 'TokenExpiredError') {
+        throw error;
+      }
+
+      let refreshToken: Awaited<ReturnType<typeof Tokens.verifyRefreshToken>> | undefined;
+      try {
+        refreshToken = await Tokens.verifyRefreshToken(refreshTokenValue);
+      } catch (refreshError) {
+        if (!refreshToken?.authenticationToken) {
+          throw new Error('an unexpected error occurred');
+        }
+
+        await Tokens.invalidateUserTokens({
+          userId: refreshToken.authenticationToken.userId,
+        });
+
+        throw refreshError;
+      }
+
+      if (!refreshToken?.authenticationToken) {
+        throw new Error('an unexpected error occurred');
+      }
+
+      await Tokens.invalidateAuthenticationToken(
+        authenticationTokenValue,
+        {
+          ignoreExpiration: true,
+        },
+      );
+
+      const payload = {
+        data: {
+          userId: refreshToken.authenticationToken.userId,
+        },
+      };
+      const authenticationToken = await Tokens.signAuthenticationToken(payload);
+
+      return authenticationToken;
+    }
+  }
+
+  static async invalidateAuthenticationToken(
+    value: string,
+    options: VerifyOptions = {},
+  ) {
+    try {
+      await prisma.authenticationToken.delete({
+        where: {
+          value,
+        },
+      });
+    } catch (error) {
+      if (!options.ignoreExpiration) {
+        throw error;
+      }
+    }
+  }
+
+  static async invalidateRefreshToken(
+    value: string,
+    options: VerifyOptions = {},
+  ) {
+    try {
+      await prisma.refreshToken.delete({
+        where: {
+          value,
+        },
+      });
+    } catch (error) {
+      if (!options.ignoreExpiration) {
+        throw error;
+      }
+    }
+  }
+
+  static async invalidateStaleTokens() {
+    const now = new Date();
+    const staleDate = new Date(now.setHours(now.getHours() - 25));
+
+    await prisma.authenticationToken.deleteMany({
+      where: {
+        createdAt: {
+          lte: staleDate,
+        },
+      },
+    });
+  }
+
+  static async invalidateUserTokens({
+    userId,
+  }: {
+    userId: number,
+  }) {
+    await prisma.authenticationToken.deleteMany({
+      where: {
+        userId,
+      },
+    });
+  }
+
   static async signAuthenticationToken(payload: TokenPayload) {
     // TODO: change how the secret for tokens is defined
     if (process.env.JWT_SECRET === undefined) {
@@ -168,116 +279,5 @@ export default class Tokens {
     }
 
     return refreshToken;
-  }
-
-  static async invalidateAuthenticationToken(
-    value: string,
-    options: VerifyOptions = {},
-  ) {
-    try {
-      await prisma.authenticationToken.delete({
-        where: {
-          value,
-        },
-      });
-    } catch (error) {
-      if (!options.ignoreExpiration) {
-        throw error;
-      }
-    }
-  }
-
-  static async invalidateRefreshToken(
-    value: string,
-    options: VerifyOptions = {},
-  ) {
-    try {
-      await prisma.refreshToken.delete({
-        where: {
-          value,
-        },
-      });
-    } catch (error) {
-      if (!options.ignoreExpiration) {
-        throw error;
-      }
-    }
-  }
-
-  static async invalidateStaleTokens() {
-    const now = new Date();
-    const staleDate = new Date(now.setHours(now.getHours() - 25));
-
-    await prisma.authenticationToken.deleteMany({
-      where: {
-        createdAt: {
-          lte: staleDate,
-        },
-      },
-    });
-  }
-
-  static async invalidateUserTokens({
-    userId,
-  }: {
-    userId: number,
-  }) {
-    await prisma.authenticationToken.deleteMany({
-      where: {
-        userId,
-      },
-    });
-  }
-
-  static async authenticate(
-    authenticationTokenValue: string,
-    refreshTokenValue: string,
-  ) {
-    try {
-      const authenticationToken = await Tokens.verifyAuthenticationToken(authenticationTokenValue);
-
-      return authenticationToken;
-    } catch (authenticationError) {
-      const error = authenticationError as Error;
-
-      if (error.name !== 'TokenExpiredError') {
-        throw error;
-      }
-
-      let refreshToken: Awaited<ReturnType<typeof Tokens.verifyRefreshToken>> | undefined;
-      try {
-        refreshToken = await Tokens.verifyRefreshToken(refreshTokenValue);
-      } catch (refreshError) {
-        if (!refreshToken?.authenticationToken) {
-          throw new Error('an unexpected error occurred');
-        }
-
-        await Tokens.invalidateUserTokens({
-          userId: refreshToken.authenticationToken.userId,
-        });
-
-        throw refreshError;
-      }
-
-      if (!refreshToken?.authenticationToken) {
-        throw new Error('an unexpected error occurred');
-      }
-
-      await Tokens.invalidateAuthenticationToken(
-        authenticationTokenValue,
-        {
-          ignoreExpiration: true,
-        },
-      );
-
-      const payload = {
-        data: {
-          userId: refreshToken.authenticationToken.userId,
-        },
-      };
-      const authenticationToken = await Tokens.signAuthenticationToken(payload);
-
-      return authenticationToken;
-    }
   }
 }
