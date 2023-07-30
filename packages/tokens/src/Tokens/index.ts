@@ -217,6 +217,18 @@ export default class Tokens {
     });
   }
 
+  static async invalidateUserTokens({
+    userId,
+  }: {
+    userId: number,
+  }) {
+    await prisma.authenticationToken.deleteMany({
+      where: {
+        userId,
+      },
+    });
+  }
+
   static async authenticate(
     authenticationTokenValue: string,
     refreshTokenValue: string,
@@ -225,16 +237,29 @@ export default class Tokens {
       const authenticationToken = await Tokens.verifyAuthenticationToken(authenticationTokenValue);
 
       return authenticationToken;
-    } catch (e) {
-      const error = e as Error;
+    } catch (authenticationError) {
+      const error = authenticationError as Error;
 
       if (error.name !== 'TokenExpiredError') {
         throw error;
       }
 
-      const refreshToken = await Tokens.verifyRefreshToken(refreshTokenValue);
+      let refreshToken: Awaited<ReturnType<typeof Tokens.verifyRefreshToken>> | undefined;
+      try {
+        refreshToken = await Tokens.verifyRefreshToken(refreshTokenValue);
+      } catch (refreshError) {
+        if (!refreshToken?.authenticationToken) {
+          throw new Error('an unexpected error occurred');
+        }
 
-      if (!refreshToken.authenticationToken) {
+        await Tokens.invalidateUserTokens({
+          userId: refreshToken.authenticationToken.userId,
+        });
+
+        throw refreshError;
+      }
+
+      if (!refreshToken?.authenticationToken) {
         throw new Error('an unexpected error occurred');
       }
 
