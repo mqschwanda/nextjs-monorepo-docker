@@ -1,13 +1,6 @@
 import jwt, { VerifyOptions as JwtVerifyOptions } from 'jsonwebtoken';
 import { prisma } from '@mqs/prisma/client';
 
-const ALGORITHM = 'HS256';
-const EXPIRES_IN_AUTHENTICATION = '1h';
-const AUDIENCE_AUTHENTICATION = 'authentication';
-const EXPIRES_IN_REFRESH = '1d';
-const AUDIENCE_REFRESH = 'refresh';
-const ISSUER = '@mqs/token';
-
 type VerifyOptions = Pick<JwtVerifyOptions, 'ignoreExpiration'>;
 type TokenPayload = {
   data: {
@@ -16,6 +9,18 @@ type TokenPayload = {
 };
 
 export default class Tokens {
+  static algorithm = 'HS256' as const;
+
+  static audienceAuthentication = 'authentication' as const;
+
+  static audienceRefresh = 'refresh' as const;
+
+  static expiresInAuthentication = '1h' as const;
+
+  static expiresInRefresh = '1d' as const;
+
+  static issuer = '@mqs/token' as const;
+
   static async authenticate(
     authenticationTokenValue: string,
     refreshTokenValue: string,
@@ -139,10 +144,10 @@ export default class Tokens {
       payload,
       process.env.JWT_SECRET,
       {
-        algorithm: ALGORITHM,
-        audience: AUDIENCE_AUTHENTICATION,
-        expiresIn: EXPIRES_IN_AUTHENTICATION,
-        issuer: ISSUER,
+        algorithm: Tokens.algorithm,
+        audience: Tokens.audienceAuthentication,
+        expiresIn: Tokens.expiresInAuthentication,
+        issuer: Tokens.issuer,
       },
     );
 
@@ -174,10 +179,10 @@ export default class Tokens {
       payload,
       process.env.JWT_SECRET,
       {
-        algorithm: ALGORITHM,
-        audience: AUDIENCE_REFRESH,
-        expiresIn: EXPIRES_IN_REFRESH,
-        issuer: ISSUER,
+        algorithm: Tokens.algorithm,
+        audience: Tokens.audienceRefresh,
+        expiresIn: Tokens.expiresInRefresh,
+        issuer: Tokens.issuer,
       },
     );
 
@@ -208,11 +213,11 @@ export default class Tokens {
       process.env.JWT_SECRET,
       {
         algorithms: [
-          ALGORITHM,
+          Tokens.algorithm,
         ],
-        audience: AUDIENCE_AUTHENTICATION,
+        audience: Tokens.audienceAuthentication,
         ignoreExpiration,
-        issuer: ISSUER,
+        issuer: Tokens.issuer,
       },
     ) as TokenPayload;
 
@@ -254,11 +259,11 @@ export default class Tokens {
       process.env.JWT_SECRET,
       {
         algorithms: [
-          ALGORITHM,
+          Tokens.algorithm,
         ],
-        audience: AUDIENCE_REFRESH,
+        audience: Tokens.audienceRefresh,
         ignoreExpiration,
-        issuer: ISSUER,
+        issuer: Tokens.issuer,
       },
     ) as TokenPayload;
 
