@@ -204,6 +204,19 @@ export default class Tokens {
     }
   }
 
+  static async invalidateStaleTokens() {
+    const now = new Date();
+    const staleDate = new Date(now.setHours(now.getHours() - 25));
+
+    await prisma.authenticationToken.deleteMany({
+      where: {
+        createdAt: {
+          lte: staleDate,
+        },
+      },
+    });
+  }
+
   static async authenticate(
     authenticationTokenValue: string,
     refreshTokenValue: string,

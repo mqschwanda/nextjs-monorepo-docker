@@ -4211,12 +4211,14 @@ __metadata:
     "@mqs/jest-preset": "*"
     "@mqs/logger": "*"
     "@mqs/prisma": "*"
+    "@mqs/tokens": "*"
     "@mqs/tsconfig": "*"
     "@types/body-parser": ^1.19.2
     "@types/cors": ^2.8.13
     "@types/express": ^4.17.17
     "@types/morgan": ^1.9.4
     "@types/node": ^20.4.2
+    "@types/node-cron": ^3.0.8
     "@types/supertest": ^2.0.12
     body-parser: ^1.20.2
     cors: ^2.8.5
@@ -4226,6 +4228,7 @@ __metadata:
     express: ^4.18.2
     jest: ^29.6.1
     morgan: ^1.10.0
+    node-cron: ^3.0.2
     nodemon: ^2.0.22
     supertest: ^6.3.3
     typescript: ^5.1.6
@@ -7216,6 +7219,13 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: d1e99c66a43501dcdf6e94e013dfff4e6c152cbb5f782d954bb722d230a9c1c0fe06fab6df3f3dfa3547735a7598f9471633cc6813d794e9562fd022e217c6ae
+  languageName: node
+  linkType: hard
+
+"@types/node-cron@npm:^3.0.8":
+  version: 3.0.8
+  resolution: "@types/node-cron@npm:3.0.8"
+  checksum: e45f3fb8e0f3ed57bb6bc7b365a3fd50a93e64c0751381bb6db5d8e758f8b54b6af61bf68c72fc5be3b550c01f06b16dca56c05e9507cd3f345c39f44f250ec2
   languageName: node
   linkType: hard
 
@@ -17564,6 +17574,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-cron@npm:^3.0.2":
+  version: 3.0.2
+  resolution: "node-cron@npm:3.0.2"
+  dependencies:
+    uuid: 8.3.2
+  checksum: dd21585c0d4069a0752022dad9b8380a4393c4783ec78355ffa99ff32b018c3743a35d4ebf9d7c7863949e94e302b440f58c884eb4960e71c7260d817e2d3f25
+  languageName: node
+  linkType: hard
+
 "node-dir@npm:^0.1.10, node-dir@npm:^0.1.17":
   version: 0.1.17
   resolution: "node-dir@npm:0.1.17"
@@ -22556,7 +22575,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:^8.3.2":
+"uuid@npm:8.3.2, uuid@npm:^8.3.2":
   version: 8.3.2
   resolution: "uuid@npm:8.3.2"
   bin:

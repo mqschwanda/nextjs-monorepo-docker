@@ -5,11 +5,14 @@ import cors from 'cors';
 import createGraphqlServer from '@mqs/graphql-server';
 import healthz from './routes/healthz'; // cspell:disable-line
 import healthDb from './routes/healthz-db'; // cspell:disable-line
+import * as jobs from './jobs';
 
 export default function createServer() {
   const graphqlServer = createGraphqlServer();
 
   const app = express();
+
+  jobs.schedule();
 
   app
     .disable('x-powered-by')
