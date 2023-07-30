@@ -8,19 +8,44 @@ type TokenPayload = {
   }
 };
 
+/**
+ * Handle authentication with access and refresh tokens connected to the database.
+ */
 export default class Tokens {
+  /**
+   * JSON Web Token algorithm for access and refresh tokens
+   */
   static algorithm = 'HS256' as const;
 
+  /**
+   * Access token audience
+   */
   static audienceAccess = 'access' as const;
 
+  /**
+   * Refresh token audience
+   */
   static audienceRefresh = 'refresh' as const;
 
+  /**
+   * Access token time until expiration
+   */
   static expiresInAccess = '1h' as const;
 
+  /**
+   * Refresh token time until expiration
+   */
   static expiresInRefresh = '1d' as const;
 
+  /**
+   * JSON Web Token issuer for access and refresh tokens
+   */
   static issuer = '@mqs/token' as const;
 
+  /**
+   * Confirm that the access token is still valid, and if it is not use the refresh token to generate a new token pair.
+   * If both the access token and refresh token are not valid, all tokens for the associated user will be invalidated.
+   */
   static async authenticate(
     accessTokenValue: string,
     refreshTokenValue: string,
@@ -73,6 +98,9 @@ export default class Tokens {
     }
   }
 
+  /**
+   * Delete access token from database to prevent future use.
+   */
   static async invalidateAccessToken(
     value: string,
     options: VerifyOptions = {},
@@ -84,12 +112,16 @@ export default class Tokens {
         },
       });
     } catch (error) {
+      // TODO: handle delete error properly
       if (!options.ignoreExpiration) {
         throw error;
       }
     }
   }
 
+  /**
+   * Delete refresh token from database to prevent future use.
+   */
   static async invalidateRefreshToken(
     value: string,
     options: VerifyOptions = {},
@@ -101,12 +133,16 @@ export default class Tokens {
         },
       });
     } catch (error) {
+      // TODO: handle delete error properly
       if (!options.ignoreExpiration) {
         throw error;
       }
     }
   }
 
+  /**
+   * Delete access and refresh tokens from database that are older than a day to free up space.
+   */
   static async invalidateStaleTokens() {
     const now = new Date();
     const staleDate = new Date(now.setHours(now.getHours() - 25));
@@ -120,6 +156,9 @@ export default class Tokens {
     });
   }
 
+  /**
+   * Delete access and refresh tokens from database for a given user.
+   */
   static async invalidateUserTokens({
     userId,
   }: {
@@ -132,6 +171,9 @@ export default class Tokens {
     });
   }
 
+  /**
+   * Create new access and refresh token pair for a given user.
+   */
   static async signAccessToken(payload: TokenPayload) {
     // TODO: change how the secret for tokens is defined
     if (process.env.JWT_SECRET === undefined) {
@@ -169,6 +211,9 @@ export default class Tokens {
     return accessToken;
   }
 
+  /**
+   * Create new refresh token pair for a given user.
+   */
   static async signRefreshToken(payload: TokenPayload) {
     // TODO: change how the secret for tokens is defined
     if (process.env.JWT_SECRET === undefined) {
@@ -195,6 +240,9 @@ export default class Tokens {
     return refreshToken;
   }
 
+  /**
+   * Verify and decode access token and validate that it exists in the database.
+   */
   static async verifyAccessToken(
     value: string,
     options: VerifyOptions = {},
@@ -241,6 +289,9 @@ export default class Tokens {
     return accessToken;
   }
 
+  /**
+   * Verify and decode refresh token and validate that it exists in the database.
+   */
   static async verifyRefreshToken(
     value: string,
     options: VerifyOptions = {},
