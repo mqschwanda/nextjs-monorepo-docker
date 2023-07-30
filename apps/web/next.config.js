@@ -38,6 +38,7 @@ module.exports = {
     '@mqs/prisma',
     '@mqs/react-client-components',
     '@mqs/react-server-components',
+    '@mqs/tokens',
   ],
   typescript: {
     ignoreBuildErrors: false,

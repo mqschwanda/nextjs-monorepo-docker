@@ -7,9 +7,9 @@ import {
 import { cookies } from 'next/headers';
 import Image from 'next/image';
 import { prisma } from '@mqs/prisma/client';
-import jwtVerify from 'utilities/jwt/jwtVerify';
 import { redirect } from 'next/navigation';
 import qs from 'query-string';
+import { Tokens } from '@mqs/tokens';
 
 async function getUser() {
   const { value } = cookies().get('token') || {};
@@ -27,7 +27,7 @@ async function getUser() {
   let token;
 
   try {
-    token = jwtVerify(value);
+    token = Tokens.verifyAuthenticationToken(value);
   } catch (error) {
     if (error) {
       redirect(redirectPath);

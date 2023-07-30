@@ -5,7 +5,7 @@ import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
 import { getFormDataForZod } from '@mqs/zod';
 import { Prisma, prisma } from '@mqs/prisma/client';
-import jwtSign from 'utilities/jwt/jwtSign';
+import { Tokens } from '@mqs/tokens';
 import { signUpSchema } from './validation';
 
 // eslint-disable-next-line consistent-return
@@ -79,15 +79,19 @@ export default async function signUpAction(formData: FormData) {
     };
   }
 
-  const token = jwtSign({
-    userId: user.id,
+  const token = Tokens.signAuthenticationToken({
+    data: {
+      userId: user.id,
+    },
   });
+
   await prisma.authenticationToken.create({
     data: {
       userId: user.id,
       value: token,
     },
   });
+
   cookies().set('token', token, {
     httpOnly: true,
   });
