@@ -1,5 +1,5 @@
 import jwt, { VerifyOptions as JwtVerifyOptions } from 'jsonwebtoken';
-import { prisma } from '@mqs/prisma/client';
+import { Prisma, prisma } from '@mqs/prisma/client';
 
 type VerifyOptions = Pick<JwtVerifyOptions, 'ignoreExpiration'>;
 type TokenPayload = {
@@ -111,11 +111,19 @@ export default class Tokens {
           value,
         },
       });
-    } catch (error) {
-      // TODO: handle delete error properly
-      if (!options.ignoreExpiration) {
-        throw error;
+    } catch (e) {
+      const error = e as Error;
+      if (
+        options.ignoreExpiration
+        && (
+          error instanceof Prisma.PrismaClientKnownRequestError
+          && error.message.includes('Record to delete does not exist')
+        )
+      ) {
+        return;
       }
+
+      throw error;
     }
   }
 
@@ -132,11 +140,19 @@ export default class Tokens {
           value,
         },
       });
-    } catch (error) {
-      // TODO: handle delete error properly
-      if (!options.ignoreExpiration) {
-        throw error;
+    } catch (e) {
+      const error = e as Error;
+      if (
+        options.ignoreExpiration
+        && (
+          error instanceof Prisma.PrismaClientKnownRequestError
+          && error.message.includes('Record to delete does not exist')
+        )
+      ) {
+        return;
       }
+
+      throw error;
     }
   }
 
