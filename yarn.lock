@@ -3142,16 +3142,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/executor-apollo-link@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@graphql-tools/executor-apollo-link@npm:1.0.0"
+"@graphql-tools/executor-apollo-link@npm:^0.0.9":
+  version: 0.0.9
+  resolution: "@graphql-tools/executor-apollo-link@npm:0.0.9"
   dependencies:
-    "@graphql-tools/utils": ^10.0.0
+    "@graphql-tools/utils": ^9.2.1
     tslib: ^2.3.1
   peerDependencies:
     "@apollo/client": ^3.5.9
     graphql: ^15.2.0 || ^16.0.0
-  checksum: c7db26dfb316fde52d048b93ec342b97dff67da7ac4e0f290ae08570c22e5f3f12c999013447c943e4201c76790a713cadc37bdbee61f7ced63b9c56c4af4f47
+  checksum: b52dac3315d4cf8c4f4cb60a2f9b7be98f244b35b425add31ee3c76998f83c781dba03fa612634277104d126b2e79983dc63dec89af7532524c8b502ec701be3
   languageName: node
   linkType: hard
 
@@ -3188,7 +3188,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-tools/executor-http@npm:^0.1.7":
+"@graphql-tools/executor-http@npm:^0.1.7, @graphql-tools/executor-http@npm:^0.1.9":
   version: 0.1.10
   resolution: "@graphql-tools/executor-http@npm:0.1.10"
   dependencies:
@@ -3710,17 +3710,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@graphql-yoga/apollo-link@npm:^2.0.3":
-  version: 2.0.3
-  resolution: "@graphql-yoga/apollo-link@npm:2.0.3"
+"@graphql-yoga/apollo-link@npm:^1.8.1":
+  version: 1.8.1
+  resolution: "@graphql-yoga/apollo-link@npm:1.8.1"
   dependencies:
-    "@graphql-tools/executor-apollo-link": ^1.0.0
-    "@graphql-tools/executor-http": ^1.0.0
-    tslib: ^2.5.2
+    "@graphql-tools/executor-apollo-link": ^0.0.9
+    "@graphql-tools/executor-http": ^0.1.9
+    tslib: ^2.3.1
   peerDependencies:
     "@apollo/client": ^3.5.9
     graphql: ^15.2.0 || ^16.0.0
-  checksum: b90024326f71c75ba0acd8382aaa49459a5c33bfa81a32935be8d40ebc262efd9975d012cef082e23582e4272b07ad77718327aa895fb7baadcf1a9a9b3f33fd
+  checksum: ca82faaafcbe796207c67cbc7915b9fbd612d5014e5ef9956fce9fb294cae37849bc7f9914919feeb98c75f4a5546746d8425e23c211ee2cb4b2cc68760206b9
   languageName: node
   linkType: hard
 
@@ -4551,7 +4551,7 @@ __metadata:
     "@graphql-codegen/cli": ^5.0.0
     "@graphql-codegen/typescript-react-apollo": ^3.3.7
     "@graphql-tools/executor-http": ^1.0.2
-    "@graphql-yoga/apollo-link": ^2.0.3
+    "@graphql-yoga/apollo-link": ^1.8.1
     "@mqs/eslint-config": "*"
     "@mqs/graphql-schema": "*"
     "@mqs/tsc": "*"
