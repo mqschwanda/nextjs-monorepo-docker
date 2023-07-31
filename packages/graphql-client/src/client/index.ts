@@ -3,10 +3,8 @@ import {
   InMemoryCache,
   from,
 } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
 import type { HTTPExecutorOptions } from '@graphql-tools/executor-http';
 import { YogaLink } from '@graphql-yoga/apollo-link';
-import Cookies from 'js-cookie';
 
 function getApolloClientUri() {
   return 'http://localhost:3001/graphql/v1';
@@ -28,24 +26,8 @@ export default function getClient({
 }: {
   fetch?: HTTPExecutorOptions['fetch'],
 }) {
-  const authorizationLink = setContext((_, ctx) => {
-    const { headers = {} } = ctx;
-
-    const token = Cookies.get('token');
-    const authorization = token ? `Bearer ${token}` : undefined;
-
-    return {
-      ...ctx,
-      headers: {
-        ...headers,
-        authorization,
-      },
-    };
-  });
-
   const link = from(
     [
-      authorizationLink,
       new YogaLink({
         credentials: 'include',
         endpoint: getApolloClientUri(),
