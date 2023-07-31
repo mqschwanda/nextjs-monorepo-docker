@@ -290,7 +290,21 @@ export default class Tokens {
         createdAt: true,
         id: true,
         refreshToken: true,
-        user: true,
+        user: {
+          select: {
+            createdAt: true,
+            email: true,
+            id: true,
+            nameFirst: true,
+            nameLast: true,
+            password: true,
+            roles: {
+              select: {
+                role: true,
+              },
+            },
+          },
+        },
         value: true,
       },
       where: {

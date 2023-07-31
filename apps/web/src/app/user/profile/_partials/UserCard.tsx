@@ -4,40 +4,15 @@ import {
   CardProps,
   CardTitle,
 } from '@mqs/react-server-components';
-import { cookies } from 'next/headers';
 import Image from 'next/image';
-import { redirect } from 'next/navigation';
-import qs from 'query-string';
-import { Tokens } from '@mqs/tokens';
-
-async function getUser() { // eslint-disable-line consistent-return
-  const { value: accessTokenCookie } = cookies().get(Tokens.audienceAccess) || {};
-
-  const query = qs.stringify({
-    redirect: '/user/profile',
-  });
-
-  const signInPath = `/auth/sign-in?${query}`;
-
-  if (!accessTokenCookie) {
-    redirect(signInPath);
-  }
-
-  try {
-    const accessToken = await Tokens.verifyAccessToken(accessTokenCookie);
-
-    return accessToken.user;
-  } catch (error) {
-    redirect(`/auth/refresh?${query}`);
-  }
-}
+import authenticate from 'utilities/authenticate';
 
 export interface UserCardProps extends Omit<CardProps, 'side' | 'children'> {
 
 }
 
 export default async function UserCard(props: UserCardProps) {
-  const user = await getUser();
+  const user = await authenticate();
 
   return (
     <Card
