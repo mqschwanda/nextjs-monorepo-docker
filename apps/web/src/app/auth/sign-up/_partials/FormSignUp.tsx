@@ -7,12 +7,12 @@ import {
   InputText,
   Label,
 } from '@mqs/react-server-components';
-import { useFormActionSignUp } from 'actions/sign-up';
 import {
   DetailedHTMLProps,
   FormHTMLAttributes,
   useMemo,
 } from 'react';
+import { useFormActionSignUp } from 'actions/sign-up';
 
 export interface FormSignUpProps
   extends Omit<DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>, 'action' | 'children'> {

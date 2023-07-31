@@ -8,9 +8,9 @@ import {
 import {
   DetailedHTMLProps, FormHTMLAttributes, useEffect, useMemo,
 } from 'react';
-import { useFormActionSignOut } from 'actions/sign-out';
 import { useMeQuery } from '@mqs/graphql-client';
 import { useRouter } from 'next/navigation';
+import { useFormActionSignOut } from 'actions/sign-out';
 
 export interface FormSignOutProps extends Omit<DetailedHTMLProps<FormHTMLAttributes<HTMLFormElement>, HTMLFormElement>, 'action' | 'children'> {
 

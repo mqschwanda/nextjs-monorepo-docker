@@ -1,5 +1,5 @@
-import { CodegenConfig } from '@graphql-codegen/cli';
 import path from 'path';
+import { CodegenConfig } from '@graphql-codegen/cli';
 import {
   documentsGlob,
   generatedDir,

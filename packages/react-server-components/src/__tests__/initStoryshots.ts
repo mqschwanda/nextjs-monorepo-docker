@@ -1,5 +1,5 @@
-import initStoryshotsMqs, { InitStoryshotsOptions as InitStoryshotsOptionsMqs } from '@mqs/storybook-utils/initStoryshots';
 import path from 'path';
+import initStoryshotsMqs, { InitStoryshotsOptions as InitStoryshotsOptionsMqs } from '@mqs/storybook-utils/initStoryshots';
 
 /**
  * Path to workspace storybook config

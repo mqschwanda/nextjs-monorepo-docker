@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
+import path from 'path';
 import { globSync } from 'glob';
 import { buildSchema } from 'graphql';
-import path from 'path';
 import { schemaGlob } from './constants';
 
 const filePaths = globSync(path.join(__dirname, schemaGlob));

@@ -1,7 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
-import NavAuthMenuItems from 'partials/NavAuthMenuItems';
 import { NextLinkWrapper } from '@mqs/react-client-components';
+import NavAuthMenuItems from 'partials/NavAuthMenuItems';
 import { MENU_ITEMS } from './constants';
 
 interface Props extends Omit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, 'children'> {

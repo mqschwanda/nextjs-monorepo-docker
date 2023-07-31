@@ -1,3 +1,4 @@
+import path from 'path';
 import { CodegenConfig } from '@graphql-codegen/cli';
 import {
   buildDir,
@@ -5,7 +6,6 @@ import {
   reactApolloVersion,
   schemaGlob,
 } from '@mqs/graphql-schema/constants';
-import path from 'path';
 
 import graphqlSchemaPackageJson from '@mqs/graphql-schema/package.json';
 
