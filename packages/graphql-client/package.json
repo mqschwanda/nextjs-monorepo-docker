@@ -46,7 +46,7 @@
   "dependencies": {
     "@apollo/client": "^3.7.17",
     "@graphql-tools/executor-http": "^1.0.2",
-    "@graphql-yoga/apollo-link": "^2.0.3",
+    "@graphql-yoga/apollo-link": "1.8.1",
     "@mqs/graphql-schema": "*",
     "graphql": "^16.7.1",
     "graphql-tag": "^2.12.6",
