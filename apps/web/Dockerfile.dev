@@ -12,7 +12,7 @@ RUN yarn install
 ###
 # runner
 ##
-FROM node:16 AS runner
+FROM node:latest AS runner
 WORKDIR /app
 
 COPY --from=installer /app .
