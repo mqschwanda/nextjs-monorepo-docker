@@ -26,7 +26,7 @@
     "@mqs/tsconfig": "*",
     "@types/cookie": "^0.5.1",
     "eslint": "^7.32.0",
-    "jest": "^29.6.1",
+    "jest": "^29.6.2",
     "react": "^18.2.0",
     "typescript": "^5.1.6"
   },
