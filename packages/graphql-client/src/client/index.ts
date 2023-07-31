@@ -4,7 +4,7 @@ import {
   from,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import { HTTPExecutorOptions } from '@graphql-tools/executor-http';
+import type { HTTPExecutorOptions } from '@graphql-tools/executor-http';
 import { YogaLink } from '@graphql-yoga/apollo-link';
 import Cookies from 'js-cookie';
 

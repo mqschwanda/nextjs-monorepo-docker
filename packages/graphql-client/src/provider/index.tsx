@@ -2,7 +2,7 @@
 
 import { ApolloProvider as Provider } from '@apollo/client';
 import { useMemo, type ReactNode } from 'react';
-import { HTTPExecutorOptions } from '@graphql-tools/executor-http';
+import type { HTTPExecutorOptions } from '@graphql-tools/executor-http';
 import getClient from '../client';
 
 export interface ApolloProviderProps {

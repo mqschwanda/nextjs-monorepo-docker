@@ -33,6 +33,7 @@
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.0",
     "@graphql-codegen/typescript-react-apollo": "^3.3.7",
+    "@graphql-tools/executor-http": "^1.0.2",
     "@mqs/eslint-config": "*",
     "@mqs/tsc": "*",
     "@mqs/tsconfig": "*",
@@ -45,7 +46,6 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.17",
-    "@graphql-tools/executor-http": "^1.0.2",
     "@graphql-yoga/apollo-link": "1.8.1",
     "@mqs/graphql-schema": "*",
     "graphql": "^16.7.1",
