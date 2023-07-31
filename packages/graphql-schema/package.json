@@ -46,11 +46,11 @@
     "lint:fix": "yarn lint --fix"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^3.3.1",
-    "@graphql-codegen/client-preset": "^3.0.1",
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/client-preset": "^4.1.0",
     "@graphql-codegen/import-types-preset": "^2.2.6",
-    "@graphql-codegen/typed-document-node": "^4.0.1",
-    "@graphql-codegen/typescript-resolvers": "^3.2.1",
+    "@graphql-codegen/typed-document-node": "^5.0.1",
+    "@graphql-codegen/typescript-resolvers": "^4.0.1",
     "@graphql-eslint/eslint-plugin": "^3.20.1",
     "@mqs/eslint-config": "*",
     "@mqs/tsc": "*",

@@ -31,7 +31,7 @@
     "lint:fix": "yarn lint --fix"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^3.3.1",
+    "@graphql-codegen/cli": "^5.0.0",
     "@graphql-codegen/typescript-react-apollo": "^3.3.7",
     "@mqs/eslint-config": "*",
     "@mqs/tsc": "*",
