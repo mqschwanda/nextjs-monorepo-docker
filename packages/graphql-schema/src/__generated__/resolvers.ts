@@ -69,22 +69,22 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
-  Boolean: ResolverTypeWrapper<Types.Scalars['Boolean']>;
-  ID: ResolverTypeWrapper<Types.Scalars['ID']>;
-  Int: ResolverTypeWrapper<Types.Scalars['Int']>;
+  Boolean: ResolverTypeWrapper<Types.Scalars['Boolean']['output']>;
+  ID: ResolverTypeWrapper<Types.Scalars['ID']['output']>;
+  Int: ResolverTypeWrapper<Types.Scalars['Int']['output']>;
   Query: ResolverTypeWrapper<{}>;
-  String: ResolverTypeWrapper<Types.Scalars['String']>;
+  String: ResolverTypeWrapper<Types.Scalars['String']['output']>;
   Subscription: ResolverTypeWrapper<{}>;
   User: ResolverTypeWrapper<Types.User>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
-  Boolean: Types.Scalars['Boolean'];
-  ID: Types.Scalars['ID'];
-  Int: Types.Scalars['Int'];
+  Boolean: Types.Scalars['Boolean']['output'];
+  ID: Types.Scalars['ID']['output'];
+  Int: Types.Scalars['Int']['output'];
   Query: {};
-  String: Types.Scalars['String'];
+  String: Types.Scalars['String']['output'];
   Subscription: {};
   User: Types.User;
 };
