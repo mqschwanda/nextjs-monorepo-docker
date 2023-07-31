@@ -2,11 +2,11 @@ import { type ReactNode } from 'react';
 // import '@mqs/react-server-components/styles';
 import '@mqs/style/style.css';
 import { Metadata } from 'next';
+import { IconInfo } from '@mqs/react-server-components';
+import { AlertDismissible } from '@mqs/react-client-components';
 import Footer from 'partials/Footer';
 import Nav from 'partials/Nav';
 import Header from 'partials/Header';
-import { IconInfo } from '@mqs/react-server-components';
-import { AlertDismissible } from '@mqs/react-client-components';
 import Providers from 'providers';
 
 interface RootLayoutProps {
