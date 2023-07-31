@@ -294,10 +294,15 @@ export default class Tokens {
           select: {
             createdAt: true,
             email: true,
+            id: true,
             nameFirst: true,
             nameLast: true,
             password: true,
-            roles: true,
+            roles: {
+              select: {
+                role: true,
+              },
+            },
           },
         },
         value: true,

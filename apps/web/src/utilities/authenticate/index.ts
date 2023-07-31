@@ -1,4 +1,4 @@
-import { UserRole } from '@mqs/prisma/client';
+import { RoleKey } from '@mqs/prisma/client';
 import { Tokens } from '@mqs/tokens';
 import { cookies, headers } from 'next/headers';
 import { notFound, redirect } from 'next/navigation';
@@ -8,7 +8,7 @@ import qs from 'query-string';
 export default async function authenticate({
   roles,
 }: {
-  roles?: UserRole,
+  roles?: Array<RoleKey>,
 } = {}) {
   const invokePath = headers().get('x-invoke-path');
   const { value: accessTokenCookie } = cookies().get(Tokens.audienceAccess) || {};
@@ -25,7 +25,8 @@ export default async function authenticate({
     const { user } = await Tokens.verifyAccessToken(accessTokenCookie);
 
     if (roles) {
-      if (user.roles.includes(roles)) {
+      const userRoles = user.roles.map(({ role: { key } }) => key);
+      if (roles.every((role) => userRoles.includes(role))) {
         return user;
       }
 
