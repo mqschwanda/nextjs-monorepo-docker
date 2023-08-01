@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-server-components components <LoadingIndicator /> renders 1`] = `
+<DocumentFragment>
+  <span
+    class="loading loading-spinner loading-md test"
+    data-testid="LoadingIndicator"
+  />
+</DocumentFragment>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/LoadingIndicator Loading Indicator Color Example 1`] = `
+[
+  <span
+    className="loading text-primary loading-spinner loading-md"
+  >
+    primary
+  </span>,
+  <span
+    className="loading text-secondary loading-spinner loading-md"
+  >
+    secondary
+  </span>,
+  <span
+    className="loading text-accent loading-spinner loading-md"
+  >
+    accent
+  </span>,
+  <span
+    className="loading text-neutral loading-spinner loading-md"
+  >
+    neutral
+  </span>,
+  <span
+    className="loading text-info loading-spinner loading-md"
+  >
+    info
+  </span>,
+  <span
+    className="loading text-success loading-spinner loading-md"
+  >
+    success
+  </span>,
+  <span
+    className="loading text-warning loading-spinner loading-md"
+  >
+    warning
+  </span>,
+  <span
+    className="loading text-error loading-spinner loading-md"
+  >
+    error
+  </span>,
+]
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/LoadingIndicator Loading Indicator Example 1`] = `
+<span
+  className="loading loading-spinner loading-md"
+/>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/LoadingIndicator Loading Indicator Shape Example 1`] = `
+[
+  <span
+    className="loading loading-ball loading-md"
+  >
+    ball
+  </span>,
+  <span
+    className="loading loading-bars loading-md"
+  >
+    bars
+  </span>,
+  <span
+    className="loading loading-dots loading-md"
+  >
+    dots
+  </span>,
+  <span
+    className="loading loading-infinity loading-md"
+  >
+    infinity
+  </span>,
+  <span
+    className="loading loading-ring loading-md"
+  >
+    ring
+  </span>,
+  <span
+    className="loading loading-spinner loading-md"
+  >
+    spinner
+  </span>,
+]
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/LoadingIndicator Loading Indicator Size Example 1`] = `
+[
+  <span
+    className="loading loading-spinner loading-xs"
+  >
+    xs
+  </span>,
+  <span
+    className="loading loading-spinner loading-sm"
+  >
+    sm
+  </span>,
+  <span
+    className="loading loading-spinner loading-md"
+  >
+    md
+  </span>,
+  <span
+    className="loading loading-spinner loading-lg"
+  >
+    lg
+  </span>,
+]
+`;

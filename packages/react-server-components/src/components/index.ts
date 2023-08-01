@@ -6,6 +6,7 @@ export * from './FormControl';
 export * from './Icon';
 export * from './Input';
 export * from './Label';
+export * from './LoadingIndicator';
 export * from './Skeleton';
 export * from './Svg';
 export * from './Typography';
