@@ -1,6 +1,16 @@
 import { faker } from '@faker-js/faker';
 
 describe('@mqs/web', () => {
+  describe('Not Found', () => {
+    it('should render page', () => {
+      cy.visit('/not/a/path', {
+        failOnStatusCode: false,
+      });
+
+      cy.contains('Page Not Found');
+    });
+  });
+
   describe('Home Page', () => {
     it('should redirect to the page', () => {
       cy.visit('/');

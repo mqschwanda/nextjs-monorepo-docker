@@ -67,7 +67,10 @@ Cypress.Commands.add('signInUser', ({
 
 Cypress.Commands.add('signOutUser', () => {
   cy.visit('/auth/sign-out');
-  cy.get('button[type="submit"]').click();
+
+  cy.get('button[type="submit"]', {
+    timeout: 21000,
+  }).should('be.enabled').click();
 
   cy.location('pathname', { timeout: 1000 }).should('eq', '/home');
 
