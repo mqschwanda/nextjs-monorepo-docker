@@ -4,6 +4,7 @@ query Me {
     email
     nameFirst
     nameLast
+    roleKeys
   }
 }
 

@@ -4689,6 +4689,7 @@ __metadata:
     "@faker-js/faker": ^8.0.2
     "@mqs/eslint-config": "*"
     "@mqs/graphql-client": "*"
+    "@mqs/graphql-schema": "*"
     "@mqs/logger": "*"
     "@mqs/prisma": "*"
     "@mqs/react-client-components": "*"

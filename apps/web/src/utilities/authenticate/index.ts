@@ -21,20 +21,22 @@ export default async function authenticate({
     redirect(`/auth/sign-in?${query}`);
   }
 
+  let accessToken: Awaited<ReturnType<typeof Tokens.verifyAccessToken>> | undefined;
+
   try {
-    const { user } = await Tokens.verifyAccessToken(accessTokenCookie);
-
-    if (roles) {
-      const userRoles = user.roles.map(({ role: { key } }) => key);
-      if (roles.every((role) => userRoles.includes(role))) {
-        return user;
-      }
-
-      notFound();
-    }
-
-    return user;
+    accessToken = await Tokens.verifyAccessToken(accessTokenCookie);
   } catch (error) {
     redirect(`/auth/refresh?${query}`);
   }
+
+  if (roles) {
+    const userRoles = accessToken.user.roles.map(({ role: { key } }) => key);
+    if (roles.every((role) => userRoles.includes(role))) {
+      return accessToken.user;
+    }
+
+    notFound();
+  }
+
+  return accessToken.user;
 }

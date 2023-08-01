@@ -1,4 +1,4 @@
-import { Resolvers } from '@mqs/graphql-schema';
+import { Resolvers, RoleKey } from '@mqs/graphql-schema';
 import cookie from 'cookie';
 import { Tokens } from '@mqs/tokens';
 
@@ -27,7 +27,12 @@ const resolvers: Resolvers = {
 
       const accessToken = await Tokens.verifyAccessToken(access);
 
-      return coercePrismaObjectForGraphQL(accessToken.user);
+      const user = {
+        ...accessToken.user,
+        roleKeys: accessToken.user.roles.map((({ role }) => role.key as RoleKey)),
+      };
+
+      return coercePrismaObjectForGraphQL(user);
     },
   },
   Subscription: {

@@ -12,7 +12,8 @@
     "./loadSchema": "./dist/loadSchema.js",
     "./package.json": "./package.json",
     "./queries/*.graphql": "./dist/queries/*.graphql",
-    "./schema/*.graphql": "./dist/schema/*.graphql"
+    "./schema/*.graphql": "./dist/schema/*.graphql",
+    "./__generated__/graphql": "./dist/__generated__/graphql.js"
   },
   "typesVersions": {
     "*": {
@@ -24,6 +25,9 @@
       ],
       "react-apollo": [
         "./dist/__generated__/react-apollo.d.ts"
+      ],
+      "__generated__/graphql": [
+        "./dist/__generated__/graphql.d.ts"
       ]
     }
   },

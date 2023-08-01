@@ -15,8 +15,16 @@
 
 import './commands';
 
-Cypress.on('uncaught:exception', (err) => {
-  if (err?.message.includes('NEXT_REDIRECT')) {
+Cypress.on('uncaught:exception', (error) => {
+  const { message } = error;
+  const NEXT_NON_ERRORS = [
+    'NEXT_REDIRECT',
+    'NEXT_NOT_FOUND',
+  ];
+
+  if (
+    message
+    && NEXT_NON_ERRORS.some((key) => message.includes(key))) {
     return false;
   }
 

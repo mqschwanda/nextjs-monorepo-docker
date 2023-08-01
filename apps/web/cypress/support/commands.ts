@@ -45,6 +45,7 @@ declare global {
       aliasGraphQL(): Chainable<void>
       assertSignedInNavAuth(): Chainable<void>
       assertSignedOutNavAuth(): Chainable<void>
+      assertNotFoundPage(): Chainable<void>
       signInAdminUser(options?: {
         screenshot?: boolean
       }): Chainable<void>
@@ -81,6 +82,10 @@ Cypress.Commands.add('assertSignedInNavAuth', () => {
 
   cy.get('#nav-auth-menu-profile')
     .should('exist');
+});
+
+Cypress.Commands.add('assertNotFoundPage', () => {
+  cy.get('h1').contains('Page Not Found');
 });
 
 Cypress.Commands.add('signInAdminUser', ({

@@ -18,6 +18,60 @@ describe('@mqs/web', () => {
       });
     });
 
+    describe('admin', () => {
+      it('should render the page for admin user', () => {
+        cy.signInAdminUser();
+
+        cy.visit('/admin');
+
+        cy.get('head title')
+          .contains('Admin');
+
+        cy.screenshot();
+
+        cy.signOutUser();
+      });
+
+      it('should render the not found page for user', () => {
+        cy.signInUser();
+
+        cy.visit('/admin', {
+          failOnStatusCode: false,
+        });
+
+        cy.assertNotFoundPage();
+
+        cy.signOutUser();
+      });
+
+      describe('users', () => {
+        it('should render the page for admin user', () => {
+          cy.signInAdminUser();
+
+          cy.visit('/admin/users');
+
+          cy.get('head title')
+            .contains('Users');
+
+          cy.screenshot();
+
+          cy.signOutUser();
+        });
+
+        it('should render the not found page for user', () => {
+          cy.signInUser();
+
+          cy.visit('/admin/users', {
+            failOnStatusCode: false,
+          });
+
+          cy.assertNotFoundPage();
+
+          cy.signOutUser();
+        });
+      });
+    });
+
     describe('auth', () => {
       describe('refresh', () => {
         it('should refresh tokens and redirect', () => {
@@ -205,7 +259,7 @@ describe('@mqs/web', () => {
           failOnStatusCode: false,
         });
 
-        cy.contains('Page Not Found');
+        cy.assertNotFoundPage();
       });
     });
   });

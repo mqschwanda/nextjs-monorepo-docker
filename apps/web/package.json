@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@mqs/graphql-client": "*",
+    "@mqs/graphql-schema": "*",
     "@mqs/logger": "*",
     "@mqs/prisma": "*",
     "@mqs/react-client-components": "*",

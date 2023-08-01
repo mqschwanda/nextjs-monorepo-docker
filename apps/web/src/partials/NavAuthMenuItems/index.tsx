@@ -57,25 +57,30 @@ export default function NavAuthMenuItems(_props: Props) {
           id='nav-auth-menu-profile'
           tabIndex={0}
         >
-          { PROFILE_ITEMS.map(({
-            href,
-            label,
-          }) => (
-            <li
-              key={label}
-            >
-              <NextLinkWrapper
-                href={href}
+          { PROFILE_ITEMS
+            .filter(({ roleKeys }) => (
+              !roleKeys
+              || roleKeys.every((roleKey) => data.me?.roleKeys.includes(roleKey))
+            ))
+            .map(({
+              href,
+              label,
+            }) => (
+              <li
+                key={label}
               >
-                <a
-                  className='btn btn-ghost normal-case text-xl'
+                <NextLinkWrapper
                   href={href}
                 >
-                  { label }
-                </a>
-              </NextLinkWrapper>
-            </li>
-          )) }
+                  <a
+                    className='btn btn-ghost normal-case text-xl'
+                    href={href}
+                  >
+                    { label }
+                  </a>
+                </NextLinkWrapper>
+              </li>
+            )) }
         </ul>
       </div>
     );

@@ -15,7 +15,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
 const documents = {
     "subscription Countdown($from: Int!) {\n  countdown(from: $from)\n}": types.CountdownDocument,
     "query Hello($name: String!) {\n  hello(name: $name)\n}": types.HelloDocument,
-    "query Me {\n  me {\n    id\n    email\n    nameFirst\n    nameLast\n  }\n}": types.MeDocument,
+    "query Me {\n  me {\n    id\n    email\n    nameFirst\n    nameLast\n    roleKeys\n  }\n}": types.MeDocument,
 };
 
 /**
@@ -43,7 +43,7 @@ export function graphql(source: "query Hello($name: String!) {\n  hello(name: $n
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "query Me {\n  me {\n    id\n    email\n    nameFirst\n    nameLast\n  }\n}"): (typeof documents)["query Me {\n  me {\n    id\n    email\n    nameFirst\n    nameLast\n  }\n}"];
+export function graphql(source: "query Me {\n  me {\n    id\n    email\n    nameFirst\n    nameLast\n    roleKeys\n  }\n}"): (typeof documents)["query Me {\n  me {\n    id\n    email\n    nameFirst\n    nameLast\n    roleKeys\n  }\n}"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

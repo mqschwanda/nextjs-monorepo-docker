@@ -73,6 +73,7 @@ export type ResolversTypes = {
   ID: ResolverTypeWrapper<Types.Scalars['ID']['output']>;
   Int: ResolverTypeWrapper<Types.Scalars['Int']['output']>;
   Query: ResolverTypeWrapper<{}>;
+  RoleKey: Types.RoleKey;
   String: ResolverTypeWrapper<Types.Scalars['String']['output']>;
   Subscription: ResolverTypeWrapper<{}>;
   User: ResolverTypeWrapper<Types.User>;
@@ -103,6 +104,7 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   nameFirst?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   nameLast?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  roleKeys?: Resolver<Array<ResolversTypes['RoleKey']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
