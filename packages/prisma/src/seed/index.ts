@@ -5,6 +5,17 @@ import {
   RoleKey,
   prisma,
 } from '../client';
+import { ADMIN_USER, USER } from './constants';
+
+type SeedUser = Omit<User, 'createdAt' | 'id'>;
+async function sanitizeUser(user: SeedUser) {
+  const password = await bcrypt.hash(user.password, 10);
+
+  return {
+    ...user,
+    password,
+  };
+}
 
 async function seed() {
   const roles: Array<Omit<Role, 'id'>> = [
@@ -24,21 +35,10 @@ async function seed() {
     })),
   );
 
-  const password = await bcrypt.hash('password', 10);
-  const users: Array<Omit<User, 'id' | 'createdAt'>> = [
-    {
-      email: 'admin@email.com',
-      nameFirst: 'Admin',
-      nameLast: 'Smith',
-      password,
-    },
-    {
-      email: 'user@email.com',
-      nameFirst: 'John',
-      nameLast: 'Smith',
-      password,
-    },
-  ];
+  const users = await Promise.all([
+    sanitizeUser(ADMIN_USER),
+    sanitizeUser(USER),
+  ]);
 
   await Promise.all(
     users.map((user) => prisma.user.upsert({

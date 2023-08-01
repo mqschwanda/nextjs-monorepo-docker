@@ -36,9 +36,18 @@
 //   }
 // }
 
+import { ADMIN_USER, USER } from '@mqs/prisma/dist/seed/constants';
+import { aliasQuery } from './utilities/graphql-test-utils';
+
 declare global {
   namespace Cypress {
     interface Chainable {
+      aliasGraphQL(): Chainable<void>
+      assertSignedInNavAuth(): Chainable<void>
+      assertSignedOutNavAuth(): Chainable<void>
+      signInAdminUser(options?: {
+        screenshot?: boolean
+      }): Chainable<void>
       signInUser(options?: {
         screenshot?: boolean
       }): Chainable<void>
@@ -47,38 +56,98 @@ declare global {
   }
 }
 
-Cypress.Commands.add('signInUser', ({
+Cypress.Commands.add('aliasGraphQL', () => {
+  const url = new URL('/graphql/v1', 'http://localhost:3001');
+  cy.intercept('POST', url.toString(), (req) => {
+    // Queries
+    aliasQuery(req, 'Me');
+
+    // Mutations
+    // aliasMutation(req, 'Login')
+  });
+});
+
+Cypress.Commands.add('assertSignedOutNavAuth', () => {
+  cy.get('#nav-auth-menu-auth')
+    .should('exist');
+
+  cy.get('#nav-auth-menu-profile')
+    .should('not.exist');
+});
+
+Cypress.Commands.add('assertSignedInNavAuth', () => {
+  cy.get('#nav-auth-menu-auth')
+    .should('not.exist');
+
+  cy.get('#nav-auth-menu-profile')
+    .should('exist');
+});
+
+Cypress.Commands.add('signInAdminUser', ({
   screenshot = false,
 } = {}) => {
   cy.visit('/auth/sign-in');
 
-  cy.get('#nav-auth-menu-auth').should('exist');
-  cy.get('#nav-auth-menu-profile').should('not.exist');
+  cy.assertSignedOutNavAuth();
 
-  cy.get('#email').type('admin@email.com');
-  cy.get('#password').type('password');
+  cy.get('#email')
+    .type(ADMIN_USER.email);
+  cy.get('#password')
+    .type(ADMIN_USER.password);
 
   if (screenshot) {
     cy.screenshot();
   }
 
-  cy.get('button[type="submit"]').click();
+  cy.get('button[type="submit"]')
+    .click();
+
+  cy.location('pathname', { timeout: 1000 })
+    .should('eq', '/home');
+
+  cy.assertSignedInNavAuth();
+});
+
+Cypress.Commands.add('signInUser', ({
+  screenshot = false,
+} = {}) => {
+  cy.visit('/auth/sign-in');
+
+  cy.assertSignedOutNavAuth();
+
+  cy.get('#email')
+    .type(USER.email);
+  cy.get('#password')
+    .type(USER.password);
+
+  if (screenshot) {
+    cy.screenshot();
+  }
+
+  cy.get('button[type="submit"]')
+    .click();
+
+  cy.location('pathname', { timeout: 1000 })
+    .should('eq', '/home');
+
+  cy.assertSignedInNavAuth();
 });
 
 Cypress.Commands.add('signOutUser', () => {
   cy.visit('/auth/sign-out');
 
-  cy.get('button[type="submit"]', {
-    timeout: 21000,
-  }).should('be.enabled').click();
+  cy.wait('@query Me');
 
-  cy.location('pathname', { timeout: 1000 }).should('eq', '/home');
+  cy.assertSignedInNavAuth();
 
-  // TODO: figure out why reload is needed to update ui because this currently works in development
-  cy.reload();
+  cy.get('button[type="submit"]', { timeout: 1000 })
+    .should('be.enabled')
+    .click();
 
-  cy.get('#nav-auth-menu-auth').should('exist');
-  cy.get('#nav-auth-menu-profile').should('not.exist');
+  cy.location('pathname', { timeout: 1000 })
+    .should('eq', '/home');
+
+  cy.assertSignedOutNavAuth();
 });
 
 // Prevent TypeScript from reading file as legacy script

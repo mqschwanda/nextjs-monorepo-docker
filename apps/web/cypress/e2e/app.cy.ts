@@ -1,164 +1,211 @@
 import { faker } from '@faker-js/faker';
+import { USER } from '@mqs/prisma/dist/seed/constants';
 
 describe('@mqs/web', () => {
-  describe('Not Found', () => {
-    it('should render page', () => {
-      cy.visit('/not/a/path', {
-        failOnStatusCode: false,
-      });
-
-      cy.contains('Page Not Found');
-    });
+  beforeEach(() => {
+    cy.aliasGraphQL();
   });
 
-  describe('Home Page', () => {
-    it('should redirect to the page', () => {
-      cy.visit('/');
-
-      cy.url().should('include', '/home');
-    });
-
-    it('should render the home page', () => {
-      cy.visit('/home');
-
-      cy.get('head title').contains('Home');
-      cy.screenshot();
-    });
-  });
-
-  describe('About Page', () => {
-    it('should render the page', () => {
-      cy.visit('/about');
-
-      cy.get('head title').contains('About');
-      cy.screenshot();
-    });
-  });
-
-  describe('auth', () => {
-    const user = {
-      email: faker.internet.email(),
-      nameFirst: faker.person.firstName(),
-      nameLast: faker.person.lastName(),
-      password: faker.internet.password(),
-    };
-
-    describe('Sign Up Page', () => {
+  describe('app', () => {
+    describe('about', () => {
       it('should render the page', () => {
-        cy.visit('/auth/sign-up');
+        cy.visit('/about');
 
-        cy.get('head title').contains('Sign Up');
-        cy.screenshot();
-      });
-
-      it('should fill out and submit the form', () => {
-        cy.visit('/auth/sign-up');
-
-        cy.get('#nav-auth-menu-auth').should('exist');
-        cy.get('#nav-auth-menu-profile').should('not.exist');
-
-        cy.get('#email').type(user.email);
-        cy.get('#nameFirst').type(user.nameFirst);
-        cy.get('#nameLast').type(user.nameLast);
-        cy.get('#password').type(user.password);
-        cy.get('#confirm-password').type(user.password);
+        cy.get('head title')
+          .contains('About');
 
         cy.screenshot();
-
-        cy.get('button[type="submit"]').click();
-        cy.location('pathname', { timeout: 1000 }).should('eq', '/user/profile');
-
-        cy.get('#nav-auth-menu-auth').should('not.exist');
-        cy.get('#nav-auth-menu-profile').should('exist');
-
-        cy.signOutUser();
       });
     });
 
-    describe('Sign Out Page', () => {
-      it('should render the page', () => {
-        cy.signInUser();
-        cy.visit('/auth/sign-out');
+    describe('auth', () => {
+      describe('refresh', () => {
+        it('should refresh tokens and redirect', () => {
+          cy.signInUser();
 
-        cy.get('head title').contains('Sign Out');
-        cy.screenshot();
-      });
+          const userProfilePath = '/user/profile';
+          cy.visit('/auth/refresh', { qs: { redirect: userProfilePath } });
 
-      it('should submit the form', () => {
-        cy.signInUser();
+          cy.location('pathname', { timeout: 5000 })
+            .should('eq', userProfilePath);
 
-        cy.signOutUser();
-        cy.location('pathname', { timeout: 1000 }).should('eq', '/home');
-      });
-
-      it('should redirect when no user is signed in', () => {
-        cy.visit('/auth/sign-out');
-
-        cy.location('pathname', { timeout: 1000 }).should('eq', '/home');
-      });
-    });
-
-    describe('Sign In Page', () => {
-      it('should render the page', () => {
-        cy.visit('/auth/sign-in');
-
-        cy.get('head title').contains('Sign In');
-        cy.screenshot();
-      });
-
-      it('should fill out and submit the form', () => {
-        cy.signInUser({
-          screenshot: true,
+          cy.signOutUser();
         });
-        cy.location('pathname', { timeout: 1000 }).should('eq', '/home');
-
-        cy.get('#nav-auth-menu-auth').should('not.exist');
-        cy.get('#nav-auth-menu-profile').should('exist');
-
-        cy.signOutUser();
       });
 
-      it('should redirect user based on url search param', () => {
-        const userProfilePath = '/user/profile';
-        cy.visit(`/auth/sign-in?redirect=${encodeURIComponent(userProfilePath)}`);
+      describe('sign-in', () => {
+        it('should render the page', () => {
+          cy.visit('/auth/sign-in');
 
-        cy.get('#nav-auth-menu-auth').should('exist');
-        cy.get('#nav-auth-menu-profile').should('not.exist');
+          cy.get('head title')
+            .contains('Sign In');
 
-        cy.get('#email').type(user.email);
-        cy.get('#password').type(user.password);
+          cy.screenshot();
+        });
 
-        cy.screenshot();
+        it('should fill out and submit the form', () => {
+          cy.signInUser({
+            screenshot: true,
+          });
 
-        cy.get('button[type="submit"]').click();
-        cy.location('pathname', { timeout: 1000 }).should('eq', userProfilePath);
+          cy.signOutUser();
+        });
 
-        cy.get('#nav-auth-menu-auth').should('not.exist');
-        cy.get('#nav-auth-menu-profile').should('exist');
+        it('should redirect user based on url search param', () => {
+          const userProfilePath = '/user/profile';
+          cy.visit('/auth/sign-in', { qs: { redirect: userProfilePath } });
 
-        cy.signOutUser();
+          cy.get('#nav-auth-menu-auth')
+            .should('exist');
+          cy.get('#nav-auth-menu-profile')
+            .should('not.exist');
+
+          cy.get('#email')
+            .type(USER.email);
+          cy.get('#password')
+            .type(USER.password);
+
+          cy.screenshot();
+
+          cy.get('button[type="submit"]')
+            .click();
+          cy.location('pathname', { timeout: 5000 })
+            .should('eq', userProfilePath);
+
+          cy.assertSignedInNavAuth();
+
+          cy.signOutUser();
+        });
+      });
+
+      describe('sign-out', () => {
+        it('should render the page', () => {
+          cy.signInUser();
+
+          cy.visit('/auth/sign-out');
+
+          cy.get('head title')
+            .contains('Sign Out');
+
+          cy.screenshot();
+        });
+
+        it('should submit the form', () => {
+          cy.signInUser();
+
+          cy.signOutUser();
+
+          cy.location('pathname', { timeout: 5000 })
+            .should('eq', '/home');
+        });
+
+        it('should redirect when no user is signed in', () => {
+          cy.visit('/auth/sign-out');
+
+          cy.location('pathname', { timeout: 5000 })
+            .should('eq', '/home');
+        });
+      });
+
+      describe('sign-up', () => {
+        it('should render the page', () => {
+          cy.visit('/auth/sign-up');
+
+          cy.get('head title')
+            .contains('Sign Up');
+
+          cy.screenshot();
+        });
+
+        it('should fill out and submit the form', () => {
+          cy.visit('/auth/sign-up');
+
+          cy.assertSignedOutNavAuth();
+
+          const user = {
+            email: faker.internet.email(),
+            nameFirst: faker.person.firstName(),
+            nameLast: faker.person.lastName(),
+            password: faker.internet.password(),
+          };
+
+          cy.get('#email')
+            .type(user.email);
+          cy.get('#nameFirst')
+            .type(user.nameFirst);
+          cy.get('#nameLast')
+            .type(user.nameLast);
+          cy.get('#password')
+            .type(user.password);
+          cy.get('#confirm-password')
+            .type(user.password);
+
+          cy.screenshot();
+
+          cy.get('button[type="submit"]')
+            .click();
+          cy.location('pathname', { timeout: 5000 })
+            .should('eq', '/user/profile');
+
+          cy.assertSignedInNavAuth();
+
+          cy.signOutUser();
+        });
       });
     });
-  });
 
-  describe('user', () => {
-    describe('Profile Page', () => {
+    describe('home', () => {
       it('should render the page', () => {
-        cy.signInUser();
-        cy.visit('/user/profile');
+        cy.visit('/home');
 
-        cy.get('head title').contains('User Profile');
+        cy.get('head title')
+          .contains('Home');
+
         cy.screenshot();
-
-        cy.signOutUser();
       });
 
-      it('should redirect to sign in without user', () => {
-        cy.visit('/user/profile');
+      it('should redirect to the home page', () => {
+        cy.visit('/');
 
-        const userProfilePath = '/user/profile';
-        cy.location('pathname', { timeout: 1000 }).should('eq', '/auth/sign-in');
-        cy.location('search', { timeout: 1000 }).should('include', `redirect=${encodeURIComponent(userProfilePath)}`);
+        cy.url()
+          .should('include', '/home');
+      });
+    });
+
+    describe('user', () => {
+      describe('profile', () => {
+        it('should render the page', () => {
+          cy.signInUser();
+
+          cy.visit('/user/profile');
+
+          cy.get('head title')
+            .contains('User Profile');
+
+          cy.screenshot();
+
+          cy.signOutUser();
+        });
+
+        it('should redirect to sign in without user', () => {
+          cy.visit('/user/profile');
+
+          const userProfilePath = '/user/profile';
+          cy.location('pathname', { timeout: 5000 })
+            .should('eq', '/auth/sign-in');
+          cy.location('search', { timeout: 5000 })
+            .should('include', `redirect=${encodeURIComponent(userProfilePath)}`);
+        });
+      });
+    });
+
+    describe('not-found', () => {
+      it('should render page', () => {
+        cy.visit('/not/a/path', {
+          failOnStatusCode: false,
+        });
+
+        cy.contains('Page Not Found');
       });
     });
   });

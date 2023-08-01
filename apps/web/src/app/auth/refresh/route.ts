@@ -43,9 +43,9 @@ export async function GET(request: Request) { // eslint-disable-line import/pref
         httpOnly: true,
       },
     );
-
-    redirect(redirectPath || '/home');
   } catch (error) {
     redirect(signInPath);
   }
+
+  redirect(redirectPath || '/home');
 }

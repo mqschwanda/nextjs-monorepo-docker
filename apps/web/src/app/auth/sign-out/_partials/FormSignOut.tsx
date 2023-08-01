@@ -6,7 +6,10 @@ import {
   Label,
 } from '@mqs/react-server-components';
 import {
-  DetailedHTMLProps, FormHTMLAttributes, useEffect, useMemo,
+  DetailedHTMLProps,
+  FormHTMLAttributes,
+  useEffect,
+  useMemo,
 } from 'react';
 import { useMeQuery } from '@mqs/graphql-client';
 import { useRouter } from 'next/navigation';
@@ -61,7 +64,7 @@ export default function FormSignOut(props: FormSignOutProps) {
         <input
           name='email'
           type='hidden'
-          value={data?.me?.email}
+          value={data?.me?.email || ''}
         />
         <Button
           disabled={loading || !data?.me}
