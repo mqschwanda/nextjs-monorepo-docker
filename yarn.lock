@@ -4699,6 +4699,7 @@ __metadata:
     "@mqs/tokens": "*"
     "@mqs/tsconfig": "*"
     "@mqs/zod": "*"
+    "@types/date-fns": ^2.6.0
     "@types/jsonwebtoken": ^9.0.2
     "@types/node": ^20.4.5
     "@types/react": ^18.2.17
@@ -4706,6 +4707,7 @@ __metadata:
     classnames: ^2.3.2
     cookies-next: ^2.1.2
     cypress: 12.17.2
+    date-fns: ^2.30.0
     eslint: ^8.46.0
     next: 13.4.7
     query-string: ^8.1.0
@@ -6971,6 +6973,15 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: fa9edd32178878cab3ea8d6d0260639e0fe4860ddb3887b8de53d6e8036e154fc5f313c653f690975aa25025aea8beb83fb0870b931bf8d9202c3ac530a24c9d
+  languageName: node
+  linkType: hard
+
+"@types/date-fns@npm:^2.6.0":
+  version: 2.6.0
+  resolution: "@types/date-fns@npm:2.6.0"
+  dependencies:
+    date-fns: "*"
+  checksum: 6839db1d12d6586cd572e8aa77efc2ea88fd6566b7902641cf3efe2e22518aff067df2ba433539a275a3ab1169612b54d007ddcc2800d846be4f7e629cd7bfb3
   languageName: node
   linkType: hard
 
@@ -10612,7 +10623,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"date-fns@npm:^2.30.0":
+"date-fns@npm:*, date-fns@npm:^2.30.0":
   version: 2.30.0
   resolution: "date-fns@npm:2.30.0"
   dependencies:
