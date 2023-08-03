@@ -1,6 +1,13 @@
 type Query {
   hello(name: String!): String!
+  job(key: JobKey!): Job!
+  jobs: [Job!]!
   me: User
+}
+
+type Mutation {
+  cancelJob(key: JobKey!): Job!
+  runJob(key: JobKey!): Job!
 }
 
 
@@ -16,6 +23,44 @@ type User {
   roleKeys: [RoleKey!]!
 }
 
+type Job {
+  id: ID!
+  key: JobKey!
+  name: String!
+  ranJob: RanJob
+}
+
+type RanJob {
+  id: ID!
+  canceledAt: Date
+  failedAt: Date
+  finishedAt: Date
+  startedAt: Date!
+}
+
+scalar Date
+
 enum RoleKey {
   Admin
+}
+
+enum JobKey {
+  InvalidateStaleTokens
+}
+
+fragment RanJobFragment on RanJob {
+  id
+  canceledAt
+  failedAt
+  finishedAt
+  startedAt
+}
+
+fragment JobFragment on Job {
+  id
+  key
+  name
+  ranJob {
+    ...RanJobFragment
+  }
 }

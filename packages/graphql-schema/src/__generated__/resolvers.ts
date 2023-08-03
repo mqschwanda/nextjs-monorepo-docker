@@ -1,4 +1,4 @@
-import { GraphQLResolveInfo } from 'graphql';
+import { GraphQLResolveInfo, GraphQLScalarType, GraphQLScalarTypeConfig } from 'graphql';
 import * as Types from './graphql';
 
 export type RequireFields<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
@@ -70,9 +70,14 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
   Boolean: ResolverTypeWrapper<Types.Scalars['Boolean']['output']>;
+  Date: ResolverTypeWrapper<Types.Scalars['Date']['output']>;
   ID: ResolverTypeWrapper<Types.Scalars['ID']['output']>;
   Int: ResolverTypeWrapper<Types.Scalars['Int']['output']>;
+  Job: ResolverTypeWrapper<Types.Job>;
+  JobKey: Types.JobKey;
+  Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
+  RanJob: ResolverTypeWrapper<Types.RanJob>;
   RoleKey: Types.RoleKey;
   String: ResolverTypeWrapper<Types.Scalars['String']['output']>;
   Subscription: ResolverTypeWrapper<{}>;
@@ -82,17 +87,49 @@ export type ResolversTypes = {
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
   Boolean: Types.Scalars['Boolean']['output'];
+  Date: Types.Scalars['Date']['output'];
   ID: Types.Scalars['ID']['output'];
   Int: Types.Scalars['Int']['output'];
+  Job: Types.Job;
+  Mutation: {};
   Query: {};
+  RanJob: Types.RanJob;
   String: Types.Scalars['String']['output'];
   Subscription: {};
   User: Types.User;
 };
 
+export interface DateScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['Date'], any> {
+  name: 'Date';
+}
+
+export type JobResolvers<ContextType = any, ParentType extends ResolversParentTypes['Job'] = ResolversParentTypes['Job']> = {
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  key?: Resolver<ResolversTypes['JobKey'], ParentType, ContextType>;
+  name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  ranJob?: Resolver<Types.Maybe<ResolversTypes['RanJob']>, ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
+  cancelJob?: Resolver<ResolversTypes['Job'], ParentType, ContextType, RequireFields<Types.MutationCancelJobArgs, 'key'>>;
+  runJob?: Resolver<ResolversTypes['Job'], ParentType, ContextType, RequireFields<Types.MutationRunJobArgs, 'key'>>;
+};
+
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   hello?: Resolver<ResolversTypes['String'], ParentType, ContextType, RequireFields<Types.QueryHelloArgs, 'name'>>;
+  job?: Resolver<ResolversTypes['Job'], ParentType, ContextType, RequireFields<Types.QueryJobArgs, 'key'>>;
+  jobs?: Resolver<Array<ResolversTypes['Job']>, ParentType, ContextType>;
   me?: Resolver<Types.Maybe<ResolversTypes['User']>, ParentType, ContextType>;
+};
+
+export type RanJobResolvers<ContextType = any, ParentType extends ResolversParentTypes['RanJob'] = ResolversParentTypes['RanJob']> = {
+  canceledAt?: Resolver<Types.Maybe<ResolversTypes['Date']>, ParentType, ContextType>;
+  failedAt?: Resolver<Types.Maybe<ResolversTypes['Date']>, ParentType, ContextType>;
+  finishedAt?: Resolver<Types.Maybe<ResolversTypes['Date']>, ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  startedAt?: Resolver<ResolversTypes['Date'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type SubscriptionResolvers<ContextType = any, ParentType extends ResolversParentTypes['Subscription'] = ResolversParentTypes['Subscription']> = {
@@ -109,7 +146,11 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
 };
 
 export type Resolvers<ContextType = any> = {
+  Date?: GraphQLScalarType;
+  Job?: JobResolvers<ContextType>;
+  Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
+  RanJob?: RanJobResolvers<ContextType>;
   Subscription?: SubscriptionResolvers<ContextType>;
   User?: UserResolvers<ContextType>;
 };

@@ -4,7 +4,25 @@ import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
 
 const defaultOptions = {} as const;
-
+export const RanJobFragmentFragmentDoc = /* #__PURE__ */ gql`
+    fragment RanJobFragment on RanJob {
+  id
+  canceledAt
+  failedAt
+  finishedAt
+  startedAt
+}
+    `;
+export const JobFragmentFragmentDoc = /* #__PURE__ */ gql`
+    fragment JobFragment on Job {
+  id
+  key
+  name
+  ranJob {
+    ...RanJobFragment
+  }
+}
+    ${RanJobFragmentFragmentDoc}`;
 export const CountdownDocument = /* #__PURE__ */ gql`
     subscription Countdown($from: Int!) {
   countdown(from: $from)
@@ -66,6 +84,75 @@ export function useHelloLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Type
 export type HelloQueryHookResult = ReturnType<typeof useHelloQuery>;
 export type HelloLazyQueryHookResult = ReturnType<typeof useHelloLazyQuery>;
 export type HelloQueryResult = Apollo.QueryResult<Types.HelloQuery, Types.HelloQueryVariables>;
+export const JobDocument = /* #__PURE__ */ gql`
+    query Job($key: JobKey!) {
+  job(key: $key) {
+    ...JobFragment
+  }
+}
+    ${JobFragmentFragmentDoc}`;
+
+/**
+ * __useJobQuery__
+ *
+ * To run a query within a React component, call `useJobQuery` and pass it any options that fit your needs.
+ * When your component renders, `useJobQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useJobQuery({
+ *   variables: {
+ *      key: // value for 'key'
+ *   },
+ * });
+ */
+export function useJobQuery(baseOptions: Apollo.QueryHookOptions<Types.JobQuery, Types.JobQueryVariables>) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<Types.JobQuery, Types.JobQueryVariables>(JobDocument, options);
+}
+export function useJobLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Types.JobQuery, Types.JobQueryVariables>) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<Types.JobQuery, Types.JobQueryVariables>(JobDocument, options);
+}
+export type JobQueryHookResult = ReturnType<typeof useJobQuery>;
+export type JobLazyQueryHookResult = ReturnType<typeof useJobLazyQuery>;
+export type JobQueryResult = Apollo.QueryResult<Types.JobQuery, Types.JobQueryVariables>;
+export const JobsDocument = /* #__PURE__ */ gql`
+    query Jobs {
+  jobs {
+    ...JobFragment
+  }
+}
+    ${JobFragmentFragmentDoc}`;
+
+/**
+ * __useJobsQuery__
+ *
+ * To run a query within a React component, call `useJobsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useJobsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useJobsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useJobsQuery(baseOptions?: Apollo.QueryHookOptions<Types.JobsQuery, Types.JobsQueryVariables>) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<Types.JobsQuery, Types.JobsQueryVariables>(JobsDocument, options);
+}
+export function useJobsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Types.JobsQuery, Types.JobsQueryVariables>) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<Types.JobsQuery, Types.JobsQueryVariables>(JobsDocument, options);
+}
+export type JobsQueryHookResult = ReturnType<typeof useJobsQuery>;
+export type JobsLazyQueryHookResult = ReturnType<typeof useJobsLazyQuery>;
+export type JobsQueryResult = Apollo.QueryResult<Types.JobsQuery, Types.JobsQueryVariables>;
 export const MeDocument = /* #__PURE__ */ gql`
     query Me {
   me {

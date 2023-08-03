@@ -1,0 +1,5 @@
+query Job($key: JobKey!) {
+  job(key: $key) {
+    ...JobFragment
+  }
+}

@@ -13,9 +13,14 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
+    "mutation CancelJob($key: JobKey!) {\n  cancelJob(key: $key) {\n    ...JobFragment\n  }\n}": types.CancelJobDocument,
+    "mutation RunJob($key: JobKey!) {\n  runJob(key: $key) {\n    ...JobFragment\n  }\n}": types.RunJobDocument,
     "subscription Countdown($from: Int!) {\n  countdown(from: $from)\n}": types.CountdownDocument,
     "query Hello($name: String!) {\n  hello(name: $name)\n}": types.HelloDocument,
+    "query Job($key: JobKey!) {\n  job(key: $key) {\n    ...JobFragment\n  }\n}": types.JobDocument,
+    "query Jobs {\n  jobs {\n    ...JobFragment\n  }\n}": types.JobsDocument,
     "query Me {\n  me {\n    id\n    email\n    nameFirst\n    nameLast\n    roleKeys\n  }\n}": types.MeDocument,
+    "fragment RanJobFragment on RanJob {\n  id\n  canceledAt\n  failedAt\n  finishedAt\n  startedAt\n}\n\nfragment JobFragment on Job {\n  id\n  key\n  name\n  ranJob {\n    ...RanJobFragment\n  }\n}": types.RanJobFragmentFragmentDoc,
 };
 
 /**
@@ -35,6 +40,14 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
+export function graphql(source: "mutation CancelJob($key: JobKey!) {\n  cancelJob(key: $key) {\n    ...JobFragment\n  }\n}"): (typeof documents)["mutation CancelJob($key: JobKey!) {\n  cancelJob(key: $key) {\n    ...JobFragment\n  }\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "mutation RunJob($key: JobKey!) {\n  runJob(key: $key) {\n    ...JobFragment\n  }\n}"): (typeof documents)["mutation RunJob($key: JobKey!) {\n  runJob(key: $key) {\n    ...JobFragment\n  }\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
 export function graphql(source: "subscription Countdown($from: Int!) {\n  countdown(from: $from)\n}"): (typeof documents)["subscription Countdown($from: Int!) {\n  countdown(from: $from)\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
@@ -43,7 +56,19 @@ export function graphql(source: "query Hello($name: String!) {\n  hello(name: $n
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
+export function graphql(source: "query Job($key: JobKey!) {\n  job(key: $key) {\n    ...JobFragment\n  }\n}"): (typeof documents)["query Job($key: JobKey!) {\n  job(key: $key) {\n    ...JobFragment\n  }\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "query Jobs {\n  jobs {\n    ...JobFragment\n  }\n}"): (typeof documents)["query Jobs {\n  jobs {\n    ...JobFragment\n  }\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
 export function graphql(source: "query Me {\n  me {\n    id\n    email\n    nameFirst\n    nameLast\n    roleKeys\n  }\n}"): (typeof documents)["query Me {\n  me {\n    id\n    email\n    nameFirst\n    nameLast\n    roleKeys\n  }\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "fragment RanJobFragment on RanJob {\n  id\n  canceledAt\n  failedAt\n  finishedAt\n  startedAt\n}\n\nfragment JobFragment on Job {\n  id\n  key\n  name\n  ranJob {\n    ...RanJobFragment\n  }\n}"): (typeof documents)["fragment RanJobFragment on RanJob {\n  id\n  canceledAt\n  failedAt\n  finishedAt\n  startedAt\n}\n\nfragment JobFragment on Job {\n  id\n  key\n  name\n  ranJob {\n    ...RanJobFragment\n  }\n}"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

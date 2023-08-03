@@ -24,7 +24,9 @@ const config: CodegenConfig = {
         enumsAsTypes: false,
         namingConvention: 'change-case-all#pascalCase',
         nonOptionalTypename: false,
-        scalars: {},
+        scalars: {
+          Date: 'Date',
+        },
         skipTypename: true,
         strictScalars: true,
         useTypeImports: false,

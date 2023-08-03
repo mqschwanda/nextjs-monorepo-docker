@@ -80,7 +80,7 @@ async function seed() {
     data: {
       finishedAt: new Date(),
       jobId: job.id,
-      ranAt: new Date(),
+      startedAt: new Date(),
     },
   });
 }

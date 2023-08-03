@@ -17,7 +17,8 @@ model Job {
 
 model RanJob {
   id         Int       @id @default(autoincrement())
-  ranAt      DateTime
+  canceledAt DateTime?
+  startedAt  DateTime
   failedAt   DateTime?
   finishedAt DateTime?
   jobId      Int

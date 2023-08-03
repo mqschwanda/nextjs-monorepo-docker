@@ -1,0 +1,5 @@
+mutation CancelJob($key: JobKey!) {
+  cancelJob(key: $key) {
+    ...JobFragment
+  }
+}
