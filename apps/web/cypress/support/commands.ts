@@ -69,6 +69,8 @@ Cypress.Commands.add('aliasGraphQL', () => {
 });
 
 Cypress.Commands.add('assertSignedOutNavAuth', () => {
+  // cy.wait('@query Me');
+
   cy.get('#nav-auth-menu-auth')
     .should('exist');
 
@@ -77,6 +79,8 @@ Cypress.Commands.add('assertSignedOutNavAuth', () => {
 });
 
 Cypress.Commands.add('assertSignedInNavAuth', () => {
+  // cy.wait('@query Me');
+
   cy.get('#nav-auth-menu-auth')
     .should('not.exist');
 
@@ -144,8 +148,6 @@ Cypress.Commands.add('signInUser', ({
 
 Cypress.Commands.add('signOutUser', () => {
   cy.visit('/auth/sign-out');
-
-  cy.wait('@query Me');
 
   cy.assertSignedInNavAuth();
 

@@ -46,6 +46,35 @@ describe('@mqs/web', () => {
         cy.signOutUser();
       });
 
+      describe('jobs', () => {
+        it('should render the page for admin user', () => {
+          cy.signInAdminUser();
+
+          cy.visit('/admin/jobs');
+
+          cy.get('head title')
+            .contains('Jobs');
+
+          cy.screenshot();
+
+          cy.signOutUser();
+        });
+
+        it('should render the not found page for user', () => {
+          cy.signInUser();
+
+          // cy.visitAndAssertNotFoundPage('/admin/jobs');
+          cy.visit('/admin/jobs', {
+            failOnStatusCode: false,
+          });
+
+          cy.get('h1')
+            .contains('Page Not Found');
+
+          cy.signOutUser();
+        });
+      });
+
       describe('users', () => {
         it('should render the page for admin user', () => {
           cy.signInAdminUser();

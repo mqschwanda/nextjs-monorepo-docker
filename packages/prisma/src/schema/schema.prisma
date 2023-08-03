@@ -8,6 +8,22 @@ datasource db {
   url      = "postgresql://user:password@db:5432/postgres"
 }
 
+model Job {
+  id      Int      @id @default(autoincrement())
+  key     JobKey   @unique
+  name    String
+  ranJobs RanJob[]
+}
+
+model RanJob {
+  id         Int       @id @default(autoincrement())
+  ranAt      DateTime
+  failedAt   DateTime?
+  finishedAt DateTime?
+  jobId      Int
+  job        Job       @relation(fields: [jobId], references: [id], onDelete: Cascade)
+}
+
 model Role {
   id        Int        @id @default(autoincrement())
   key       RoleKey    @unique
@@ -53,4 +69,8 @@ model RefreshToken {
 
 enum RoleKey {
   Admin
+}
+
+enum JobKey {
+  InvalidateStaleTokens
 }

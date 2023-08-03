@@ -5,7 +5,7 @@ import {
   RoleKey,
   prisma,
 } from '../client';
-import { ADMIN_USER, USER } from './constants';
+import { ADMIN_USER, USER, JOBS } from './constants';
 
 type SeedUser = Omit<User, 'createdAt' | 'id'>;
 async function sanitizeUser(user: SeedUser) {
@@ -68,6 +68,19 @@ async function seed() {
       refreshTokenId: refreshToken.id,
       userId: user.id,
       value: 'not a valid token',
+    },
+  });
+
+  await prisma.job.createMany({
+    data: JOBS,
+  });
+  const job = await prisma.job.findFirstOrThrow();
+
+  await prisma.ranJob.create({
+    data: {
+      finishedAt: new Date(),
+      jobId: job.id,
+      ranAt: new Date(),
     },
   });
 }
