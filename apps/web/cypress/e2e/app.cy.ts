@@ -35,11 +35,13 @@ describe('@mqs/web', () => {
       it('should render the not found page for user', () => {
         cy.signInUser();
 
+        // cy.visitAndAssertNotFoundPage('/admin');
         cy.visit('/admin', {
           failOnStatusCode: false,
         });
 
-        cy.assertNotFoundPage();
+        cy.get('h1')
+          .contains('Page Not Found');
 
         cy.signOutUser();
       });
@@ -61,13 +63,43 @@ describe('@mqs/web', () => {
         it('should render the not found page for user', () => {
           cy.signInUser();
 
+          // cy.visitAndAssertNotFoundPage('/admin/users');
           cy.visit('/admin/users', {
             failOnStatusCode: false,
           });
 
-          cy.assertNotFoundPage();
+          cy.get('h1')
+            .contains('Page Not Found');
 
           cy.signOutUser();
+        });
+
+        describe('[userId]', () => {
+          it('should render the page for admin user', () => {
+            cy.signInAdminUser();
+
+            cy.visit('/admin/users/1');
+
+            cy.get('head title')
+              .contains('User Profile');
+
+            cy.screenshot();
+
+            cy.signOutUser();
+          });
+
+          it('should render the not found page for user', () => {
+            cy.signInUser();
+
+            cy.visit('/admin/users/1', {
+              failOnStatusCode: false,
+            });
+
+            cy.get('h1')
+              .contains('Page Not Found');
+
+            cy.signOutUser();
+          });
         });
       });
     });
@@ -255,11 +287,7 @@ describe('@mqs/web', () => {
 
     describe('not-found', () => {
       it('should render page', () => {
-        cy.visit('/not/a/path', {
-          failOnStatusCode: false,
-        });
-
-        cy.assertNotFoundPage();
+        cy.visitAndAssertNotFoundPage('/not/a/path');
       });
     });
   });

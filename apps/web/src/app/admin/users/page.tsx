@@ -65,6 +65,11 @@ export default async function Page() {
                 >
                   { 'Roles' }
                 </th>
+                <th
+                  className='w-[100px]'
+                >
+                  { 'Actions' }
+                </th>
               </tr>
             </thead>
             <Suspense

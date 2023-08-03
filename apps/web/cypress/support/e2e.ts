@@ -24,7 +24,8 @@ Cypress.on('uncaught:exception', (error) => {
 
   if (
     message
-    && NEXT_NON_ERRORS.some((key) => message.includes(key))) {
+    && NEXT_NON_ERRORS.some((key) => message.includes(key))
+  ) {
     return false;
   }
 

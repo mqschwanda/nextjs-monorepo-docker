@@ -45,7 +45,7 @@ declare global {
       aliasGraphQL(): Chainable<void>
       assertSignedInNavAuth(): Chainable<void>
       assertSignedOutNavAuth(): Chainable<void>
-      assertNotFoundPage(): Chainable<void>
+      visitAndAssertNotFoundPage(url: string): Chainable<void>
       signInAdminUser(options?: {
         screenshot?: boolean
       }): Chainable<void>
@@ -84,8 +84,12 @@ Cypress.Commands.add('assertSignedInNavAuth', () => {
     .should('exist');
 });
 
-Cypress.Commands.add('assertNotFoundPage', () => {
-  cy.get('h1').contains('Page Not Found');
+Cypress.Commands.add('visitAndAssertNotFoundPage', (url: string) => {
+  cy.request({ failOnStatusCode: false, url })
+    .its('status')
+    .should('equal', 404);
+
+  cy.visit(url, { failOnStatusCode: false });
 });
 
 Cypress.Commands.add('signInAdminUser', ({

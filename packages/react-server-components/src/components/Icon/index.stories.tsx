@@ -2,6 +2,7 @@ import type { Meta } from '@storybook/react';
 import { StoryObjReact } from '@mqs/storybook-utils';
 import {
   IconClose,
+  IconEye,
   IconInfo,
   IconType,
   Typography,
@@ -26,6 +27,7 @@ export const IconExample: IconStoryObj = {
   },
   render: (props) => [
     IconClose,
+    IconEye,
     IconInfo,
   ].map((Component) => (
     <>
