@@ -10,7 +10,7 @@ export default class Job {
 
   cronExpression: string | undefined = undefined;
 
-  runningJob: Promise<any> | undefined = undefined;
+  runningJob: { pid: number, ranJobId: number } | undefined = undefined;
 
   constructor(
     key: JobKey,
@@ -42,6 +42,11 @@ export default class Job {
     });
 
     try {
+      this.runningJob = {
+        pid: process.pid,
+        ranJobId: ranJob.id,
+      };
+
       await this.job();
 
       await prisma.ranJob.update({
@@ -61,12 +66,33 @@ export default class Job {
           id: ranJob.id,
         },
       });
+    } finally {
+      this.runningJob = undefined;
     }
   }
 
-  cancel() { // eslint-disable-line class-methods-use-this
-    // TODO: handle cancel job
-    console.log(this.runningJob);
+  async cancel() {
+    if (!this.runningJob) {
+      throw new Error(`no job runningJob for ${this.key}`);
+    }
+
+    const {
+      ranJobId,
+      pid,
+    } = this.runningJob;
+
+    await prisma.ranJob.update({
+      data: {
+        canceledAt: new Date(),
+      },
+      where: {
+        id: ranJobId,
+      },
+    });
+
+    this.runningJob = undefined;
+
+    process.kill(pid);
   }
 
   scheduleJob() {

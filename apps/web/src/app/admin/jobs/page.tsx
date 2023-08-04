@@ -66,7 +66,7 @@ export default async function Page() {
                   { 'Canceled At' }
                 </th>
                 <th
-                  className='w-[100px]'
+                  className='w-[200px] text-center'
                 >
                   { 'Actions' }
                 </th>

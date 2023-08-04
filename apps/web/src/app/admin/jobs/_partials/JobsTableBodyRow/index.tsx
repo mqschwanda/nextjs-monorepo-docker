@@ -1,10 +1,12 @@
 'use client';
 
-import { JobDocument, useJobQuery, useRunJobMutation } from '@mqs/graphql-client';
+import {
+  JobDocument, useCancelJobMutation, useJobQuery, useRunJobMutation,
+} from '@mqs/graphql-client';
 import { JobKey } from '@mqs/graphql-schema';
 import { Button } from '@mqs/react-server-components';
 import { useMemo } from 'react';
-import { TimeAgo } from '@mqs/react-client-components';
+import { Stack, TimeAgo } from '@mqs/react-client-components';
 import JobsTableBodyRowLoading from '../JobsTableBodyRowLoading';
 
 type JobsTableBodyRowProps = {
@@ -36,9 +38,23 @@ export default function JobsTableBodyRow({
     },
   });
 
-  const runJobButtonLoading = useMemo(
+  const [cancelJob, { loading: cancelJobLoading }] = useCancelJobMutation({
+    refetchQueries: [
+      {
+        query: JobDocument,
+        variables: {
+          key: jobKey,
+        },
+      },
+    ],
+    variables: {
+      key: jobKey,
+    },
+  });
+
+  const jobButtonLoading = useMemo(
     () => {
-      if (loading || !data || runJobLoading) {
+      if (loading || !data || runJobLoading || cancelJobLoading) {
         return true;
       }
 
@@ -59,6 +75,7 @@ export default function JobsTableBodyRow({
       data,
       loading,
       runJobLoading,
+      cancelJobLoading,
     ],
   );
 
@@ -132,12 +149,22 @@ export default function JobsTableBodyRow({
       <td
         className='text-ellipsis overflow-hidden'
       >
-        <Button
-          loading={runJobButtonLoading}
-          onClick={() => runJob()}
+        <Stack
+          direction='row'
         >
-          { 'Run' }
-        </Button>
+          <Button
+            loading={jobButtonLoading}
+            onClick={() => runJob()}
+          >
+            { 'Run' }
+          </Button>
+          <Button
+            loading={jobButtonLoading}
+            onClick={() => cancelJob()}
+          >
+            { 'Cancel' }
+          </Button>
+        </Stack>
       </td>
     </tr>
   );
