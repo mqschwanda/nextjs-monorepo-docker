@@ -1,5 +1,7 @@
 mutation RunJob($key: JobKey!) {
   runJob(key: $key) {
-    ...JobFragment
+    id
+    key
+    name
   }
 }

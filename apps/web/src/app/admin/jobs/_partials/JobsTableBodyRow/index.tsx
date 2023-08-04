@@ -1,11 +1,14 @@
 'use client';
 
 import {
-  JobDocument, useCancelJobMutation, useJobQuery, useRunJobMutation,
+  // JobDocument,
+  useCancelJobMutation,
+  useJobQuery,
+  useRunJobMutation,
 } from '@mqs/graphql-client';
 import { JobKey } from '@mqs/graphql-schema';
 import { Button } from '@mqs/react-server-components';
-import { useMemo } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { Stack, TimeAgo } from '@mqs/react-client-components';
 import JobsTableBodyRowLoading from '../JobsTableBodyRowLoading';
 
@@ -16,8 +19,21 @@ type JobsTableBodyRowProps = {
 export default function JobsTableBodyRow({
   jobKey,
 }: JobsTableBodyRowProps) {
+  const [showTimeAgo, setShowTimeAgo] = useState(true);
+
+  const onFinishJobQuery = useCallback(
+    () => {
+      setShowTimeAgo(true);
+    },
+    [
+
+    ],
+  );
+
   const { data, loading } = useJobQuery({
     fetchPolicy: 'network-only',
+    onCompleted: onFinishJobQuery,
+    onError: onFinishJobQuery,
     pollInterval: 5000,
     variables: {
       key: jobKey,
@@ -25,32 +41,52 @@ export default function JobsTableBodyRow({
   });
 
   const [runJob, { loading: runJobLoading }] = useRunJobMutation({
-    refetchQueries: [
-      {
-        query: JobDocument,
-        variables: {
-          key: jobKey,
-        },
-      },
-    ],
+    // refetchQueries: [
+    //   {
+    //     query: JobDocument,
+    //     variables: {
+    //       key: jobKey,
+    //     },
+    //   },
+    // ],
     variables: {
       key: jobKey,
     },
   });
 
-  const [cancelJob, { loading: cancelJobLoading }] = useCancelJobMutation({
-    refetchQueries: [
-      {
-        query: JobDocument,
-        variables: {
-          key: jobKey,
-        },
-      },
+  const handleRunJob = useCallback(
+    () => {
+      setShowTimeAgo(false);
+      runJob();
+    },
+    [
+      runJob,
     ],
+  );
+
+  const [cancelJob, { loading: cancelJobLoading }] = useCancelJobMutation({
+    // refetchQueries: [
+    //   {
+    //     query: JobDocument,
+    //     variables: {
+    //       key: jobKey,
+    //     },
+    //   },
+    // ],
     variables: {
       key: jobKey,
     },
   });
+
+  const handleCancelJob = useCallback(
+    () => {
+      setShowTimeAgo(false);
+      cancelJob();
+    },
+    [
+      cancelJob,
+    ],
+  );
 
   const jobButtonLoading = useMemo(
     () => {
@@ -97,7 +133,7 @@ export default function JobsTableBodyRow({
       <td
         className='text-ellipsis overflow-hidden text-center'
       >
-        { data?.job.ranJob ? (
+        { showTimeAgo && data?.job.ranJob ? (
           <TimeAgo
             date={new Date(data.job.ranJob.startedAt)}
           />
@@ -110,7 +146,7 @@ export default function JobsTableBodyRow({
       <td
         className='text-ellipsis overflow-hidden text-center'
       >
-        { data?.job.ranJob?.finishedAt ? (
+        { showTimeAgo && data?.job.ranJob?.finishedAt ? (
           <TimeAgo
             date={new Date(data.job.ranJob.finishedAt)}
           />
@@ -123,7 +159,7 @@ export default function JobsTableBodyRow({
       <td
         className='text-ellipsis overflow-hidden text-center'
       >
-        { data?.job.ranJob?.failedAt ? (
+        { showTimeAgo && data?.job.ranJob?.failedAt ? (
           <TimeAgo
             date={new Date(data.job.ranJob.failedAt)}
           />
@@ -136,7 +172,7 @@ export default function JobsTableBodyRow({
       <td
         className='text-ellipsis overflow-hidden text-center'
       >
-        { data?.job.ranJob?.canceledAt ? (
+        { showTimeAgo && data?.job.ranJob?.canceledAt ? (
           <TimeAgo
             date={new Date(data.job.ranJob.canceledAt)}
           />
@@ -154,13 +190,13 @@ export default function JobsTableBodyRow({
         >
           <Button
             loading={jobButtonLoading}
-            onClick={() => runJob()}
+            onClick={handleRunJob}
           >
             { 'Run' }
           </Button>
           <Button
             loading={jobButtonLoading}
-            onClick={() => cancelJob()}
+            onClick={handleCancelJob}
           >
             { 'Cancel' }
           </Button>

@@ -35,30 +35,16 @@ const resolvers: Resolvers = {
       } = args;
 
       const job = await prisma.job.findUniqueOrThrow({
-        select: {
-          id: true,
-          key: true,
-          name: true,
-          ranJobs: {
-            orderBy: {
-              startedAt: 'desc',
-            },
-            take: 1,
-          },
-        },
         where: {
           key,
         },
       });
-
-      const [ranJob] = job.ranJobs;
 
       jobs.cancel({ key });
 
       return {
         ...coercePrismaObjectForGraphQL(job),
         key: job.key as JobKey,
-        ranJob: ranJob ? coercePrismaObjectForGraphQL(ranJob) : undefined,
       };
     },
     runJob: async (_parent, args, context, _info) => {
@@ -81,30 +67,16 @@ const resolvers: Resolvers = {
       } = args;
 
       const job = await prisma.job.findUniqueOrThrow({
-        select: {
-          id: true,
-          key: true,
-          name: true,
-          ranJobs: {
-            orderBy: {
-              startedAt: 'desc',
-            },
-            take: 1,
-          },
-        },
         where: {
           key,
         },
       });
-
-      const [ranJob] = job.ranJobs;
 
       jobs.start({ key });
 
       return {
         ...coercePrismaObjectForGraphQL(job),
         key: job.key as JobKey,
-        ranJob: ranJob ? coercePrismaObjectForGraphQL(ranJob) : undefined,
       };
     },
   },

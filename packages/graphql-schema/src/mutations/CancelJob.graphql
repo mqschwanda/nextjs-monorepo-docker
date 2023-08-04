@@ -1,5 +1,7 @@
 mutation CancelJob($key: JobKey!) {
   cancelJob(key: $key) {
-    ...JobFragment
+    id
+    key
+    name
   }
 }

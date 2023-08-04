@@ -13,8 +13,8 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "mutation CancelJob($key: JobKey!) {\n  cancelJob(key: $key) {\n    ...JobFragment\n  }\n}": types.CancelJobDocument,
-    "mutation RunJob($key: JobKey!) {\n  runJob(key: $key) {\n    ...JobFragment\n  }\n}": types.RunJobDocument,
+    "mutation CancelJob($key: JobKey!) {\n  cancelJob(key: $key) {\n    id\n    key\n    name\n  }\n}": types.CancelJobDocument,
+    "mutation RunJob($key: JobKey!) {\n  runJob(key: $key) {\n    id\n    key\n    name\n  }\n}": types.RunJobDocument,
     "subscription Countdown($from: Int!) {\n  countdown(from: $from)\n}": types.CountdownDocument,
     "query Hello($name: String!) {\n  hello(name: $name)\n}": types.HelloDocument,
     "query Job($key: JobKey!) {\n  job(key: $key) {\n    ...JobFragment\n  }\n}": types.JobDocument,
@@ -40,11 +40,11 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "mutation CancelJob($key: JobKey!) {\n  cancelJob(key: $key) {\n    ...JobFragment\n  }\n}"): (typeof documents)["mutation CancelJob($key: JobKey!) {\n  cancelJob(key: $key) {\n    ...JobFragment\n  }\n}"];
+export function graphql(source: "mutation CancelJob($key: JobKey!) {\n  cancelJob(key: $key) {\n    id\n    key\n    name\n  }\n}"): (typeof documents)["mutation CancelJob($key: JobKey!) {\n  cancelJob(key: $key) {\n    id\n    key\n    name\n  }\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "mutation RunJob($key: JobKey!) {\n  runJob(key: $key) {\n    ...JobFragment\n  }\n}"): (typeof documents)["mutation RunJob($key: JobKey!) {\n  runJob(key: $key) {\n    ...JobFragment\n  }\n}"];
+export function graphql(source: "mutation RunJob($key: JobKey!) {\n  runJob(key: $key) {\n    id\n    key\n    name\n  }\n}"): (typeof documents)["mutation RunJob($key: JobKey!) {\n  runJob(key: $key) {\n    id\n    key\n    name\n  }\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
