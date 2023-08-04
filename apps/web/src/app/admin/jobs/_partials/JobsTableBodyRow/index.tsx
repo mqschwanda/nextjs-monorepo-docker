@@ -1,10 +1,10 @@
 'use client';
 
 import { JobDocument, useJobQuery, useRunJobMutation } from '@mqs/graphql-client';
-import { format } from 'date-fns';
 import { JobKey } from '@mqs/graphql-schema';
 import { Button } from '@mqs/react-server-components';
 import { useMemo } from 'react';
+import { TimeAgo } from '@mqs/react-client-components';
 import JobsTableBodyRowLoading from '../JobsTableBodyRowLoading';
 
 type JobsTableBodyRowProps = {
@@ -80,30 +80,54 @@ export default function JobsTableBodyRow({
       <td
         className='text-ellipsis overflow-hidden text-center'
       >
-        <span>
-          { data?.job.ranJob ? format(new Date(data.job.ranJob.startedAt), 'MM/dd/yyyy HH:mm:ss O') : '-' }
-        </span>
+        { data?.job.ranJob ? (
+          <TimeAgo
+            date={new Date(data.job.ranJob.startedAt)}
+          />
+        ) : (
+          <span>
+            { '-' }
+          </span>
+        ) }
       </td>
       <td
         className='text-ellipsis overflow-hidden text-center'
       >
-        <span>
-          { data?.job.ranJob?.finishedAt ? format(new Date(data.job.ranJob.finishedAt), 'MM/dd/yyyy HH:mm:ss O') : '-' }
-        </span>
+        { data?.job.ranJob?.finishedAt ? (
+          <TimeAgo
+            date={new Date(data.job.ranJob.finishedAt)}
+          />
+        ) : (
+          <span>
+            { '-' }
+          </span>
+        ) }
       </td>
       <td
         className='text-ellipsis overflow-hidden text-center'
       >
-        <span>
-          { data?.job.ranJob?.failedAt ? format(new Date(data.job.ranJob.failedAt), 'MM/dd/yyyy HH:mm:ss O') : '-' }
-        </span>
+        { data?.job.ranJob?.failedAt ? (
+          <TimeAgo
+            date={new Date(data.job.ranJob.failedAt)}
+          />
+        ) : (
+          <span>
+            { '-' }
+          </span>
+        ) }
       </td>
       <td
         className='text-ellipsis overflow-hidden text-center'
       >
-        <span>
-          { data?.job.ranJob?.canceledAt ? format(new Date(data.job.ranJob.canceledAt), 'MM/dd/yyyy HH:mm:ss O') : '-' }
-        </span>
+        { data?.job.ranJob?.canceledAt ? (
+          <TimeAgo
+            date={new Date(data.job.ranJob.canceledAt)}
+          />
+        ) : (
+          <span>
+            { '-' }
+          </span>
+        ) }
       </td>
       <td
         className='text-ellipsis overflow-hidden'

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-client-components components <TimeAgo /> renders 1`] = `
+<DocumentFragment>
+  <span
+    data-testid="TimeAgo"
+  >
+    just now
+  </span>
+</DocumentFragment>
+`;
