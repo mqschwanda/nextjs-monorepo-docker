@@ -1,8 +1,21 @@
+import child_process from 'child_process';
 import { JobKey, Resolvers, RoleKey } from '@mqs/graphql-schema';
 import cookie from 'cookie';
 import { Tokens } from '@mqs/tokens';
 import { prisma } from '@mqs/prisma/client';
 import DateScalar from './scalars/Date';
+
+function argvStringFromObject(argv: Record<string, any>) {
+  return Object
+    .keys(argv)
+    .reduce(
+      (previousValue, currentValue) => [
+        ...previousValue,
+        `--${currentValue}=${argv[currentValue]}`,
+      ],
+      [] as Array<string>,
+    );
+}
 
 function coercePrismaObjectForGraphQL<Obj extends Record<string, any> & { id: number }>(obj: Obj) {
   return {
@@ -50,16 +63,12 @@ const resolvers: Resolvers = {
         },
       });
 
-      // TODO: handle cancel job
+      const [ranJob] = job.ranJobs;
 
-      const ranJob = await prisma.ranJob.update({
-        data: {
-          canceledAt: new Date(),
-        },
-        where: {
-          id: job.ranJobs[0].id,
-        },
-      });
+      child_process.fork(
+        require.resolve('@mqs/jobs/cli/cancel'),
+        argvStringFromObject({ key }),
+      );
 
       return {
         ...coercePrismaObjectForGraphQL(job),
@@ -87,19 +96,28 @@ const resolvers: Resolvers = {
       } = args;
 
       const job = await prisma.job.findUniqueOrThrow({
+        select: {
+          id: true,
+          key: true,
+          name: true,
+          ranJobs: {
+            orderBy: {
+              startedAt: 'desc',
+            },
+            take: 1,
+          },
+        },
         where: {
           key,
         },
       });
 
-      // TODO: handle start job
+      const [ranJob] = job.ranJobs;
 
-      const ranJob = await prisma.ranJob.create({
-        data: {
-          jobId: job.id,
-          startedAt: new Date(),
-        },
-      });
+      child_process.fork(
+        require.resolve('@mqs/jobs/cli/run'),
+        argvStringFromObject({ key }),
+      );
 
       return {
         ...coercePrismaObjectForGraphQL(job),
@@ -154,7 +172,7 @@ const resolvers: Resolvers = {
         ranJob: coercePrismaObjectForGraphQL(ranJob),
       });
     },
-    jobs: async (_parent, args, context, _info) => {
+    jobs: async (_parent, _args, context, _info) => {
       const cookies = context.request.headers.get('cookie');
 
       if (!cookies) {

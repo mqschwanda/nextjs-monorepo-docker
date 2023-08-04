@@ -1,49 +1,14 @@
-import { Button, SkeletonSpan } from '@mqs/react-server-components';
+import JobsTableBodyRowLoading from '../JobsTableBodyRowLoading';
 
 const rows = Array.from({ length: 50 }, (_, i) => i + 1);
 
-export default function UsersTableLoading() {
+export default function JobsTableBodyLoading() {
   return (
     <tbody>
       { rows.map((row) => (
-        <tr
+        <JobsTableBodyRowLoading
           key={row}
-        >
-          <td>
-            <SkeletonSpan
-              cx={[
-                'w-full',
-              ]}
-            />
-          </td>
-          <td>
-            <SkeletonSpan
-              cx={[
-                'w-full',
-              ]}
-            />
-          </td>
-          <td>
-            <SkeletonSpan
-              cx={[
-                'w-full',
-              ]}
-            />
-          </td>
-          <td>
-            <SkeletonSpan
-              cx={[
-                'w-full',
-              ]}
-            />
-          </td>
-          <td>
-            <Button
-              loading
-              variantShape='circle'
-            />
-          </td>
-        </tr>
+        />
       )) }
     </tbody>
   );

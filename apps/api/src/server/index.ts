@@ -3,16 +3,16 @@ import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import createGraphqlServer from '@mqs/graphql-server';
+import * as jobs from '@mqs/jobs';
 import healthz from './routes/healthz'; // cspell:disable-line
 import healthDb from './routes/healthz-db'; // cspell:disable-line
-import * as jobs from './jobs';
 
 export default function createServer() {
   const graphqlServer = createGraphqlServer();
 
   const app = express();
 
-  jobs.schedule();
+  jobs.scheduleJobs();
 
   app
     .disable('x-powered-by')

@@ -23,6 +23,8 @@ services:
     container_name: db
     image: postgres
     restart: always
+    ports:
+      - 5432:5432
     networks:
       - app_network
 

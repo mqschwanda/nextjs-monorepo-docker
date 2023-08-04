@@ -1,13 +1,28 @@
 {
-  "name": "@mqs/graphql-server",
+  "name": "@mqs/jobs",
   "version": "0.0.0",
-  "license": "MIT",
+  "private": true,
   "main": "./dist/index.js",
   "source": "./src/index.ts",
   "types": "./dist/index.d.ts",
   "files": [
     "dist/**"
   ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./cli/cancel": "./dist/cli/cancel.js",
+    "./cli/run": "./dist/cli/run.js"
+  },
+  "typesVersions": {
+    "*": {
+      "cli/cancel": [
+        "./dist/cli/cancel.d.ts"
+      ],
+      "cli/run": [
+        "./dist/cli/run.d.ts"
+      ]
+    }
+  },
   "scripts": {
     "build": "mqs-tsc --project tsconfig.build.json",
     "clean": "rm -rf dist",
@@ -16,29 +31,24 @@
     "lint:fix": "yarn lint --fix",
     "test": "jest"
   },
+  "bin": {
+    "mqs-jobs-cancel": "./dist/cli/cancel.js",
+    "mqs-jobs-run": "./dist/cli/run.js"
+  },
   "devDependencies": {
-    "@apollo/client": "^3.7.17",
-    "@graphql-tools/executor-graphql-ws": "^1.1.0",
-    "@graphql-tools/executor-http": "^1.0.2",
     "@mqs/eslint-config": "*",
     "@mqs/jest-preset": "*",
+    "@mqs/prisma": "*",
     "@mqs/tsc": "*",
     "@mqs/tsconfig": "*",
-    "@types/cookie": "^0.5.1",
-    "eslint": "^8.46.0",
+    "@types/node-cron": "^3.0.8",
+    "@types/yargs": "^17.0.24",
     "jest": "^29.6.2",
-    "react": "^18.2.0",
     "typescript": "^5.1.6"
   },
-  "peerDependencies": {
-    "@mqs/jobs": "*"
-  },
   "dependencies": {
-    "@mqs/graphql-schema": "*",
-    "@mqs/prisma": "*",
     "@mqs/tokens": "*",
-    "cookie": "^0.5.0",
-    "graphql": "^16.7.1",
-    "graphql-yoga": "^4.0.3"
+    "node-cron": "^3.0.2",
+    "yargs": "^17.7.2"
   }
 }

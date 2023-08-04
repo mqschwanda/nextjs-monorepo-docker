@@ -46,19 +46,24 @@ export default async function Page() {
                   { 'Name' }
                 </th>
                 <th
-                  className='w-[200px]'
+                  className='w-[200px] text-center'
                 >
-                  { 'Ran At' }
+                  { 'Started At' }
                 </th>
                 <th
-                  className='w-[200px]'
+                  className='w-[200px] text-center'
                 >
                   { 'Finished At' }
                 </th>
                 <th
-                  className='w-[200px]'
+                  className='w-[200px] text-center'
                 >
                   { 'Failed At' }
+                </th>
+                <th
+                  className='w-[200px] text-center'
+                >
+                  { 'Canceled At' }
                 </th>
                 <th
                   className='w-[100px]'

@@ -23,6 +23,72 @@ export const JobFragmentFragmentDoc = /* #__PURE__ */ gql`
   }
 }
     ${RanJobFragmentFragmentDoc}`;
+export const CancelJobDocument = /* #__PURE__ */ gql`
+    mutation CancelJob($key: JobKey!) {
+  cancelJob(key: $key) {
+    ...JobFragment
+  }
+}
+    ${JobFragmentFragmentDoc}`;
+export type CancelJobMutationFn = Apollo.MutationFunction<Types.CancelJobMutation, Types.CancelJobMutationVariables>;
+
+/**
+ * __useCancelJobMutation__
+ *
+ * To run a mutation, you first call `useCancelJobMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCancelJobMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [cancelJobMutation, { data, loading, error }] = useCancelJobMutation({
+ *   variables: {
+ *      key: // value for 'key'
+ *   },
+ * });
+ */
+export function useCancelJobMutation(baseOptions?: Apollo.MutationHookOptions<Types.CancelJobMutation, Types.CancelJobMutationVariables>) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<Types.CancelJobMutation, Types.CancelJobMutationVariables>(CancelJobDocument, options);
+}
+export type CancelJobMutationHookResult = ReturnType<typeof useCancelJobMutation>;
+export type CancelJobMutationResult = Apollo.MutationResult<Types.CancelJobMutation>;
+export type CancelJobMutationOptions = Apollo.BaseMutationOptions<Types.CancelJobMutation, Types.CancelJobMutationVariables>;
+export const RunJobDocument = /* #__PURE__ */ gql`
+    mutation RunJob($key: JobKey!) {
+  runJob(key: $key) {
+    ...JobFragment
+  }
+}
+    ${JobFragmentFragmentDoc}`;
+export type RunJobMutationFn = Apollo.MutationFunction<Types.RunJobMutation, Types.RunJobMutationVariables>;
+
+/**
+ * __useRunJobMutation__
+ *
+ * To run a mutation, you first call `useRunJobMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useRunJobMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [runJobMutation, { data, loading, error }] = useRunJobMutation({
+ *   variables: {
+ *      key: // value for 'key'
+ *   },
+ * });
+ */
+export function useRunJobMutation(baseOptions?: Apollo.MutationHookOptions<Types.RunJobMutation, Types.RunJobMutationVariables>) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<Types.RunJobMutation, Types.RunJobMutationVariables>(RunJobDocument, options);
+}
+export type RunJobMutationHookResult = ReturnType<typeof useRunJobMutation>;
+export type RunJobMutationResult = Apollo.MutationResult<Types.RunJobMutation>;
+export type RunJobMutationOptions = Apollo.BaseMutationOptions<Types.RunJobMutation, Types.RunJobMutationVariables>;
 export const CountdownDocument = /* #__PURE__ */ gql`
     subscription Countdown($from: Int!) {
   countdown(from: $from)

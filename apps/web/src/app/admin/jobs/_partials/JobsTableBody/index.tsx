@@ -1,64 +1,27 @@
-'use client';
+import prisma from '@mqs/prisma/client';
+import { JobKey } from '@mqs/graphql-schema';
+import JobsTableBodyRow from '../JobsTableBodyRow';
 
-import { useJobsQuery } from '@mqs/graphql-client';
-import { format } from 'date-fns';
-import JobsTableBodyLoading from '../JobsTableBodyLoading';
+async function getJobs() {
+  const jobs = await prisma.job.findMany({
+    select: {
+      key: true,
+    },
+  });
 
-export default function JobsTableBody() {
-  const { data, loading } = useJobsQuery();
+  return jobs;
+}
 
-  if (loading) {
-    return (
-      <JobsTableBodyLoading />
-    );
-  }
+export default async function JobsTableBody() {
+  const jobs = await getJobs();
 
   return (
     <tbody>
-      { data?.jobs.map(({
-        name,
-        id,
-        ranJob,
-      }) => (
-        <tr
-          key={id}
-        >
-          <td
-            className='text-ellipsis overflow-hidden'
-          >
-            <span>
-              { name }
-            </span>
-          </td>
-          <td
-            className='text-ellipsis overflow-hidden'
-          >
-            <span>
-              { ranJob ? format(new Date(ranJob.startedAt), 'MM/dd/yyyy HH:mm:ss O') : null }
-            </span>
-          </td>
-          <td
-            className='text-ellipsis overflow-hidden'
-          >
-            <span>
-              { ranJob?.finishedAt ? format(new Date(ranJob.finishedAt), 'MM/dd/yyyy HH:mm:ss O') : null }
-            </span>
-          </td>
-          <td
-            className='text-ellipsis overflow-hidden'
-          >
-            <span>
-              { ranJob?.failedAt ? format(new Date(ranJob.failedAt), 'MM/dd/yyyy HH:mm:ss O') : null }
-            </span>
-          </td>
-          <td
-            className='text-ellipsis overflow-hidden'
-          >
-            <span>
-              { '-' }
-            </span>
-          </td>
-        </tr>
+      { jobs.map(({ key }) => (
+        <JobsTableBodyRow
+          jobKey={key as JobKey}
+          key={key}
+        />
       )) }
     </tbody>
   );
