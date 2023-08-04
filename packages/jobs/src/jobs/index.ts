@@ -8,14 +8,14 @@ export function scheduleJobs() {
   Object
     .values(jobs)
     .forEach((job) => {
-      job.scheduleJob();
+      job.schedule();
     });
 }
 
-export function stopScheduledJobs() {
+export function unscheduleJobs() {
   Object
     .values(jobs)
     .forEach((job) => {
-      job.stopScheduledJob();
+      job.unschedule();
     });
 }

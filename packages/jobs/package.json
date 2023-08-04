@@ -11,15 +11,15 @@
   "exports": {
     ".": "./dist/index.js",
     "./cli/cancel": "./dist/cli/cancel.js",
-    "./cli/run": "./dist/cli/run.js"
+    "./cli/start": "./dist/cli/start.js"
   },
   "typesVersions": {
     "*": {
       "cli/cancel": [
         "./dist/cli/cancel.d.ts"
       ],
-      "cli/run": [
-        "./dist/cli/run.d.ts"
+      "cli/start": [
+        "./dist/cli/start.d.ts"
       ]
     }
   },
@@ -33,7 +33,7 @@
   },
   "bin": {
     "mqs-jobs-cancel": "./dist/cli/cancel.js",
-    "mqs-jobs-run": "./dist/cli/run.js"
+    "mqs-jobs-start": "./dist/cli/start.js"
   },
   "devDependencies": {
     "@mqs/eslint-config": "*",

@@ -1,21 +1,9 @@
-import child_process from 'child_process';
 import { JobKey, Resolvers, RoleKey } from '@mqs/graphql-schema';
 import cookie from 'cookie';
 import { Tokens } from '@mqs/tokens';
 import { prisma } from '@mqs/prisma/client';
+import * as jobs from '@mqs/jobs';
 import DateScalar from './scalars/Date';
-
-function argvStringFromObject(argv: Record<string, any>) {
-  return Object
-    .keys(argv)
-    .reduce(
-      (previousValue, currentValue) => [
-        ...previousValue,
-        `--${currentValue}=${argv[currentValue]}`,
-      ],
-      [] as Array<string>,
-    );
-}
 
 function coercePrismaObjectForGraphQL<Obj extends Record<string, any> & { id: number }>(obj: Obj) {
   return {
@@ -65,10 +53,7 @@ const resolvers: Resolvers = {
 
       const [ranJob] = job.ranJobs;
 
-      child_process.fork(
-        require.resolve('@mqs/jobs/cli/cancel'),
-        argvStringFromObject({ key }),
-      );
+      jobs.cancel({ key });
 
       return {
         ...coercePrismaObjectForGraphQL(job),
@@ -114,10 +99,7 @@ const resolvers: Resolvers = {
 
       const [ranJob] = job.ranJobs;
 
-      child_process.fork(
-        require.resolve('@mqs/jobs/cli/run'),
-        argvStringFromObject({ key }),
-      );
+      jobs.start({ key });
 
       return {
         ...coercePrismaObjectForGraphQL(job),

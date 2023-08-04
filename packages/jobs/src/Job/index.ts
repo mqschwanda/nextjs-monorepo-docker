@@ -73,7 +73,7 @@ export default class Job {
 
   async cancel() {
     if (!this.runningJob) {
-      throw new Error(`no job runningJob for ${this.key}`);
+      throw new Error(`no job running for ${this.key}`);
     }
 
     const {
@@ -95,7 +95,7 @@ export default class Job {
     process.kill(pid);
   }
 
-  scheduleJob() {
+  schedule() {
     if (!this.cronExpression) {
       throw new Error('no chron to schedule');
     }
@@ -106,7 +106,7 @@ export default class Job {
     );
   }
 
-  stopScheduledJob() {
+  unschedule() {
     if (this.scheduledTask) {
       this.scheduledTask.stop();
     }
