@@ -4,153 +4,106 @@ import { Tokens } from '@mqs/tokens';
 import { prisma } from '@mqs/prisma/client';
 import * as mqsJobs from '@mqs/jobs';
 import DateScalar from './scalars/Date';
+import { authenticate } from './middleware';
 
 const resolvers: Resolvers = {
   Date: DateScalar,
   Mutation: {
-    cancelJob: async (_parent, args, context, _info) => {
-      const cookies = context.request.headers.get('cookie');
-
-      if (!cookies) {
-        throw new Error('an unexpected error occurred');
-      }
-
-      const { access } = cookie.parse(cookies);
-
-      if (!access) {
-        throw new Error('an unexpected error occurred');
-      }
-
-      await Tokens.verifyAccessToken(access);
-
-      const {
-        key,
-      } = args;
-
-      const job = await prisma.job.findFirstOrThrow({
-        orderBy: {
-          startedAt: 'desc',
-        },
-        where: {
+    cancelJob: authenticate(
+      async (_parent, args, _context, _info) => {
+        const {
           key,
-        },
-      });
+        } = args;
 
-      mqsJobs.cancel({ key });
+        const job = await prisma.job.findFirstOrThrow({
+          orderBy: {
+            startedAt: 'desc',
+          },
+          where: {
+            key,
+          },
+        });
 
-      const { name } = mqsJobs.jobs[key];
+        mqsJobs.cancel({ key });
 
-      return {
-        name,
-        ...job,
-      };
-    },
-    runJob: async (_parent, args, context, _info) => {
-      const cookies = context.request.headers.get('cookie');
-
-      if (!cookies) {
-        throw new Error('an unexpected error occurred');
-      }
-
-      const { access } = cookie.parse(cookies);
-
-      if (!access) {
-        throw new Error('an unexpected error occurred');
-      }
-
-      await Tokens.verifyAccessToken(access);
-
-      const {
-        key,
-      } = args;
-
-      const job = await prisma.job.findFirstOrThrow({
-        orderBy: {
-          startedAt: 'desc',
-        },
-        where: {
-          key,
-        },
-      });
-
-      mqsJobs.start({ key });
-
-      const { name } = mqsJobs.jobs[key];
-
-      return {
-        name,
-        ...job,
-      };
-    },
-  },
-  Query: {
-    hello: (_parent, args, _context, _info) => `Hello ${args.name}`,
-    job: async (_parent, args, context, _info) => {
-      const cookies = context.request.headers.get('cookie');
-
-      if (!cookies) {
-        throw new Error('an unexpected error occurred');
-      }
-
-      const { access } = cookie.parse(cookies);
-
-      if (!access) {
-        throw new Error('an unexpected error occurred');
-      }
-
-      await Tokens.verifyAccessToken(access);
-
-      const {
-        key,
-      } = args;
-
-      const job = await prisma.job.findFirstOrThrow({
-        orderBy: {
-          startedAt: 'desc',
-        },
-        take: 1,
-        where: {
-          key,
-        },
-      });
-
-      const { name } = mqsJobs.jobs[key];
-
-      return {
-        name,
-        ...job,
-      };
-    },
-    jobs: async (_parent, _args, context, _info) => {
-      const cookies = context.request.headers.get('cookie');
-
-      if (!cookies) {
-        throw new Error('an unexpected error occurred');
-      }
-
-      const { access } = cookie.parse(cookies);
-
-      if (!access) {
-        throw new Error('an unexpected error occurred');
-      }
-
-      await Tokens.verifyAccessToken(access);
-
-      const jobs = await prisma.job.findMany({
-        orderBy: {
-          startedAt: 'desc',
-        },
-      });
-
-      return jobs.map((job) => {
-        const { name } = mqsJobs.jobs[job.key];
+        const { name } = mqsJobs.jobs[key];
 
         return {
           name,
           ...job,
         };
-      });
-    },
+      },
+    ),
+    runJob: authenticate(
+      async (_parent, args, _context, _info) => {
+        const {
+          key,
+        } = args;
+
+        const job = await prisma.job.findFirstOrThrow({
+          orderBy: {
+            startedAt: 'desc',
+          },
+          where: {
+            key,
+          },
+        });
+
+        mqsJobs.start({ key });
+
+        const { name } = mqsJobs.jobs[key];
+
+        return {
+          name,
+          ...job,
+        };
+      },
+    ),
+  },
+  Query: {
+    hello: (_parent, args, _context, _info) => `Hello ${args.name}`,
+    job: authenticate(
+      async (_parent, args, _context, _info) => {
+        const {
+          key,
+        } = args;
+
+        const job = await prisma.job.findFirstOrThrow({
+          orderBy: {
+            startedAt: 'desc',
+          },
+          take: 1,
+          where: {
+            key,
+          },
+        });
+
+        const { name } = mqsJobs.jobs[key];
+
+        return {
+          name,
+          ...job,
+        };
+      },
+    ),
+    jobs: authenticate(
+      async (_parent, _args, _context, _info) => {
+        const jobs = await prisma.job.findMany({
+          orderBy: {
+            startedAt: 'desc',
+          },
+        });
+
+        return jobs.map((job) => {
+          const { name } = mqsJobs.jobs[job.key];
+
+          return {
+            name,
+            ...job,
+          };
+        });
+      },
+    ),
     me: async (_parent, _args, context, _info) => {
       const cookies = context.request.headers.get('cookie');
 
