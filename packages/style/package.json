@@ -11,7 +11,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "tsup",
+    "build": "yarn clean && tsup",
+    "clean": "rm -rfv dist || true",
     "dev": "tsup --watch",
     "check-types": "tsc --noEmit"
   },

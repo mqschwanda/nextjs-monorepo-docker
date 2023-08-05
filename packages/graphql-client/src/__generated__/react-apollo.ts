@@ -26,10 +26,12 @@ export const JobFragmentFragmentDoc = /* #__PURE__ */ gql`
 export const CancelJobDocument = /* #__PURE__ */ gql`
     mutation CancelJob($key: JobKey!) {
   cancelJob(key: $key) {
-    ...JobFragment
+    id
+    key
+    name
   }
 }
-    ${JobFragmentFragmentDoc}`;
+    `;
 export type CancelJobMutationFn = Apollo.MutationFunction<Types.CancelJobMutation, Types.CancelJobMutationVariables>;
 
 /**
@@ -59,10 +61,12 @@ export type CancelJobMutationOptions = Apollo.BaseMutationOptions<Types.CancelJo
 export const RunJobDocument = /* #__PURE__ */ gql`
     mutation RunJob($key: JobKey!) {
   runJob(key: $key) {
-    ...JobFragment
+    id
+    key
+    name
   }
 }
-    ${JobFragmentFragmentDoc}`;
+    `;
 export type RunJobMutationFn = Apollo.MutationFunction<Types.RunJobMutation, Types.RunJobMutationVariables>;
 
 /**

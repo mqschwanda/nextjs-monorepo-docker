@@ -6,8 +6,8 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.build.json && tsc-alias --project tsconfig.build.json",
-    "clean": "rm -rf dist",
+    "build": "yarn clean && tsc --project tsconfig.build.json && tsc-alias --project tsconfig.build.json",
+    "clean": "rm -rfv dist || true",
     "dev": "tsc && (concurrently \"tsc -w --project tsconfig.build.json\" \"tsc-alias -w --project tsconfig.build.json\")",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix"

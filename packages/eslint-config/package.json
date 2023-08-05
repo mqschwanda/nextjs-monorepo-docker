@@ -28,8 +28,8 @@
     "dist/**"
   ],
   "scripts": {
-    "build": "tsc --project tsconfig.build.json",
-    "clean": "rm -rf dist",
+    "build": "yarn clean && tsc --project tsconfig.build.json",
+    "clean": "rm -rfv dist || true",
     "dev": "tsc -w --project tsconfig.build.json",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix"

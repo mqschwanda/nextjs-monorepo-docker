@@ -31,8 +31,8 @@
     "seed": "node ./dist/seed/index.js"
   },
   "scripts": {
-    "build": "yarn generate:schema && mqs-tsc --project tsconfig.build.json",
-    "clean": "rm -rf dist",
+    "build": "yarn clean && yarn generate:schema && mqs-tsc --project tsconfig.build.json",
+    "clean": "rm -rfv dist || true",
     "dev": "mqs-tsc-watch --project tsconfig.build.json",
     "generate:schema": "prisma generate --schema ./src/schema/schema.prisma",
     "lint": "eslint .",

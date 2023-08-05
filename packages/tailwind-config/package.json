@@ -4,8 +4,8 @@
   "private": true,
   "main": "./dist/index.js",
   "scripts": {
-    "build": "mqs-tsc --project tsconfig.build.json",
-    "clean": "rm -rf dist",
+    "build": "yarn clean && mqs-tsc --project tsconfig.build.json",
+    "clean": "rm -rfv dist || true",
     "dev": "mqs-tsc-watch --project tsconfig.build.json",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix"

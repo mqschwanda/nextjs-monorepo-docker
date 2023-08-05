@@ -22,10 +22,12 @@
   "scripts": {
     "codegen": "graphql-codegen",
     "codegen:watch": "yarn codegen --watch",
-    "build": "yarn codegen && yarn build-tsc",
+    "build": "yarn clean && yarn codegen && yarn build-tsc",
     "build-tsc": "mqs-tsc --project tsconfig.build.json",
     "build-tsc:watch": "mqs-tsc-watch --project tsconfig.build.json",
-    "clean": "rm -rf dist",
+    "clean": "yarn clean-dist && yarn clean-generated",
+    "clean-dist": "rm -rfv dist || true",
+    "clean-generated": "rm -rfv ./**/__generated__/* || true",
     "dev": "yarn build && concurrently \"yarn codegen:watch\" \"yarn build-tsc:watch\"",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix"

@@ -4,8 +4,8 @@
   "license": "MIT",
   "homepage": "http://mqschwanda.github.io/next-monorepo-docker",
   "scripts": {
-    "build": "yarn storybook:build",
-    "clean": "rm -rf dist",
+    "build": "yarn clean && yarn storybook:build",
+    "clean": "rm -rfv storybook-static || true",
     "deploy": "yarn storybook:deploy",
     "dev": "yarn storybook:dev",
     "lint": "eslint .",
