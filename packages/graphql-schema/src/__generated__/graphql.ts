@@ -9,7 +9,7 @@ export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> =
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: { input: string; output: string; }
+  ID: { input: string; output: string | number; }
   String: { input: string; output: string; }
   Boolean: { input: boolean; output: boolean; }
   Int: { input: number; output: number; }
@@ -92,14 +92,14 @@ export type CancelJobMutationVariables = Exact<{
 }>;
 
 
-export type CancelJobMutation = { cancelJob: { id: string, key: JobKey, name: string } };
+export type CancelJobMutation = { cancelJob: { id: string | number, key: JobKey, name: string } };
 
 export type RunJobMutationVariables = Exact<{
   key: JobKey;
 }>;
 
 
-export type RunJobMutation = { runJob: { id: string, key: JobKey, name: string } };
+export type RunJobMutation = { runJob: { id: string | number, key: JobKey, name: string } };
 
 export type CountdownSubscriptionVariables = Exact<{
   from: Scalars['Int']['input'];
@@ -120,21 +120,21 @@ export type JobQueryVariables = Exact<{
 }>;
 
 
-export type JobQuery = { job: { id: string, key: JobKey, name: string, ranJob?: { id: string, canceledAt?: Date | null, failedAt?: Date | null, finishedAt?: Date | null, startedAt: Date } | null } };
+export type JobQuery = { job: { id: string | number, key: JobKey, name: string, ranJob?: { id: string | number, canceledAt?: Date | null, failedAt?: Date | null, finishedAt?: Date | null, startedAt: Date } | null } };
 
 export type JobsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type JobsQuery = { jobs: Array<{ id: string, key: JobKey, name: string, ranJob?: { id: string, canceledAt?: Date | null, failedAt?: Date | null, finishedAt?: Date | null, startedAt: Date } | null }> };
+export type JobsQuery = { jobs: Array<{ id: string | number, key: JobKey, name: string, ranJob?: { id: string | number, canceledAt?: Date | null, failedAt?: Date | null, finishedAt?: Date | null, startedAt: Date } | null }> };
 
 export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type MeQuery = { me?: { id: string, email: string, nameFirst: string, nameLast: string, roleKeys: Array<RoleKey> } | null };
+export type MeQuery = { me?: { id: string | number, email: string, nameFirst: string, nameLast: string, roleKeys: Array<RoleKey> } | null };
 
-export type RanJobFragmentFragment = { id: string, canceledAt?: Date | null, failedAt?: Date | null, finishedAt?: Date | null, startedAt: Date };
+export type RanJobFragmentFragment = { id: string | number, canceledAt?: Date | null, failedAt?: Date | null, finishedAt?: Date | null, startedAt: Date };
 
-export type JobFragmentFragment = { id: string, key: JobKey, name: string, ranJob?: { id: string, canceledAt?: Date | null, failedAt?: Date | null, finishedAt?: Date | null, startedAt: Date } | null };
+export type JobFragmentFragment = { id: string | number, key: JobKey, name: string, ranJob?: { id: string | number, canceledAt?: Date | null, failedAt?: Date | null, finishedAt?: Date | null, startedAt: Date } | null };
 
 export const RanJobFragmentFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"RanJobFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RanJob"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"canceledAt"}},{"kind":"Field","name":{"kind":"Name","value":"failedAt"}},{"kind":"Field","name":{"kind":"Name","value":"finishedAt"}},{"kind":"Field","name":{"kind":"Name","value":"startedAt"}}]}}]} as unknown as DocumentNode<RanJobFragmentFragment, unknown>;
 export const JobFragmentFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"JobFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Job"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"key"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"ranJob"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"RanJobFragment"}}]}}]}},{"kind":"FragmentDefinition","name":{"kind":"Name","value":"RanJobFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"RanJob"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"canceledAt"}},{"kind":"Field","name":{"kind":"Name","value":"failedAt"}},{"kind":"Field","name":{"kind":"Name","value":"finishedAt"}},{"kind":"Field","name":{"kind":"Name","value":"startedAt"}}]}}]} as unknown as DocumentNode<JobFragmentFragment, unknown>;

@@ -5,13 +5,6 @@ import { prisma } from '@mqs/prisma/client';
 import * as mqsJobs from '@mqs/jobs';
 import DateScalar from './scalars/Date';
 
-function coercePrismaObjectForGraphQL<Obj extends Record<string, any> & { id: number }>(obj: Obj) {
-  return {
-    ...obj,
-    id: String(obj.id),
-  };
-}
-
 const resolvers: Resolvers = {
   Date: DateScalar,
   Mutation: {
@@ -42,10 +35,7 @@ const resolvers: Resolvers = {
 
       mqsJobs.cancel({ key });
 
-      return {
-        ...coercePrismaObjectForGraphQL(job),
-        key: job.key,
-      };
+      return job;
     },
     runJob: async (_parent, args, context, _info) => {
       const cookies = context.request.headers.get('cookie');
@@ -74,10 +64,7 @@ const resolvers: Resolvers = {
 
       mqsJobs.start({ key });
 
-      return {
-        ...coercePrismaObjectForGraphQL(job),
-        key: job.key,
-      };
+      return job;
     },
   },
   Query: {
@@ -120,11 +107,10 @@ const resolvers: Resolvers = {
 
       const [ranJob] = job.ranJobs;
 
-      return coercePrismaObjectForGraphQL({
+      return {
         ...job,
-        key: job.key,
-        ranJob: coercePrismaObjectForGraphQL(ranJob),
-      });
+        ranJob,
+      };
     },
     jobs: async (_parent, _args, context, _info) => {
       const cookies = context.request.headers.get('cookie');
@@ -158,11 +144,10 @@ const resolvers: Resolvers = {
       return jobs.map((job) => {
         const [ranJob] = job.ranJobs;
 
-        return coercePrismaObjectForGraphQL({
+        return {
           ...job,
-          key: job.key,
-          ranJob: coercePrismaObjectForGraphQL(ranJob),
-        });
+          ranJob,
+        };
       });
     },
     me: async (_parent, _args, context, _info) => {
@@ -185,7 +170,7 @@ const resolvers: Resolvers = {
         roleKeys: accessToken.user.roles.map((({ role }) => role.key)),
       };
 
-      return coercePrismaObjectForGraphQL(user);
+      return user;
     },
   },
   Subscription: {

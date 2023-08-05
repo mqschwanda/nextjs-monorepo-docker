@@ -33,6 +33,10 @@ const config: CodegenConfig = {
         nonOptionalTypename: false,
         scalars: {
           Date: 'Date',
+          ID: {
+            input: 'string',
+            output: 'string | number',
+          },
         },
         skipTypename: true,
         strictScalars: true,
