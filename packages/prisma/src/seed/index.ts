@@ -4,8 +4,9 @@ import {
   Role,
   RoleKey,
   prisma,
+  JobKey,
 } from '../client';
-import { ADMIN_USER, USER, JOBS } from './constants';
+import { ADMIN_USER, USER } from './constants';
 
 type SeedUser = Omit<User, 'createdAt' | 'id'>;
 async function sanitizeUser(user: SeedUser) {
@@ -72,16 +73,11 @@ async function seed() {
   });
 
   await prisma.job.createMany({
-    data: JOBS,
-  });
-  const job = await prisma.job.findFirstOrThrow();
-
-  await prisma.ranJob.create({
-    data: {
-      finishedAt: new Date(),
-      jobId: job.id,
+    data: Object.values(JobKey).map((job) => ({
+      failedAt: new Date(),
+      key: job,
       startedAt: new Date(),
-    },
+    })),
   });
 }
 

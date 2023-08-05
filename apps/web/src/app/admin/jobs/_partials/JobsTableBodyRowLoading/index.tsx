@@ -1,3 +1,4 @@
+import { Stack } from '@mqs/react-client-components';
 import { Button, SkeletonSpan } from '@mqs/react-server-components';
 
 export default function JobsTableBodyRowLoading() {
@@ -39,10 +40,18 @@ export default function JobsTableBodyRowLoading() {
         />
       </td>
       <td>
-        <Button
-          loading
-          variantShape='circle'
-        />
+        <Stack
+          alignItems='center'
+          direction='row'
+          justifyContent='center'
+        >
+          <Button
+            loading
+          />
+          <Button
+            loading
+          />
+        </Stack>
       </td>
     </tr>
   );

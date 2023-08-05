@@ -1,4 +1,4 @@
-import { RoleKey } from '@mqs/graphql-schema/__generated__/graphql';
+import { RoleKey } from '@prisma/client';
 
 export const AUTH_ITEMS = [
   {

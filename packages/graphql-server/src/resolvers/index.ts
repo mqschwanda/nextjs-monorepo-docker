@@ -27,7 +27,10 @@ const resolvers: Resolvers = {
         key,
       } = args;
 
-      const job = await prisma.job.findUniqueOrThrow({
+      const job = await prisma.job.findFirstOrThrow({
+        orderBy: {
+          startedAt: 'desc',
+        },
         where: {
           key,
         },
@@ -35,7 +38,12 @@ const resolvers: Resolvers = {
 
       mqsJobs.cancel({ key });
 
-      return job;
+      const { name } = mqsJobs.jobs[key];
+
+      return {
+        name,
+        ...job,
+      };
     },
     runJob: async (_parent, args, context, _info) => {
       const cookies = context.request.headers.get('cookie');
@@ -56,7 +64,10 @@ const resolvers: Resolvers = {
         key,
       } = args;
 
-      const job = await prisma.job.findUniqueOrThrow({
+      const job = await prisma.job.findFirstOrThrow({
+        orderBy: {
+          startedAt: 'desc',
+        },
         where: {
           key,
         },
@@ -64,7 +75,12 @@ const resolvers: Resolvers = {
 
       mqsJobs.start({ key });
 
-      return job;
+      const { name } = mqsJobs.jobs[key];
+
+      return {
+        name,
+        ...job,
+      };
     },
   },
   Query: {
@@ -88,28 +104,21 @@ const resolvers: Resolvers = {
         key,
       } = args;
 
-      const job = await prisma.job.findUniqueOrThrow({
-        select: {
-          id: true,
-          key: true,
-          name: true,
-          ranJobs: {
-            orderBy: {
-              startedAt: 'desc',
-            },
-            take: 1,
-          },
+      const job = await prisma.job.findFirstOrThrow({
+        orderBy: {
+          startedAt: 'desc',
         },
+        take: 1,
         where: {
           key,
         },
       });
 
-      const [ranJob] = job.ranJobs;
+      const { name } = mqsJobs.jobs[key];
 
       return {
+        name,
         ...job,
-        ranJob,
       };
     },
     jobs: async (_parent, _args, context, _info) => {
@@ -128,25 +137,17 @@ const resolvers: Resolvers = {
       await Tokens.verifyAccessToken(access);
 
       const jobs = await prisma.job.findMany({
-        select: {
-          id: true,
-          key: true,
-          name: true,
-          ranJobs: {
-            orderBy: {
-              startedAt: 'desc',
-            },
-            take: 1,
-          },
+        orderBy: {
+          startedAt: 'desc',
         },
       });
 
       return jobs.map((job) => {
-        const [ranJob] = job.ranJobs;
+        const { name } = mqsJobs.jobs[job.key];
 
         return {
+          name,
           ...job,
-          ranJob,
         };
       });
     },

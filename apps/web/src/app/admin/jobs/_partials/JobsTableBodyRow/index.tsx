@@ -90,16 +90,26 @@ export default function JobsTableBodyRow({
 
   const jobButtonLoading = useMemo(
     () => {
-      if (loading || !data || runJobLoading || cancelJobLoading) {
+      if (
+        !data
+        || loading
+        || runJobLoading
+        || cancelJobLoading
+      ) {
         return true;
       }
 
-      const { ranJob } = data.job;
+      const {
+        canceledAt,
+        failedAt,
+        finishedAt,
+        startedAt,
+      } = data.job;
       if (
-        ranJob?.startedAt && !(
-          ranJob?.canceledAt
-          || ranJob?.finishedAt
-          || ranJob?.failedAt
+        startedAt && !(
+          canceledAt
+          || finishedAt
+          || failedAt
         )
       ) {
         return true;
@@ -133,9 +143,9 @@ export default function JobsTableBodyRow({
       <td
         className='text-ellipsis overflow-hidden text-center'
       >
-        { showTimeAgo && data?.job.ranJob ? (
+        { showTimeAgo && data?.job ? (
           <TimeAgo
-            date={new Date(data.job.ranJob.startedAt)}
+            date={new Date(data.job.startedAt)}
           />
         ) : (
           <span>
@@ -146,9 +156,9 @@ export default function JobsTableBodyRow({
       <td
         className='text-ellipsis overflow-hidden text-center'
       >
-        { showTimeAgo && data?.job.ranJob?.finishedAt ? (
+        { showTimeAgo && data?.job?.finishedAt ? (
           <TimeAgo
-            date={new Date(data.job.ranJob.finishedAt)}
+            date={new Date(data.job.finishedAt)}
           />
         ) : (
           <span>
@@ -159,9 +169,9 @@ export default function JobsTableBodyRow({
       <td
         className='text-ellipsis overflow-hidden text-center'
       >
-        { showTimeAgo && data?.job.ranJob?.failedAt ? (
+        { showTimeAgo && data?.job?.failedAt ? (
           <TimeAgo
-            date={new Date(data.job.ranJob.failedAt)}
+            date={new Date(data.job.failedAt)}
           />
         ) : (
           <span>
@@ -172,9 +182,9 @@ export default function JobsTableBodyRow({
       <td
         className='text-ellipsis overflow-hidden text-center'
       >
-        { showTimeAgo && data?.job.ranJob?.canceledAt ? (
+        { showTimeAgo && data?.job?.canceledAt ? (
           <TimeAgo
-            date={new Date(data.job.ranJob.canceledAt)}
+            date={new Date(data.job.canceledAt)}
           />
         ) : (
           <span>
@@ -186,7 +196,9 @@ export default function JobsTableBodyRow({
         className='text-ellipsis overflow-hidden'
       >
         <Stack
+          alignItems='center'
           direction='row'
+          justifyContent='center'
         >
           <Button
             loading={jobButtonLoading}

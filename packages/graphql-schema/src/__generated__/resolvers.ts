@@ -80,7 +80,6 @@ export type ResolversTypes = {
   JobKey: ResolverTypeWrapper<JobKey>;
   Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
-  RanJob: ResolverTypeWrapper<Types.RanJob>;
   RoleKey: ResolverTypeWrapper<RoleKey>;
   String: ResolverTypeWrapper<Types.Scalars['String']['output']>;
   Subscription: ResolverTypeWrapper<{}>;
@@ -96,7 +95,6 @@ export type ResolversParentTypes = {
   Job: Types.Job;
   Mutation: {};
   Query: {};
-  RanJob: Types.RanJob;
   String: Types.Scalars['String']['output'];
   Subscription: {};
   User: User;
@@ -107,10 +105,13 @@ export interface DateScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes
 }
 
 export type JobResolvers<ContextType = any, ParentType extends ResolversParentTypes['Job'] = ResolversParentTypes['Job']> = {
+  canceledAt?: Resolver<Types.Maybe<ResolversTypes['Date']>, ParentType, ContextType>;
+  failedAt?: Resolver<Types.Maybe<ResolversTypes['Date']>, ParentType, ContextType>;
+  finishedAt?: Resolver<Types.Maybe<ResolversTypes['Date']>, ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   key?: Resolver<ResolversTypes['JobKey'], ParentType, ContextType>;
   name?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  ranJob?: Resolver<Types.Maybe<ResolversTypes['RanJob']>, ParentType, ContextType>;
+  startedAt?: Resolver<ResolversTypes['Date'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
@@ -126,15 +127,6 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
   job?: Resolver<ResolversTypes['Job'], ParentType, ContextType, RequireFields<Types.QueryJobArgs, 'key'>>;
   jobs?: Resolver<Array<ResolversTypes['Job']>, ParentType, ContextType>;
   me?: Resolver<Types.Maybe<ResolversTypes['User']>, ParentType, ContextType>;
-};
-
-export type RanJobResolvers<ContextType = any, ParentType extends ResolversParentTypes['RanJob'] = ResolversParentTypes['RanJob']> = {
-  canceledAt?: Resolver<Types.Maybe<ResolversTypes['Date']>, ParentType, ContextType>;
-  failedAt?: Resolver<Types.Maybe<ResolversTypes['Date']>, ParentType, ContextType>;
-  finishedAt?: Resolver<Types.Maybe<ResolversTypes['Date']>, ParentType, ContextType>;
-  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
-  startedAt?: Resolver<ResolversTypes['Date'], ParentType, ContextType>;
-  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type RoleKeyResolvers = EnumResolverSignature<{ Admin?: any }, ResolversTypes['RoleKey']>;
@@ -158,7 +150,6 @@ export type Resolvers<ContextType = any> = {
   JobKey?: JobKeyResolvers;
   Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
-  RanJob?: RanJobResolvers<ContextType>;
   RoleKey?: RoleKeyResolvers;
   Subscription?: SubscriptionResolvers<ContextType>;
   User?: UserResolvers<ContextType>;

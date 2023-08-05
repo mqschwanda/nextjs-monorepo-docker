@@ -1,4 +1,4 @@
-import { RoleKey } from '@mqs/prisma/client';
+import { RoleKey } from '@prisma/client';
 import { Tokens } from '@mqs/tokens';
 import { cookies, headers } from 'next/headers';
 import { notFound, redirect } from 'next/navigation';

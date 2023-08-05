@@ -1,5 +1,3 @@
-import { JobKey } from '@prisma/client';
-
 export const ADMIN_USER = {
   email: 'admin@email.com',
   nameFirst: 'Admin',
@@ -12,10 +10,3 @@ export const USER = {
   nameLast: 'Smith',
   password: 'password',
 } as const;
-
-export const JOBS = [
-  {
-    key: JobKey.InvalidateStaleTokens,
-    name: 'Invalidate stale tokens',
-  },
-];

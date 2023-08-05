@@ -4,25 +4,17 @@ import { gql } from '@apollo/client';
 import * as Apollo from '@apollo/client';
 
 const defaultOptions = {} as const;
-export const RanJobFragmentFragmentDoc = /* #__PURE__ */ gql`
-    fragment RanJobFragment on RanJob {
+export const JobFragmentFragmentDoc = /* #__PURE__ */ gql`
+    fragment JobFragment on Job {
   id
+  key
+  name
   canceledAt
   failedAt
   finishedAt
   startedAt
 }
     `;
-export const JobFragmentFragmentDoc = /* #__PURE__ */ gql`
-    fragment JobFragment on Job {
-  id
-  key
-  name
-  ranJob {
-    ...RanJobFragment
-  }
-}
-    ${RanJobFragmentFragmentDoc}`;
 export const CancelJobDocument = /* #__PURE__ */ gql`
     mutation CancelJob($key: JobKey!) {
   cancelJob(key: $key) {

@@ -4724,6 +4724,7 @@ __metadata:
     "@mqs/tokens": "*"
     "@mqs/tsconfig": "*"
     "@mqs/zod": "*"
+    "@prisma/client": ^5.0.0
     "@types/date-fns": ^2.6.0
     "@types/jsonwebtoken": ^9.0.2
     "@types/node": ^20.4.5

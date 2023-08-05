@@ -20,7 +20,7 @@ const documents = {
     "query Job($key: JobKey!) {\n  job(key: $key) {\n    ...JobFragment\n  }\n}": types.JobDocument,
     "query Jobs {\n  jobs {\n    ...JobFragment\n  }\n}": types.JobsDocument,
     "query Me {\n  me {\n    id\n    email\n    nameFirst\n    nameLast\n    roleKeys\n  }\n}": types.MeDocument,
-    "fragment RanJobFragment on RanJob {\n  id\n  canceledAt\n  failedAt\n  finishedAt\n  startedAt\n}\n\nfragment JobFragment on Job {\n  id\n  key\n  name\n  ranJob {\n    ...RanJobFragment\n  }\n}": types.RanJobFragmentFragmentDoc,
+    "fragment JobFragment on Job {\n  id\n  key\n  name\n  canceledAt\n  failedAt\n  finishedAt\n  startedAt\n}": types.JobFragmentFragmentDoc,
 };
 
 /**
@@ -68,7 +68,7 @@ export function graphql(source: "query Me {\n  me {\n    id\n    email\n    name
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "fragment RanJobFragment on RanJob {\n  id\n  canceledAt\n  failedAt\n  finishedAt\n  startedAt\n}\n\nfragment JobFragment on Job {\n  id\n  key\n  name\n  ranJob {\n    ...RanJobFragment\n  }\n}"): (typeof documents)["fragment RanJobFragment on RanJob {\n  id\n  canceledAt\n  failedAt\n  finishedAt\n  startedAt\n}\n\nfragment JobFragment on Job {\n  id\n  key\n  name\n  ranJob {\n    ...RanJobFragment\n  }\n}"];
+export function graphql(source: "fragment JobFragment on Job {\n  id\n  key\n  name\n  canceledAt\n  failedAt\n  finishedAt\n  startedAt\n}"): (typeof documents)["fragment JobFragment on Job {\n  id\n  key\n  name\n  canceledAt\n  failedAt\n  finishedAt\n  startedAt\n}"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

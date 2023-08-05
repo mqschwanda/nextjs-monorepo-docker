@@ -1,12 +1,10 @@
-import { RoleKey } from '@mqs/prisma/client';
+import { JobKey, RoleKey } from '@mqs/prisma/client';
 import {
   Card,
   Container,
 } from '@mqs/react-server-components';
-import { Suspense } from 'react';
 import authenticate from 'utilities/authenticate';
-import JobsTableBodyLoading from './_partials/JobsTableBodyLoading';
-import JobsTableBody from './_partials/JobsTableBody';
+import JobsTableBodyRow from './_partials/JobsTableBodyRow';
 
 export const metadata = {
   title: 'Jobs',
@@ -72,11 +70,12 @@ export default async function Page() {
                 </th>
               </tr>
             </thead>
-            <Suspense
-              fallback={<JobsTableBodyLoading />}
-            >
-              <JobsTableBody />
-            </Suspense>
+            { Object.values(JobKey).map((key) => (
+              <JobsTableBodyRow
+                jobKey={key}
+                key={key}
+              />
+            )) }
           </table>
         </div>
       </Card>

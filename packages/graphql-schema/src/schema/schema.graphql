@@ -25,16 +25,11 @@ type User {
 
 type Job {
   id: ID!
-  key: JobKey!
-  name: String!
-  ranJob: RanJob
-}
-
-type RanJob {
-  id: ID!
   canceledAt: Date
   failedAt: Date
   finishedAt: Date
+  key: JobKey!
+  name: String!
   startedAt: Date!
 }
 
@@ -48,19 +43,12 @@ enum JobKey {
   InvalidateStaleTokens
 }
 
-fragment RanJobFragment on RanJob {
-  id
-  canceledAt
-  failedAt
-  finishedAt
-  startedAt
-}
-
 fragment JobFragment on Job {
   id
   key
   name
-  ranJob {
-    ...RanJobFragment
-  }
+  canceledAt
+  failedAt
+  finishedAt
+  startedAt
 }

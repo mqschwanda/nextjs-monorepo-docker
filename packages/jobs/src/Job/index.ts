@@ -1,8 +1,10 @@
-import { JobKey, prisma } from '@mqs/prisma/client';
+import { JobKey, Job as PrismaJob, prisma } from '@mqs/prisma/client';
 import cron, { ScheduledTask } from 'node-cron';
 
 export default class Job {
-  key: JobKey;
+  public key: JobKey;
+
+  public name: string;
 
   job: () => Promise<any>;
 
@@ -10,87 +12,78 @@ export default class Job {
 
   cronExpression: string | undefined = undefined;
 
-  runningJob: { pid: number, ranJobId: number } | undefined = undefined;
+  process: { pid: number, job: PrismaJob } | undefined = undefined;
 
   constructor(
     key: JobKey,
+    name: string,
     job: () => Promise<any>,
     cronExpression?: string,
   ) {
     this.key = key;
+    this.name = name;
     this.job = job;
     this.cronExpression = cronExpression;
   }
 
   async run() {
-    const {
-      id: jobId,
-    } = await prisma.job.findUniqueOrThrow({
-      select: {
-        id: true,
-      },
-      where: {
-        key: this.key,
-      },
-    });
-
-    const ranJob = await prisma.ranJob.create({
+    const job = await prisma.job.create({
       data: {
-        jobId,
+        key: this.key,
         startedAt: new Date(),
       },
     });
 
     try {
-      this.runningJob = {
+      this.process = {
+        job,
         pid: process.pid,
-        ranJobId: ranJob.id,
       };
 
       await this.job();
 
-      await prisma.ranJob.update({
+      await prisma.job.update({
         data: {
           finishedAt: new Date(),
         },
         where: {
-          id: ranJob.id,
+          id: job.id,
         },
       });
     } catch (error) {
-      await prisma.ranJob.update({
+      await prisma.job.update({
         data: {
           failedAt: new Date(),
         },
         where: {
-          id: ranJob.id,
+          id: job.id,
         },
       });
     } finally {
-      this.runningJob = undefined;
+      this.process = undefined;
     }
   }
 
   async cancel() {
-    if (!this.runningJob) {
+    if (!this.process) {
       throw new Error(`no job running for ${this.key}`);
     }
 
     const {
-      ranJobId,
+      job,
       pid,
-    } = this.runningJob;
+    } = this.process;
 
-    await prisma.ranJob.update({
+    await prisma.job.update({
       data: {
         canceledAt: new Date(),
       },
       where: {
-        id: ranJobId,
+        id: job.id,
       },
     });
 
-    this.runningJob = undefined;
+    this.process = undefined;
 
     process.kill(pid);
   }

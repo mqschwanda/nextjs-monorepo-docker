@@ -9,20 +9,12 @@ datasource db {
 }
 
 model Job {
-  id      Int      @id @default(autoincrement())
-  key     JobKey   @unique
-  name    String
-  ranJobs RanJob[]
-}
-
-model RanJob {
-  id         Int       @id @default(autoincrement())
+  id         Int      @id @default(autoincrement())
+  key        JobKey
   canceledAt DateTime?
-  startedAt  DateTime
   failedAt   DateTime?
   finishedAt DateTime?
-  jobId      Int
-  job        Job       @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  startedAt  DateTime
 }
 
 model Role {
