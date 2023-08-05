@@ -2,7 +2,7 @@ import { JobKey, Resolvers, RoleKey } from '@mqs/graphql-schema';
 import cookie from 'cookie';
 import { Tokens } from '@mqs/tokens';
 import { prisma } from '@mqs/prisma/client';
-import * as jobs from '@mqs/jobs';
+import * as mqsJobs from '@mqs/jobs';
 import DateScalar from './scalars/Date';
 
 function coercePrismaObjectForGraphQL<Obj extends Record<string, any> & { id: number }>(obj: Obj) {
@@ -40,7 +40,7 @@ const resolvers: Resolvers = {
         },
       });
 
-      jobs.cancel({ key });
+      mqsJobs.cancel({ key });
 
       return {
         ...coercePrismaObjectForGraphQL(job),
@@ -72,7 +72,7 @@ const resolvers: Resolvers = {
         },
       });
 
-      jobs.start({ key });
+      mqsJobs.start({ key });
 
       return {
         ...coercePrismaObjectForGraphQL(job),
