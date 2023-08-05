@@ -1,5 +1,4 @@
 import prisma from '@mqs/prisma/client';
-import { JobKey } from '@mqs/graphql-schema';
 import JobsTableBodyRow from '../JobsTableBodyRow';
 
 async function getJobs() {
@@ -19,7 +18,7 @@ export default async function JobsTableBody() {
     <tbody>
       { jobs.map(({ key }) => (
         <JobsTableBodyRow
-          jobKey={key as JobKey}
+          jobKey={key}
           key={key}
         />
       )) }

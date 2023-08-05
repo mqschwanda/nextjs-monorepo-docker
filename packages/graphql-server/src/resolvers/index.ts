@@ -1,4 +1,4 @@
-import { JobKey, Resolvers, RoleKey } from '@mqs/graphql-schema';
+import { Resolvers } from '@mqs/graphql-schema';
 import cookie from 'cookie';
 import { Tokens } from '@mqs/tokens';
 import { prisma } from '@mqs/prisma/client';
@@ -44,7 +44,7 @@ const resolvers: Resolvers = {
 
       return {
         ...coercePrismaObjectForGraphQL(job),
-        key: job.key as JobKey,
+        key: job.key,
       };
     },
     runJob: async (_parent, args, context, _info) => {
@@ -76,7 +76,7 @@ const resolvers: Resolvers = {
 
       return {
         ...coercePrismaObjectForGraphQL(job),
-        key: job.key as JobKey,
+        key: job.key,
       };
     },
   },
@@ -122,7 +122,7 @@ const resolvers: Resolvers = {
 
       return coercePrismaObjectForGraphQL({
         ...job,
-        key: job.key as JobKey,
+        key: job.key,
         ranJob: coercePrismaObjectForGraphQL(ranJob),
       });
     },
@@ -160,7 +160,7 @@ const resolvers: Resolvers = {
 
         return coercePrismaObjectForGraphQL({
           ...job,
-          key: job.key as JobKey,
+          key: job.key,
           ranJob: coercePrismaObjectForGraphQL(ranJob),
         });
       });
@@ -182,7 +182,7 @@ const resolvers: Resolvers = {
 
       const user = {
         ...accessToken.user,
-        roleKeys: accessToken.user.roles.map((({ role }) => role.key as RoleKey)),
+        roleKeys: accessToken.user.roles.map((({ role }) => role.key)),
       };
 
       return coercePrismaObjectForGraphQL(user);

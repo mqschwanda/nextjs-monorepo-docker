@@ -10,6 +10,12 @@ import {
 export const srcDir = 'src';
 export const typesPath = './graphql';
 
+const mappers = {
+  JobKey: '@mqs/prisma/client#JobKey',
+  RoleKey: '@mqs/prisma/client#RoleKey',
+  User: '@mqs/prisma/client#User',
+};
+
 const config: CodegenConfig = {
   documents: [
     path.join(srcDir, documentsGlob),
@@ -21,7 +27,8 @@ const config: CodegenConfig = {
         avoidOptionals: false,
         dedupeFragments: true,
         defaultScalarType: 'any',
-        enumsAsTypes: false,
+        enumsAsTypes: true,
+        mappers,
         namingConvention: 'change-case-all#pascalCase',
         nonOptionalTypename: false,
         scalars: {
@@ -42,6 +49,7 @@ const config: CodegenConfig = {
     },
     [path.join(srcDir, generatedDir, 'resolvers.ts')]: {
       config: {
+        mappers,
         reactApolloVersion,
       },
       plugins: [

@@ -1,6 +1,9 @@
 import { GraphQLResolveInfo, GraphQLScalarType, GraphQLScalarTypeConfig } from 'graphql';
+import { JobKey, RoleKey, User } from '@mqs/prisma/client';
 import * as Types from './graphql';
 
+export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+export type EnumResolverSignature<T, AllowedValues = any> = { [key in keyof T]?: AllowedValues };
 export type RequireFields<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
 
 export type ResolverTypeWrapper<T> = Promise<T> | T;
@@ -73,15 +76,15 @@ export type ResolversTypes = {
   Date: ResolverTypeWrapper<Types.Scalars['Date']['output']>;
   ID: ResolverTypeWrapper<Types.Scalars['ID']['output']>;
   Int: ResolverTypeWrapper<Types.Scalars['Int']['output']>;
-  Job: ResolverTypeWrapper<Types.Job>;
-  JobKey: Types.JobKey;
+  Job: ResolverTypeWrapper<Omit<Types.Job, 'key'> & { key: ResolversTypes['JobKey'] }>;
+  JobKey: ResolverTypeWrapper<JobKey>;
   Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
   RanJob: ResolverTypeWrapper<Types.RanJob>;
-  RoleKey: Types.RoleKey;
+  RoleKey: ResolverTypeWrapper<RoleKey>;
   String: ResolverTypeWrapper<Types.Scalars['String']['output']>;
   Subscription: ResolverTypeWrapper<{}>;
-  User: ResolverTypeWrapper<Types.User>;
+  User: ResolverTypeWrapper<User>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
@@ -96,7 +99,7 @@ export type ResolversParentTypes = {
   RanJob: Types.RanJob;
   String: Types.Scalars['String']['output'];
   Subscription: {};
-  User: Types.User;
+  User: User;
 };
 
 export interface DateScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['Date'], any> {
@@ -110,6 +113,8 @@ export type JobResolvers<ContextType = any, ParentType extends ResolversParentTy
   ranJob?: Resolver<Types.Maybe<ResolversTypes['RanJob']>, ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
+
+export type JobKeyResolvers = EnumResolverSignature<{ InvalidateStaleTokens?: any }, ResolversTypes['JobKey']>;
 
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
   cancelJob?: Resolver<ResolversTypes['Job'], ParentType, ContextType, RequireFields<Types.MutationCancelJobArgs, 'key'>>;
@@ -132,6 +137,8 @@ export type RanJobResolvers<ContextType = any, ParentType extends ResolversParen
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
+export type RoleKeyResolvers = EnumResolverSignature<{ Admin?: any }, ResolversTypes['RoleKey']>;
+
 export type SubscriptionResolvers<ContextType = any, ParentType extends ResolversParentTypes['Subscription'] = ResolversParentTypes['Subscription']> = {
   countdown?: SubscriptionResolver<ResolversTypes['Int'], 'countdown', ParentType, ContextType, RequireFields<Types.SubscriptionCountdownArgs, 'from'>>;
 };
@@ -148,9 +155,11 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
 export type Resolvers<ContextType = any> = {
   Date?: GraphQLScalarType;
   Job?: JobResolvers<ContextType>;
+  JobKey?: JobKeyResolvers;
   Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   RanJob?: RanJobResolvers<ContextType>;
+  RoleKey?: RoleKeyResolvers;
   Subscription?: SubscriptionResolvers<ContextType>;
   User?: UserResolvers<ContextType>;
 };

@@ -61,6 +61,7 @@
     "@graphql-codegen/typescript-resolvers": "^4.0.1",
     "@graphql-eslint/eslint-plugin": "^3.20.1",
     "@mqs/eslint-config": "*",
+    "@mqs/prisma": "*",
     "@mqs/tsc": "*",
     "@mqs/tsconfig": "*",
     "concurrently": "^8.2.0",

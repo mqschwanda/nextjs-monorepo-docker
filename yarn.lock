@@ -4373,6 +4373,7 @@ __metadata:
     "@graphql-codegen/typescript-resolvers": ^4.0.1
     "@graphql-eslint/eslint-plugin": ^3.20.1
     "@mqs/eslint-config": "*"
+    "@mqs/prisma": "*"
     "@mqs/tsc": "*"
     "@mqs/tsconfig": "*"
     concurrently: ^8.2.0
@@ -4450,7 +4451,7 @@ __metadata:
     yargs: ^17.7.2
   bin:
     mqs-jobs-cancel: ./dist/cli/cancel.js
-    mqs-jobs-run: ./dist/cli/run.js
+    mqs-jobs-start: ./dist/cli/start.js
   languageName: unknown
   linkType: soft
 

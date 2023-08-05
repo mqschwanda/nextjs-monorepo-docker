@@ -24,9 +24,8 @@ export type Job = {
   ranJob?: Maybe<RanJob>;
 };
 
-export enum JobKey {
-  InvalidateStaleTokens = 'InvalidateStaleTokens'
-}
+export type JobKey =
+  | 'InvalidateStaleTokens';
 
 export type Mutation = {
   cancelJob: Job;
@@ -68,9 +67,8 @@ export type RanJob = {
   startedAt: Scalars['Date']['output'];
 };
 
-export enum RoleKey {
-  Admin = 'Admin'
-}
+export type RoleKey =
+  | 'Admin';
 
 export type Subscription = {
   countdown: Scalars['Int']['output'];

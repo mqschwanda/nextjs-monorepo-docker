@@ -3,6 +3,7 @@
 /* eslint-disable no-console */
 import yargs from 'yargs/yargs';
 import { jobs } from '../jobs';
+import stringIsJobKey from '@/stringIsJobKey';
 
 console.log('mqs-jobs-run started');
 
@@ -19,11 +20,8 @@ console.log('mqs-jobs-run started');
     })
     .parseSync();
 
-  if (
-    key
-    && Object.keys(jobs).includes(key)
-  ) {
-    const job = jobs[key as keyof typeof jobs];
+  if (stringIsJobKey(key)) {
+    const job = jobs[key];
 
     if (!job) {
       throw new Error(`job not found for ${key}`);
