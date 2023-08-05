@@ -2,15 +2,12 @@ import { Resolver } from '@mqs/graphql-schema';
 import cookie from 'cookie';
 import { Tokens } from '@mqs/tokens';
 import { GraphQLResolveInfo } from 'graphql';
-import { User } from '@mqs/prisma/client';
+import { ContextType } from 'context';
 
 async function authenticateResolver<
   TResult extends any,
-  TParent extends any,
-  TContext extends {
-    [key: string]: any,
-    user: User
-  },
+  TParent extends {},
+  TContext extends ContextType,
   TArgs extends {},
   >(
   resolver: Resolver<TResult, TParent, TContext, TArgs>,
@@ -44,11 +41,8 @@ async function authenticateResolver<
 
 export const authenticate = <
   TResult extends any,
-  TParent extends any,
-  TContext extends {
-    [key: string]: any,
-    user: User
-  },
+  TParent extends {},
+  TContext extends ContextType,
   TArgs extends {},
 >(
     resolver: Resolver<TResult, TParent, TContext, TArgs>,

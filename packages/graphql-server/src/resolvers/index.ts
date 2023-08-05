@@ -1,12 +1,13 @@
 import { Resolvers } from '@mqs/graphql-schema';
+import { prisma } from '@mqs/prisma/client';
 import cookie from 'cookie';
 import { Tokens } from '@mqs/tokens';
-import { prisma } from '@mqs/prisma/client';
 import * as mqsJobs from '@mqs/jobs';
+import { ContextType } from 'context';
 import DateScalar from './scalars/Date';
 import { authenticate } from './middleware';
 
-const resolvers: Resolvers = {
+const resolvers: Resolvers<ContextType> = {
   Date: DateScalar,
   Mutation: {
     cancelJob: authenticate(
