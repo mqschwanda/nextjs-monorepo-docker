@@ -5,14 +5,9 @@ import { format } from 'date-fns';
 
 async function getUsers() {
   const users = await prisma.user.findMany({
-    select: {
-      createdAt: true,
-      email: true,
-      id: true,
-      nameFirst: true,
-      nameLast: true,
+    include: {
       roles: {
-        select: {
+        include: {
           role: true,
         },
       },

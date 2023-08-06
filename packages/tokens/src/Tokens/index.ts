@@ -70,7 +70,7 @@ export default class Tokens {
         }
 
         await Tokens.invalidateUserTokens({
-          userId: refreshToken.accessToken.userId,
+          userId: refreshToken.accessToken.user.id,
         });
 
         throw refreshError;
@@ -89,7 +89,7 @@ export default class Tokens {
 
       const payload = {
         data: {
-          userId: refreshToken.accessToken.userId,
+          userId: refreshToken.accessToken.user.id,
         },
       };
       const accessToken = await Tokens.signAccessToken(payload);
@@ -215,12 +215,16 @@ export default class Tokens {
         userId: payload.data.userId,
         value,
       },
-      select: {
-        createdAt: true,
-        id: true,
-        refreshToken: true,
-        user: true,
-        value: true,
+      include: {
+        user: {
+          include: {
+            roles: {
+              include: {
+                role: true,
+              },
+            },
+          },
+        },
       },
     });
 
@@ -286,26 +290,16 @@ export default class Tokens {
     ) as TokenPayload;
 
     const accessToken = await prisma.accessToken.findFirstOrThrow({
-      select: {
-        createdAt: true,
-        id: true,
-        refreshToken: true,
+      include: {
         user: {
-          select: {
-            createdAt: true,
-            email: true,
-            id: true,
-            nameFirst: true,
-            nameLast: true,
-            password: true,
+          include: {
             roles: {
-              select: {
+              include: {
                 role: true,
               },
             },
           },
         },
-        value: true,
       },
       where: {
         value,
@@ -349,18 +343,27 @@ export default class Tokens {
     ) as TokenPayload;
 
     const refreshToken = await prisma.refreshToken.findFirstOrThrow({
-      select: {
-        accessToken: true,
-        createdAt: true,
-        id: true,
-        value: true,
+      include: {
+        accessToken: {
+          include: {
+            user: {
+              include: {
+                roles: {
+                  include: {
+                    role: true,
+                  },
+                },
+              },
+            },
+          },
+        },
       },
       where: {
         value,
       },
     });
 
-    if (token.data.userId !== refreshToken.accessToken?.userId) {
+    if (token.data.userId !== refreshToken.accessToken?.user.id) {
       throw new Error('an unexpected error occurred');
     }
 

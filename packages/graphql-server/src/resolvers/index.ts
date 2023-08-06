@@ -1,7 +1,5 @@
 import { Resolvers } from '@mqs/graphql-schema';
 import { prisma } from '@mqs/prisma/client';
-import cookie from 'cookie';
-import { Tokens } from '@mqs/tokens';
 import * as mqsJobs from '@mqs/jobs';
 import { ContextType } from 'context';
 import DateScalar from './scalars/Date';
@@ -105,28 +103,21 @@ const resolvers: Resolvers<ContextType> = {
         });
       },
     ),
-    me: async (_parent, _args, context, _info) => {
-      const cookies = context.request.headers.get('cookie');
+    me: authenticate(
+      async (_parent, _args, context, _info) => {
+        if (!context.user) {
+          return null;
+        }
 
-      if (!cookies) {
-        return null;
-      }
-
-      const { access } = cookie.parse(cookies);
-
-      if (!access) {
-        return null;
-      }
-
-      const accessToken = await Tokens.verifyAccessToken(access);
-
-      const user = {
-        ...accessToken.user,
-        roleKeys: accessToken.user.roles.map((({ role }) => role.key)),
-      };
-
-      return user;
-    },
+        return {
+          ...context.user,
+          roleKeys: context.user.roles.map((({ role }) => role.key)),
+        };
+      },
+      {
+        throwErrors: false,
+      },
+    ),
   },
   Subscription: {
     countdown: {

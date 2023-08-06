@@ -34,6 +34,7 @@
     "@mqs/jobs": "*"
   },
   "dependencies": {
+    "@apollo/server": "^4.9.1",
     "@mqs/graphql-schema": "*",
     "@mqs/prisma": "*",
     "@mqs/tokens": "*",
