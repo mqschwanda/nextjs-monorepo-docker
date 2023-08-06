@@ -8,7 +8,7 @@ import { authenticate } from './middleware';
 const resolvers: Resolvers<ContextType> = {
   Date: DateScalar,
   Mutation: {
-    cancelJob: authenticate(
+    cancelJob: authenticate()(
       async (_parent, args, _context, _info) => {
         const {
           key,
@@ -33,7 +33,7 @@ const resolvers: Resolvers<ContextType> = {
         };
       },
     ),
-    runJob: authenticate(
+    runJob: authenticate()(
       async (_parent, args, _context, _info) => {
         const {
           key,
@@ -61,7 +61,7 @@ const resolvers: Resolvers<ContextType> = {
   },
   Query: {
     hello: (_parent, args, _context, _info) => `Hello ${args.name}`,
-    job: authenticate(
+    job: authenticate()(
       async (_parent, args, _context, _info) => {
         const {
           key,
@@ -85,7 +85,7 @@ const resolvers: Resolvers<ContextType> = {
         };
       },
     ),
-    jobs: authenticate(
+    jobs: authenticate()(
       async (_parent, _args, _context, _info) => {
         const jobs = await prisma.job.findMany({
           orderBy: {
@@ -103,7 +103,9 @@ const resolvers: Resolvers<ContextType> = {
         });
       },
     ),
-    me: authenticate(
+    me: authenticate({
+      throwErrors: false,
+    })(
       async (_parent, _args, context, _info) => {
         if (!context.user) {
           return null;
@@ -113,9 +115,6 @@ const resolvers: Resolvers<ContextType> = {
           ...context.user,
           roleKeys: context.user.roles.map((({ role }) => role.key)),
         };
-      },
-      {
-        throwErrors: false,
       },
     ),
   },
