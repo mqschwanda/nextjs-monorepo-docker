@@ -2,6 +2,7 @@ type Query {
   hello(name: String!): String!
   job(key: JobKey!): Job!
   jobs: [Job!]!
+  logs: [Log!]!
   me: User
 }
 
@@ -17,10 +18,19 @@ type Subscription {
 
 type User {
   id: ID!
+  createdAt: Date!
   email: String!
   nameFirst: String!
   nameLast: String!
   roleKeys: [RoleKey!]!
+}
+
+type Log {
+  id: ID!
+  createdAt: Date!
+  message: String!
+  payload: JSON
+  type: LogType!
 }
 
 type Job {
@@ -35,12 +45,19 @@ type Job {
 
 scalar Date
 
+scalar JSON
+
 enum RoleKey {
   Admin
 }
 
 enum JobKey {
   InvalidateStaleTokens
+}
+
+enum LogType {
+  Error
+  Default
 }
 
 fragment JobFragment on Job {
@@ -51,4 +68,12 @@ fragment JobFragment on Job {
   failedAt
   finishedAt
   startedAt
+}
+
+fragment LogFragment on Log {
+  id
+  createdAt
+  message
+  payload
+  type
 }

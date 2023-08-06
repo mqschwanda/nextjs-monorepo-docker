@@ -1,5 +1,7 @@
 import { GraphQLResolveInfo, GraphQLScalarType, GraphQLScalarTypeConfig } from 'graphql';
-import { JobKey, RoleKey, User } from '@mqs/prisma/client';
+import {
+  JobKey, Log, LogType, RoleKey, User,
+} from '@mqs/prisma/client';
 import * as Types from './graphql';
 
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
@@ -76,8 +78,11 @@ export type ResolversTypes = {
   Date: ResolverTypeWrapper<Types.Scalars['Date']['output']>;
   ID: ResolverTypeWrapper<Types.Scalars['ID']['output']>;
   Int: ResolverTypeWrapper<Types.Scalars['Int']['output']>;
+  JSON: ResolverTypeWrapper<Types.Scalars['JSON']['output']>;
   Job: ResolverTypeWrapper<Omit<Types.Job, 'key'> & { key: ResolversTypes['JobKey'] }>;
   JobKey: ResolverTypeWrapper<JobKey>;
+  Log: ResolverTypeWrapper<Log>;
+  LogType: ResolverTypeWrapper<LogType>;
   Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
   RoleKey: ResolverTypeWrapper<RoleKey>;
@@ -92,7 +97,9 @@ export type ResolversParentTypes = {
   Date: Types.Scalars['Date']['output'];
   ID: Types.Scalars['ID']['output'];
   Int: Types.Scalars['Int']['output'];
+  JSON: Types.Scalars['JSON']['output'];
   Job: Types.Job;
+  Log: Log;
   Mutation: {};
   Query: {};
   String: Types.Scalars['String']['output'];
@@ -102,6 +109,10 @@ export type ResolversParentTypes = {
 
 export interface DateScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['Date'], any> {
   name: 'Date';
+}
+
+export interface JsonScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['JSON'], any> {
+  name: 'JSON';
 }
 
 export type JobResolvers<ContextType = any, ParentType extends ResolversParentTypes['Job'] = ResolversParentTypes['Job']> = {
@@ -117,6 +128,17 @@ export type JobResolvers<ContextType = any, ParentType extends ResolversParentTy
 
 export type JobKeyResolvers = EnumResolverSignature<{ InvalidateStaleTokens?: any }, ResolversTypes['JobKey']>;
 
+export type LogResolvers<ContextType = any, ParentType extends ResolversParentTypes['Log'] = ResolversParentTypes['Log']> = {
+  createdAt?: Resolver<ResolversTypes['Date'], ParentType, ContextType>;
+  id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
+  message?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  payload?: Resolver<Types.Maybe<ResolversTypes['JSON']>, ParentType, ContextType>;
+  type?: Resolver<ResolversTypes['LogType'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type LogTypeResolvers = EnumResolverSignature<{ Default?: any, Error?: any }, ResolversTypes['LogType']>;
+
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
   cancelJob?: Resolver<ResolversTypes['Job'], ParentType, ContextType, RequireFields<Types.MutationCancelJobArgs, 'key'>>;
   runJob?: Resolver<ResolversTypes['Job'], ParentType, ContextType, RequireFields<Types.MutationRunJobArgs, 'key'>>;
@@ -126,6 +148,7 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
   hello?: Resolver<ResolversTypes['String'], ParentType, ContextType, RequireFields<Types.QueryHelloArgs, 'name'>>;
   job?: Resolver<ResolversTypes['Job'], ParentType, ContextType, RequireFields<Types.QueryJobArgs, 'key'>>;
   jobs?: Resolver<Array<ResolversTypes['Job']>, ParentType, ContextType>;
+  logs?: Resolver<Array<ResolversTypes['Log']>, ParentType, ContextType>;
   me?: Resolver<Types.Maybe<ResolversTypes['User']>, ParentType, ContextType>;
 };
 
@@ -136,6 +159,7 @@ export type SubscriptionResolvers<ContextType = any, ParentType extends Resolver
 };
 
 export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
+  createdAt?: Resolver<ResolversTypes['Date'], ParentType, ContextType>;
   email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   nameFirst?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -146,8 +170,11 @@ export type UserResolvers<ContextType = any, ParentType extends ResolversParentT
 
 export type Resolvers<ContextType = any> = {
   Date?: GraphQLScalarType;
+  JSON?: GraphQLScalarType;
   Job?: JobResolvers<ContextType>;
   JobKey?: JobKeyResolvers;
+  Log?: LogResolvers<ContextType>;
+  LogType?: LogTypeResolvers;
   Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
   RoleKey?: RoleKeyResolvers;

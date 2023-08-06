@@ -60,6 +60,18 @@ export default async function Page() {
                 </a>
               </NextLinkWrapper>
             </li>
+            <li>
+              <NextLinkWrapper
+                href='/admin/logs'
+              >
+                <a
+                  className='link link-primary'
+                  href='/admin/logs'
+                >
+                  { 'logs' }
+                </a>
+              </NextLinkWrapper>
+            </li>
           </ul>
         </CardBody>
       </Card>

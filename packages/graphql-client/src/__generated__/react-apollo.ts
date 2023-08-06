@@ -15,6 +15,15 @@ export const JobFragmentFragmentDoc = /* #__PURE__ */ gql`
   startedAt
 }
     `;
+export const LogFragmentFragmentDoc = /* #__PURE__ */ gql`
+    fragment LogFragment on Log {
+  id
+  createdAt
+  message
+  payload
+  type
+}
+    `;
 export const CancelJobDocument = /* #__PURE__ */ gql`
     mutation CancelJob($key: JobKey!) {
   cancelJob(key: $key) {
@@ -215,6 +224,40 @@ export function useJobsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Types
 export type JobsQueryHookResult = ReturnType<typeof useJobsQuery>;
 export type JobsLazyQueryHookResult = ReturnType<typeof useJobsLazyQuery>;
 export type JobsQueryResult = Apollo.QueryResult<Types.JobsQuery, Types.JobsQueryVariables>;
+export const LogsDocument = /* #__PURE__ */ gql`
+    query Logs {
+  logs {
+    ...LogFragment
+  }
+}
+    ${LogFragmentFragmentDoc}`;
+
+/**
+ * __useLogsQuery__
+ *
+ * To run a query within a React component, call `useLogsQuery` and pass it any options that fit your needs.
+ * When your component renders, `useLogsQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useLogsQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useLogsQuery(baseOptions?: Apollo.QueryHookOptions<Types.LogsQuery, Types.LogsQueryVariables>) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<Types.LogsQuery, Types.LogsQueryVariables>(LogsDocument, options);
+}
+export function useLogsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Types.LogsQuery, Types.LogsQueryVariables>) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<Types.LogsQuery, Types.LogsQueryVariables>(LogsDocument, options);
+}
+export type LogsQueryHookResult = ReturnType<typeof useLogsQuery>;
+export type LogsLazyQueryHookResult = ReturnType<typeof useLogsLazyQuery>;
+export type LogsQueryResult = Apollo.QueryResult<Types.LogsQuery, Types.LogsQueryVariables>;
 export const MeDocument = /* #__PURE__ */ gql`
     query Me {
   me {

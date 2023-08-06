@@ -2,11 +2,12 @@ import { Resolvers } from '@mqs/graphql-schema';
 import { RoleKey, prisma } from '@mqs/prisma/client';
 import * as mqsJobs from '@mqs/jobs';
 import { ContextType } from 'context';
-import DateScalar from './scalars/Date';
+import { DateScalar, JSONScalar } from './scalars';
 import { authenticate, compose, userContext } from './middleware';
 
 const resolvers: Resolvers<ContextType> = {
   Date: DateScalar,
+  JSON: JSONScalar,
   Mutation: {
     cancelJob: compose(
       authenticate({
@@ -125,6 +126,23 @@ const resolvers: Resolvers<ContextType> = {
             ...job,
           };
         });
+      },
+    ),
+    logs: compose(
+      authenticate({
+        roles: [
+          RoleKey.Admin,
+        ],
+      }),
+    )(
+      async (_parent, _args, _context, _info) => {
+        const logs = await prisma.log.findMany({
+          orderBy: {
+            createdAt: 'desc',
+          },
+        });
+
+        return logs;
       },
     ),
     me: compose(

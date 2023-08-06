@@ -8,6 +8,14 @@ datasource db {
   url      = "postgresql://user:password@db:5432/postgres"
 }
 
+model Log {
+  id         Int      @id @default(autoincrement())
+  createdAt  DateTime @default(now())
+  message    String
+  payload    Json?
+  type       LogType
+}
+
 model Job {
   id         Int      @id @default(autoincrement())
   key        JobKey
@@ -66,4 +74,9 @@ enum RoleKey {
 
 enum JobKey {
   InvalidateStaleTokens
+}
+
+enum LogType {
+  Error
+  Default
 }

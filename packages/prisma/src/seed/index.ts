@@ -5,6 +5,7 @@ import {
   RoleKey,
   prisma,
   JobKey,
+  LogType,
 } from '../client';
 import { ADMIN_USER, USER } from './constants';
 
@@ -78,6 +79,16 @@ async function seed() {
       key: job,
       startedAt: new Date(),
     })),
+  });
+
+  await prisma.log.create({
+    data: {
+      message: 'example message',
+      payload: {
+        hello: 'world',
+      },
+      type: LogType.Default,
+    },
   });
 }
 

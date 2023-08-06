@@ -9,6 +9,7 @@
     "node_modules"
   ],
   "compilerOptions": {
+    "target": "ES2017",
     "baseUrl": "./src",
     "lib": [
       "ES2015"

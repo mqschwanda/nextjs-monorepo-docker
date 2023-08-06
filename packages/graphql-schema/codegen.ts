@@ -12,6 +12,8 @@ export const typesPath = './graphql';
 
 const mappers = {
   JobKey: '@mqs/prisma/client#JobKey',
+  Log: '@mqs/prisma/client#Log',
+  LogType: '@mqs/prisma/client#LogType',
   RoleKey: '@mqs/prisma/client#RoleKey',
   User: '@mqs/prisma/client#User',
 };
@@ -37,6 +39,7 @@ const config: CodegenConfig = {
             input: 'string',
             output: 'string | number',
           },
+          JSON: 'JSON',
         },
         skipTypename: true,
         strictScalars: true,
