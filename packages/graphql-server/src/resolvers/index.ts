@@ -1,5 +1,5 @@
 import { Resolvers } from '@mqs/graphql-schema';
-import { prisma } from '@mqs/prisma/client';
+import { RoleKey, prisma } from '@mqs/prisma/client';
 import * as mqsJobs from '@mqs/jobs';
 import { ContextType } from 'context';
 import DateScalar from './scalars/Date';
@@ -9,7 +9,11 @@ const resolvers: Resolvers<ContextType> = {
   Date: DateScalar,
   Mutation: {
     cancelJob: compose(
-      authenticate(),
+      authenticate({
+        roles: [
+          RoleKey.Admin,
+        ],
+      }),
     )(
       async (_parent, args, _context, _info) => {
         const {
@@ -36,7 +40,11 @@ const resolvers: Resolvers<ContextType> = {
       },
     ),
     runJob: compose(
-      authenticate(),
+      authenticate({
+        roles: [
+          RoleKey.Admin,
+        ],
+      }),
     )(
       async (_parent, args, _context, _info) => {
         const {
@@ -66,7 +74,11 @@ const resolvers: Resolvers<ContextType> = {
   Query: {
     hello: (_parent, args, _context, _info) => `Hello ${args.name}`,
     job: compose(
-      authenticate(),
+      authenticate({
+        roles: [
+          RoleKey.Admin,
+        ],
+      }),
     )(
       async (_parent, args, _context, _info) => {
         const {
@@ -92,7 +104,11 @@ const resolvers: Resolvers<ContextType> = {
       },
     ),
     jobs: compose(
-      authenticate(),
+      authenticate({
+        roles: [
+          RoleKey.Admin,
+        ],
+      }),
     )(
       async (_parent, _args, _context, _info) => {
         const jobs = await prisma.job.findMany({

@@ -1,8 +1,8 @@
 import { Resolver, ResolverFn } from '@mqs/graphql-schema';
 import { ContextType } from 'context';
 import { GraphQLResolveInfo } from 'graphql';
-import { resolveResolver } from 'resolvers/utilities';
 import { Middleware } from 'resolvers/middleware/types';
+import resolveResolver from '../resolveResolver';
 import reduce from '../reduce';
 
 export default function compose<

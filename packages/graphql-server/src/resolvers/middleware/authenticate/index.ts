@@ -1,11 +1,27 @@
 import { GraphQLResolveInfo } from 'graphql';
 import { ContextType } from 'context';
 import { AuthenticationError } from 'errors';
+import { RoleKey } from '@mqs/graphql-schema';
 import userContext from '../userContext';
 import { reduce } from '../utilities';
 
-type AuthenticateOptions = {
+function contextHasUser(
+  context: ContextType,
+): context is ContextType & Required<Pick<ContextType, 'user'>> {
+  return !!context.user;
+}
 
+function userHasRoles(
+  context: Required<Pick<ContextType, 'user'>>,
+  roles: Array<RoleKey>,
+) {
+  const userRoles = context.user.roles.map(({ role: { key } }) => key);
+
+  return roles.every((role) => userRoles.includes(role));
+}
+
+type AuthenticateOptions = {
+  roles: Array<RoleKey>
 };
 
 export default function authenticate<
@@ -13,8 +29,10 @@ export default function authenticate<
   TContext extends ContextType,
   TArgs extends {},
 >(
-  _options: AuthenticateOptions = {
-
+  {
+    roles,
+  }: AuthenticateOptions = {
+    roles: [],
   },
 ) {
   async function middleware(
@@ -23,7 +41,13 @@ export default function authenticate<
     context: TContext,
     info: GraphQLResolveInfo,
   ) {
-    if (context.user) {
+    if (
+      contextHasUser(context)
+      && (
+        roles.length === 0
+        || userHasRoles(context, roles)
+      )
+    ) {
       return [parent, args, context, info] as [TParent, TArgs, TContext, GraphQLResolveInfo];
     }
 
