@@ -216,6 +216,7 @@ export default class Tokens {
         value,
       },
       include: {
+        refreshToken: true,
         user: {
           include: {
             roles: {
@@ -291,6 +292,7 @@ export default class Tokens {
 
     const accessToken = await prisma.accessToken.findFirstOrThrow({
       include: {
+        refreshToken: true,
         user: {
           include: {
             roles: {
