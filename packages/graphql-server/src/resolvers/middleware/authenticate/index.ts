@@ -4,18 +4,17 @@ import { Tokens } from '@mqs/tokens';
 import { GraphQLResolveInfo } from 'graphql';
 import { ContextType } from 'context';
 import { AuthenticationError } from 'errors';
+import { resolveResolver } from 'resolvers/utilities';
 
 type AuthenticateOptions = {
   throwErrors: boolean
 };
 
 async function authenticateResolver<
-  TResult extends any,
   TParent extends {},
   TContext extends ContextType,
   TArgs extends {},
   >(
-  resolver: Resolver<TResult, TParent, TContext, TArgs>,
   parent: TParent,
   args: TArgs,
   context: TContext,
@@ -43,11 +42,7 @@ async function authenticateResolver<
   }
 
   if (context.user || !options.throwErrors) {
-    if (typeof resolver === 'function') {
-      return resolver(parent, args, context, info);
-    }
-
-    return resolver.resolve(parent, args, context, info);
+    return [parent, args, context, info] as const;
   }
 
   throw new AuthenticationError();
@@ -61,11 +56,14 @@ export const authenticate = <
 >(
     resolver: Resolver<TResult, TParent, TContext, TArgs>,
     options?: AuthenticateOptions,
-  ): Resolver<TResult, TParent, TContext, TArgs> => (
+  ): Resolver<TResult, TParent, TContext, TArgs> => async (
     parent: TParent,
     args: TArgs,
     context: TContext,
     info: GraphQLResolveInfo,
-  ) => authenticateResolver(resolver, parent, args, context, info, options);
+  ) => resolveResolver(
+    resolver,
+    ...await authenticateResolver(parent, args, context, info, options),
+  );
 
 export default authenticate;
