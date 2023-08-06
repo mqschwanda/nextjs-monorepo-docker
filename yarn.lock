@@ -4612,7 +4612,9 @@ __metadata:
     "@mqs/tokens": "*"
     "@mqs/tsc": "*"
     "@mqs/tsconfig": "*"
+    "@types/bluebird": ^3.5.38
     "@types/cookie": ^0.5.1
+    bluebird: ^3.7.2
     cookie: ^0.5.0
     eslint: ^8.46.0
     graphql: ^16.7.1
@@ -7224,6 +7226,13 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: 063c32c7a519d64768dfc0169a319b8244d6a6cb50a355c93992b3c5fee1dbc236526a1111f0e7bb25abc8b0473e5f40a5edfeb8b33cad2a6ea35aa2d7d7db14
+  languageName: node
+  linkType: hard
+
+"@types/bluebird@npm:^3.5.38":
+  version: 3.5.38
+  resolution: "@types/bluebird@npm:3.5.38"
+  checksum: 8d1b04261e8e58816ec84ffa616c9e641c9416d0ab10c915ddb9cd8a0e7070af16df4f2eec243a3809cbed8ecee2fb3f45600ae43b3ab0ceea563aa18ceb6ab1
   languageName: node
   linkType: hard
 
