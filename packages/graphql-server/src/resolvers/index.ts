@@ -3,7 +3,7 @@ import { prisma } from '@mqs/prisma/client';
 import * as mqsJobs from '@mqs/jobs';
 import { ContextType } from 'context';
 import DateScalar from './scalars/Date';
-import { authenticate, compose } from './middleware';
+import { authenticate, compose, userContext } from './middleware';
 
 const resolvers: Resolvers<ContextType> = {
   Date: DateScalar,
@@ -112,9 +112,7 @@ const resolvers: Resolvers<ContextType> = {
       },
     ),
     me: compose(
-      authenticate({
-        throwErrors: false,
-      }),
+      userContext(),
     )(
       async (_parent, _args, context, _info) => {
         if (!context.user) {

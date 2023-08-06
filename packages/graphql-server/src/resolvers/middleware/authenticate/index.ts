@@ -1,50 +1,37 @@
-import cookie from 'cookie';
-import { Tokens } from '@mqs/tokens';
 import { GraphQLResolveInfo } from 'graphql';
 import { ContextType } from 'context';
 import { AuthenticationError } from 'errors';
+import userContext from '../userContext';
+import { reduce } from '../utilities';
 
 type AuthenticateOptions = {
-  throwErrors: boolean
+
 };
 
-export const authenticate = (
-  options: AuthenticateOptions = {
-    throwErrors: true,
-  },
-) => async <
+export default function authenticate<
   TParent extends {},
   TContext extends ContextType,
   TArgs extends {},
 >(
-  parent: TParent,
-  args: TArgs,
-  context: TContext,
-  info: GraphQLResolveInfo,
-) => {
-  const cookies = context.request.headers.get('cookie');
+  _options: AuthenticateOptions = {
 
-  if (cookies) {
-    const { access } = cookie.parse(cookies);
-
-    if (access) {
-      try {
-        const token = await Tokens.verifyAccessToken(access);
-
-        context.user = token.user;
-      } catch (error) {
-        if (options.throwErrors) {
-          throw error;
-        }
-      }
+  },
+) {
+  async function middleware(
+    parent: TParent,
+    args: TArgs,
+    context: TContext,
+    info: GraphQLResolveInfo,
+  ) {
+    if (context.user) {
+      return [parent, args, context, info] as [TParent, TArgs, TContext, GraphQLResolveInfo];
     }
+
+    throw new AuthenticationError();
   }
 
-  if (context.user || !options.throwErrors) {
-    return [parent, args, context, info] as [TParent, TArgs, TContext, GraphQLResolveInfo];
-  }
-
-  throw new AuthenticationError();
-};
-
-export default authenticate;
+  return reduce(
+    userContext(),
+    middleware,
+  );
+}

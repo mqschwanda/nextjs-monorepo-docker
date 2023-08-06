@@ -2,25 +2,15 @@ import { Resolver, ResolverFn } from '@mqs/graphql-schema';
 import { ContextType } from 'context';
 import { GraphQLResolveInfo } from 'graphql';
 import { resolveResolver } from 'resolvers/utilities';
-import Bluebird from 'bluebird';
-
-type IMiddleware<
-  TParent extends {} = {},
-  TContext extends ContextType = ContextType,
-  TArgs extends {} = {},
-> = (
-  parent: TParent,
-  args: TArgs,
-  context: TContext,
-  info: GraphQLResolveInfo
-) => Promise<[TParent, TArgs, TContext, GraphQLResolveInfo]>;
+import { Middleware } from 'resolvers/middleware/types';
+import reduce from '../reduce';
 
 export default function compose<
   TParentPassthrough extends {},
   TContextPassthrough extends ContextType,
   TArgsPassthrough extends {},
 >(
-  ...functions: Array<IMiddleware<TParentPassthrough, TContextPassthrough, TArgsPassthrough>>
+  ...functions: Array<Middleware<TParentPassthrough, TContextPassthrough, TArgsPassthrough>>
 ) {
   return <
     TResult extends any,
@@ -35,18 +25,14 @@ export default function compose<
     context: TContext,
     info: GraphQLResolveInfo,
   ) => {
-    async function reduceMiddleware(
-      previousValue: [TParent, TArgs, TContext, GraphQLResolveInfo],
-      currentValue: IMiddleware<TParent, TContext, TArgs>,
-    ) {
-      return currentValue(...previousValue);
-    }
-
-    const options = await Bluebird.reduce(
+    const options = await reduce<TParent, TContext, TArgs>(
       // TODO: fix types so unknown does not need to be passed
-      functions as unknown as Array<IMiddleware<TParent, TContext, TArgs>>,
-      reduceMiddleware,
-      [parent, args, context, info] as [TParent, TArgs, TContext, GraphQLResolveInfo],
+      ...functions as unknown as Array<Middleware<TParent, TContext, TArgs>>,
+    )(
+      parent,
+      args,
+      context,
+      info,
     );
 
     return resolveResolver(
