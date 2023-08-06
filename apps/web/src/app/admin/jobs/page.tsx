@@ -70,12 +70,14 @@ export default async function Page() {
                 </th>
               </tr>
             </thead>
-            { Object.values(JobKey).map((key) => (
-              <JobsTableBodyRow
-                jobKey={key}
-                key={key}
-              />
-            )) }
+            <tbody>
+              { Object.values(JobKey).map((key) => (
+                <JobsTableBodyRow
+                  jobKey={key}
+                  key={key}
+                />
+              )) }
+            </tbody>
           </table>
         </div>
       </Card>
