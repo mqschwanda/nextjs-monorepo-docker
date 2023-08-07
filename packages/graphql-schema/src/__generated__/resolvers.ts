@@ -82,6 +82,7 @@ export type ResolversTypes = {
   Job: ResolverTypeWrapper<Omit<Types.Job, 'key'> & { key: ResolversTypes['JobKey'] }>;
   JobKey: ResolverTypeWrapper<JobKey>;
   Log: ResolverTypeWrapper<Log>;
+  LogInput: Types.LogInput;
   LogType: ResolverTypeWrapper<LogType>;
   Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
@@ -100,6 +101,7 @@ export type ResolversParentTypes = {
   JSON: Types.Scalars['JSON']['output'];
   Job: Types.Job;
   Log: Log;
+  LogInput: Types.LogInput;
   Mutation: {};
   Query: {};
   String: Types.Scalars['String']['output'];
@@ -137,10 +139,11 @@ export type LogResolvers<ContextType = any, ParentType extends ResolversParentTy
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export type LogTypeResolvers = EnumResolverSignature<{ Default?: any, Error?: any }, ResolversTypes['LogType']>;
+export type LogTypeResolvers = EnumResolverSignature<{ Debug?: any, Error?: any, Info?: any, Log?: any, Warn?: any }, ResolversTypes['LogType']>;
 
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
   cancelJob?: Resolver<ResolversTypes['Job'], ParentType, ContextType, RequireFields<Types.MutationCancelJobArgs, 'key'>>;
+  createLog?: Resolver<ResolversTypes['Log'], ParentType, ContextType, RequireFields<Types.MutationCreateLogArgs, 'input'>>;
   runJob?: Resolver<ResolversTypes['Job'], ParentType, ContextType, RequireFields<Types.MutationRunJobArgs, 'key'>>;
 };
 

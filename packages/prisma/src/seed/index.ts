@@ -87,7 +87,7 @@ async function seed() {
       payload: {
         hello: 'world',
       },
-      type: LogType.Default,
+      type: LogType.Log,
     },
   });
 }

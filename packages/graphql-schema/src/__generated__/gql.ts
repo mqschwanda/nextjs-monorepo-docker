@@ -14,6 +14,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  */
 const documents = {
     "mutation CancelJob($key: JobKey!) {\n  cancelJob(key: $key) {\n    id\n    key\n    name\n  }\n}": types.CancelJobDocument,
+    "mutation CreateLog($input: LogInput!) {\n  createLog(input: $input) {\n    ...LogFragment\n  }\n}": types.CreateLogDocument,
     "mutation RunJob($key: JobKey!) {\n  runJob(key: $key) {\n    id\n    key\n    name\n  }\n}": types.RunJobDocument,
     "subscription Countdown($from: Int!) {\n  countdown(from: $from)\n}": types.CountdownDocument,
     "query Hello($name: String!) {\n  hello(name: $name)\n}": types.HelloDocument,
@@ -42,6 +43,10 @@ export function graphql(source: string): unknown;
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "mutation CancelJob($key: JobKey!) {\n  cancelJob(key: $key) {\n    id\n    key\n    name\n  }\n}"): (typeof documents)["mutation CancelJob($key: JobKey!) {\n  cancelJob(key: $key) {\n    id\n    key\n    name\n  }\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "mutation CreateLog($input: LogInput!) {\n  createLog(input: $input) {\n    ...LogFragment\n  }\n}"): (typeof documents)["mutation CreateLog($input: LogInput!) {\n  createLog(input: $input) {\n    ...LogFragment\n  }\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

@@ -5,21 +5,7 @@ import {
 } from '@apollo/client';
 import type { HTTPExecutorOptions } from '@graphql-tools/executor-http';
 import { YogaLink } from '@graphql-yoga/apollo-link';
-
-function getApolloClientUri() {
-  return 'http://localhost:3001/graphql/v1';
-
-  // if (process.env.NODE_ENV === 'production') {
-  //   throw new Error('no production uri');
-  //   // return '';
-  // }
-
-  // if (process.env.NODE_ENV === 'development') {
-  //   return 'http://localhost:3001/graphql/v1';
-  // }
-
-  // throw new Error('no uri');
-}
+import getApolloClientUri from './getApolloClientUri';
 
 export default function getClient({
   fetch,

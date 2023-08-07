@@ -3,6 +3,7 @@ import type { Config } from 'jest';
 const config: Config = {
   preset: '@mqs/jest-preset/node',
   transform: {
+    '^.+\\.jsx?$': 'babel-jest',
     '^.+\\.tsx?$': [
       'ts-jest',
       {
@@ -11,6 +12,9 @@ const config: Config = {
       },
     ],
   },
+  transformIgnorePatterns: [
+    'node_modules/(?!serialize-error)',
+  ],
 };
 
 export default config;

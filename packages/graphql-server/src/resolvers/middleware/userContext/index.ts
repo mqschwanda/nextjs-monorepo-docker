@@ -2,6 +2,7 @@ import cookie from 'cookie';
 import { Tokens } from '@mqs/tokens';
 import { GraphQLResolveInfo } from 'graphql';
 import { ContextType } from 'context';
+import logger from '@mqs/logger';
 
 type UserContextOptions = {
 
@@ -32,8 +33,13 @@ export default function userContext(
           const token = await Tokens.verifyAccessToken(access);
 
           context.user = token.user;
-        } catch (error) {
-          console.log(error);
+        } catch (e) {
+          const error = e as Error;
+
+          logger.error({
+            message: error.message,
+            payload: error,
+          });
         }
       }
     }

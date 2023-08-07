@@ -12,6 +12,7 @@ module.exports = {
   },
   experimental: {
     appDir: true,
+    esmExternals: 'loose',
     outputFileTracingRoot: path.join(__dirname, '../../'),
     serverActions: true,
     serverComponentsExternalPackages: [

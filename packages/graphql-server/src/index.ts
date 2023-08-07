@@ -1,5 +1,6 @@
 import loadSchema from '@mqs/graphql-schema/loadSchema';
 import { createSchema, createYoga } from 'graphql-yoga';
+import logger from '@mqs/logger';
 import resolvers from './resolvers';
 
 const schema = createSchema({
@@ -17,17 +18,29 @@ export default function createGraphqlServer() {
     graphqlEndpoint: '/graphql/v1',
     landingPage: false,
     logging: {
-      debug(...args) {
-        console.debug(...args);
+      debug(options) {
+        logger.debug({
+          db: false,
+          message: JSON.stringify(options),
+        });
       },
-      error(...args) {
-        console.error(...args);
+      error(options) {
+        logger.error({
+          message: JSON.stringify(options),
+          payload: options,
+        });
       },
-      info(...args) {
-        console.info(...args);
+      info(options) {
+        logger.info({
+          db: false,
+          message: JSON.stringify(options),
+        });
       },
-      warn(...args) {
-        console.warn(...args);
+      warn(options) {
+        logger.warn({
+          message: JSON.stringify(options),
+          payload: options,
+        });
       },
     },
     schema,

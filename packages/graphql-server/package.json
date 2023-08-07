@@ -37,6 +37,7 @@
   "dependencies": {
     "@apollo/server": "^4.9.1",
     "@mqs/graphql-schema": "*",
+    "@mqs/logger": "*",
     "@mqs/prisma": "*",
     "@mqs/tokens": "*",
     "bluebird": "^3.7.2",

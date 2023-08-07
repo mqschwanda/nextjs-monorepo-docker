@@ -10,10 +10,14 @@
   ],
   "exports": {
     ".": "./dist/index.js",
+    "./getApolloClientUri": "./dist/client/getApolloClientUri.js",
     "./provider": "./dist/provider/index.js"
   },
   "typesVersions": {
     "*": {
+      "getApolloClientUri": [
+        "./dist/client/getApolloClientUri.d.ts"
+      ],
       "provider": [
         "./dist/provider/index.d.ts"
       ]

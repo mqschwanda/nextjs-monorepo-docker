@@ -6,6 +6,7 @@ import { cookies } from 'next/headers';
 import { getFormDataForZod } from '@mqs/zod';
 import { Prisma, prisma } from '@mqs/prisma/client';
 import { Tokens } from '@mqs/tokens';
+import logger from '@mqs/logger';
 import { signUpSchema } from './validation';
 
 // eslint-disable-next-line consistent-return
@@ -41,26 +42,31 @@ export default async function signUpAction(formData: FormData) {
       password,
     });
   } catch (error) {
-    if (error instanceof Prisma.PrismaClientKnownRequestError) {
-      if (
-        error?.meta?.target
-        && Array.isArray(error?.meta?.target)
-        && error?.meta?.target.includes('email')
-      ) {
-        if (error.code === 'P2002') {
-          return {
-            errors: {
-              fieldErrors: {
-                email: ['a new user cannot be created with this email'],
+    if (error instanceof Error) {
+      if (error instanceof Prisma.PrismaClientKnownRequestError) {
+        if (
+          error?.meta?.target
+          && Array.isArray(error?.meta?.target)
+          && error?.meta?.target.includes('email')
+        ) {
+          if (error.code === 'P2002') {
+            return {
+              errors: {
+                fieldErrors: {
+                  email: ['a new user cannot be created with this email'],
+                },
+                formErrors: [],
               },
-              formErrors: [],
-            },
-          };
+            };
+          }
         }
       }
-    }
 
-    console.log(error);
+      logger.error({
+        message: error.message,
+        payload: error,
+      });
+    }
 
     return {
       errors: {

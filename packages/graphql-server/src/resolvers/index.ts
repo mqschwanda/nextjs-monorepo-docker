@@ -1,5 +1,5 @@
 import { Resolvers } from '@mqs/graphql-schema';
-import { RoleKey, prisma } from '@mqs/prisma/client';
+import { RoleKey, prisma, Prisma } from '@mqs/prisma/client';
 import * as mqsJobs from '@mqs/jobs';
 import { ContextType } from 'context';
 import { DateScalar, JSONScalar } from './scalars';
@@ -40,6 +40,25 @@ const resolvers: Resolvers<ContextType> = {
         };
       },
     ),
+    createLog: async (_parent, args, _context, _info) => {
+      const {
+        input,
+      } = args;
+
+      // TODO: handle serialize JSON
+      const payload = input.payload
+        ? JSON.parse(JSON.stringify(input.payload))
+        : undefined;
+
+      const log = await prisma.log.create({
+        data: {
+          ...input,
+          payload,
+        },
+      });
+
+      return log;
+    },
     runJob: compose(
       authenticate({
         roles: [

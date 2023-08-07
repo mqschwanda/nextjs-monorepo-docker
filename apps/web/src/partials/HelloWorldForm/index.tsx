@@ -46,7 +46,11 @@ export default function HelloWorldForm() {
         setError('Unable to fetch response');
       }
     } catch (err) {
-      logger(err);
+      const errLog = err as Error;
+      logger.error({
+        message: errLog.message,
+        payload: errLog,
+      });
       setError('Unable to fetch response');
     }
   };

@@ -1,0 +1,5 @@
+mutation CreateLog($input: LogInput!) {
+  createLog(input: $input) {
+    ...LogFragment
+  }
+}

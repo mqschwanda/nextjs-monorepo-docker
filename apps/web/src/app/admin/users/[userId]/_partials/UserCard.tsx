@@ -7,6 +7,7 @@ import {
 } from '@mqs/react-server-components';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
+import logger from '@mqs/logger';
 
 export interface UserCardProps extends Omit<CardProps, 'side' | 'children'> {
   userId: number,
@@ -24,8 +25,13 @@ export default async function UserCard({
         id: userId,
       },
     });
-  } catch (error) {
-    console.log(error);
+  } catch (e) {
+    const error = e as Error;
+
+    logger.error({
+      message: error.message,
+      payload: error,
+    });
   }
 
   if (!user) {

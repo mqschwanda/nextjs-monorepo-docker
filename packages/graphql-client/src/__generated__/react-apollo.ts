@@ -59,6 +59,39 @@ export function useCancelJobMutation(baseOptions?: Apollo.MutationHookOptions<Ty
 export type CancelJobMutationHookResult = ReturnType<typeof useCancelJobMutation>;
 export type CancelJobMutationResult = Apollo.MutationResult<Types.CancelJobMutation>;
 export type CancelJobMutationOptions = Apollo.BaseMutationOptions<Types.CancelJobMutation, Types.CancelJobMutationVariables>;
+export const CreateLogDocument = /* #__PURE__ */ gql`
+    mutation CreateLog($input: LogInput!) {
+  createLog(input: $input) {
+    ...LogFragment
+  }
+}
+    ${LogFragmentFragmentDoc}`;
+export type CreateLogMutationFn = Apollo.MutationFunction<Types.CreateLogMutation, Types.CreateLogMutationVariables>;
+
+/**
+ * __useCreateLogMutation__
+ *
+ * To run a mutation, you first call `useCreateLogMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateLogMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createLogMutation, { data, loading, error }] = useCreateLogMutation({
+ *   variables: {
+ *      input: // value for 'input'
+ *   },
+ * });
+ */
+export function useCreateLogMutation(baseOptions?: Apollo.MutationHookOptions<Types.CreateLogMutation, Types.CreateLogMutationVariables>) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useMutation<Types.CreateLogMutation, Types.CreateLogMutationVariables>(CreateLogDocument, options);
+}
+export type CreateLogMutationHookResult = ReturnType<typeof useCreateLogMutation>;
+export type CreateLogMutationResult = Apollo.MutationResult<Types.CreateLogMutation>;
+export type CreateLogMutationOptions = Apollo.BaseMutationOptions<Types.CreateLogMutation, Types.CreateLogMutationVariables>;
 export const RunJobDocument = /* #__PURE__ */ gql`
     mutation RunJob($key: JobKey!) {
   runJob(key: $key) {
