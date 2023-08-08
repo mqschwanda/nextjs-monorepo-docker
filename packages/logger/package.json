@@ -9,6 +9,20 @@
   "files": [
     "dist/**"
   ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./browser": "./dist/browser.js"
+  },
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/index.d.ts"
+      ],
+      "browser": [
+        "./dist/browser.d.ts"
+      ]
+    }
+  },
   "scripts": {
     "build": "yarn clean && mqs-tsc --project tsconfig.build.json",
     "clean": "rm -rfv dist || true",

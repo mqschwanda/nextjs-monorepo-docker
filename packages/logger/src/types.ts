@@ -16,3 +16,10 @@ export type LoggerOptionsError
 export type LoggerOptions
   = LoggerOptionsFinal
   | LoggerOptionsError;
+
+export type LoggerResult = {
+  createdAt?: Date;
+  id: number;
+  message: string;
+  payload?: any;
+};

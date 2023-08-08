@@ -1,6 +1,6 @@
 import { LoggerOptions, LoggerOptionsError, LoggerOptionsFinal } from 'types';
 import { LogType } from '@prisma/client';
-import { getConsoleFunction, serializeOptions } from './utilities';
+import { getConsoleFunction, normalizeResult, serializeOptions } from './utilities';
 
 type Handler<TResult> = (options: LoggerOptions) => Promise<TResult>;
 
@@ -23,12 +23,12 @@ export default class Logger<TResult> {
     consoleFunction(serialized.message);
 
     if (!db) {
-      return serialized;
+      return normalizeResult(serialized);
     }
 
     const result = await this.handler(serialized);
 
-    return result;
+    return normalizeResult(result);
   }
 
   public async debug(options: Omit<LoggerOptionsFinal, 'type'>) {
