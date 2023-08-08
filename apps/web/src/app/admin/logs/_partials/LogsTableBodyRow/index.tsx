@@ -1,7 +1,15 @@
 'use client';
 
 import { Log } from '@mqs/graphql-schema';
+import { JsonView } from '@mqs/react-client-components';
+import {
+  Modal,
+  ModalBody,
+  ModalButtonClose,
+} from '@mqs/react-server-components';
 import { format } from 'date-fns';
+import { useCallback, useMemo } from 'react';
+import cx from 'classnames';
 
 type LogsTableBodyRowProps = {
   log: Log,
@@ -10,11 +18,30 @@ type LogsTableBodyRowProps = {
 export default function LogsTableBodyRow({
   log: {
     createdAt,
+    id,
     message,
     payload,
     type,
   },
 }: LogsTableBodyRowProps) {
+  const modalId = useMemo(
+    () => `log-modal-${id}`,
+    [
+      id,
+    ],
+  );
+
+  const handleShowModal = useCallback(
+    () => {
+      const modal = (window as any)[modalId];
+
+      modal.showModal();
+    },
+    [
+      modalId,
+    ],
+  );
+
   return (
     <tr>
       <td
@@ -39,11 +66,43 @@ export default function LogsTableBodyRow({
         </span>
       </td>
       <td
-        className='text-ellipsis overflow-hidden text-center'
+        className={cx('text-ellipsis overflow-hidden text-center whitespace-nowrap', payload ? 'cursor-pointer' : undefined)}
+        onClick={handleShowModal}
       >
         <span>
           { payload ? JSON.stringify(payload) : '-' }
         </span>
+        { payload ? (
+          <Modal
+            id={modalId}
+          >
+            <ModalBody
+              cx={[
+                'w-11/12',
+                'max-w-[600px]',
+                'h-screen',
+                'max-h-[600px]',
+                'box-content',
+              ]}
+            >
+              <ModalButtonClose />
+              <JsonView
+                collapsed={false}
+                cx={[
+                  'text-start',
+                  'mt-4',
+                  'whitespace-normal',
+                ]}
+                indentWidth={2}
+                name={false}
+                quotesOnKeys={false}
+                sortKeys
+                src={payload}
+                theme='hopscotch'
+              />
+            </ModalBody>
+          </Modal>
+        ) : null }
       </td>
     </tr>
   );

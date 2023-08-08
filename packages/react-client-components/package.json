@@ -33,6 +33,7 @@
     "@emotion/styled": "^11.11.0",
     "@mqs/react-server-components": "*",
     "@mqs/react-testing-lib": "*",
+    "@mqs/react-utils": "*",
     "@mqs/style": "*",
     "@mui/base": "^5.0.0-beta.8",
     "@mui/icons-material": "^5.14.1",
@@ -41,6 +42,7 @@
     "next": "^13.4.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-json-view": "^1.21.3",
     "timeago.js": "^4.0.2"
   }
 }

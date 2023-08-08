@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-server-components components <Modal /> renders 1`] = `
+<DocumentFragment>
+  <dialog
+    class="modal test"
+    data-testid="Modal"
+  >
+    <form
+      class="modal-box"
+      data-testid="ModalBody"
+      method="dialog"
+    >
+      <button
+        class="btn btn-ghost btn-circle btn-sm absolute right-2 top-2"
+        data-testid="ModalButtonClose"
+        type="button"
+      >
+        <svg
+          class="fill-none stroke-current stroke-1 h-4 w-4"
+          data-testid="IconClose"
+          fill="currentColor"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6 18L18 6M6 6l12 12"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+          />
+        </svg>
+      </button>
+      <p>
+        children...
+      </p>
+    </form>
+    <form
+      class="modal-backdrop"
+      method="dialog"
+    >
+      <button
+        type="submit"
+      >
+        close
+      </button>
+    </form>
+  </dialog>
+</DocumentFragment>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Modal Modal Example 1`] = `
+<dialog
+  className="modal"
+  data-testid="Modal"
+>
+  <form
+    className="modal-box"
+    data-testid="ModalBody"
+    method="dialog"
+  >
+    <button
+      className="btn btn-ghost btn-circle btn-sm absolute right-2 top-2"
+      data-testid="ModalButtonClose"
+      disabled={false}
+      type="button"
+    >
+      <svg
+        className="fill-none stroke-current stroke-1 h-4 w-4"
+        data-testid="IconClose"
+        fill="currentColor"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 18L18 6M6 6l12 12"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+        />
+      </svg>
+    </button>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut mollis.
+  </form>
+  <form
+    className="modal-backdrop"
+    method="dialog"
+  >
+    <button
+      type="submit"
+    >
+      close
+    </button>
+  </form>
+</dialog>
+`;
