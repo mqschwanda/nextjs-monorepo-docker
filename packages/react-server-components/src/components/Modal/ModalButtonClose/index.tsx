@@ -10,7 +10,7 @@ import { IconClose } from '@/components/Icon';
 export interface ModalButtonCloseProps
   extends ReactTestingProps,
   ReactCxProps,
-  Omit<ButtonProps, 'children'> {
+  Omit<ButtonProps, 'children' | 'type'> {
 
 }
 
@@ -37,6 +37,7 @@ export function ModalButtonClose({
         className,
         cxProp,
       )}
+      type='submit'
       variantColor={variantColor}
       variantShape={variantShape}
       variantSize={variantSize}
