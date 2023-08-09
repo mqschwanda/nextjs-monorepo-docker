@@ -2,6 +2,7 @@ export * from './Alert';
 export * from './Button';
 export * from './Card';
 export * from './Container';
+export * from './Drawer';
 export * from './FormControl';
 export * from './Icon';
 export * from './Input';

@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-server-components components <Drawer /> renders 1`] = `
+<DocumentFragment>
+  <div
+    class="drawer test"
+    data-testid="Drawer"
+    id="Drawer"
+  >
+    <input
+      class="drawer-toggle"
+      id="Drawer-toggle"
+      type="checkbox"
+    />
+    <div
+      class="drawer-content flex flex-col items-center justify-center"
+    >
+      <label
+        class="btn btn-primary drawer-button"
+        for="Drawer-toggle"
+      >
+        Open drawer
+      </label>
+    </div>
+    <div
+      class="drawer-side"
+    >
+      <label
+        class="drawer-overlay"
+        for="Drawer-toggle"
+      />
+      children...
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Drawer Drawer Example 1`] = `
+<div
+  className="drawer"
+  data-testid="Drawer"
+  id="DrawerExample"
+>
+  <input
+    className="drawer-toggle"
+    id="DrawerExample-toggle"
+    type="checkbox"
+  />
+  <div
+    className="drawer-content flex flex-col items-center justify-center"
+  >
+    <label
+      className="btn btn-primary drawer-button"
+      htmlFor="DrawerExample-toggle"
+    >
+      Open drawer
+    </label>
+  </div>
+  <div
+    className="drawer-side"
+  >
+    <label
+      className="drawer-overlay"
+      htmlFor="DrawerExample-toggle"
+    />
+    <ul
+      className="menu menu-horizontal"
+    >
+      <li>
+        <button
+          type="button"
+        >
+          Navbar Item 1
+        </button>
+      </li>
+      <li>
+        <button
+          type="button"
+        >
+          Navbar Item 2
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Drawer Drawer Responsive Example 1`] = `
+<div
+  className="drawer lg:drawer-open"
+  data-testid="Drawer"
+  id="DrawerResponsiveExample"
+>
+  <input
+    className="drawer-toggle"
+    id="DrawerResponsiveExample-toggle"
+    type="checkbox"
+  />
+  <div
+    className="drawer-content flex flex-col items-center justify-center"
+  >
+    <label
+      className="btn btn-primary drawer-button lg:hidden"
+      htmlFor="DrawerResponsiveExample-toggle"
+    >
+      Open drawer
+    </label>
+  </div>
+  <div
+    className="drawer-side"
+  >
+    <label
+      className="drawer-overlay"
+      htmlFor="DrawerResponsiveExample-toggle"
+    />
+    <ul
+      className="menu menu-horizontal"
+    >
+      <li>
+        <button
+          type="button"
+        >
+          Navbar Item 1
+        </button>
+      </li>
+      <li>
+        <button
+          type="button"
+        >
+          Navbar Item 2
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Drawer Drawer Right Side Example 1`] = `
+<div
+  className="drawer drawer-end"
+  data-testid="Drawer"
+  id="DrawerRightSideExample"
+>
+  <input
+    className="drawer-toggle"
+    id="DrawerRightSideExample-toggle"
+    type="checkbox"
+  />
+  <div
+    className="drawer-content flex flex-col items-center justify-center"
+  >
+    <label
+      className="btn btn-primary drawer-button"
+      htmlFor="DrawerRightSideExample-toggle"
+    >
+      Open drawer
+    </label>
+  </div>
+  <div
+    className="drawer-side"
+  >
+    <label
+      className="drawer-overlay"
+      htmlFor="DrawerRightSideExample-toggle"
+    />
+    <ul
+      className="menu menu-horizontal"
+    >
+      <li>
+        <button
+          type="button"
+        >
+          Navbar Item 1
+        </button>
+      </li>
+      <li>
+        <button
+          type="button"
+        >
+          Navbar Item 2
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+`;

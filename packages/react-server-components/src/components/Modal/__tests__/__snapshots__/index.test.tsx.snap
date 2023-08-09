@@ -14,7 +14,7 @@ exports[`@mqs/react-server-components components <Modal /> renders 1`] = `
       <button
         class="btn btn-ghost btn-circle btn-sm absolute right-2 top-2"
         data-testid="ModalButtonClose"
-        type="button"
+        type="submit"
       >
         <svg
           class="fill-none stroke-current stroke-1 h-4 w-4"
@@ -64,7 +64,7 @@ exports[`Storyshots @mqs/react-server-components/components/Modal Modal Example 
       className="btn btn-ghost btn-circle btn-sm absolute right-2 top-2"
       data-testid="ModalButtonClose"
       disabled={false}
-      type="button"
+      type="submit"
     >
       <svg
         className="fill-none stroke-current stroke-1 h-4 w-4"
