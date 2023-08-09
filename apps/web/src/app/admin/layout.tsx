@@ -1,5 +1,7 @@
 import { NextLinkWrapper } from '@mqs/react-client-components';
-import { Drawer, DrawerButtonToggle } from '@mqs/react-server-components';
+import {
+  Drawer, DrawerButtonToggle, Menu, MenuItem, MenuTitle,
+} from '@mqs/react-server-components';
 import { type ReactNode } from 'react';
 
 interface AdminLayoutProps {
@@ -9,55 +11,64 @@ interface AdminLayoutProps {
 export default function AdminLayout({
   children,
 }: AdminLayoutProps) {
+  const drawerId = 'admin-drawer';
+
   return (
     <Drawer
-      id='admin-drawer'
+      id={drawerId}
       menu={(
-        <ul
-          className='menu p-4 pt-20 lg:pt-0 w-80 h-full bg-base-200'
+        <Menu
+          cx={[
+            'bg-base-200',
+            'h-full',
+            'lg:pt-0',
+            'p-4',
+            'pt-20',
+            'w-80',
+          ]}
         >
-          <li>
+          <MenuTitle>
+            { ' Admin Menu' }
+          </MenuTitle>
+          <MenuItem>
             <NextLinkWrapper
               href='/admin/users'
             >
               <a
-                className='link link-primary'
                 href='/admin/users'
               >
-                { 'users' }
+                { 'Users' }
               </a>
             </NextLinkWrapper>
-          </li>
-          <li>
+          </MenuItem>
+          <MenuItem>
             <NextLinkWrapper
               href='/admin/jobs'
             >
               <a
-                className='link link-primary'
                 href='/admin/jobs'
               >
-                { 'jobs' }
+                { 'Jobs' }
               </a>
             </NextLinkWrapper>
-          </li>
-          <li>
+          </MenuItem>
+          <MenuItem>
             <NextLinkWrapper
               href='/admin/logs'
             >
               <a
-                className='link link-primary'
                 href='/admin/logs'
               >
-                { 'logs' }
+                { 'Logs' }
               </a>
             </NextLinkWrapper>
-          </li>
-        </ul>
+          </MenuItem>
+        </Menu>
         )}
       responsive
     >
       <DrawerButtonToggle
-        drawerId='admin-drawer'
+        drawerId={drawerId}
         responsive
       />
       { children }

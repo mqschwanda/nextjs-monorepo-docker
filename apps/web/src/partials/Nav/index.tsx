@@ -1,6 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cx, { Argument as ClassName } from 'classnames';
 import { NextLinkWrapper } from '@mqs/react-client-components';
+import { Menu, MenuItem } from '@mqs/react-server-components';
 import NavAuthMenuItems from 'partials/NavAuthMenuItems';
 import { MENU_ITEMS } from './constants';
 
@@ -42,29 +43,32 @@ export default function Nav({
       <div
         className='flex-none'
       >
-        <ul
-          className='menu menu-horizontal px-1'
+        <Menu
+          cx={[
+            'px-1',
+          ]}
+          variantDirection='horizontal'
         >
           { MENU_ITEMS.map(({
             href,
             label,
           }) => (
-            <li
+            <MenuItem
               key={label}
             >
               <NextLinkWrapper
                 href={href}
               >
                 <a
-                  className='btn btn-ghost normal-case text-xl'
+                  className='text-xl'
                   href={href}
                 >
                   { label }
                 </a>
               </NextLinkWrapper>
-            </li>
+            </MenuItem>
           )) }
-        </ul>
+        </Menu>
       </div>
       <div
         className='flex-none'

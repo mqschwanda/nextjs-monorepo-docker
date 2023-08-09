@@ -8,6 +8,7 @@ export * from './Icon';
 export * from './Input';
 export * from './Label';
 export * from './LoadingIndicator';
+export * from './Menu';
 export * from './Skeleton';
 export * from './Modal';
 export * from './Svg';

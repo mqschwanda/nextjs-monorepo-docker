@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`@mqs/react-server-components components <Menu /> renders 1`] = `
+<DocumentFragment>
+  <ul
+    class="menu menu-vertical menu-md test"
+    data-testid="Menu"
+  >
+    <li
+      class="menu-title"
+      data-testid="MenuTitle"
+    >
+      <a
+        href="#"
+      >
+        Kittens!
+      </a>
+    </li>
+    <li
+      class=""
+      data-testid="MenuItem"
+    >
+      <a
+        href="#"
+      >
+        Normal Kitten
+      </a>
+    </li>
+    <li
+      class="active"
+      data-testid="MenuItem"
+    >
+      <a
+        href="#"
+      >
+        Active Kitten
+      </a>
+    </li>
+    <li
+      class="disabled"
+      data-testid="MenuItem"
+    >
+      <a
+        href="#"
+      >
+        Disabled Kitten
+      </a>
+    </li>
+    <li
+      class="focus"
+      data-testid="MenuItem"
+    >
+      <a
+        href="#"
+      >
+        Focused Kitten
+      </a>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`Storyshots @mqs/react-server-components/components/Menu Menu Example 1`] = `
+<ul
+  className="menu menu-vertical menu-md"
+  data-testid="Menu"
+>
+  <li
+    className="menu-title"
+    data-testid="MenuTitle"
+  >
+    <a
+      href="#"
+    >
+      Kittens!
+    </a>
+  </li>
+  <li
+    className=""
+    data-testid="MenuItem"
+  >
+    <a
+      href="#"
+    >
+      Normal Kitten
+    </a>
+  </li>
+  <li
+    className="active"
+    data-testid="MenuItem"
+  >
+    <a
+      href="#"
+    >
+      Active Kitten
+    </a>
+  </li>
+  <li
+    className="disabled"
+    data-testid="MenuItem"
+  >
+    <a
+      href="#"
+    >
+      Disabled Kitten
+    </a>
+  </li>
+  <li
+    className="focus"
+    data-testid="MenuItem"
+  >
+    <a
+      href="#"
+    >
+      Focused Kitten
+    </a>
+  </li>
+</ul>
+`;

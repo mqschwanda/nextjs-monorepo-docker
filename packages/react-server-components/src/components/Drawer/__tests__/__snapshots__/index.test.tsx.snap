@@ -3,7 +3,7 @@
 exports[`@mqs/react-server-components components <Drawer /> renders 1`] = `
 <DocumentFragment>
   <div
-    class="drawer test"
+    class="drawer h-full test"
     data-testid="Drawer"
     id="Drawer"
   >
@@ -13,23 +13,34 @@ exports[`@mqs/react-server-components components <Drawer /> renders 1`] = `
       type="checkbox"
     />
     <div
-      class="drawer-content flex flex-col items-center justify-center"
+      class="drawer-content"
     >
-      <label
-        class="btn btn-primary drawer-button"
-        for="Drawer-toggle"
-      >
-        Open drawer
-      </label>
+      children...
     </div>
     <div
-      class="drawer-side"
+      class="drawer-side h-full z-10"
     >
       <label
         class="drawer-overlay"
         for="Drawer-toggle"
       />
-      children...
+      <ul
+        class="menu menu-vertical menu-md"
+        data-testid="Menu"
+      >
+        <li
+          class="menu-title"
+          data-testid="MenuTitle"
+        >
+          Example Menu
+        </li>
+        <li
+          class=""
+          data-testid="MenuItem"
+        >
+          Example menu item
+        </li>
+      </ul>
     </div>
   </div>
 </DocumentFragment>
@@ -37,7 +48,7 @@ exports[`@mqs/react-server-components components <Drawer /> renders 1`] = `
 
 exports[`Storyshots @mqs/react-server-components/components/Drawer Drawer Example 1`] = `
 <div
-  className="drawer"
+  className="drawer h-full"
   data-testid="Drawer"
   id="DrawerExample"
 >
@@ -47,24 +58,26 @@ exports[`Storyshots @mqs/react-server-components/components/Drawer Drawer Exampl
     type="checkbox"
   />
   <div
-    className="drawer-content flex flex-col items-center justify-center"
+    className="drawer-content"
   >
     <label
       className="btn btn-primary drawer-button"
+      data-testid="Drawer"
       htmlFor="DrawerExample-toggle"
     >
       Open drawer
     </label>
+    content
   </div>
   <div
-    className="drawer-side"
+    className="drawer-side h-full z-10"
   >
     <label
       className="drawer-overlay"
       htmlFor="DrawerExample-toggle"
     />
     <ul
-      className="menu menu-horizontal"
+      className="menu p-4 w-80 h-full bg-base-200"
     >
       <li>
         <button
@@ -87,7 +100,7 @@ exports[`Storyshots @mqs/react-server-components/components/Drawer Drawer Exampl
 
 exports[`Storyshots @mqs/react-server-components/components/Drawer Drawer Responsive Example 1`] = `
 <div
-  className="drawer lg:drawer-open"
+  className="drawer h-full lg:drawer-open"
   data-testid="Drawer"
   id="DrawerResponsiveExample"
 >
@@ -97,24 +110,26 @@ exports[`Storyshots @mqs/react-server-components/components/Drawer Drawer Respon
     type="checkbox"
   />
   <div
-    className="drawer-content flex flex-col items-center justify-center"
+    className="drawer-content"
   >
     <label
       className="btn btn-primary drawer-button lg:hidden"
+      data-testid="Drawer"
       htmlFor="DrawerResponsiveExample-toggle"
     >
       Open drawer
     </label>
+    content
   </div>
   <div
-    className="drawer-side"
+    className="drawer-side h-full z-10"
   >
     <label
       className="drawer-overlay"
       htmlFor="DrawerResponsiveExample-toggle"
     />
     <ul
-      className="menu menu-horizontal"
+      className="menu p-4 w-80 h-full bg-base-200"
     >
       <li>
         <button
@@ -137,7 +152,7 @@ exports[`Storyshots @mqs/react-server-components/components/Drawer Drawer Respon
 
 exports[`Storyshots @mqs/react-server-components/components/Drawer Drawer Right Side Example 1`] = `
 <div
-  className="drawer drawer-end"
+  className="drawer h-full drawer-end"
   data-testid="Drawer"
   id="DrawerRightSideExample"
 >
@@ -147,24 +162,26 @@ exports[`Storyshots @mqs/react-server-components/components/Drawer Drawer Right 
     type="checkbox"
   />
   <div
-    className="drawer-content flex flex-col items-center justify-center"
+    className="drawer-content"
   >
     <label
       className="btn btn-primary drawer-button"
+      data-testid="Drawer"
       htmlFor="DrawerRightSideExample-toggle"
     >
       Open drawer
     </label>
+    content
   </div>
   <div
-    className="drawer-side"
+    className="drawer-side h-full z-10"
   >
     <label
       className="drawer-overlay"
       htmlFor="DrawerRightSideExample-toggle"
     />
     <ul
-      className="menu menu-horizontal"
+      className="menu p-4 w-80 h-full bg-base-200"
     >
       <li>
         <button

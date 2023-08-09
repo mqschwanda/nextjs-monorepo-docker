@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { NextLinkWrapper } from '@mqs/react-client-components';
 import { useMeQuery } from '@mqs/graphql-client';
+import { Menu, MenuItem } from '@mqs/react-server-components';
 import { AUTH_ITEMS, PROFILE_ITEMS } from './constants';
 
 interface Props {
@@ -52,8 +53,17 @@ export default function NavAuthMenuItems(_props: Props) {
             />
           </div>
         </label>
-        <ul
-          className='mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52'
+        <Menu
+          cx={[
+            'bg-base-100',
+            'dropdown-content',
+            'menu-compact',
+            'mt-3',
+            'p-2',
+            'rounded-box',
+            'shadow',
+            'w-52',
+          ]}
           id='nav-auth-menu-profile'
           tabIndex={0}
         >
@@ -66,50 +76,53 @@ export default function NavAuthMenuItems(_props: Props) {
               href,
               label,
             }) => (
-              <li
+              <MenuItem
                 key={label}
               >
                 <NextLinkWrapper
                   href={href}
                 >
                   <a
-                    className='btn btn-ghost normal-case text-xl'
+                    className='text-xl'
                     href={href}
                   >
                     { label }
                   </a>
                 </NextLinkWrapper>
-              </li>
+              </MenuItem>
             )) }
-        </ul>
+        </Menu>
       </div>
     );
   }
 
   return (
-    <ul
-      className='menu menu-horizontal px-1'
+    <Menu
+      cx={[
+        'px-1',
+      ]}
       id='nav-auth-menu-auth'
+      variantDirection='horizontal'
     >
       { AUTH_ITEMS.map(({
         href,
         label,
       }) => (
-        <li
+        <MenuItem
           key={label}
         >
           <NextLinkWrapper
             href={href}
           >
             <a
-              className='btn btn-ghost normal-case text-xl'
+              className='text-xl'
               href={href}
             >
               { label }
             </a>
           </NextLinkWrapper>
-        </li>
+        </MenuItem>
       )) }
-    </ul>
+    </Menu>
   );
 }
