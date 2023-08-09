@@ -1,7 +1,8 @@
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import cx from 'classnames';
 import { ReactCxProps } from '@mqs/react-utils';
+import getDrawerToggleId from '../helpers/getDrawerTaggleId';
 
 /**
  * Props for the `<Drawer />` component.
@@ -9,11 +10,19 @@ import { ReactCxProps } from '@mqs/react-utils';
 export interface DrawerProps
   extends ReactTestingProps,
   ReactCxProps,
-  Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'id'> {
+  Omit<DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>, 'id' | 'children'> {
   /**
-   *
+   * The read-only children property returns a live HTMLCollection which contains all of the child elements of the document upon which it was called.
+   */
+  children: ReactNode;
+  /**
+   * Specifies the unique id for the `<Drawer />` component
    */
   id: string;
+  /**
+   * The content that is rendered inside the `<Drawer />` menu
+   */
+  menu: ReactNode;
   /**
    * Sidebar is always visible on large screen but can be toggled on smaller screens
    *
@@ -34,21 +43,23 @@ export interface DrawerProps
  * See [interactive docs](https://mqschwanda.github.io/nextjs-monorepo-docker/?path=/docs/mqs-react-server-components-components-drawer--docs) for more information.
  */
 export function Drawer({
-  id,
   children,
   className,
   cx: cxProp,
+  id,
+  menu,
   responsive = false,
   rightSide = false,
   testId = 'Drawer',
   ...rest
 }: DrawerProps) {
-  const toggleId = `${id}-toggle`;
+  const toggleId = getDrawerToggleId(id);
 
   return (
     <div
       className={cx(
         'drawer',
+        'h-full',
         rightSide ? 'drawer-end' : undefined,
         responsive ? 'lg:drawer-open' : undefined,
         className,
@@ -64,30 +75,23 @@ export function Drawer({
         type='checkbox'
       />
       <div
-        className='drawer-content flex flex-col items-center justify-center'
+        className='drawer-content'
       >
-        { /* Page content here */ }
-        <label
-          className={cx(
-            'btn',
-            'btn-primary',
-            'drawer-button',
-            responsive ? 'lg:hidden' : undefined,
-          )}
-          htmlFor={toggleId}
-        >
-          { 'Open drawer' }
-        </label>
+        { children }
       </div>
       <div
-        className='drawer-side'
+        className={cx(
+          'drawer-side',
+          'h-full',
+          'z-10',
+        )}
       >
         { /* eslint-disable-next-line jsx-a11y/label-has-associated-control */ }
         <label
           className='drawer-overlay'
           htmlFor={toggleId}
         />
-        { children }
+        { menu }
       </div>
     </div>
   );
