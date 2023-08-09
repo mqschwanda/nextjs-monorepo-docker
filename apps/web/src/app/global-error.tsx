@@ -1,13 +1,8 @@
 'use client';
 
-// import '@mqs/react-server-components/styles';
-import '@mqs/style/style.css';
 import { Button } from '@mqs/react-server-components';
 import { Stack } from '@mqs/react-client-components';
-import Footer from 'partials/Footer';
-import Nav from 'partials/Nav';
-import Header from 'partials/Header';
-import Providers from 'providers';
+import LayoutDefault from 'partials/LayoutDefault';
 
 function goHome() {
   window.location.replace('/home');
@@ -23,73 +18,56 @@ export default function GlobalError({
   reset,
 }: GlobalErrorProps) {
   return (
-    <html
-      data-theme='dark'
-      lang='en'
-    >
-      <body
-        className='flex flex-col h-screen'
+    <LayoutDefault>
+      <div
+        className='hero bg-base-200'
       >
-        <Providers>
-          <Header>
-            <Nav />
-          </Header>
-          <main
-            className='flex-grow'
+        <div
+          className='hero-content text-center'
+        >
+          <div
+            className='max-w-md'
           >
-            <div
-              className='hero bg-base-200'
+            <h1
+              className='text-5xl font-bold'
             >
-              <div
-                className='hero-content text-center'
+              { 'Error' }
+            </h1>
+            <p
+              className='pt-6 pb-2'
+            >
+              { error.digest || 'An unexpected error occurred.' }
+            </p>
+            <p
+              className='pt-2 pb-6'
+            >
+              { 'You can try to reset the page to recover from the error, or go navigate to the home page.' }
+            </p>
+            <div>
+              <Stack
+                direction='row'
+                justifyContent='center'
+                spacing={1}
               >
-                <div
-                  className='max-w-md'
+                <Button
+                  onClick={reset}
+                  type='button'
+                  variantColor='primary'
                 >
-                  <h1
-                    className='text-5xl font-bold'
-                  >
-                    { 'Error' }
-                  </h1>
-                  <p
-                    className='pt-6 pb-2'
-                  >
-                    { error.digest || 'An unexpected error occurred.' }
-                  </p>
-                  <p
-                    className='pt-2 pb-6'
-                  >
-                    { 'You can try to reset the page to recover from the error, or go navigate to the home page.' }
-                  </p>
-                  <div>
-                    <Stack
-                      direction='row'
-                      justifyContent='center'
-                      spacing={1}
-                    >
-                      <Button
-                        onClick={reset}
-                        type='button'
-                        variantColor='primary'
-                      >
-                        { 'Reset' }
-                      </Button>
-                      <Button
-                        onClick={goHome}
-                        type='button'
-                        variantColor='primary'
-                      >
-                        { 'Go Home' }
-                      </Button>
-                    </Stack>
-                  </div>
-                </div>
-              </div>
+                  { 'Reset' }
+                </Button>
+                <Button
+                  onClick={goHome}
+                  type='button'
+                  variantColor='primary'
+                >
+                  { 'Go Home' }
+                </Button>
+              </Stack>
             </div>
-          </main>
-          <Footer />
-        </Providers>
-      </body>
-    </html>
+          </div>
+        </div>
+      </div>
+    </LayoutDefault>
   );
 }
