@@ -1,9 +1,9 @@
 import { Tokens } from '@mqs/tokens';
-import { YogaInitialContext } from 'graphql-yoga';
+import type { Jobs } from '@mqs/jobs';
 
 export type ContextType
-  = YogaInitialContext
-  & Record<string, any>
+  = Record<string, any>
   & {
+    jobs: Jobs,
     user?: Awaited<ReturnType<typeof Tokens.verifyAccessToken>>['user'],
   };

@@ -1,6 +1,7 @@
 import loadSchema from '@mqs/graphql-schema/loadSchema';
 import { createSchema, createYoga } from 'graphql-yoga';
 import logger from '@mqs/logger';
+import { ContextType } from 'context';
 import resolvers from './resolvers';
 
 const schema = createSchema({
@@ -8,8 +9,9 @@ const schema = createSchema({
   typeDefs: loadSchema(),
 });
 
-export default function createGraphqlServer() {
+export default function createGraphqlServer(context: ContextType) {
   return createYoga({
+    context,
     cors: {
       credentials: true,
       // origin: 'http://localhost:3000',

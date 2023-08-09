@@ -1,6 +1,5 @@
 import { Resolvers } from '@mqs/graphql-schema';
-import { RoleKey, prisma, Prisma } from '@mqs/prisma/client';
-import * as mqsJobs from '@mqs/jobs';
+import { RoleKey, prisma } from '@mqs/prisma/client';
 import { ContextType } from 'context';
 import { DateScalar, JSONScalar } from './scalars';
 import { authenticate, compose, userContext } from './middleware';
@@ -16,7 +15,7 @@ const resolvers: Resolvers<ContextType> = {
         ],
       }),
     )(
-      async (_parent, args, _context, _info) => {
+      async (_parent, args, context, _info) => {
         const {
           key,
         } = args;
@@ -30,9 +29,8 @@ const resolvers: Resolvers<ContextType> = {
           },
         });
 
-        mqsJobs.cancel({ key });
-
-        const { name } = mqsJobs.jobs[key];
+        context.jobs[key].cancel();
+        const { name } = context.jobs[key];
 
         return {
           name,
@@ -66,7 +64,7 @@ const resolvers: Resolvers<ContextType> = {
         ],
       }),
     )(
-      async (_parent, args, _context, _info) => {
+      async (_parent, args, context, _info) => {
         const {
           key,
         } = args;
@@ -80,9 +78,8 @@ const resolvers: Resolvers<ContextType> = {
           },
         });
 
-        mqsJobs.start({ key });
-
-        const { name } = mqsJobs.jobs[key];
+        context.jobs[key].run();
+        const { name } = context.jobs[key];
 
         return {
           name,
@@ -100,7 +97,7 @@ const resolvers: Resolvers<ContextType> = {
         ],
       }),
     )(
-      async (_parent, args, _context, _info) => {
+      async (_parent, args, context, _info) => {
         const {
           key,
         } = args;
@@ -115,7 +112,7 @@ const resolvers: Resolvers<ContextType> = {
           },
         });
 
-        const { name } = mqsJobs.jobs[key];
+        const { name } = context.jobs[key];
 
         return {
           name,
@@ -130,7 +127,7 @@ const resolvers: Resolvers<ContextType> = {
         ],
       }),
     )(
-      async (_parent, _args, _context, _info) => {
+      async (_parent, _args, context, _info) => {
         const jobs = await prisma.job.findMany({
           orderBy: {
             startedAt: 'desc',
@@ -138,7 +135,7 @@ const resolvers: Resolvers<ContextType> = {
         });
 
         return jobs.map((job) => {
-          const { name } = mqsJobs.jobs[job.key];
+          const { name } = context.jobs[job.key];
 
           return {
             name,

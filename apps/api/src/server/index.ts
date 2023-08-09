@@ -8,7 +8,9 @@ import healthz from './routes/healthz'; // cspell:disable-line
 import healthDb from './routes/healthz-db'; // cspell:disable-line
 
 export default function createServer() {
-  const graphqlServer = createGraphqlServer();
+  const graphqlServer = createGraphqlServer({
+    jobs: jobs.jobs,
+  });
 
   const app = express();
 
