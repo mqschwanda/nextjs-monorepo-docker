@@ -13,7 +13,8 @@
     "./document-strings": "./dist/__generated__/document-strings.js",
     "./getApolloClientUri": "./dist/utilities/getApolloClientUri.js",
     "./gqlString": "./dist/utilities/gqlString.js",
-    "./provider": "./dist/provider/index.js"
+    "./provider": "./dist/provider/index.js",
+    "./poll-interval": "./dist/poll-intervals.js"
   },
   "typesVersions": {
     "*": {
@@ -28,6 +29,9 @@
       ],
       "provider": [
         "./dist/provider/index.d.ts"
+      ],
+      "poll-interval": [
+        "./dist/poll-interval.d.ts"
       ]
     }
   },

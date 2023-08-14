@@ -11,13 +11,12 @@ import {
   useEffect,
   useRef,
 } from 'react';
-import { useVersionQuery } from '@mqs/graphql-client';
+import {
+  useVersionQuery,
+  POLL_INTERVAL_FIVE_MIN,
+} from '@mqs/graphql-client';
 import { useAlertDismissible } from '@mqs/react-client-components';
 import logger from '@mqs/logger/browser';
-
-// TODO: add polling interval constants to @mqs/graphql-client package
-const ONE_MIN = 60 * 1000;
-const FIVE_MIN = 5 * ONE_MIN;
 
 const VERSION_DEFAULT = '';
 
@@ -34,7 +33,7 @@ export default function NavAlertVersionOutdated(_props: NavAlertVersionOutdatedP
   const versionQueryLatest = useRef(VERSION_DEFAULT);
 
   const versionQuery = useVersionQuery({
-    pollInterval: FIVE_MIN,
+    pollInterval: POLL_INTERVAL_FIVE_MIN,
   });
 
   const refresh = useCacheRefresh();
