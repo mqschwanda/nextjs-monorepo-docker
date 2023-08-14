@@ -40,6 +40,10 @@ const config: CodegenConfig = {
             output: 'string | number',
           },
           JSON: 'JSON',
+          JsonPrisma: {
+            input: 'string | number | boolean | Record<string, any> | Array<any>',
+            output: 'string | number | boolean | Record<string, any> | Array<any>',
+          },
         },
         skipTypename: true,
         strictScalars: true,

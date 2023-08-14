@@ -10,6 +10,7 @@
     ".": "./dist/index.js",
     "./constants": "./dist/constants.js",
     "./loadSchema": "./dist/loadSchema.js",
+    "./types": "./dist/types.js",
     "./package.json": "./package.json",
     "./queries/*.graphql": "./dist/queries/*.graphql",
     "./schema/*.graphql": "./dist/schema/*.graphql",
@@ -22,6 +23,9 @@
       ],
       "loadSchema": [
         "./dist/loadSchema.d.ts"
+      ],
+      "types": [
+        "./dist/types.d.ts"
       ],
       "react-apollo": [
         "./dist/__generated__/react-apollo.d.ts"

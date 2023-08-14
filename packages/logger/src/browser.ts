@@ -15,7 +15,6 @@ async function handler(options: LoggerOptionsSerialized) {
 
   const input: LogInput = {
     message,
-    // @ts-ignore TODO: cleanup JSON types for graphql and prisma
     payload,
     type,
   };

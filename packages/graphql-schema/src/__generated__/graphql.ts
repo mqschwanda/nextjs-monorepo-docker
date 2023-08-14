@@ -16,6 +16,7 @@ export type Scalars = {
   Float: { input: number; output: number; }
   Date: { input: Date; output: Date; }
   JSON: { input: JSON; output: JSON; }
+  JsonPrisma: { input: string | number | boolean | Record<string, any> | Array<any>; output: string | number | boolean | Record<string, any> | Array<any>; }
 };
 
 export type Job = {
@@ -35,13 +36,13 @@ export type Log = {
   createdAt: Scalars['Date']['output'];
   id: Scalars['ID']['output'];
   message: Scalars['String']['output'];
-  payload?: Maybe<Scalars['JSON']['output']>;
+  payload?: Maybe<Scalars['JsonPrisma']['output']>;
   type: LogType;
 };
 
 export type LogInput = {
   message: Scalars['String']['input'];
-  payload?: InputMaybe<Scalars['JSON']['input']>;
+  payload?: InputMaybe<Scalars['JsonPrisma']['input']>;
   type: LogType;
 };
 
@@ -125,7 +126,7 @@ export type CreateLogMutationVariables = Exact<{
 }>;
 
 
-export type CreateLogMutation = { createLog: { id: string | number, createdAt: Date, message: string, payload?: JSON | null, type: LogType } };
+export type CreateLogMutation = { createLog: { id: string | number, createdAt: Date, message: string, payload?: string | number | boolean | Record<string, any> | Array<any> | null, type: LogType } };
 
 export type RunJobMutationVariables = Exact<{
   key: JobKey;
@@ -163,7 +164,7 @@ export type JobsQuery = { jobs: Array<{ id: string | number, key: JobKey, name: 
 export type LogsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type LogsQuery = { logs: Array<{ id: string | number, createdAt: Date, message: string, payload?: JSON | null, type: LogType }> };
+export type LogsQuery = { logs: Array<{ id: string | number, createdAt: Date, message: string, payload?: string | number | boolean | Record<string, any> | Array<any> | null, type: LogType }> };
 
 export type MeQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -177,7 +178,7 @@ export type VersionQuery = { version: string };
 
 export type JobFragmentFragment = { id: string | number, key: JobKey, name: string, canceledAt?: Date | null, failedAt?: Date | null, finishedAt?: Date | null, startedAt: Date };
 
-export type LogFragmentFragment = { id: string | number, createdAt: Date, message: string, payload?: JSON | null, type: LogType };
+export type LogFragmentFragment = { id: string | number, createdAt: Date, message: string, payload?: string | number | boolean | Record<string, any> | Array<any> | null, type: LogType };
 
 export const JobFragmentFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"JobFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Job"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"key"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"canceledAt"}},{"kind":"Field","name":{"kind":"Name","value":"failedAt"}},{"kind":"Field","name":{"kind":"Name","value":"finishedAt"}},{"kind":"Field","name":{"kind":"Name","value":"startedAt"}}]}}]} as unknown as DocumentNode<JobFragmentFragment, unknown>;
 export const LogFragmentFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"LogFragment"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Log"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}},{"kind":"Field","name":{"kind":"Name","value":"message"}},{"kind":"Field","name":{"kind":"Name","value":"payload"}},{"kind":"Field","name":{"kind":"Name","value":"type"}}]}}]} as unknown as DocumentNode<LogFragmentFragment, unknown>;

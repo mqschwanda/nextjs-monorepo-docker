@@ -2,12 +2,13 @@ import { Resolvers } from '@mqs/graphql-schema';
 import { RoleKey, prisma } from '@mqs/prisma/client';
 import { ContextType } from 'context';
 import parentJSON from 'parent-package-json';
-import { DateScalar, JSONScalar } from './scalars';
+import { DateScalar, JSONScalar, JsonPrisma } from './scalars';
 import { authenticate, compose, userContext } from './middleware';
 
 const resolvers: Resolvers<ContextType> = {
   Date: DateScalar,
   JSON: JSONScalar,
+  JsonPrisma,
   Mutation: {
     cancelJob: compose(
       authenticate({
@@ -44,15 +45,10 @@ const resolvers: Resolvers<ContextType> = {
         input,
       } = args;
 
-      // TODO: handle serialize JSON
-      const payload = input.payload
-        ? JSON.parse(JSON.stringify(input.payload))
-        : undefined;
-
       const log = await prisma.log.create({
         data: {
           ...input,
-          payload,
+          payload: input.payload || undefined,
         },
       });
 

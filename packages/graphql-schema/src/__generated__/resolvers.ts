@@ -81,6 +81,7 @@ export type ResolversTypes = {
   JSON: ResolverTypeWrapper<Types.Scalars['JSON']['output']>;
   Job: ResolverTypeWrapper<Omit<Types.Job, 'key'> & { key: ResolversTypes['JobKey'] }>;
   JobKey: ResolverTypeWrapper<JobKey>;
+  JsonPrisma: ResolverTypeWrapper<Types.Scalars['JsonPrisma']['output']>;
   Log: ResolverTypeWrapper<Log>;
   LogInput: Types.LogInput;
   LogType: ResolverTypeWrapper<LogType>;
@@ -100,6 +101,7 @@ export type ResolversParentTypes = {
   Int: Types.Scalars['Int']['output'];
   JSON: Types.Scalars['JSON']['output'];
   Job: Types.Job;
+  JsonPrisma: Types.Scalars['JsonPrisma']['output'];
   Log: Log;
   LogInput: Types.LogInput;
   Mutation: {};
@@ -130,11 +132,15 @@ export type JobResolvers<ContextType = any, ParentType extends ResolversParentTy
 
 export type JobKeyResolvers = EnumResolverSignature<{ InvalidateStaleTokens?: any }, ResolversTypes['JobKey']>;
 
+export interface JsonPrismaScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['JsonPrisma'], any> {
+  name: 'JsonPrisma';
+}
+
 export type LogResolvers<ContextType = any, ParentType extends ResolversParentTypes['Log'] = ResolversParentTypes['Log']> = {
   createdAt?: Resolver<ResolversTypes['Date'], ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   message?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
-  payload?: Resolver<Types.Maybe<ResolversTypes['JSON']>, ParentType, ContextType>;
+  payload?: Resolver<Types.Maybe<ResolversTypes['JsonPrisma']>, ParentType, ContextType>;
   type?: Resolver<ResolversTypes['LogType'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
@@ -177,6 +183,7 @@ export type Resolvers<ContextType = any> = {
   JSON?: GraphQLScalarType;
   Job?: JobResolvers<ContextType>;
   JobKey?: JobKeyResolvers;
+  JsonPrisma?: GraphQLScalarType;
   Log?: LogResolvers<ContextType>;
   LogType?: LogTypeResolvers;
   Mutation?: MutationResolvers<ContextType>;

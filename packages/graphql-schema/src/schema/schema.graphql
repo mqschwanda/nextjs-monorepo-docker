@@ -31,7 +31,7 @@ type Log {
   id: ID!
   createdAt: Date!
   message: String!
-  payload: JSON
+  payload: JsonPrisma
   type: LogType!
 }
 
@@ -47,13 +47,15 @@ type Job {
 
 input LogInput {
   message: String!
-  payload: JSON
+  payload: JsonPrisma
   type: LogType!
 }
 
 scalar Date
 
 scalar JSON
+
+scalar JsonPrisma
 
 enum RoleKey {
   Admin
