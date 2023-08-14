@@ -5,7 +5,7 @@ import {
 } from '@apollo/client';
 import type { HTTPExecutorOptions } from '@graphql-tools/executor-http';
 import { YogaLink } from '@graphql-yoga/apollo-link';
-import getApolloClientUri from './getApolloClientUri';
+import getApolloClientUri from '@/utilities/getApolloClientUri';
 
 export default function getClient({
   fetch,

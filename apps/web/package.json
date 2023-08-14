@@ -46,5 +46,9 @@
     "eslint": "^8.46.0",
     "start-server-and-test": "2.0.0",
     "typescript": "^5.1.6"
+  },
+  "resolutions": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

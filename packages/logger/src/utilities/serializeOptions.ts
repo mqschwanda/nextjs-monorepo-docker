@@ -1,12 +1,11 @@
-import { LogType } from '@mqs/prisma/client';
 import { serializeError } from 'serialize-error';
-import { LoggerOptions, LoggerOptionsError, LoggerOptionsFinal } from 'types';
+import { LoggerOptions, LoggerOptionsError, LoggerOptionsSerialized } from 'types';
 
 function optionsIsError(options: LoggerOptions): options is LoggerOptionsError {
-  return options.type === LogType.Error;
+  return options.type === 'Error'; // TODO: Add prisma client and prisma server module
 }
 
-export default function serializeOptions(options: LoggerOptions): LoggerOptionsFinal {
+export default function serializeOptions(options: LoggerOptions): LoggerOptionsSerialized {
   if (optionsIsError(options)) {
     if (options.payload instanceof Error) {
       return {
@@ -16,5 +15,12 @@ export default function serializeOptions(options: LoggerOptions): LoggerOptionsF
     }
   }
 
-  return options as LoggerOptionsFinal;
+  const payload = options.payload
+    ? JSON.parse(JSON.stringify(options.payload))
+    : undefined;
+
+  return {
+    ...options,
+    payload,
+  };
 }

@@ -22,6 +22,7 @@ const documents = {
     "query Jobs {\n  jobs {\n    ...JobFragment\n  }\n}": types.JobsDocument,
     "query Logs {\n  logs {\n    ...LogFragment\n  }\n}": types.LogsDocument,
     "query Me {\n  me {\n    id\n    email\n    nameFirst\n    nameLast\n    roleKeys\n  }\n}": types.MeDocument,
+    "query Version {\n  version\n}": types.VersionDocument,
     "fragment JobFragment on Job {\n  id\n  key\n  name\n  canceledAt\n  failedAt\n  finishedAt\n  startedAt\n}\n\nfragment LogFragment on Log {\n  id\n  createdAt\n  message\n  payload\n  type\n}": types.JobFragmentFragmentDoc,
 };
 
@@ -75,6 +76,10 @@ export function graphql(source: "query Logs {\n  logs {\n    ...LogFragment\n  }
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function graphql(source: "query Me {\n  me {\n    id\n    email\n    nameFirst\n    nameLast\n    roleKeys\n  }\n}"): (typeof documents)["query Me {\n  me {\n    id\n    email\n    nameFirst\n    nameLast\n    roleKeys\n  }\n}"];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "query Version {\n  version\n}"): (typeof documents)["query Version {\n  version\n}"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

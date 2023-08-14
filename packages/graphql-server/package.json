@@ -42,6 +42,7 @@
     "cookie": "^0.5.0",
     "graphql": "^16.7.1",
     "graphql-type-json": "^0.3.2",
-    "graphql-yoga": "^4.0.3"
+    "graphql-yoga": "^4.0.3",
+    "parent-package-json": "^3.0.0"
   }
 }

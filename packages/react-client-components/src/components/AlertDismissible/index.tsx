@@ -7,18 +7,11 @@ import {
   IconClose,
 } from '@mqs/react-server-components';
 import cx from 'classnames';
-import {
-  MouseEvent,
-  MouseEventHandler,
-  useCallback,
-  useState,
-} from 'react';
+import { OnClickDismiss, useAlertDismissible } from './hook';
 
-type OnClickDismiss = (
-  event: MouseEvent<HTMLButtonElement,
-  globalThis.MouseEvent>
-) => boolean | void;
-
+export {
+  useAlertDismissible,
+};
 export interface AlertDismissableProps
   extends AlertProps {
   onClickDismiss?: OnClickDismiss
@@ -31,18 +24,12 @@ export function AlertDismissible({
   testId = 'AlertDismissible',
   ...rest
 }: AlertDismissableProps) {
-  const [hidden, setHidden] = useState(false);
-
-  const handleClick: MouseEventHandler<HTMLButtonElement> = useCallback(
-    (event) => {
-      if (!onClickDismiss || onClickDismiss(event)) {
-        setHidden(true);
-      }
-    },
-    [
-      onClickDismiss,
-    ],
-  );
+  const {
+    handleClickDismiss,
+    hidden,
+  } = useAlertDismissible({
+    onClickDismiss,
+  });
 
   return (
     <Alert
@@ -55,7 +42,7 @@ export function AlertDismissible({
     >
       { children }
       <Button
-        onClick={handleClick}
+        onClick={handleClickDismiss}
         type='button'
         variantShape='circle'
         variantSize='sm'

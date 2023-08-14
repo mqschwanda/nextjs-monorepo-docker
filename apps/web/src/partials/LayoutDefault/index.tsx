@@ -5,7 +5,7 @@ import Footer from 'partials/Footer';
 import Nav from 'partials/Nav';
 import Header from 'partials/Header';
 import Providers from 'providers';
-// import Alerts from 'partials/Alerts';
+import NavAlerts from 'partials/NavAlerts';
 
 interface LayoutDefaultProps {
   children: ReactNode
@@ -24,8 +24,8 @@ export default function LayoutDefault({
       >
         <Providers>
           <Header>
+            <NavAlerts />
             <Nav />
-            { /* <Alerts /> */ }
           </Header>
           <main
             className='flex-grow'

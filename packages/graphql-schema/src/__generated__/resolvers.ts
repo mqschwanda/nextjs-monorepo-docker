@@ -153,6 +153,7 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
   jobs?: Resolver<Array<ResolversTypes['Job']>, ParentType, ContextType>;
   logs?: Resolver<Array<ResolversTypes['Log']>, ParentType, ContextType>;
   me?: Resolver<Types.Maybe<ResolversTypes['User']>, ParentType, ContextType>;
+  version?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
 };
 
 export type RoleKeyResolvers = EnumResolverSignature<{ Admin?: any }, ResolversTypes['RoleKey']>;

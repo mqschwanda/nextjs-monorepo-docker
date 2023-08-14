@@ -10,13 +10,21 @@
   ],
   "exports": {
     ".": "./dist/index.js",
-    "./getApolloClientUri": "./dist/client/getApolloClientUri.js",
+    "./document-strings": "./dist/__generated__/document-strings.js",
+    "./getApolloClientUri": "./dist/utilities/getApolloClientUri.js",
+    "./gqlString": "./dist/utilities/gqlString.js",
     "./provider": "./dist/provider/index.js"
   },
   "typesVersions": {
     "*": {
+      "document-strings": [
+        "./dist/__generated__/document-strings.d.ts"
+      ],
       "getApolloClientUri": [
-        "./dist/client/getApolloClientUri.d.ts"
+        "./dist/utilities/getApolloClientUri.d.ts"
+      ],
+      "gqlString": [
+        "./dist/utilities/gqlString.d.ts"
       ],
       "provider": [
         "./dist/provider/index.d.ts"
@@ -38,6 +46,8 @@
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/typescript-document-nodes": "^4.0.1",
+    "@graphql-codegen/typescript-operations": "^4.0.1",
     "@graphql-codegen/typescript-react-apollo": "^3.3.7",
     "@graphql-tools/executor-http": "^1.0.2",
     "@mqs/eslint-config": "*",

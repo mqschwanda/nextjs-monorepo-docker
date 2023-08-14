@@ -2965,6 +2965,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@graphql-codegen/typescript-document-nodes@npm:^4.0.1":
+  version: 4.0.1
+  resolution: "@graphql-codegen/typescript-document-nodes@npm:4.0.1"
+  dependencies:
+    "@graphql-codegen/plugin-helpers": ^5.0.0
+    "@graphql-codegen/visitor-plugin-common": 4.0.1
+    auto-bind: ~4.0.0
+    tslib: ~2.5.0
+  peerDependencies:
+    graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+  checksum: 688144eee31d5601ca217ff282747f586b1b80e635661abda3e52336f56d5a97299cf63da70744aaeb82e414ce2c57aa8da9585216dd4e924942eca4c062ca4a
+  languageName: node
+  linkType: hard
+
 "@graphql-codegen/typescript-operations@npm:^4.0.1":
   version: 4.0.1
   resolution: "@graphql-codegen/typescript-operations@npm:4.0.1"
@@ -4561,6 +4575,8 @@ __metadata:
   dependencies:
     "@apollo/client": ^3.7.17
     "@graphql-codegen/cli": ^5.0.0
+    "@graphql-codegen/typescript-document-nodes": ^4.0.1
+    "@graphql-codegen/typescript-operations": ^4.0.1
     "@graphql-codegen/typescript-react-apollo": ^3.3.7
     "@graphql-tools/executor-http": ^1.0.2
     "@graphql-yoga/apollo-link": 1.8.1
@@ -4617,6 +4633,7 @@ __metadata:
     "@mqs/eslint-config": "*"
     "@mqs/graphql-schema": "*"
     "@mqs/jest-preset": "*"
+    "@mqs/jobs": "*"
     "@mqs/logger": "*"
     "@mqs/prisma": "*"
     "@mqs/tokens": "*"
@@ -4631,10 +4648,9 @@ __metadata:
     graphql-type-json: ^0.3.2
     graphql-yoga: ^4.0.3
     jest: ^29.6.2
+    parent-package-json: ^3.0.0
     react: ^18.2.0
     typescript: ^5.1.6
-  peerDependencies:
-    "@mqs/jobs": "*"
   languageName: unknown
   linkType: soft
 
@@ -18855,6 +18871,13 @@ __metadata:
   dependencies:
     callsites: ^3.1.0
   checksum: f131f13d687a938556a01033561fb1b274b39921eb4425c7a691f0d91dcfbe9b19759c2b8d425a3ee7c8a46874e57fa418a690643880c3c7c56827aba12f78dd
+  languageName: node
+  linkType: hard
+
+"parent-package-json@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "parent-package-json@npm:3.0.0"
+  checksum: ab71f61705dd75b6a555db9303e63d2e8a1bb8d022d061e3c5fc7403e0aece8d4c53d609c7b993326aad11327e8bcd6d7943724a282eac127c6d82b6bea367f5
   languageName: node
   linkType: hard
 

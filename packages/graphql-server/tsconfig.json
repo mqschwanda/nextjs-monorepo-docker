@@ -9,7 +9,7 @@
     "node_modules"
   ],
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ES2016",
     "baseUrl": "./src",
     "lib": [
       "ES2015"
@@ -17,6 +17,13 @@
     "module": "CommonJS",
     "outDir": "./dist",
     "rootDir": "./src",
-    "paths": {}
+    "paths": {
+      "@": [
+        "./"
+      ],
+      "@/*": [
+        "./*"
+      ]
+    }
   },
 }

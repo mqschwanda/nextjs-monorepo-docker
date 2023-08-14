@@ -1,7 +1,7 @@
 import { GraphQLResolveInfo } from 'graphql';
 import { ContextType } from 'context';
-import { AuthenticationError } from 'errors';
 import { RoleKey } from '@mqs/graphql-schema';
+import { AuthenticationError } from '@/errors';
 import userContext from '../userContext';
 import { reduce } from '../utilities';
 

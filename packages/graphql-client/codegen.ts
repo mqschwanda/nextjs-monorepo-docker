@@ -18,6 +18,21 @@ const config: CodegenConfig = {
     path.join(graphqlSchemaPath, buildDir, documentsGlob),
   ],
   generates: {
+    [path.join('src', '__generated__', 'document-strings.ts')]: {
+      config: {
+        documentMode: 'graphQLTag',
+        gqlImport: path.join('@', 'utilities', 'gqlString'),
+        pureMagicComment: true,
+        reactApolloVersion,
+      },
+      plugins: [
+        'typescript-document-nodes',
+      ],
+      preset: 'import-types',
+      presetConfig: {
+        typesPath: graphqlSchemaName,
+      },
+    },
     [path.join('src', '__generated__', 'react-apollo.ts')]: {
       config: {
         pureMagicComment: true,

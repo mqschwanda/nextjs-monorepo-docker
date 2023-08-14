@@ -1,25 +1,25 @@
 import type { Prisma } from '@mqs/prisma/client';
 
-export type LoggerOptionsFinal
+export type LoggerOptionsSerialized
   = Omit<Prisma.LogCreateInput, 'createdAt'>
   & {
     db?: boolean,
   };
 
 export type LoggerOptionsError
-  = Omit<LoggerOptionsFinal, 'type' | 'payload'>
+  = Omit<LoggerOptionsSerialized, 'type' | 'payload'>
   & {
     payload?: Error,
     type: 'Error',
   };
 
 export type LoggerOptions
-  = LoggerOptionsFinal
+  = LoggerOptionsSerialized
   | LoggerOptionsError;
 
 export type LoggerResult = {
   createdAt?: Date;
-  id: number;
+  id?: number;
   message: string;
   payload?: any;
 };

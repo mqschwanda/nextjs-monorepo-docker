@@ -1,8 +1,7 @@
-import { LoggerOptions, LoggerOptionsError, LoggerOptionsFinal } from 'types';
-import { LogType } from '@prisma/client';
+import { LoggerOptions, LoggerOptionsError, LoggerOptionsSerialized } from 'types';
 import { getConsoleFunction, normalizeResult, serializeOptions } from './utilities';
 
-type Handler<TResult> = (options: LoggerOptions) => Promise<TResult>;
+type Handler<TResult> = (options: LoggerOptionsSerialized) => Promise<TResult>;
 
 export default class Logger<TResult> {
   handler: Handler<TResult>;
@@ -31,11 +30,11 @@ export default class Logger<TResult> {
     return normalizeResult(result);
   }
 
-  public async debug(options: Omit<LoggerOptionsFinal, 'type'>) {
+  public async debug(options: Omit<LoggerOptionsSerialized, 'type'>) {
     return this.logger(
       {
         ...options,
-        type: LogType.Debug,
+        type: 'Debug', // TODO: Add prisma client and prisma server module
       },
     );
   }
@@ -44,34 +43,34 @@ export default class Logger<TResult> {
     return this.logger(
       {
         ...options,
-        type: LogType.Error,
+        type: 'Error', // TODO: Add prisma client and prisma server module
       },
     );
   }
 
-  public async info(options: Omit<LoggerOptionsFinal, 'type'>) {
+  public async info(options: Omit<LoggerOptionsSerialized, 'type'>) {
     return this.logger(
       {
         ...options,
-        type: LogType.Info,
+        type: 'Info', // TODO: Add prisma client and prisma server module
       },
     );
   }
 
-  public async log(options: Omit<LoggerOptionsFinal, 'type'>) {
+  public async log(options: Omit<LoggerOptionsSerialized, 'type'>) {
     return this.logger(
       {
         ...options,
-        type: LogType.Log,
+        type: 'Log', // TODO: Add prisma client and prisma server module
       },
     );
   }
 
-  public async warn(options: Omit<LoggerOptionsFinal, 'type'>) {
+  public async warn(options: Omit<LoggerOptionsSerialized, 'type'>) {
     return this.logger(
       {
         ...options,
-        type: LogType.Warn,
+        type: 'Warn', // TODO: Add prisma client and prisma server module
       },
     );
   }

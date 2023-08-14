@@ -4,6 +4,7 @@ type Query {
   jobs: [Job!]!
   logs: [Log!]!
   me: User
+  version: String!
 }
 
 type Mutation {

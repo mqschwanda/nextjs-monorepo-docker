@@ -1,10 +1,20 @@
 import prisma from '@mqs/prisma/client';
-import { LoggerOptions } from './types';
+import { LoggerOptionsSerialized } from './types';
 import Logger from './Logger';
 
-async function handler(options: LoggerOptions) {
+async function handler(options: LoggerOptionsSerialized) {
+  const {
+    message,
+    payload,
+    type,
+  } = options;
+
   const result = await prisma.log.create({
-    data: options,
+    data: {
+      message,
+      payload,
+      type,
+    },
   });
 
   return result;

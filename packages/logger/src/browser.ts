@@ -1,35 +1,45 @@
-import { LoggerOptions } from 'types';
+import { LoggerOptionsSerialized } from 'types';
 import getApolloClientUri from '@mqs/graphql-client/getApolloClientUri';
-import { CreateLogDocument } from '@mqs/graphql-client';
+import { CreateLog } from '@mqs/graphql-client/document-strings';
 import type { LogInput } from '@mqs/graphql-schema';
 import Logger from './Logger';
 
-async function handler(options: LoggerOptions) {
-  const payload = options.payload
-    ? JSON.parse(JSON.stringify(options.payload))
-    : undefined;
+const uri = getApolloClientUri();
+
+async function handler(options: LoggerOptionsSerialized) {
+  const {
+    message,
+    payload,
+    type,
+  } = options;
 
   const input: LogInput = {
-    message: options.message,
+    message,
+    // @ts-ignore TODO: cleanup JSON types for graphql and prisma
     payload,
-    type: options.type,
+    type,
+  };
+
+  const body = JSON.stringify({
+    query: CreateLog,
+    variables: {
+      input,
+    },
+  });
+
+  const headers = {
+    'Content-Type': 'application/json',
   };
 
   const request = new Request(
-    getApolloClientUri(),
+    uri,
     {
-      body: JSON.stringify({
-        query: CreateLogDocument,
-        variables: {
-          input,
-        },
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      body,
+      headers,
       method: 'POST',
     },
   );
+
   const response = await fetch(request);
   const result = await response.json();
 

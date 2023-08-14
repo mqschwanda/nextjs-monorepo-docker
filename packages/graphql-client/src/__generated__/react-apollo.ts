@@ -329,3 +329,35 @@ export function useMeLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Types.M
 export type MeQueryHookResult = ReturnType<typeof useMeQuery>;
 export type MeLazyQueryHookResult = ReturnType<typeof useMeLazyQuery>;
 export type MeQueryResult = Apollo.QueryResult<Types.MeQuery, Types.MeQueryVariables>;
+export const VersionDocument = /* #__PURE__ */ gql`
+    query Version {
+  version
+}
+    `;
+
+/**
+ * __useVersionQuery__
+ *
+ * To run a query within a React component, call `useVersionQuery` and pass it any options that fit your needs.
+ * When your component renders, `useVersionQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useVersionQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useVersionQuery(baseOptions?: Apollo.QueryHookOptions<Types.VersionQuery, Types.VersionQueryVariables>) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useQuery<Types.VersionQuery, Types.VersionQueryVariables>(VersionDocument, options);
+}
+export function useVersionLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Types.VersionQuery, Types.VersionQueryVariables>) {
+  const options = { ...defaultOptions, ...baseOptions };
+  return Apollo.useLazyQuery<Types.VersionQuery, Types.VersionQueryVariables>(VersionDocument, options);
+}
+export type VersionQueryHookResult = ReturnType<typeof useVersionQuery>;
+export type VersionLazyQueryHookResult = ReturnType<typeof useVersionLazyQuery>;
+export type VersionQueryResult = Apollo.QueryResult<Types.VersionQuery, Types.VersionQueryVariables>;

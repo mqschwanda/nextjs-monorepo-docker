@@ -1,6 +1,7 @@
 import { Resolvers } from '@mqs/graphql-schema';
 import { RoleKey, prisma } from '@mqs/prisma/client';
 import { ContextType } from 'context';
+import parentJSON from 'parent-package-json';
 import { DateScalar, JSONScalar } from './scalars';
 import { authenticate, compose, userContext } from './middleware';
 
@@ -173,6 +174,23 @@ const resolvers: Resolvers<ContextType> = {
           ...context.user,
           roleKeys: context.user.roles.map((({ role }) => role.key)),
         };
+      },
+    ),
+    // TODO: isolate resolver and make other optimizations
+    version: compose()(
+      async (_parent, _args, _context, _info) => {
+        const parentPackageJson = parentJSON({});
+        const packageJsonPath = parentPackageJson.path.relative;
+
+        if (packageJsonPath) {
+          const packageJson = await import(require.resolve(packageJsonPath));
+
+          if (packageJson) {
+            return packageJson.version;
+          }
+        }
+
+        return 'N/A';
       },
     ),
   },

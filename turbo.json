@@ -13,7 +13,8 @@
       ],
       "env": [
         "NEXT_PUBLIC_API_HOST",
-        "JWT_SECRET"
+        "JWT_SECRET",
+        "NODE_ENV"
       ],
       "inputs": [
         "src/**/*.tsx",
@@ -62,7 +63,8 @@
     "dev": {
       "cache": false,
       "env": [
-        "JWT_SECRET"
+        "JWT_SECRET",
+        "NODE_ENV"
       ],
       "outputMode": "full",
       "persistent": true

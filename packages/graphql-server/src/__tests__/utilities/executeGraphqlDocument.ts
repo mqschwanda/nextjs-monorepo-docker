@@ -2,6 +2,8 @@ import { buildHTTPExecutor } from '@graphql-tools/executor-http';
 import { TypedDocumentNode } from '@apollo/client';
 import createGraphqlServer from '../..';
 
+jest.mock('@mqs/jobs');
+
 export default async function executeGraphqlDocument<
   Q,
   V extends Record<string, any>,
@@ -12,7 +14,9 @@ export default async function executeGraphqlDocument<
   document: TypedDocumentNode<Q, V>,
   variables: V,
 }) {
-  const graphqlServer = createGraphqlServer();
+  const graphqlServer = createGraphqlServer({
+    jobs: require('@mqs/jobs'), // eslint-disable-line global-require
+  });
   const executor = buildHTTPExecutor({
     endpoint: graphqlServer.graphqlEndpoint,
     fetch: graphqlServer.fetch,
