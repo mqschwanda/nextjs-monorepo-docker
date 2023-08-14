@@ -1,15 +1,10 @@
 export default function getApolloClientUri() {
-  // TODO: handle dynamic apollo client uri
-  return 'http://localhost:3001/graphql/v1';
+  const url = new URL('/graphql/v1', 'http://localhost:3001');
 
-  // if (process.env.NODE_ENV === 'production') {
-  //   throw new Error('no production uri');
-  //   // return '';
-  // }
+  if (process.env.NODE_ENV === 'production') {
+    // TODO: handle production apollo client uri
+    throw new Error('no production uri');
+  }
 
-  // if (process.env.NODE_ENV === 'development') {
-  //   return 'http://localhost:3001/graphql/v1';
-  // }
-
-  // throw new Error('no uri');
+  return url.toString();
 }
