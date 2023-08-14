@@ -2,6 +2,7 @@ import { LoggerOptionsSerialized } from 'types';
 import getApolloClientUri from '@mqs/graphql-client/getApolloClientUri';
 import { CreateLog } from '@mqs/graphql-client/document-strings';
 import type { LogInput } from '@mqs/graphql-schema';
+import type { CreateLogMutationResult } from '@mqs/graphql-client';
 import Logger from './Logger';
 
 const uri = getApolloClientUri();
@@ -40,9 +41,11 @@ async function handler(options: LoggerOptionsSerialized) {
   );
 
   const response = await fetch(request);
-  const result = await response.json();
 
-  return result.data;
+  const result: CreateLogMutationResult = await response.json();
+  const log = result.data?.createLog;
+
+  return log;
 }
 
 export default new Logger(handler);
