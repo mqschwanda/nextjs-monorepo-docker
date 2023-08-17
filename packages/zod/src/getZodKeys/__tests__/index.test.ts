@@ -1,24 +1,24 @@
-import * as z from '@';
+import { getZodKeys, zod } from '@';
 
 describe('@mqs/zod', () => {
   describe('getZodKeys', () => {
     it('gets keys for zod object', () => {
-      const schema = z
+      const schema = zod
         .object({
-          bar: z.string(),
-          foo: z.string(),
+          bar: zod.string(),
+          foo: zod.string(),
         });
 
-      const result = z.getZodKeys(schema);
+      const result = getZodKeys(schema);
 
       expect(result).toStrictEqual(['bar', 'foo']);
     });
 
     it('gets keys for zod object with effects', () => {
-      const schema = z
+      const schema = zod
         .object({
-          bar: z.string(),
-          foo: z.string(),
+          bar: zod.string(),
+          foo: zod.string(),
         })
         .refine(
           (obj) => obj.bar !== 'bar',
@@ -28,7 +28,7 @@ describe('@mqs/zod', () => {
           },
         );
 
-      const result = z.getZodKeys(schema);
+      const result = getZodKeys(schema);
 
       expect(result).toStrictEqual(['bar', 'foo']);
     });

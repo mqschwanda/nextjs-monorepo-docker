@@ -1,14 +1,14 @@
-import * as z from '@mqs/zod';
+import { zod } from '@mqs/zod';
 
-export const signInSchema = z
+export const signInSchema = zod
   .object({
-    email: z
+    email: zod
       .string()
       .email()
       .min(1, { message: 'email is required' }),
-    password: z
+    password: zod
       .string()
       .min(1, { message: 'password is required' }),
   });
 
-export type SignInSchema = z.infer<typeof signInSchema>;
+export type SignInSchema = zod.infer<typeof signInSchema>;

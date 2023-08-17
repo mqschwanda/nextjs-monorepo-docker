@@ -1,21 +1,21 @@
-import * as z from '@mqs/zod';
+import { zod } from '@mqs/zod';
 
-export const signUpSchema = z
+export const signUpSchema = zod
   .object({
-    'confirm-password': z
+    'confirm-password': zod
       .string()
       .min(1, { message: 'confirm password is required' }),
-    email: z
+    email: zod
       .string()
       .email()
       .min(1, { message: 'email is required' }),
-    nameFirst: z
+    nameFirst: zod
       .string()
       .min(1, { message: 'first name is required' }),
-    nameLast: z
+    nameLast: zod
       .string()
       .min(1, { message: 'last name is required' }),
-    password: z
+    password: zod
       .string()
       .min(1, { message: 'password is required' }),
   })
@@ -38,4 +38,4 @@ export const signUpSchema = z
     },
   );
 
-export type SignUpSchema = z.infer<typeof signUpSchema>;
+export type SignUpSchema = zod.infer<typeof signUpSchema>;

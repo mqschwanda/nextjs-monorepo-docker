@@ -3,14 +3,14 @@ import {
   useMemo,
   useState,
 } from 'react';
-import { getFormDataForZod, ZodTypeAny, typeToFlattenedError } from '@mqs/zod';
+import { getFormDataForZod, zod } from '@mqs/zod';
 
 export type UseFormActionOptions<
-  TSchema extends ZodTypeAny,
+  TSchema extends zod.ZodTypeAny,
   TSchemaOutput = TSchema['_output'],
 > = {
   action: (formData: FormData) => Promise<{
-    errors: typeToFlattenedError<TSchemaOutput>,
+    errors: zod.typeToFlattenedError<TSchemaOutput>,
   }>,
   schema: TSchema,
 };
@@ -19,13 +19,13 @@ export type UseFormActionOptions<
  * A hook to handle server actions for a form.
  */
 export function useFormAction<
-  TSchema extends ZodTypeAny,
+  TSchema extends zod.ZodTypeAny,
   TSchemaOutput = TSchema['_output'],
 >({
   action,
   schema,
 }: UseFormActionOptions<TSchema, TSchemaOutput>) {
-  type TErrors = typeToFlattenedError<TSchemaOutput>;
+  type TErrors = zod.typeToFlattenedError<TSchemaOutput>;
   type TFieldErrors = TErrors['fieldErrors'];
 
   const [errors, setErrors] = useState<TErrors>({
