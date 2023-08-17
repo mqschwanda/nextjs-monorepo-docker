@@ -5,7 +5,8 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { NextLinkWrapper } from '@mqs/react-client-components';
 import { useMeQuery } from '@mqs/graphql-client';
-import { Menu, MenuItem } from '@mqs/react-server-components';
+import { LoadingIndicator, Menu, MenuItem } from '@mqs/react-server-components';
+import cx from 'classnames';
 import { AUTH_ITEMS, PROFILE_ITEMS } from './constants';
 
 interface Props {
@@ -26,11 +27,6 @@ export default function NavAuthMenuItems(_props: Props) {
       pathname,
     ],
   );
-
-  if (loading) {
-    // TODO: handle loading state
-    return null;
-  }
 
   if (data?.me) {
     return (
@@ -110,14 +106,25 @@ export default function NavAuthMenuItems(_props: Props) {
       }) => (
         <MenuItem
           key={label}
+          variantState={loading ? 'disabled' : undefined}
         >
           <NextLinkWrapper
             href={href}
           >
             <a
-              className='text-xl'
+              className={cx([
+                'text-xl',
+              ])}
               href={href}
             >
+              { loading ? (
+                <>
+                  <LoadingIndicator
+                    variantSize='sm'
+                  />
+                  { ' ' }
+                </>
+              ) : null }
               { label }
             </a>
           </NextLinkWrapper>
