@@ -1,22 +1,22 @@
 /* eslint-disable no-console */
 
-import type { LogType } from '@mqs/graphql-schema';
+import { LogType } from '@mqs/prisma/client/browser';
 
 export default function getConsoleFunction(type: LogType) {
   switch (type) {
-    case 'Debug': // TODO: Add prisma client and prisma server module
+    case LogType.Debug:
       return console.debug;
 
-    case 'Error': // TODO: Add prisma client and prisma server module
+    case LogType.Error:
       return console.error;
 
-    case 'Log': // TODO: Add prisma client and prisma server module
+    case LogType.Log:
       return console.log;
 
-    case 'Info': // TODO: Add prisma client and prisma server module
+    case LogType.Info:
       return console.info;
 
-    case 'Warn': // TODO: Add prisma client and prisma server module
+    case LogType.Warn:
       return console.warn;
 
     default:

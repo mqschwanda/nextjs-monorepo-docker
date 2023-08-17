@@ -11,11 +11,11 @@ export const srcDir = 'src';
 export const typesPath = './graphql';
 
 const mappers = {
-  JobKey: '@mqs/prisma/client#JobKey',
-  Log: '@mqs/prisma/client#Log',
-  LogType: '@mqs/prisma/client#LogType',
-  RoleKey: '@mqs/prisma/client#RoleKey',
-  User: '@mqs/prisma/client#User',
+  JobKey: '@mqs/prisma/client/browser#JobKey',
+  Log: '@mqs/prisma/client/browser#Log',
+  LogType: '@mqs/prisma/client/browser#LogType',
+  RoleKey: '@mqs/prisma/client/browser#RoleKey',
+  User: '@mqs/prisma/client/browser#User',
 };
 
 const config: CodegenConfig = {

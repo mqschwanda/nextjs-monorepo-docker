@@ -1,7 +1,7 @@
 import { GraphQLResolveInfo, GraphQLScalarType, GraphQLScalarTypeConfig } from 'graphql';
 import {
   JobKey, Log, LogType, RoleKey, User,
-} from '@mqs/prisma/client';
+} from '@mqs/prisma/client/browser';
 import * as Types from './graphql';
 
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;

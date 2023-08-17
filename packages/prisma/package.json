@@ -7,14 +7,18 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
-    "./client": "./dist/client.js",
+    "./client": "./dist/client/index.js",
+    "./client/browser": "./dist/client/browser.js",
     "./seed": "./dist/seed/index.js",
     "./seed/constants": "./dist/seed/constants.js"
   },
   "typesVersions": {
     "*": {
       "client": [
-        "./dist/client.d.ts"
+        "./dist/client/index.d.ts"
+      ],
+      "client/browser": [
+        "./dist/client/index.d.ts"
       ],
       "seed": [
         "./dist/seed/index.d.ts"

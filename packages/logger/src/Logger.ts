@@ -1,4 +1,5 @@
 import { LoggerOptions, LoggerOptionsError, LoggerOptionsSerialized } from 'types';
+import { LogType } from '@mqs/prisma/client/browser';
 import { getConsoleFunction, normalizeResult, serializeOptions } from './utilities';
 
 type Handler<TResult> = (options: LoggerOptionsSerialized) => Promise<TResult>;
@@ -34,7 +35,7 @@ export default class Logger<TResult> {
     return this.logger(
       {
         ...options,
-        type: 'Debug', // TODO: Add prisma client and prisma server module
+        type: LogType.Debug,
       },
     );
   }
@@ -43,7 +44,7 @@ export default class Logger<TResult> {
     return this.logger(
       {
         ...options,
-        type: 'Error', // TODO: Add prisma client and prisma server module
+        type: LogType.Error,
       },
     );
   }
@@ -52,7 +53,7 @@ export default class Logger<TResult> {
     return this.logger(
       {
         ...options,
-        type: 'Info', // TODO: Add prisma client and prisma server module
+        type: LogType.Info,
       },
     );
   }
@@ -61,7 +62,7 @@ export default class Logger<TResult> {
     return this.logger(
       {
         ...options,
-        type: 'Log', // TODO: Add prisma client and prisma server module
+        type: LogType.Log,
       },
     );
   }
@@ -70,7 +71,7 @@ export default class Logger<TResult> {
     return this.logger(
       {
         ...options,
-        type: 'Warn', // TODO: Add prisma client and prisma server module
+        type: LogType.Warn,
       },
     );
   }

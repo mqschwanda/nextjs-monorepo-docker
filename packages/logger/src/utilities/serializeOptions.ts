@@ -1,8 +1,9 @@
 import { serializeError } from 'serialize-error';
+import { LogType } from '@mqs/prisma/client/browser';
 import { LoggerOptions, LoggerOptionsError, LoggerOptionsSerialized } from 'types';
 
 function optionsIsError(options: LoggerOptions): options is LoggerOptionsError {
-  return options.type === 'Error'; // TODO: Add prisma client and prisma server module
+  return options.type === LogType.Error;
 }
 
 export default function serializeOptions(options: LoggerOptions): LoggerOptionsSerialized {
