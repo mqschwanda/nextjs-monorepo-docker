@@ -18,6 +18,7 @@
     "docker-build:prod": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose -f docker-compose.base.yml -f docker-compose.prod.yml build",
     "docker-kill": "docker kill $(docker ps -q) && docker rm $(docker ps -a -q)",
     "docker-prisma-migrate-dev:dev": "docker compose -f docker-compose.base.yml -f docker-compose.dev.yml exec api yarn workspace @mqs/prisma run migrate:dev",
+    "docker-prisma-migrate-dev:initial": "docker compose -f docker-compose.base.yml -f docker-compose.dev.yml exec api yarn workspace @mqs/prisma run migrate:initial",
     "docker-prisma-migrate-status:dev": "docker compose -f docker-compose.base.yml -f docker-compose.dev.yml exec api yarn workspace @mqs/prisma run migrate:status",
     "docker-prisma-migrate-reset:dev": "docker compose -f docker-compose.base.yml -f docker-compose.dev.yml exec api yarn workspace @mqs/prisma run migrate:reset",
     "docker-prisma-pull:dev": "docker compose -f docker-compose.base.yml -f docker-compose.dev.yml exec api yarn workspace @mqs/prisma run pull:dev",
