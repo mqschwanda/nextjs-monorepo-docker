@@ -21,6 +21,7 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
+    "@mqs/errors": "*",
     "zod": "^3.21.4"
   }
 }

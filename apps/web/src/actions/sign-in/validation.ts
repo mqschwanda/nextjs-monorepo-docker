@@ -2,13 +2,13 @@ import { zod } from '@mqs/zod';
 
 export const signInSchema = zod
   .object({
-    email: zod
-      .string()
-      .email()
-      .min(1, { message: 'email is required' }),
-    password: zod
-      .string()
-      .min(1, { message: 'password is required' }),
-  });
+    email: zod.mqs.email({
+      key: 'email',
+    }),
+    password: zod.mqs.password({
+      key: 'password',
+    }),
+  })
+  .required();
 
 export type SignInSchema = zod.infer<typeof signInSchema>;

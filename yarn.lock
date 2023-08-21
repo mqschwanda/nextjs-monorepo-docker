@@ -5016,6 +5016,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mqs/zod@workspace:packages/zod"
   dependencies:
+    "@mqs/errors": "*"
     "@mqs/eslint-config": "*"
     "@mqs/jest-preset": "*"
     "@mqs/tsc": "*"

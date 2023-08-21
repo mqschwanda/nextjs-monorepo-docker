@@ -2,23 +2,23 @@ import { zod } from '@mqs/zod';
 
 export const signUpSchema = zod
   .object({
-    'confirm-password': zod
-      .string()
-      .min(1, { message: 'confirm password is required' }),
-    email: zod
-      .string()
-      .email()
-      .min(1, { message: 'email is required' }),
-    nameFirst: zod
-      .string()
-      .min(1, { message: 'first name is required' }),
-    nameLast: zod
-      .string()
-      .min(1, { message: 'last name is required' }),
-    password: zod
-      .string()
-      .min(1, { message: 'password is required' }),
+    'confirm-password': zod.mqs.password({
+      key: 'confirm-password',
+    }),
+    email: zod.mqs.email({
+      key: 'email',
+    }),
+    nameFirst: zod.mqs.name({
+      key: 'first name',
+    }),
+    nameLast: zod.mqs.name({
+      key: 'last name',
+    }),
+    password: zod.mqs.password({
+      key: 'password',
+    }),
   })
+  .required()
   .refine(
     (obj) => obj.password === obj['confirm-password'],
     {
