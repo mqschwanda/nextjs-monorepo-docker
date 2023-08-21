@@ -23,12 +23,12 @@
     "@mqs/eslint-config": "*",
     "@mqs/tailwind-config": "*",
     "@mqs/tsconfig": "*",
-    "@types/react": "^18.2.17",
-    "autoprefixer": "^10.4.14",
-    "eslint": "^8.46.0",
-    "postcss": "^8.4.27",
+    "@types/react": "^18.2.20",
+    "autoprefixer": "^10.4.15",
+    "eslint": "^8.47.0",
+    "postcss": "^8.4.28",
     "react": "^18.2.0",
-    "tsup": "^7.1.0",
+    "tsup": "^7.2.0",
     "typescript": "^5.1.6"
   }
 }
