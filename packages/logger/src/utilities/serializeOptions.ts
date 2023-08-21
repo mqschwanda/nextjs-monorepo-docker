@@ -1,4 +1,4 @@
-import { serializeError } from 'serialize-error';
+import { serialize as serializeError } from '@mqs/errors/utilities';
 import { LogType } from '@mqs/prisma/client/browser';
 import { LoggerOptions, LoggerOptionsError, LoggerOptionsSerialized } from 'types';
 
