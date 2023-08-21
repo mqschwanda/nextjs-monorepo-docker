@@ -99,6 +99,19 @@ export default class Tokens {
   }
 
   /**
+   * Get JWT secret
+   */
+  static get jwtSecret() { // eslint-disable-line class-methods-use-this
+    const JWT_SECRET = process.env.JWT_SECRET; // eslint-disable-line prefer-destructuring
+
+    if (!JWT_SECRET) {
+      throw new Error('an unexpected error occurred');
+    }
+
+    return JWT_SECRET;
+  }
+
+  /**
    * Delete access token from database to prevent future use.
    */
   static async invalidateAccessToken(
@@ -191,16 +204,11 @@ export default class Tokens {
    * Create new access and refresh token pair for a given user.
    */
   static async signAccessToken(payload: TokenPayload) {
-    // TODO: change how the secret for tokens is defined
-    if (process.env.JWT_SECRET === undefined) {
-      throw new Error('an unexpected error occurred');
-    }
-
     const refreshToken = await Tokens.signRefreshToken(payload);
 
     const value = jwt.sign(
       payload,
-      process.env.JWT_SECRET,
+      this.jwtSecret,
       {
         algorithm: Tokens.algorithm,
         audience: Tokens.audienceAccess,
@@ -236,14 +244,9 @@ export default class Tokens {
    * Create new refresh token pair for a given user.
    */
   static async signRefreshToken(payload: TokenPayload) {
-    // TODO: change how the secret for tokens is defined
-    if (process.env.JWT_SECRET === undefined) {
-      throw new Error('an unexpected error occurred');
-    }
-
     const value = jwt.sign(
       payload,
-      process.env.JWT_SECRET,
+      this.jwtSecret,
       {
         algorithm: Tokens.algorithm,
         audience: Tokens.audienceRefresh,
@@ -272,14 +275,9 @@ export default class Tokens {
       ignoreExpiration = false,
     } = options;
 
-    // TODO: change how the secret for tokens is defined
-    if (process.env.JWT_SECRET === undefined) {
-      throw new Error('an unexpected error occurred');
-    }
-
     const token = jwt.verify(
       value,
-      process.env.JWT_SECRET,
+      this.jwtSecret,
       {
         algorithms: [
           Tokens.algorithm,
@@ -326,14 +324,9 @@ export default class Tokens {
       ignoreExpiration = false,
     } = options;
 
-    // TODO: change how the secret for tokens is defined
-    if (process.env.JWT_SECRET === undefined) {
-      throw new Error('an unexpected error occurred');
-    }
-
     const token = jwt.verify(
       value,
-      process.env.JWT_SECRET,
+      this.jwtSecret,
       {
         algorithms: [
           Tokens.algorithm,
