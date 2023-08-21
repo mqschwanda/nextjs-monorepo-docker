@@ -3,7 +3,7 @@ import { zod } from '@mqs/zod';
 export const signUpSchema = zod
   .object({
     'confirm-password': zod.mqs.password({
-      key: 'confirm-password',
+      key: 'confirm password',
     }),
     email: zod.mqs.email({
       key: 'email',
