@@ -1,5 +1,6 @@
 import jwt, { VerifyOptions as JwtVerifyOptions } from 'jsonwebtoken';
 import { Prisma, prisma } from '@mqs/prisma/client';
+import { ErrorUnexpected } from '@mqs/errors/errors';
 
 type VerifyOptions = Pick<JwtVerifyOptions, 'ignoreExpiration'>;
 type TokenPayload = {
@@ -66,7 +67,7 @@ export default class Tokens {
         refreshToken = await Tokens.verifyRefreshToken(refreshTokenValue);
       } catch (refreshError) {
         if (!refreshToken?.accessToken) {
-          throw new Error('an unexpected error occurred');
+          throw new ErrorUnexpected();
         }
 
         await Tokens.invalidateUserTokens({
@@ -77,7 +78,7 @@ export default class Tokens {
       }
 
       if (!refreshToken?.accessToken) {
-        throw new Error('an unexpected error occurred');
+        throw new ErrorUnexpected();
       }
 
       await Tokens.invalidateAccessToken(
@@ -105,7 +106,7 @@ export default class Tokens {
     const JWT_SECRET = process.env.JWT_SECRET; // eslint-disable-line prefer-destructuring
 
     if (!JWT_SECRET) {
-      throw new Error('an unexpected error occurred');
+      throw new ErrorUnexpected();
     }
 
     return JWT_SECRET;
@@ -307,7 +308,7 @@ export default class Tokens {
     });
 
     if (token.data.userId !== accessToken.user.id) {
-      throw new Error('an unexpected error occurred');
+      throw new ErrorUnexpected();
     }
 
     return accessToken;
@@ -359,7 +360,7 @@ export default class Tokens {
     });
 
     if (token.data.userId !== refreshToken.accessToken?.user.id) {
-      throw new Error('an unexpected error occurred');
+      throw new ErrorUnexpected();
     }
 
     return refreshToken;

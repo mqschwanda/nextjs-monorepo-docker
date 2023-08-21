@@ -1,16 +1,35 @@
 {
-  "name": "@mqs/tokens",
+  "name": "@mqs/errors",
   "version": "0.0.0",
-  "license": "MIT",
+  "private": true,
   "main": "./dist/index.js",
   "source": "./src/index.ts",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": "./dist/index.js"
-  },
   "files": [
     "dist/**"
   ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./errors": "./dist/errors/index.js",
+    "./messages": "./dist/messages.js",
+    "./utilities": "./dist/utilities/index.js"
+  },
+  "typesVersions": {
+    "*": {
+      ".": [
+        "./dist/index.d.ts"
+      ],
+      "errors": [
+        "./dist/errors/index.d.ts"
+      ],
+      "messages": [
+        "./dist/messages.d.ts"
+      ],
+      "utilities": [
+        "./dist/utilities/index.d.ts"
+      ]
+    }
+  },
   "scripts": {
     "build": "yarn clean && mqs-tsc --project tsconfig.build.json",
     "clean": "rm -rfv dist || true",
@@ -20,7 +39,9 @@
     "test": "jest"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.22.9",
     "@mqs/eslint-config": "*",
+    "@mqs/graphql-schema": "*",
     "@mqs/jest-preset": "*",
     "@mqs/tsc": "*",
     "@mqs/tsconfig": "*",
@@ -29,8 +50,6 @@
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@mqs/errors": "*",
-    "@mqs/prisma": "*",
-    "jsonwebtoken": "^9.0.1"
+    "serialize-error": "^11.0.1"
   }
 }

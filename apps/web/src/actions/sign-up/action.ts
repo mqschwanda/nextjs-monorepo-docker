@@ -7,6 +7,7 @@ import { getFormDataForZod } from '@mqs/zod';
 import { Prisma, prisma } from '@mqs/prisma/client';
 import { Tokens } from '@mqs/tokens';
 import logger from '@mqs/logger';
+import errorMessages from '@mqs/errors/messages';
 import { signUpSchema } from './validation';
 
 // eslint-disable-next-line consistent-return
@@ -71,7 +72,7 @@ export default async function signUpAction(formData: FormData) {
     return {
       errors: {
         fieldErrors: {},
-        formErrors: ['an unexpected error occurred'],
+        formErrors: [errorMessages.UNEXPECTED],
       },
     };
   }
@@ -80,7 +81,7 @@ export default async function signUpAction(formData: FormData) {
     return {
       errors: {
         fieldErrors: {},
-        formErrors: ['an unexpected error occurred'],
+        formErrors: [errorMessages.UNEXPECTED],
       },
     };
   }

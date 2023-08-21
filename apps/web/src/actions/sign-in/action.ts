@@ -6,6 +6,7 @@ import { cookies, headers } from 'next/headers';
 import { getFormDataForZod } from '@mqs/zod';
 import { prisma } from '@mqs/prisma/client';
 import { Tokens } from '@mqs/tokens';
+import errorMessages from '@mqs/errors/messages';
 import { signInSchema } from './validation';
 
 // eslint-disable-next-line consistent-return
@@ -38,10 +39,10 @@ export default async function signInAction(formData: FormData) {
     return {
       errors: {
         fieldErrors: {
-          email: ['not authorized'],
-          password: ['not authorized'],
+          email: [errorMessages.NOT_AUTHORIZED],
+          password: [errorMessages.NOT_AUTHORIZED],
         },
-        formErrors: ['not authorized'],
+        formErrors: [errorMessages.NOT_AUTHORIZED],
       },
     };
   }
