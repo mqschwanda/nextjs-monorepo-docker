@@ -4535,8 +4535,8 @@ __metadata:
     "@types/body-parser": ^1.19.2
     "@types/cors": ^2.8.13
     "@types/express": ^4.17.17
-    "@types/morgan": ^1.9.4
-    "@types/node": ^20.5.1
+    "@types/morgan": ^1.9.5
+    "@types/node": ^20.5.3
     "@types/supertest": ^2.0.12
     body-parser: ^1.20.2
     cors: ^2.8.5
@@ -4609,7 +4609,7 @@ __metadata:
     "@mqs/graphql-schema": "*"
     "@mqs/tsc": "*"
     "@mqs/tsconfig": "*"
-    concurrently: ^8.2.0
+    concurrently: ^8.2.1
     eslint: ^8.47.0
     glob: ^10.3.3
     graphql: ^16.8.0
@@ -4635,7 +4635,7 @@ __metadata:
     "@mqs/prisma": "*"
     "@mqs/tsc": "*"
     "@mqs/tsconfig": "*"
-    concurrently: ^8.2.0
+    concurrently: ^8.2.1
     copyfiles: ^2.4.1
     eslint: ^8.47.0
     glob: ^10.3.3
@@ -4686,8 +4686,8 @@ __metadata:
     "@mqs/eslint-config": "*"
     "@mqs/tsc": "*"
     "@mqs/tsconfig": "*"
-    "@types/jest": ^29.5.3
-    "@types/node": ^20.5.1
+    "@types/jest": ^29.5.4
+    "@types/node": ^20.5.3
     eslint: ^8.47.0
     jest: ^29.6.3
     jest-environment-jsdom: ^29.6.3
@@ -4777,7 +4777,7 @@ __metadata:
     "@mui/icons-material": ^5.14.3
     "@mui/material": ^5.14.5
     "@testing-library/react": ^14.0.0
-    "@types/react": ^18.2.20
+    "@types/react": ^18.2.21
     "@types/react-dom": ^18.2.7
     classnames: ^2.3.2
     eslint: ^8.47.0
@@ -4805,7 +4805,7 @@ __metadata:
     "@mqs/tsconfig": "*"
     "@storybook/react": ^7.3.2
     "@testing-library/react": ^14.0.0
-    "@types/react": ^18.2.20
+    "@types/react": ^18.2.21
     "@types/react-dom": ^18.2.7
     classnames: ^2.3.2
     eslint: ^8.47.0
@@ -4905,7 +4905,7 @@ __metadata:
     "@mqs/eslint-config": "*"
     "@mqs/tailwind-config": "*"
     "@mqs/tsconfig": "*"
-    "@types/react": ^18.2.20
+    "@types/react": ^18.2.21
     autoprefixer: ^10.4.15
     eslint: ^8.47.0
     postcss: ^8.4.28
@@ -4958,7 +4958,7 @@ __metadata:
   dependencies:
     "@mqs/eslint-config": "*"
     "@mqs/tsconfig": "*"
-    concurrently: ^8.2.0
+    concurrently: ^8.2.1
     eslint: ^8.47.0
     tsc-alias: ^1.8.7
     typescript: ^5.1.6
@@ -5003,8 +5003,8 @@ __metadata:
     "@prisma/client": ^5.2.0
     "@types/date-fns": ^2.6.0
     "@types/jsonwebtoken": ^9.0.2
-    "@types/node": ^20.5.1
-    "@types/react": ^18.2.20
+    "@types/node": ^20.5.3
+    "@types/react": ^18.2.21
     "@types/react-dom": ^18.2.7
     classnames: ^2.3.2
     cookies-next: ^2.1.2
@@ -8009,7 +8009,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:*, @types/jest@npm:^29.5.3":
+"@types/jest@npm:*, @types/jest@npm:^29.5.4":
   version: 29.5.4
   resolution: "@types/jest@npm:29.5.4"
   dependencies:
@@ -8109,7 +8109,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/morgan@npm:^1.9.4":
+"@types/morgan@npm:^1.9.5":
   version: 1.9.5
   resolution: "@types/morgan@npm:1.9.5"
   dependencies:
@@ -8135,7 +8135,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.5.1":
+"@types/node@npm:*, @types/node@npm:^20.5.3":
   version: 20.5.3
   resolution: "@types/node@npm:20.5.3"
   checksum: fe67a0fd7402218bdf91523a2b1c2e41d619f7294b1a471e0a778b8bc7bb3fcf291aed12041bcbe9622d50a3d1295a9adea0e7e19bb9386a246bf66071404721
@@ -8243,7 +8243,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:>=16, @types/react@npm:^18.2.20":
+"@types/react@npm:*, @types/react@npm:>=16, @types/react@npm:^18.2.21":
   version: 18.2.21
   resolution: "@types/react@npm:18.2.21"
   dependencies:
@@ -10926,7 +10926,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"concurrently@npm:^8.2.0":
+"concurrently@npm:^8.2.1":
   version: 8.2.1
   resolution: "concurrently@npm:8.2.1"
   dependencies:
@@ -18672,7 +18672,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-check-updates@npm:^16.12.2":
+"npm-check-updates@npm:^16.13.0":
   version: 16.13.0
   resolution: "npm-check-updates@npm:16.13.0"
   dependencies:
@@ -24041,7 +24041,7 @@ __metadata:
     cspell: ^6.31.3
     eslint: ^8.47.0
     jest: ^29.6.3
-    npm-check-updates: ^16.12.2
+    npm-check-updates: ^16.13.0
     prettier: ^3.0.2
     turbo: ^1.10.12
     typescript: ^5.1.6
