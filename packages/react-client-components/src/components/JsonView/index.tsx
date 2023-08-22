@@ -1,9 +1,14 @@
 'use client';
 
 import { ReactTestingProps, spreadReactTestingProps } from '@mqs/react-testing-lib';
-import ReactJsonView, { ReactJsonViewProps } from 'react-json-view';
 import { ReactCxProps } from '@mqs/react-utils';
 import cx from 'classnames';
+import type { ReactJsonViewProps } from 'react-json-view';
+import { ComponentType, lazy } from 'react';
+
+const ReactJsonView = lazy<ComponentType<ReactJsonViewProps>>(
+  () => import('react-json-view'),
+);
 
 export interface JsonViewProps
   extends ReactTestingProps,
@@ -26,9 +31,11 @@ export function JsonView({
       )}
       {...spreadReactTestingProps({ testId })} // eslint-disable-line react/jsx-props-no-spreading
     >
-      <ReactJsonView
-        {...rest} // eslint-disable-line react/jsx-props-no-spreading
-      />
+      { document && window ? (
+        <ReactJsonView
+          {...rest} // eslint-disable-line react/jsx-props-no-spreading
+        />
+      ) : null }
     </div>
 
   );
