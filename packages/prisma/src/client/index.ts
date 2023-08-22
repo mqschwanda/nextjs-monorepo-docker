@@ -1,5 +1,8 @@
 import {
-  PrismaClient, RoleKey, Prisma, User,
+  PrismaClient,
+  RoleKey,
+  Prisma,
+  User,
 } from '@prisma/client';
 import bcrypt from 'bcrypt';
 

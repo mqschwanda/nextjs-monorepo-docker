@@ -20,6 +20,8 @@ async function sanitizeUser(user: SeedUser) {
 }
 
 async function seed() {
+  await prisma.$connect();
+
   const roles: Array<Omit<Role, 'id'>> = [
     {
       key: RoleKey.Admin,
@@ -55,7 +57,7 @@ async function seed() {
   await prisma.user.addUserRoleForUniqueUser({
     roleKey: RoleKey.Admin,
     where: {
-      email: 'admin@email.com',
+      email: ADMIN_USER.email,
     },
   });
 
@@ -99,5 +101,5 @@ seed()
   .catch(async (error) => {
     console.error(error); // eslint-disable-line no-console
     await prisma.$disconnect();
-    process.exit(1);
+    // process.exit(1);
   });

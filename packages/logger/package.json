@@ -47,7 +47,7 @@
     "@mqs/errors": "*",
     "@mqs/graphql-client": "*",
     "@mqs/prisma": "*",
-    "@prisma/client": "^5.1.1",
-    "prisma": "^5.1.1"
+    "@prisma/client": "^5.2.0",
+    "prisma": "^5.2.0"
   }
 }
