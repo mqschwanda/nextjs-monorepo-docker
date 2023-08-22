@@ -4926,7 +4926,7 @@ __metadata:
     "@mqs/tsconfig": "*"
     "@tailwindcss/typography": ^0.5.9
     autoprefixer: ^10.4.15
-    daisyui: ^3.5.1
+    daisyui: ^3.6.1
     eslint: ^8.47.0
     jest: ^29.6.3
     postcss: ^8.4.28
@@ -11506,16 +11506,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"daisyui@npm:^3.5.1":
-  version: 3.5.1
-  resolution: "daisyui@npm:3.5.1"
+"daisyui@npm:^3.6.1":
+  version: 3.6.1
+  resolution: "daisyui@npm:3.6.1"
   dependencies:
     colord: ^2.9
     css-selector-tokenizer: ^0.8
     postcss: ^8
     postcss-js: ^4
     tailwindcss: ^3
-  checksum: 0f7e572b8fd4bfd5922b8ae1315734cad635383cfcd5c9f272b932012fdcffc35cdec43ebee2f69ac9166114741fe948ebfdd67d929daa198cda3e0ab00ff99e
+  checksum: effcd189b3c7a7319b89615afd0f67a4f4870a250a794a56bce871e3a661d2571134904e341d33d75d81b03b811af2b041711b0105a4c1824a6a74eb8130dfa2
   languageName: node
   linkType: hard
 
