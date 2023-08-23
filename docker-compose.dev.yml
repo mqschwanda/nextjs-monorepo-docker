@@ -24,5 +24,17 @@ services:
       - 8080:8080
     networks:
       - app_network
+  dev:
+    volumes:
+      - ./:/app
+    working_dir: /app
+    image: node:alpine
+    container_name: dev
+    restart: always
+    env_file:
+      - .env.dev
+    tty: true
+    networks:
+      - app_network
 volumes:
   app:
