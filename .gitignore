@@ -41,6 +41,9 @@ yarn-error.log*
 # turbo
 .turbo
 
+# env
+.env.prod
+
 .swc
 cypress/videos/
 cypress/downloads/

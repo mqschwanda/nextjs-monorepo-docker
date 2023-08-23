@@ -4,7 +4,8 @@
     "**/.env.*local"
   ],
   "globalEnv": [
-    "PORT"
+    "PORT",
+    "NODE_ENV"
   ],
   "pipeline": {
     "build": {
@@ -12,6 +13,7 @@
         "^build"
       ],
       "env": [
+        "APOLLO_CLIENT_HOST",
         "NEXT_PUBLIC_API_HOST",
         "JWT_SECRET",
         "NODE_ENV"
@@ -48,6 +50,7 @@
       "persistent": false
     },
     "codegen:watch": {
+      "cache": false,
       "dependsOn": [
         "^build"
       ],
@@ -63,6 +66,7 @@
     "dev": {
       "cache": false,
       "env": [
+        "APOLLO_CLIENT_HOST",
         "JWT_SECRET",
         "NODE_ENV"
       ],
@@ -84,7 +88,9 @@
       "persistent": false
     },
     "test": {
-      "dependsOn": [],
+      "dependsOn": [
+        "^build"
+      ],
       "outputMode": "full",
       "outputs": [
         "coverage/**",

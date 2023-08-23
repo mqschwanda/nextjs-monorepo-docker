@@ -17,4 +17,4 @@ WORKDIR /app
 
 COPY --from=installer /app .
 
-CMD yarn turbo run dev --scope=@mqs/web
+CMD yarn turbo run dev --filter=@mqs/web -vvv

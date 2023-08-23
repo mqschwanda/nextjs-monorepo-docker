@@ -4,20 +4,18 @@ services:
       - ./:/app
     build:
       dockerfile: ./apps/web/Dockerfile.dev
-    environment:
-      JWT_SECRET: secret
+    env_file:
+      - .env.dev
   api:
     volumes:
       - ./:/app
     build:
       dockerfile: ./apps/api/Dockerfile.dev
-    environment:
-      JWT_SECRET: secret
+    env_file:
+      - .env.dev
   db:
-    environment:
-      POSTGRES_PASSWORD: password
-      POSTGRES_USER: user
-      POSTGRES_DB: postgres
+    env_file:
+      - .env.dev
   adminer:
     image: adminer
     container_name: adminer

@@ -54,6 +54,13 @@ You should not run into this issue unless you are trying to run all (or many) wo
 
 ### Production
 
+First, you will want to create an `.env.prod` file be either copying the `.env.dev` or `.env.prod.example` files and making the necessary changes. (Note: The `.env.prod` file will be ignored by git):
+```
+cp .env.dev .env.prod
+# or
+cp .env.prod.example .env.prod
+```
+
 This repo is configured to be built with Docker, and Docker compose. To build all apps in this repo:
 
 ```

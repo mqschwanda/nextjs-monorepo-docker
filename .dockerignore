@@ -1,1 +1,12 @@
+.cspell/
+.dockerignore
+.editorconfig
+.env.*
+.eslintrc.js
+.gitignore
+.vscode/
+*.md
+docker-compose.*
+docs/
 node_modules
+out/

@@ -97,7 +97,7 @@ export default function LogsTableBodyRow({
                 name={false}
                 quotesOnKeys={false}
                 sortKeys
-                src={payload}
+                src={payload as any} // TODO: fix any cast
                 theme='hopscotch'
               />
             </ModalBody>
