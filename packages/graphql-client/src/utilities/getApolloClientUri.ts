@@ -1,13 +1,16 @@
 export default function getApolloClientUri() {
   const url = new URL('/graphql/v1', 'http://localhost:3001');
 
-  const APOLLO_CLIENT_HOST = process.env.APOLLO_CLIENT_HOST; // eslint-disable-line prefer-destructuring
+  const host = (
+    process.env.APOLLO_CLIENT_HOST
+    || process.env.NEXT_PUBLIC_APOLLO_CLIENT_HOST
+  );
 
-  if (!APOLLO_CLIENT_HOST) {
-    throw new Error('no APOLLO_CLIENT_HOST environment variable');
+  if (!host) {
+    throw new Error('no APOLLO_CLIENT_HOST or NEXT_PUBLIC_APOLLO_CLIENT_HOST environment variable');
   }
 
-  url.host = APOLLO_CLIENT_HOST;
+  url.host = host;
 
   return url.toString();
 }

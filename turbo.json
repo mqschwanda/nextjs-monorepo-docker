@@ -14,6 +14,7 @@
       ],
       "env": [
         "APOLLO_CLIENT_HOST",
+        "NEXT_PUBLIC_APOLLO_CLIENT_HOST",
         "NEXT_PUBLIC_API_HOST",
         "JWT_SECRET",
         "NODE_ENV"
@@ -67,6 +68,7 @@
       "cache": false,
       "env": [
         "APOLLO_CLIENT_HOST",
+        "NEXT_PUBLIC_APOLLO_CLIENT_HOST",
         "JWT_SECRET",
         "NODE_ENV"
       ],
