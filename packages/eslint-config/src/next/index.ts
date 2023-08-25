@@ -18,6 +18,9 @@ const config: Linter.Config = {
   plugins: [
     'cypress',
   ],
+  rules: {
+    'import/no-anonymous-default-export': 'warn',
+  },
 };
 
 export {};

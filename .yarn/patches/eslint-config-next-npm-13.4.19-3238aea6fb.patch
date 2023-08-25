@@ -1,0 +1,16 @@
+diff --git a/index.js b/index.js
+index a17aa9d618f9f786d93fd6510b07d321c24e8a12..5eb2e50f7093395b453e4e233eb3b26bad6d1557 100644
+--- a/index.js
++++ b/index.js
+@@ -57,9 +57,9 @@ module.exports = {
+     'plugin:react-hooks/recommended',
+     'plugin:@next/next/recommended',
+   ],
+-  plugins: ['import', 'react', 'jsx-a11y'],
++  plugins: [/*'import'*/, 'react', 'jsx-a11y'],
+   rules: {
+-    'import/no-anonymous-default-export': 'warn',
++    // 'import/no-anonymous-default-export': 'warn',
+     'react/no-unknown-property': 'off',
+     'react/react-in-jsx-scope': 'off',
+     'react/prop-types': 'off',

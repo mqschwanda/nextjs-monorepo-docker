@@ -6,7 +6,8 @@ migrations/
 
 # dependencies
 node_modules
-.yarn
+.yarn/*
+!.yarn/patches
 .pnp
 .pnp.js
 
