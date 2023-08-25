@@ -1,7 +1,4 @@
 import {
-  AlertProps,
-} from '@mqs/react-server-components';
-import {
   MouseEvent,
   MouseEventHandler,
   useCallback,
@@ -13,23 +10,25 @@ export type OnClickDismiss = (
   event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
 ) => Promise<boolean | void> | boolean | void;
 
-export interface UseAlertDismissibleOptions
-  extends AlertProps {
+export interface UseAlertDismissibleOptions {
   onClickDismiss?: OnClickDismiss;
   hiddenDefault?: boolean;
 }
 
-export function useAlertDismissible(options: UseAlertDismissibleOptions) {
-  const [hidden, setHidden] = useState(!!options.hiddenDefault);
+export function useAlertDismissible({
+  onClickDismiss,
+  hiddenDefault,
+}: UseAlertDismissibleOptions = {}) {
+  const [hidden, setHidden] = useState(!!hiddenDefault);
 
   const handleClickDismiss: MouseEventHandler<HTMLButtonElement> = useCallback(
     async (event) => {
-      if (!options.onClickDismiss || await options.onClickDismiss(event)) {
+      if (!onClickDismiss || await onClickDismiss(event)) {
         setHidden(true);
       }
     },
     [
-      options,
+      onClickDismiss,
       setHidden,
     ],
   );

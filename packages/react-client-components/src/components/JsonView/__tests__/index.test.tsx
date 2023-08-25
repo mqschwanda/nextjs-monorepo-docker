@@ -1,10 +1,10 @@
-import { render } from '@testing-library/react';
+import { render, waitFor } from '@testing-library/react';
 import { JsonView } from '@';
 
 describe('@mqs/react-client-components', () => {
   describe('components', () => {
     describe('<JsonView />', () => {
-      it('renders', () => {
+      it('renders', async () => {
         const testId = JsonView.name;
 
         const { getByTestId, asFragment } = render((
@@ -22,7 +22,10 @@ describe('@mqs/react-client-components', () => {
           />
         ));
 
-        const element = getByTestId(testId);
+        let element: HTMLElement | undefined;
+        await waitFor(() => {
+          element = getByTestId(testId);
+        });
         expect(element).toBeTruthy();
 
         expect(asFragment()).toMatchSnapshot();

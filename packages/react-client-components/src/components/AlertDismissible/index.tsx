@@ -6,7 +6,6 @@ import {
   Button,
   IconClose,
 } from '@mqs/react-server-components';
-import cx from 'classnames';
 import { OnClickDismiss, useAlertDismissible } from './hook';
 
 export {
@@ -28,15 +27,16 @@ export function AlertDismissible({
     handleClickDismiss,
     hidden,
   } = useAlertDismissible({
+    hiddenDefault: false,
     onClickDismiss,
   });
 
   return (
     <Alert
-      cx={cx(
+      cx={[
         cxProp,
         hidden ? 'hidden' : null,
-      )}
+      ]}
       testId={testId}
       {...rest} // eslint-disable-line react/jsx-props-no-spreading
     >

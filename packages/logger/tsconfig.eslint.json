@@ -3,6 +3,7 @@
   "files": [
     "./.eslintrc.js",
     "./jest.config.ts",
+    "./.jest/setupFiles/env.ts",
     "./babel.config.js"
-  ],
+  ]
 }

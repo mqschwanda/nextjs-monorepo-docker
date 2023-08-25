@@ -118,7 +118,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@apollo/server@npm:^4.9.1":
+"@apollo/server@npm:^4.9.2":
   version: 4.9.2
   resolution: "@apollo/server@npm:4.9.2"
   dependencies:
@@ -340,7 +340,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.16, @babel/core@npm:^7.14.0, @babel/core@npm:^7.22.10, @babel/core@npm:^7.22.5, @babel/core@npm:^7.22.9, @babel/core@npm:^7.7.5":
+"@babel/core@npm:^7.11.6, @babel/core@npm:^7.12.3, @babel/core@npm:^7.13.16, @babel/core@npm:^7.14.0, @babel/core@npm:^7.22.11, @babel/core@npm:^7.22.5, @babel/core@npm:^7.22.9, @babel/core@npm:^7.7.5":
   version: 7.22.11
   resolution: "@babel/core@npm:7.22.11"
   dependencies:
@@ -1759,7 +1759,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/preset-typescript@npm:^7.13.0, @babel/preset-typescript@npm:^7.22.5":
+"@babel/preset-typescript@npm:^7.13.0, @babel/preset-typescript@npm:^7.22.11":
   version: 7.22.11
   resolution: "@babel/preset-typescript@npm:7.22.11"
   dependencies:
@@ -4536,7 +4536,7 @@ __metadata:
     "@types/cors": "npm:^2.8.13"
     "@types/express": "npm:^4.17.17"
     "@types/morgan": "npm:^1.9.5"
-    "@types/node": "npm:^20.5.3"
+    "@types/node": "npm:^20.5.6"
     "@types/supertest": "npm:^2.0.12"
     body-parser: "npm:^1.20.2"
     cors: "npm:^2.8.5"
@@ -4544,11 +4544,11 @@ __metadata:
     esbuild-register: "npm:^3.4.2"
     eslint: "npm:^8.47.0"
     express: "npm:^4.18.2"
-    jest: "npm:^29.6.3"
+    jest: "npm:^29.6.4"
     morgan: "npm:^1.10.0"
     nodemon: "npm:^3.0.1"
     supertest: "npm:^6.3.3"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -4563,9 +4563,9 @@ __metadata:
     "@mqs/tsc": "npm:*"
     "@mqs/tsconfig": "npm:*"
     eslint: "npm:^8.47.0"
-    jest: "npm:^29.6.3"
+    jest: "npm:^29.6.4"
     serialize-error: "npm:^11.0.1"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -4582,15 +4582,15 @@ __metadata:
     eslint-config-airbnb-typescript: "npm:^17.1.0"
     eslint-config-next: "npm:^13.4.19"
     eslint-config-prettier: "npm:^8.10.0"
-    eslint-config-turbo: "npm:1.10.12"
+    eslint-config-turbo: "npm:1.10.13"
     eslint-plugin-cypress: "npm:^2.14.0"
     eslint-plugin-import: "npm:^2.28.1"
     eslint-plugin-jsx-a11y: "npm:^6.7.1"
-    eslint-plugin-react: "npm:^7.33.1"
+    eslint-plugin-react: "npm:^7.33.2"
     eslint-plugin-react-hooks: "npm:^4.6.0"
     eslint-plugin-storybook: "npm:^0.6.13"
-    jest: "npm:^29.6.3"
-    typescript: "npm:^5.1.6"
+    jest: "npm:^29.6.4"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -4614,9 +4614,9 @@ __metadata:
     glob: "npm:^10.3.3"
     graphql: "npm:^16.8.0"
     graphql-tag: "npm:^2.12.6"
-    jest: "npm:^29.6.3"
+    jest: "npm:^29.6.4"
     react: "npm:^18.2.0"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -4640,10 +4640,10 @@ __metadata:
     eslint: "npm:^8.47.0"
     glob: "npm:^10.3.3"
     graphql: "npm:^16.8.0"
-    jest: "npm:^29.6.3"
+    jest: "npm:^29.6.4"
     nodemon: "npm:^3.0.1"
     react: "npm:^18.2.0"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -4652,7 +4652,7 @@ __metadata:
   resolution: "@mqs/graphql-server@workspace:packages/graphql-server"
   dependencies:
     "@apollo/client": "npm:^3.8.1"
-    "@apollo/server": "npm:^4.9.1"
+    "@apollo/server": "npm:^4.9.2"
     "@graphql-tools/executor-graphql-ws": "npm:^1.1.0"
     "@graphql-tools/executor-http": "npm:^1.0.2"
     "@mqs/eslint-config": "npm:*"
@@ -4672,10 +4672,10 @@ __metadata:
     graphql: "npm:^16.8.0"
     graphql-type-json: "npm:^0.3.2"
     graphql-yoga: "npm:^4.0.4"
-    jest: "npm:^29.6.3"
+    jest: "npm:^29.6.4"
     parent-package-json: "npm:^3.0.0"
     react: "npm:^18.2.0"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -4687,13 +4687,13 @@ __metadata:
     "@mqs/tsc": "npm:*"
     "@mqs/tsconfig": "npm:*"
     "@types/jest": "npm:^29.5.4"
-    "@types/node": "npm:^20.5.3"
+    "@types/node": "npm:^20.5.6"
     eslint: "npm:^8.47.0"
-    jest: "npm:^29.6.3"
-    jest-environment-jsdom: "npm:^29.6.3"
+    jest: "npm:^29.6.4"
+    jest-environment-jsdom: "npm:^29.6.4"
     ts-jest: "npm:^29.1.1"
     ts-node: "npm:^10.9.1"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -4709,9 +4709,9 @@ __metadata:
     "@mqs/tsconfig": "npm:*"
     "@types/node-cron": "npm:^3.0.8"
     "@types/yargs": "npm:^17.0.24"
-    jest: "npm:^29.6.3"
+    jest: "npm:^29.6.4"
     node-cron: "npm:^3.0.2"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
     yargs: "npm:^17.7.2"
   bin:
     mqs-jobs-cancel: ./dist/cli/cancel.js
@@ -4733,11 +4733,11 @@ __metadata:
     "@mqs/tsc": "npm:*"
     "@mqs/tsconfig": "npm:*"
     "@prisma/client": "npm:^5.2.0"
-    babel-jest: "npm:^29.6.3"
+    babel-jest: "npm:^29.6.4"
     eslint: "npm:^8.47.0"
-    jest: "npm:^29.6.3"
+    jest: "npm:^29.6.4"
     prisma: "npm:^5.2.0"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -4753,9 +4753,9 @@ __metadata:
     "@types/bcrypt": "npm:^5.0.0"
     bcrypt: "npm:^5.1.1"
     eslint: "npm:^8.47.0"
-    jest: "npm:^29.6.3"
+    jest: "npm:^29.6.4"
     prisma: "npm:^5.2.0"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -4773,21 +4773,21 @@ __metadata:
     "@mqs/style": "npm:*"
     "@mqs/tsc": "npm:*"
     "@mqs/tsconfig": "npm:*"
-    "@mui/base": "npm:^5.0.0-beta.11"
-    "@mui/icons-material": "npm:^5.14.3"
-    "@mui/material": "npm:^5.14.5"
+    "@mui/base": "npm:^5.0.0-beta.12"
+    "@mui/icons-material": "npm:^5.14.6"
+    "@mui/material": "npm:^5.14.6"
     "@testing-library/react": "npm:^14.0.0"
     "@types/react": "npm:^18.2.21"
     "@types/react-dom": "npm:^18.2.7"
     classnames: "npm:^2.3.2"
     eslint: "npm:^8.47.0"
-    jest: "npm:^29.6.3"
+    jest: "npm:^29.6.4"
     next: "npm:^13.4.19"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     react-json-view: "npm:^1.21.3"
     timeago.js: "npm:^4.0.2"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -4809,10 +4809,10 @@ __metadata:
     "@types/react-dom": "npm:^18.2.7"
     classnames: "npm:^2.3.2"
     eslint: "npm:^8.47.0"
-    jest: "npm:^29.6.3"
+    jest: "npm:^29.6.4"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -4824,8 +4824,8 @@ __metadata:
     "@mqs/tsc": "npm:*"
     "@mqs/tsconfig": "npm:*"
     eslint: "npm:^8.47.0"
-    jest: "npm:^29.6.3"
-    typescript: "npm:^5.1.6"
+    jest: "npm:^29.6.4"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -4840,9 +4840,9 @@ __metadata:
     "@mqs/zod": "npm:*"
     classnames: "npm:^2.3.2"
     eslint: "npm:^8.47.0"
-    jest: "npm:^29.6.3"
+    jest: "npm:^29.6.4"
     react: "npm:^18.2.0"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -4857,9 +4857,9 @@ __metadata:
     "@storybook/react": "npm:^7.3.2"
     "@storybook/types": "npm:^7.3.2"
     eslint: "npm:^8.47.0"
-    jest: "npm:^29.6.3"
+    jest: "npm:^29.6.4"
     react: "npm:^18.2.0"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -4867,10 +4867,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mqs/storybook@workspace:packages/storybook"
   dependencies:
-    "@babel/core": "npm:^7.22.10"
+    "@babel/core": "npm:^7.22.11"
     "@babel/preset-env": "npm:^7.22.10"
     "@babel/preset-react": "npm:^7.22.5"
-    "@babel/preset-typescript": "npm:^7.22.5"
+    "@babel/preset-typescript": "npm:^7.22.11"
     "@mqs/eslint-config": "npm:*"
     "@mqs/storybook-utils": "npm:*"
     "@mqs/style": "npm:*"
@@ -4889,12 +4889,12 @@ __metadata:
     eslint: "npm:^8.47.0"
     eslint-plugin-storybook: "npm:^0.6.13"
     gh-pages: "npm:^5.0.0"
-    jest: "npm:^29.6.3"
+    jest: "npm:^29.6.4"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     storybook: "npm:^7.3.2"
     tsconfig-paths-webpack-plugin: "npm:^4.1.0"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -4911,7 +4911,7 @@ __metadata:
     postcss: "npm:^8.4.28"
     react: "npm:^18.2.0"
     tsup: "npm:^7.2.0"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   peerDependencies:
     react: ^18.2.0
   languageName: unknown
@@ -4928,10 +4928,10 @@ __metadata:
     autoprefixer: "npm:^10.4.15"
     daisyui: "npm:^3.6.1"
     eslint: "npm:^8.47.0"
-    jest: "npm:^29.6.3"
+    jest: "npm:^29.6.4"
     postcss: "npm:^8.4.28"
     tailwindcss: "npm:^3.3.3"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -4946,9 +4946,9 @@ __metadata:
     "@mqs/tsc": "npm:*"
     "@mqs/tsconfig": "npm:*"
     eslint: "npm:^8.47.0"
-    jest: "npm:^29.6.3"
+    jest: "npm:^29.6.4"
     jsonwebtoken: "npm:^9.0.1"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -4961,7 +4961,7 @@ __metadata:
     concurrently: "npm:^8.2.1"
     eslint: "npm:^8.47.0"
     tsc-alias: "npm:^1.8.7"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   peerDependencies:
     typescript: ^5.0.4
   bin:
@@ -4976,8 +4976,8 @@ __metadata:
   resolution: "@mqs/tsconfig@workspace:packages/tsconfig"
   dependencies:
     eslint: "npm:^8.47.0"
-    jest: "npm:^29.6.3"
-    typescript: "npm:^5.1.6"
+    jest: "npm:^29.6.4"
+    typescript: "npm:^5.2.2"
     typescript-plugin-css-modules: "npm:^5.0.1"
   languageName: unknown
   linkType: soft
@@ -5003,7 +5003,7 @@ __metadata:
     "@prisma/client": "npm:^5.2.0"
     "@types/date-fns": "npm:^2.6.0"
     "@types/jsonwebtoken": "npm:^9.0.2"
-    "@types/node": "npm:^20.5.3"
+    "@types/node": "npm:^20.5.6"
     "@types/react": "npm:^18.2.21"
     "@types/react-dom": "npm:^18.2.7"
     classnames: "npm:^2.3.2"
@@ -5016,7 +5016,7 @@ __metadata:
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
     start-server-and-test: "npm:2.0.0"
-    typescript: "npm:^5.1.6"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 
@@ -5030,13 +5030,13 @@ __metadata:
     "@mqs/tsc": "npm:*"
     "@mqs/tsconfig": "npm:*"
     eslint: "npm:^8.47.0"
-    jest: "npm:^29.6.3"
-    typescript: "npm:^5.1.6"
+    jest: "npm:^29.6.4"
+    typescript: "npm:^5.2.2"
     zod: "npm:^3.22.2"
   languageName: unknown
   linkType: soft
 
-"@mui/base@npm:5.0.0-beta.12, @mui/base@npm:^5.0.0-beta.11":
+"@mui/base@npm:5.0.0-beta.12, @mui/base@npm:^5.0.0-beta.12":
   version: 5.0.0-beta.12
   resolution: "@mui/base@npm:5.0.0-beta.12"
   dependencies:
@@ -5067,7 +5067,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/icons-material@npm:^5.14.3":
+"@mui/icons-material@npm:^5.14.6":
   version: 5.14.6
   resolution: "@mui/icons-material@npm:5.14.6"
   dependencies:
@@ -5083,7 +5083,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/material@npm:^5.14.5":
+"@mui/material@npm:^5.14.6":
   version: 5.14.6
   resolution: "@mui/material@npm:5.14.6"
   dependencies:
@@ -8144,7 +8144,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.5.3":
+"@types/node@npm:*, @types/node@npm:^20.5.6":
   version: 20.5.6
   resolution: "@types/node@npm:20.5.6"
   checksum: 58573cf9e3a174fd0a443ac77f60c62e4408ed9566c685bc51554093c5b64dcc5124be113cfdafbdbd350f1be842db581439998e307a97755368dcb3e3033e7f
@@ -9659,7 +9659,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-jest@npm:^29.6.3, babel-jest@npm:^29.6.4":
+"babel-jest@npm:^29.6.4":
   version: 29.6.4
   resolution: "babel-jest@npm:29.6.4"
   dependencies:
@@ -12953,14 +12953,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-turbo@npm:1.10.12":
-  version: 1.10.12
-  resolution: "eslint-config-turbo@npm:1.10.12"
+"eslint-config-turbo@npm:1.10.13":
+  version: 1.10.13
+  resolution: "eslint-config-turbo@npm:1.10.13"
   dependencies:
-    eslint-plugin-turbo: "npm:1.10.12"
+    eslint-plugin-turbo: "npm:1.10.13"
   peerDependencies:
     eslint: ">6.6.0"
-  checksum: de8e8ef54d7878ab68bded5d4d631df8b3111e420acd72dad88d28870c89eb9e51f97c4577930057f4901fefc03b9f4a522cd312becd89058ce206113cf81557
+  checksum: b3dd9dd878feb9864af56b04bc9b85d76628d72e1687113817fc46ec94cd9c3f296a717fa3ac214f775f066684b88de8ba65c0b5ce5984657187f91b96cebdbb
   languageName: node
   linkType: hard
 
@@ -13126,14 +13126,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-turbo@npm:1.10.12":
-  version: 1.10.12
-  resolution: "eslint-plugin-turbo@npm:1.10.12"
+"eslint-plugin-turbo@npm:1.10.13":
+  version: 1.10.13
+  resolution: "eslint-plugin-turbo@npm:1.10.13"
   dependencies:
     dotenv: "npm:16.0.3"
   peerDependencies:
     eslint: ">6.6.0"
-  checksum: 845a6550e5a921b274ebc0bf7373b1105efab5119f6bc3f3f4203600f031bb2085b13e1590d78d2508b407ccb4643c1dc96da4fc5f09ebd2411dd6a15e730f49
+  checksum: ba1067b11079ebcbf26f0515944abf3eaa67a5c1123f300115d37f6a722398598bb71d6ccf8c108fd9a52c10d5b37fa27f66bd3a5a19d9d007d1253f289bdd58
   languageName: node
   linkType: hard
 
@@ -16316,7 +16316,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-environment-jsdom@npm:^29.6.3":
+"jest-environment-jsdom@npm:^29.6.4":
   version: 29.6.4
   resolution: "jest-environment-jsdom@npm:29.6.4"
   dependencies:
@@ -17018,7 +17018,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest@npm:^29.6.3":
+"jest@npm:^29.6.4":
   version: 29.6.4
   resolution: "jest@npm:29.6.4"
   dependencies:
@@ -18703,7 +18703,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-check-updates@npm:^16.13.0":
+"npm-check-updates@npm:^16.13.1":
   version: 16.13.1
   resolution: "npm-check-updates@npm:16.13.1"
   dependencies:
@@ -22997,7 +22997,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"turbo@npm:^1.10.12":
+"turbo@npm:^1.10.13":
   version: 1.10.13
   resolution: "turbo@npm:1.10.13"
   dependencies:
@@ -23204,7 +23204,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.1.6":
+"typescript@npm:^5.2.2":
   version: 5.2.2
   resolution: "typescript@npm:5.2.2"
   bin:
@@ -23214,7 +23214,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A^5.1.6#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A^5.2.2#optional!builtin<compat/typescript>":
   version: 5.2.2
   resolution: "typescript@patch:typescript@npm%3A5.2.2#optional!builtin<compat/typescript>::version=5.2.2&hash=f3b441"
   bin:
@@ -24071,11 +24071,11 @@ __metadata:
     "@mqs/eslint-config": "npm:*"
     cspell: "npm:^6.31.3"
     eslint: "npm:^8.47.0"
-    jest: "npm:^29.6.3"
-    npm-check-updates: "npm:^16.13.0"
+    jest: "npm:^29.6.4"
+    npm-check-updates: "npm:^16.13.1"
     prettier: "npm:^3.0.2"
-    turbo: "npm:^1.10.12"
-    typescript: "npm:^5.1.6"
+    turbo: "npm:^1.10.13"
+    typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
 

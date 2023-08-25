@@ -1,4 +1,6 @@
-import { fireEvent, render } from '@testing-library/react';
+import {
+  act, fireEvent, render, waitFor,
+} from '@testing-library/react';
 import { AlertDismissible } from '@';
 
 describe('@mqs/react-server-components', () => {
@@ -42,12 +44,14 @@ describe('@mqs/react-server-components', () => {
         expect(element.classList.contains('hidden')).toBe(false);
 
         const [button] = element.getElementsByTagName('button');
-        fireEvent.click(button);
+        act(() => {
+          fireEvent.click(button);
+        });
 
         expect(element.classList.contains('hidden')).toBe(true);
       });
 
-      it('hides when dismiss button is clicked and onClickDismiss prop returns true', () => {
+      it('hides when dismiss button is clicked and onClickDismiss prop returns true', async () => {
         const testId = AlertDismissible.name;
         const children = 'children...';
         const onClickDismiss = () => true;
@@ -67,9 +71,14 @@ describe('@mqs/react-server-components', () => {
         expect(element.classList.contains('hidden')).toBe(false);
 
         const [button] = element.getElementsByTagName('button');
-        fireEvent.click(button);
+        act(() => {
+          fireEvent.click(button);
+        });
 
-        expect(element.classList.contains('hidden')).toBe(true);
+        // TODO: cleanup tests and figure out why waitFor needed to be added
+        await waitFor(() => {
+          expect(element.classList.contains('hidden')).toBe(true);
+        });
       });
 
       it('does not hide when dismiss button is clicked and onClickDismiss prop returns false', () => {
@@ -92,7 +101,9 @@ describe('@mqs/react-server-components', () => {
         expect(element.classList.contains('hidden')).toBe(false);
 
         const [button] = element.getElementsByTagName('button');
-        fireEvent.click(button);
+        act(() => {
+          fireEvent.click(button);
+        });
 
         expect(element.classList.contains('hidden')).toBe(false);
       });

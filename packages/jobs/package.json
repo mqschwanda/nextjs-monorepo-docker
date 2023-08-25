@@ -29,7 +29,7 @@
     "dev": "mqs-tsc-watch --project tsconfig.build.json",
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "bin": {
     "mqs-jobs-cancel": "./dist/cli/cancel.js",
@@ -43,8 +43,8 @@
     "@mqs/tsconfig": "*",
     "@types/node-cron": "^3.0.8",
     "@types/yargs": "^17.0.24",
-    "jest": "^29.6.3",
-    "typescript": "^5.1.6"
+    "jest": "^29.6.4",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "@mqs/tokens": "*",

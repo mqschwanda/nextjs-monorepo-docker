@@ -2,6 +2,9 @@ import type { Config } from 'jest';
 
 const config: Config = {
   preset: '@mqs/jest-preset/node',
+  setupFiles: [ // TODO: load dynamically
+    '<rootDir>/.jest/setupFiles/env.ts',
+  ],
   transform: {
     '^.+\\.jsx?$': 'babel-jest',
     '^.+\\.tsx?$': [
