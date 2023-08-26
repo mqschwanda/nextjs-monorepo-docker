@@ -6,7 +6,7 @@ To see live example you can visit [github pages](https://mqschwanda.github.io/ne
 
 ## Development Philosophies
 
-For a detailed explanation of why certain decisions were made and what guidelines should be followed review the [development philosophies documentation](docs/development-philosophies.md) 
+For a detailed explanation of why certain decisions were made and what guidelines should be followed review the [development philosophies documentation](.docs/development-philosophies.md) 
 
 
 ## Quick Start
@@ -88,11 +88,13 @@ Each workspace is built with [TypeScript](https://www.typescriptlang.org/).
 - `web`: a [Next.js](https://nextjs.org/) app
 - `api`: an [Express](https://expressjs.com/) server
 #### Packages
+- `errors`: utilities to handle errors
 - `eslint-config`: shared `eslint` configurations
 - `graphql-client`: react client and api utilities for graphql
 - `graphql-schema`: graphql schema and types
 - `graphql-server`: graphql server and resolvers
 - `jest-preset`: Jest configurations
+- `jobs`: server workers and utilities
 - `logger`: Isomorphic logger (a small wrapper around console.log)
 - `prisma`: Database ORM
 - `react-client-components`: a React client component library
