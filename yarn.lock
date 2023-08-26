@@ -2710,10 +2710,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:^8.47.0":
-  version: 8.47.0
-  resolution: "@eslint/js@npm:8.47.0"
-  checksum: 0b38490ccad7e57174c362d4604b3afe648a1d03cf437e61b4faf7a9484a9744a12d349df0827b79aef7784081e165d418b652225485b6ff2b42a9b4161078bc
+"@eslint/js@npm:8.48.0":
+  version: 8.48.0
+  resolution: "@eslint/js@npm:8.48.0"
+  checksum: 55f6c58b046772c2bcb479366e23d9bd6fe9a32e2143729a593b6482d134debfb90bf49186ebd5884dcbab27c29f0baa2a47a3239afbae3622561eb82deed193
   languageName: node
   linkType: hard
 
@@ -4542,7 +4542,7 @@ __metadata:
     cors: "npm:^2.8.5"
     esbuild: "npm:^0.14.54"
     esbuild-register: "npm:^3.4.2"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     express: "npm:^4.18.2"
     jest: "npm:^29.6.4"
     morgan: "npm:^1.10.0"
@@ -4562,9 +4562,9 @@ __metadata:
     "@mqs/jest-preset": "npm:*"
     "@mqs/tsc": "npm:*"
     "@mqs/tsconfig": "npm:*"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
-    serialize-error: "npm:^11.0.1"
+    serialize-error: "npm:^11.0.2"
     typescript: "npm:^5.2.2"
   languageName: unknown
   linkType: soft
@@ -4577,7 +4577,7 @@ __metadata:
     "@types/eslint": "npm:^8.44.2"
     "@typescript-eslint/eslint-plugin": "npm:^5.62.0"
     "@typescript-eslint/parser": "npm:^5.62.0"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     eslint-config-airbnb: "npm:^19.0.4"
     eslint-config-airbnb-typescript: "npm:^17.1.0"
     eslint-config-next: "npm:^13.4.19"
@@ -4610,7 +4610,7 @@ __metadata:
     "@mqs/tsc": "npm:*"
     "@mqs/tsconfig": "npm:*"
     concurrently: "npm:^8.2.1"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     glob: "npm:^10.3.3"
     graphql: "npm:^16.8.0"
     graphql-tag: "npm:^2.12.6"
@@ -4637,7 +4637,7 @@ __metadata:
     "@mqs/tsconfig": "npm:*"
     concurrently: "npm:^8.2.1"
     copyfiles: "npm:^2.4.1"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     glob: "npm:^10.3.3"
     graphql: "npm:^16.8.0"
     jest: "npm:^29.6.4"
@@ -4668,7 +4668,7 @@ __metadata:
     "@types/cookie": "npm:^0.5.1"
     bluebird: "npm:^3.7.2"
     cookie: "npm:^0.5.0"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     graphql: "npm:^16.8.0"
     graphql-type-json: "npm:^0.3.2"
     graphql-yoga: "npm:^4.0.4"
@@ -4688,7 +4688,7 @@ __metadata:
     "@mqs/tsconfig": "npm:*"
     "@types/jest": "npm:^29.5.4"
     "@types/node": "npm:^20.5.6"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
     jest-environment-jsdom: "npm:^29.6.4"
     ts-jest: "npm:^29.1.1"
@@ -4734,7 +4734,7 @@ __metadata:
     "@mqs/tsconfig": "npm:*"
     "@prisma/client": "npm:^5.2.0"
     babel-jest: "npm:^29.6.4"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
     prisma: "npm:^5.2.0"
     typescript: "npm:^5.2.2"
@@ -4752,7 +4752,7 @@ __metadata:
     "@prisma/client": "npm:^5.2.0"
     "@types/bcrypt": "npm:^5.0.0"
     bcrypt: "npm:^5.1.1"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
     prisma: "npm:^5.2.0"
     typescript: "npm:^5.2.2"
@@ -4780,7 +4780,7 @@ __metadata:
     "@types/react": "npm:^18.2.21"
     "@types/react-dom": "npm:^18.2.7"
     classnames: "npm:^2.3.2"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
     next: "npm:^13.4.19"
     react: "npm:^18.2.0"
@@ -4808,7 +4808,7 @@ __metadata:
     "@types/react": "npm:^18.2.21"
     "@types/react-dom": "npm:^18.2.7"
     classnames: "npm:^2.3.2"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
@@ -4823,7 +4823,7 @@ __metadata:
     "@mqs/eslint-config": "npm:*"
     "@mqs/tsc": "npm:*"
     "@mqs/tsconfig": "npm:*"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
     typescript: "npm:^5.2.2"
   languageName: unknown
@@ -4839,7 +4839,7 @@ __metadata:
     "@mqs/tsconfig": "npm:*"
     "@mqs/zod": "npm:*"
     classnames: "npm:^2.3.2"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
     react: "npm:^18.2.0"
     typescript: "npm:^5.2.2"
@@ -4856,7 +4856,7 @@ __metadata:
     "@storybook/addon-storyshots": "npm:^7.3.2"
     "@storybook/react": "npm:^7.3.2"
     "@storybook/types": "npm:^7.3.2"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
     react: "npm:^18.2.0"
     typescript: "npm:^5.2.2"
@@ -4886,7 +4886,7 @@ __metadata:
     "@storybook/test-runner": "npm:^0.12.0"
     "@storybook/testing-library": "npm:^0.2.0"
     "@storybook/theming": "npm:^7.3.2"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     eslint-plugin-storybook: "npm:^0.6.13"
     gh-pages: "npm:^5.0.0"
     jest: "npm:^29.6.4"
@@ -4907,7 +4907,7 @@ __metadata:
     "@mqs/tsconfig": "npm:*"
     "@types/react": "npm:^18.2.21"
     autoprefixer: "npm:^10.4.15"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     postcss: "npm:^8.4.28"
     react: "npm:^18.2.0"
     tsup: "npm:^7.2.0"
@@ -4926,8 +4926,8 @@ __metadata:
     "@mqs/tsconfig": "npm:*"
     "@tailwindcss/typography": "npm:^0.5.9"
     autoprefixer: "npm:^10.4.15"
-    daisyui: "npm:^3.6.1"
-    eslint: "npm:^8.47.0"
+    daisyui: "npm:^3.6.3"
+    eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
     postcss: "npm:^8.4.28"
     tailwindcss: "npm:^3.3.3"
@@ -4945,7 +4945,7 @@ __metadata:
     "@mqs/prisma": "npm:*"
     "@mqs/tsc": "npm:*"
     "@mqs/tsconfig": "npm:*"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
     jsonwebtoken: "npm:^9.0.1"
     typescript: "npm:^5.2.2"
@@ -4959,7 +4959,7 @@ __metadata:
     "@mqs/eslint-config": "npm:*"
     "@mqs/tsconfig": "npm:*"
     concurrently: "npm:^8.2.1"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     tsc-alias: "npm:^1.8.7"
     typescript: "npm:^5.2.2"
   peerDependencies:
@@ -4975,7 +4975,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mqs/tsconfig@workspace:packages/tsconfig"
   dependencies:
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
     typescript: "npm:^5.2.2"
     typescript-plugin-css-modules: "npm:^5.0.1"
@@ -5010,7 +5010,7 @@ __metadata:
     cookies-next: "npm:^2.1.2"
     cypress: "npm:12.17.4"
     date-fns: "npm:^2.30.0"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     next: "npm:13.4.19"
     query-string: "npm:^8.1.0"
     react: "npm:^18.2.0"
@@ -5029,7 +5029,7 @@ __metadata:
     "@mqs/jest-preset": "npm:*"
     "@mqs/tsc": "npm:*"
     "@mqs/tsconfig": "npm:*"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
     typescript: "npm:^5.2.2"
     zod: "npm:^3.22.2"
@@ -11515,16 +11515,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"daisyui@npm:^3.6.1":
-  version: 3.6.1
-  resolution: "daisyui@npm:3.6.1"
+"daisyui@npm:^3.6.3":
+  version: 3.6.3
+  resolution: "daisyui@npm:3.6.3"
   dependencies:
     colord: "npm:^2.9"
     css-selector-tokenizer: "npm:^0.8"
     postcss: "npm:^8"
     postcss-js: "npm:^4"
     tailwindcss: "npm:^3"
-  checksum: 3114b284270e599c5c1c8da3a679437feac2dfbbe2830b61e986b56d3894ccc153fca13b12a7513933c5786c4f78a8bb5526d7d9d25528fa57143abb0084da49
+  checksum: 6e164410bb3a6cfcd323fdda95eb3b5567d96e3b34b215bd7d31938ed22cdf52237d735724dfdacf4379ea7fbae8ce87289cd777c1a109ede1e3a9a21477e5c3
   languageName: node
   linkType: hard
 
@@ -13164,14 +13164,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^8.47.0":
-  version: 8.47.0
-  resolution: "eslint@npm:8.47.0"
+"eslint@npm:^8.48.0":
+  version: 8.48.0
+  resolution: "eslint@npm:8.48.0"
   dependencies:
     "@eslint-community/eslint-utils": "npm:^4.2.0"
     "@eslint-community/regexpp": "npm:^4.6.1"
     "@eslint/eslintrc": "npm:^2.1.2"
-    "@eslint/js": "npm:^8.47.0"
+    "@eslint/js": "npm:8.48.0"
     "@humanwhocodes/config-array": "npm:^0.11.10"
     "@humanwhocodes/module-importer": "npm:^1.0.1"
     "@nodelib/fs.walk": "npm:^1.2.8"
@@ -13207,7 +13207,7 @@ __metadata:
     text-table: "npm:^0.2.0"
   bin:
     eslint: bin/eslint.js
-  checksum: f3f9c68631aae49c3152ae3e749b4e35443890e76d7b292c601c5df10882ec7153abeaeccdec0e5b2f73655d2ad8c62929c0f74994fa736497e79631627a8a61
+  checksum: 43ba3a939aa9203b2d98de9aa242262f10dd242eba6f9f72d17cd9ba8a82085441ffa8b93e017aae0561d52d3bcf49fde3afda4d25b4f95ff4e7274dc911474a
   languageName: node
   linkType: hard
 
@@ -21414,12 +21414,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"serialize-error@npm:^11.0.1":
-  version: 11.0.1
-  resolution: "serialize-error@npm:11.0.1"
+"serialize-error@npm:^11.0.2":
+  version: 11.0.2
+  resolution: "serialize-error@npm:11.0.2"
   dependencies:
     type-fest: "npm:^2.12.2"
-  checksum: eba8ef661e2782580ac6c81f31a42c02807b842d377fc506144198e7dbe7ee0ab63cd466ef332e9a55cd04f70faf2c49602d694bc770dc5e0a7323e96cc75f38
+  checksum: 0dbc8aff39fcaa76463bdb7acb8b37b7187ee622719eb4c186c2d1e847e4a08d54da84afb2af5fad049707e3040d52885d50174899aab4a0577df491c7763f61
   languageName: node
   linkType: hard
 
@@ -24070,7 +24070,7 @@ __metadata:
   dependencies:
     "@mqs/eslint-config": "npm:*"
     cspell: "npm:^6.31.3"
-    eslint: "npm:^8.47.0"
+    eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
     npm-check-updates: "npm:^16.13.1"
     prettier: "npm:^3.0.2"

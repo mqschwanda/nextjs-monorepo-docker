@@ -58,7 +58,7 @@
     "@mqs/tsc": "*",
     "@mqs/tsconfig": "*",
     "concurrently": "^8.2.1",
-    "eslint": "^8.47.0",
+    "eslint": "^8.48.0",
     "glob": "^10.3.3",
     "jest": "^29.6.4",
     "typescript": "^5.2.2"
