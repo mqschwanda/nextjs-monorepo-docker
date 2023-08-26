@@ -6,6 +6,10 @@ import cx from 'classnames';
 import type { ReactJsonViewProps } from 'react-json-view';
 import { ComponentType, lazy } from 'react';
 
+export function isObjectType(obj: any): obj is object {
+  return typeof obj === 'object';
+}
+
 const ReactJsonView = lazy<ComponentType<ReactJsonViewProps>>(
   () => import('react-json-view'),
 );

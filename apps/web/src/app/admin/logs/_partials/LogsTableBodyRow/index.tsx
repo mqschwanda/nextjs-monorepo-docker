@@ -1,7 +1,7 @@
 'use client';
 
 import { Log } from '@mqs/graphql-schema';
-import { JsonView } from '@mqs/react-client-components';
+import { JsonView, isObjectType } from '@mqs/react-client-components';
 import {
   Modal,
   ModalBody,
@@ -72,7 +72,7 @@ export default function LogsTableBodyRow({
         <span>
           { payload ? JSON.stringify(payload) : '-' }
         </span>
-        { payload ? (
+        { isObjectType(payload) ? (
           <Modal
             id={modalId}
           >
@@ -97,7 +97,7 @@ export default function LogsTableBodyRow({
                 name={false}
                 quotesOnKeys={false}
                 sortKeys
-                src={payload as any} // TODO: fix any cast
+                src={payload}
                 theme='hopscotch'
               />
             </ModalBody>
