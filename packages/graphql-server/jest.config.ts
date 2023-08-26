@@ -1,5 +1,5 @@
 import type { Config } from 'jest';
-import { pathsToModuleNameMapper } from '@mqs/jest-preset/utilities';
+import { jestDirectoryFiles, pathsToModuleNameMapper } from '@mqs/jest-preset/utilities';
 import tsconfig from './tsconfig.json';
 
 const config: Config = {
@@ -13,8 +13,8 @@ const config: Config = {
     ),
   },
   preset: '@mqs/jest-preset/node',
-  setupFilesAfterEnv: [ // TODO: load dynamically
-    './src/__tests__/scripts/setupFilesAfterEnv.ts',
+  setupFilesAfterEnv: [
+    ...jestDirectoryFiles('setupFilesAfterEnv'),
   ],
   transform: {
     '^.+\\.tsx?$': [
