@@ -4653,6 +4653,7 @@ __metadata:
   dependencies:
     "@apollo/client": "npm:^3.8.1"
     "@apollo/server": "npm:^4.9.2"
+    "@babel/preset-env": "npm:^7.22.10"
     "@graphql-tools/executor-graphql-ws": "npm:^1.1.0"
     "@graphql-tools/executor-http": "npm:^1.0.2"
     "@mqs/eslint-config": "npm:*"
@@ -4666,6 +4667,7 @@ __metadata:
     "@mqs/tsconfig": "npm:*"
     "@types/bluebird": "npm:^3.5.38"
     "@types/cookie": "npm:^0.5.1"
+    babel-jest: "npm:^29.6.4"
     bluebird: "npm:^3.7.2"
     cookie: "npm:^0.5.0"
     eslint: "npm:^8.48.0"

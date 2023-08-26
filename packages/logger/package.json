@@ -32,7 +32,6 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.22.10",
     "@mqs/eslint-config": "*",
     "@mqs/graphql-schema": "*",
     "@mqs/jest-preset": "*",

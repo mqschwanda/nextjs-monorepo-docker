@@ -1,4 +1,5 @@
 import type { Config } from 'jest';
+import path from 'path';
 
 const config: Config = {
   // Module file extensions for importing
@@ -26,11 +27,23 @@ const config: Config = {
   // Matches parent folder `__tests__` and filename
   // should contain `test` or `spec`.
   testRegex: '(/__tests__/.*(\\.|/)(test|spec))\\.tsx?$',
-  // Jest transformations -- this adds support for TypeScript
-  // using ts-jest
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.jsx?$': [
+      'babel-jest',
+      {
+        configFile: path.resolve(__dirname, 'babel-config'),
+      },
+    ],
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        babel: false,
+      },
+    ],
   },
+  transformIgnorePatterns: [
+    'node_modules/?!serialize-error', // TODO: cleanup serialize error package for jest
+  ],
 };
 
 export default config;

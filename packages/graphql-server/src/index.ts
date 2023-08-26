@@ -21,10 +21,12 @@ export default function createGraphqlServer(context: ContextType) {
     landingPage: false,
     logging: {
       debug(options) {
-        logger.debug({
-          db: false,
-          message: JSON.stringify(options),
-        });
+        if (process.env.NODE_ENV === 'development') {
+          logger.debug({
+            db: false,
+            message: JSON.stringify(options),
+          });
+        }
       },
       error(options) {
         logger.error({
