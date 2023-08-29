@@ -17,28 +17,42 @@ For a detailed explanation of why certain decisions were made and what guideline
 
 2. From project root run the yarn cli to install all dependencies
 
-  ```
+  ```bash
   yarn install
   ```
 
 ### Development
 
-This repo is configured to be built with Docker, and Docker compose. To run all apps in this repo:
-```
-yarn docker-build:dev
-yarn docker-run:dev
-```
+#### Run Apps
 
-If you do not want to use docker the alternative command can be used:
-```
-yarn dev
-```
+1. Run the docker build command
+    ```bash
+    yarn docker-compose-build:dev
+    ```
+2. Run the docker run command
+    ```bash
+    yarn docker-compose-run:dev
+    ```
 
-To setup the database run the migration setup and reset scripts:
-```
-docker-prisma-migrate-dev:dev
-docker-prisma-migrate-reset:dev
-```
+  NOTE: If you have not setup the database make sure to run the setup database commands.
+
+#### Setup Database
+
+1. Run the database migration command
+    ```bash
+    docker-compose-prisma-migrate:dev
+    ```
+2. Run the database reset command
+    ```bash
+    docker-compose-prisma-migrate-reset:dev
+    ```
+
+#### Flatten Migrations
+
+1. Run the database initial migration command
+    ```bash
+    docker-compose-prisma-migrate-initial:dev
+    ```
 
 #### Troubleshooting
 
@@ -54,26 +68,36 @@ You should not run into this issue unless you are trying to run all (or many) wo
 
 ### Production
 
-First, you will want to create an `.env.prod` file be either copying the `.env.dev` or `.env.prod.example` files and making the necessary changes. (Note: The `.env.prod` file will be ignored by git):
-```
-cp .env.dev .env.prod
-# or
-cp .env.prod.example .env.prod
-```
+#### Run Apps
 
-This repo is configured to be built with Docker, and Docker compose. To build all apps in this repo:
+1. Create an `.env.prod` file be either copying the `.env.dev` or `.env.prod.example` files and making the necessary changes. 
+    
+    Note: This only needs to be done once, so you can skip to step 2 if this is not the first time starting up a production instance.
 
-```
-yarn docker-build:prod
-yarn docker-run:prod
-```
+    - copy the development env file and use it as the production env file
+        ```bash
+        cp .env.dev .env.prod
+        ```
+    - copy the production example env file and use it as the production env file
+        ```bash
+        cp .env.prod.example .env.prod
+        ```
+    After copying the file, make sure to update `.env.prod` with the proper values
+
+2. Run the docker build command
+    ```bash
+    yarn docker-compose-build:prod
+    ```
+3. Run the docker run command
+    ```bash
+    yarn docker-compose-run:prod
+    ```
 
 Open http://localhost:3000.
 
 To shutdown all running containers:
 
-```
-# Stop all running containers
+```bash
 yarn docker-kill
 ```
 
