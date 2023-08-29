@@ -4902,7 +4902,7 @@ __metadata:
     "@storybook/manager-api": "npm:^7.3.2"
     "@storybook/react": "npm:^7.3.2"
     "@storybook/react-webpack5": "npm:^7.3.2"
-    "@storybook/test-runner": "npm:^0.12.0"
+    "@storybook/test-runner": "npm:^0.13.0"
     "@storybook/testing-library": "npm:^0.2.0"
     "@storybook/theming": "npm:^7.3.2"
     eslint: "npm:^8.48.0"
@@ -7409,9 +7409,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/test-runner@npm:^0.12.0":
-  version: 0.12.0
-  resolution: "@storybook/test-runner@npm:0.12.0"
+"@storybook/test-runner@npm:^0.13.0":
+  version: 0.13.0
+  resolution: "@storybook/test-runner@npm:0.13.0"
   dependencies:
     "@babel/core": "npm:^7.22.5"
     "@babel/generator": "npm:^7.22.5"
@@ -7442,7 +7442,7 @@ __metadata:
     ts-dedent: "npm:^2.0.0"
   bin:
     test-storybook: dist/test-storybook.js
-  checksum: d2121772fd195f911f09a0c1fa5926a018ba03404d71cce9b1641e95d697ae9525abccbb69fd173d151eb954edfe9cf2e74e3fa57454717bdd14bd0a237f6c02
+  checksum: fecb84f8e020e133823311a2b81daa98d3750172149d96d9edbf2127207b6b72c6c66d6752bc7421ed922b9baf9947e6779a8c1b01f4a8209771dc95e9b2bad5
   languageName: node
   linkType: hard
 
