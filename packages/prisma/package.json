@@ -42,7 +42,7 @@
     "lint": "eslint .",
     "lint:fix": "yarn lint --fix",
     "migrate:dev": "prisma migrate dev --schema ./src/schema/schema.prisma",
-    "migrate:initial": "rm -rfv ./src/schema/migrations && prisma migrate dev --schema ./src/schema/schema.prisma --name initial",
+    "migrate:initial": "yarn prisma migrate diff --from-empty --to-schema-datamodel ./src/schema/schema.prisma --script > ./src/schema/migrations/0_initial/migration.sql",
     "migrate:reset": "prisma migrate reset --schema ./src/schema/schema.prisma",
     "migrate:status": "prisma migrate status --schema ./src/schema/schema.prisma",
     "pull:dev": "prisma db pull --schema ./src/schema/schema.prisma",

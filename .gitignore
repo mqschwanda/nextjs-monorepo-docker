@@ -1,9 +1,5 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# migrations
-# TODO: remove migrations from gitignore when done prototyping
-migrations/
-
 # dependencies
 node_modules
 .yarn/*
