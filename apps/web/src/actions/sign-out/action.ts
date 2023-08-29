@@ -43,5 +43,5 @@ export default async function signOutAction(formData: FormData) {
   cookies().delete(Tokens.audienceRefresh);
 
   revalidatePath('/');
-  redirect('/');
+  redirect('/home');
 }

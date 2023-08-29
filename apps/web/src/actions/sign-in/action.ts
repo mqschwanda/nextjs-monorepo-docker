@@ -74,7 +74,7 @@ export default async function signInAction(formData: FormData) {
     },
   );
 
-  let redirectPath = '/';
+  let redirectPath = '/home';
   const referer = headers().get('referer');
   if (referer) {
     const url = new URL(referer);
