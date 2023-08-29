@@ -4556,7 +4556,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mqs/errors@workspace:packages/errors"
   dependencies:
-    "@babel/preset-env": "npm:^7.22.10"
     "@mqs/eslint-config": "npm:*"
     "@mqs/graphql-schema": "npm:*"
     "@mqs/jest-preset": "npm:*"
@@ -4683,6 +4682,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mqs/jest-preset@workspace:packages/jest-preset"
   dependencies:
+    "@babel/core": "npm:^7.22.11"
     "@babel/preset-env": "npm:^7.22.10"
     "@mqs/eslint-config": "npm:*"
     "@mqs/tsc": "npm:*"
@@ -4734,7 +4734,6 @@ __metadata:
     "@mqs/tsc": "npm:*"
     "@mqs/tsconfig": "npm:*"
     "@prisma/client": "npm:^5.2.0"
-    babel-jest: "npm:^29.6.4"
     eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
     prisma: "npm:^5.2.0"
@@ -4861,6 +4860,8 @@ __metadata:
     jest: "npm:^29.6.4"
     react: "npm:^18.2.0"
     typescript: "npm:^5.2.2"
+  peerDependencies:
+    react-dom: "*"
   languageName: unknown
   linkType: soft
 
