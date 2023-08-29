@@ -5009,7 +5009,6 @@ __metadata:
     "@types/react": "npm:^18.2.21"
     "@types/react-dom": "npm:^18.2.7"
     classnames: "npm:^2.3.2"
-    cookies-next: "npm:^2.1.2"
     cypress: "npm:12.17.2"
     date-fns: "npm:^2.30.0"
     eslint: "npm:^8.48.0"
@@ -7808,13 +7807,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/cookie@npm:^0.4.1":
-  version: 0.4.1
-  resolution: "@types/cookie@npm:0.4.1"
-  checksum: 427c9220217d3d74f3e5d53d68cd39502f3bbebdb1af4ecf0d05076bcbe9ddab299ad6369fe0f517389296ba4ca49ddf9a8c22f68e5e9eb8ae6d0076cfab90b2
-  languageName: node
-  linkType: hard
-
 "@types/cookie@npm:^0.5.1":
   version: 0.5.1
   resolution: "@types/cookie@npm:0.5.1"
@@ -8160,7 +8152,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^16.0.0, @types/node@npm:^16.10.2":
+"@types/node@npm:^16.0.0":
   version: 16.18.46
   resolution: "@types/node@npm:16.18.46"
   checksum: 78e45fd4fa70232a912a1d15acf12c194e1ad78617534718e05d5db3efa6b07d1cd08b09fcc190bb38115c7671413205817726b3eab5cc47776cefef8079b46c
@@ -11084,28 +11076,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cookie@npm:^0.4.0":
-  version: 0.4.2
-  resolution: "cookie@npm:0.4.2"
-  checksum: 2e1de9fdedca54881eab3c0477aeb067f281f3155d9cfee9d28dfb252210d09e85e9d175c0a60689661feb9e35e588515352f2456bc1f8e8db4267e05fd70137
-  languageName: node
-  linkType: hard
-
 "cookiejar@npm:^2.1.4":
   version: 2.1.4
   resolution: "cookiejar@npm:2.1.4"
   checksum: 4a184f5a0591df8b07d22a43ea5d020eacb4572c383e853a33361a99710437eaa0971716c688684075bbf695b484f5872e9e3f562382e46858716cb7fc8ce3f4
-  languageName: node
-  linkType: hard
-
-"cookies-next@npm:^2.1.2":
-  version: 2.1.2
-  resolution: "cookies-next@npm:2.1.2"
-  dependencies:
-    "@types/cookie": "npm:^0.4.1"
-    "@types/node": "npm:^16.10.2"
-    cookie: "npm:^0.4.0"
-  checksum: daaaf97724195e09d7e8852fd9314d7be91ee1c99d7efe965697c35cf01d2656076dced6b7d75765e4a2f4a1102e44afa3b96b196437d590e732563f036631f3
   languageName: node
   linkType: hard
 
