@@ -28,7 +28,7 @@ services:
     volumes:
       - ./:/app
     working_dir: /app
-    image: node:alpine
+    image: node:latest # TODO: revert to alpine and add bycrypt deps https://github.com/kelektiv/node.bcrypt.js/wiki/Installation-Instructions
     container_name: dev
     restart: always
     env_file:
