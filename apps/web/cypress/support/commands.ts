@@ -61,7 +61,7 @@ Cypress.Commands.add('aliasGraphQL', () => {
   const url = new URL('/graphql/v1', 'http://localhost:3001');
   cy.intercept('POST', url.toString(), (req) => {
     // Queries
-    aliasQuery(req, 'Me');
+    aliasQuery(req, 'me');
 
     // Mutations
     // aliasMutation(req, 'Login')
@@ -69,7 +69,7 @@ Cypress.Commands.add('aliasGraphQL', () => {
 });
 
 Cypress.Commands.add('assertSignedOutNavAuth', () => {
-  // cy.wait('@query Me');
+  // cy.wait('@query me');
 
   cy.get('#nav-auth-menu-auth')
     .should('exist');
@@ -79,7 +79,7 @@ Cypress.Commands.add('assertSignedOutNavAuth', () => {
 });
 
 Cypress.Commands.add('assertSignedInNavAuth', () => {
-  // cy.wait('@query Me');
+  // cy.wait('@query me');
 
   cy.get('#nav-auth-menu-auth')
     .should('not.exist');

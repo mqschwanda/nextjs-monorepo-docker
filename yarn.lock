@@ -2306,7 +2306,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@cypress/request@npm:2.88.12":
+"@cypress/request@npm:^2.88.11":
   version: 2.88.12
   resolution: "@cypress/request@npm:2.88.12"
   dependencies:
@@ -4653,7 +4653,6 @@ __metadata:
   dependencies:
     "@apollo/client": "npm:^3.8.1"
     "@apollo/server": "npm:^4.9.2"
-    "@babel/preset-env": "npm:^7.22.10"
     "@graphql-tools/executor-graphql-ws": "npm:^1.1.0"
     "@graphql-tools/executor-http": "npm:^1.0.2"
     "@mqs/eslint-config": "npm:*"
@@ -4667,7 +4666,6 @@ __metadata:
     "@mqs/tsconfig": "npm:*"
     "@types/bluebird": "npm:^3.5.38"
     "@types/cookie": "npm:^0.5.1"
-    babel-jest: "npm:^29.6.4"
     bluebird: "npm:^3.7.2"
     cookie: "npm:^0.5.0"
     eslint: "npm:^8.48.0"
@@ -4685,11 +4683,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mqs/jest-preset@workspace:packages/jest-preset"
   dependencies:
+    "@babel/preset-env": "npm:^7.22.10"
     "@mqs/eslint-config": "npm:*"
     "@mqs/tsc": "npm:*"
     "@mqs/tsconfig": "npm:*"
     "@types/jest": "npm:^29.5.4"
     "@types/node": "npm:^20.5.6"
+    babel-jest: "npm:^29.6.4"
     eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
     jest-environment-jsdom: "npm:^29.6.4"
@@ -4725,7 +4725,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@mqs/logger@workspace:packages/logger"
   dependencies:
-    "@babel/preset-env": "npm:^7.22.10"
     "@mqs/errors": "npm:*"
     "@mqs/eslint-config": "npm:*"
     "@mqs/graphql-client": "npm:*"
@@ -5010,7 +5009,7 @@ __metadata:
     "@types/react-dom": "npm:^18.2.7"
     classnames: "npm:^2.3.2"
     cookies-next: "npm:^2.1.2"
-    cypress: "npm:12.17.4"
+    cypress: "npm:12.17.2"
     date-fns: "npm:^2.30.0"
     eslint: "npm:^8.48.0"
     next: "npm:13.4.19"
@@ -8153,7 +8152,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^16.0.0, @types/node@npm:^16.10.2, @types/node@npm:^16.18.39":
+"@types/node@npm:^14.14.31":
+  version: 14.18.56
+  resolution: "@types/node@npm:14.18.56"
+  checksum: fb831c5b731e6c0cf5d29674a887206f0be454007c0ef5e077d9e85e5c252f0f919a6d2bf1ccba4de01e643686df2b16ca86efbff025a68c0e370fd14c0f487d
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^16.0.0, @types/node@npm:^16.10.2":
   version: 16.18.46
   resolution: "@types/node@npm:16.18.46"
   checksum: 78e45fd4fa70232a912a1d15acf12c194e1ad78617534718e05d5db3efa6b07d1cd08b09fcc190bb38115c7671413205817726b3eab5cc47776cefef8079b46c
@@ -11464,13 +11470,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:12.17.4":
-  version: 12.17.4
-  resolution: "cypress@npm:12.17.4"
+"cypress@npm:12.17.2":
+  version: 12.17.2
+  resolution: "cypress@npm:12.17.2"
   dependencies:
-    "@cypress/request": "npm:2.88.12"
+    "@cypress/request": "npm:^2.88.11"
     "@cypress/xvfb": "npm:^1.2.4"
-    "@types/node": "npm:^16.18.39"
+    "@types/node": "npm:^14.14.31"
     "@types/sinonjs__fake-timers": "npm:8.1.1"
     "@types/sizzle": "npm:^2.3.2"
     arch: "npm:^2.2.0"
@@ -11503,7 +11509,6 @@ __metadata:
     minimist: "npm:^1.2.8"
     ospath: "npm:^1.2.2"
     pretty-bytes: "npm:^5.6.0"
-    process: "npm:^0.11.10"
     proxy-from-env: "npm:1.0.0"
     request-progress: "npm:^3.0.0"
     semver: "npm:^7.5.3"
@@ -11513,7 +11518,7 @@ __metadata:
     yauzl: "npm:^2.10.0"
   bin:
     cypress: bin/cypress
-  checksum: bddf5c8d717c79b122fb1269e0e31ae79fcd6c2b5c140e7d327a194b4cb2f6b00071a12541e1bea9cebad165ffc028f43db6ca75d8d2ca90c4632109238bd22a
+  checksum: 14332b3c868debd32f6d1aba41cbe8229c05caaa0f7e4e6208049cae51ccb64b5d1df1d38f5335e94af5e722b0d560f6941330092e26711d9fea9d276ec4ce52
   languageName: node
   linkType: hard
 
