@@ -4536,7 +4536,7 @@ __metadata:
     "@types/cors": "npm:^2.8.13"
     "@types/express": "npm:^4.17.17"
     "@types/morgan": "npm:^1.9.5"
-    "@types/node": "npm:^20.5.6"
+    "@types/node": "npm:^20.5.7"
     "@types/supertest": "npm:^2.0.12"
     body-parser: "npm:^1.20.2"
     cors: "npm:^2.8.5"
@@ -4688,7 +4688,7 @@ __metadata:
     "@mqs/tsc": "npm:*"
     "@mqs/tsconfig": "npm:*"
     "@types/jest": "npm:^29.5.4"
-    "@types/node": "npm:^20.5.6"
+    "@types/node": "npm:^20.5.7"
     babel-jest: "npm:^29.6.4"
     eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
@@ -5004,7 +5004,7 @@ __metadata:
     "@prisma/client": "npm:^5.2.0"
     "@types/date-fns": "npm:^2.6.0"
     "@types/jsonwebtoken": "npm:^9.0.2"
-    "@types/node": "npm:^20.5.6"
+    "@types/node": "npm:^20.5.7"
     "@types/react": "npm:^18.2.21"
     "@types/react-dom": "npm:^18.2.7"
     classnames: "npm:^2.3.2"
@@ -8145,7 +8145,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^20.5.6":
+"@types/node@npm:*":
   version: 20.5.6
   resolution: "@types/node@npm:20.5.6"
   checksum: 58573cf9e3a174fd0a443ac77f60c62e4408ed9566c685bc51554093c5b64dcc5124be113cfdafbdbd350f1be842db581439998e307a97755368dcb3e3033e7f
@@ -8163,6 +8163,13 @@ __metadata:
   version: 16.18.46
   resolution: "@types/node@npm:16.18.46"
   checksum: 78e45fd4fa70232a912a1d15acf12c194e1ad78617534718e05d5db3efa6b07d1cd08b09fcc190bb38115c7671413205817726b3eab5cc47776cefef8079b46c
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^20.5.7":
+  version: 20.5.7
+  resolution: "@types/node@npm:20.5.7"
+  checksum: 4571c455d1528ae3aa0d738de4631bf12781107b18e29e364000fdb8fea6c5d4fe7bf83edeeb93406aeac56cc4af43b30dffa3df475a57a89f32a9b025bf2112
   languageName: node
   linkType: hard
 
@@ -18710,9 +18717,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"npm-check-updates@npm:^16.13.1":
-  version: 16.13.1
-  resolution: "npm-check-updates@npm:16.13.1"
+"npm-check-updates@npm:^16.13.2":
+  version: 16.13.2
+  resolution: "npm-check-updates@npm:16.13.2"
   dependencies:
     chalk: "npm:^5.3.0"
     cli-table3: "npm:^0.6.3"
@@ -18748,7 +18755,7 @@ __metadata:
   bin:
     ncu: build/src/bin/cli.js
     npm-check-updates: build/src/bin/cli.js
-  checksum: 463b47d675b5b619b9da42f440430d5c482a3ee246f7bb42e6812d7779619a631dae73c957994a942e71de8c1a0a25de8e25e03deb9d63f96d11da77347d3b97
+  checksum: 3a4de17dff4b1a3a4c1da2c48eab389568c79a499d3d24c5aa10e987d4f942de86de9989539f2171f157bc74e66e3dee266abd22cbca678daeb5db7c8419e8be
   languageName: node
   linkType: hard
 
@@ -24079,7 +24086,7 @@ __metadata:
     cspell: "npm:^6.31.3"
     eslint: "npm:^8.48.0"
     jest: "npm:^29.6.4"
-    npm-check-updates: "npm:^16.13.1"
+    npm-check-updates: "npm:^16.13.2"
     prettier: "npm:^3.0.2"
     turbo: "npm:^1.10.13"
     typescript: "npm:^5.2.2"
